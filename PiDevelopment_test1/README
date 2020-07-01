@@ -1,5 +1,3 @@
-All the code in this examples are GPLv3, you can use it to develop your apps.
-
 You should use Sandbox at https://developers.minepi.com
 
 At the moment I just can get it work with dev.js, and commented prod.js in index.html
@@ -8,3 +6,9 @@ At the moment I just can get it work with dev.js, and commented prod.js in index
 <script src="https://downloads.minepi.com/sdk/v1/dev.js"></script> <!--You should use prod.js, but at the moment, not working prod.js-->
 
 If you have KYC done and want to donate something, use my username in Pi Network: rockcesar
+
+
+
+All the code in this examples are GPLv3, you can use it to develop your apps. Free to copy, study and modify:
+
+https://www.gnu.org/licenses/gpl-3.0.html
