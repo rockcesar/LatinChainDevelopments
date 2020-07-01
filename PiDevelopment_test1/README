@@ -1,0 +1,6 @@
+You should use Sandbox at https://developers.minepi.com
+
+At the moment I just can get it work with dev.js, and commented prod.js in index.html
+
+<!--<script src="https://downloads.minepi.com/sdk/v1/prod.js"></script>-->
+<script src="https://downloads.minepi.com/sdk/v1/dev.js"></script> <!--You should use prod.js, but at the moment, not working prod.js-->
