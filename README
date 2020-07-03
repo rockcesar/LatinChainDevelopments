@@ -1,1 +1,3 @@
 pidoku.js is the Sudoku Solver. Put it in the root of HTTP Server: /var/www/html
+
+PiDevelopment_test1 is a test and example of how to use Pi Apps API in a Webpage
