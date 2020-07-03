@@ -49,7 +49,7 @@ $( document ).ready(function() {
     $(".sudoku-list").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         //$(this).val($(this).val().replace(/[^0-9\.]/g,''));
-        if ((event.which != 46) && (event.which < 48 || event.which > 57)) {
+        if ((event.which != 46) && (event.which < 49 || event.which > 57)) {
             event.preventDefault();
         }
     });
