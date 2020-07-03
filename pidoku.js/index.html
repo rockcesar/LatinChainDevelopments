@@ -96,6 +96,110 @@
             </div>
             
             <div id="puzzle-controls">
+                <a id="clear" class="pull-left btn btn-primary" rel="tooltip" 
+                        title="Clear the current puzzle" href="#">
+                    Clear  
+                </a>
+                
+                <a id="refresh" class="pull-right btn" rel="tooltip" 
+                        title="Refresh the current puzzle" href="#">
+                    Refresh  
+                </a>
+                <br/>
+            </div>
+
+            <!-- Sudoku board -->
+            <table class="table table-striped">
+                <tbody id="sudoku-board"></tbody>
+            </table>
+            
+            <!-- Message box -->
+            <div id="message" class="alert alert-error">
+                <button type="button" class="close" data-dismiss="alert">
+                    &times;
+                </button>
+                <div id="text"></div>
+            </div>
+            
+            <!-- Solver buttons -->
+            <div id="solver-controls">
+                <button id="solve" class="btn btn-primary" rel="tooltip" 
+                        title="Solve the current puzzle!" 
+                        data-placement="bottom">
+                    Solve!
+                </button>
+                <button id="get-candidates" class="btn pull-right" rel="tooltip" 
+                        title="Show all possible values for each empty square" 
+                        data-placement="bottom">
+                    Show Candidates
+                </button>
+            </div>
+
+        </div> <!-- /container -->
+        
+        <!-- javascript
+             (Placed at the bottom so the DOM loads faster) -->
+        <script src="pidoku/assets/js/jquery.min.js"></script>
+        <script src="pidoku/assets/js/bootstrap.min.js"></script>
+        <script src="pidoku/sudoku.js"></script>
+        <script src="pidoku/assets/js/app.js"></script>
+        <script src="https://downloads.minepi.com/sdk/v1/prod.js"></script> <!--You should use prod.js, but at the moment, not working prod.js-->
+        <script type="text/javascript" src="pidoku/functions.js"></script>
+    </body>
+</html>
+
+            <br>
+            <br>
+            
+            <!-- Tabs -->
+            <ul id="generator-tabs" class="nav nav-tabs">
+                <li>
+                    <a id="easy" rel="tooltip" title="Generate an easy puzzle" 
+                            href="#">Easy</a>
+                </li>
+                <li>
+                    <a id="medium" rel="tooltip" 
+                            title="Generate a medium puzzle" href="#">Medium</a>
+                </li>
+                <li>
+                    <a id="hard" rel="tooltip" title="Generate a hard puzzle" 
+                            href="#">Hard</a>
+                </li>
+                <li>
+                    <a id="very-hard" rel="tooltip" 
+                            title="Generate a very hard puzzle" href="#">
+                        Very hard    
+                    </a>
+                </li>
+                <li>
+                    <a id="insane" rel="tooltip" 
+                            title="Generate an insane puzzle" href="#">
+                        Insane
+                    </a>
+                </li>
+                <li>
+                    <a id="inhuman" rel="tooltip" 
+                            title="Generate an inhuman puzzle" href="#">
+                        Robots only
+                    </a>
+                </li>
+                <li class="pull-right">
+                    <a id="import" rel="tooltip" title="Import your own puzzle" 
+                            href="#">
+                        Import...
+                    </a>
+                </li>
+            </ul>
+            
+            <div id="import-controls">
+                <p>Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces.</p>
+                <input id="import-string" class="input-block-level sudoku-list" 
+                    placeholder="Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
+                    maxlength="81"
+                    type="text"/>
+            </div>
+            
+            <div id="puzzle-controls">
                 <a id="clear" class="pull-left" rel="tooltip" 
                         title="Clear the current puzzle" href="#">
                     Clear  
