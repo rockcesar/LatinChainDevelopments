@@ -17,7 +17,8 @@ $( document ).ready(function() {
 
     async function transfer() {
         try {
-            const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Demo transfer request");
+            //alert($("#pi_donate").val());
+            const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Transfer request");
             //alert(transferRequest.status);
         } catch(err) {
             //alert(err);
@@ -45,9 +46,11 @@ $( document ).ready(function() {
         }
     });
     
-    
-});
-
+    $(".sudoku-list").on("keypress keyup blur",function (event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        //$(this).val($(this).val().replace(/[^0-9\.]/g,''));
+        if ((event.which != 46) && (event.which < 48 || event.which > 57)) {
+            event.preventDefault();
         }
     });
     
