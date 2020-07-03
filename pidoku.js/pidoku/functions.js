@@ -8,17 +8,17 @@ $( document ).ready(function() {
 
             //alert('Hello ' + user.username);
         } catch (err) {
-            alert(err);
+            //alert(err);
             // Not able to fetch the user
         }
     }
 
     async function transfer() {
         try {
-            const transferRequest = await PiNetworkClient.RequestTransfer($("pi_donate").val(), "Demo transfer request");
+            const transferRequest = await PiNetworkClient.RequestTransfer($("pi_donate").text(), "Demo transfer request");
             //alert(transferRequest.status);
         } catch(err) {
-            alert(err);
+            //alert(err);
             // Technical problem (eg network failure). Please try again
         }
     }
@@ -44,6 +44,12 @@ $( document ).ready(function() {
         $(this).val(val);
         if ((event.which < 48 || event.which > 57)) {
             event.preventDefault();
+        }
+    });
+    
+    
+});
+
         }
     });
     
