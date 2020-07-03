@@ -6,7 +6,7 @@ $( document ).ready(function() {
 
             const user = await PiNetworkClient.Authenticate();
 
-            alert('Hello ' + user.username);
+            //alert('Hello ' + user.username);
         } catch (err) {
             alert(err);
             // Not able to fetch the user
@@ -15,8 +15,8 @@ $( document ).ready(function() {
 
     async function transfer() {
         try {
-            const transferRequest = await PiNetworkClient.RequestTransfer(3.14, "Demo transfer request");
-            alert(transferRequest.status);
+            const transferRequest = await PiNetworkClient.RequestTransfer($("pi_donate").val(), "Demo transfer request");
+            //alert(transferRequest.status);
         } catch(err) {
             alert(err);
             // Technical problem (eg network failure). Please try again
