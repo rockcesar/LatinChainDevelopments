@@ -15,7 +15,7 @@ $( document ).ready(function() {
 
     async function transfer() {
         try {
-            const transferRequest = await PiNetworkClient.RequestTransfer($("#pi_donate").text(), "Demo transfer request");
+            const transferRequest = await PiNetworkClient.RequestTransfer($("#pi_donate").val(), "Demo transfer request");
             //alert(transferRequest.status);
         } catch(err) {
             //alert(err);
