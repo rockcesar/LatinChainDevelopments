@@ -5,7 +5,9 @@ $( document ).ready(function() {
         try {
 
             const user = await PiNetworkClient.Authenticate();
-
+            $( "#button_click" ).click(function() {
+                transfer();
+            });
             //alert('Hello ' + user.username);
         } catch (err) {
             //alert(err);
@@ -15,7 +17,7 @@ $( document ).ready(function() {
 
     async function transfer() {
         try {
-            const transferRequest = await PiNetworkClient.RequestTransfer($("#pi_donate").val(), "Demo transfer request");
+            const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Demo transfer request");
             //alert(transferRequest.status);
         } catch(err) {
             //alert(err);
@@ -24,10 +26,6 @@ $( document ).ready(function() {
     }
 
     auth();
-
-    $( "#button_click" ).click(function() {
-        transfer();
-    });
     
     $(".numeric-decimal").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
