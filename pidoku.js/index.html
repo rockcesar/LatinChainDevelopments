@@ -6,10 +6,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
         <!-- Styles -->
         <link href="pidoku/assets/css/bootstrap.min.css" rel="stylesheet" />
         <link href="pidoku/assets/css/styles.css" rel="stylesheet" />
-        <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="pidoku/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -17,7 +18,7 @@
         <![endif]-->
 
         <!-- Fav and touch icons -->
-        <link rel="shortcut icon" href="ico/favicon.ico">
+        <link rel="shortcut icon" href="pidoku/ico/favicon.ico">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" 
                 href="pidoku/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" 
@@ -29,9 +30,18 @@
     </head>
 
     <body>
+        <div id="loading" class="container-narrow">
+            <p>
+                <img src="pidoku/assets/img/pacman.gif"/> Loading...
+            </p>
+        </div>
         <div id="app-wrap" class="container-narrow hidden">
             <!-- Masthead -->
-            <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.0001" class="numeric-decimal" lang="en-US"/>
+            <p>Only for generate and solving Sudokus, not play, click in solve. Also you can import Sudokus.</p>
+            <p>Sólo para generar y resolver Sudokus, no jugar, click en solve. También pueden importar Sudokus.</p>
+            
+            <br>
+            <input id="pi_donate" name="pi_donate" type="number" step="0.0001" class="numeric-decimal" lang="en-US"/>
             <br>
             <input id="button_click" name="button_click" value="Donate Pi" type="button" class="btn btn-primary"/>
             <br>
@@ -44,6 +54,94 @@
                             href="#">Easy</a>
                 </li>
                 <li>
+                    <a id="medium" rel="tooltip" 
+                            title="Generate a medium puzzle" href="#">Medium</a>
+                </li>
+                <li>
+                    <a id="hard" rel="tooltip" title="Generate a hard puzzle" 
+                            href="#">Hard</a>
+                </li>
+                <li>
+                    <a id="very-hard" rel="tooltip" 
+                            title="Generate a very hard puzzle" href="#">
+                        Very hard    
+                    </a>
+                </li>
+                <li>
+                    <a id="insane" rel="tooltip" 
+                            title="Generate an insane puzzle" href="#">
+                        Insane
+                    </a>
+                </li>
+                <li>
+                    <a id="inhuman" rel="tooltip" 
+                            title="Generate an inhuman puzzle" href="#">
+                        Robots only
+                    </a>
+                </li>
+                <li class="pull-right">
+                    <a id="import" rel="tooltip" title="Import your own puzzle" 
+                            href="#">
+                        Import...
+                    </a>
+                </li>
+            </ul>
+            
+            <div id="import-controls">
+                <p>Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces.</p>
+                <input id="import-string" class="input-block-level sudoku-list" 
+                    placeholder="Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
+                    maxlength="81"
+                    type="text"/>
+            </div>
+            
+            <div id="puzzle-controls">
+                <a id="refresh" class="pull-right" rel="tooltip" 
+                        title="Refresh the current puzzle" href="#">
+                    Refresh  
+                </a>
+            </div>
+
+            <!-- Sudoku board -->
+            <table class="table table-striped">
+                <tbody id="sudoku-board"></tbody>
+            </table>
+            
+            <!-- Message box -->
+            <div id="message" class="alert alert-error">
+                <button type="button" class="close" data-dismiss="alert">
+                    &times;
+                </button>
+                <div id="text"></div>
+            </div>
+            
+            <!-- Solver buttons -->
+            <div id="solver-controls">
+                <button id="solve" class="btn btn-primary" rel="tooltip" 
+                        title="Solve the current puzzle!" 
+                        data-placement="bottom">
+                    Solve!
+                </button>
+                <button id="get-candidates" class="btn pull-right" rel="tooltip" 
+                        title="Show all possible values for each empty square" 
+                        data-placement="bottom">
+                    Show Candidates
+                </button>
+            </div>
+
+        </div> <!-- /container -->
+        
+        <!-- javascript
+             (Placed at the bottom so the DOM loads faster) -->
+        <script src="pidoku/assets/js/jquery.min.js"></script>
+        <script src="pidoku/assets/js/bootstrap.min.js"></script>
+        <script src="pidoku/sudoku.js"></script>
+        <script src="pidoku/assets/js/app.js"></script>
+        <script src="https://downloads.minepi.com/sdk/v1/prod.js"></script> <!--You should use prod.js, but at the moment, not working prod.js-->
+        <script type="text/javascript" src="pidoku/functions.js"></script>
+    </body>
+</html>
+
                     <a id="medium" rel="tooltip" 
                             title="Generate a medium puzzle" href="#">Medium</a>
                 </li>
