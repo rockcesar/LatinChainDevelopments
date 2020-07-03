@@ -23,6 +23,11 @@
                         const user = await PiNetworkClient.Authenticate();
 
                         alert('Hello ' + user.username);
+                        
+                        $( "#button_click" ).click(function() {
+                            transfer();
+                            //alert("Click");
+                        });
                     } catch (err) {
                         alert(err);
                         // Not able to fetch the user
@@ -41,10 +46,6 @@
 
                 auth();
 
-                $( "#button_click" ).click(function() {
-                    transfer();
-                    //alert("Click");
-                });
             });
         </script>
 
