@@ -1,10 +1,15 @@
 $( document ).ready(function() {
+    $('.timer').countimer({
+			autoStart : false
+			});
+    
     const PiNetworkClient = window.PiNetwork;
     
     async function auth() {
         try {
 
             const user = await PiNetworkClient.Authenticate();
+            
             $( "#button_click" ).click(function() {
                 transfer();
             });

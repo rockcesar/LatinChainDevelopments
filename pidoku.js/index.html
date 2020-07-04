@@ -11,6 +11,19 @@
         <link href="pidoku/assets/css/bootstrap.min.css" rel="stylesheet" />
         <link href="pidoku/assets/css/styles.css" rel="stylesheet" />
         <link href="pidoku/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        
+        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        
+        <!-- javascript
+             (Placed at the bottom so the DOM loads faster) -->
+        <script src="pidoku/assets/js/jquery.min.js"></script>
+        <script src="pidoku/assets/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+        <script src="pidoku/watch/dist/ez.countimer.js"></script>
+        <script src="pidoku/sudoku.js"></script>
+        <script src="pidoku/assets/js/app.js"></script>
+        <script src="https://downloads.minepi.com/sdk/v1/prod.js"></script> <!--You should use prod.js, but at the moment, not working prod.js-->
+        <script type="text/javascript" src="pidoku/functions.js"></script>
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -46,6 +59,16 @@
             <input id="button_click" name="button_click" value="Donate Pi" type="button" class="btn btn-success"/>
             <br>
             <br>
+            
+            <style>
+            .cont { text-align:center; font-size:30px;}
+
+            </style>
+            <div class="cont">
+            <h1>Time</h1>
+            <div class="timer well"></div>
+            <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+            </div>
             
             <!-- Tabs -->
             <ul id="generator-tabs" class="nav nav-tabs">
@@ -96,12 +119,12 @@
             </div>
             
             <div id="puzzle-controls">
-                <!--<a id="clear" class="pull-left btn btn-primary" 
+                <a id="clear" class="pull-left btn btn-primary" rel="tooltip"
                         title="Clear the current puzzle" href="#">
                     Clear  
-                </a>-->
+                </a>
                 
-                <a id="refresh" class="pull-right btn" 
+                <a id="refresh" class="pull-right btn" rel="tooltip" 
                         title="Refresh the current puzzle" href="#">
                     Refresh  
                 </a>
@@ -138,13 +161,5 @@
 
         </div> <!-- /container -->
         
-        <!-- javascript
-             (Placed at the bottom so the DOM loads faster) -->
-        <script src="pidoku/assets/js/jquery.min.js"></script>
-        <script src="pidoku/assets/js/bootstrap.min.js"></script>
-        <script src="pidoku/sudoku.js"></script>
-        <script src="pidoku/assets/js/app.js"></script>
-        <script src="https://downloads.minepi.com/sdk/v1/prod.js"></script> <!--You should use prod.js, but at the moment, not working prod.js-->
-        <script type="text/javascript" src="pidoku/functions.js"></script>
     </body>
 </html>
