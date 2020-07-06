@@ -26,8 +26,8 @@
 <body>
     
     <style>
-    .square {color: black; font-weight: bold;; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
-    .square-borderless {padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
+    .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
+    .square-borderless {color: black; font-weight: bold; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center;}
     .transparent {opacity: 0.5;}
     .bottom {
         position: absolute;
@@ -44,6 +44,100 @@
             }
             
             $( "#left" ).click(function() {
+                press(37);
+            });
+            $( "#up" ).click(function() {
+                press(38);
+            });
+            $( "#down" ).click(function() {
+                press(40);
+            });
+            $( "#right" ).click(function() {
+                press(39);
+            });
+            $( "#reset" ).click(function() {
+                press(82);
+            });
+            $( "#pause" ).click(function() {
+                press(32);
+            });
+            $( "#bot" ).click(function() {
+                press(66);
+            });
+            $( "#minus" ).click(function() {
+                press(189);
+            });
+            $( "#plus" ).click(function() {
+                press(187);
+            });
+        });
+    </script>
+    <div class="intro">
+        <h2>Super Snake</h2>
+        <p>
+            <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.0001" class="numeric-decimal transparent" lang="en-US"/>
+            <input id="button_click" name="button_click" value="Donate Pi" type="button" class="transparent"/>
+        </p>
+        <p>
+            <div class="square-borderless"></div><div class="square" id="up">&#8593;</div>
+            <br/><br/><div class="square" id="left">&#8592;</div>
+            <div class="square-borderless"></div><div class="square" id="right">&#8594;</div>
+            <br/><br/><div class="square-borderless"></div><div class="square" id="down">&#8595;</div></p>
+        <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
+    </div>
+
+    <div class="container absolute">
+
+        <canvas id="snake-canvas" autofocus="autofocus" data-full-screen="true"></canvas>
+        
+        <div class="bottom">
+            <p>
+                <div class="square" id="reset">Reset</div><div class="square" id="pause">Pause</div>
+                <div class="square" id="bot">Bot</div><div class="square" id="minus">-</div>
+                <div class="square" id="plus">+</div><div class="square-borderless fps-counter">fsf</div></p>
+            <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
+        </div>
+
+        <div id="scoreboard">
+            <div id="score">
+                Score :
+                <span>0</span>
+            </div>
+
+            <div id="hi-score">
+                Hi Score :
+                <span>0</span>
+            </div>
+
+            <div id="bot-hi-score">
+                Bot Hi Score :
+                <span>0</span>
+            </div>
+        </div>
+    </div>
+
+<!-- Vendor Component Libraries -->
+<script src="https://pinwgames.com/responsive-snake/example/vendor/zepto/zepto.js"></script>
+<script src="https://pinwgames.com/responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
+
+<!-- Browserified Build -->
+<script src="https://pinwgames.com/responsive-snake/build/snake.build.js"></script>
+
+<script>
+    //Start Snake Game
+    $(document).ready(function() {
+        ResponsiveSnake.start({
+            snakePixels    : 14,
+            snakeSize      : 2,
+            bot            : true,
+            explosion      : true,
+        });
+        
+    });
+</script>
+</body>
+</html>
+
                 press(37);
             });
             $( "#up" ).click(function() {
