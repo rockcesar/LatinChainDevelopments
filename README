@@ -1,5 +1,5 @@
-pidoku.js is the Sudoku Solver. Put it in the root of HTTP Server: /var/www/html
+pidoku.js (MIT License) is the Sudoku Solver. Put it in the root of HTTP Server: /var/www/html
 
-responsive-snake is the Super Snake. Put it in the root of HTTP Server: /var/www/html (You can use subdomains)
+responsive-snake (MIT License) is the Super Snake. Put it in the root of HTTP Server: /var/www/html (You can use subdomains)
 
-PiDevelopment_test1 is a test and example of how to use Pi Apps API in a Webpage
+PiDevelopment_test1 (GPLv3) is a test and example of how to use Pi Apps API in a Webpage
