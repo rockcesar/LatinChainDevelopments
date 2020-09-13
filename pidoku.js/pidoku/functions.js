@@ -23,7 +23,7 @@ $( document ).ready(function() {
     async function transfer() {
         try {
             //alert($("#pi_donate").val());
-            const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Transfer request");
+            const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Donation to Sudoku");
             //alert(transferRequest.status);
         } catch(err) {
             //alert(err);
@@ -44,6 +44,24 @@ $( document ).ready(function() {
     $(".numeric").on("keypress keyup blur",function (event) {
         var val = $(this).val().replace(/[^\d].+/, "");
         if(val.length > 1)
+            val = val.substring(0, 1);
+        $(this).val(val);
+        if ((event.which < 48 || event.which > 57)) {
+            event.preventDefault();
+        }
+    });
+    
+    $(".sudoku-list").on("keypress keyup blur",function (event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        //$(this).val($(this).val().replace(/[^0-9\.]/g,''));
+        if ((event.which != 46) && (event.which < 49 || event.which > 57)) {
+            event.preventDefault();
+        }
+    });
+    
+    
+});
+
             val = val.substring(0, 1);
         $(this).val(val);
         if ((event.which < 48 || event.which > 57)) {
