@@ -21,3 +21,5 @@ Documentation: https://developers.minepi.com/doc/javascript
 Pi Developers: https://developers.minepi.com/
 
 Repository: https://github.com/rockcesar/PiNetworkDevelopments
+
+Odoo Developments: https://github.com/rockcesar/odoo_addons
