@@ -19,3 +19,5 @@ Test the app here: https://developers.minepi.com/about-app
 Documentation: https://developers.minepi.com/doc/javascript
 
 Pi Developers: https://developers.minepi.com/
+
+Repository: https://github.com/rockcesar/PiNetworkDevelopments
