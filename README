@@ -9,3 +9,6 @@ responsive-snake (MIT License) is the Super Snake.
 
 PiDevelopment_test1 (GPLv3) is a test and example of how to use Pi Apps API in a Webpage.
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
+
+website_pinetwork_odoo (GPLv3) is a test and example of how to use Pi Apps API in a Webpage.
+# Run it in Odoo 13.0 Server. (You can use domains or subdomains)
