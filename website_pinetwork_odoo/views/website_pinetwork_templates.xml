@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="pinetwork" name="PiNetwork View">
+          <t t-call="website.layout">
+            <script type="text/javascript" src="/website_pinetwork_odoo/static/src/js/jquery-3.5.1.min.js"></script>
+            <script type="text/javascript" src="https://downloads.minepi.com/sdk/v1/prod.js"></script>
+
+            <input id="pi_donate" name="pi_donate" type="text" />
+            <input id="button_click" name="button_click" value="Donate Pi" type="button"/>
+
+            <script type="text/javascript">
+                $( document ).ready(function() {
+                    const PiNetworkClient = window.PiNetwork;
+
+                    //alert(PiNetworkClient);
+
+                    async function auth() {
+                        try {
+
+                            const user = await PiNetworkClient.Authenticate();
+
+                            alert('Hello ' + user.username);
+                            
+                            $( "#button_click" ).click(function() {
+                                transfer();
+                                //alert("Click");
+                            });
+                        } catch (err) {
+                            alert(err);
+                            // Not able to fetch the user
+                        }
+                    }
+
+                    async function transfer() {
+                        try {
+                            const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Demo transfer request");
+                            alert(transferRequest.status);
+                        } catch(err) {
+                            alert(err);
+                            // Technical problem (eg network failure). Please try again
+                        }
+                    }
+
+                    auth();
+
+                });
+            </script>
+          </t>
+		</template>
+
+</odoo>
