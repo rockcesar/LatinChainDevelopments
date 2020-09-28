@@ -11,6 +11,8 @@ $( document ).ready(function() {
             const user = await PiNetworkClient.Authenticate();
             
             $( "#button_click" ).click(function() {
+		if(parseFloat($("#pi_donate").val()) > 0)
+			$("#button_click").prop( "disabled", true );
                 transfer();
             });
             //alert('Hello ' + user.username);
@@ -24,6 +26,8 @@ $( document ).ready(function() {
         try {
             //alert($("#pi_donate").val());
             const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Donation to Sudoku");
+            if(transferRequest.status == "failed" || transferRequest.status == "succeeded")
+	        $("#button_click").prop( "disabled", false );
             //alert(transferRequest.status);
         } catch(err) {
             //alert(err);
