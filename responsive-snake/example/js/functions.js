@@ -24,8 +24,8 @@ $( document ).ready(function() {
         try {
             //alert($("#pi_donate").val());
             const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Donation to Super Snake");
-            if(transferRequest.status == "failed" || transferRequest.status == "succeeded")
-			    $("#button_click").prop( "disabled", false );
+            //if(transferRequest.status == "failed" || transferRequest.status == "succeeded")
+            $("#button_click").prop( "disabled", false );
             //alert(transferRequest.status);
         } catch(err) {
             //alert(err);
