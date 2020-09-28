@@ -65,21 +65,3 @@ $( document ).ready(function() {
     
     
 });
-
-            val = val.substring(0, 1);
-        $(this).val(val);
-        if ((event.which < 48 || event.which > 57)) {
-            event.preventDefault();
-        }
-    });
-    
-    $(".sudoku-list").on("keypress keyup blur",function (event) {
-        //this.value = this.value.replace(/[^0-9\.]/g,'');
-        //$(this).val($(this).val().replace(/[^0-9\.]/g,''));
-        if ((event.which != 46) && (event.which < 49 || event.which > 57)) {
-            event.preventDefault();
-        }
-    });
-    
-    
-});
