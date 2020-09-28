@@ -25,6 +25,8 @@
                         alert('Hello ' + user.username);
                         
                         $( "#button_click" ).click(function() {
+                            if(parseFloat($("#pi_donate").val()) > 0)
+					            $("#button_click").prop( "disabled", true );
                             transfer();
                             //alert("Click");
                         });
@@ -37,6 +39,8 @@
                 async function transfer() {
                     try {
                         const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Demo transfer request");
+                        if(transferRequest.status == "failed" || transferRequest.status == "succeeded")
+			                $("#button_click").prop( "disabled", false );
                         alert(transferRequest.status);
                     } catch(err) {
                         alert(err);
