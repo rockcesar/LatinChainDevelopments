@@ -12,8 +12,10 @@ $( document ).ready(function() {
             
             $( "#button_click" ).click(function() {
 		if(parseFloat($("#pi_donate").val()) > 0)
-			$("#button_click").prop( "disabled", true );
-                transfer();
+		{
+		    $("#button_click").prop( "disabled", true );
+                    transfer();
+		}
             });
             //alert('Hello ' + user.username);
         } catch (err) {
