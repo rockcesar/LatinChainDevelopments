@@ -41,8 +41,8 @@
                 async function transfer() {
                     try {
                         const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Demo transfer request");
-                        if(transferRequest.status == "failed" || transferRequest.status == "succeeded")
-			    $("#button_click").prop( "disabled", false );
+                        //if(transferRequest.status == "failed" || transferRequest.status == "succeeded")
+			$("#button_click").prop( "disabled", false );
                         alert(transferRequest.status);
                     } catch(err) {
                         alert(err);
