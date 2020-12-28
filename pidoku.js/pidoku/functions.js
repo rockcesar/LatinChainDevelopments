@@ -14,7 +14,7 @@ $( document ).ready(function() {
 		if(parseFloat($("#pi_donate").val()) > 0)
 		{
 		    $("#button_click").prop( "disabled", true );
-		    setTimeout(function ()
+                    setTimeout(function ()
                     {
                         $("#button_click").prop( "disabled", false );
                     }, 10000);
