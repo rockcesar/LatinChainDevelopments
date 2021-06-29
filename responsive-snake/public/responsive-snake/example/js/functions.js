@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     const Pi = window.Pi;
+    Pi.init({ version: "2.0" });
     
     async function auth() {
         try {
