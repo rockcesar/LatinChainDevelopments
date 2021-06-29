@@ -62,12 +62,12 @@
                           metadata: { /* ... */ }, // e.g: { kittenId: 1234 }
                         }, {
                           // Callbacks you need to implement - read more about those in the detailed docs linked below:
-                          onReadyForServerApproval: function(paymentId) { /* ... */ },
+                          onReadyForServerApproval: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
                           onReadyForServerCompletion: function(paymentId, txid) { 
                               $("#button_click").prop( "disabled", false );
                           },
-                          onCancel: function(paymentId) { /* ... */ },
-                          onError: function(error, payment) { /* ... */ },
+                          onCancel: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
+                          onError: function(error, payment) { $("#button_click").prop( "disabled", false ); /* ... */ },
                         });
                     } catch(err) {
                         alert(err);

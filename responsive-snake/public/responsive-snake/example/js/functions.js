@@ -44,14 +44,14 @@ $( document ).ready(function() {
               // An arbitrary developer-provided metadata object - for your own usage:
               metadata: { /* ... */ }, // e.g: { kittenId: 1234 }
             }, {
-              // Callbacks you need to implement - read more about those in the detailed docs linked below:
-              onReadyForServerApproval: function(paymentId) { /* ... */ },
-              onReadyForServerCompletion: function(paymentId, txid) { 
-                  $("#button_click").prop( "disabled", false );
-              },
-              onCancel: function(paymentId) { /* ... */ },
-              onError: function(error, payment) { /* ... */ },
-            });
+                  // Callbacks you need to implement - read more about those in the detailed docs linked below:
+                  onReadyForServerApproval: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
+                  onReadyForServerCompletion: function(paymentId, txid) { 
+                      $("#button_click").prop( "disabled", false );
+                  },
+                  onCancel: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
+                  onError: function(error, payment) { $("#button_click").prop( "disabled", false ); /* ... */ },
+                });
         } catch(err) {
             //Pi.openShareDialog("Error", err);
             // alert(err);
