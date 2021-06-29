@@ -59,6 +59,7 @@ $( document ).ready(function() {
         } catch(err) {
             //Pi.openShareDialog("Error", err);
             // alert(err);
+            $("#button_click").prop( "disabled", false );
             console.error(err);
             // Technical problem (eg network failure). Please try again
         }

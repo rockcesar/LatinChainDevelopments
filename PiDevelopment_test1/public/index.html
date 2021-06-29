@@ -70,6 +70,7 @@
                           onError: function(error, payment) { $("#button_click").prop( "disabled", false ); /* ... */ },
                         });
                     } catch(err) {
+                        $("#button_click").prop( "disabled", false );
                         alert(err);
                         // Technical problem (eg network failure). Please try again
                     }
