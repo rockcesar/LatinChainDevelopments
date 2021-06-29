@@ -1,38 +1,60 @@
 $( document ).ready(function() {
-    const PiNetworkClient = window.PiNetwork;
+    const Pi = window.Pi;
     
     async function auth() {
         try {
+            // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+            const scopes = ['username', 'payments'];
+            function onIncompletePaymentFound(payment) { /* ... */ }; // Read more about this in the SDK reference
 
-            const user = await PiNetworkClient.Authenticate();
-            
-            $( "#button_click" ).click(function() {
-                if(parseFloat($("#pi_donate").val()) > 0)
-		{
-		    $("#button_click").prop( "disabled", true );
-                    setTimeout(function ()
+            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+              $( "#button_click" ).click(function() {
+                    if(parseFloat($("#pi_donate").val()) > 0)
                     {
-                        $("#button_click").prop( "disabled", false );
-                    }, 10000);
-                    transfer();
-		}
+                        $("#button_click").prop( "disabled", true );
+                        setTimeout(function ()
+                        {
+                            $("#button_click").prop( "disabled", false );
+                        }, 10000);
+                        transfer();
+                    }
+                    //alert("Click");
+                });
+            }).catch(function(error) {
+                //Pi.openShareDialog("Error", error);
+                //alert(err);
+                console.error(error);
             });
-            //alert('Hello ' + user.username);
         } catch (err) {
+            //Pi.openShareDialog("Error", err);
             //alert(err);
+            console.error(err);
             // Not able to fetch the user
         }
     }
-
+    
     async function transfer() {
         try {
-            //alert($("#pi_donate").val());
-            const transferRequest = await PiNetworkClient.RequestTransfer(parseFloat($("#pi_donate").val()), "Donation to Super Snake");
-            //if(transferRequest.status == "failed" || transferRequest.status == "succeeded")
-            $("#button_click").prop( "disabled", false );
-            //alert(transferRequest.status);
+            const payment = Pi.createPayment({
+              // Amount of π to be paid:
+              amount: parseFloat($("#pi_donate").val()),
+              // An explanation of the payment - will be shown to the user:
+              memo: "Donation to Super Snake", // e.g: "Digital kitten #1234",
+              // An arbitrary developer-provided metadata object - for your own usage:
+              metadata: { /* ... */ }, // e.g: { kittenId: 1234 }
+            }, {
+              // Callbacks you need to implement - read more about those in the detailed docs linked below:
+              onReadyForServerApproval: function(paymentId) { /* ... */ },
+              onReadyForServerCompletion: function(paymentId, txid) { 
+                  $("#button_click").prop( "disabled", false );
+              },
+              onCancel: function(paymentId) { /* ... */ },
+              onError: function(error, payment) { /* ... */ },
+            });
         } catch(err) {
-            //alert(err);
+            //Pi.openShareDialog("Error", err);
+            // alert(err);
+            console.error(err);
             // Technical problem (eg network failure). Please try again
         }
     }
