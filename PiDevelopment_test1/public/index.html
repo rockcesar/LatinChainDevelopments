@@ -34,10 +34,10 @@
                                 if(parseFloat($("#pi_donate").val()) > 0)
                                 {
                                     $("#button_click").prop( "disabled", true );
-                                    setTimeout(function ()
+                                    /*setTimeout(function ()
                                     {
                                         $("#button_click").prop( "disabled", false );
-                                    }, 10000);
+                                    }, 10000);*/
                                     transfer();
                                 }
                                 //alert("Click");
@@ -60,7 +60,7 @@
                           // An explanation of the payment - will be shown to the user:
                           memo: "Demo transfer request", // e.g: "Digital kitten #1234",
                           // An arbitrary developer-provided metadata object - for your own usage:
-                          metadata: { /* ... */ }, // e.g: { kittenId: 1234 }
+                          metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
                         }, {
                           // Callbacks you need to implement - read more about those in the detailed docs linked below:
                           onReadyForServerApproval: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
