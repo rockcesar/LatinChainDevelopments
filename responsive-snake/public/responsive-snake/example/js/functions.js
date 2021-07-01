@@ -7,7 +7,7 @@ $( document ).ready(function() {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
             function onIncompletePaymentFound(payment) {
-                $.ajax({
+                return $.ajax({
                     url: 'https://api.minepi.com/v2/payments/'+payment.identifier+'/complete',
                     type: 'post',
                     data: {
@@ -64,7 +64,7 @@ $( document ).ready(function() {
             }, {
                   // Callbacks you need to implement - read more about those in the detailed docs linked below:
                   onReadyForServerApproval: function(paymentId) { 
-                      $.ajax({
+                      return $.ajax({
                             url: 'https://api.minepi.com/v2/payments/'+paymentId+'/approve',
                             type: 'post',
                             data: {
@@ -82,7 +82,7 @@ $( document ).ready(function() {
                         });
                        },
                   onReadyForServerCompletion: function(paymentId, txid) { 
-                      $.ajax({
+                      return $.ajax({
                             url: 'https://api.minepi.com/v2/payments/'+paymentId+'/complete',
                             type: 'post',
                             data: {
