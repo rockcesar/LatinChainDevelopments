@@ -10,7 +10,25 @@ $( document ).ready(function() {
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
-            function onIncompletePaymentFound(payment) { /* ... */ }; // Read more about this in the SDK reference
+            function onIncompletePaymentFound(payment) {
+                $.ajax({
+                    url: 'https://api.minepi.com/v2/payments/'+payment.identifier+'/complete',
+                    type: 'post',
+                    data: {
+                        "txid": payment.transaction.txid
+                    },
+                    headers: {
+                        "Authorization": 'Key f6abrmg3e67qxpp8g4mdkteefsxsejsid84jjavkwvhpjcdylmc9wqbpvgbab9vv'
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        /*alert("incomplete1 " + data.status.developer_approved);
+                        alert("incomplete2 " + data.status.developer_completed);*/
+                    }
+                }).then(function(data) {
+                    $("#button_click").prop( "disabled", false );
+                });
+            }; // Read more about this in the SDK reference
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
               $( "#button_click" ).click(function() {
@@ -49,9 +67,42 @@ $( document ).ready(function() {
               metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
             }, {
                   // Callbacks you need to implement - read more about those in the detailed docs linked below:
-                  onReadyForServerApproval: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
+                  onReadyForServerApproval: function(paymentId) { 
+                      $.ajax({
+                            url: 'https://api.minepi.com/v2/payments/'+paymentId+'/approve',
+                            type: 'post',
+                            data: {
+                            },
+                            headers: {
+                                "Authorization": 'Key f6abrmg3e67qxpp8g4mdkteefsxsejsid84jjavkwvhpjcdylmc9wqbpvgbab9vv'
+                            },
+                            dataType: 'json',
+                            success: function (data) {
+                                /*alert("approval1 " + data.status.developer_approved);
+                                alert("approval2 " + data.status.developer_completed);*/
+                            }
+                        }).then(function(data) {
+                            $("#button_click").prop( "disabled", false );
+                        });
+                       },
                   onReadyForServerCompletion: function(paymentId, txid) { 
-                      $("#button_click").prop( "disabled", false );
+                      $.ajax({
+                            url: 'https://api.minepi.com/v2/payments/'+paymentId+'/complete',
+                            type: 'post',
+                            data: {
+                                "txid": txid
+                            },
+                            headers: {
+                                "Authorization": 'Key f6abrmg3e67qxpp8g4mdkteefsxsejsid84jjavkwvhpjcdylmc9wqbpvgbab9vv'
+                            },
+                            dataType: 'json',
+                            success: function (data) {
+                                /*alert("complete1 " + data.status.developer_approved);
+                                alert("complete2 " + data.status.developer_completed);*/
+                            }
+                        }).then(function(data) {
+                            $("#button_click").prop( "disabled", false );
+                        });
                   },
                   onCancel: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
                   onError: function(error, payment) { $("#button_click").prop( "disabled", false ); /* ... */ },
