@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+    $('.timer').countimer({
+			autoStart : false
+			});
+    
     const Pi = window.Pi;
     Pi.init({ version: "2.0" });
     
@@ -7,26 +11,20 @@ $( document ).ready(function() {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
             function onIncompletePaymentFound(payment) {
-                return $.ajax({
-                    url: 'https://latin-chain.com/server1.php',
-                    type: 'post',
-                    data: {
+                
+                var data: {
                         'action': 'complete',
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
-                        'app_client': 'auth_snake'
-                    },
-                    headers: {
-                    },
-                    dataType: 'json',
-                    success: function (data) {
-                        /*alert("success");
-                        alert("incomplete1 " + data.status.developer_approved);
-                        alert("incomplete2 " + data.status.developer_completed);*/
-                    }
-                }).done(function(data) {
-                    $("#button_click").prop( "disabled", false );
-                });
+                        'app_client': 'auth_pidoku'
+                    };
+                  return $.post( "https://latin-chain.com/server1.php", function( data ) {
+                  
+                    }).done(function(data) {
+                        $("#button_click").prop( "disabled", false );
+                    }).fail(function() {
+                        $("#button_click").prop( "disabled", false );
+                    });
             }; // Read more about this in the SDK reference
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
@@ -34,10 +32,10 @@ $( document ).ready(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
                     {
                         $("#button_click").prop( "disabled", true );
-                        setTimeout(function ()
+                        /*setTimeout(function ()
                         {
                             $("#button_click").prop( "disabled", false );
-                        }, 10000);
+                        }, 10000);*/
                         transfer();
                     }
                     //alert("Click");
@@ -61,50 +59,40 @@ $( document ).ready(function() {
               // Amount of π to be paid:
               amount: parseFloat($("#pi_donate").val()),
               // An explanation of the payment - will be shown to the user:
-              memo: "Donation to Super Snake", // e.g: "Digital kitten #1234",
+              memo: "Donation to Sudoku", // e.g: "Digital kitten #1234",
               // An arbitrary developer-provided metadata object - for your own usage:
               metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
             }, {
                   // Callbacks you need to implement - read more about those in the detailed docs linked below:
-                  onReadyForServerApproval: function(paymentId) { 
-                      return $.ajax({
-                            url: 'https://latin-chain.com/server1.php',
-                            type: 'post',
-                            data: {
+                  onReadyForServerApproval: function(paymentId) {
+                        
+                    var data: {
                                 'action': 'approve',
                                 'paymentId': paymentId,
                                 "txid": '',
-                                'app_client': 'auth_snake'
-                            },
-                            headers: {
-                            },
-                            dataType: 'json',
-                            success: function (data) {
-                                /*alert("approval1 " + data.status.developer_approved);
-                                alert("approval2 " + data.status.developer_completed);*/
-                            }
+                                'app_client': 'auth_pidoku'
+                            };
+                      return $.post( "https://latin-chain.com/server1.php", function( data ) {
+                      
                         }).done(function(data) {
                             $("#button_click").prop( "disabled", false );
+                        }).fail(function() {
+                            $("#button_click").prop( "disabled", false );
                         });
-                       },
-                  onReadyForServerCompletion: function(paymentId, txid) { 
-                      return $.ajax({
-                            url: 'https://latin-chain.com/server1.php',
-                            type: 'post',
-                            data: {
+                  },
+                  onReadyForServerCompletion: function(paymentId, txid) {
+                        
+                        var data: {
                                 'action': 'complete',
                                 'paymentId': paymentId,
                                 "txid": txid,
-                                'app_client': 'auth_snake'
-                            },
-                            headers: {
-                            },
-                            dataType: 'json',
-                            success: function (data) {
-                                /*alert("complete1 " + data.status.developer_approved);
-                                alert("complete2 " + data.status.developer_completed);*/
-                            }
+                                'app_client': 'auth_pidoku'
+                            };
+                      return $.post( "https://latin-chain.com/server1.php", function( data ) {
+                      
                         }).done(function(data) {
+                            $("#button_click").prop( "disabled", false );
+                        }).fail(function() {
                             $("#button_click").prop( "disabled", false );
                         });
                   },
