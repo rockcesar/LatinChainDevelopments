@@ -36,8 +36,6 @@
     header('Content-Type: application/json');
     echo json_encode($response);
     
-    exit();
-    
     /*$file = fopen("./file.txt", "a");
     fwrite($file , json_encode($response));
     fclose($file );*/
