@@ -13,6 +13,8 @@ piapp-example (GPLv3) is a test and example of how to use Pi Apps API in a Webpa
 website_pinetwork_odoo (GNU Affero General Public License) is a test and example of how to use Pi Apps API in a Webpage.
 # Run it in Odoo 13.0 Server. (You can use domains or subdomains)
 
+server1.php is a server side example.
+
 Apps published:
 
 Pidoku
