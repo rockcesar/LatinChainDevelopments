@@ -12,20 +12,23 @@ $( document ).ready(function() {
             const scopes = ['username', 'payments'];
             function onIncompletePaymentFound(payment) {
                 return $.ajax({
-                    url: 'https://api.minepi.com/v2/payments/'+payment.identifier+'/complete',
+                    url: 'https://latin-chain.com/server1.php',
                     type: 'post',
                     data: {
-                        "txid": payment.transaction.txid
+                        'action': 'complete',
+                        'paymentId': payment.identifier,
+                        'txid': payment.transaction.txid,
+                        'app_client': 'auth_pidoku'
                     },
                     headers: {
-                        "Authorization": 'Key f6abrmg3e67qxpp8g4mdkteefsxsejsid84jjavkwvhpjcdylmc9wqbpvgbab9vv'
                     },
                     dataType: 'json',
                     success: function (data) {
-                        /*alert("incomplete1 " + data.status.developer_approved);
+                        /*alert("success");
+                        alert("incomplete1 " + data.status.developer_approved);
                         alert("incomplete2 " + data.status.developer_completed);*/
                     }
-                }).then(function(data) {
+                }).done(function(data) {
                     $("#button_click").prop( "disabled", false );
                 });
             }; // Read more about this in the SDK reference
@@ -35,10 +38,10 @@ $( document ).ready(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
                     {
                         $("#button_click").prop( "disabled", true );
-                        /*setTimeout(function ()
+                        setTimeout(function ()
                         {
                             $("#button_click").prop( "disabled", false );
-                        }, 10000);*/
+                        }, 10000);
                         transfer();
                     }
                     //alert("Click");
@@ -67,40 +70,45 @@ $( document ).ready(function() {
               metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
             }, {
                   // Callbacks you need to implement - read more about those in the detailed docs linked below:
-                  onReadyForServerApproval: function(paymentId) { 
+                  onReadyForServerApproval: function(paymentId) {
                       return $.ajax({
-                            url: 'https://api.minepi.com/v2/payments/'+paymentId+'/approve',
+                            url: 'https://latin-chain.com/server1.php',
                             type: 'post',
                             data: {
+                                'action': 'approve',
+                                'paymentId': paymentId,
+                                "txid": '',
+                                'app_client': 'auth_pidoku'
                             },
                             headers: {
-                                "Authorization": 'Key f6abrmg3e67qxpp8g4mdkteefsxsejsid84jjavkwvhpjcdylmc9wqbpvgbab9vv'
                             },
                             dataType: 'json',
                             success: function (data) {
                                 /*alert("approval1 " + data.status.developer_approved);
                                 alert("approval2 " + data.status.developer_completed);*/
                             }
-                        }).then(function(data) {
+                        }).done(function(data) {
                             $("#button_click").prop( "disabled", false );
                         });
                   },
-                  onReadyForServerCompletion: function(paymentId, txid) { 
+                  onReadyForServerCompletion: function(paymentId, txid) {
                       return $.ajax({
-                            url: 'https://api.minepi.com/v2/payments/'+paymentId+'/complete',
+                            url: 'https://latin-chain.com/server1.php',
                             type: 'post',
                             data: {
-                                "txid": txid
+                                'action': 'complete',
+                                'paymentId': paymentId,
+                                "txid": txid,
+                                'app_client': 'auth_pidoku'
                             },
                             headers: {
-                                "Authorization": 'Key f6abrmg3e67qxpp8g4mdkteefsxsejsid84jjavkwvhpjcdylmc9wqbpvgbab9vv'
                             },
                             dataType: 'json',
                             success: function (data) {
                                 /*alert("complete1 " + data.status.developer_approved);
                                 alert("complete2 " + data.status.developer_completed);*/
                             }
-                        }).then(function(data) {
+                        }).done(function(data) {
                             $("#button_click").prop( "disabled", false );
                         });
                   },
