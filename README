@@ -1,13 +1,13 @@
 To use these sources codes in Pi Sandbox (https://developers.minepi.com/), put it in the root of HTTP Server: /var/www/html.
 In the HTTP Server, where you put these codes, you can use domains or subdomains.
 
-pidoku.js (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License)
+sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License)
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-responsive-snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License)
+snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License)
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-PiDevelopment_test1 (GPLv3) is a test and example of how to use Pi Apps API in a Webpage.
+piapp-example (GPLv3) is a test and example of how to use Pi Apps API in a Webpage.
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 website_pinetwork_odoo (GNU Affero General Public License) is a test and example of how to use Pi Apps API in a Webpage.
