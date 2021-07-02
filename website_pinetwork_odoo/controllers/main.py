@@ -19,12 +19,12 @@ class PiNetworkController(http.Controller):
         
         if kw['action'] == "approve":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/approve'
-            data = {}
+            obj = {}
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
-            data = {'txid': kw['txid']}
+            obj = {'txid': kw['txid']}
         
-        re = requests.post(url,json=data,headers={'Authorization':'Key <your Server API Key>'})
+        re = requests.post(url,data=obj,headers={'Authorization':'Key <your Server API Key>'})
         
         try:
             result = re.json()

@@ -25,5 +25,3 @@ Repository: https://github.com/rockcesar/PiNetworkDevelopments
 Odoo Developments: https://github.com/rockcesar/odoo_addons
 
 To test, you have to use Pi Browser.
-
-Main page: /pinetwork
