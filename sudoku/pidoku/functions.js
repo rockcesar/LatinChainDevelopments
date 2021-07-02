@@ -12,7 +12,7 @@ $( document ).ready(function() {
             const scopes = ['username', 'payments'];
             function onIncompletePaymentFound(payment) {
                 
-                var data: {
+                var data = {
                         'action': 'complete',
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
@@ -66,7 +66,7 @@ $( document ).ready(function() {
                   // Callbacks you need to implement - read more about those in the detailed docs linked below:
                   onReadyForServerApproval: function(paymentId) {
                         
-                    var data: {
+                    var data = {
                                 'action': 'approve',
                                 'paymentId': paymentId,
                                 "txid": '',
@@ -82,7 +82,7 @@ $( document ).ready(function() {
                   },
                   onReadyForServerCompletion: function(paymentId, txid) {
                         
-                        var data: {
+                        var data = {
                                 'action': 'complete',
                                 'paymentId': paymentId,
                                 "txid": txid,
