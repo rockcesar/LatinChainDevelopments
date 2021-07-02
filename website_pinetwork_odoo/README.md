@@ -24,5 +24,4 @@ Repository: https://github.com/rockcesar/PiNetworkDevelopments
 
 Odoo Developments: https://github.com/rockcesar/odoo_addons
 
-For http://localhost:8069 you can use this Sandbox:
-https://developers.minepi.com/sandbox/sml9WJSKyHvzOLA3LrPIo9DxiJ3bhKHxQpwFrOXS71ce
+To test, you have to use Pi Browser.
