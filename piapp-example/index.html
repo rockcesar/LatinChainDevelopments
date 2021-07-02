@@ -52,9 +52,7 @@
                                     'txid': payment.transaction.txid,
                                     'app_client': 'auth_example'
                                 };
-                            return $.post( "https://latin-chain.com/server1.php", function( data ) {
-                              
-                            }).done(function(data) {
+                            return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                 $("#button_click").prop( "disabled", false );
                             }).fail(function() {
                                 $("#button_click").prop( "disabled", false );
@@ -102,9 +100,7 @@
                                         'txid': '',
                                         'app_client': 'auth_example'
                                     };
-                              return $.post( "https://latin-chain.com/server1.php", function( data ) {
-                              
-                                }).done(function(data) {
+                              return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
@@ -117,9 +113,7 @@
                                     "txid": txid,
                                     'app_client': 'auth_example'
                                 };
-                                return $.post( "https://latin-chain.com/server1.php", function( data ) {
-                              
-                                }).done(function(data) {
+                                return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
