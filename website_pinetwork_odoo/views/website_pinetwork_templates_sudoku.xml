@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="sudoku" name="Pidoku">
+            &lt;!DOCTYPE html&gt;
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                    <title>Pidoku Solver</title>
+                    <meta name="apple-mobile-web-app-capable" content="yes" />
+                    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                    <link rel="manifest" href="/website_pinetwork_odoo/static/src/pidoku/manifest.webmanifest"/>
+                    
+                    <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                    
+                    <!-- ios support -->
+                    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                    <meta name="theme-color" content="#db4938" />
+                    
+                    <meta name="application-name" content="Pidoku Solver"/>
+                    <link rel="icon" sizes="16x16 32x32 48x48" href="/website_pinetwork_odoo/static/src/pidoku/icon.png"/>
+                    <link rel="icon" sizes="192x192" href="/website_pinetwork_odoo/static/src/pidoku/icon.png"/>
+
+                    <!-- Styles -->
+                    <link href="/website_pinetwork_odoo/static/src/pidoku/assets/css/bootstrap.min.css" rel="stylesheet" />
+                    <link href="/website_pinetwork_odoo/static/src/pidoku/assets/css/styles.css" rel="stylesheet" />
+                    <link href="/website_pinetwork_odoo/static/src/pidoku/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+                    
+                    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"/>
+                    
+                    <!-- javascript
+                         (Placed at the bottom so the DOM loads faster) -->
+                    <script src="/website_pinetwork_odoo/static/src/pidoku/assets/js/jquery.min.js"></script>
+                    <script src="/website_pinetwork_odoo/static/src/pidoku/assets/js/bootstrap.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+                    <script src="/website_pinetwork_odoo/static/src/pidoku/watch/dist/ez.countimer.js"></script>
+                    <script src="/website_pinetwork_odoo/static/src/pidoku/sudoku.js"></script>
+                    <script src="/website_pinetwork_odoo/static/src/pidoku/assets/js/app.js"></script>
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    <script type="text/javascript" src="/website_pinetwork_odoo/static/src/pidoku/functions.js"></script>
+
+                    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+                    <!--[if lt IE 9]>
+                        <script src="assets/js/html5shiv-pre3.6.js"></script>
+                    <![endif]-->
+
+                    <!-- Fav and touch icons -->
+                    <link rel="shortcut icon" href="/website_pinetwork_odoo/static/src/pidoku/icon.png" type="image/x-icon"/>
+                    <link rel="apple-touch-icon" href="/website_pinetwork_odoo/static/src/pidoku/icon.png"/>
+                    <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
+                    <link rel="canonical" href="https://cr-innova.negocio.site/"/>
+                </head>
+
+                <body>
+                    <!-- The core Firebase JS SDK is always required and must be listed first -->
+                    <script src="/__/firebase/8.6.3/firebase-app.js"></script>
+
+                    <!-- TODO: Add SDKs for Firebase products that you want to use
+                         https://firebase.google.com/docs/web/setup#available-libraries -->
+                    <script src="/__/firebase/8.6.3/firebase-analytics.js"></script>
+
+                    <!-- Initialize Firebase -->
+                    <script src="/__/firebase/init.js"></script>
+                    <div id="loading" class="container-narrow">
+                        <p>
+                            <img src="/website_pinetwork_odoo/static/src/pidoku/assets/img/pacman.gif"/> Loading...
+                        </p>
+                    </div>
+                    <div id="app-wrap" class="container-narrow hidden">
+                        <!--<iframe data-aa="1429853" src="//ad.a-ads.com/1429853?size=468x60" scrolling="no" style="width:468px; height:60px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+                        <br/>-->
+                        <!-- Masthead -->
+                        <p>Generate and solve Sudokus, click in Solve!. Also you can import Sudokus to resolve.</p>
+                        <p>Generar y resolver Sudokus, click en Solve!. También pueden importar Sudokus para resolver.</p>
+                        <p><a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html">Info</a></p>
+                        
+                        <br/>
+                        <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal" lang="en-US"/>
+                        <br/>
+                        <input id="button_click" name="button_click" value="Donate Pi" type="button" class="btn btn-success"/>
+                        <br/>
+                        <br/>
+                        
+                        <style>
+                        .cont { text-align:center; font-size:30px;}
+
+                        </style>
+                        <div class="cont">
+                        <h1>Time</h1>
+                        <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+                        <div class="timer well"></div>
+                        </div>
+                        
+                        <!-- Tabs -->
+                        <ul id="generator-tabs" class="nav nav-tabs">
+                            <li>
+                                <a id="easy" rel="tooltip" title="Easy puzzle" 
+                                        href="#">Easy</a>
+                            </li>
+                            <li>
+                                <a id="medium" rel="tooltip" 
+                                        title="Medium puzzle" href="#">Medium</a>
+                            </li>
+                            <li>
+                                <a id="hard" rel="tooltip" title="Hard puzzle" 
+                                        href="#">Hard</a>
+                            </li>
+                            <li>
+                                <a id="very-hard" rel="tooltip" 
+                                        title="Very hard puzzle" href="#">
+                                    Very hard    
+                                </a>
+                            </li>
+                            <li>
+                                <a id="insane" rel="tooltip" 
+                                        title="Insane puzzle" href="#">
+                                    Insane
+                                </a>
+                            </li>
+                            <li>
+                                <a id="inhuman" rel="tooltip" 
+                                        title="Inhuman puzzle" href="#">
+                                    Robots only
+                                </a>
+                            </li>
+                            <li class="pull-right">
+                                <a id="import" rel="tooltip" title="Your own puzzle" 
+                                        href="#">
+                                    Import...
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <div id="import-controls">
+                            <p>Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces.</p>
+                            <input id="import-string" class="input-block-level sudoku-list" 
+                                placeholder="Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
+                                maxlength="81"
+                                type="text"/>
+                        </div>
+                        
+                        <div id="puzzle-controls">
+                            <a id="clear" class="pull-left btn btn-primary" rel="tooltip"
+                                    title="This puzzle" href="#">
+                                Clear  
+                            </a>
+                            
+                            <!--<a id="export" class="pull-left btn btn-primary" style="margin-left:10px" rel="tooltip" 
+                                    title="Export the current puzzle" href="#">
+                                Export  
+                            </a>-->
+                            
+                            <a id="copy" class="pull-left btn btn-primary" style="margin-left:10px" rel="tooltip" 
+                                    title="Copy string" href="#">
+                                Copy  
+                            </a>
+                            
+                            <a id="refresh" class="pull-right btn" rel="tooltip" 
+                                    title="This puzzle" href="#">
+                                Refresh  
+                            </a>
+                            
+                            <br/>
+                            <br/>
+                            <div style="color: black;">String to import in the Import tab:<br/>
+                            Cadena para importar en la pestaña Import:</div>
+                            <input id="export-string" readonly="readonly" style="min-width: 580px; border:solid; padding:5px; color: green;" />
+                            <br/>
+                            <br/>
+                        </div>
+                        
+                        <!-- Sudoku board -->
+                        <table class="table table-striped">
+                            <tbody id="sudoku-board"></tbody>
+                        </table>
+                        
+                        <!-- Message box -->
+                        <div id="message" class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">
+                                x
+                            </button>
+                            <div id="text"></div>
+                        </div>
+                        
+                        <!-- Solver buttons -->
+                        <div id="solver-controls">
+                            <button id="solve" class="btn btn-primary" rel="tooltip" 
+                                    title="This puzzle" 
+                                    data-placement="bottom">
+                                Solve!
+                            </button>
+                            <button id="get-candidates" class="btn pull-right" rel="tooltip" 
+                                    title="Show all possible values for each empty square" 
+                                    data-placement="bottom">
+                                Show Candidates
+                            </button>
+                        </div>
+
+                    </div> <!-- /container -->
+                    
+                </body>
+            </html>
+		</template>
+
+</odoo>
