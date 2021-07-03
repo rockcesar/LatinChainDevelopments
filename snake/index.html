@@ -1,169 +1,18 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Super Snake</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="manifest" href="/manifest.webmanifest">
-    
-    <!-- ios support -->
-    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
-    <meta name="theme-color" content="#db4938" />
-    
-    <meta name="application-name" content="Super Snake">
-    <link rel="icon" sizes="16x16 32x32 48x48" href="icon.png">
-    <link rel="icon" sizes="192x192" href="icon.png">
-
-    <link rel="stylesheet" href="responsive-snake/example/assets/css/main.css">
-
-    <script>
-        window.requestAnimationFrame=function(){
-            return window.requestAnimationFrame||window.webkitRequestAnimationFrame||
-                    window.mozRequestAnimationFrame||window.msRequestAnimationFrame||
-                    window.oRequestAnimationFrame||function(f){window.setTimeout(f,1e3/60)}}();
-    </script>
-    
-    <script type="text/javascript" src="responsive-snake/example/js/jquery-3.5.1.min.js"></script>
-    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-    <script type="text/javascript" src="responsive-snake/example/js/functions.js"></script>
-    
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="icon.png">
-    <meta name="description" content="César - OpenSource Expert. OpenSource Consultant.">
-    <link rel="canonical" href="https://cr-innova.negocio.site/">
-</head>
-
-<body>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/8.6.3/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/8.6.3/firebase-analytics.js"></script>
-
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-    
-    <style>
-    .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
-    .square-borderless {color: black; font-weight: bold; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center;}
-    .transparent {opacity: 0.5;}
-    .bottom {
-        position: absolute;
-        bottom: 40px;
-    }
-    </style>
-    
-    <script type="text/javascript">
-        $( document ).ready(function() {
-            function press(key)
-            {
-                var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
-                jQuery( "body" ).trigger( e );
-            }
-            
-            $( "#left" ).click(function() {
-                press(37);
-            });
-            $( "#up" ).click(function() {
-                press(38);
-            });
-            $( "#down" ).click(function() {
-                press(40);
-            });
-            $( "#right" ).click(function() {
-                press(39);
-            });
-            $( "#reset" ).click(function() {
-                press(82);
-            });
-            $( "#pause" ).click(function() {
-                press(32);
-            });
-            $( "#bot" ).click(function() {
-                press(66);
-            });
-            $( "#minus" ).click(function() {
-                press(189);
-            });
-            $( "#plus" ).click(function() {
-                press(187);
-            });
-        });
-    </script>
-    <div class="intro">
-        <!--<iframe data-aa="1429940" src="//ad.a-ads.com/1429940?size=120x60" scrolling="no" style="opacity: 0.3; width:120px; height:60px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
-        <br>-->
-        <h2>Super Snake <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a></h2>
-        <p>
-            <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" lang="en-US"/>
-            <input id="button_click" name="button_click" value="Donate Pi" type="button" class="transparent"/>
-        </p>
-        <p>
-            <!--<div style="min-height: 60px;"></div>-->
-            <div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
-            <div class="square" id="up">&#8593;</div>
-            <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div>
-            <div class="square" id="left">&#8592;</div>
-            <div class="square-borderless"></div>
-            <div class="square" id="right">&#8594;</div>
-            <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
-            <div class="square" id="down">&#8595;</div></p>
-        <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
-    </div>
-
-    <div class="container absolute">
-
-        <canvas id="snake-canvas" autofocus="autofocus" data-full-screen="true"></canvas>
-        
-        <div class="bottom">
-            <p>
-                <div class="square" id="reset">Reset</div><div class="square" id="pause">Pause</div>
-                <div class="square" id="bot">Bot</div><div class="square" id="minus">-</div>
-                <div class="square" id="plus">+</div><div class="square-borderless fps-counter"></div>
-                </p>
-            <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
-        </div>
-
-        <div id="scoreboard">
-            <div id="score">
-                Score :
-                <span>0</span>
-            </div>
-
-            <div id="hi-score">
-                Hi Score :
-                <span>0</span>
-            </div>
-
-            <div id="bot-hi-score">
-                Bot Hi Score :
-                <span>0</span>
-            </div>
-        </div>
-    </div>
-
-<!-- Vendor Component Libraries -->
-<script src="responsive-snake/example/vendor/zepto/zepto.js"></script>
-<script src="responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
-
-<!-- Browserified Build -->
-<script src="responsive-snake/build/snake.build.js"></script>
-
-<script>
-    //Start Snake Game
-    $(document).ready(function() {
-        ResponsiveSnake.start({
-            snakePixels    : 14,
-            snakeSize      : 2,
-            bot            : true,
-            explosion      : true,
-        });
-        
-    });
-</script>
-</body>
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	</head>
+	<body>
+ 		<div class="container" style="text-align:center">
+			Welcome to Pi Apps from LatinChain. Choose your app:<br/><br/>
+			<a href="https://snake.latin-chain.com/main.html" class="btn btn-primary">SNAKE</a><br/><br/>
+            Other developments:<br/><br/>
+			<a href="https://apps.odoo.com/apps/modules/13.0/website_pinetwork_odoo/" class="btn btn-primary">WATCH OUR ODOO APP</a><br/><br/>
+			INFO:<br/><br/>
+			<a href="https://latin-chain.com" class="btn btn-link">MAIN PAGE OF THE TEAM</a><br/><br/>
+			<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link">MORE INFO</a>
+		</div>
+	</body>
 </html>
