@@ -24,7 +24,7 @@ class PiNetworkController(http.Controller):
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             obj = {'txid': kw['txid']}
         
-        re = requests.post(url,data=obj,headers={'Authorization':'Key <your Server API Key>'})
+        re = requests.post(url,data=obj,json=obj,headers={'Authorization':'Key <your Server API Key>'})
         
         try:
             result = re.json()
