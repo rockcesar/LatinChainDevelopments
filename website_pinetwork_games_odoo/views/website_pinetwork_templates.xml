@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <template id="example" name="PiNetwork View">
+        <template id="pinetwork" name="PiNetwork View">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -60,7 +60,7 @@
                                                 'txid': payment.transaction.txid,
                                                 'app_client': 'auth_example'
                                             };
-                                        return $.post( "/pi-api-example", data).done(function(data) {
+                                        return $.post( "/pi-api", data).done(function(data) {
                                             $("#button_click").prop( "disabled", false );
                                         }).fail(function() {
                                             $("#button_click").prop( "disabled", false );
@@ -108,7 +108,7 @@
                                                     'txid': '',
                                                     'app_client': 'auth_example'
                                                 };
-                                          return $.post( "/pi-api-example", data).done(function(data) {
+                                          return $.post( "/pi-api", data).done(function(data) {
                                                 $("#button_click").prop( "disabled", false );
                                             }).fail(function() {
                                                 $("#button_click").prop( "disabled", false );
@@ -121,7 +121,7 @@
                                                 "txid": txid,
                                                 'app_client': 'auth_example'
                                             };
-                                            return $.post( "/pi-api-example", data).done(function(data) {
+                                            return $.post( "/pi-api", data).done(function(data) {
                                                 $("#button_click").prop( "disabled", false );
                                             }).fail(function() {
                                                 $("#button_click").prop( "disabled", false );

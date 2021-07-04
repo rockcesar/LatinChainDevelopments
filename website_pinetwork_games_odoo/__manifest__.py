@@ -16,10 +16,10 @@
 #
 ##############################################################################
 {
-    'name': 'PiNetwork First App for Odoo',
+    'name': 'PiNetwork Games Platform for Odoo',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'PiNetwork First App for Odoo',
+    'summary': 'PiNetwork Games Platform for Odoo',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
@@ -27,7 +27,7 @@
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
     'description': """
-PiNetwork First App for Odoo
+PiNetwork Games Platform for Odoo
 -----------------
 
 Pi is a new digital currency developed by Stanford PhDs, with over 18 million members worldwide (at July 2021). To claim your Pi, follow this link https://minepi.com/rockcesar and use my username (rockcesar) as your invitation code.
@@ -45,10 +45,12 @@ Odoo Developments: https://github.com/rockcesar/odoo_addons
 
 To test, you have to use Pi Browser.
 
-Main page: /mainpage""",
+Main page: /""",
     'depends': ['website'],
     'data': [
         'views/website_pinetwork_templates.xml',
+        'views/website_pinetwork_templates_sudoku.xml',
+        'views/website_pinetwork_templates_snake.xml',
         'views/website_pinetwork_templates_mainpage.xml',
         'security/groups_security.xml',
         'views/admin_apps_v.xml',

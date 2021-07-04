@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Groups  -->
+        <record id="group_pi_admin" model="res.groups">
+            <field name="name">Pi Admin Group</field>
+        </record>
+    </data>
+</odoo>

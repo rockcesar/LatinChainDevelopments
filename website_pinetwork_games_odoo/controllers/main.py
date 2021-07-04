@@ -11,24 +11,26 @@ _logger = logging.getLogger(__name__)
 
 from odoo.addons.website.controllers.main import Website
 
-"""
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
     def index(self, **kw):
         super(Website, self).index(**kw)
         return http.request.render('website_pinetwork_odoo.mainpage', {})
-"""
 
 class PiNetworkController(http.Controller):
-    @http.route('/mainpage', type='http', auth="public", website=True)
+    @http.route('/pinetwork', type='http', auth="public", website=True)
     def index(self, **kw):
-        return http.request.render('website_pinetwork_odoo.mainpage', {})
+        return http.request.render('website_pinetwork_odoo.pinetwork', {})
     
-    @http.route('/example', type='http', auth="public", website=True)
-    def example(self, **kw):
-        return http.request.render('website_pinetwork_odoo.example', {})
+    @http.route('/sudoku', type='http', auth="public", website=True)
+    def sudoku(self, **kw):
+        return http.request.render('website_pinetwork_odoo.sudoku', {})
+    
+    @http.route('/snake', type='http', auth="public", website=True)
+    def snake(self, **kw):
+        return http.request.render('website_pinetwork_odoo.snake', {})
         
-    @http.route('/pi-api-example', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
         
         if kw['action'] == "approve":
