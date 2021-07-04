@@ -15,20 +15,20 @@ class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
     def index(self, **kw):
         super(Website, self).index(**kw)
-        return http.request.render('website_pinetwork_odoo.mainpage', {})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {})
 
 class PiNetworkController(http.Controller):
     @http.route('/pinetwork', type='http', auth="public", website=True)
     def index(self, **kw):
-        return http.request.render('website_pinetwork_odoo.pinetwork', {})
+        return http.request.render('website_pinetwork_games_odoo.pinetwork', {})
     
     @http.route('/sudoku', type='http', auth="public", website=True)
     def sudoku(self, **kw):
-        return http.request.render('website_pinetwork_odoo.sudoku', {})
+        return http.request.render('website_pinetwork_games_odoo.sudoku', {})
     
     @http.route('/snake', type='http', auth="public", website=True)
     def snake(self, **kw):
-        return http.request.render('website_pinetwork_odoo.snake', {})
+        return http.request.render('website_pinetwork_games_odoo.snake', {})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):

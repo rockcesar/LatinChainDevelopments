@@ -10,7 +10,7 @@
                     <title>Pidoku Solver</title>
                     <meta name="apple-mobile-web-app-capable" content="yes" />
                     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-                    <link rel="manifest" href="/website_pinetwork_odoo/static/src/pidoku/manifest.webmanifest"/>
+                    <link rel="manifest" href="/website_pinetwork_games_odoo/static/src/pidoku/manifest.webmanifest"/>
                     
                     <meta name="viewport" content="width=device-width, user-scalable=yes"/>
                     
@@ -19,26 +19,26 @@
                     <meta name="theme-color" content="#db4938" />
                     
                     <meta name="application-name" content="Pidoku Solver"/>
-                    <link rel="icon" sizes="16x16 32x32 48x48" href="/website_pinetwork_odoo/static/src/pidoku/icon.png"/>
-                    <link rel="icon" sizes="192x192" href="/website_pinetwork_odoo/static/src/pidoku/icon.png"/>
+                    <link rel="icon" sizes="16x16 32x32 48x48" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png"/>
+                    <link rel="icon" sizes="192x192" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png"/>
 
                     <!-- Styles -->
-                    <link href="/website_pinetwork_odoo/static/src/pidoku/assets/css/bootstrap.min.css" rel="stylesheet" />
-                    <link href="/website_pinetwork_odoo/static/src/pidoku/assets/css/styles.css" rel="stylesheet" />
-                    <link href="/website_pinetwork_odoo/static/src/pidoku/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+                    <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/bootstrap.min.css" rel="stylesheet" />
+                    <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/styles.css" rel="stylesheet" />
+                    <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
                     
                     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"/>
                     
                     <!-- javascript
                          (Placed at the bottom so the DOM loads faster) -->
-                    <script src="/website_pinetwork_odoo/static/src/pidoku/assets/js/jquery.min.js"></script>
-                    <script src="/website_pinetwork_odoo/static/src/pidoku/assets/js/bootstrap.min.js"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/jquery.min.js"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/bootstrap.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-                    <script src="/website_pinetwork_odoo/static/src/pidoku/watch/dist/ez.countimer.js"></script>
-                    <script src="/website_pinetwork_odoo/static/src/pidoku/sudoku.js"></script>
-                    <script src="/website_pinetwork_odoo/static/src/pidoku/assets/js/app.js"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/pidoku/watch/dist/ez.countimer.js"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/pidoku/sudoku.js"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/app.js"></script>
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    <script type="text/javascript" src="/website_pinetwork_odoo/static/src/pidoku/functions.js"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js"></script>
 
                     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                     <!--[if lt IE 9]>
@@ -46,8 +46,8 @@
                     <![endif]-->
 
                     <!-- Fav and touch icons -->
-                    <link rel="shortcut icon" href="/website_pinetwork_odoo/static/src/pidoku/icon.png" type="image/x-icon"/>
-                    <link rel="apple-touch-icon" href="/website_pinetwork_odoo/static/src/pidoku/icon.png"/>
+                    <link rel="shortcut icon" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png" type="image/x-icon"/>
+                    <link rel="apple-touch-icon" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png"/>
                     <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
                     <link rel="canonical" href="https://cr-innova.negocio.site/"/>
                 </head>
@@ -64,7 +64,7 @@
                     <script src="/__/firebase/init.js"></script>
                     <div id="loading" class="container-narrow">
                         <p>
-                            <img src="/website_pinetwork_odoo/static/src/pidoku/assets/img/pacman.gif"/> Loading...
+                            <img src="/website_pinetwork_games_odoo/static/src/pidoku/assets/img/pacman.gif"/> Loading...
                         </p>
                     </div>
                     <div id="app-wrap" class="container-narrow hidden">

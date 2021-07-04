@@ -11,17 +11,17 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-                <link rel="manifest" href="/website_pinetwork_odoo/static/src/responsive-snake/manifest.webmanifest"/>
+                <link rel="manifest" href="/website_pinetwork_games_odoo/static/src/responsive-snake/manifest.webmanifest"/>
                 
                 <!-- ios support -->
                 <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
                 <meta name="theme-color" content="#db4938" />
                 
                 <meta name="application-name" content="Super Snake"/>
-                <link rel="icon" sizes="16x16 32x32 48x48" href="/website_pinetwork_odoo/static/src/responsive-snake/icon.png"/>
-                <link rel="icon" sizes="192x192" href="/website_pinetwork_odoo/static/src/responsive-snake/icon.png"/>
+                <link rel="icon" sizes="16x16 32x32 48x48" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png"/>
+                <link rel="icon" sizes="192x192" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png"/>
 
-                <link rel="stylesheet" href="/website_pinetwork_odoo/static/src/responsive-snake/example/assets/css/main.css"/>
+                <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/responsive-snake/example/assets/css/main.css"/>
 
                 <script>
                     window.requestAnimationFrame=function(){
@@ -30,12 +30,12 @@
                                 window.oRequestAnimationFrame||function(f){window.setTimeout(f,1e3/60)}}();
                 </script>
                 
-                <script type="text/javascript" src="/website_pinetwork_odoo/static/src/responsive-snake/example/js/jquery-3.5.1.min.js"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/jquery-3.5.1.min.js"></script>
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                <script type="text/javascript" src="/website_pinetwork_odoo/static/src/responsive-snake/example/js/functions.js"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js"></script>
                 
-                <link rel="shortcut icon" href="/website_pinetwork_odoo/static/src/responsive-snake/icon.png" type="image/x-icon"/>
-                <link rel="apple-touch-icon" href="/website_pinetwork_odoo/static/src/responsive-snake/icon.png"/>
+                <link rel="shortcut icon" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png" type="image/x-icon"/>
+                <link rel="apple-touch-icon" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png"/>
                 <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
                 <link rel="canonical" href="https://cr-innova.negocio.site/"/>
             </head>
@@ -151,11 +151,11 @@
                 </div>
 
             <!-- Vendor Component Libraries -->
-            <script src="/website_pinetwork_odoo/static/src/responsive-snake/example/vendor/zepto/zepto.js"></script>
-            <script src="/website_pinetwork_odoo/static/src/responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto/zepto.js"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
 
             <!-- Browserified Build -->
-            <script src="/website_pinetwork_odoo/static/src/responsive-snake/build/snake.build.js"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/build/snake.build.js"></script>
 
             <script>
                 //Start Snake Game

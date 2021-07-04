@@ -48,13 +48,13 @@
     <menuitem
         id="menu_config_admin_pi_apps"
         name="Config Admin Pi Apps"
-        groups="website_pinetwork_odoo.group_pi_admin,base.group_system"
+        groups="website_pinetwork_games_odoo.group_pi_admin,base.group_system"
         sequence="75"/>
             
     <menuitem
         id="menu_admin_pi_apps"
         name="Admin Pi App"
-        groups="website_pinetwork_odoo.group_pi_admin,base.group_system"
+        groups="website_pinetwork_games_odoo.group_pi_admin,base.group_system"
         parent="menu_config_admin_pi_apps"
         action="admin_pi_apps_action"
         sequence="75"/>
