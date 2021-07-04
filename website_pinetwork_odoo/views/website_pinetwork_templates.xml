@@ -58,7 +58,7 @@
                                                 'action': 'complete',
                                                 'paymentId': payment.identifier,
                                                 'txid': payment.transaction.txid,
-                                                'app_client': 'auth_example'
+                                                'app_client': 'auth_first_app'
                                             };
                                         return $.post( "/pi-api-example", data).done(function(data) {
                                             $("#button_click").prop( "disabled", false );
@@ -106,7 +106,7 @@
                                                     'action': 'approve',
                                                     'paymentId': paymentId,
                                                     'txid': '',
-                                                    'app_client': 'auth_example'
+                                                    'app_client': 'auth_first_app'
                                                 };
                                           return $.post( "/pi-api-example", data).done(function(data) {
                                                 $("#button_click").prop( "disabled", false );
@@ -119,7 +119,7 @@
                                                 'action': 'complete',
                                                 'paymentId': paymentId,
                                                 "txid": txid,
-                                                'app_client': 'auth_example'
+                                                'app_client': 'auth_first_app'
                                             };
                                             return $.post( "/pi-api-example", data).done(function(data) {
                                                 $("#button_click").prop( "disabled", false );

@@ -2,9 +2,9 @@
 <odoo>
     <data noupdate="0">
         <!-- Groups  -->
-        <record id="example_app" model="admin.apps">
+        <record id="first_app" model="admin.apps">
             <field name="name">Example</field>
-            <field name="app">auth_example</field>
+            <field name="app">auth_first_app</field>
             <field name="admin_key">Your Server API Key</field>
         </record>
     </data>
