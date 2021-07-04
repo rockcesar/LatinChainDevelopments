@@ -2,6 +2,7 @@
 <odoo>
 
         <template id="mainpage" name="Mainpage View">
+            <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -23,6 +24,7 @@
                     </div>
                 </body>
             </html>
+            </t>
 		</template>
 
 </odoo>
