@@ -3,7 +3,7 @@
 	<head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Pi Example</title>
+        <title>LatinChain Platform</title>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, user-scalable=yes">
@@ -27,8 +27,9 @@
 			<a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-primary">WATCH OUR ODOO APP</a><br/><br/>
             <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
 			INFO:<br/><br/>
-			<a href="https://latin-chain.com" class="btn btn-link">MAIN PAGE OF THE TEAM</a><br/><br/>
-			<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link">MORE INFO</a>
+            <a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>
+            <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
+			<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link">MORE INFO</a><br/><br/>
 		</div>
 	</body>
 </html>
