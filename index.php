@@ -12,7 +12,9 @@
         <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
         <meta name="theme-color" content="#db4938" />
         
-        <meta name="application-name" content="Pi Example">
+        <meta name="application-name" content="LatinChain Platform"/>
+        
+        <link href="https://latin-chain.com/latin-chain-logo.jpeg" rel="shortcut icon" />
         
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
