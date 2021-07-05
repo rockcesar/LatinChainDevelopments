@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <?php
+            if(!isset($_GET['mobile']))
+            {
+        ?>
+            <!--<script type="text/javascript">
+                const isMobile = /Mobi/.test(window.navigator.userAgent);
+                
+                if(isMobile == false)
+                    location.href="https://latin-chain.com/weblatin";
+            </script>-->
+        <?php
+            }
+        ?>
+        
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>LatinChain Platform</title>
