@@ -11,9 +11,9 @@
     }
     
     $apps = array();
-    $apps['auth_pidoku'] = 'Key <your Server API Key>';
-    $apps['auth_snake'] = 'Key <your Server API Key>';
-    $apps['auth_example'] = 'Key <your Server API Key>';
+    $apps['auth_app1'] = 'Key <your Server API Key>';
+    $apps['auth_app2'] = 'Key <your Server API Key>';
+    $apps['auth_app3'] = 'Key <your Server API Key>';
     
     $ch = curl_init($url);
     # Form data string
