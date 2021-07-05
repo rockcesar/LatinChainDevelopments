@@ -16,7 +16,7 @@
 #
 ##############################################################################
 {
-    'name': 'PiNetwork Games Platform for Odoo',
+    'name': 'PiNetwork Games Engine and Platform for Odoo',
     'category': 'Website/Website',
     'sequence': 54,
     'summary': 'PiNetwork Games Platform for Odoo',
