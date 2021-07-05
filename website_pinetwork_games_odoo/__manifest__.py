@@ -19,7 +19,7 @@
     'name': 'PiNetwork Games Engine and Platform for Odoo',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'PiNetwork Games Platform for Odoo',
+    'summary': 'PiNetwork Games Engine and Platform for Odoo',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
@@ -27,7 +27,7 @@
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
     'description': """
-PiNetwork Games Platform for Odoo
+PiNetwork Games Engine and Platform for Odoo
 -----------------
 
 Pi is a new digital currency developed by Stanford PhDs, with over 18 million members worldwide (at July 2021). To claim your Pi, follow this link https://minepi.com/rockcesar and use my username (rockcesar) as your invitation code.

@@ -1,4 +1,4 @@
-PiNetwork Games Platform for Odoo
+PiNetwork Games Engine and Platform for Odoo
 -----------------
 
 Pi is a new digital currency developed by Stanford PhDs, with over 18 million members worldwide (at July 2021). To claim your Pi, follow this link https://minepi.com/rockcesar and use my username (rockcesar) as your invitation code.
