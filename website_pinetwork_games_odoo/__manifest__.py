@@ -43,6 +43,8 @@ Repository: https://github.com/rockcesar/PiNetworkDevelopments
 
 Odoo Developments: https://github.com/rockcesar/odoo_addons
 
+Check our apps published: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
+
 To test, you have to use Pi Browser.
 
 Main page: /""",
