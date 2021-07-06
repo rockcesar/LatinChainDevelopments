@@ -34,12 +34,42 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 
         <script type="text/javascript">
             $( document ).ready(function() {
+                const Pi = window.Pi;
+                Pi.init({ version: "2.0" });
+                
+                async function auth() {
+                    try {
+                        // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+                        const scopes = ['username', 'payments'];
+                        function onIncompletePaymentFound(payment) {
+                            
+                        }; // Read more about this in the SDK reference
+
+                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                            $("#username").html(auth.user.username);
+                        }).catch(function(error) {
+                            //Pi.openShareDialog("Error", error);
+                            //alert(err);
+                            console.error(error);
+                        });
+                    } catch (err) {
+                        //Pi.openShareDialog("Error", err);
+                        //alert(err);
+                        console.error(err);
+                        // Not able to fetch the user
+                    }
+                }
+                
+                auth();
+                
                 const shareData = {
                     title: 'LatinChain Platform',
-                    text: 'Hi. Check it out this Pi App: LatinChain Platform',
+                    text: 'Hi. Check it out this Pi App: LatinChain Platform (Pi Network Games from Latin America). Try it in Pi Browser. #PiNetwork #PiApps',
                     url: 'https://latin-chain.com/',
                 }
                 
@@ -66,10 +96,9 @@
 
         </script>
 	</head>
-    
 	<body>
- 		<div class="container" style="text-align:center;">
-            <br/>Welcome to Pi Network Games from Latin America (LatinChain). Choose your app:<br/><br/>
+ 		<div class="container" style="text-align:center">
+			<br/>Hi <strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app:<br/><br/>
             <a href="https://latin-chain.com/sudoku/main.html" class="btn btn-primary">SUDOKU</a><br/><br/>
             <a href="https://latin-chain.com/snake/main.html" class="btn btn-primary">SNAKE</a><br/><br/>
             <a href="https://latin-chain.com/piapp-example/main.html" class="btn btn-primary">PIAPP EXAMPLE</a><br/><br/>
