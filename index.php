@@ -69,7 +69,7 @@
     
 	<body>
  		<div class="container" style="text-align:center;">
-            Welcome to Pi Apps from LatinChain. Choose your app:<br/><br/>
+            <br/>Welcome to Pi Network Games from Latin America (LatinChain). Choose your app:<br/><br/>
             <a href="https://latin-chain.com/sudoku/main.html" class="btn btn-primary">SUDOKU</a><br/><br/>
             <a href="https://latin-chain.com/snake/main.html" class="btn btn-primary">SNAKE</a><br/><br/>
             <a href="https://latin-chain.com/piapp-example/main.html" class="btn btn-primary">PIAPP EXAMPLE</a><br/><br/>
