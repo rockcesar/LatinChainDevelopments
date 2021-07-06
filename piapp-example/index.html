@@ -31,6 +31,7 @@
                     $("#social_div").html("");
                 }else
                 {
+                    $("#social_div").css("visibility", "visible");
                     const btn = document.querySelector('#button1');
                     //const resultPara = document.querySelector('.result');
                     
@@ -56,13 +57,13 @@
             Other developments:<br/><br/>
 			<a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-primary">WATCH OUR ODOO APP</a><br/><br/>
             <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
-            <div id="social_div">Share in Social Networks:<br/><br/>
-            <button id="button1"class="btn btn-primary">Share</button><br/><br/>
-            </div>
 			INFO:<br/><br/>
 			<a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>
             <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
 			<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a><br/><br/>
+            <div id="social_div" style="visibility: hidden">Share in Social Networks:<br/><br/>
+            <button id="button1"class="btn btn-primary">Share</button><br/><br/>
+            </div>
 		</div>
 	</body>
 </html>
