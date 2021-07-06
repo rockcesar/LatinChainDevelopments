@@ -34,22 +34,25 @@
                     text: 'Hi. Watch out this platform: LatinChain Platform',
                     url: 'https://latin-chain.com/',
                 }
+                
+                if (!navigator.share) {
+                    $("#social_div").html("");
+                }else
+                {
+                    const btn = document.querySelector('#button1');
+                    //const resultPara = document.querySelector('.result');
+                    
+                    // Must be triggered some kind of "user activation"
+                    btn.addEventListener('click', async () => {
+                      try {
+                        await navigator.share(shareData);
+                        //resultPara.textContent = 'MDN shared successfully'
+                      } catch(err) {
+                        //alert('Error: ' + err);
+                      }
+                    });
 
-                const btn = document.querySelector('#button1');
-                //const resultPara = document.querySelector('.result');
-
-                // Must be triggered some kind of "user activation"
-                btn.addEventListener('click', async () => {
-                  try {
-                    await navigator.share(shareData)
-                    //resultPara.textContent = 'MDN shared successfully'
-                  } catch(err) {
-                      alert("This function isn't working in this browser yet");
-                    //alert('Error: ' + err);
-                  }
-                });
-
-                share();
+                }
             });
 
         </script>
@@ -61,8 +64,9 @@
             Other developments:<br/><br/>
 			<a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-primary">WATCH OUR ODOO APP</a><br/><br/>
             <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
-            Share in Social Networks:<br/><br/>
+            <div id="social_div">Share in Social Networks:<br/><br/>
             <button id="button1"class="btn btn-primary">Share</button><br/><br/>
+            </div>
 			INFO:<br/><br/>
 			<a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>
             <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
