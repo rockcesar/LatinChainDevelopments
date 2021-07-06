@@ -52,6 +52,7 @@
                     await navigator.share(shareData)
                     //resultPara.textContent = 'MDN shared successfully'
                   } catch(err) {
+                      alert("This function isn't working in this browser yet");
                     //alert('Error: ' + err);
                   }
                 });
