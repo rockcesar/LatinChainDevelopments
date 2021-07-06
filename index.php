@@ -51,7 +51,7 @@
                         }; // Read more about this in the SDK reference
 
                         Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                            $("#username").html(auth.user.username);
+                            $("#username").html(" " + auth.user.username);
                         }).catch(function(error) {
                             //Pi.openShareDialog("Error", error);
                             //alert(err);
@@ -98,7 +98,7 @@
 	</head>
 	<body>
  		<div class="container" style="text-align:center">
-			<br/>Hi <strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app:<br/><br/>
+			<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app:<br/><br/>
             <a href="https://latin-chain.com/sudoku/main.html" class="btn btn-primary">SUDOKU</a><br/><br/>
             <a href="https://latin-chain.com/snake/main.html" class="btn btn-primary">SNAKE</a><br/><br/>
             <a href="https://latin-chain.com/piapp-example/main.html" class="btn btn-primary">PIAPP EXAMPLE</a><br/><br/>
