@@ -24,6 +24,34 @@
         
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                const shareData = {
+                    title: 'LatinChain Platform',
+                    text: 'Hi. Watch out this platform: LatinChain Platform',
+                    url: 'https://latin-chain.com/',
+                }
+
+                const btn = document.querySelector('#button1');
+                //const resultPara = document.querySelector('.result');
+
+                // Must be triggered some kind of "user activation"
+                btn.addEventListener('click', async () => {
+                  try {
+                    await navigator.share(shareData)
+                    //resultPara.textContent = 'MDN shared successfully'
+                  } catch(err) {
+                    //alert('Error: ' + err);
+                  }
+                });
+
+                share();
+            });
+
+        </script>
 	</head>
 	<body>
  		<div class="container" style="text-align:center">
@@ -32,6 +60,8 @@
             Other developments:<br/><br/>
 			<a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-primary">WATCH OUR ODOO APP</a><br/><br/>
             <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
+            Share in Social Networks:<br/><br/>
+            <button id="button1"class="btn btn-primary">Share</button><br/><br/>
 			INFO:<br/><br/>
 			<a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>
             <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
