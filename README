@@ -10,7 +10,10 @@ snake (MIT License) is the Super Snake. It's a modification of https://github.co
 piapp-example (GPLv3) is a test and example of how to use Pi Apps API in a Webpage.
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-website_pinetwork_odoo (GNU Affero General Public License) is a Pi Network Games Platform for Odoo.
+website_pinetwork_odoo (GNU Affero General Public License) is a Pi Network First App for Odoo.
+# Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
+
+website_pinetwork_games_odoo (GNU Affero General Public License) is a Pi Network Games Engine and Platform for Odoo.
 # Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 server1.php is a server side example.
@@ -26,8 +29,11 @@ https://snake.latin-chain.com
 PiApp Example:
 https://piapp-example.latin-chain.com
 
-Pi Network Games Platform for Odoo:
+Pi Network First App for Odoo:
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
+
+Pi Network Games Engine and Platform for Odoo:
+https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/
 
 Link for info:
 https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
