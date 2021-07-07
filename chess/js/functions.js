@@ -16,7 +16,7 @@ $( document ).ready(function() {
                         'action': 'complete',
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
-                        'app_client': 'auth_pidoku'
+                        'app_client': 'auth_platform'
                     };
                   return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
@@ -68,7 +68,7 @@ $( document ).ready(function() {
                                 'action': 'approve',
                                 'paymentId': paymentId,
                                 "txid": '',
-                                'app_client': 'auth_pidoku'
+                                'app_client': 'auth_platform'
                             };
                       return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
@@ -82,7 +82,7 @@ $( document ).ready(function() {
                                 'action': 'complete',
                                 'paymentId': paymentId,
                                 "txid": txid,
-                                'app_client': 'auth_pidoku'
+                                'app_client': 'auth_platform'
                             };
                       return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
