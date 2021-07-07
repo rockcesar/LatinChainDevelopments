@@ -19,7 +19,7 @@ class Website(Website):
         return http.request.render('website_pinetwork_odoo.mainpage', {})
 """
 
-class PiNetworkController(http.Controller):
+class PiNetworkExampleController(http.Controller):
     @http.route('/mainpage', type='http', auth="public", website=True)
     def index(self, **kw):
         return http.request.render('website_pinetwork_odoo.mainpage', {})
@@ -29,7 +29,7 @@ class PiNetworkController(http.Controller):
         return http.request.render('website_pinetwork_odoo.example', {})
         
     @http.route('/pi-api-example', type='http', auth="public", website=True, csrf=False, methods=['POST'])
-    def pi_api(self, **kw):
+    def pi_api_example(self, **kw):
         
         if kw['action'] == "approve":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/approve'
