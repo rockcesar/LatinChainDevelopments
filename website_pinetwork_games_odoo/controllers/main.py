@@ -30,6 +30,10 @@ class PiNetworkController(http.Controller):
     def snake(self, **kw):
         return http.request.render('website_pinetwork_games_odoo.snake', {})
         
+    @http.route('/chess', type='http', auth="public", website=True)
+    def chess(self, **kw):
+        return http.request.render('website_pinetwork_games_odoo.chess', {})
+        
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
         

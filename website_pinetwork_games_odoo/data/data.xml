@@ -17,5 +17,10 @@
             <field name="app">auth_example</field>
             <field name="admin_key">Your Server API Key</field>
         </record>
+        <record id="platform_app" model="admin.apps">
+            <field name="name">Platform</field>
+            <field name="app">auth_platform</field>
+            <field name="admin_key">Your Server API Key</field>
+        </record>
     </data>
 </odoo>
