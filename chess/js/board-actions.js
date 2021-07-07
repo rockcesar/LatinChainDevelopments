@@ -259,5 +259,9 @@ function postEndGame() {
 
     $('#game-turn').addClass('hidden');
 
+    try{
+    	$('.timer').countimer('stop');
+    }catch(error){}
+
     return;
 }
