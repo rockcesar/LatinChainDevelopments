@@ -10,7 +10,7 @@ function setDesktopBoard(position = false, sparePieces = false) {
       draggable: true,
       dropOffBoard: 'trash',
       sparePieces: true,
-      pieceTheme: 'img/pieces/{piece}.svg'
+      pieceTheme: '/website_pinetwork_games_odoo/static/src/chess/img/pieces/{piece}.svg'
     });
     return;
   }
@@ -120,7 +120,7 @@ function setDesktopBoard(position = false, sparePieces = false) {
     onMouseoverSquare: onMouseoverSquare,
 
     onSnapEnd: onSnapEnd,
-    pieceTheme: 'img/pieces/{piece}.svg'
+    pieceTheme: '/website_pinetwork_games_odoo/static/src/chess/img/pieces/{piece}.svg'
 
   });
 
