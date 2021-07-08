@@ -59,7 +59,7 @@ function listMoves() {
     console.log('History: show turn ' + $(this).attr('turn'));
     moves = JSON.parse(localStorage.getItem('boardHistory'));
     console.log(moves[turnN-1]);
-    loadBoard(moves[turnN-1], true);
+    //loadBoard(moves[turnN-1], true);
   });
 }
 

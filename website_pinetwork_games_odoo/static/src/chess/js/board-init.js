@@ -31,7 +31,7 @@ var
 
 // Init engine
 
-var stockfish = new Worker('/website_pinetwork_games_odoo/static/src/chess/js/stockfish.js');
+var stockfish = new Worker('js/stockfish.js');
 
 function dumpLog(data) {
   if (!data) {
@@ -59,7 +59,7 @@ function listMoves() {
     console.log('History: show turn ' + $(this).attr('turn'));
     moves = JSON.parse(localStorage.getItem('boardHistory'));
     console.log(moves[turnN-1]);
-    loadBoard(moves[turnN-1], true);
+    //loadBoard(moves[turnN-1], true);
   });
 }
 
