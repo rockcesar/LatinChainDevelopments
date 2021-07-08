@@ -99,13 +99,22 @@
 	<body>
  		<div class="container" style="text-align:center">
 			<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app:<br/><br/>
-            <a href="https://latin-chain.com/sudoku/main.html" class="btn btn-primary">SUDOKU</a><br/><br/>
-            <a href="https://latin-chain.com/snake/main.html" class="btn btn-primary">SNAKE</a><br/><br/>
-            <a href="https://latin-chain.com/chess/main.html" class="btn btn-primary">CHESS</a><br/><br/>
-            <a href="https://latin-chain.com/piapp-example/main.html" class="btn btn-primary">PIAPP EXAMPLE</a><br/><br/>
+            <div class="container">
+                <div class="row">
+                    <div class="col"><a href="https://latin-chain.com/sudoku/main.html" class="btn btn-primary">SUDOKU</a></div>
+                    <div class="col"><a href="https://latin-chain.com/snake/main.html" class="btn btn-primary">SNAKE</a></div>
+                    <div class="col"><a href="https://latin-chain.com/chess/main.html" class="btn btn-primary">CHESS</a></div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col"><a href="https://latin-chain.com/piapp-example/main.html" class="btn btn-primary">PIAPP EXAMPLE</a></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </div><br/><br/>
             Other developments:<br/><br/>
-            <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-primary">WATCH OUR ODOO APP</a><br/><br/>
-            <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
+            <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary">WATCH OUR ODOO APP</a><br/><br/>
+            <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
             INFO:<br/><br/>
             <a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>
             <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
