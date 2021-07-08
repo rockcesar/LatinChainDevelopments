@@ -52,7 +52,9 @@ function startTimer(game) {
         $('.timer_white').countimer('resume');
     }
 
-    if (game.in_checkmate()) {
+    if(game == "stop-both")
+    {
+    }else if (game.in_checkmate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
     }else if (game.in_draw()) {
@@ -83,7 +85,8 @@ function stopTimer(game) {
         $('.timer_white').countimer('resume');
     }
 
-    if (game.in_checkmate()) {
+    if(game == "stop-both")
+    {}else if (game.in_checkmate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
     }else if (game.in_draw()) {
