@@ -9,7 +9,7 @@ $('#btn-new-game').click(function() {
   gameStarted = false;
   gameEnd = false;
 
-  stopTimer();
+  stopTimer("stop-both");
 
   $('#game-settings').removeClass('hidden');
   $('#btn-choose-white-side, #btn-choose-black-side').removeClass('locked');

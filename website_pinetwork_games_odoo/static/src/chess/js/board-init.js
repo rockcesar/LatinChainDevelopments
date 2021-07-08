@@ -179,7 +179,7 @@ stockfish.onmessage = function(event) {
 
       console.log('Match and move.');
 
-      stopTimer();
+      stopTimer(game);
 
       var move = game.move({
         from: match[1],
@@ -199,7 +199,7 @@ stockfish.onmessage = function(event) {
       }
 
       listMoves();
-      startTimer();
+      startTimer(game);
 
       gameHistoryAddMove(game.fen());
 

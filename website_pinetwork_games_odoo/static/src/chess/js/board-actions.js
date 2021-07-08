@@ -91,7 +91,7 @@ function loadBoard(fen, fromHistory = false) {
       stockfish.postMessage('go depth ' + engineSkill);
     }
 
-    startTimer();
+    startTimer(game);
 
     $('#game-state').addClass('hidden');
 
@@ -105,7 +105,7 @@ function opponentTurn() {
 
   console.log('Opponent turn.');
 
-  stopTimer();
+  stopTimer(game);
 
   if (promotionEvent) {
     console.log('Debug 13');
@@ -156,7 +156,7 @@ function opponentTurn() {
       stockfish.postMessage('go depth ' + engineSkill);
     }, 500);
   
-    startTimer();
+    startTimer(game);
   }
 }
 

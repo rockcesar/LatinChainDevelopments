@@ -1,4 +1,4 @@
-function startTimer() {
+function startTimer(game) {
 
   $('#game-timer').removeClass('hidden');
 
@@ -36,9 +36,61 @@ function startTimer() {
     }
 
   }, 1000);
+
+    if(game == "stop-both")
+    {
+        $('.timer_white').countimer('start');
+        $('.timer_white').countimer('stop');
+        $('.timer_black').countimer('start');
+        $('.timer_black').countimer('stop');
+    }else if(game.turn() == "b")
+    {
+    	$('.timer_white').countimer('stop');
+    	$('.timer_black').countimer('resume');
+    }else if(game.turn() == "w"){
+	$('.timer_black').countimer('stop');
+        $('.timer_white').countimer('resume');
+    }
+
+    if (game.in_checkmate()) {
+        $('.timer_black').countimer('stop');
+        $('.timer_white').countimer('stop');
+    }else if (game.in_draw()) {
+        $('.timer_black').countimer('stop');
+        $('.timer_white').countimer('stop');
+    }else if (game.in_stalemate()) {
+        $('.timer_black').countimer('stop');
+        $('.timer_white').countimer('stop');
+    }
 }
 
-function stopTimer() {
+function stopTimer(game) {
   clearInterval(gameTimer);
   $('#game-timer').text('00:00');
+
+  if(game == "stop-both")
+    {
+        $('.timer_white').countimer('start');
+        $('.timer_white').countimer('stop');
+        $('.timer_black').countimer('start');
+        $('.timer_black').countimer('stop');
+    }else if(game.turn() == "b")
+    {
+        $('.timer_white').countimer('stop');
+        $('.timer_black').countimer('resume');
+    }else if(game.turn() == "w"){
+        $('.timer_black').countimer('stop');
+        $('.timer_white').countimer('resume');
+    }
+
+    if (game.in_checkmate()) {
+        $('.timer_black').countimer('stop');
+        $('.timer_white').countimer('stop');
+    }else if (game.in_draw()) {
+        $('.timer_black').countimer('stop');
+        $('.timer_white').countimer('stop');
+    }else if (game.in_stalemate()) {
+        $('.timer_black').countimer('stop');
+        $('.timer_white').countimer('stop');
+    }
 }
