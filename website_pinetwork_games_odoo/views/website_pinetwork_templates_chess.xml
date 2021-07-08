@@ -70,12 +70,12 @@
                             <div class="row">
                                 <div class="cont col-6">
                                 <h3>Time White</h3>
-                                <p><button class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button>  <button class="btn btn-success" onClick="$('.timer_white').countimer('resume');$('.timer_black').countimer('stop');">Resume</button></p>
+                                <p><button class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button> </p>
                                 <div class="timer_white well"></div>
                                 </div>
                                 <div class="cont col-6">
                                 <h3>Time Black</h3>
-                                <p><button class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button>  <button class="btn btn-success" onClick="$('.timer_black').countimer('resume');$('.timer_white').countimer('stop');">Resume</button></p>
+                                <p><button class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button></p>
                                 <div class="timer_black well"></div>
                                 </div>
                             </div><br/>
