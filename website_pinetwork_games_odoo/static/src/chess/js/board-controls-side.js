@@ -58,7 +58,7 @@ $('#btn-new-game').click(function() {
 
 $('#btn-empty-board').click(function() {
 
-  stopTimer();
+  stopTimer("stop-both");
 
   $('#game-timer').addClass('hidden');
   $('#btn-choose-white-side, #btn-choose-black-side').removeClass('locked');
@@ -256,7 +256,7 @@ $('#board-resign-game-area .close').click(function() {
 
 $('#board-resign-game-area .yes').click(function() {
   gameEnd = true;
-  stopTimer();
+  stopTimer("stop-both");
   $('#game-state').text('Game ended.').removeClass('hidden');
   $('#game-timer').addClass('hidden');
   $('#board').addClass('locked');

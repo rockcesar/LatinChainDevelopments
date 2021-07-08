@@ -37,7 +37,7 @@ function startTimer(game) {
 
   }, 1000);
 
-    if(game == "stop-both")
+    if(game == undefined || game == "stop-both")
     {
         $('.timer_white').countimer('start');
         $('.timer_white').countimer('stop');
@@ -52,7 +52,7 @@ function startTimer(game) {
         $('.timer_white').countimer('resume');
     }
 
-    if(game == "stop-both")
+    if(game == undefined || game == "stop-both")
     {
     }else if (game.in_checkmate()) {
         $('.timer_black').countimer('stop');
@@ -70,7 +70,7 @@ function stopTimer(game) {
   clearInterval(gameTimer);
   $('#game-timer').text('00:00');
 
-  if(game == "stop-both")
+  if(game == undefined || game == "stop-both")
     {
         $('.timer_white').countimer('start');
         $('.timer_white').countimer('stop');
@@ -85,7 +85,7 @@ function stopTimer(game) {
         $('.timer_white').countimer('resume');
     }
 
-    if(game == "stop-both")
+    if(game == undefined || game == "stop-both")
     {}else if (game.in_checkmate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');

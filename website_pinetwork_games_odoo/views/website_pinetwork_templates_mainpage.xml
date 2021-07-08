@@ -14,7 +14,6 @@
                         Welcome to Pi Apps from LatinChain. Choose your app:<br/><br/>
                         <a href="/sudoku" class="btn btn-primary">PIDOKU SOLVER</a><br/><br/>
                         <a href="/snake" class="btn btn-primary">SNAKE</a><br/><br/>
-                        <a href="/chess" class="btn btn-primary">CHESS</a><br/><br/>
                         <a href="/pinetwork" class="btn btn-primary">PIAPP EXAMPLE</a><br/><br/>
                         <a href="https://apps.odoo.com/apps/modules/13.0/website_pinetwork_odoo/" class="btn btn-primary">PIAPP IN ODOO</a><br/><br/>
                         <a href="https://apps.odoo.com/apps/modules/13.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
