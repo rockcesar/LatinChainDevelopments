@@ -1,5 +1,9 @@
 $( document ).ready(function() {
-    $('.timer').countimer({
+    $('.timer_white').countimer({
+			autoStart : false
+			});
+    
+    $('.timer_black').countimer({
 			autoStart : false
 			});
     

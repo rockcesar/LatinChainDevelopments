@@ -64,13 +64,20 @@
                             </div>
                             
                             <style>
-                            .cont { text-align:center; font-size:30px;}
+                            .cont { text-align:center; font-size:30px}
 
                             </style>
-                            <div class="cont">
-                            <h1>Time</h1>
-                            <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
-                            <div class="timer well"></div>
+                            <div class="row">
+                                <div class="cont col-6">
+                                <h3>Time White</h3>
+                                <p><button class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button>  <button class="btn btn-success" onClick="$('.timer_white').countimer('resume');$('.timer_black').countimer('stop');">Resume</button></p>
+                                <div class="timer_white well"></div>
+                                </div>
+                                <div class="cont col-6">
+                                <h3>Time Black</h3>
+                                <p><button class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button>  <button class="btn btn-success" onClick="$('.timer_black').countimer('resume');$('.timer_white').countimer('stop');">Resume</button></p>
+                                <div class="timer_black well"></div>
+                                </div>
                             </div><br/>
                         </span>
                             <div class="chess-area">

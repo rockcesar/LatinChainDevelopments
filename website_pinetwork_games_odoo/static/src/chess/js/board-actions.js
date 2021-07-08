@@ -260,7 +260,8 @@ function postEndGame() {
     $('#game-turn').addClass('hidden');
 
     try{
-    	$('.timer').countimer('stop');
+    	$('.timer_white').countimer('stop');
+	$('.timer_black').countimer('stop');
     }catch(error){}
 
     return;
