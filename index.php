@@ -116,7 +116,7 @@
             <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary">WATCH OUR ODOO APP</a><br/><br/>
             <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
             INFO:<br/><br/>
-            <a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>
+            <!--<a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>-->
             <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
             <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a><br/><br/>
             <div id="social_div" style="visibility: hidden">Share in Social Networks:<br/><br/>
