@@ -39,7 +39,7 @@
     curl_close($ch);
     
     $file = fopen("./server.log", "a");
-    fwrite($file , "Response " . date("Y-m-d H:i:s") . "\n");
+    fwrite($file , "\nResponse " . date("Y-m-d H:i:s") . "\n");
     fwrite($file , $response);
     fwrite($file , "\nError\n");
     fwrite($file , $error);
