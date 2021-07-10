@@ -97,39 +97,6 @@
         </script>
 	</head>
 	<body>
-        <!--<nav class="navbar navbar-expand navbar-light bg-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">LatinChain</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav navbar-nav-scroll me-auto mb-2">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Apps
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a href="#" class="dropdown-item disabled"><strong>Apps</strong></a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a href="https://latin-chain.com/sudoku/main.html" class="dropdown-item">SUDOKU</a></li>
-                        <li><a href="https://latin-chain.com/snake/main.html" class="dropdown-item">SNAKE</a></li>
-                        <li><a href="https://latin-chain.com/chess/main.html" class="dropdown-item">CHESS</a></li>
-                        <li><a href="https://latin-chain.com/piapp-example/main.html" class="dropdown-item">PIAPP EXAMPLE</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a href="#" class="dropdown-item disabled"><strong>Other developments</strong></a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="dropdown-item">ODOO APP</a></li>
-                        <li><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="dropdown-item">PLATFORM IN ODOO</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a href="#" class="dropdown-item disabled"><strong>Info</strong></a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a href="https://latin-chain.com/weblatin" class="dropdown-item">LATINCHAIN</a></li>
-                        <li><a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="dropdown-item" >MORE INFO</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>-->
  		<div class="container" style="text-align:center">
             <br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain).<br/><br/>
             <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
