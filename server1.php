@@ -1,5 +1,10 @@
 <?php
 
+    $file = fopen("./server.log", "a");
+    fwrite($file , "\nAccessed " . date("Y-m-d H:i:s") . "\n");
+    fwrite($file , "\n_POST " . print_r($_POST, true) . "\n");
+    fclose($file );
+
     if($_POST['action'] == "approve")
     {
         $url = 'https://api.minepi.com/v2/payments/'.$_POST['paymentId'].'/approve';
@@ -14,6 +19,7 @@
     $apps['auth_app1'] = 'Key <your Server API Key>';
     $apps['auth_app2'] = 'Key <your Server API Key>';
     $apps['auth_app3'] = 'Key <your Server API Key>';
+    $apps['auth_app4'] = 'Key <your Server API Key>';
     
     $ch = curl_init($url);
     # Form data string
@@ -29,14 +35,19 @@
     //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     # Get the response
     $response = curl_exec($ch);
+    $error = curl_error($ch);
     curl_close($ch);
+    
+    $file = fopen("./server.log", "a");
+    fwrite($file , "Response " . date("Y-m-d H:i:s") . "\n");
+    fwrite($file , $response);
+    fwrite($file , "\nError\n");
+    fwrite($file , $error);
+    fwrite($file , "\n");
+    fclose($file );
 
     //var_dump($response);
     header("HTTP/1.1 200 OK");
     header('Content-Type: application/json');
     echo json_encode($response);
-    
-    /*$file = fopen("./file.txt", "a");
-    fwrite($file , json_encode($response));
-    fclose($file );*/
 ?>
