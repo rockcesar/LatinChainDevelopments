@@ -73,7 +73,7 @@
                     //url: 'https://latin-chain.com/',
                 }
 
-                $("#social_div").css("visibility", "visible");
+                //$("#social_div").css("visibility", "visible");
                 const btn = document.querySelector('#button1');
                 //const resultPara = document.querySelector('.result');
                 
@@ -170,7 +170,7 @@
             <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
             <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a><br/><br/>-->
             <br/><br/>
-            <div id="social_div" style="visibility: hidden">Share in Social Networks:<br/><br/>
+            <div id="social_div">Share in Social Networks:<br/><br/>
             <button id="button1" class="btn btn-primary">Share</button><br/><br/>
             </div>
 		</div>
