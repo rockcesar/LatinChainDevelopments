@@ -61,29 +61,28 @@
                             
                             const shareData = {
                                 title: 'LatinChain Platform',
-                                text: 'Hi. Check it out this Pi App: LatinChain Platform (Pi Network Games from Latin America). Try it in Pi Browser. #PiNetwork #PiApps',
-                                url: 'https://latin-chain.com/',
+                                text: 'Hi. Check it out this Pi App: LatinChain Platform (Pi Network Games from Latin America). Try it in Pi Browser. #PiNetwork #PiApps https://latin-chain.com/',
+                                //url: 'https://latin-chain.com/',
                             }
+
+                            $("#social_div").css("visibility", "visible");
+                            const btn = document.querySelector('#button1');
+                            //const resultPara = document.querySelector('.result');
                             
-                            if (!navigator.share) {
-                                $("#social_div").html("");
-                            }else
-                            {
-                                $("#social_div").css("visibility", "visible");
-                                const btn = document.querySelector('#button1');
-                                //const resultPara = document.querySelector('.result');
-                                
-                                // Must be triggered some kind of "user activation"
-                                btn.addEventListener('click', async () => {
+                            // Must be triggered some kind of "user activation"
+                            btn.addEventListener('click', async () => {
+                                if (!navigator.share) {
+                                    Pi.openShareDialog(shareData.title, shareData.text);
+                                }else
+                                {
                                   try {
                                     await navigator.share(shareData);
                                     //resultPara.textContent = 'MDN shared successfully'
                                   } catch(err) {
                                     //alert('Error: ' + err);
                                   }
-                                });
-
-                            }
+                                }
+                            });
                         });
 
                     </script>
