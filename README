@@ -21,7 +21,7 @@ website_pinetwork_games_odoo (GNU Affero General Public License) is a Pi Network
 
 server1.php is a server side example for PiApps.
 
-In client, for using Sandbox you must set, sandox: true.
+In client, for using Sandbox you must set, sandox: true, in Pi.init().
 
   <script src="https://sdk.minepi.com/pi-sdk.js"></script>
   <script>Pi.init({ version: "2.0", sandbox: true })</script>
