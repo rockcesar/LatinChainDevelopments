@@ -1,9 +1,9 @@
 <?php
 
-    $file = fopen("./server.log", "a");
+    /*$file = fopen("./server.log", "a");
     fwrite($file , "\nAccessed " . date("Y-m-d H:i:s") . "\n");
     fwrite($file , "\n_POST " . print_r($_POST, true) . "\n");
-    fclose($file );
+    fclose($file );*/
 
     if($_POST['action'] == "approve")
     {
@@ -38,13 +38,13 @@
     $error = curl_error($ch);
     curl_close($ch);
     
-    $file = fopen("./server.log", "a");
+    /*$file = fopen("./server.log", "a");
     fwrite($file , "\nResponse " . date("Y-m-d H:i:s") . "\n");
     fwrite($file , $response);
     fwrite($file , "\nError\n");
     fwrite($file , $error);
     fwrite($file , "\n");
-    fclose($file );
+    fclose($file );*/
 
     //var_dump($response);
     header("HTTP/1.1 200 OK");
