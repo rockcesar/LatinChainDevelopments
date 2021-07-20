@@ -51,6 +51,7 @@
                 </head>
 
                 <body>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div id="loading" class="container-narrow">
                         <p>
                             <img src="/website_pinetwork_games_odoo/static/src/pidoku/assets/img/pacman.gif"/> Loading...

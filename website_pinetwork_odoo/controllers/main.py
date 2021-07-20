@@ -22,11 +22,19 @@ class Website(Website):
 class PiNetworkExampleController(http.Controller):
     @http.route('/mainpage', type='http', auth="public", website=True)
     def index(self, **kw):
-        return http.request.render('website_pinetwork_odoo.mainpage', {})
+                    
+        return http.request.render('website_pinetwork_odoo.mainpage')
     
     @http.route('/example', type='http', auth="public", website=True)
     def example(self, **kw):
-        return http.request.render('website_pinetwork_odoo.example', {})
+        admin_app_list = request.env["admin.apps.example"].sudo().search([('app', '=', 'auth_first_app')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+        else:
+            sandbox = admin_app_list[0].sandbox
+        
+        return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
     @http.route('/pi-api-example', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api_example(self, **kw):

@@ -15,24 +15,60 @@ class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
     def index(self, **kw):
         super(Website, self).index(**kw)
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {})
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+        else:
+            sandbox = admin_app_list[0].sandbox
+        
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox})
 
 class PiNetworkController(http.Controller):
     @http.route('/pinetwork', type='http', auth="public", website=True)
     def index(self, **kw):
-        return http.request.render('website_pinetwork_games_odoo.pinetwork', {})
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+        else:
+            sandbox = admin_app_list[0].sandbox
+        
+        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'sandbox': sandbox})
     
     @http.route('/sudoku', type='http', auth="public", website=True)
     def sudoku(self, **kw):
-        return http.request.render('website_pinetwork_games_odoo.sudoku', {})
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_pidoku')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+        else:
+            sandbox = admin_app_list[0].sandbox
+        
+        return http.request.render('website_pinetwork_games_odoo.sudoku', {'sandbox': sandbox})
     
     @http.route('/snake', type='http', auth="public", website=True)
     def snake(self, **kw):
-        return http.request.render('website_pinetwork_games_odoo.snake', {})
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_snake')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+        else:
+            sandbox = admin_app_list[0].sandbox
+        
+        return http.request.render('website_pinetwork_games_odoo.snake', {'sandbox': sandbox})
         
     @http.route('/chess', type='http', auth="public", website=True)
     def chess(self, **kw):
-        return http.request.render('website_pinetwork_games_odoo.chess', {})
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+        else:
+            sandbox = admin_app_list[0].sandbox
+        
+        return http.request.render('website_pinetwork_games_odoo.chess', {'sandbox': sandbox})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):

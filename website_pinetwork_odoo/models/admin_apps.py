@@ -17,3 +17,4 @@ class admin_apps_example(models.Model):
     name = fields.Char('Name')
     app = fields.Char('App code', required=True)
     admin_key = fields.Char('Admin Key', required=True)
+    sandbox = fields.Boolean('Sandbox', required=True)

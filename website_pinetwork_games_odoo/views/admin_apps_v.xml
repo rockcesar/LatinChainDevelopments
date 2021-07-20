@@ -13,6 +13,7 @@
                                     <field name="name"/>
                                     <field name="app"/>
                                     <field name="admin_key"/>
+                                    <field name="sandbox"/>
                                 </group>
                             </group>
                         </page>
@@ -30,6 +31,7 @@
                 <field name="name"/>
                 <field name="app"/>
                 <field name="admin_key"/>
+                <field name="sandbox"/>
             </tree>
         </field>
     </record>

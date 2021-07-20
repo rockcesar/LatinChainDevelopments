@@ -32,7 +32,7 @@
                     <script type="text/javascript">
                         $( document ).ready(function() {
                             const Pi = window.Pi;
-                            Pi.init({ version: "2.0" });
+                            Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
                             
                             async function auth() {
                                 try {
@@ -88,6 +88,7 @@
                     </script>
                 </head>
                 <body>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
                         <br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain).<br/><br/>
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
