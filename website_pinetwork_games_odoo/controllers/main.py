@@ -44,7 +44,7 @@ class PiNetworkController(http.Controller):
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             obj = {'txid': kw['txid']}
             
-        admin_app_list = request.env["admin.apps"].search([('app', '=', kw['app_client'])])
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
         
         if len(admin_app_list) == 0:
             result = {"error": "SERVER MESSAGE: There is not API Key Stored in DB"}
