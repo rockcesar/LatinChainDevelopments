@@ -6,6 +6,7 @@
             <field name="name">Example</field>
             <field name="app">auth_first_app</field>
             <field name="admin_key">Your Server API Key</field>
+            <field name="sandbox">False</field>
         </record>
     </data>
 </odoo>
