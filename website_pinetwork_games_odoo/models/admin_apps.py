@@ -24,8 +24,6 @@ class pi_transactions(models.Model):
     
     def check_transactions(self):
         for pit in self:
-            if pit.action != 'approve':
-                continue
             
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
