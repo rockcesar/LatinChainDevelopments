@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='pi_transactions_view_form' model='ir.ui.view'>
+        <field name="name">pi.transactions.form</field>
+        <field name="model">pi.transactions</field>
+        <field name="arch" type="xml">
+            <form string="Pi Transactions">
+                <sheet>
+                    <notebook>
+                        <page string="Pi Transactions">
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="name"/>
+                                    <field name="app_id"/>
+                                    <field name="app"/>
+                                    <field name="action" readonly="True"/>
+                                    <field name="payment_id" readonly="True"/>
+                                    <field name="txid" readonly="True"/>
+                                    <field name="json_result" readonly="True"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='pi_transactions_view_tree' model='ir.ui.view'>
+        <field name="name">pi.transactions.tree</field>
+        <field name="model">pi.transactions</field>
+        <field name="arch" type="xml">
+            <tree string="Pi Transactions">
+                <header>
+                    <button name="check_transactions" type="object" string="Check Transactions" class="oe_highlight"/>
+                </header>
+                <field name="app"/>
+                <field name="action"/>
+                <field name="payment_id"/>
+                <field name="txid"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='pi_transactions_action' model='ir.actions.act_window'>
+        <field name="name">Pi Transactions</field>
+        <field name="res_model">pi.transactions</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new pi transaction.
+          </p>
+        </field>
+    </record>
+            
+    <menuitem
+        id="menu_pi_transactions"
+        name="Pi Transactions"
+        groups="website_pinetwork_games_odoo.group_pi_admin,base.group_system"
+        parent="menu_config_admin_pi_apps"
+        action="pi_transactions_action"
+        sequence="75"/>
+</odoo>

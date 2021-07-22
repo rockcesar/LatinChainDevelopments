@@ -90,6 +90,25 @@ class PiNetworkController(http.Controller):
         
         try:
             result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if kw['action'] == "approve":
+                _logger.info(result)
+                request.env["pi.transactions"].sudo().create({'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                                                'app_id': admin_app_list[0].id,
+                                                                'action': kw['action'],
+                                                                'payment_id': kw['paymentId'],
+                                                                'json_result': str(result_dict)})
+            elif kw['action'] == "complete":
+                _logger.info(result)
+                request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(
+                                                                {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                                                'app_id': admin_app_list[0].id,
+                                                                'action': kw['action'],
+                                                                'payment_id': kw['paymentId'],
+                                                                'txid': kw['txid'],
+                                                                'json_result': str(result_dict)})
         except Exception:
             result = {"error": "SERVER MESSAGE: " + str(re)}
         

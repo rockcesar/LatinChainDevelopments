@@ -14,6 +14,7 @@
                                     <field name="app"/>
                                     <field name="admin_key"/>
                                     <field name="sandbox"/>
+                                    <field name="pi_transactions_ids"/>
                                 </group>
                             </group>
                         </page>
@@ -32,6 +33,7 @@
                 <field name="app"/>
                 <field name="admin_key"/>
                 <field name="sandbox"/>
+                <field name="pi_transactions_ids"/>
             </tree>
         </field>
     </record>
