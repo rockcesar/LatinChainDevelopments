@@ -22,7 +22,7 @@ $( document ).ready(function() {
                         'txid': payment.transaction.txid,
                         'app_client': 'auth_platform'
                     };
-                  return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
+                  return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
@@ -74,7 +74,7 @@ $( document ).ready(function() {
                                 "txid": '',
                                 'app_client': 'auth_platform'
                             };
-                      return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
+                      return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
@@ -88,7 +88,7 @@ $( document ).ready(function() {
                                 "txid": txid,
                                 'app_client': 'auth_platform'
                             };
-                      return $.post( "https://latin-chain.com/server1.php", data).done(function(data) {
+                      return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );

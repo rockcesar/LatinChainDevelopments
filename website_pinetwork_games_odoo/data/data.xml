@@ -26,5 +26,18 @@
             <field name="admin_key">Your Server API Key</field>
             <field name="sandbox">False</field>
         </record>
+        
+        <record forcecreate="True" id="check_pi_transactions_v1" model="ir.cron">
+           <field name="name">Check Pi Transactions</field>
+           <field eval="True" name="active" />
+           <field name="user_id" ref="base.user_root" />
+           <field name="interval_number">60</field>
+           <field name="interval_type">minutes</field>
+           <field name="numbercall">-1</field>
+           <field ref="model_pi_transactions" name="model_id" />
+            <field name="state">code</field>
+           <field name="code">model.search([('action', '=', 'approve')]).check_transactions()</field>
+           <field eval="False" name="doall"/>
+        </record>
     </data>
 </odoo>

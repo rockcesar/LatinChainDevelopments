@@ -23,8 +23,10 @@ class pi_transactions(models.Model):
     json_result = fields.Text('JSON Result', required=True)
     
     def check_transactions(self):
-        _logger.info("entered")
         for pit in self:
+            if pit.action != 'approve':
+                continue
+            
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
