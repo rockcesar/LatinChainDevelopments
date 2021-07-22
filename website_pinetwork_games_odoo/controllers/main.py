@@ -98,7 +98,10 @@ class PiNetworkController(http.Controller):
                                                                 'app_id': admin_app_list[0].id,
                                                                 'action': kw['action'],
                                                                 'payment_id': kw['paymentId'],
-                                                                'json_result': str(result_dict)})
+                                                                'json_result': str(result_dict),
+                                                                'pi_user_id': result_dict["user_uid"]})
+                request.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
+                                                            ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions()
             elif kw['action'] == "complete":
                 request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(
                                                                 {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
@@ -106,7 +109,8 @@ class PiNetworkController(http.Controller):
                                                                 'action': kw['action'],
                                                                 'payment_id': kw['paymentId'],
                                                                 'txid': kw['txid'],
-                                                                'json_result': str(result_dict)})
+                                                                'json_result': str(result_dict),
+                                                                'pi_user_id': result_dict["user_uid"]})
         except Exception:
             result = {"error": "SERVER MESSAGE: " + str(re)}
         

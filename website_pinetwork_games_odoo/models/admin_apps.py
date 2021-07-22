@@ -20,6 +20,7 @@ class pi_transactions(models.Model):
     action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True)
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
+    pi_user_id = fields.Char('Pi User ID')
     json_result = fields.Text('JSON Result', required=True)
     
     def check_transactions(self):

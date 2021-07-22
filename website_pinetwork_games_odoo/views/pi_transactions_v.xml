@@ -16,6 +16,7 @@
                                     <field name="action" readonly="True"/>
                                     <field name="payment_id" readonly="True"/>
                                     <field name="txid" readonly="True"/>
+                                    <field name="pi_user_id" readonly="True"/>
                                     <field name="json_result" readonly="True"/>
                                 </group>
                             </group>

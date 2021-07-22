@@ -31,8 +31,8 @@
            <field name="name">Check Pi Transactions</field>
            <field eval="True" name="active" />
            <field name="user_id" ref="base.user_root" />
-           <field name="interval_number">60</field>
-           <field name="interval_type">minutes</field>
+           <field name="interval_number">24</field>
+           <field name="interval_type">hours</field>
            <field name="numbercall">-1</field>
            <field ref="model_pi_transactions" name="model_id" />
             <field name="state">code</field>
