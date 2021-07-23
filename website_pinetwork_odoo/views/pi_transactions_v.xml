@@ -11,7 +11,7 @@
                             <group col="4">
                                 <group colspan="2" col="2">
                                     <field name="name"/>
-                                    <field name="app_id"/>
+                                    <field name="app_id" readonly="True"/>
                                     <field name="app"/>
                                     <field name="action" readonly="True"/>
                                     <field name="payment_id" readonly="True"/>
