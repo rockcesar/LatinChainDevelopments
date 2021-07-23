@@ -21,6 +21,9 @@ class pi_transactions(models.Model):
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
     pi_user_id = fields.Char('Pi User ID')
+    amount = fields.Float('Amount')
+    memo = fields.Char('Memo')
+    to_address = fields.Char('To address')
     json_result = fields.Text('JSON Result', required=True)
     
     def check_transactions(self):

@@ -65,7 +65,10 @@ class PiNetworkBaseController(http.Controller):
                                                                 'action': kw['action'],
                                                                 'payment_id': kw['paymentId'],
                                                                 'json_result': str(result_dict),
-                                                                'pi_user_id': result_dict["user_uid"]})
+                                                                'pi_user_id': result_dict["user_uid"],
+                                                                'amount': result_dict["amount"],
+                                                                'memo': result_dict["memo"],
+                                                                'to_address': result_dict["to_address"]})
                 request.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                             ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions()
             elif kw['action'] == "complete":
@@ -76,7 +79,10 @@ class PiNetworkBaseController(http.Controller):
                                                                 'payment_id': kw['paymentId'],
                                                                 'txid': kw['txid'],
                                                                 'json_result': str(result_dict),
-                                                                'pi_user_id': result_dict["user_uid"]})
+                                                                'pi_user_id': result_dict["user_uid"],
+                                                                'amount': result_dict["amount"],
+                                                                'memo': result_dict["memo"],
+                                                                'to_address': result_dict["to_address"]})
         except Exception:
             result = {"error": "SERVER MESSAGE: " + str(re)}
         
