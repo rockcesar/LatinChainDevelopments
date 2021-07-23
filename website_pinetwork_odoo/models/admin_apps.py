@@ -24,6 +24,11 @@ class pi_transactions(models.Model):
     amount = fields.Float('Amount')
     memo = fields.Char('Memo')
     to_address = fields.Char('To address')
+    developer_approved = fields.Boolean('developer_approved')
+    transaction_verified = fields.Boolean('transaction_verified')
+    developer_completed = fields.Boolean('developer_completed')
+    cancelled = fields.Boolean('cancelled')
+    user_cancelled = fields.Boolean('user_cancelled')
     json_result = fields.Text('JSON Result', required=True)
     
     def check_transactions(self):
@@ -39,11 +44,18 @@ class pi_transactions(models.Model):
                 result_dict = json.loads(str(json.dumps(result)))
                 
                 if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
-                    pit.write({'action': 'cancelled', 'json_result': str(result_dict)})
+                    pit.write({'action': 'cancelled'})
                 elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
-                    pit.write({'action': 'approve', 'json_result': str(result_dict)})
+                    pit.write({'action': 'approve'})
                 if result_dict['status']['developer_completed']  and pit.action!="complete":
-                    pit.write({'action': 'complete', 'json_result': str(result_dict)})
+                    pit.write({'action': 'complete'})
+                    
+                pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
+                        'transaction_verified': result_dict["status"]["transaction_verified"], 
+                        'developer_completed': result_dict["status"]["developer_completed"], 
+                        'cancelled': result_dict["status"]["cancelled"], 
+                        'user_cancelled': result_dict["status"]["user_cancelled"],
+                        'json_result': str(result_dict)})
                     
             except Exception:
                 _logger.info(str(re))

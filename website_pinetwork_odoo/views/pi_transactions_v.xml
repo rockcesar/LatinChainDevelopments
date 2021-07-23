@@ -20,6 +20,11 @@
                                     <field name="amount" readonly="True"/>
                                     <field name="memo" readonly="True"/>
                                     <field name="to_address" readonly="True"/>
+                                    <field name="developer_approved" readonly="True"/>
+                                    <field name="transaction_verified" readonly="True"/>
+                                    <field name="developer_completed" readonly="True"/>
+                                    <field name="cancelled" readonly="True"/>
+                                    <field name="user_cancelled" readonly="True"/>
                                     <field name="json_result" readonly="True"/>
                                 </group>
                             </group>

@@ -68,7 +68,12 @@ class PiNetworkBaseController(http.Controller):
                                                                 'pi_user_id': result_dict["user_uid"],
                                                                 'amount': result_dict["amount"],
                                                                 'memo': result_dict["memo"],
-                                                                'to_address': result_dict["to_address"]})
+                                                                'to_address': result_dict["to_address"],
+                                                                'developer_approved': result_dict["status"]["developer_approved"], 
+                                                                'transaction_verified': result_dict["status"]["transaction_verified"], 
+                                                                'developer_completed': result_dict["status"]["developer_completed"], 
+                                                                'cancelled': result_dict["status"]["cancelled"], 
+                                                                'user_cancelled': result_dict["status"]["user_cancelled"]})
                 request.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                             ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions()
             elif kw['action'] == "complete":
@@ -82,7 +87,12 @@ class PiNetworkBaseController(http.Controller):
                                                                 'pi_user_id': result_dict["user_uid"],
                                                                 'amount': result_dict["amount"],
                                                                 'memo': result_dict["memo"],
-                                                                'to_address': result_dict["to_address"]})
+                                                                'to_address': result_dict["to_address"],
+                                                                'developer_approved': result_dict["status"]["developer_approved"], 
+                                                                'transaction_verified': result_dict["status"]["transaction_verified"], 
+                                                                'developer_completed': result_dict["status"]["developer_completed"], 
+                                                                'cancelled': result_dict["status"]["cancelled"], 
+                                                                'user_cancelled': result_dict["status"]["user_cancelled"]})
         except Exception:
             result = {"error": "SERVER MESSAGE: " + str(re)}
         
