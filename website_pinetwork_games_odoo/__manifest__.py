@@ -48,17 +48,13 @@ Check our apps published: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-pub
 To test, you have to use Pi Browser.
 
 Main page: /""",
-    'depends': ['website'],
+    'depends': ['website', 'website_pinetwork_odoo'],
     'data': [
         'views/website_pinetwork_templates.xml',
         'views/website_pinetwork_templates_sudoku.xml',
         'views/website_pinetwork_templates_snake.xml',
         'views/website_pinetwork_templates_chess.xml',
         'views/website_pinetwork_templates_mainpage.xml',
-        'security/groups_security.xml',
-        'views/admin_apps_v.xml',
-        'views/pi_transactions_v.xml',
-        'security/ir.model.access.csv',
         'data/data.xml',
     ],
     'images': ['static/description/icon.png'],

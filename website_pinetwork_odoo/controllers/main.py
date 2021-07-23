@@ -19,7 +19,7 @@ class Website(Website):
         return http.request.render('website_pinetwork_odoo.mainpage', {})
 """
 
-class PiNetworkExampleController(http.Controller):
+class PiNetworkBaseController(http.Controller):
     @http.route('/mainpage', type='http', auth="public", website=True)
     def index(self, **kw):
                     
@@ -27,7 +27,7 @@ class PiNetworkExampleController(http.Controller):
     
     @http.route('/example', type='http', auth="public", website=True)
     def example(self, **kw):
-        admin_app_list = request.env["admin.apps.example"].sudo().search([('app', '=', 'auth_first_app')])
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_first_app')])
         
         if len(admin_app_list) == 0:
             sandbox = False
@@ -36,8 +36,8 @@ class PiNetworkExampleController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
-    @http.route('/pi-api-example', type='http', auth="public", website=True, csrf=False, methods=['POST'])
-    def pi_api_example(self, **kw):
+    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    def pi_api(self, **kw):
         
         if kw['action'] == "approve":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/approve'
@@ -46,7 +46,7 @@ class PiNetworkExampleController(http.Controller):
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             obj = {'txid': kw['txid']}
             
-        admin_app_list = request.env["admin.apps.example"].sudo().search([('app', '=', kw['app_client'])])
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
         
         if len(admin_app_list) == 0:
             result = {"error": "SERVER MESSAGE: There is not API Key Stored in DB"}
@@ -56,6 +56,27 @@ class PiNetworkExampleController(http.Controller):
         
         try:
             result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if kw['action'] == "approve":
+                request.env["pi.transactions"].sudo().create({'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                                                'app_id': admin_app_list[0].id,
+                                                                'action': kw['action'],
+                                                                'payment_id': kw['paymentId'],
+                                                                'json_result': str(result_dict),
+                                                                'pi_user_id': result_dict["user_uid"]})
+                request.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
+                                                            ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions()
+            elif kw['action'] == "complete":
+                request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(
+                                                                {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                                                'app_id': admin_app_list[0].id,
+                                                                'action': kw['action'],
+                                                                'payment_id': kw['paymentId'],
+                                                                'txid': kw['txid'],
+                                                                'json_result': str(result_dict),
+                                                                'pi_user_id': result_dict["user_uid"]})
         except Exception:
             result = {"error": "SERVER MESSAGE: " + str(re)}
         

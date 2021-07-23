@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pi_admin_example_group_pi_admin_1,pi.admin.example.group.pi.admin.1,website_pinetwork_odoo.model_admin_apps_example,website_pinetwork_odoo.group_pi_admin_example,1,1,1,1
+access_pi_admin_group_pi_admin_1,pi.admin.group.pi.admin.1,website_pinetwork_odoo.model_admin_apps,website_pinetwork_odoo.group_pi_admin,1,1,1,1
+access_pi_admin_group_pi_admin_2,pi.admin.group.pi.admin.2,website_pinetwork_odoo.model_pi_transactions,website_pinetwork_odoo.group_pi_admin,1,1,1,1

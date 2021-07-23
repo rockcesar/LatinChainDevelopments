@@ -40,8 +40,7 @@
                         <input id="button_click" name="button_click" value="Donate" type="button" class="btn btn-primary"/>
                         
                         <br/><br/>
-                        <a href="https://github.com/rockcesar/PiNetworkDevelopments/" class="btn btn-link">Watch code</a>
-                        URL:<br/>https://github.com/rockcesar/PiNetworkDevelopments/
+                        <a href="https://github.com/rockcesar/PiNetworkDevelopments/" target="_blank" class="btn btn-link">Watch code</a>
                     </div>
 
                     <script type="text/javascript">
@@ -63,7 +62,7 @@
                                                 'txid': payment.transaction.txid,
                                                 'app_client': 'auth_first_app'
                                             };
-                                        return $.post( "/pi-api-example", data).done(function(data) {
+                                        return $.post( "/pi-api", data).done(function(data) {
                                             $("#button_click").prop( "disabled", false );
                                         }).fail(function() {
                                             $("#button_click").prop( "disabled", false );
@@ -111,7 +110,7 @@
                                                     'txid': '',
                                                     'app_client': 'auth_first_app'
                                                 };
-                                          return $.post( "/pi-api-example", data).done(function(data) {
+                                          return $.post( "/pi-api", data).done(function(data) {
                                                 $("#button_click").prop( "disabled", false );
                                             }).fail(function() {
                                                 $("#button_click").prop( "disabled", false );
@@ -124,7 +123,7 @@
                                                 "txid": txid,
                                                 'app_client': 'auth_first_app'
                                             };
-                                            return $.post( "/pi-api-example", data).done(function(data) {
+                                            return $.post( "/pi-api", data).done(function(data) {
                                                 $("#button_click").prop( "disabled", false );
                                             }).fail(function() {
                                                 $("#button_click").prop( "disabled", false );

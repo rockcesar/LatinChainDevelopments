@@ -57,7 +57,7 @@
     <menuitem
         id="menu_pi_transactions"
         name="Pi Transactions"
-        groups="website_pinetwork_games_odoo.group_pi_admin,base.group_system"
+        groups="website_pinetwork_odoo.group_pi_admin,base.group_system"
         parent="menu_config_admin_pi_apps"
         action="pi_transactions_action"
         sequence="75"/>
