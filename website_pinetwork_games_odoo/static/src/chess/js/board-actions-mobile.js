@@ -30,6 +30,7 @@ function setMobileBoard(position = false) {
       },
 
       onMove: function(move) {
+        stopTimer(game);
         if (!gameStarted) {
           gameStarted = true;
           $('#btn-choose-white-side, #btn-choose-black-side').addClass('locked');
@@ -48,10 +49,12 @@ function setMobileBoard(position = false) {
         if (move !== null) {
           checkPositions('computer');
         }
+        updateEngineSkill();
         setTimeout(function() {
           stockfish.postMessage('position fen ' + game.fen());
           stockfish.postMessage('go depth ' + engineSkill);
         }, 1000);
+        startTimer(game);
         return game.fen();
       }
 
