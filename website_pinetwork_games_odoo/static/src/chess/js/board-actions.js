@@ -212,7 +212,7 @@ console.log('Checking positions', turn);
     
     if(turn == "computer")
     {
-        set_points(2);
+        set_points(3);
     }
   }
 
