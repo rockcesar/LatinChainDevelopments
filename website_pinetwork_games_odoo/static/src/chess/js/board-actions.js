@@ -205,19 +205,25 @@ function checkTurn() {
 
 function checkPositions(turn) {
 console.log('Checking positions', turn);
+
   if (game.in_checkmate()) {
     postEndGame();
     $('#game-state').text('Checkmate').removeClass('hidden');
+
+    if(turn == "computer")
+        set_points(2);
   }
 
   else if (game.in_draw()) {
     postEndGame();
     $('#game-state').text('The game has ended in a draw.').removeClass('hidden');
+    set_points(1);
   }
 
   else if (game.in_stalemate()) {
     postEndGame();
     $('#game-state').text('The game has ended in a stalemate (draw).').removeClass('hidden');
+    set_points(1);
   }
 
   else if (game.in_check()) {

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='pi_users_view_form' model='ir.ui.view'>
+        <field name="name">pi.users.form</field>
+        <field name="model">pi.users</field>
+        <field name="arch" type="xml">
+            <form string="Pi Users">
+                <sheet>
+                    <notebook>
+                        <page string="Pi Users">
+                            <group col="4">
+                                <group colspan="2" col="2">
+                                    <field name="name"/>
+                                    <field name="pi_user_id"/>
+                                    <field name="pi_user_code"/>
+                                    <field name="points"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='pi_users_view_tree' model='ir.ui.view'>
+        <field name="name">pi.users.tree</field>
+        <field name="model">pi.users</field>
+        <field name="arch" type="xml">
+            <tree string="Pi Users">
+                <field name="name"/>
+                <field name="pi_user_id"/>
+                <field name="pi_user_code"/>
+                <field name="points"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='pi_users_action' model='ir.actions.act_window'>
+        <field name="name">Pi Users</field>
+        <field name="res_model">pi.users</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new pi users.
+          </p>
+        </field>
+    </record>
+            
+    <menuitem
+        id="menu_pi_users"
+        name="Pi Users"
+        groups="website_pinetwork_odoo.group_pi_admin,base.group_system"
+        parent="menu_config_admin_pi_apps"
+        action="pi_users_action"
+        sequence="75"/>
+</odoo>

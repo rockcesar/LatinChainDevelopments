@@ -140,3 +140,17 @@ class admin_apps(models.Model):
             result = {"error": "SERVER MESSAGE: " + str(re)}
         
         return json.dumps(result)
+
+class pi_users(models.Model):
+    _name = "pi.users"
+    _description = "Pi Users"
+    
+    _sql_constraints = [
+        # Partial constraint, complemented by a python constraint (see below).
+        ('pi_user_unique_key', 'unique (pi_user_id)', 'You can not have two users with the same User code!'),
+    ]
+
+    name = fields.Char('Name')
+    pi_user_id = fields.Char('Pi User ID', required=True)
+    pi_user_code = fields.Char('Pi User Code', required=True)
+    points = fields.Float('Pi User Points', required=True)

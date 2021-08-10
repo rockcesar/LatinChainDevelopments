@@ -175,11 +175,11 @@
                         
                         <!-- Solver buttons -->
                         <div id="solver-controls">
-                            <button id="solve" class="btn btn-primary" rel="tooltip" 
+                            <!--<button id="solve" class="btn btn-primary" rel="tooltip" 
                                     title="This puzzle" 
                                     data-placement="bottom">
                                 Solve!
-                            </button>
+                            </button>-->
                             <button id="get-candidates" class="btn pull-right" rel="tooltip" 
                                     title="Show all possible values for each empty square" 
                                     data-placement="bottom">

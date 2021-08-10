@@ -1,3 +1,23 @@
+var pi_user_id = "";
+var pi_user_code = "";
+
+function set_points(points) {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'points': points,
+                };
+                
+        return $.post( "/pi-points", data).done(function(data) {
+            alert("You won " + points + " points");
+        }).fail(function() {
+            
+        });
+    }
+}
+
 $( document ).ready(function() {
     const Pi = window.Pi;
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -22,6 +42,9 @@ $( document ).ready(function() {
             }; // Read more about this in the SDK reference
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                pi_user_id = auth.user.uid;
+                pi_user_code = auth.user.username;
+                
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
                     {

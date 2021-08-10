@@ -237,6 +237,7 @@ var init_controls = function(){
         {
             $('.timer').countimer('stop');
             solve_puzzle(get_tab());
+            set_points(2);
         }
     });
     
