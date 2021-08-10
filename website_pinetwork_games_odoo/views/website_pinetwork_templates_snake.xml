@@ -79,7 +79,7 @@
                         $( "#pause" ).click(function() {
                             press(32);
                         });
-                        $( "#bot" ).click(function() {
+                        /*$( "#bot" ).click(function() {
                             press(66);
                         });
                         $( "#minus" ).click(function() {
@@ -87,7 +87,7 @@
                         });
                         $( "#plus" ).click(function() {
                             press(187);
-                        });
+                        });*/
                     });
                 </script>
                 <div class="intro">
@@ -155,10 +155,9 @@
                     ResponsiveSnake.start({
                         snakePixels    : 14,
                         snakeSize      : 2,
-                        bot            : true,
+                        bot            : false,
                         explosion      : true,
                     });
-                    
                 });
             </script>
             </body>

@@ -356,7 +356,7 @@ GameContainer.prototype.onKeydown = function (event) {
     case 39 :
       this.inst.queueDirection(this.inst.DIRECTIONS.RIGHT);
       break;
-    case 187: //+
+    /*case 187: //+
       this.inst.increaseFPS(1);
       break;
     case 189: //-
@@ -366,7 +366,7 @@ GameContainer.prototype.onKeydown = function (event) {
       if (this.inst.bot) {
         this.inst.bot.enable();
       }
-      break;
+      break;*/
     case 82 : //r
       this.inst.restart();
       break;
