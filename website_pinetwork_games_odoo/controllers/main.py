@@ -12,7 +12,7 @@ _logger = logging.getLogger(__name__)
 from odoo.addons.website.controllers.main import Website
 
 class Website(Website):
-    @http.route('/', type='http', auth="public", website=True)
+    @http.route('/', type='http', auth="user", website=True)
     def index(self, **kw):
         super(Website, self).index(**kw)
         
@@ -26,7 +26,7 @@ class Website(Website):
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox})
 
 class PiNetworkController(http.Controller):
-    @http.route('/pinetwork', type='http', auth="public", website=True)
+    @http.route('/pinetwork', type='http', auth="user", website=True)
     def index(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
@@ -37,7 +37,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.pinetwork', {'sandbox': sandbox})
     
-    @http.route('/sudoku', type='http', auth="public", website=True)
+    @http.route('/sudoku', type='http', auth="user", website=True)
     def sudoku(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_pidoku')])
         
@@ -48,7 +48,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.sudoku', {'sandbox': sandbox})
     
-    @http.route('/snake', type='http', auth="public", website=True)
+    @http.route('/snake', type='http', auth="user", website=True)
     def snake(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_snake')])
         
@@ -59,7 +59,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.snake', {'sandbox': sandbox})
         
-    @http.route('/chess', type='http', auth="public", website=True)
+    @http.route('/chess', type='http', auth="user", website=True)
     def chess(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
