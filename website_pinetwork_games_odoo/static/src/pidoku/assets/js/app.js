@@ -24,6 +24,16 @@ var boards = {
     "import": null,
 };
 
+var points_values = {
+    "easy": 3,
+    "medium": 6,
+    "hard": 9,
+    "very-hard": 12,
+    "insane": 15,
+    "inhuman": 18,
+    "import": 0,
+};
+
 var build_board = function(){
     /* Build the Sudoku board markup
     
@@ -237,7 +247,10 @@ var init_controls = function(){
         {
             $('.timer').countimer('stop');
             solve_puzzle(get_tab());
-            set_points(2);
+            
+            var tab_name = get_tab();
+            if(tab_name != "import")
+                set_points(points_values[get_tab()]);
         }
     });
     
