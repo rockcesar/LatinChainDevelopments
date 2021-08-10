@@ -207,14 +207,12 @@ function checkPositions(turn) {
 console.log('Checking positions', turn);
 
   if (game.in_checkmate()) {
-    updateEngineSkill();
-    
     postEndGame();
     $('#game-state').text('Checkmate').removeClass('hidden');
     
     if(turn == "computer")
     {
-        set_points(engineSkill);
+        set_points(2);
     }
   }
 
