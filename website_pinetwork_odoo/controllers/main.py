@@ -36,7 +36,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
-    @http.route('/pi-api', type='http', auth="user", website=True, csrf=True, methods=['POST'])
+    @http.route('/pi-api', type='http', auth="user", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
         return request.env["admin.apps"].pi_api(kw)
         
