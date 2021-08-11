@@ -36,11 +36,11 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
-    @http.route('/pi-api', type='http', auth="user", website=True, csrf=False, methods=['POST'])
+    @http.route('/pi-api', type='http', auth="user", website=True, csrf=True, methods=['POST'])
     def pi_api(self, **kw):
         return request.env["admin.apps"].pi_api(kw)
         
-    @http.route('/pi-points', type='http', auth="user", website=True, csrf=False, methods=['POST'])
+    @http.route('/pi-points', type='http', auth="user", website=True, csrf=True, methods=['POST'])
     def pi_points(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_id', '=', kw['pi_user_id'])])
         

@@ -2,6 +2,7 @@
 <odoo>
 
         <template id="sudoku" name="Pidoku">
+            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html lang="en">
                 <head>
@@ -191,6 +192,7 @@
                     
                 </body>
             </html>
+            </t>
 		</template>
 
 </odoo>

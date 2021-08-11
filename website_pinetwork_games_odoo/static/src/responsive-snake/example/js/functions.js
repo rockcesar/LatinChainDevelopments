@@ -8,6 +8,7 @@ function set_points(points) {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
                     'points': points,
+                    'csrf_token': odoo.csrf_token,
                 };
                 
         return $.post( "/pi-points", data).done(function(data) {
@@ -31,7 +32,8 @@ $( document ).ready(function() {
                         'action': 'complete',
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
-                        'app_client': 'auth_snake'
+                        'app_client': 'auth_snake',
+                        'csrf_token': odoo.csrf_token,
                     };
                 
                 return $.post( "/pi-api", data).done(function(data) {
@@ -86,7 +88,8 @@ $( document ).ready(function() {
                                 'action': 'approve',
                                 'paymentId': paymentId,
                                 "txid": '',
-                                'app_client': 'auth_snake'
+                                'app_client': 'auth_snake',
+                                'csrf_token': odoo.csrf_token,
                             };
                         
                         return $.post( "/pi-api", data).done(function(data) {
@@ -100,7 +103,8 @@ $( document ).ready(function() {
                                 'action': 'complete',
                                 'paymentId': paymentId,
                                 "txid": txid,
-                                'app_client': 'auth_snake'
+                                'app_client': 'auth_snake',
+                                'csrf_token': odoo.csrf_token,
                             };
                         
                         return $.post( "/pi-api", data).done(function(data) {

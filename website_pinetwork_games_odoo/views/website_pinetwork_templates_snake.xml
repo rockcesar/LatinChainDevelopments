@@ -2,6 +2,7 @@
 <odoo>
 
         <template id="snake" name="Snake">
+            <t t-call="web.layout">
           &lt;!DOCTYPE html&gt;
             <html class="no-js">
             <head>
@@ -162,6 +163,7 @@
             </script>
             </body>
             </html>
+            </t>
 		</template>
 
 </odoo>

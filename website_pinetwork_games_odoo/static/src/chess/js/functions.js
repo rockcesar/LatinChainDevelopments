@@ -8,6 +8,7 @@ function set_points(points) {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
                     'points': points,
+                    'csrf_token': odoo.csrf_token,
                 };
         return $.post( "/pi-points", data).done(function(data) {
             alert("You won " + points + " points");
@@ -39,7 +40,8 @@ $( document ).ready(function() {
                         'action': 'complete',
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
-                        'app_client': 'auth_platform'
+                        'app_client': 'auth_platform',
+                        'csrf_token': odoo.csrf_token,
                     };
                   return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
@@ -94,7 +96,8 @@ $( document ).ready(function() {
                                 'action': 'approve',
                                 'paymentId': paymentId,
                                 "txid": '',
-                                'app_client': 'auth_platform'
+                                'app_client': 'auth_platform',
+                                'csrf_token': odoo.csrf_token,
                             };
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
@@ -108,7 +111,8 @@ $( document ).ready(function() {
                                 'action': 'complete',
                                 'paymentId': paymentId,
                                 "txid": txid,
-                                'app_client': 'auth_platform'
+                                'app_client': 'auth_platform',
+                                'csrf_token': odoo.csrf_token,
                             };
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
