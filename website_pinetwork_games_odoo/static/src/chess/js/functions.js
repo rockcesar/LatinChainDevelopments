@@ -11,7 +11,9 @@ function set_points(points) {
                     'csrf_token': odoo.csrf_token,
                 };
         return $.post( "/pi-points", data).done(function(data) {
-            alert("You won " + points + " points");
+            data = JSON.parse(data);
+            if(data.result)
+                alert("You won " + points + " points");
         }).fail(function() {
             
         });
