@@ -20,12 +20,12 @@ class Website(Website):
 """
 
 class PiNetworkBaseController(http.Controller):
-    @http.route('/mainpage', type='http', auth="user", website=True)
+    @http.route('/mainpage', type='http', auth="public", website=True)
     def index(self, **kw):
                     
         return http.request.render('website_pinetwork_odoo.mainpage')
     
-    @http.route('/example', type='http', auth="user", website=True)
+    @http.route('/example', type='http', auth="public", website=True)
     def example(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_first_app')])
         
@@ -36,11 +36,11 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
-    @http.route('/pi-api', type='http', auth="user", website=True, csrf=False, methods=['POST'])
+    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
         return request.env["admin.apps"].pi_api(kw)
         
-    @http.route('/pi-points', type='http', auth="user", website=True, csrf=True, methods=['POST'])
+    @http.route('/pi-points', type='http', auth="public", website=True, csrf=True, methods=['POST'])
     def pi_points(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_id', '=', kw['pi_user_id'])])
         
@@ -59,7 +59,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True})
         
-    @http.route('/get-points', type='http', auth="user", website=True)
+    @http.route('/get-points', type='http', auth="public", website=True)
     def get_points(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([], limit=50, order="points desc")
         
