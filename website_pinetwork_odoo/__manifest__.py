@@ -26,7 +26,7 @@
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
-    "license": "AGPLv3",
+    "license": "AGPL-3",
     'description': """
 Pi Network First App for Odoo
 -----------------
