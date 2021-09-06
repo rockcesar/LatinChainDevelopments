@@ -26,6 +26,7 @@
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
+    "license": "AGPLv3",
     'description': """
 Pi Network Games Engine and Platform for Odoo
 -----------------
