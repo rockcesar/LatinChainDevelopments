@@ -10,13 +10,13 @@ snake (MIT License) is the Super Snake. It's a modification of https://github.co
 chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3)
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-piapp-example (GPLv3) is a test and example of how to use Pi Apps API in a Webpage.
+piapp-example (AGPLv3) is a test and example of how to use Pi Apps API in a Webpage.
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-website_pinetwork_odoo (GNU Affero General Public License) is a Pi Network First App for Odoo.
+website_pinetwork_odoo (AGPLv3) is a Pi Network First App for Odoo.
 # Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
-website_pinetwork_games_odoo (GNU Affero General Public License) is a Pi Network Games Engine and Platform for Odoo.
+website_pinetwork_games_odoo (AGPLv3) is a Pi Network Games Engine and Platform for Odoo.
 # Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 server1.php is a server side example for PiApps.
