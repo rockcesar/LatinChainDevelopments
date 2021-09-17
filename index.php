@@ -96,7 +96,7 @@
                 });
                 
                 $( "#vote" ).click(function() {
-                    $.colorbox({href:"https://latin-chain.com/modals/vote_pi.html", iframe:true, width: "80%", height: "80%"});
+                    $.colorbox({href:"https://latin-chain.com/modals/vote_pi.html", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
                 });
             });
 
