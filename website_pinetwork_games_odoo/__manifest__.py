@@ -28,6 +28,8 @@
     ],
     "license": "AGPL-3",
     'description': """
+Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
+
 LatinCain Games Engine and Platform for Odoo (work in the Pi Network TM)
 -----------------
 
