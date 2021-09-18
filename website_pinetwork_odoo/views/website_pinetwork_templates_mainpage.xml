@@ -11,7 +11,7 @@
                 </head>
                 <body>
                     <div class="container" style="text-align:center">
-                        Welcome to Pi Apps from LatinChain. 
+                        Welcome to Pi TM Apps from LatinChain. 
                         <a href="/get-points" class="btn btn-success">Leaders Board</a>. Choose your app:<br/><br/>
                         <a href="/example" class="btn btn-primary">PIAPP EXAMPLE</a><br/><br/>
                         <a href="https://apps.odoo.com/apps/modules/13.0/website_pinetwork_odoo/" class="btn btn-primary">PIAPP IN ODOO</a><br/><br/>

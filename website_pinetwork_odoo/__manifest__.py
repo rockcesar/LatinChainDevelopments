@@ -16,10 +16,10 @@
 #
 ##############################################################################
 {
-    'name': 'Pi Network First App for Odoo',
+    'name': 'LatinChain First App for Odoo (works in the Pi Network TM)',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'Pi Network First App for Odoo',
+    'summary': 'LatinChain First App for Odoo (works in the Pi Network TM)',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
@@ -28,7 +28,7 @@
     ],
     "license": "AGPL-3",
     'description': """
-Pi Network First App for Odoo
+LatinChain First App for Odoo (works in the Pi Network TM)
 -----------------
 
 Games Leaders board, Pi API Platform integration, Games.

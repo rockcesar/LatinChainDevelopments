@@ -16,10 +16,10 @@
 #
 ##############################################################################
 {
-    'name': 'Pi Network Games Engine and Platform for Odoo',
+    'name': 'LatinCain Games Engine and Platform for Odoo (work in the Pi Network TM)',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'Pi Network Games Engine and Platform for Odoo',
+    'summary': 'LatinCain Games Engine and Platform for Odoo (work in the Pi Network TM)',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
@@ -28,7 +28,7 @@
     ],
     "license": "AGPL-3",
     'description': """
-Pi Network Games Engine and Platform for Odoo
+LatinCain Games Engine and Platform for Odoo (work in the Pi Network TM)
 -----------------
 
 Games Leaders board, Pi API Platform integration, Games.

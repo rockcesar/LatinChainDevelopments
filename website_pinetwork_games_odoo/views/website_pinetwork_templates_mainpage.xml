@@ -88,7 +88,7 @@
                             
                             const shareData = {
                                 title: 'LatinChain Platform',
-                                text: 'Hi. Check it out this Pi App: LatinChain Platform (Pi Network Games from Latin America). Try it in Pi Browser. #PiNetwork #PiApps https://latin-chain.com/',
+                                text: 'Hi. Check it out this Pi App: LatinChain Platform (LatinChain Games from Latin America which work with the Pi Network). Try it in Pi Browser. #PiNetwork #PiApps https://latin-chain.com/',
                                 //url: 'https://latin-chain.com/',
                             }
 
@@ -117,7 +117,7 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
-                        <br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). 
+                        <br/>Hi<strong><span id="username"></span></strong>. Welcome to LatinChain Games from Latin America (with the Pi Network). 
                         <a href="/get-points" class="btn btn-success">Leaders Board</a><br/><br/>
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
@@ -142,7 +142,7 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col"><a href="/pinetwork" class="btn btn-primary">PIAPP EXAMPLE</a></div>
+                                    <div class="col"><a href="/pinetwork" class="btn btn-primary">APP EXAMPLE</a></div>
                                     <div class="col"></div>
                                     <div class="col"></div>
                                 </div>
