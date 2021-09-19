@@ -13,7 +13,7 @@ $('#btn-flip-board').on('click', function () {
 // Switch sides
 
 $('#btn-switch-sides').on('click', function () {
-  if (typeof board.flip == 'function') {
+  /*if (typeof board.flip == 'function') {
     board.flip();
   } else {
     board.setOrientation('flip');
@@ -29,7 +29,7 @@ $('#btn-switch-sides').on('click', function () {
     opponentSide = 'b';
   }
 
-  opponentTurn();
+  opponentTurn();*/
 
 });
 
@@ -79,13 +79,13 @@ $('#btn-show-hint').on('click', function () {
 // Make one step back
 
 $('#btn-take-back').on('click', function () {
-  game.undo();
+  /*game.undo();
   board.position(game.fen());
   game.undo();
   board.position(game.fen());
   if (game.history().length == 0) {
     $('#btn-take-back').addClass('disabled');
-  }
+  }*/
 });
 
 // Promotion popup ui
