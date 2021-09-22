@@ -51,7 +51,7 @@
                     <link rel="canonical" href="https://cr-innova.negocio.site/"/>
                 </head>
 
-                <body>
+                <body style="padding:0px">
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div id="loading" class="container-narrow">
                         <p>
