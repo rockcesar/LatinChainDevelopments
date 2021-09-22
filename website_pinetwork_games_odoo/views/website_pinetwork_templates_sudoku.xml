@@ -156,15 +156,17 @@
                             <br/>
                             <div style="color: black;">String to import in the Import tab:<br/>
                             Cadena para importar en la pestaña Import:</div>
-                            <input id="export-string" readonly="readonly" style="min-width: 580px; border:solid; padding:5px; color: green;" />
+                            <input id="export-string" readonly="readonly" style="width: 100%; border:solid; padding-left:1px; padding-right:1px; padding-bottom:5px; padding-top:5px; color: green;" />
                             <br/>
                             <br/>
                         </div>
                         
                         <!-- Sudoku board -->
-                        <table class="table table-striped">
-                            <tbody id="sudoku-board"></tbody>
-                        </table>
+                        <div style="width: 100%; height: 100%; overflow-x: auto; overflow-y: hidden; white-space: nowrap;">
+                            <table class="table table-striped">
+                                <tbody id="sudoku-board"></tbody>
+                            </table>
+                        </div>
                         
                         <!-- Message box -->
                         <div id="message" class="alert alert-error">
