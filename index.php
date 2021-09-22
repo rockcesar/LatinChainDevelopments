@@ -105,7 +105,7 @@
 	<body>
  		<div class="container" style="text-align:center">
             <br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). 
-            <button id="vote" class="btn btn-success">How to vote?</button><br/><br/>
+            <button id="vote" class="btn btn-info">How to vote?</button><br/><br/>
             <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</button>
@@ -122,7 +122,7 @@
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <br/>Choose your app:<br/><br/>
+                <br/>Choose your app (Test our game Chess):<br/><br/>
             
                 <div class="container" style="text-align:center">
                     <div class="row">
