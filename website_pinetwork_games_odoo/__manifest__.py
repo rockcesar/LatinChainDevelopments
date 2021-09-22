@@ -16,10 +16,10 @@
 #
 ##############################################################################
 {
-    'name': 'LatinChain Games Engine and Platform for Odoo (work in the Pi Network TM)',
+    'name': 'Pi Network Games Engine and Platform for Odoo',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'LatinChain Games Engine and Platform for Odoo (work in the Pi Network TM)',
+    'summary': 'Pi Network Games Engine and Platform for Odoo',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
@@ -30,7 +30,7 @@
     'description': """
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
-LatinChain Games Engine and Platform for Odoo (work in the Pi Network TM)
+Pi Network Games Engine and Platform for Odoo
 -----------------
 
 Games Leaders board, Pi API Platform integration, Games.

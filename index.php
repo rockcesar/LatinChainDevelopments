@@ -116,6 +116,9 @@
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Info</button>
               </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Video</button>
+              </li>
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -151,6 +154,10 @@
                 <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /><br/><br/>
                 <a href="https://latin-chain.com/weblatin" class="btn btn-link">LATINCHAIN</a><br/><br/>
                 <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a>
+              </div>
+              <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+                <br/>Video presentation:<br/><br/>
+                <iframe width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
 			<!--<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app.<br/><br/>

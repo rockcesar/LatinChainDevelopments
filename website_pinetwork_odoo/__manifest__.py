@@ -16,10 +16,10 @@
 #
 ##############################################################################
 {
-    'name': 'LatinChain First App for Odoo (works in the Pi Network TM)',
+    'name': 'Pi Network First App for Odoo',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'LatinChain First App for Odoo (works in the Pi Network TM)',
+    'summary': 'Pi Network First App for Odoo',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
@@ -30,7 +30,7 @@
     'description': """
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
-LatinChain First App for Odoo (works in the Pi Network TM)
+Pi Network First App for Odoo
 -----------------
 
 Games Leaders board, Pi API Platform integration, Games.
