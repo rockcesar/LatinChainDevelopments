@@ -136,9 +136,9 @@
                         
                             <div class="container" style="text-align:center">
                                 <div class="row">
+                                    <div class="col"><a href="/chess" class="btn btn-success">CHESS</a></div>
                                     <div class="col"><a href="/sudoku" class="btn btn-primary">SUDOKU</a></div>
                                     <div class="col"><a href="/snake" class="btn btn-primary">SNAKE</a></div>
-                                    <div class="col"><a href="/chess" class="btn btn-primary">CHESS</a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
