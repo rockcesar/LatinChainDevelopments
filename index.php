@@ -126,9 +126,9 @@
             
                 <div class="container" style="text-align:center">
                     <div class="row">
+                        <div class="col"><a href="https://latin-chain.com/chess/main.html" class="btn btn-success">CHESS</a></div>
                         <div class="col"><a href="https://latin-chain.com/sudoku/main.html" class="btn btn-primary">SUDOKU</a></div>
                         <div class="col"><a href="https://latin-chain.com/snake/main.html" class="btn btn-primary">SNAKE</a></div>
-                        <div class="col"><a href="https://latin-chain.com/chess/main.html" class="btn btn-primary">CHESS</a></div>
                     </div>
                     <br/>
                     <div class="row">
