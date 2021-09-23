@@ -13,6 +13,8 @@
                     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
                     <link rel="manifest" href="/website_pinetwork_games_odoo/static/src/pidoku/manifest.webmanifest"/>
                     
+                    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+                    
                     <!-- ios support -->
                     <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
                     <meta name="theme-color" content="#db4938" />
@@ -58,6 +60,7 @@
                             <img src="/website_pinetwork_games_odoo/static/src/pidoku/assets/img/pacman.gif"/> Loading...
                         </p>
                     </div>
+                    
                     <ul class="nav nav-tabs" id="myTab" style="background-color: #e3f2fd;">
                       <li class="active" role="presentation">
                         <a href="#home" data-toggle="tab">Home</a>
@@ -66,151 +69,144 @@
                         <a href="#sudoku" data-toggle="tab">Sudoku</a>
                       </li>
                     </ul>
-                    <div class="tab-content" id="myTabContent" style="padding:10px">
-                      <div class="tab-pane active" id="home">
-                            <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
-                            <br />
-                            <br />
-                            <div style="text-align:center" class="form-group container">
-                                <div class="row">
-                                    <div class="col-3">
+                    <div id="app-wrap" class="container-narrow hidden">
+                        <div class="tab-content" id="myTabContent" style="padding:10px">
+                          <div class="tab-pane active" id="home">
+                                <div style="text-align:center">
+                                    <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
+                                    <br />
+                                    <br />
+                                
+                                    <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" lang="en-US"/>
+                                    <br/>
+                                    <input id="button_click" name="button_click" value="Donate Pi" type="button" class="btn btn-success"/>
+                                    <br/>
+                                    <br/>
+                                </div>
+                          </div>
+                          <div class="tab-pane" id="sudoku">
+                                
+                                    <style>
+                                    .cont { text-align:center; font-size:30px;}
+
+                                    </style>
+                                    <div class="cont">
+                                    <h1>Time</h1>
+                                    <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+                                    <div class="timer well"></div>
                                     </div>
-                                    <div class="col-6">
-                                        <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" lang="en-US"/>
+                                    
+                                    <!-- Tabs -->
+                                    <ul id="generator-tabs" class="nav nav-tabs">
+                                        <li>
+                                            <a id="easy" rel="tooltip" title="Easy puzzle" 
+                                                    href="#">Easy</a>
+                                        </li>
+                                        <li>
+                                            <a id="medium" rel="tooltip" 
+                                                    title="Medium puzzle" href="#">Medium</a>
+                                        </li>
+                                        <li>
+                                            <a id="hard" rel="tooltip" title="Hard puzzle" 
+                                                    href="#">Hard</a>
+                                        </li>
+                                        <li>
+                                            <a id="very-hard" rel="tooltip" 
+                                                    title="Very hard puzzle" href="#">
+                                                Very hard    
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="insane" rel="tooltip" 
+                                                    title="Insane puzzle" href="#">
+                                                Insane
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="inhuman" rel="tooltip" 
+                                                    title="Inhuman puzzle" href="#">
+                                                Robots only
+                                            </a>
+                                        </li>
+                                        <li class="pull-right">
+                                            <a id="import" rel="tooltip" title="Your own puzzle" 
+                                                    href="#">
+                                                Import...
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                    <div id="import-controls">
+                                        <p>Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces.</p>
+                                        <input id="import-string" class="input-block-level sudoku-list" 
+                                            placeholder="Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
+                                            maxlength="81"
+                                            type="text"/>
+                                    </div>
+                                    
+                                    <div id="puzzle-controls">
+                                        <a id="clear" class="pull-left btn btn-primary" rel="tooltip"
+                                                title="This puzzle" href="#">
+                                            Clear  
+                                        </a>
+                                        
+                                        <!--<a id="export" class="pull-left btn btn-primary" style="margin-left:10px" rel="tooltip" 
+                                                title="Export the current puzzle" href="#">
+                                            Export  
+                                        </a>-->
+                                        
+                                        <a id="copy" class="pull-left btn btn-primary" style="margin-left:10px" rel="tooltip" 
+                                                title="Copy string" href="#">
+                                            Copy  
+                                        </a>
+                                        
+                                        <a id="refresh" class="pull-right btn" rel="tooltip" 
+                                                title="This puzzle" href="#">
+                                            Refresh  
+                                        </a>
+                                        
                                         <br/>
-                                        <input id="button_click" name="button_click" value="Donate Pi" type="button" class="btn btn-success"/>
+                                        <br/>
+                                        <div style="color: black;">String to import in the Import tab:<br/>
+                                        Cadena para importar en la pestaña Import:</div>
+                                        <input id="export-string" readonly="readonly" style="width: 100%; border:solid; padding-left:1px; padding-right:1px; padding-bottom:5px; padding-top:5px; color: green;" />
+                                        <br/>
+                                        <br/>
                                     </div>
-                                    <div class="col-3">
+                                    
+                                    <!-- Sudoku board -->
+                                    <div style="width: 100%; height: 100%; overflow-x: auto; overflow-y: hidden; white-space: nowrap;">
+                                        <table class="table table-striped">
+                                            <tbody id="sudoku-board"></tbody>
+                                        </table>
                                     </div>
-                                </div>
-                                <br/>
-                                <br/>
-                            </div>
-                      </div>
-                      <div class="tab-pane" id="sudoku">
-                        <div id="app-wrap" class="container-narrow hidden">
-                            
-                                <style>
-                                .cont { text-align:center; font-size:30px;}
+                                    
+                                    <!-- Message box -->
+                                    <div id="message" class="alert alert-error">
+                                        <button type="button" class="close" data-dismiss="alert">
+                                            x
+                                        </button>
+                                        <div id="text"></div>
+                                    </div>
+                                    
+                                    <!-- Solver buttons -->
+                                    <div id="solver-controls">
+                                        <!--<button id="solve" class="btn btn-primary" rel="tooltip" 
+                                                title="This puzzle" 
+                                                data-placement="bottom">
+                                            Solve!
+                                        </button>-->
+                                        <button id="get-candidates" class="btn pull-right" rel="tooltip" 
+                                                title="Show all possible values for each empty square" 
+                                                data-placement="bottom">
+                                            Show Candidates
+                                        </button>
+                                    </div>
 
-                                </style>
-                                <div class="cont">
-                                <h1>Time</h1>
-                                <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
-                                <div class="timer well"></div>
-                                </div>
                                 
-                                <!-- Tabs -->
-                                <ul id="generator-tabs" class="nav nav-tabs">
-                                    <li>
-                                        <a id="easy" rel="tooltip" title="Easy puzzle" 
-                                                href="#">Easy</a>
-                                    </li>
-                                    <li>
-                                        <a id="medium" rel="tooltip" 
-                                                title="Medium puzzle" href="#">Medium</a>
-                                    </li>
-                                    <li>
-                                        <a id="hard" rel="tooltip" title="Hard puzzle" 
-                                                href="#">Hard</a>
-                                    </li>
-                                    <li>
-                                        <a id="very-hard" rel="tooltip" 
-                                                title="Very hard puzzle" href="#">
-                                            Very hard    
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="insane" rel="tooltip" 
-                                                title="Insane puzzle" href="#">
-                                            Insane
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="inhuman" rel="tooltip" 
-                                                title="Inhuman puzzle" href="#">
-                                            Robots only
-                                        </a>
-                                    </li>
-                                    <li class="pull-right">
-                                        <a id="import" rel="tooltip" title="Your own puzzle" 
-                                                href="#">
-                                            Import...
-                                        </a>
-                                    </li>
-                                </ul>
-                                
-                                <div id="import-controls">
-                                    <p>Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces.</p>
-                                    <input id="import-string" class="input-block-level sudoku-list" 
-                                        placeholder="Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
-                                        maxlength="81"
-                                        type="text"/>
-                                </div>
-                                
-                                <div id="puzzle-controls">
-                                    <a id="clear" class="pull-left btn btn-primary" rel="tooltip"
-                                            title="This puzzle" href="#">
-                                        Clear  
-                                    </a>
-                                    
-                                    <!--<a id="export" class="pull-left btn btn-primary" style="margin-left:10px" rel="tooltip" 
-                                            title="Export the current puzzle" href="#">
-                                        Export  
-                                    </a>-->
-                                    
-                                    <a id="copy" class="pull-left btn btn-primary" style="margin-left:10px" rel="tooltip" 
-                                            title="Copy string" href="#">
-                                        Copy  
-                                    </a>
-                                    
-                                    <a id="refresh" class="pull-right btn" rel="tooltip" 
-                                            title="This puzzle" href="#">
-                                        Refresh  
-                                    </a>
-                                    
-                                    <br/>
-                                    <br/>
-                                    <div style="color: black;">String to import in the Import tab:<br/>
-                                    Cadena para importar en la pestaña Import:</div>
-                                    <input id="export-string" readonly="readonly" style="width: 100%; border:solid; padding-left:1px; padding-right:1px; padding-bottom:5px; padding-top:5px; color: green;" />
-                                    <br/>
-                                    <br/>
-                                </div>
-                                
-                                <!-- Sudoku board -->
-                                <div style="width: 100%; height: 100%; overflow-x: auto; overflow-y: hidden; white-space: nowrap;">
-                                    <table class="table table-striped">
-                                        <tbody id="sudoku-board"></tbody>
-                                    </table>
-                                </div>
-                                
-                                <!-- Message box -->
-                                <div id="message" class="alert alert-error">
-                                    <button type="button" class="close" data-dismiss="alert">
-                                        x
-                                    </button>
-                                    <div id="text"></div>
-                                </div>
-                                
-                                <!-- Solver buttons -->
-                                <div id="solver-controls">
-                                    <!--<button id="solve" class="btn btn-primary" rel="tooltip" 
-                                            title="This puzzle" 
-                                            data-placement="bottom">
-                                        Solve!
-                                    </button>-->
-                                    <button id="get-candidates" class="btn pull-right" rel="tooltip" 
-                                            title="Show all possible values for each empty square" 
-                                            data-placement="bottom">
-                                        Show Candidates
-                                    </button>
-                                </div>
-
                             </div>
                         </div>
                     </div> <!-- /container -->
-                    
                 </body>
             </html>
             </t>
