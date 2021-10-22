@@ -70,6 +70,8 @@
                                         pi_user_code = auth.user.username;
                                         $("#username").html(" " + auth.user.username);
                                         
+                                        $("#leaderboard").attr("href", "/get-points/" + auth.user.username);
+                                        
                                         set_points(0);
                                     }).catch(function(error) {
                                         //Pi.openShareDialog("Error", error);
@@ -118,7 +120,7 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
                         <br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America. 
-                        <a href="/get-points" class="btn btn-success">Leaders Board</a><br/><br/>
+                        <a href="/get-points/" id="leaderboard" class="btn btn-success">Leaders Board</a><br/><br/>
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</button>

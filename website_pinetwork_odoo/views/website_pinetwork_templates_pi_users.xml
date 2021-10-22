@@ -10,6 +10,9 @@
                 </head>
                 <body>
                     <div class="container" style="text-align:center">
+                        <t t-if="pi_user">
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong> has <t t-esc="pi_user.points" /> points<br/>
+                        </t>
                         <strong>Leaders:</strong><br/>
                         <ul class="list-group">
                             <t t-foreach="pi_users_list" t-as="pi_user">
