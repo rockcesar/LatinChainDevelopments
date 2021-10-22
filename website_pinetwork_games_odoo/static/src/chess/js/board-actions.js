@@ -209,14 +209,14 @@ console.log('Checking positions', turn);
   if (game.in_checkmate()) {
     postEndGame();
     $('#game-state').text('Checkmate').removeClass('hidden');
-    
+
     if(turn == "computer")
     {
-        set_points(3);
+        set_points(engineSkill);
     }
   }
 
-  else if (game.in_draw()) {      
+  else if (game.in_draw()) {
     postEndGame();
     $('#game-state').text('The game has ended in a draw.').removeClass('hidden');
     set_points(1);
