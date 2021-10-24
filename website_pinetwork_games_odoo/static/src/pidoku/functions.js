@@ -40,7 +40,7 @@ function get_user() {
                 }
                 else
                 {
-                    $("#pi_donate").show();
+                    $("#pi_donate").hide();
                     $("#button_click").show();
                     $("#sudoku-tab").hide();
                 }
