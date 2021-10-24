@@ -195,7 +195,7 @@ stockfish.onmessage = function(event) {
       checkAnalyzeOption();
 
       if (game.history().length > 0) {
-        $('#btn-take-back').removeClass('disabled');
+        //$('#btn-take-back').removeClass('disabled');
       }
 
       listMoves();
