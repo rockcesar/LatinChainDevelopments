@@ -40,8 +40,6 @@ class PiNetworkBaseController(http.Controller):
     def get_user(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_id', '=', kw['pi_user_id'])])
         
-        _logger.info(str(pi_users_list))
-        
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         
