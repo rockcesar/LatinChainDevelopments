@@ -21,11 +21,41 @@ function set_points(points) {
     }
 }
 
+function get_user() {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+                    'pi_user_id': pi_user_id,
+                    'csrf_token': odoo.csrf_token,
+                };
+        return $.post( "/get-user", data).done(function(data) {
+            data = JSON.parse(data);
+            if(data.result)
+            {
+                if(data.unblocked)
+                {                    
+                    $("#pi_donate").hide();
+                    $("#button_click").hide();
+                }
+                else
+                {
+                    $("#pi_donate").show();
+                    $("#button_click").show();
+                }
+            }
+        }).fail(function() {
+            
+        });
+    }
+}
+
 $( document ).ready(function() {
     const Pi = window.Pi;
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
     async function auth() {
+        $("#pi_donate").hide();
+        $("#button_click").show();
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
@@ -48,6 +78,8 @@ $( document ).ready(function() {
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
+                
+                get_user();
                 
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)

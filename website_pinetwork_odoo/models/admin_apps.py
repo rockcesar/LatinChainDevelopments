@@ -136,6 +136,18 @@ class admin_apps(models.Model):
                                                                 'developer_completed': result_dict["status"]["developer_completed"], 
                                                                 'cancelled': result_dict["status"]["cancelled"], 
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
+                
+                if kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform']:
+                    if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                        users = self.env['pi.users'].search([('pi_user_id', '=', result_dict["user_uid"])])
+                        
+                        if len(users) > 0:
+                            if (users[0].paid + float(result_dict["amount"])) >= 1:
+                                users[0].sudo().write({'unblocked': True})
+                                                    
+                            users[0].sudo().write({'paid': users[0].paid + float(result_dict["amount"])})
+                        
+                
         except Exception:
             result = {"error": "SERVER MESSAGE: " + str(re)}
         
@@ -154,3 +166,5 @@ class pi_users(models.Model):
     pi_user_id = fields.Char('Pi User ID', required=True)
     pi_user_code = fields.Char('Pi User Code', required=True)
     points = fields.Float('Pi User Points', required=True)
+    paid = fields.Float('Paid by user')
+    unblocked = fields.Boolean('Unblocked')

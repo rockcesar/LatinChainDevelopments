@@ -66,7 +66,7 @@
                         <a href="#home" data-toggle="tab">Home</a>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <a href="#sudoku" data-toggle="tab">Sudoku</a>
+                        <a href="#sudoku" id="sudoku-tab" data-toggle="tab">Sudoku</a>
                       </li>
                     </ul>
                     <div id="app-wrap" class="container-narrow hidden">
@@ -77,9 +77,9 @@
                                     <br />
                                     <br />
                                 
-                                    <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" lang="en-US"/>
+                                    <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" lang="en-US" value="1"/>
                                     <br/>
-                                    <input id="button_click" name="button_click" value="Donate Pi" type="button" class="btn btn-success"/>
+                                    <input id="button_click" name="button_click" value="Unblock with 1 Pi" type="button" class="btn btn-success"/>
                                     <br/>
                                     <br/>
                                 </div>
