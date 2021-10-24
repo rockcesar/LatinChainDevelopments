@@ -132,12 +132,12 @@
                                             <div id="board" class="board"></div>
                                             <div id="board-controls" class="controls">
                                                 <div class="buttons">
-                                                    <button id="btn-switch-sides" class="disabled" title="Switch Sides"><i class="icon"></i></button>
+                                                    <button id="btn-switch-sides" class="disabled hidden" title="Switch Sides"><i class="icon"></i></button>
                                                     <button id="btn-flip-board" title="Flip Board"><i class="icon"></i></button>
                                                     <button id="btn-save-pgn" title="Save PNG"><i class="icon"></i></button>
-                                                    <button id="btn-engine-disable" class="disabled" title="Engine Toggle (On/Off)">AI</button>
-                                                    <button id="btn-show-hint" class="disabled" title="Show Hint"><i class="icon"></i></button>
-                                                    <button id="btn-take-back" class="disabled" title="Take Back"><i class="icon"></i></button>
+                                                    <button id="btn-engine-disable" class="disabled hidden" title="Engine Toggle (On/Off)">AI</button>
+                                                    <button id="btn-show-hint" class="disabled hidden" title="Show Hint"><i class="icon"></i></button>
+                                                    <button id="btn-take-back" class="disabled hidden" title="Take Back"><i class="icon"></i></button>
                                                 </div>
                                                 <div class="status">
                                                     <!-- <span id="game-timer" class="hidden">00:00</span> -->
