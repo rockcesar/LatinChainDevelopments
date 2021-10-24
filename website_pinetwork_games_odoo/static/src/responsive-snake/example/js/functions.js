@@ -13,7 +13,7 @@ function set_points(points) {
                 
         return $.post( "/pi-points", data).done(function(data) {
             data = JSON.parse(data);
-            if(data.result)
+            if(data.result && points > 0)
                 alert("You won " + points + " points");
         }).fail(function() {
             
@@ -78,6 +78,8 @@ $( document ).ready(function() {
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
+                
+                set_points(0);
                 
                 get_user();
                 
