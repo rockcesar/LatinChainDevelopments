@@ -32,16 +32,16 @@ function get_user() {
             if(data.result)
             {
                 if(data.unblocked)
-                {                    
+                {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
-                    $("#chess-tab").show();
+                    $('#chess-tab').show();
                 }
                 else
                 {
                     $("#pi_donate").hide();
                     $("#button_click").show();
-                    $("#chess-tab").hide();
+                    $('#chess-tab').hide();
                 }
             }
         }).fail(function() {
@@ -65,7 +65,8 @@ $( document ).ready(function() {
     async function auth() {
         $("#pi_donate").hide();
         $("#button_click").show();
-        $("#chess-tab").hide();
+        $('#chess-tab').hide();
+        
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
@@ -154,6 +155,7 @@ $( document ).ready(function() {
                             };
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
+                                    location.reload();
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
