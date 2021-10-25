@@ -37,12 +37,14 @@ function get_user() {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     $("#sudoku-tab").show();
+                    $("#sudoku-tab").click();
                 }
                 else
                 {
                     $("#pi_donate").hide();
                     $("#button_click").show();
                     $("#sudoku-tab").hide();
+                    $("#home-tab").click();
                 }
             }
         }).fail(function() {
@@ -63,6 +65,8 @@ $( document ).ready(function() {
         $("#pi_donate").hide();
         $("#button_click").show();
         $("#sudoku-tab").hide();
+        $("#home-tab").click();
+        
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];

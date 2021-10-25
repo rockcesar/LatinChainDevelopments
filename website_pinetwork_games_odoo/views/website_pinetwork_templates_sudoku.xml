@@ -63,7 +63,7 @@
                     
                     <ul class="nav nav-tabs" id="myTab" style="background-color: #e3f2fd;">
                       <li class="active" role="presentation">
-                        <a href="#home" data-toggle="tab">Home</a>
+                        <a href="#home" id="home-tab" data-toggle="tab">Home</a>
                       </li>
                       <li class="nav-item" role="presentation">
                         <a href="#sudoku" id="sudoku-tab" data-toggle="tab">Sudoku</a>
