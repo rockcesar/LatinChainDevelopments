@@ -139,7 +139,7 @@ class admin_apps(models.Model):
                 
                 if kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'example_app']:
                     if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                        users = self.env['pi.users'].search([('pi_user_id', '=', result_dict["user_uid"])])
+                        users = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
                         
                         if len(users) > 0:
                             if (users[0].paid + float(result_dict["amount"])) >= 1:
