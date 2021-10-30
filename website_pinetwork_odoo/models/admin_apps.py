@@ -137,7 +137,7 @@ class admin_apps(models.Model):
                                                                 'cancelled': result_dict["status"]["cancelled"], 
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
                 
-                if kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'example_app']:
+                if kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
                     if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                         users = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
                         
