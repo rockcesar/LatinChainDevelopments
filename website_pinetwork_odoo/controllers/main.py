@@ -74,14 +74,14 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_points_user(self, pi_user_code, **kw):
-        pi_users_list = request.env["pi.users"].sudo().search([('unblocked', '=', True)], limit=50, order="points desc")
+        pi_users_list = request.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked desc,id asc")
         
-        pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code), ('unblocked', '=', True)])
+        pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
         return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_list': pi_users_list, 'pi_user': pi_user})
         
     @http.route('/get-points/', type='http', auth="public", website=True)
     def get_points(self, **kw):
-        pi_users_list = request.env["pi.users"].sudo().search([('unblocked', '=', True)], limit=50, order="points desc")
+        pi_users_list = request.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked desc,id asc")
         
         return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_list': pi_users_list})

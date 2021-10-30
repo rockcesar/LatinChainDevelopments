@@ -114,7 +114,7 @@ $( document ).ready(function() {
               // Amount of π to be paid:
               amount: parseFloat($("#pi_donate").val()),
               // An explanation of the payment - will be shown to the user:
-              memo: "Donation to Super Snake", // e.g: "Digital kitten #1234",
+              memo: "Pay to unlock LatinChain Games (Snake)", // e.g: "Digital kitten #1234",
               // An arbitrary developer-provided metadata object - for your own usage:
               metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
             }, {

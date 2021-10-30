@@ -1,0 +1,152 @@
+var pi_user_id = "";
+var pi_user_code = "";
+
+function set_points(points) {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'points': points,
+                    'csrf_token': odoo.csrf_token,
+                };
+                
+        return $.post( "/pi-points", data).done(function(data) {
+            data = JSON.parse(data);
+            if(data.result && points > 0)
+                alert("You won " + points + " points");
+        }).fail(function() {
+            
+        });
+    }
+}
+
+function get_user() {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+                    'pi_user_id': pi_user_id,
+                    'csrf_token': odoo.csrf_token,
+                };
+        return $.post( "/get-user", data).done(function(data) {
+            data = JSON.parse(data);
+            if(data.result)
+            {
+                if(data.unblocked)
+                {                    
+                    alert("Thank you for your donation. User " + pi_user_code + " unblocked.");
+                }
+            }
+        }).fail(function() {
+            
+        });
+    }
+}
+
+$( document ).ready(function() {
+    const Pi = window.Pi;
+    Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+
+    //alert(PiNetworkClient);
+
+    async function auth() {
+        try {
+            // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+            const scopes = ['username', 'payments'];
+            function onIncompletePaymentFound(payment) {
+                
+                var data = {
+                        'action': 'complete',
+                        'paymentId': payment.identifier,
+                        'txid': payment.transaction.txid,
+                        'app_client': 'auth_example',
+                        'csrf_token': odoo.csrf_token,
+                    };
+                return $.post( "/pi-api", data).done(function(data) {
+                    $("#button_click").prop( "disabled", false );
+                }).fail(function() {
+                    $("#button_click").prop( "disabled", false );
+                });
+            }; // Read more about this in the SDK reference
+
+            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+              pi_user_id = auth.user.uid;
+              pi_user_code = auth.user.username;
+              
+              set_points(0);
+            
+              $( "#button_click" ).click(function() {
+                    if(parseFloat($("#pi_donate").val()) > 0)
+                    {
+                        $("#button_click").prop( "disabled", true );
+                        /*setTimeout(function ()
+                        {
+                            $("#button_click").prop( "disabled", false );
+                        }, 10000);*/
+                        transfer();
+                    }
+                    //alert("Click");
+                });
+                //alert('Hello ' + auth.user.username);
+            }).catch(function(error) {
+              console.error(error);
+            });
+        } catch (err) {
+            alert(err);
+            // Not able to fetch the user
+        }
+    }
+
+    async function transfer() {
+        try {
+            const payment = Pi.createPayment({
+              // Amount of π to be paid:
+              amount: parseFloat($("#pi_donate").val()),
+              // An explanation of the payment - will be shown to the user:
+              memo: "Donate to LatinChain Games", // e.g: "Digital kitten #1234",
+              // An arbitrary developer-provided metadata object - for your own usage:
+              metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
+            }, {
+              // Callbacks you need to implement - read more about those in the detailed docs linked below:
+              onReadyForServerApproval: function(paymentId) {
+                  var data = {
+                            'action': 'approve',
+                            'paymentId': paymentId,
+                            'txid': '',
+                            'app_client': 'auth_example',
+                            'csrf_token': odoo.csrf_token,
+                        };
+                  return $.post( "/pi-api", data).done(function(data) {
+                        $("#button_click").prop( "disabled", false );
+                    }).fail(function() {
+                        $("#button_click").prop( "disabled", false );
+                    });
+              },
+              onReadyForServerCompletion: function(paymentId, txid) {
+                    var data = {
+                        'action': 'complete',
+                        'paymentId': paymentId,
+                        "txid": txid,
+                        'app_client': 'auth_example',
+                        'csrf_token': odoo.csrf_token,
+                    };
+                    return $.post( "/pi-api", data).done(function(data) {
+                        $("#button_click").prop( "disabled", false );
+                        get_user();
+                    }).fail(function() {
+                        $("#button_click").prop( "disabled", false );
+                    });
+              },
+              onCancel: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
+              onError: function(error, payment) { $("#button_click").prop( "disabled", false ); /* ... */ },
+            });
+        } catch(err) {
+            $("#button_click").prop( "disabled", false );
+            alert(err);
+            // Technical problem (eg network failure). Please try again
+        }
+    }
+
+    auth();
+
+});
