@@ -2,7 +2,7 @@
 <odoo>
 
         <template id="example" name="PiNetwork View">
-            <t t-call="website.layout">
+            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
