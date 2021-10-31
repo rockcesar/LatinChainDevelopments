@@ -27,6 +27,9 @@
 
                     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     
+                    <script src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+                    <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/modals/colorbox/example1/colorbox.css" />
+                    
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 
                     <script type="text/javascript">
@@ -138,6 +141,10 @@
                                   }
                                 }
                             });
+                            
+                            $( "#vote" ).click(function() {
+                                $.colorbox({href:"/website_pinetwork_games_odoo/static/src/modals/vote_pi.html", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                            });
                         });
 
                     </script>
@@ -145,8 +152,8 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
-                        <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. (Remember <strong>clear the Pi Browser cache</strong> if it is not working well). 
-                        <a href="/get-points/" id="leaderboard" class="btn btn-success">Leaders Board</a><br/><br/>
+                        <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. 
+                        <button id="vote" class="btn btn-info">Pi Hackathon winners</button> <a href="/get-points/" id="leaderboard" class="btn btn-success">Leaders Board</a><br/><br/>
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</button>
@@ -156,6 +163,9 @@
                           </li>
                           <li class="nav-item" role="presentation">
                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Info</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Video</button>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -192,6 +202,10 @@
                             <img src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /><br/><br/>
                             <a href="https://latin-chain.com/weblatin" class="btn btn-link">LATINCHAIN</a><br/><br/>
                             <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a>
+                          </div>
+                          <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+                            <br/>Video presentation:<br/><br/>
+                            <iframe width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allowfullscreen="1"></iframe>
                           </div>
                         </div>
                         <!--<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app.<br/><br/>
