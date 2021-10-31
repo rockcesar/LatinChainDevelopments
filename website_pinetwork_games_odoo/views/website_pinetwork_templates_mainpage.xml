@@ -119,7 +119,7 @@
                             
                             const shareData = {
                                 title: 'LatinChain Platform',
-                                text: 'Hi. Check it out this Pi App: LatinChain Platform (LatinChain Games from Latin America which work with the Pi Network). Try it in Pi Browser. #PiNetwork #PiApps https://latin-chain.com/',
+                                text: 'Hi. Check it out this Pi App: LatinChain Platform (Pi Network Games from Latin America). Try it in Pi Browser. #PiNetwork #PiApps https://latin-chain.com/',
                                 //url: 'https://latin-chain.com/',
                             }
 
