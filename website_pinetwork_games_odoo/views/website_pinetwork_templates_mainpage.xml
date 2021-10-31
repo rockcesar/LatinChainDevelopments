@@ -58,6 +58,7 @@
                             {
                                 var data = {
                                             'pi_user_id': pi_user_id,
+                                            'pi_user_code': pi_user_code,
                                             'csrf_token': odoo.csrf_token,
                                         };
                                 return $.post( "/get-user", data).done(function(data) {
@@ -144,7 +145,7 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
-                        <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. 
+                        <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. (Remember <strong>clear the browser</strong> cache if it is not working well). 
                         <a href="/get-points/" id="leaderboard" class="btn btn-success">Leaders Board</a><br/><br/>
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">

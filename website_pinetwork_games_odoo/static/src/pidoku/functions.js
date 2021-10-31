@@ -26,6 +26,7 @@ function get_user() {
     {
         var data = {
                     'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
                     'csrf_token': odoo.csrf_token,
                 };
         return $.post( "/get-user", data).done(function(data) {

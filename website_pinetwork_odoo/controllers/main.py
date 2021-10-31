@@ -38,7 +38,7 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=True, methods=['POST'])
     def get_user(self, **kw):
-        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_id', '=', kw['pi_user_id'])])
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
@@ -52,7 +52,7 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/pi-points', type='http', auth="public", website=True, csrf=True, methods=['POST'])
     def pi_points(self, **kw):
-        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_id', '=', kw['pi_user_id'])])
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
         if len(pi_users_list) == 0:
             request.env["pi.users"].sudo().create({'name': kw['pi_user_code'],

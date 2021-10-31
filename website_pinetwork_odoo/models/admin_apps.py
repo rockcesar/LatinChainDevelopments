@@ -159,7 +159,7 @@ class pi_users(models.Model):
     
     _sql_constraints = [
         # Partial constraint, complemented by a python constraint (see below).
-        ('pi_user_unique_key', 'unique (pi_user_id)', 'You can not have two users with the same User code!'),
+        ('pi_user_unique_key', 'unique (pi_user_code)', 'You can not have two users with the same User code!'),
     ]
 
     name = fields.Char('Name')
