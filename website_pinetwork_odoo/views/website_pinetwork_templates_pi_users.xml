@@ -17,8 +17,10 @@
                         </t>
                         <strong>Leaders:</strong><br/>
                         <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
                             <t t-foreach="pi_users_list" t-as="pi_user">
-                                <li class="list-group-item"><strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points</li>
+                                <li class="list-group-item"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points</li>
+                                <t t-set="i" t-value="i+1"/>
                             </t>
                         </ul>
                         <br/>
