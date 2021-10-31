@@ -47,7 +47,7 @@
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false">Chess</button>
+                            <button style="display: none;" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false">Chess</button>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
