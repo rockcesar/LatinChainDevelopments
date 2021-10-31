@@ -19,7 +19,7 @@ var
   togglePlayer = false,
   engineDisabled = false,
 
-  engineSkill = 8,       // default engine depth (AI difficulty)
+  engineSkill = 20,       // default engine depth (AI difficulty)
   staticSkill = 16,
 
 
