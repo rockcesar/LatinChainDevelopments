@@ -11,11 +11,11 @@
                             <group col="4">
                                 <group colspan="2" col="2">
                                     <field name="name"/>
-                                    <field name="pi_user_id"/>
-                                    <field name="pi_user_code"/>
-                                    <field name="points"/>
-                                    <field name="paid"/>
-                                    <field name="unblocked"/>
+                                    <field name="pi_user_id" readonly="True"/>
+                                    <field name="pi_user_code" readonly="True"/>
+                                    <field name="points" readonly="True"/>
+                                    <field name="paid" readonly="True"/>
+                                    <field name="unblocked" />
                                 </group>
                             </group>
                         </page>
