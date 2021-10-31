@@ -145,7 +145,7 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
-                        <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. (Remember <strong>clear the browser cache</strong> if it is not working well). 
+                        <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. (Remember <strong>clear the Pi Browser cache</strong> if it is not working well). 
                         <a href="/get-points/" id="leaderboard" class="btn btn-success">Leaders Board</a><br/><br/>
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
