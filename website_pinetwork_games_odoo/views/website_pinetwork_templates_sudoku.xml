@@ -20,8 +20,7 @@
                     <meta name="theme-color" content="#db4938" />
                     
                     <meta name="application-name" content="Pidoku Solver"/>
-                    <link rel="icon" sizes="16x16 32x32 48x48" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png"/>
-                    <link rel="icon" sizes="192x192" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png"/>
+                    <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
 
                     <!-- Styles -->
                     <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/bootstrap.min.css" rel="stylesheet" />

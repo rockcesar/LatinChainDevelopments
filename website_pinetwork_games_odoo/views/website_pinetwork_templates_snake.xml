@@ -19,8 +19,7 @@
                 <meta name="theme-color" content="#db4938" />
                 
                 <meta name="application-name" content="Super Snake"/>
-                <link rel="icon" sizes="16x16 32x32 48x48" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png"/>
-                <link rel="icon" sizes="192x192" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png"/>
+                <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
 
                 <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/responsive-snake/example/assets/css/main.css"/>
 

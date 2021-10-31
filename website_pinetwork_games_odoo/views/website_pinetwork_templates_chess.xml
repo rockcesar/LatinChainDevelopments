@@ -20,7 +20,7 @@
                     <meta property="og:title" content="Play Chess Against the best AI Chess Player (Stockfish)"/>
                     <meta property="og:description" content="Play Chess Against the best AI Chess Player (Stockfish)"/>
 
-                    <link rel="icon" type="image/svg" href="/website_pinetwork_games_odoo/static/src/chess/img/icons/latin-chain-logo.jpeg" />
+                    <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
 
                     <link rel="stylesheet" id="chessboard-css" href="/website_pinetwork_games_odoo/static/src/chess/css/chessboard.css" />
                     <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/chess/css/board.css" />
