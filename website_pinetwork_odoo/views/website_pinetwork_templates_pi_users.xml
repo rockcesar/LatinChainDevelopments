@@ -11,14 +11,15 @@
                 <body>
                     <div class="container" style="text-align:center">
                         <t t-if="pi_user">
-                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong> has <t t-esc="pi_user.points" /> points<br/>
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points<br/>
                         </t>
                         <strong>Leaders:</strong><br/>
                         <ul class="list-group">
                             <t t-foreach="pi_users_list" t-as="pi_user">
-                                <li class="list-group-item"><strong><t t-esc="pi_user.pi_user_code" /></strong> has <t t-esc="pi_user.points" /> points</li>
+                                <li class="list-group-item"><strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points</li>
                             </t>
                         </ul>
+                        <br/>
                     </div>
                 </body>
             </html>
