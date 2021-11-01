@@ -11,6 +11,8 @@ _logger = logging.getLogger(__name__)
 
 from odoo.addons.website.controllers.main import Website
 
+from random import choice
+
 """
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
@@ -43,10 +45,15 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         
+        passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789%^*(-_=+)') for i in range(10)])
+        
+        pi_users_list[0].sudo().write({'passkey': passkey})
+        
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
-                            'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked})
+                            'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked,
+                            'passkey': passkey})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
@@ -68,6 +75,9 @@ class PiNetworkBaseController(http.Controller):
                                                     'unblocked': False
                                                 })
         else:
+            if kw['passkey'] != pi_users_list[0].passkey:
+                return json.dumps({'result': True})
+            
             if pi_users_list[0].unblocked:
                 values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],

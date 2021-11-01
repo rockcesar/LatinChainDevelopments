@@ -1,5 +1,6 @@
 var pi_user_id = "";
 var pi_user_code = "";
+var passkey = "";
 
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
@@ -9,6 +10,7 @@ function set_points(points) {
                     'pi_user_code': pi_user_code,
                     'points': points,
                     'app_client': 'auth_pidoku',
+                    'passkey': passkey,
                     'csrf_token': odoo.csrf_token,
                 };
         return $.post( "/pi-points", data).done(function(data) {
@@ -16,6 +18,7 @@ function set_points(points) {
             if(data.result && points > 0)
                 alert("You won " + points + " points");
             $("#refresh").click();
+            
         }).fail(function() {
             
         });
@@ -34,6 +37,7 @@ function get_user() {
             data = JSON.parse(data);
             if(data.result)
             {
+                passkey=data.passkey;
                 if(data.unblocked)
                 {                    
                     $("#pi_donate").hide();
@@ -92,9 +96,8 @@ $( document ).ready(function() {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
                 
-                set_points(0);
-                
                 get_user();
+                set_points(0);
                 
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)

@@ -165,6 +165,7 @@ class pi_users(models.Model):
     name = fields.Char('Name')
     pi_user_id = fields.Char('Pi User ID', required=True)
     pi_user_code = fields.Char('Pi User Code', required=True)
+    passkey = fields.Char('Pass Key')
     points = fields.Float('Pi User Points', compute="_total_points", store=True)
     points_chess = fields.Float('Chess Points', required=True)
     points_sudoku = fields.Float('Sudoku Points', required=True)

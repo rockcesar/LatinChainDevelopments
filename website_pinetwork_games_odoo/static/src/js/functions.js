@@ -1,5 +1,6 @@
 var pi_user_id = "";
 var pi_user_code = "";
+var passkey = "";
 
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
@@ -8,6 +9,7 @@ function set_points(points) {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
                     'points': points,
+                    'passkey': passkey,
                     'csrf_token': odoo.csrf_token,
                 };
                 
@@ -21,7 +23,7 @@ function set_points(points) {
     }
 }
 
-function get_user() {
+function get_user(donation) {
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -33,9 +35,11 @@ function get_user() {
             data = JSON.parse(data);
             if(data.result)
             {
+                passkey=data.passkey;
                 if(data.unblocked)
-                {                    
-                    alert("Thank you for your donation. User " + pi_user_code + " unblocked.");
+                {
+                    if(donation)
+                        alert("Thank you for your donation. User " + pi_user_code + " unblocked.");
                 }
             }
         }).fail(function() {
@@ -74,6 +78,7 @@ $( document ).ready(function() {
               pi_user_id = auth.user.uid;
               pi_user_code = auth.user.username;
               
+              get_user(false);
               set_points(0);
             
               $( "#button_click" ).click(function() {
@@ -133,7 +138,7 @@ $( document ).ready(function() {
                     };
                     return $.post( "/pi-api", data).done(function(data) {
                         $("#button_click").prop( "disabled", false );
-                        get_user();
+                        get_user(true);
                     }).fail(function() {
                         $("#button_click").prop( "disabled", false );
                     });
