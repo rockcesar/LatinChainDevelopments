@@ -79,9 +79,9 @@ $( document ).ready(function() {
               pi_user_id = auth.user.uid;
               pi_user_code = auth.user.username;
               
-                get_user();
+                get_user(false);
                 set_points(0);
-                get_user();
+                get_user(false);
             
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
