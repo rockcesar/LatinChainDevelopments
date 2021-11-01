@@ -73,12 +73,13 @@ class PiNetworkBaseController(http.Controller):
                                 'pi_user_id': kw['pi_user_id'],
                                 'pi_user_code': kw['pi_user_code'],
                             }
-                if kw['app_client'] == "auth_platform":
-                    values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
-                elif kw['app_client'] == "auth_pidoku":
-                    values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
-                elif kw['app_client'] == "auth_snake":
-                    values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+                if 'app_client' in kw:
+                    if kw['app_client'] == "auth_platform":
+                        values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
+                    elif kw['app_client'] == "auth_pidoku":
+                        values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
+                    elif kw['app_client'] == "auth_snake":
+                        values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
                     
                 pi_users_list[0].sudo().write(values)
         
