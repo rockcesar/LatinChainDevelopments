@@ -157,7 +157,6 @@
                         snakeSize      : 2,
                         bot            : false,
                         explosion      : true,
-                        pause          : true,
                     });
                     ResponsiveSnake.game.pause();
                 });
