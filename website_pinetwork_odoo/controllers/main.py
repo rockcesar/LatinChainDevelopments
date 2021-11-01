@@ -76,6 +76,7 @@ class PiNetworkBaseController(http.Controller):
                                                 })
         else:
             if kw['passkey'] != pi_users_list[0].passkey:
+                _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
                 return json.dumps({'result': True})
             
             if pi_users_list[0].unblocked:

@@ -12,7 +12,7 @@ function set_points(points) {
                     'passkey': passkey,
                     'csrf_token': odoo.csrf_token,
                 };
-                
+        $.ajaxSetup({async: false});
         return $.post( "/pi-points", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result && points > 0)
@@ -31,6 +31,7 @@ function get_user(donation) {
                     'pi_user_code': pi_user_code,
                     'csrf_token': odoo.csrf_token,
                 };
+        $.ajaxSetup({async: false});
         return $.post( "/get-user", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result)
@@ -78,8 +79,9 @@ $( document ).ready(function() {
               pi_user_id = auth.user.uid;
               pi_user_code = auth.user.username;
               
-              get_user(false);
-              set_points(0);
+                get_user();
+                set_points(0);
+                get_user();
             
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
