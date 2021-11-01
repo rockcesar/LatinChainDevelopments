@@ -117,7 +117,7 @@
                     
                     <div class="bottom">
                         <p>
-                            <div class="square" id="reset">Reset</div><div class="square" id="pause">Pause</div>
+                            <div class="square" id="reset">Reset</div><div class="square" id="pause" style="display:none;">Pause</div>
                             <!--<div class="square" id="bot">Bot</div><div class="square" id="minus">-</div>
                             <div class="square" id="plus">+</div>--><div class="square-borderless fps-counter"></div>
                             </p>

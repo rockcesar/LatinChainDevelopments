@@ -22,7 +22,7 @@ function set_points(points) {
     }
 }
 
-function get_user() {
+function get_user(pause) {
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -35,12 +35,17 @@ function get_user() {
             if(data.result)
             {
                 if(data.unblocked)
-                {                    
+                {
+                    $("#pause").show();
                     $("#pi_donate").hide();
                     $("#button_click").hide();
+                    
+                    if(pause)
+                        alert("Now you can give click on pause");
                 }
                 else
                 {
+                    $("#pause").hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
                 }
@@ -56,6 +61,8 @@ $( document ).ready(function() {
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
     async function auth() {
+        $("#pause").hide();
+        $("#pause").click();
         $("#pi_donate").hide();
         $("#button_click").show();
         try {
@@ -83,7 +90,7 @@ $( document ).ready(function() {
                 
                 set_points(0);
                 
-                get_user();
+                get_user(false);
                 
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
@@ -147,7 +154,7 @@ $( document ).ready(function() {
                         
                         return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
-                                    get_user();
+                                    get_user(true);
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
