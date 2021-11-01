@@ -13,7 +13,7 @@
                 <body>
                     <div class="container" style="text-align:center">
                         <t t-if="pi_user">
-                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points<br/>
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/>
                         </t>
                         <strong>Leaders:</strong><br/>
                         <ul class="list-group">
