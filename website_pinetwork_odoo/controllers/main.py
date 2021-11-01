@@ -36,7 +36,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
     
-    @http.route('/get-user', type='http', auth="public", website=True, csrf=True, methods=['POST'])
+    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
@@ -52,7 +52,7 @@ class PiNetworkBaseController(http.Controller):
     def pi_api(self, **kw):
         return request.env["admin.apps"].pi_api(kw)
         
-    @http.route('/pi-points', type='http', auth="public", website=True, csrf=True, methods=['POST'])
+    @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_points(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
