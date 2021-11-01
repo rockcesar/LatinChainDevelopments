@@ -204,8 +204,8 @@ var init_controls = function(){
     $(SOLVER_CONTROLS_SEL + " #solve").click(function(e){
         /* Solve the current puzzle
         */
-        e.preventDefault();
-        solve_puzzle(get_tab());
+        /*e.preventDefault();
+        solve_puzzle(get_tab());*/
     });
     
     $(".square").on("keyup",function(e){
