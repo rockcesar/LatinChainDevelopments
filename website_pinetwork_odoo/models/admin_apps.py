@@ -165,6 +165,14 @@ class pi_users(models.Model):
     name = fields.Char('Name')
     pi_user_id = fields.Char('Pi User ID', required=True)
     pi_user_code = fields.Char('Pi User Code', required=True)
-    points = fields.Float('Pi User Points', required=True)
+    points = fields.Float('Pi User Points', compute="_total_points", store=True)
+    points_chess = fields.Float('Chess Points', required=True)
+    points_sudoku = fields.Float('Sudoku Points', required=True)
+    points_snake = fields.Float('Snake Points', required=True)
     paid = fields.Float('Paid by user')
     unblocked = fields.Boolean('Unblocked')
+    
+    @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
+    def _total_points(self):
+        for i in self:
+            i.points = i.points_chess + i.points_sudoku + i.points_snake

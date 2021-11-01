@@ -14,6 +14,9 @@
                                     <field name="pi_user_id" readonly="True"/>
                                     <field name="pi_user_code" readonly="True"/>
                                     <field name="points" readonly="True"/>
+                                    <field name="points_chess" readonly="True"/>
+                                    <field name="points_sudoku" readonly="True"/>
+                                    <field name="points_snake" readonly="True"/>
                                     <field name="paid" readonly="True"/>
                                     <field name="unblocked" />
                                 </group>
@@ -34,6 +37,9 @@
                 <field name="pi_user_id"/>
                 <field name="pi_user_code"/>
                 <field name="points"/>
+                <field name="points_chess"/>
+                <field name="points_sudoku"/>
+                <field name="points_snake"/>
                 <field name="paid"/>
                 <field name="unblocked"/>
             </tree>

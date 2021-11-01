@@ -8,6 +8,7 @@ function set_points(points) {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
                     'points': points,
+                    'app_client': 'auth_platform',
                     'csrf_token': odoo.csrf_token,
                 };
         return $.post( "/pi-points", data).done(function(data) {

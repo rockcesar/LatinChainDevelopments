@@ -44,7 +44,9 @@ class PiNetworkBaseController(http.Controller):
             return json.dumps({'result': False})
         
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
-                            'points': pi_users_list[0].points, 'unblocked': pi_users_list[0].unblocked})
+                            'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
+                            'points_sudoku': pi_users_list[0].points_sudoku,
+                            'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
@@ -59,16 +61,26 @@ class PiNetworkBaseController(http.Controller):
                                                     'pi_user_id': kw['pi_user_id'],
                                                     'pi_user_code': kw['pi_user_code'],
                                                     'points': 0,
+                                                    'points_chess': 0,
+                                                    'points_sudoku': 0,
+                                                    'points_snake': 0,
                                                     'paid': 0,
                                                     'unblocked': False
                                                 })
         else:
             if pi_users_list[0].unblocked:
-                pi_users_list[0].sudo().write({'name': kw['pi_user_code'],
-                                                        'pi_user_id': kw['pi_user_id'],
-                                                        'pi_user_code': kw['pi_user_code'],
-                                                        'points': pi_users_list[0].points + float(kw['points']),
-                                                    })
+                values = {'name': kw['pi_user_code'],
+                                'pi_user_id': kw['pi_user_id'],
+                                'pi_user_code': kw['pi_user_code'],
+                            }
+                if kw['app_client'] == "auth_platform":
+                    values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
+                elif kw['app_client'] == "auth_pidoku":
+                    values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
+                elif kw['app_client'] == "auth_snake":
+                    values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+                    
+                pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
         
