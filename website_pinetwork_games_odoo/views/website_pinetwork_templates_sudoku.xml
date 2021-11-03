@@ -46,8 +46,6 @@
                     <![endif]-->
 
                     <!-- Fav and touch icons -->
-                    <link rel="shortcut icon" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png" type="image/x-icon"/>
-                    <link rel="apple-touch-icon" href="/website_pinetwork_games_odoo/static/src/pidoku/icon.png"/>
                     <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
                     <link rel="canonical" href="https://cr-innova.negocio.site/"/>
                 </head>

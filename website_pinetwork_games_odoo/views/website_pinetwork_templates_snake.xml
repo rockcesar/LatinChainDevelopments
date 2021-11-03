@@ -34,8 +34,6 @@
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                 <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js"></script>
                 
-                <link rel="shortcut icon" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png" type="image/x-icon"/>
-                <link rel="apple-touch-icon" href="/website_pinetwork_games_odoo/static/src/responsive-snake/icon.png"/>
                 <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
                 <link rel="canonical" href="https://cr-innova.negocio.site/"/>
             </head>
