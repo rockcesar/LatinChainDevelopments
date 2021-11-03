@@ -38,6 +38,18 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
     
+    @http.route('/get-external-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    def get_external_user(self, **kw):
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        
+        return json.dumps({'result': True, 'pi_user_code': pi_users_list[0].pi_user_code,
+                            'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
+                            'points_sudoku': pi_users_list[0].points_sudoku,
+                            'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked})
+    
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])

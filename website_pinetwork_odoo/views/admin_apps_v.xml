@@ -52,7 +52,7 @@
     <menuitem
         id="menu_config_admin_pi_apps"
         name="Config Admin Pi Apps"
-        groups="website_pinetwork_odoo.group_pi_admin,base.group_system"
+        groups="website_pinetwork_odoo.group_pi_admin,,website_pinetwork_odoo.group_pi_external_user,base.group_system"
         sequence="75"/>
             
     <menuitem

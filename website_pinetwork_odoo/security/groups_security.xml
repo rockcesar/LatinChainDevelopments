@@ -5,5 +5,9 @@
         <record id="group_pi_admin" model="res.groups">
             <field name="name">Pi Admin Group</field>
         </record>
+        
+        <record id="group_pi_external_user" model="res.groups">
+            <field name="name">Pi External User Group</field>
+        </record>
     </data>
 </odoo>
