@@ -2,7 +2,7 @@
 <odoo>
 
         <template id="debranding" inherit_id="web.layout">
-            <xpath expr="//title" position="replace">LatinChain</xpath>
+            <xpath expr="//title" position="replace"><title>LatinChain Platform</title></xpath>
             
             <xpath expr="//link[@rel='shortcut icon']" position="replace">
                 <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
