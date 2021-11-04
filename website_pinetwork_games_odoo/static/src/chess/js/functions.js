@@ -149,6 +149,7 @@ $( document ).ready(function() {
                                 "txid": '',
                                 'app_client': 'auth_platform',
                                 'csrf_token': odoo.csrf_token,
+                                'pi_user_code': pi_user_code,
                             };
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );

@@ -17,6 +17,7 @@
                                     <field name="payment_id" readonly="True"/>
                                     <field name="txid" readonly="True"/>
                                     <field name="pi_user_id" readonly="True"/>
+                                    <field name="pi_user" readonly="True"/>
                                     <field name="amount" readonly="True"/>
                                     <field name="memo" readonly="True"/>
                                     <field name="to_address" readonly="True"/>
@@ -47,6 +48,7 @@
                 <field name="action"/>
                 <field name="payment_id"/>
                 <field name="txid"/>
+                <field name="pi_user"/>
             </tree>
         </field>
     </record>

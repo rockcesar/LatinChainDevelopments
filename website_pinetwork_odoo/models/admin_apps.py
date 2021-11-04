@@ -15,12 +15,13 @@ class pi_transactions(models.Model):
     _description = "Pi Transactions"
 
     name = fields.Char('Name')
-    app_id = fields.Many2one('admin.apps', required=True)
+    app_id = fields.Many2one('admin.apps', required=True, ondelete='restrict')
     app = fields.Char(related="app_id.app")
     action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True)
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
     pi_user_id = fields.Char('Pi User ID')
+    pi_user = fields.Many2one('pi.users', ondelete='restrict')
     amount = fields.Float('Amount')
     memo = fields.Char('Memo')
     to_address = fields.Char('To address')
@@ -103,12 +104,14 @@ class admin_apps(models.Model):
             result_dict = json.loads(str(json.dumps(result)))
             
             if kw['action'] == "approve":
+                pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
                 self.env["pi.transactions"].sudo().create({'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
                                                                 'app_id': admin_app_list[0].id,
                                                                 'action': kw['action'],
                                                                 'payment_id': kw['paymentId'],
                                                                 'json_result': str(result_dict),
                                                                 'pi_user_id': result_dict["user_uid"],
+                                                                'pi_user': pi_user[0].id,
                                                                 'amount': result_dict["amount"],
                                                                 'memo': result_dict["memo"],
                                                                 'to_address': result_dict["to_address"],
@@ -136,10 +139,11 @@ class admin_apps(models.Model):
                                                                 'developer_completed': result_dict["status"]["developer_completed"], 
                                                                 'cancelled': result_dict["status"]["cancelled"], 
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
+                transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
                 
-                if kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
+                if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
                     if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                        users = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
+                        users = transaction[0].pi_user
                         
                         if len(users) > 0:
                             if (users[0].paid + float(result_dict["amount"])) >= 1:
@@ -171,9 +175,24 @@ class pi_users(models.Model):
     points_sudoku = fields.Float('Sudoku Points', required=True)
     points_snake = fields.Float('Snake Points', required=True)
     paid = fields.Float('Paid by user')
-    unblocked = fields.Boolean('Unblocked')
+    paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True)
+    pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user')
+    unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
         for i in self:
             i.points = i.points_chess + i.points_sudoku + i.points_snake
+    
+    @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
+    def _total_paid_transactions(self):
+        for i in self:
+            total = 0
+            for j in i.pi_transactions_ids:
+                if j.action == "complete":
+                    total += j.amount
+            
+            i.paid_in_transactions = total
+            
+            if i.paid_in_transactions > 0:
+                i.unblocked = True
