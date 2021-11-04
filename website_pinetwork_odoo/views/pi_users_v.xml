@@ -18,7 +18,8 @@
                                     <field name="points_sudoku" readonly="True"/>
                                     <field name="points_snake" readonly="True"/>
                                     <field name="paid" readonly="True"/>
-                                    <field name="unblocked" />
+                                    <field name="paid_in_transactions" readonly="True"/>
+                                    <field name="unblocked" readonly="False"/>
                                 </group>
                             </group>
                         </page>
@@ -41,6 +42,7 @@
                 <field name="points_sudoku"/>
                 <field name="points_snake"/>
                 <field name="paid"/>
+                <field name="paid_in_transactions"/>
                 <field name="unblocked"/>
             </tree>
         </field>
