@@ -69,6 +69,7 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
+        _logger.info("0")
         return request.env["admin.apps"].pi_api(kw)
         
     @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
