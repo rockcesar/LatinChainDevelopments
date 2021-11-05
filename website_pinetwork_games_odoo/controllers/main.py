@@ -69,3 +69,8 @@ class PiNetworkController(http.Controller):
             sandbox = admin_app_list[0].sandbox
         
         return http.request.render('website_pinetwork_games_odoo.chess', {'sandbox': sandbox})
+
+    @http.route('/modal', type='http', auth="public", website=True, csrf=False)
+    def chess(self, **kw):
+        
+        return http.request.render('website_pinetwork_games_odoo.modal')
