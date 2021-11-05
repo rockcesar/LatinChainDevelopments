@@ -43,6 +43,10 @@ class pi_transactions(models.Model):
                 
                 result_dict = json.loads(str(json.dumps(result)))
                 
+                _logger.info(str(re) + " HERE 2")
+                
+                _logger.info(str(result_dict) + " HERE 3")
+                
                 if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
                     pit.write({'action': 'cancelled'})
                 elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
@@ -64,7 +68,7 @@ class pi_transactions(models.Model):
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                                                         
             except Exception:
-                _logger.info(str(re))
+                _logger.info(str(re) + " HERE")
 
 class admin_apps(models.Model):
     _name = "admin.apps"
