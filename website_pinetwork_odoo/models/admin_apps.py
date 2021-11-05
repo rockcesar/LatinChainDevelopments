@@ -83,14 +83,20 @@ class admin_apps(models.Model):
     
     def pi_api(self, kw):
         
+        _logger.info("1")
+        
         if kw['action'] == "approve":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/approve'
             obj = {}
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             obj = {'txid': kw['txid']}
+        
+        _logger.info("2")
             
         admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
+        
+        _logger.info("3")
         
         if len(admin_app_list) == 0:
             result = {"error": "SERVER MESSAGE: There is not API Key Stored in DB"}
