@@ -40,9 +40,11 @@ class pi_transactions(models.Model):
             
             result = re.json()
             
+            result_dict = json.loads(str(json.dumps(result)))
+            
             try:
                 
-                result_dict = json.loads(str(json.dumps(result)))
+                
                 
                 _logger.info(str(re) + " HERE 2")
                 
