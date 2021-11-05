@@ -38,8 +38,9 @@ class pi_transactions(models.Model):
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
             
+            result = re.json()
+            
             try:
-                result = re.json()
                 
                 result_dict = json.loads(str(json.dumps(result)))
                 
@@ -67,8 +68,8 @@ class pi_transactions(models.Model):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                                                         
-            except Exception:
-                _logger.info(str(re) + " HERE")
+            except Exception e:
+                _logger.info(str(e) + " HERE")
 
 class admin_apps(models.Model):
     _name = "admin.apps"
