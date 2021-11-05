@@ -95,6 +95,8 @@ class admin_apps(models.Model):
         if len(admin_app_list) == 0:
             result = {"error": "SERVER MESSAGE: There is not API Key Stored in DB"}
             return json.dumps(result)
+            
+        _logger.info(kw)
         
         re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
@@ -102,6 +104,8 @@ class admin_apps(models.Model):
             result = re.json()
             
             result_dict = json.loads(str(json.dumps(result)))
+            
+            _logger.info(result_dict)
             
             if kw['action'] == "approve":
                 pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
