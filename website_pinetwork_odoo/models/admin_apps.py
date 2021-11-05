@@ -38,33 +38,33 @@ class pi_transactions(models.Model):
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
             
-            try:
-                result = re.json()
+            #try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
+                pit.write({'action': 'cancelled'})
+            elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
+                pit.write({'action': 'approve'})
+            if result_dict['status']['developer_completed'] and pit.action!="complete":
+                pit.write({'action': 'complete'})
                 
-                result_dict = json.loads(str(json.dumps(result)))
-                
-                if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
-                    pit.write({'action': 'cancelled'})
-                elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
-                    pit.write({'action': 'approve'})
-                if result_dict['status']['developer_completed'] and pit.action!="complete":
-                    pit.write({'action': 'complete'})
-                    
-                pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
-                        'transaction_verified': result_dict["status"]["transaction_verified"], 
-                        'developer_completed': result_dict["status"]["developer_completed"], 
-                        'cancelled': result_dict["status"]["cancelled"], 
-                        'user_cancelled': result_dict["status"]["user_cancelled"],
-                        'json_result': str(result_dict)})
-                
-                if pit.action == "approve" and result_dict["status"]["developer_approved"] and \
-                    not result_dict["status"]["developer_completed"] and \
-                    not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
-                    self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
-                                                        'app_client': pit.app, 'paymentId': pit.payment_id})
+            pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
+                    'transaction_verified': result_dict["status"]["transaction_verified"], 
+                    'developer_completed': result_dict["status"]["developer_completed"], 
+                    'cancelled': result_dict["status"]["cancelled"], 
+                    'user_cancelled': result_dict["status"]["user_cancelled"],
+                    'json_result': str(result_dict)})
+            
+            if pit.action == "approve" and result_dict["status"]["developer_approved"] and \
+                not result_dict["status"]["developer_completed"] and \
+                not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
+                self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
+                                                    'app_client': pit.app, 'paymentId': pit.payment_id})
                                                         
-            except Exception:
-                _logger.info(str(re))
+            #except Exception:
+            #    _logger.info(str(re))
 
 class admin_apps(models.Model):
     _name = "admin.apps"
