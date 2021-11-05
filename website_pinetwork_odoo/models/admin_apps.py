@@ -38,17 +38,10 @@ class pi_transactions(models.Model):
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
             
-            result = re.json()
-            
-            result_dict = json.loads(str(json.dumps(result)))
-            
             try:
-                
-                
-                
-                _logger.info(str(re) + " HERE 2")
-                
-                _logger.info(str(result_dict) + " HERE 3")
+                result = re.json()
+            
+                result_dict = json.loads(str(json.dumps(result)))
                 
                 if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
                     pit.write({'action': 'cancelled'})
@@ -71,7 +64,7 @@ class pi_transactions(models.Model):
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                                                         
             except Exception as e:
-                _logger.info(str(e) + " HERE")
+                _logger.info(str(result_dict) + " HERE")
 
 class admin_apps(models.Model):
     _name = "admin.apps"
