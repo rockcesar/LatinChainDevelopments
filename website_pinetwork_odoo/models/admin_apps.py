@@ -33,7 +33,8 @@ class pi_transactions(models.Model):
     json_result = fields.Text('JSON Result', required=True)
     
     def check_transactions(self):
-        for pit in self:
+        records = self.search([('action', '=', 'approve')])
+        for pit in records:
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
