@@ -68,8 +68,8 @@ class pi_transactions(models.Model):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                                                         
-            except Exception e:
-                _logger.info(str(e) + " HERE")
+            except Exception:
+                _logger.info(str(re) + " HERE")
 
 class admin_apps(models.Model):
     _name = "admin.apps"
