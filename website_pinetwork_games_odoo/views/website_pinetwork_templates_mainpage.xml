@@ -149,7 +149,7 @@
                             });
                             
                             $( "#vote" ).click(function() {
-                                $.colorbox({href:"/modal", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                                $.colorbox({href:"/modal-vote", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
                             });
                         });
 
