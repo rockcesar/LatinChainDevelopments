@@ -40,7 +40,7 @@ class pi_transactions(models.Model):
             
             try:
                 result = re.json()
-            
+                
                 result_dict = json.loads(str(json.dumps(result)))
                 
                 if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
@@ -58,13 +58,13 @@ class pi_transactions(models.Model):
                         'json_result': str(result_dict)})
                 
                 if pit.action == "approve" and result_dict["status"]["developer_approved"] and \
-                    not result_dict["status"]["developer_completed"] and \
+                    result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                                                         
-            except Exception as e:
-                _logger.info(str(result_dict) + " HERE")
+            except Exception:
+                _logger.info(str(re))
 
 class admin_apps(models.Model):
     _name = "admin.apps"
