@@ -13,7 +13,7 @@
                                     <field name="name"/>
                                     <field name="app_id" readonly="True"/>
                                     <field name="app"/>
-                                    <field name="action" readonly="False"/>
+                                    <field name="action" readonly="True"/>
                                     <field name="payment_id" readonly="True"/>
                                     <field name="txid" readonly="True"/>
                                     <field name="pi_user_id" readonly="True"/>
