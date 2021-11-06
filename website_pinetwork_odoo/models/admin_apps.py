@@ -47,8 +47,16 @@ class pi_transactions(models.Model):
                     pit.write({'action': 'cancelled'})
                 elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
                     pit.write({'action': 'approve'})
-                if result_dict['status']['developer_completed'] and pit.action!="complete":
-                    pit.write({'action': 'complete'})
+                _logger.info(pit.action)
+                if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete":
+                    pit.write({'name': "complete. PaymentId: " + pit.payment_id,
+                                'action': 'complete',
+                                'payment_id': pit.payment_id,
+                                'txid': result_dict["transaction"]["txid"],
+                                'pi_user_id': result_dict["user_uid"],
+                                'amount': result_dict["amount"],
+                                'memo': result_dict["memo"],
+                                'to_address': result_dict["to_address"]})
                     
                 pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
                         'transaction_verified': result_dict["status"]["transaction_verified"], 
