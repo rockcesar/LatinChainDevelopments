@@ -2,7 +2,7 @@
   "name": "Pidoku Solver",
   "short_name": "Pidoku",
   "description": "César - OpenSource Expert. OpenSource Consultant.",
-  "start_url": "https://sudoku.latin-chain.com/index.html",
+  "start_url": "https://sudoku.latin-chain.com/",
   "display": "standalone",
   "orientation": "portrait",
   "display": "fullscreen",
