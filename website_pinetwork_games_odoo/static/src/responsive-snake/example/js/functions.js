@@ -84,14 +84,6 @@ $( document ).ready(function() {
                 
                 return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
-                                    try {
-                                        data = JSON.parse(data);
-                                        if(data.result && data.completed)
-                                        {
-                                            alert("A payment was registered. Reload the page to view the changes.");
-                                        }
-                                    } catch (e) {
-                                    }
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });

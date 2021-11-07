@@ -100,7 +100,7 @@ class admin_apps(models.Model):
         admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
         
         if len(admin_app_list) == 0:
-            result = {"result": False, "error": "SERVER MESSAGE: There is not API Key Stored in DB"}
+            result = {"error": "SERVER MESSAGE: There is not API Key Stored in DB"}
             return json.dumps(result)
         
         re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
@@ -129,8 +129,6 @@ class admin_apps(models.Model):
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
                 self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                             ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions()
-                                                            
-                result = {"result": True, "approved": True}
             elif kw['action'] == "complete":
                 self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(
                                                                 {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
@@ -159,11 +157,10 @@ class admin_apps(models.Model):
                                 users[0].sudo().write({'unblocked': True})
                                                     
                             users[0].sudo().write({'paid': users[0].paid + float(result_dict["amount"])})
-                            
-                        result = {"result": True, "completed": True}
+                        
                 
         except Exception:
-            result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
+            result = {"error": "SERVER MESSAGE: " + str(re)}
         
         return json.dumps(result)
 
