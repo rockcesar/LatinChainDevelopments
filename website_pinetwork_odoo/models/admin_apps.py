@@ -150,6 +150,7 @@ class admin_apps(models.Model):
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
                 transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
                 
+                result = {"result": True, "completed": False}
                 if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
                     if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                         users = transaction[0].pi_user
@@ -161,6 +162,8 @@ class admin_apps(models.Model):
                             users[0].sudo().write({'paid': users[0].paid + float(result_dict["amount"])})
                             
                         result = {"result": True, "completed": True}
+            else:
+                result = {"result": True, "completed": False, "approved": False}
                 
         except Exception:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
