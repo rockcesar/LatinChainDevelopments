@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="rules" name="Rules View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Rules to win a price in Mainnet.</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Vote for Pi Network Games from Latin America in Pi Brainstorm."/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center">
+                            <h1>Rules to win a price in Mainnet:</h1>
+                            <h3>1.- Be verified in LatinChain Platform.</h3>
+                            <h3>2.- Have 20 or more points in Chess, more than 18 points in Sudoku and more than 20 points in Snake, <strong>and</strong> have more than 200 in total points.</h3>
+                        </div>
+
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>

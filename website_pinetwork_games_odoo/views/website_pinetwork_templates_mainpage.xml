@@ -151,6 +151,10 @@
                             $( "#vote" ).click(function() {
                                 $.colorbox({href:"/modal-vote", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
                             });
+                            
+                            $( "#rules_button" ).click(function() {
+                                $.colorbox({href:"/modal-rules", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                            });
                         });
 
                     </script>
@@ -159,7 +163,7 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
                         <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase. Clear Pi Browser cache if it is not working).<br/>
-                        <button id="vote" class="btn btn-info">Pi Hackathon winners</button> <a href="/get-points/" id="leaderboard" class="btn btn-success">Leaders Board</a><br/><br/>
+                        <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</button>
@@ -172,6 +176,9 @@
                           </li>
                           <li class="nav-item" role="presentation">
                             <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Video</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false">Leaders</button>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -212,6 +219,10 @@
                           <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
                             <br/>Video presentation:<br/><br/>
                             <iframe width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allowfullscreen="1"></iframe>
+                          </div>
+                          <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
+                            <br/>Leaders and rules:<br/><br/>
+                            <button id="rules_button" class="btn btn-info">Rules</button><br/><br/><a href="/get-points/" id="leaderboard" class="btn btn-success">Leaders Board</a>
                           </div>
                         </div>
                         <!--<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app.<br/><br/>

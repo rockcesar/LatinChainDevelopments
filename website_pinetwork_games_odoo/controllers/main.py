@@ -74,3 +74,8 @@ class PiNetworkController(http.Controller):
     def modal_vote(self, **kw):
         
         return http.request.render('website_pinetwork_games_odoo.modal')
+        
+    @http.route('/modal-rules', type='http', auth="public", website=True, csrf=False)
+    def modal_rules(self, **kw):
+        
+        return http.request.render('website_pinetwork_games_odoo.rules')
