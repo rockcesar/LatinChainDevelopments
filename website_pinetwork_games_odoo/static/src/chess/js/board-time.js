@@ -43,16 +43,16 @@ function startTimer(game) {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
         $('.timer_black').countimer('stop');
-        $('#btn-switch-sides').addClass('disabled');
+        $('#btn-switch-sides').addClass('locked');
     }else if(game.turn() == "b")
     {
     	$('.timer_white').countimer('stop');
     	$('.timer_black').countimer('resume');
-        $('#btn-switch-sides').addClass('disabled');
+        $('#btn-switch-sides').addClass('locked');
     }else if(game.turn() == "w"){
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('resume');
-        $('#btn-switch-sides').addClass('disabled');
+        $('#btn-switch-sides').addClass('locked');
     }
 
     if(game == undefined || game == "stop-both")
@@ -60,15 +60,15 @@ function startTimer(game) {
     }else if (game.in_checkmate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
-        $('#btn-switch-sides').removeClass('disabled');
+        $('#btn-switch-sides').removeClass('locked');
     }else if (game.in_draw()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
-        $('#btn-switch-sides').removeClass('disabled');
+        $('#btn-switch-sides').removeClass('locked');
     }else if (game.in_stalemate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
-        $('#btn-switch-sides').removeClass('disabled');
+        $('#btn-switch-sides').removeClass('locked');
     }
 }
 
@@ -82,30 +82,30 @@ function stopTimer(game) {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
         $('.timer_black').countimer('stop');
-        $('#btn-switch-sides').addClass('disabled');
+        $('#btn-switch-sides').addClass('locked');
     }else if(game.turn() == "b")
     {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('resume');
-        $('#btn-switch-sides').addClass('disabled');
+        $('#btn-switch-sides').addClass('locked');
     }else if(game.turn() == "w"){
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('resume');
-        $('#btn-switch-sides').addClass('disabled');
+        $('#btn-switch-sides').addClass('locked');
     }
 
     if(game == undefined || game == "stop-both")
     {}else if (game.in_checkmate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
-        $('#btn-switch-sides').removeClass('disabled');
+        $('#btn-switch-sides').removeClass('locked');
     }else if (game.in_draw()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
-        $('#btn-switch-sides').removeClass('disabled');
+        $('#btn-switch-sides').removeClass('locked');
     }else if (game.in_stalemate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
-        $('#btn-switch-sides').removeClass('disabled');
+        $('#btn-switch-sides').removeClass('locked');
     }
 }
