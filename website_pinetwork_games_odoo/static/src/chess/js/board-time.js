@@ -43,16 +43,16 @@ function startTimer(game) {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
         $('.timer_black').countimer('stop');
-        $('#btn-switch-sides').hasClass('disabled');
+        $('#btn-switch-sides').addClass('disabled');
     }else if(game.turn() == "b")
     {
     	$('.timer_white').countimer('stop');
     	$('.timer_black').countimer('resume');
-        $('#btn-switch-sides').hasClass('disabled');
+        $('#btn-switch-sides').addClass('disabled');
     }else if(game.turn() == "w"){
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('resume');
-        $('#btn-switch-sides').hasClass('disabled');
+        $('#btn-switch-sides').addClass('disabled');
     }
 
     if(game == undefined || game == "stop-both")
@@ -82,16 +82,16 @@ function stopTimer(game) {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
         $('.timer_black').countimer('stop');
-        $('#btn-switch-sides').hasClass('disabled');
+        $('#btn-switch-sides').addClass('disabled');
     }else if(game.turn() == "b")
     {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('resume');
-        $('#btn-switch-sides').hasClass('disabled');
+        $('#btn-switch-sides').addClass('disabled');
     }else if(game.turn() == "w"){
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('resume');
-        $('#btn-switch-sides').hasClass('disabled');
+        $('#btn-switch-sides').addClass('disabled');
     }
 
     if(game == undefined || game == "stop-both")
