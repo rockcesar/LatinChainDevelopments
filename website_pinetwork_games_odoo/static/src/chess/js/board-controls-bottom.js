@@ -13,7 +13,7 @@ $('#btn-flip-board').on('click', function () {
 // Switch sides
 
 $('#btn-switch-sides').on('click', function () {
-  /*if (typeof board.flip == 'function') {
+  if (typeof board.flip == 'function') {
     board.flip();
   } else {
     board.setOrientation('flip');
@@ -29,7 +29,7 @@ $('#btn-switch-sides').on('click', function () {
     opponentSide = 'b';
   }
 
-  opponentTurn();*/
+  opponentTurn();
 
 });
 
