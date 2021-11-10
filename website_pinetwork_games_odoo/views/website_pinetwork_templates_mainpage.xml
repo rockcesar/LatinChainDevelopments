@@ -177,11 +177,11 @@
                               <li>
                                 <a class="dropdown-item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Dev</a>
                               </li>
-                              <li><hr class="dropdown-divider"></li>
+                              <li><hr class="dropdown-divider"/></li>
                               <li>
                                 <a class="dropdown-item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Info</a>
                               </li>
-                              <li><hr class="dropdown-divider"></li>
+                              <li><hr class="dropdown-divider"/></li>
                               <li>
                                 <a class="dropdown-item" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Video</a>
                               </li>
