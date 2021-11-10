@@ -43,8 +43,8 @@ function startTimer(game) {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
         $('.timer_black').countimer('stop');
-        if(!$('#btn-switch-sides').hasClass('hidden'))
-            $('#btn-switch-sides').addClass('hidden');
+        if($('#btn-switch-sides').hasClass('hidden'))
+            $('#btn-switch-sides').removeClass('hidden');
     }else if(game.turn() == "b")
     {
     	$('.timer_white').countimer('stop');
@@ -88,8 +88,8 @@ function stopTimer(game) {
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
         $('.timer_black').countimer('stop');
-        if(!$('#btn-switch-sides').hasClass('hidden'))
-            $('#btn-switch-sides').addClass('hidden');
+        if($('#btn-switch-sides').hasClass('hidden'))
+            $('#btn-switch-sides').removeClass('hidden');
     }else if(game.turn() == "b")
     {
         $('.timer_white').countimer('stop');
@@ -104,7 +104,8 @@ function stopTimer(game) {
     }
 
     if(game == undefined || game == "stop-both")
-    {}else if (game.in_checkmate()) {
+    {
+    }else if (game.in_checkmate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
         if($('#btn-switch-sides').hasClass('hidden'))
