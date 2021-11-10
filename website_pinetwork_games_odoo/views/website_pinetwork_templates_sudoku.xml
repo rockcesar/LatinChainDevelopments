@@ -58,7 +58,7 @@
                         </p>
                     </div>
                     
-                    <ul class="nav nav-tabs" id="myTab" style="background-color: #e3f2fd;">
+                    <ul class="nav nav-pills" id="myTab" style="background-color: #e3f2fd;">
                       <li class="active" role="presentation">
                         <a href="#home" id="home-tab" data-toggle="tab">Home</a>
                       </li>
