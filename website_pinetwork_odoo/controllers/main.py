@@ -67,7 +67,7 @@ class PiNetworkBaseController(http.Controller):
                             'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked,
                             'passkey': passkey})
         
-    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    @http.route('/pi-api', type='http', auth="public", website=True, csrf=True, methods=['POST'])
     def pi_api(self, **kw):
         return request.env["admin.apps"].pi_api(kw)
         
