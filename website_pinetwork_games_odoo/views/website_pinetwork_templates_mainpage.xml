@@ -164,7 +164,7 @@
                     <div class="container" style="text-align:center">
                         <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase. Clear Pi Browser cache if it is not working).<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>
-                        <ul class="nav nav-tabs flex-column flex-md-row" id="myTab" role="tablist" style="background-color: #e3f2fd;">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</button>
                           </li>
