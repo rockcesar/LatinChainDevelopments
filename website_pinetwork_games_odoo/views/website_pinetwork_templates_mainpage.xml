@@ -168,6 +168,9 @@
                           <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</a>
                           </li>
+                          <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false">Leaders</a>
+                          </li>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
                             <ul class="dropdown-menu">
@@ -179,9 +182,6 @@
                               </li>
                               <li>
                                 <a class="dropdown-item" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Video</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false">Leaders</a>
                               </li>
                             </ul>
                           </li>
