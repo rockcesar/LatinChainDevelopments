@@ -14,7 +14,7 @@ from odoo.addons.website.controllers.main import Website
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
     def index(self, **kw):
-        super(Website, self).index(**kw)
+        #super(Website, self).index(**kw)
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
