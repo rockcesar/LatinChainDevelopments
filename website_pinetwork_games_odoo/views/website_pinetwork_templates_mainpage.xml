@@ -222,8 +222,8 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-3"><a href="/pinetwork" class="btn btn-primary">APP EXAMPLE</a></div>
-                                    <div class="col-9"><a href="https://twitter.com/rockcesar85/status/1458541836906254342?s=20" target="_blank" class="btn btn-info">Any error?, click here</a></div>
+                                    <div class="col-4"><a href="/pinetwork" class="btn btn-primary">APP EXAMPLE</a></div>
+                                    <div class="col-8"><a href="https://twitter.com/rockcesar85/status/1458541836906254342?s=20" target="_blank" class="btn btn-info">Any error?, click here</a></div>
                                 </div>
                             </div>
                           </div>
