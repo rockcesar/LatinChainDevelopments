@@ -10,7 +10,7 @@ function set_points(points) {
                     'pi_user_code': pi_user_code,
                     'points': points,
                     'passkey': passkey,
-                    'csrf_token': odoo.csrf_token,
+                    'csrf_token': $("#csrf_token").val(),
                 };
         $.ajaxSetup({async: false});
         return $.post( "/pi-points", data).done(function(data) {
@@ -29,7 +29,7 @@ function get_user(donation) {
         var data = {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
-                    'csrf_token': odoo.csrf_token,
+                    'csrf_token': $("#csrf_token").val(),
                 };
         $.ajaxSetup({async: false});
         return $.post( "/get-user", data).done(function(data) {
@@ -66,7 +66,7 @@ $( document ).ready(function() {
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
                         'app_client': 'auth_example',
-                        'csrf_token': odoo.csrf_token,
+                        'csrf_token': $("#csrf_token").val(),
                     };
                 return $.post( "/pi-api", data).done(function(data) {
                     $("#button_click").prop( "disabled", false );
@@ -130,7 +130,7 @@ $( document ).ready(function() {
                             'paymentId': paymentId,
                             'txid': '',
                             'app_client': 'auth_example',
-                            'csrf_token': odoo.csrf_token,
+                            'csrf_token': $("#csrf_token").val(),
                             'pi_user_code': pi_user_code,
                         };
                   return $.post( "/pi-api", data).done(function(data) {
@@ -145,7 +145,7 @@ $( document ).ready(function() {
                         'paymentId': paymentId,
                         "txid": txid,
                         'app_client': 'auth_example',
-                        'csrf_token': odoo.csrf_token,
+                        'csrf_token': $("#csrf_token").val(),
                     };
                     return $.post( "/pi-api", data).done(function(data) {
                         $("#button_click").prop( "disabled", false );

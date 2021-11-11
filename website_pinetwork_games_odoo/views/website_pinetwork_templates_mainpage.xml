@@ -45,7 +45,7 @@
                                             'pi_user_code': pi_user_code,
                                             'points': points,
                                             'passkey': passkey,
-                                            'csrf_token': odoo.csrf_token,
+                                            'csrf_token': $("#csrf_token").val(),
                                         };
                                 $.ajaxSetup({async: false});
                                 return $.post( "/pi-points", data).done(function(data) {
@@ -65,7 +65,7 @@
                                 var data = {
                                             'pi_user_id': pi_user_id,
                                             'pi_user_code': pi_user_code,
-                                            'csrf_token': odoo.csrf_token,
+                                            'csrf_token': $("#csrf_token").val(),
                                         };
                                 $.ajaxSetup({async: false});
                                 return $.post( "/get-user", data).done(function(data) {
@@ -161,6 +161,7 @@
                 </head>
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="csrf_token" name="csrf_token" t-att-value="request.csrf_token()"/>
                     <div class="container" style="text-align:center">
                         <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase. Clear Pi Browser cache if it is not working).<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>

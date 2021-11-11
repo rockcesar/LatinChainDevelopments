@@ -40,7 +40,7 @@
 
             <body>
                 <input type="hidden" id="sandbox" t-att-value="sandbox"/>
-                
+                <input type="hidden" id="csrf_token" name="csrf_token" t-att-value="request.csrf_token()"/>
                 <style>
                 .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
                 .square-borderless {color: black; font-weight: bold; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center;}
