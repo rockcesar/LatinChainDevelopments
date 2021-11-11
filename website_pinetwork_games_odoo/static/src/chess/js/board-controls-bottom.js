@@ -13,11 +13,11 @@ $('#btn-flip-board').on('click', function () {
 // Switch sides
 
 $('#btn-switch-sides').on('click', function () {
-  if (typeof board.flip == 'function') {
+  /*if (typeof board.flip == 'function') {
     board.flip();
   } else {
     board.setOrientation('flip');
-  }
+  }*/
 
   if (playerSide == 'w') {
     playerSide = 'b';
