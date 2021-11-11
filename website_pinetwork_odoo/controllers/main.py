@@ -84,7 +84,8 @@ class PiNetworkBaseController(http.Controller):
                                                     'points_sudoku': 0,
                                                     'points_snake': 0,
                                                     'paid': 0,
-                                                    'unblocked': False
+                                                    'unblocked': False,
+                                                    'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
                                                 })
         else:
             if 'passkey' not in kw:
@@ -99,6 +100,7 @@ class PiNetworkBaseController(http.Controller):
                 values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],
                                 'pi_user_code': kw['pi_user_code'],
+                                'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
                             }
                 if 'app_client' in kw:
                     if kw['app_client'] == "auth_platform":

@@ -20,6 +20,7 @@
                                     <field name="paid" readonly="True"/>
                                     <field name="paid_in_transactions" readonly="True"/>
                                     <field name="unblocked" readonly="False"/>
+                                    <field name="user_agent" readonly="True"/>
                                 </group>
                             </group>
                         </page>

@@ -191,6 +191,7 @@ class pi_users(models.Model):
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True)
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user')
     unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
+    user_agent = fields.Char('User agent')
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
