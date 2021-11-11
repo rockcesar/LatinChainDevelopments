@@ -41,7 +41,6 @@
 
                 <body bgcolor="#ffffff">
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
-                    <input type="hidden" id="csrf_token" name="csrf_token" t-att-value="request.csrf_token()"/>
                     <div class="content">
                         <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
