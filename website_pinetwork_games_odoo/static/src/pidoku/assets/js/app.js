@@ -257,8 +257,8 @@ var init_controls = function(){
     $(SOLVER_CONTROLS_SEL + " #get-candidates").click(function(e){
         /* Get candidates for the current puzzle
         */
-        e.preventDefault();
-        get_candidates(get_tab());
+        /*e.preventDefault();
+        get_candidates(get_tab());*/
     });
 };
 
