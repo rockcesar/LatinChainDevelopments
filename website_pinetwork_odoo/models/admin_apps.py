@@ -192,7 +192,7 @@ class pi_users(models.Model):
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user')
     unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
     user_agent = fields.Char('User agent')
-    last_connection = fields.Date(string='Last connection', default="")
+    last_connection = fields.Datetime(string='Last connection', default="")
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
