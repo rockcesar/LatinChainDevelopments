@@ -104,7 +104,7 @@
                                         $("#username").html(" " + auth.user.username);
                                         
                                         $("#leaderboard").attr("href", "/get-points/" + auth.user.username);
-                                        $("#winnerboard").attr("href", "/get-points/" + auth.user.username);
+                                        $("#winnerboard").attr("href", "/get-winners/" + auth.user.username);
                                         
                                         get_user();
                                         set_points(0);
