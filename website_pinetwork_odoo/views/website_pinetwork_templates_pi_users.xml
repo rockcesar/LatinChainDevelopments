@@ -43,14 +43,14 @@
                     
                     <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
                     
-                    <title>LatinChain Leaders Board</title>
+                    <title>LatinChain Winners Board</title>
                 </head>
                 <body>
                     <div class="container" style="text-align:center">
-                        <t t-if="pi_users_count >= 0">
+                        <!--<t t-if="pi_users_count >= 0">
                             Total winners: <strong><t t-esc="pi_users_count" /></strong><br/>
-                        </t>
-                        <strong>Winners:</strong><br/>
+                        </t>-->
+                        <strong>Top 10 winners:</strong><br/>
                         <ul class="list-group">
                             <t t-set="i" t-value="1"/>
                             <t t-foreach="pi_users_list" t-as="pi_user">
