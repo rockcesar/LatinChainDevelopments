@@ -214,11 +214,11 @@
                                                 data-placement="bottom">
                                             Solve!
                                         </button>-->
-                                        <button id="get-candidates" class="btn pull-right" rel="tooltip" 
+                                        <!--<button id="get-candidates" class="btn pull-right" rel="tooltip" 
                                                 title="Show all possible values for each empty square" 
                                                 data-placement="bottom">
                                             Show Candidates
-                                        </button>
+                                        </button>-->
                                     </div>
 
                                 
