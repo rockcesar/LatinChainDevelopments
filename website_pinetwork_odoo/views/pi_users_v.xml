@@ -21,6 +21,7 @@
                                     <field name="paid_in_transactions" readonly="True"/>
                                     <field name="unblocked" readonly="False"/>
                                     <field name="user_agent" readonly="True"/>
+                                    <field name="last_connection" readonly="True"/>
                                 </group>
                             </group>
                         </page>
@@ -45,6 +46,7 @@
                 <field name="paid"/>
                 <field name="paid_in_transactions"/>
                 <field name="unblocked"/>
+                <field name="last_connection"/>
             </tree>
         </field>
     </record>

@@ -13,6 +13,8 @@ from odoo.addons.website.controllers.main import Website
 
 from random import choice
 
+from datetime import datetime
+
 """
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
@@ -86,6 +88,7 @@ class PiNetworkBaseController(http.Controller):
                                                     'paid': 0,
                                                     'unblocked': False,
                                                     'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
+                                                    'last_connection': datetime.today(),
                                                 })
         else:
             if 'passkey' not in kw:
@@ -101,6 +104,7 @@ class PiNetworkBaseController(http.Controller):
                                 'pi_user_id': kw['pi_user_id'],
                                 'pi_user_code': kw['pi_user_code'],
                                 'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
+                                'last_connection': datetime.today(),
                             }
                 if 'app_client' in kw:
                     if kw['app_client'] == "auth_platform":
