@@ -36,6 +36,24 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js"></script>
+                    
+                    <script type="text/javascript">
+                        $( document ).ready(function() {
+                            $( "#clear_cache" ).click(function() {
+                                try {
+                                    Cache.delete();
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                                try {
+                                    window.location.reload(true);
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            });
+                        });
+
+                    </script>
 
                 </head>
 
@@ -64,6 +82,7 @@
                                             <div class="col-3">
                                             </div>
                                             <div class="col-6">
+                                                <button style="text-align:center" id="clear_cache" class="btn btn-info">Clear Cache</button><br/><br/>
                                                 <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US" value="1"/>
                                                 <br/>
                                                 <input id="button_click" name="button_click" value="Unblock with 1 Pi" type="button" class="btn btn-success"/>

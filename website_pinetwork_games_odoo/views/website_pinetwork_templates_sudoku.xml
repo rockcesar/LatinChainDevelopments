@@ -48,6 +48,24 @@
                     <!-- Fav and touch icons -->
                     <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
                     <link rel="canonical" href="https://cr-innova.negocio.site/"/>
+                    
+                    <script type="text/javascript">
+                        $( document ).ready(function() {
+                            $( "#clear_cache" ).click(function() {
+                                try {
+                                    Cache.delete();
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                                try {
+                                    window.location.reload(true);
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            });
+                        });
+
+                    </script>
                 </head>
 
                 <body style="padding:0px">
@@ -71,6 +89,9 @@
                           <div class="tab-pane active" id="home">
                                 <div style="text-align:center">
                                     <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
+                                    <br />
+                                    <br />
+                                    <button id="clear_cache" class="btn btn-info">Clear Cache</button>
                                     <br />
                                     <br />
                                 
