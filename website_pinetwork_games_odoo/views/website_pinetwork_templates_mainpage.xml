@@ -251,7 +251,7 @@
                           </div>
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                             <br/>Leaders and rules:<br/><br/>
-                            <button id="rules_button" class="btn btn-info">Rules</button><br/><br/>
+                            <button id="rules_button" class="btn btn-warning">Rules</button><br/><br/>
                             <a href="/get-points/" id="leaderboard" class="btn btn-info">Leaders Board</a><br/><br/>
                             <a href="/get-winners/" id="winnerboard" class="btn btn-success">Winners Board</a>
                           </div>
