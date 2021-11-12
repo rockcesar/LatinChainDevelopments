@@ -64,7 +64,8 @@ class pi_transactions(models.Model):
                         'user_cancelled': result_dict["status"]["user_cancelled"],
                         'json_result': str(result_dict)})
                 
-                if pit.action == "approve" and \
+                if pit.action == "approve" and result_dict["status"]["developer_approved"] and \
+                    result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
