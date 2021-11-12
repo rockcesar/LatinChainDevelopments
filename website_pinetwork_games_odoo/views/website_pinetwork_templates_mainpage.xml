@@ -156,6 +156,11 @@
                             $( "#rules_button" ).click(function() {
                                 $.colorbox({href:"/modal-rules", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
                             });
+                            
+                            $( "#clear_cache" ).click(function() {
+                                window.applicationCache.swapCache();
+                                window.location.reload();
+                            });
                         });
 
                     </script>
@@ -224,7 +229,7 @@
                                 <br/>
                                 <div class="row">
                                     <div class="col-4"><a href="/pinetwork" class="btn btn-primary">APP EXAMPLE</a></div>
-                                    <div class="col-8"><a href="https://twitter.com/rockcesar85/status/1458541836906254342?s=20" target="_blank" class="btn btn-info">Any error?, click here</a></div>
+                                    <div class="col-8"><button id="clear_cache" class="btn btn-info">Clear Cache</button><br/><br/></div>
                                 </div>
                             </div>
                           </div>
