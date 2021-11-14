@@ -99,13 +99,14 @@ class PiNetworkBaseController(http.Controller):
                 _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
                 return json.dumps({'result': False})
             
-            if pi_users_list[0].unblocked:
-                values = {'name': kw['pi_user_code'],
+            values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],
                                 'pi_user_code': kw['pi_user_code'],
                                 'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
                                 'last_connection': datetime.now(),
                             }
+            
+            if pi_users_list[0].unblocked:
                 if 'app_client' in kw:
                     if kw['app_client'] == "auth_platform":
                         values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
@@ -114,7 +115,7 @@ class PiNetworkBaseController(http.Controller):
                     elif kw['app_client'] == "auth_snake":
                         values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
                     
-                pi_users_list[0].sudo().write(values)
+            pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
         
