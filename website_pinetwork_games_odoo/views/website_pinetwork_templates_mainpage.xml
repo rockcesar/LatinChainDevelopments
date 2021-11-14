@@ -158,7 +158,7 @@
                             });
                             
                             $( "#clear_cache" ).click(function() {
-                                var result = confirm("Are you sure you want to Clear Cache?, it will reload the page.");
+                                var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
                                 {
                                     try {
