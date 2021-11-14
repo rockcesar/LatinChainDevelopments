@@ -158,15 +158,19 @@
                             });
                             
                             $( "#clear_cache" ).click(function() {
-                                try {
-                                    Cache.delete();
-                                } catch (err) {
-                                    console.error(err);
-                                }
-                                try {
-                                    window.location.reload(true);
-                                } catch (err) {
-                                    console.error(err);
+                                var result = confirm("Are you sure you want to Clear Cache?, it will reload the page.");
+                                if(result)
+                                {
+                                    try {
+                                        Cache.delete();
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                    try {
+                                        window.location.reload(true);
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
                                 }
                             });
                         });
@@ -237,8 +241,9 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-4"><a href="/pinetwork" class="btn btn-primary">APP EXAMPLE</a></div>
-                                    <div class="col-8"><button id="clear_cache" class="btn btn-info">Clear Cache</button></div>
+                                    <div class="col"><a href="/pinetwork" class="btn btn-primary">APP EXAMPLE</a></div>
+                                    <div class="col"></div>
+                                    <div class="col"></div>
                                 </div>
                             </div>
                           </div>
@@ -296,7 +301,7 @@
                         <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a><br/><br/>-->
                         <br/><br/>
                         <div id="social_div">Share in Social Networks:<br/><br/>
-                        <button id="button1" class="btn btn-primary">Share</button><br/><br/>
+                        <button id="button1" class="btn btn-primary">Share</button> <button id="clear_cache" class="btn btn-info">Clear Cache</button><br/><br/>
                         </div>
                     </div>
                 </body>
