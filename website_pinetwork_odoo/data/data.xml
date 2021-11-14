@@ -18,7 +18,7 @@
            <field name="numbercall">-1</field>
            <field ref="model_pi_transactions" name="model_id" />
             <field name="state">code</field>
-           <field name="code">model.search([('action', '=', 'approve')]).check_transactions()</field>
+           <field name="code">model.search([('action', 'in', ['approve', 'cancelled'])]).check_transactions()</field>
            <field eval="False" name="doall"/>
         </record>
     </data>
