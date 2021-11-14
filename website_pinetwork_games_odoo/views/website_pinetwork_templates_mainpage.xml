@@ -176,6 +176,7 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
+                        <span t-if="winners"><strong>We have found the winners, check in Winners Board.</strong></span>
                         <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase. Clear Pi Browser cache if it is not working).<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>
                         <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;">
