@@ -99,12 +99,6 @@ class PiNetworkBaseController(http.Controller):
                 _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
                 return json.dumps({'result': False})
             
-            if float(kw['points']) > 0:
-                pi_users_winnners_count = request.env["pi.users"].sudo().search_count([('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)])
-                
-                if pi_users_winnners_count >= 10:
-                    return json.dumps({'result': False})
-            
             values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],
                                 'pi_user_code': kw['pi_user_code'],
@@ -113,6 +107,12 @@ class PiNetworkBaseController(http.Controller):
                             }
             
             if pi_users_list[0].unblocked:
+                if float(kw['points']) > 0:
+                    pi_users_winnners_count = request.env["pi.users"].sudo().search_count([('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)])
+                    
+                    if pi_users_winnners_count >= 10:
+                        return json.dumps({'result': False})
+                
                 if 'app_client' in kw:
                     if kw['app_client'] == "auth_platform":
                         values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
