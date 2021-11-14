@@ -78,6 +78,9 @@ class pi_transactions(models.Model):
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).days >= 7:
                     pit.unlink()
+                elif pit.action == "cancelled" and (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
+                    (datetime.now() - pit.create_date).days >= 7:
+                    pit.unlink()
                     
             except Exception:
                 _logger.info(str(re))
