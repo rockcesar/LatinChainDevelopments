@@ -120,6 +120,8 @@ class PiNetworkBaseController(http.Controller):
                         values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
                     elif kw['app_client'] == "auth_snake":
                         values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+            elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
+                return json.dumps({'result': False})
                     
             pi_users_list[0].sudo().write(values)
         
