@@ -99,10 +99,11 @@ class PiNetworkBaseController(http.Controller):
                 _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
                 return json.dumps({'result': False})
             
-            pi_users_winnners_count = request.env["pi.users"].sudo().search_count([('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)])
-            
-            if pi_users_winnners_count >= 10:
-                return json.dumps({'result': False})
+            if float(kw['points']) > 0:
+                pi_users_winnners_count = request.env["pi.users"].sudo().search_count([('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)])
+                
+                if pi_users_winnners_count >= 10:
+                    return json.dumps({'result': False})
             
             values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],
