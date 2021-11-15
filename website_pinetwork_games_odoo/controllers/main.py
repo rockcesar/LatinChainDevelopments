@@ -22,15 +22,8 @@ class Website(Website):
             sandbox = False
         else:
             sandbox = admin_app_list[0].sandbox
-            
-        pi_users_winnners_count = request.env["pi.users"].sudo().search_count([('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)])
         
-        winners = False
-        
-        if pi_users_winnners_count >= 10:
-            winners = True
-        
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox, 'winners': winners})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox})
 
 class PiNetworkController(http.Controller):
     @http.route('/pinetwork', type='http', auth="public", website=True)
