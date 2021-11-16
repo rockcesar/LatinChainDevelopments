@@ -89,13 +89,14 @@
                         }
 
                         $( document ).ready(function() {
-                            $("#loading").show();
-                            $(document).ajaxStart(function() {        
-                                $("#loading").show();
-                            });
-                            
-                            $(document).ajaxStop(function() {        
-                                $("#loading").hide();
+                            jQuery(function() {
+                                $(document).ajaxStart(function() {        
+                                    $("#loading").show();
+                                });
+                                
+                                $(document).ajaxStop(function() {        
+                                    $("#loading").hide();
+                                });
                             });
                         
                             $("#verified").hide();
