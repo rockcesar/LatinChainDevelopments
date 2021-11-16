@@ -69,7 +69,6 @@ $( document ).ready(function() {
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
                         'app_client': 'auth_example',
-                        'accessToken': accessToken,
                         'csrf_token': odoo.csrf_token,
                     };
                 return $.post( "/pi-api", data).done(function(data) {
@@ -136,7 +135,6 @@ $( document ).ready(function() {
                             'txid': '',
                             'app_client': 'auth_example',
                             'csrf_token': odoo.csrf_token,
-                            'accessToken': accessToken,
                             'pi_user_code': pi_user_code,
                         };
                   return $.post( "/pi-api", data).done(function(data) {
@@ -151,7 +149,6 @@ $( document ).ready(function() {
                         'paymentId': paymentId,
                         "txid": txid,
                         'app_client': 'auth_example',
-                        'accessToken': accessToken,
                         'csrf_token': odoo.csrf_token,
                     };
                     return $.post( "/pi-api", data).done(function(data) {
