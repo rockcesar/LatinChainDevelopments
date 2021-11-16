@@ -113,7 +113,7 @@ $( document ).ready(function() {
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
                 
-                get_user();
+                //get_user();
                 set_points(0);
                 get_user();
                 

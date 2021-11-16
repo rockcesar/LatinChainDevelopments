@@ -110,7 +110,7 @@
                                         $("#leaderboard").attr("href", "/get-points/" + auth.user.username);
                                         $("#winnerboard").attr("href", "/get-winners/" + auth.user.username);
                                         
-                                        get_user();
+                                        //get_user();
                                         set_points(0);
                                         get_user();
                                     }).catch(function(error) {
