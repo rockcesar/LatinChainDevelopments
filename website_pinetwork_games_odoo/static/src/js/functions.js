@@ -13,7 +13,7 @@ function set_points(points) {
                     'csrf_token': odoo.csrf_token,
                 };
         $.ajaxSetup({async: false});
-        return $.get( "/pi-points", data).done(function(data) {
+        return $.post( "/pi-points", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result && points > 0)
                 alert("You won " + points + " points");
@@ -32,7 +32,7 @@ function get_user(donation) {
                     'csrf_token': odoo.csrf_token,
                 };
         $.ajaxSetup({async: false});
-        return $.get( "/get-user", data).done(function(data) {
+        return $.post( "/get-user", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result)
             {
@@ -68,7 +68,7 @@ $( document ).ready(function() {
                         'app_client': 'auth_example',
                         'csrf_token': odoo.csrf_token,
                     };
-                return $.get( "/pi-api", data).done(function(data) {
+                return $.post( "/pi-api", data).done(function(data) {
                     $("#button_click").prop( "disabled", false );
                     try {
                         data = JSON.parse(data);
@@ -133,7 +133,7 @@ $( document ).ready(function() {
                             'csrf_token': odoo.csrf_token,
                             'pi_user_code': pi_user_code,
                         };
-                  return $.get( "/pi-api", data).done(function(data) {
+                  return $.post( "/pi-api", data).done(function(data) {
                         $("#button_click").prop( "disabled", false );
                     }).fail(function() {
                         $("#button_click").prop( "disabled", false );
@@ -147,7 +147,7 @@ $( document ).ready(function() {
                         'app_client': 'auth_example',
                         'csrf_token': odoo.csrf_token,
                     };
-                    return $.get( "/pi-api", data).done(function(data) {
+                    return $.post( "/pi-api", data).done(function(data) {
                         $("#button_click").prop( "disabled", false );
                         get_user(true);
                     }).fail(function() {

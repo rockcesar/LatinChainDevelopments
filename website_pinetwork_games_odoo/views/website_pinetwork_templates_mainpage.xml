@@ -48,7 +48,7 @@
                                             'csrf_token': odoo.csrf_token,
                                         };
                                 $.ajaxSetup({async: false});
-                                return $.get( "/pi-points", data).done(function(data) {
+                                return $.post( "/pi-points", data).done(function(data) {
                                     data = JSON.parse(data);
                                     //if(data.result)
                                     //    alert("You won " + points + " points");
@@ -68,7 +68,7 @@
                                             'csrf_token': odoo.csrf_token,
                                         };
                                 $.ajaxSetup({async: false});
-                                return $.get( "/get-user", data).done(function(data) {
+                                return $.post( "/get-user", data).done(function(data) {
                                     data = JSON.parse(data);
                                     if(data.result)
                                     {
