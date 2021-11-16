@@ -65,7 +65,20 @@ class PiNetworkBaseController(http.Controller):
     def get_user(self, **kw):
         request.session.logout(keep_db=True)
         
-        re = requests.post('https://api.minepi.com/me',data={},json={},headers={'Authorization': "Bearer " + kw['pi_user_id']})
+        
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            password = ''
+            common_user = ''
+            admin_key = ''
+        else:
+            password = admin_app_list[0].password_common_user
+            common_user = admin_app_list[0].common_user
+            admin_key = admin_app_list[0].admin_key
+            
+        re = requests.post('https://api.minepi.com/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
         try:
             result = re.json()
@@ -77,15 +90,6 @@ class PiNetworkBaseController(http.Controller):
             _logger.info(str(re))
             
             #return json.dumps({'result': False})
-        
-        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
-        
-        if len(admin_app_list) == 0:
-            password = ''
-            common_user = ''
-        else:
-            password = admin_app_list[0].password_common_user
-            common_user = admin_app_list[0].common_user
         
         uid = request.session.authenticate(request.session.db, common_user, password)
         

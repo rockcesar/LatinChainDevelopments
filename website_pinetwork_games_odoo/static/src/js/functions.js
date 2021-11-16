@@ -1,5 +1,6 @@
 var pi_user_id = "";
 var pi_user_code = "";
+var accessToken = "";
 var passkey = "";
 
 function set_points(points) {
@@ -10,6 +11,7 @@ function set_points(points) {
                     'pi_user_code': pi_user_code,
                     'points': points,
                     'passkey': passkey,
+                    'accessToken': accessToken,
                     'csrf_token': odoo.csrf_token,
                 };
         $.ajaxSetup({async: false});
@@ -29,6 +31,7 @@ function get_user(donation) {
         var data = {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
+                    'accessToken': accessToken,
                     'csrf_token': odoo.csrf_token,
                 };
         $.ajaxSetup({async: false});
@@ -86,6 +89,7 @@ $( document ).ready(function() {
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
               pi_user_id = auth.user.uid;
               pi_user_code = auth.user.username;
+              accessToken = auth.accessToken;
               
                 get_user(false);
                 set_points(0);
