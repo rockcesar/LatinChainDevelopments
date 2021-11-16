@@ -85,6 +85,11 @@ class PiNetworkBaseController(http.Controller):
             
             result_dict = json.loads(str(json.dumps(result)))
             
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_id']):
+                _logger.info("return False")
+            else:
+                _logger.info("return True")
+            
             _logger.info(str(result_dict))
         except Exception:
             _logger.info(str(re))
