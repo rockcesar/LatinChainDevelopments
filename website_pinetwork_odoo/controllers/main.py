@@ -67,6 +67,8 @@ class PiNetworkBaseController(http.Controller):
             
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
+        _logger.info(kw['accessToken'])
+        
         try:
             result = re.json()
             
