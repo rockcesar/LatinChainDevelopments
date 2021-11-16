@@ -78,7 +78,7 @@ class PiNetworkBaseController(http.Controller):
             common_user = admin_app_list[0].common_user
             admin_key = admin_app_list[0].admin_key
             
-        re = requests.post('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
         try:
             result = re.json()
