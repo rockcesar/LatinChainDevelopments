@@ -61,7 +61,7 @@ class PiNetworkBaseController(http.Controller):
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked})
     
-    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST', 'GET'])
+    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
@@ -89,11 +89,11 @@ class PiNetworkBaseController(http.Controller):
                             'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked,
                             'passkey': passkey})
         
-    @http.route('/pi-api', type='http', auth="user", website=True, csrf=False, methods=['POST', 'GET'])
+    @http.route('/pi-api', type='http', auth="user", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
         return request.env["admin.apps"].pi_api(kw)
         
-    @http.route('/pi-points', type='http', auth="user", website=True, csrf=False, methods=['POST', 'GET'])
+    @http.route('/pi-points', type='http', auth="user", website=True, csrf=False, methods=['POST'])
     def pi_points(self, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
