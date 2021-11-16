@@ -311,7 +311,7 @@
                         <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a><br/><br/>-->
                         <br/><br/>
                         <div id="social_div">Share in Social Networks:<br/><br/>
-                        <button id="button1" class="btn btn-primary">Share</button> <span id="loading">Loading...</span><br/><br/>
+                        <button id="button1" class="btn btn-primary">Share</button> <span id="loading" style="display: none;">Loading...</span><br/><br/>
                         </div>
                     </div>
                 </body>
