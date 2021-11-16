@@ -27,7 +27,6 @@ class Website(Website):
 
 winner_domain = [('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
 
-
 class CustomerPortalInherit(CustomerPortal):
     @http.route('/my/security', type='http', auth='user', website=True, methods=['GET', 'POST'])
     def security(self, **post):
@@ -112,13 +111,13 @@ class PiNetworkBaseController(http.Controller):
                                                     'last_connection': datetime.now(),
                                                 })
         else:
-            if 'passkey' not in kw:
-                _logger.info("PASSKEY NOT PRESENT")
-                return json.dumps({'result': False})
+            #if 'passkey' not in kw:
+            #    _logger.info("PASSKEY NOT PRESENT")
+            #    return json.dumps({'result': False})
                 
-            if kw['passkey'] != pi_users_list[0].passkey:
-                _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
-                return json.dumps({'result': False})
+            #if kw['passkey'] != pi_users_list[0].passkey:
+            #    _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
+            #    return json.dumps({'result': False})
             
             values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],
