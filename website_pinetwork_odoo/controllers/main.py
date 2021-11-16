@@ -58,7 +58,6 @@ class PiNetworkBaseController(http.Controller):
     def get_user(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
-        
         if len(admin_app_list) == 0:
             password = ''
             common_user = ''
@@ -66,6 +65,7 @@ class PiNetworkBaseController(http.Controller):
             password = admin_app_list[0].password_common_user
             common_user = admin_app_list[0].common_user
         
+        request.session.logout(keep_db=True)
         uid = request.session.authenticate(request.session.db, common_user, password)
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
