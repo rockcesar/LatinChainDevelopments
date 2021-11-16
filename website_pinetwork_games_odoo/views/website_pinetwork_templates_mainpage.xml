@@ -89,6 +89,7 @@
                         }
 
                         $( document ).ready(function() {
+                            $("#loading").show();
                             $(document).ajaxStart(function() {        
                                 $("#loading").show();
                             });
