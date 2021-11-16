@@ -65,7 +65,7 @@ class PiNetworkBaseController(http.Controller):
     def get_user(self, **kw):
         request.session.logout(keep_db=True)
         
-        re = requests.post('/me',data=obj,json=obj,headers={'Authorization': "Bearer " + kw['pi_user_id']})
+        re = requests.post('/me',data={},json={},headers={'Authorization': "Bearer " + kw['pi_user_id']})
         
         try:
             result = re.json()
