@@ -89,6 +89,14 @@
                         }
 
                         $( document ).ready(function() {
+                            $(document).ajaxStart(function() {        
+                                $("#loading").show();
+                            });
+                            
+                            $(document).ajaxStop(function() {        
+                                $("#loading").hide();
+                            });
+                        
                             $("#verified").hide();
                             const Pi = window.Pi;
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -178,13 +186,6 @@
                                 }
                             });
                             
-                            $(document).ajaxStart(function() {        
-                                $("#loading").show();
-                            });
-                            
-                            $(document).ajaxStop(function() {        
-                                $("#loading").hide();
-                            });
                         });
 
                     </script>
