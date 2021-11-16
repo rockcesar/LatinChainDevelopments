@@ -99,7 +99,7 @@ class PiNetworkBaseController(http.Controller):
             
             result_dict = json.loads(str(json.dumps(result)))
             
-            if not (result_dict['username'] == kw['pi_user_code']):
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 return json.dumps({'result': False})
         except Exception:
             return json.dumps({'result': False})
