@@ -64,19 +64,6 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
         request.session.logout(keep_db=True)
-        
-        
-        
-        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
-        
-        if len(admin_app_list) == 0:
-            password = ''
-            common_user = ''
-            admin_key = ''
-        else:
-            password = admin_app_list[0].password_common_user
-            common_user = admin_app_list[0].common_user
-            admin_key = admin_app_list[0].admin_key
             
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
@@ -86,15 +73,18 @@ class PiNetworkBaseController(http.Controller):
             result_dict = json.loads(str(json.dumps(result)))
             
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
-                _logger.info("return False")
-            else:
-                _logger.info("return True")
-            
-            _logger.info(str(result_dict))
+                return json.dumps({'result': False})
         except Exception:
-            _logger.info(str(re))
+            return json.dumps({'result': False})
             
-            #return json.dumps({'result': False})
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            password = ''
+            common_user = ''
+        else:
+            password = admin_app_list[0].password_common_user
+            common_user = admin_app_list[0].common_user
         
         uid = request.session.authenticate(request.session.db, common_user, password)
         
@@ -119,6 +109,18 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/pi-points', type='http', auth="user", website=True, csrf=False, methods=['POST'])
     def pi_points(self, **kw):
+        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                return json.dumps({'result': False})
+        except Exception:
+            return json.dumps({'result': False})
+        
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
         if len(pi_users_list) == 0:
