@@ -63,6 +63,21 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
+        request.session.logout(keep_db=True)
+        
+        re = requests.post('/me',data=obj,json=obj,headers={'Authorization': "Bearer " + kw['pi_user_id']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            _logger.info(str(result_dict))
+        except Exception:
+            _logger.info(str(re))
+            
+            #return json.dumps({'result': False})
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
