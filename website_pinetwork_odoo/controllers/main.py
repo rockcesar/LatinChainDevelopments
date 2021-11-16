@@ -11,6 +11,8 @@ _logger = logging.getLogger(__name__)
 
 from odoo.addons.website.controllers.main import Website
 
+from odoo.addons.portal.controllers.portal import CustomerPortal
+
 from random import choice
 
 from datetime import datetime
@@ -24,6 +26,12 @@ class Website(Website):
 """
 
 winner_domain = [('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
+
+
+class CustomerPortalInherit(CustomerPortal):
+    @http.route('/my/security', type='http', auth='user', website=True, methods=['GET', 'POST'])
+    def security(self, **post):
+        return request.redirect('/')
 
 class PiNetworkBaseController(http.Controller):
     @http.route('/mainpage', type='http', auth="public", website=True)
