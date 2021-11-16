@@ -105,6 +105,18 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/pi-api', type='http', auth="user", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
+        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                return json.dumps({"result": True, "completed": False, "approved": False})
+        except Exception:
+            return json.dumps({"result": False, "error": "SERVER MESSAGE: " + str(re)})
+        
         return request.env["admin.apps"].pi_api(kw)
         
     @http.route('/pi-points', type='http', auth="user", website=True, csrf=False, methods=['POST'])
