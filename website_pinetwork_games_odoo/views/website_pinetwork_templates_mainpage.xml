@@ -89,7 +89,9 @@
                         }
 
                         $( document ).ready(function() {
-                            $(document).ajaxSend(function(ev, jqhr, settings) { $("#loading").show(); })
+                            $(document).ajaxSend(function(ev, jqhr, settings) { 
+                                $("#loading").show(); 
+                            });
                             
                             $(document).ajaxStop(function() {
                                 $("#loading").hide();
