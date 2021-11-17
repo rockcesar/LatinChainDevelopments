@@ -89,10 +89,7 @@
                         }
 
                         $( document ).ready(function() {
-                            $(document).ajaxSend(function(ev, jqhr, settings) { 
-                                $("#loading").show(); 
-                            });
-                            
+                        
                             $(document).ajaxStop(function() {
                                 $("#loading").hide();
                             });
@@ -108,6 +105,8 @@
                                     function onIncompletePaymentFound(payment) {
                                         
                                     }; // Read more about this in the SDK reference
+                                    
+                                    $("#loading").show();
 
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         pi_user_id = auth.user.uid;
