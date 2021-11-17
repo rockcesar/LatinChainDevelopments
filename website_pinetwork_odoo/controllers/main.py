@@ -65,8 +65,6 @@ class PiNetworkBaseController(http.Controller):
     def get_user(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
-        _logger.info(str(kw['accessToken']))
-        
         try:
             result = re.json()
             
