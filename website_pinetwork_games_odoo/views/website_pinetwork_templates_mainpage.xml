@@ -122,12 +122,12 @@
                                         set_points(0);
                                         get_user();
                                     }).catch(function(error) {
+                                        $("#loading").hide();
                                         //Pi.openShareDialog("Error", error);
                                         //alert(err);
                                         console.error(error);
                                     });
                                 } catch (err) {
-                                    $("#loading").hide();
                                     //Pi.openShareDialog("Error", err);
                                     //alert(err);
                                     console.error(err);
