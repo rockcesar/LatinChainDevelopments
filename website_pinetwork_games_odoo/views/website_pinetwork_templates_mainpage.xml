@@ -110,7 +110,7 @@
                                     
                                     setTimeout(function() {
                                       $("#loading").hide();
-                                    }, 2000);
+                                    }, 5000);
 
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         pi_user_id = auth.user.uid;
