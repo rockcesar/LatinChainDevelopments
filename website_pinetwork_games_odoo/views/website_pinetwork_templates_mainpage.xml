@@ -87,28 +87,16 @@
                                 });
                             }
                         }
+                        
+                        $(document).ajaxStart(function() {
+                            $("#loading").show();
+                        });
+                            
+                        $(document).ajaxStop(function() {        
+                            $("#loading").hide();
+                        });
 
                         $( document ).ready(function() {
-                            
-                            /*$(document).ajaxStart(function() {        
-                                $("#loading").show();
-                            });*/
-                            
-                            $.ajaxSetup({
-                                beforeSend: function() {
-                                    $("#loading").show();
-                                }
-                            });
-                            
-                            $(document).ajaxStart(function() {
-                                $("#loading").show();
-                            });
-                                
-                            $(document).ajaxStop(function() {        
-                                $("#loading").hide();
-                            });
-                            
-                        
                             $("#verified").hide();
                             const Pi = window.Pi;
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
