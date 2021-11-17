@@ -96,13 +96,11 @@
                             
                             $.ajaxSetup({
                                 beforeSend: function() {
-                                    alert("before");
                                     $("#loading").show();
                                 }
                             });
                             
                             $(document).ajaxStart(function() {
-                                alert("start");
                                 $("#loading").show();
                             });
                                 
