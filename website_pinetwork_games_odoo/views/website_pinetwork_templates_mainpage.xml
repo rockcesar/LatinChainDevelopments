@@ -90,10 +90,6 @@
 
                         $( document ).ready(function() {
                         
-                            $(document).ajaxStop(function() {
-                                $("#loading").hide();
-                            });
-                        
                             $("#verified").hide();
                             const Pi = window.Pi;
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -120,6 +116,7 @@
                                         //get_user();
                                         set_points(0);
                                         get_user();
+                                        $("#loading").hide();
                                     }).catch(function(error) {
                                         //Pi.openShareDialog("Error", error);
                                         //alert(err);
