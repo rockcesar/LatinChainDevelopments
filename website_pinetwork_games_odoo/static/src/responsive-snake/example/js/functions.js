@@ -67,7 +67,7 @@ function get_user(pause) {
 $( document ).ready(function() {
     
     $(document).ajaxStop(function() {
-                $("#loading").hide();
+                $("#loading_word").hide();
             });
     
     const Pi = window.Pi;
@@ -79,10 +79,10 @@ $( document ).ready(function() {
         $("#pi_donate").hide();
         $("#button_click").show();
         
-        $("#loading").show();
+        $("#loading_word").show();
                                 
         setTimeout(function() {
-          $("#loading").hide();
+          $("#loading_word").hide();
         }, 5000);
         
         try {

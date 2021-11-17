@@ -54,7 +54,7 @@ function get_user(donation) {
 
 $( document ).ready(function() {
     $(document).ajaxStop(function() {
-                $("#loading").hide();
+                $("#loading_word").hide();
             });
     
     const Pi = window.Pi;
@@ -63,10 +63,10 @@ $( document ).ready(function() {
     //alert(PiNetworkClient);
 
     async function auth() {
-        $("#loading").show();
+        $("#loading_word").show();
                                 
         setTimeout(function() {
-          $("#loading").hide();
+          $("#loading_word").hide();
         }, 5000);
         
         try {

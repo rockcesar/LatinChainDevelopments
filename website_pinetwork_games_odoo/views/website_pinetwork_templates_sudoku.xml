@@ -104,7 +104,7 @@
                                     <input id="button_click" name="button_click" value="Unblock with 1 Pi" type="button" class="btn btn-success"/>
                                     <br/>
                                     <br/>
-                                    <span id="loading" style="display: none;">Loading...</span>
+                                    <span id="loading_word" style="display: none;">Loading...</span>
                                 </div>
                           </div>
                           <div class="tab-pane" id="sudoku">

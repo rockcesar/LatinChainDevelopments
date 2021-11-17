@@ -91,7 +91,7 @@
                         $( document ).ready(function() {
                         
                             $(document).ajaxStop(function() {
-                                $("#loading").hide();
+                                $("#loading_word").hide();
                             });
                         
                             $("#verified").hide();
@@ -106,10 +106,10 @@
                                         
                                     }; // Read more about this in the SDK reference
 
-                                    $("#loading").show();
+                                    $("#loading_word").show();
                                     
                                     setTimeout(function() {
-                                      $("#loading").hide();
+                                      $("#loading_word").hide();
                                     }, 5000);
 
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
@@ -315,7 +315,7 @@
                         <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a><br/><br/>-->
                         <br/><br/>
                         <div id="social_div">Share in Social Networks:<br/><br/>
-                        <button id="button1" class="btn btn-primary">Share</button> <span id="loading" style="display: none;">Loading...</span><br/><br/>
+                        <button id="button1" class="btn btn-primary">Share</button> <span id="loading_word" style="display: none;">Loading...</span><br/><br/>
                         </div>
                     </div>
                 </body>
