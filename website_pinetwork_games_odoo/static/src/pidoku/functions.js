@@ -111,10 +111,14 @@ $( document ).ready(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
             }; // Read more about this in the SDK reference
+            
+            $("#loading").show();
+                                    
+            setTimeout(function() {
+              $("#loading").hide();
+            }, 5000);
 
-            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                $("#loading").show();
-                
+            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {                
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
