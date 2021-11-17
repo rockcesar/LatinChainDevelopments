@@ -106,6 +106,8 @@
                                         
                                     }; // Read more about this in the SDK reference
 
+                                    $("#loading").show();
+
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         
                                         pi_user_id = auth.user.uid;
@@ -116,10 +118,8 @@
                                         $("#leaderboard").attr("href", "/get-points/" + auth.user.username);
                                         $("#winnerboard").attr("href", "/get-winners/" + auth.user.username);
                                         
-                                        $("#loading").show();
                                         //get_user();
                                         set_points(0);
-                                        $("#loading").show();
                                         get_user();
                                     }).catch(function(error) {
                                         //Pi.openShareDialog("Error", error);
@@ -127,6 +127,7 @@
                                         console.error(error);
                                     });
                                 } catch (err) {
+                                    $("#loading").hide();
                                     //Pi.openShareDialog("Error", err);
                                     //alert(err);
                                     console.error(err);
