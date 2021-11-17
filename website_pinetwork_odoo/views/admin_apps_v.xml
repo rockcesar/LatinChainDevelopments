@@ -14,8 +14,6 @@
                                     <field name="app"/>
                                     <field name="admin_key"/>
                                     <field name="sandbox"/>
-                                    <field name="common_user"/>
-                                    <field name="password_common_user"/>
                                     <field name="pi_transactions_ids"/>
                                 </group>
                             </group>

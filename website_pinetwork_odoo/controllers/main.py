@@ -65,14 +65,18 @@ class PiNetworkBaseController(http.Controller):
     def get_user(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
+        _logger.info(str(kw['accessToken']))
+        
         try:
             result = re.json()
             
             result_dict = json.loads(str(json.dumps(result)))
             
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
                 return json.dumps({'result': False})
         except Exception:
+            _logger.info("Authorization error")
             return json.dumps({'result': False})
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
@@ -116,8 +120,10 @@ class PiNetworkBaseController(http.Controller):
             result_dict = json.loads(str(json.dumps(result)))
             
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
                 return json.dumps({'result': False})
         except Exception:
+            _logger.info("Authorization error")
             return json.dumps({'result': False})
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])

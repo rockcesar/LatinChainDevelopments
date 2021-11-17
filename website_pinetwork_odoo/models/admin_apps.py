@@ -99,8 +99,6 @@ class admin_apps(models.Model):
     admin_key = fields.Char('Admin Key', required=True)
     sandbox = fields.Boolean('Sandbox', required=True)
     pi_transactions_ids = fields.One2many('pi.transactions', 'app_id')
-    common_user = fields.Char("Common user")
-    password_common_user = fields.Char("Password")
     
     def pi_api(self, kw):
         
