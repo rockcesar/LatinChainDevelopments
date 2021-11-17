@@ -89,14 +89,21 @@
                         }
 
                         $( document ).ready(function() {
-                            $(document).on({
-                                ajaxStart: function(){
+                            
+                            /*$(document).ajaxStart(function() {        
+                                $("#loading").show();
+                            });*/
+                            
+                            $.ajaxSetup({
+                                beforeSend: function() {
                                     $("#loading").show();
-                                },
-                                ajaxStop: function(){ 
-                                    $("#loading").hide();
-                                }    
+                                }
                             });
+                                
+                            $(document).ajaxStop(function() {        
+                                $("#loading").hide();
+                            });
+                            
                         
                             $("#verified").hide();
                             const Pi = window.Pi;
