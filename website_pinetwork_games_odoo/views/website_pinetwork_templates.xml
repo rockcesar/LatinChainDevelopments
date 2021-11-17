@@ -68,12 +68,11 @@
                         <br />
                         <button id="clear_cache" class="btn btn-info">Clear Cache</button>
                         
+                        <br/><br/>
+                        <a href="https://github.com/rockcesar/PiNetworkDevelopments/" target="_blank" class="btn btn-link">Watch code</a>
                         <br />
                         <br />
                         <span id="loading_word" style="display: none;">Loading...</span>
-                        
-                        <br/><br/>
-                        <a href="https://github.com/rockcesar/PiNetworkDevelopments/" target="_blank" class="btn btn-link">Watch code</a>
                     </div>
 
                 </body>
