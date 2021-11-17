@@ -78,6 +78,13 @@ $( document ).ready(function() {
         $("#reset").hide();
         $("#pi_donate").hide();
         $("#button_click").show();
+        
+        $("#loading").show();
+                                
+        setTimeout(function() {
+          $("#loading").hide();
+        }, 5000);
+        
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
@@ -107,12 +114,6 @@ $( document ).ready(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
             }; // Read more about this in the SDK reference
-
-            $("#loading").show();
-                                    
-            setTimeout(function() {
-              $("#loading").hide();
-            }, 5000);
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
