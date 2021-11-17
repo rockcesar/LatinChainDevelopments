@@ -65,6 +65,11 @@ function get_user(pause) {
 }
 
 $( document ).ready(function() {
+    
+    $(document).ajaxStop(function() {
+                $("#loading").hide();
+            });
+    
     const Pi = window.Pi;
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
@@ -104,6 +109,8 @@ $( document ).ready(function() {
             }; // Read more about this in the SDK reference
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                $("#loading").show();
+                
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
