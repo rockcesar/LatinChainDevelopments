@@ -245,3 +245,74 @@ $( document ).ready(function() {
     
     
 });
+
+$( document ).ready(function() {
+    function is_touch_device() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints;
+    };
+
+    function loadCss(cssId, cssHref) {
+        $('#' + cssId).attr('href', cssHref);
+    }
+
+    var mobileLibs = 8;
+    var desktopLibs = 8;
+
+    var isMobile = is_touch_device();
+
+    if (isMobile == true) {
+
+        var chess, board;
+
+        loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/caustique-chessboard.css');
+
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard-caustique-min.js', initGameBoard('mobile'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js', initGameBoard('mobile'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js', initGameBoard('mobile'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('mobile'));
+
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('mobile'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js', initGameBoard('mobile'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-mobile.js', initGameBoard('mobile'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js', initGameBoard('mobile'));
+
+    } else {
+
+        loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/chessboard.css');
+
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard.min.js', initGameBoard('desktop'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js', initGameBoard('desktop'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js', initGameBoard('desktop'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('desktop'));
+
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('desktop'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js', initGameBoard('desktop'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-desktop.js', initGameBoard('desktop'));
+        $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js', initGameBoard('desktop'));
+
+    }
+
+    function initGameBoard(lib = false) {
+
+        if (lib == 'mobile') {
+            mobileLibs--;
+            if (mobileLibs == 0) {
+                console.log('Mobile loaded');
+                setTimeout(function() {
+                    setMobileBoard();
+                }, 10000);
+            }
+        }
+
+        if (lib == 'desktop') {
+            desktopLibs--;
+            if (desktopLibs == 0) {
+                console.log('Desktop loaded');
+                setTimeout(function() {
+                    setDesktopBoard();
+                }, 10000);
+            }
+        }
+
+    }
+});
