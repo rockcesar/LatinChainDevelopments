@@ -4,33 +4,92 @@ var accessToken = "";
 var passkey = "";
 const Pi = window.Pi;
 
-$( document ).ready(function() {
-    Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-
-    function set_points_v2(points) {
-        if(pi_user_id != "" && pi_user_code != "")
-        {
-            var data = {
-                'pi_user_id': pi_user_id,
-                'pi_user_code': pi_user_code,
-                'points': points,
-                'app_client': 'auth_platform',
-                'passkey': passkey,
-                'accessToken': accessToken,
-                'csrf_token': odoo.csrf_token,
-            };
-            $.ajaxSetup({async: false});
-            return $.post( "/pi-points", data).done(function(data) {
-                data = JSON.parse(data);
-                if(data.result && points > 0)
-                    alert("You won " + points + " points");
-            }).fail(function() {
-                
-            });
-        }
+function set_points(points) {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+            'pi_user_id': pi_user_id,
+            'pi_user_code': pi_user_code,
+            'points': points,
+            'app_client': 'auth_platform',
+            'passkey': passkey,
+            'accessToken': accessToken,
+            'csrf_token': odoo.csrf_token,
+        };
+        $.ajaxSetup({async: false});
+        return $.post( "/pi-points", data).done(function(data) {
+            data = JSON.parse(data);
+            if(data.result && points > 0)
+                alert("You won " + points + " points");
+        }).fail(function() {
+            
+        });
     }
+}
 
-    function set_points(points) {
+function get_user() {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'accessToken': accessToken,
+                    'csrf_token': odoo.csrf_token,
+                };
+        $.ajaxSetup({async: false});
+        return $.post( "/get-user", data).done(function(data) {
+            data = JSON.parse(data);
+            if(data.result)
+            {
+                passkey=data.passkey;
+                if(data.unblocked)
+                {
+                    $("#pi_donate").hide();
+                    $("#button_click").hide();
+                    $('#chess-tab').show();
+                    $('#chess-tab').click();
+                }
+                else
+                {
+                    $("#pi_donate").hide();
+                    $("#button_click").show();
+                    $('#chess-tab').hide();
+                    $("#home-tab").click();
+                }
+            }
+        }).fail(function() {
+            
+        });
+    }
+}
+
+$( document ).ready(function() {
+    $('.timer_white').countimer({
+			autoStart : false
+			});
+    
+    $('.timer_black').countimer({
+			autoStart : false
+			});
+    
+    $(document).ajaxStop(function() {
+                $("#loading_word").hide();
+            });
+            
+    Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+    
+    async function auth() {
+        $("#pi_donate").hide();
+        $("#button_click").show();
+        $('#chess-tab').hide();
+        $("#home-tab").click();
+        
+        $("#loading_word").show();
+                                
+        setTimeout(function() {
+          $("#loading_word").hide();
+        }, 5000);
+        
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
@@ -67,7 +126,7 @@ $( document ).ready(function() {
                 accessToken = auth.accessToken;
                 
                 //get_user();
-                set_points_v2(points);
+                set_points(0);
                 get_user();
                 
               $( "#button_click" ).click(function() {
@@ -93,70 +152,7 @@ $( document ).ready(function() {
             //alert(err);
             console.error(err);
             // Not able to fetch the user
-        }
-    }
-
-    function get_user() {
-        if(pi_user_id != "" && pi_user_code != "")
-        {
-            var data = {
-                        'pi_user_id': pi_user_id,
-                        'pi_user_code': pi_user_code,
-                        'accessToken': accessToken,
-                        'csrf_token': odoo.csrf_token,
-                    };
-            $.ajaxSetup({async: false});
-            return $.post( "/get-user", data).done(function(data) {
-                data = JSON.parse(data);
-                if(data.result)
-                {
-                    passkey=data.passkey;
-                    if(data.unblocked)
-                    {
-                        $("#pi_donate").hide();
-                        $("#button_click").hide();
-                        $('#chess-tab').show();
-                        $('#chess-tab').click();
-                    }
-                    else
-                    {
-                        $("#pi_donate").hide();
-                        $("#button_click").show();
-                        $('#chess-tab').hide();
-                        $("#home-tab").click();
-                    }
-                }
-            }).fail(function() {
-                
-            });
-        }
-    }
-    
-    $('.timer_white').countimer({
-			autoStart : false
-			});
-    
-    $('.timer_black').countimer({
-			autoStart : false
-			});
-    
-    $(document).ajaxStop(function() {
-                $("#loading_word").hide();
-            });
-    
-    async function auth() {
-        $("#pi_donate").hide();
-        $("#button_click").show();
-        $('#chess-tab').hide();
-        $("#home-tab").click();
-        
-        $("#loading_word").show();
-                                
-        setTimeout(function() {
-          $("#loading_word").hide();
-        }, 5000);
-        
-        set_points(0);
+        }        
     }
     
     async function transfer() {
