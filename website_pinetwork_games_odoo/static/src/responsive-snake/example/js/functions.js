@@ -4,7 +4,7 @@ var accessToken = "";
 var passkey = "";
 const Pi = window.Pi;
 
-function set_points(points) {
+function set_points_v2(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -24,6 +24,71 @@ function set_points(points) {
         }).fail(function() {
             
         });
+    }
+}
+
+function set_points(points) {
+    try {
+        // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+        const scopes = ['username', 'payments'];
+        function onIncompletePaymentFound(payment) {
+            var data={
+                    'action': 'complete',
+                    'paymentId': payment.identifier,
+                    'txid': payment.transaction.txid,
+                    'app_client': 'auth_snake',
+                    'accessToken': accessToken,
+                    'pi_user_code': pi_user_code,
+                    'pi_user_id': pi_user_id,
+                    'csrf_token': odoo.csrf_token,
+                };
+            
+            return $.post( "/pi-api", data).done(function(data) {
+                                $("#button_click").prop( "disabled", false );
+                                try {
+                                    data = JSON.parse(data);
+                                    if(data.result && data.completed)
+                                    {
+                                        alert("A payment was registered. Reload the page to view the changes.");
+                                    }
+                                } catch (e) {
+                                }
+                            }).fail(function() {
+                                $("#button_click").prop( "disabled", false );
+                            });
+        }; // Read more about this in the SDK reference
+
+        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+            pi_user_id = auth.user.uid;
+            pi_user_code = auth.user.username;
+            accessToken = auth.accessToken;
+            
+            //get_user(false);
+            set_points_v2(points);
+            get_user(true);
+            
+          $( "#button_click" ).click(function() {
+                if(parseFloat($("#pi_donate").val()) > 0)
+                {
+                    $("#button_click").prop( "disabled", true );
+                    /*setTimeout(function ()
+                    {
+                        $("#button_click").prop( "disabled", false );
+                    }, 10000);*/
+                    transfer();
+                }
+                //alert("Click");
+            });
+        }).catch(function(error) {
+            //Pi.openShareDialog("Error", error);
+            //alert(err);
+            console.error(error);
+        });
+    } catch (err) {
+        //Pi.openShareDialog("Error", err);
+        //alert(err);
+        console.error(err);
+        // Not able to fetch the user
     }
 }
 
@@ -85,68 +150,7 @@ $( document ).ready(function() {
           $("#loading_word").hide();
         }, 5000);
         
-        try {
-            // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
-            const scopes = ['username', 'payments'];
-            function onIncompletePaymentFound(payment) {
-                var data={
-                        'action': 'complete',
-                        'paymentId': payment.identifier,
-                        'txid': payment.transaction.txid,
-                        'app_client': 'auth_snake',
-                        'accessToken': accessToken,
-                        'pi_user_code': pi_user_code,
-                        'pi_user_id': pi_user_id,
-                        'csrf_token': odoo.csrf_token,
-                    };
-                
-                return $.post( "/pi-api", data).done(function(data) {
-                                    $("#button_click").prop( "disabled", false );
-                                    try {
-                                        data = JSON.parse(data);
-                                        if(data.result && data.completed)
-                                        {
-                                            alert("A payment was registered. Reload the page to view the changes.");
-                                        }
-                                    } catch (e) {
-                                    }
-                                }).fail(function() {
-                                    $("#button_click").prop( "disabled", false );
-                                });
-            }; // Read more about this in the SDK reference
-
-            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                pi_user_id = auth.user.uid;
-                pi_user_code = auth.user.username;
-                accessToken = auth.accessToken;
-                
-                //get_user(false);
-                set_points(0);
-                get_user(true);
-                
-              $( "#button_click" ).click(function() {
-                    if(parseFloat($("#pi_donate").val()) > 0)
-                    {
-                        $("#button_click").prop( "disabled", true );
-                        /*setTimeout(function ()
-                        {
-                            $("#button_click").prop( "disabled", false );
-                        }, 10000);*/
-                        transfer();
-                    }
-                    //alert("Click");
-                });
-            }).catch(function(error) {
-                //Pi.openShareDialog("Error", error);
-                //alert(err);
-                console.error(error);
-            });
-        } catch (err) {
-            //Pi.openShareDialog("Error", err);
-            //alert(err);
-            console.error(err);
-            // Not able to fetch the user
-        }
+        set_points(0);
     }
     
     async function transfer() {
