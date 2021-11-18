@@ -29,7 +29,9 @@ function set_points(points) {
                 };
                 $.ajaxSetup({async: false});
                 return $.post( "/pi-points", data).done(function(data) {
+                    get_user();
                     data = JSON.parse(data);
+                    
                     if(data.result && points > 0)
                         alert("You won " + points + " points");
                     $("#refresh").click();
@@ -147,7 +149,6 @@ $( document ).ready(function() {
                 
                 //get_user();
                 set_points(0);
-                get_user();
                 
               $( "#button_click" ).click(function() {
                     if(parseFloat($("#pi_donate").val()) > 0)
