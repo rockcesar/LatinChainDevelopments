@@ -229,7 +229,7 @@
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/ltpgnviewer.js"></script>
 
                     <script>
-                        /*$( document ).ready(function() {
+                        $( document ).ready(function() {
                             function is_touch_device() {
                                 return 'ontouchstart' in window || navigator.maxTouchPoints;
                             };
@@ -298,7 +298,7 @@
                                 }
 
                             }
-                        });*/
+                        });
                     </script>
                     
                     <script type="text/javascript">
