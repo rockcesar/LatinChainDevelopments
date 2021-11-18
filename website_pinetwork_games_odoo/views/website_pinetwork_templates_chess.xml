@@ -229,7 +229,7 @@
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/ltpgnviewer.js"></script>
 
                     <script>
-                        /*$( document ).ready(function() {
+                        $( document ).ready(function() {
                             function is_touch_device() {
                                 return 'ontouchstart' in window || navigator.maxTouchPoints;
                             };
@@ -283,7 +283,7 @@
                                         console.log('Mobile loaded');
                                         setTimeout(function() {
                                             setMobileBoard();
-                                        }, 5000);
+                                        }, 10000);
                                     }
                                 }
 
@@ -293,16 +293,16 @@
                                         console.log('Desktop loaded');
                                         setTimeout(function() {
                                             setDesktopBoard();
-                                        }, 5000);
+                                        }, 10000);
                                     }
                                 }
 
                             }
-                        });*/
+                        });
                     </script>
                     
                     <script type="text/javascript">
-                        /*$( document ).ready(function() {
+                        $( document ).ready(function() {
                             var status_audio = false;
                             var audioElement = document.createElement('audio');
                             audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/Right_Here_Beside_You-Spence.mp3');
@@ -339,7 +339,7 @@
                                     }
                                 }
                             });
-                        });*/
+                        });
 
                     </script>
 
