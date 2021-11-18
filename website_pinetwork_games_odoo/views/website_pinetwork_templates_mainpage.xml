@@ -90,6 +90,26 @@
 
                         $( document ).ready(function() {
                         
+                            var status_audio = false;
+                            var audioElement = document.createElement('audio');
+                            audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/Right_Here_Beside_You-Spence.mp3');
+                            audioElement.addEventListener('ended', function() {
+                                this.play();
+                            }, false);
+                            
+                            $('#play').click(function() {
+                                if(!status_audio)
+                                {
+                                    audioElement.play();
+                                    status_audio = true;
+                                }
+                                else
+                                {
+                                    audioElement.pause();
+                                    status_audio = false;
+                                }
+                            });
+                        
                             $(document).ajaxStop(function() {
                                 $("#loading_word").hide();
                             });
@@ -196,7 +216,8 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
-                        <br/>Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase. <strong>Clear Pi Browser cache</strong> if it is not working).<br/>
+                        <br/><img width="30" height="30" id="play" src="/website_pinetwork_games_odoo/static/src/music/music.png" alt="Music" style="margin-left: auto; margin-right: auto" />  
+                        Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase. <strong>Clear Pi Browser cache</strong> if it is not working).<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>
                         <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">

@@ -51,6 +51,26 @@
                     
                     <script type="text/javascript">
                         $( document ).ready(function() {
+                            var status_audio = false;
+                            var audioElement = document.createElement('audio');
+                            audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/Right_Here_Beside_You-Spence.mp3');
+                            audioElement.addEventListener('ended', function() {
+                                this.play();
+                            }, false);
+                            
+                            $('#play').click(function() {
+                                if(!status_audio)
+                                {
+                                    audioElement.play();
+                                    status_audio = true;
+                                }
+                                else
+                                {
+                                    audioElement.pause();
+                                    status_audio = false;
+                                }
+                            });
+                        
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
@@ -92,6 +112,7 @@
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
                                 <div style="text-align:center">
+                                    <img width="30" height="30" id="play" src="/website_pinetwork_games_odoo/static/src/music/music.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                                     <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
                                     <br />
                                     <br />
