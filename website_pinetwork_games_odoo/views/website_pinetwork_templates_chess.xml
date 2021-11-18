@@ -242,6 +242,8 @@
                             var desktopLibs = 8;
 
                             var isMobile = is_touch_device();
+                            
+                            $.ajaxSetup({async: false});
 
                             if (isMobile == true) {
 
@@ -283,7 +285,7 @@
                                         console.log('Mobile loaded');
                                         setTimeout(function() {
                                             setMobileBoard();
-                                        }, 10000);
+                                        }, 1000);
                                     }
                                 }
 
@@ -293,7 +295,7 @@
                                         console.log('Desktop loaded');
                                         setTimeout(function() {
                                             setDesktopBoard();
-                                        }, 10000);
+                                        }, 1000);
                                     }
                                 }
 
