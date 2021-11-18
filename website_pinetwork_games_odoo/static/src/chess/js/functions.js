@@ -47,18 +47,6 @@ function get_user() {
                     $("#button_click").hide();
                     $('#chess-tab').show();
                     $('#chess-tab').click();
-                    
-                    if (lib == 'mobile') {
-                        setTimeout(function() {
-                                setMobileBoard();
-                            }, 1000);
-                    }
-
-                    if (lib == 'desktop') {
-                        setTimeout(function() {
-                                setDesktopBoard();
-                            }, 1000);
-                    }
                 }
                 else
                 {
