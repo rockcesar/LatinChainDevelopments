@@ -29,7 +29,7 @@ $( document ).ready(function() {
         }
     }
 
-    function set_points(points) {
+    async function set_points(points) {
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments'];
@@ -77,7 +77,6 @@ $( document ).ready(function() {
                         {
                             $("#button_click").prop( "disabled", false );
                         }, 10000);*/
-                        $.ajaxSetup({async: true});
                         transfer();
                     }
                     //alert("Click");
