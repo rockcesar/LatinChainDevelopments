@@ -77,6 +77,7 @@ $( document ).ready(function() {
                         {
                             $("#button_click").prop( "disabled", false );
                         }, 10000);*/
+                        $.ajaxSetup({async: true});
                         transfer();
                     }
                     //alert("Click");
