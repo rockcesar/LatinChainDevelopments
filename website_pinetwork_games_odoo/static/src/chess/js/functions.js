@@ -47,6 +47,26 @@ function get_user() {
                     $("#button_click").hide();
                     $('#chess-tab').show();
                     $('#chess-tab').click();
+                    
+                    if (lib == 'mobile') {
+                        mobileLibs--;
+                        if (mobileLibs == 0) {
+                            console.log('Mobile loaded');
+                            setTimeout(function() {
+                                setMobileBoard();
+                            }, 1000);
+                        }
+                    }
+
+                    if (lib == 'desktop') {
+                        desktopLibs--;
+                        if (desktopLibs == 0) {
+                            console.log('Desktop loaded');
+                            setTimeout(function() {
+                                setDesktopBoard();
+                            }, 1000);
+                        }
+                    }
                 }
                 else
                 {
