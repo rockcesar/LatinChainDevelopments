@@ -113,7 +113,7 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_points(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
-        _logger.info(kw['accessToken'])
+        #_logger.info(kw['accessToken'])
         try:
             result = re.json()
             
