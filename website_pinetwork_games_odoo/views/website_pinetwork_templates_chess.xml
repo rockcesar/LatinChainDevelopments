@@ -260,10 +260,6 @@
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js', initGameBoard('mobile'));
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-mobile.js', initGameBoard('mobile'));
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js', initGameBoard('mobile'));
-                                
-                                setTimeout(function() {
-                                        setMobileBoard();
-                                    }, 1000);
 
                             } else {
 
@@ -284,16 +280,14 @@
                             function initGameBoard(lib = false) {
 
                                 if (lib == 'mobile') {
-                                    /*setTimeout(function() {
-                                        setMobileBoard();
-                                    }, 1000);*/
-                                    /*mobileLibs--;
+                                    mobileLibs--;
+                                    alert(mobileLibs);
                                     if (mobileLibs == 0) {
                                         console.log('Mobile loaded');
                                         setTimeout(function() {
                                             setMobileBoard();
                                         }, 1000);
-                                    }*/
+                                    }
                                 }
 
                                 if (lib == 'desktop') {
