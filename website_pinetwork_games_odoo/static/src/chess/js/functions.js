@@ -132,6 +132,43 @@ $( document ).ready(function() {
 
     }
     
+    var status_audio = false;
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/Right_Here_Beside_You-Spence.mp3');
+    audioElement.addEventListener('ended', function() {
+        this.play();
+    }, false);
+    
+    $('#play').click(function() {
+        if(!status_audio)
+        {
+            audioElement.play();
+            status_audio = true;
+        }
+        else
+        {
+            audioElement.pause();
+            status_audio = false;
+        }
+    });
+
+    $( "#clear_cache" ).click(function() {
+        var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
+        if(result)
+        {
+            try {
+                Cache.delete();
+            } catch (err) {
+                console.error(err);
+            }
+            try {
+                window.location.reload(true);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    });
+    
     $('.timer_white').countimer({
 			autoStart : false
 			});

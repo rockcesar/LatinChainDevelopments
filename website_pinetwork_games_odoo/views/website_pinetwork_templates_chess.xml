@@ -302,7 +302,7 @@
                     </script>
                     
                     <script type="text/javascript">
-                        $( document ).ready(function() {
+                        /*$( document ).ready(function() {
                             var status_audio = false;
                             var audioElement = document.createElement('audio');
                             audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/Right_Here_Beside_You-Spence.mp3');
@@ -339,7 +339,7 @@
                                     }
                                 }
                             });
-                        });
+                        });*/
 
                     </script>
 
