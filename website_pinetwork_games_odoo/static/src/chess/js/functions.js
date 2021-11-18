@@ -2,11 +2,23 @@ var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";
 var passkey = "";
+const Pi = window.Pi;
 
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
-        var data = {
+        try {
+            // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+            const scopes = ['username', 'payments'];
+            function onIncompletePaymentFound(payment) {
+            }; // Read more about this in the SDK reference
+
+            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {                
+                pi_user_id = auth.user.uid;
+                pi_user_code = auth.user.username;
+                accessToken = auth.accessToken;
+                
+                var data = {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
                     'points': points,
@@ -15,14 +27,26 @@ function set_points(points) {
                     'accessToken': accessToken,
                     'csrf_token': odoo.csrf_token,
                 };
-        $.ajaxSetup({async: false});
-        return $.post( "/pi-points", data).done(function(data) {
-            data = JSON.parse(data);
-            if(data.result && points > 0)
-                alert("You won " + points + " points");
-        }).fail(function() {
-            
-        });
+                $.ajaxSetup({async: false});
+                return $.post( "/pi-points", data).done(function(data) {
+                    data = JSON.parse(data);
+                    if(data.result && points > 0)
+                        alert("You won " + points + " points");
+                }).fail(function() {
+                    
+                });
+            }).catch(function(error) {
+                //Pi.openShareDialog("Error", error);
+                //alert(err);
+                console.error(error);
+            });
+        } catch (err) {
+            //Pi.openShareDialog("Error", err);
+            //alert(err);
+            console.error(err);
+            // Not able to fetch the user
+        }
+        
     }
 }
 
