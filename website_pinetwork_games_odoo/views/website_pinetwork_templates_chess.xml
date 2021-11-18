@@ -280,13 +280,16 @@
                             function initGameBoard(lib = false) {
 
                                 if (lib == 'mobile') {
-                                    mobileLibs--;
+                                    setTimeout(function() {
+                                        setMobileBoard();
+                                    }, 1000);
+                                    /*mobileLibs--;
                                     if (mobileLibs == 0) {
                                         console.log('Mobile loaded');
                                         setTimeout(function() {
                                             setMobileBoard();
                                         }, 1000);
-                                    }
+                                    }*/
                                 }
 
                                 if (lib == 'desktop') {
