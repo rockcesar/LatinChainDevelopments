@@ -61,7 +61,7 @@ class PiNetworkBaseController(http.Controller):
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked})
     
-    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    @http.route('/get-user', type='http', auth="public", website=True, csrf=True, methods=['POST'])
     def get_user(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
@@ -92,7 +92,7 @@ class PiNetworkBaseController(http.Controller):
                             'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked,
                             'passkey': passkey})
         
-    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    @http.route('/pi-api', type='http', auth="public", website=True, csrf=True, methods=['POST'])
     def pi_api(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
@@ -110,7 +110,7 @@ class PiNetworkBaseController(http.Controller):
         
         return request.env["admin.apps"].pi_api(kw)
         
-    @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    @http.route('/pi-points', type='http', auth="public", website=True, csrf=True, methods=['POST'])
     def pi_points(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         #_logger.info(kw['accessToken'])
