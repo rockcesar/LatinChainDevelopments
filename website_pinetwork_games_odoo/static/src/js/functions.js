@@ -13,7 +13,7 @@ function set_points(points) {
             'points': points,
             'passkey': passkey,
             'accessToken': accessToken,
-            'csrf_token': $("#csrf_token").val(),
+            'csrf_token': odoo.csrf_token,
         };
         $.ajaxSetup({async: false});
         return $.post( "/pi-points", data).done(function(data) {
@@ -33,7 +33,7 @@ function get_user(donation) {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
                     'accessToken': accessToken,
-                    'csrf_token': $("#csrf_token").val(),
+                    'csrf_token': odoo.csrf_token,
                 };
         $.ajaxSetup({async: false});
         return $.post( "/get-user", data).done(function(data) {
@@ -79,7 +79,7 @@ $( document ).ready(function() {
                         'paymentId': payment.identifier,
                         'txid': payment.transaction.txid,
                         'app_client': 'auth_example',
-                        'csrf_token': $("#csrf_token").val(),
+                        'csrf_token': odoo.csrf_token,
                         'accessToken': accessToken,
                         'pi_user_code': pi_user_code,
                         'pi_user_id': pi_user_id,
@@ -147,7 +147,7 @@ $( document ).ready(function() {
                             'paymentId': paymentId,
                             'txid': '',
                             'app_client': 'auth_example',
-                            'csrf_token': $("#csrf_token").val(),
+                            'csrf_token': odoo.csrf_token,
                             'accessToken': accessToken,
                             'pi_user_code': pi_user_code,
                             'pi_user_id': pi_user_id,
@@ -164,7 +164,7 @@ $( document ).ready(function() {
                         'paymentId': paymentId,
                         "txid": txid,
                         'app_client': 'auth_example',
-                        'csrf_token': $("#csrf_token").val(),
+                        'csrf_token': odoo.csrf_token,
                         'accessToken': accessToken,
                         'pi_user_code': pi_user_code,
                         'pi_user_id': pi_user_id,

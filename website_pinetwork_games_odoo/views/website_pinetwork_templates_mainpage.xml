@@ -48,7 +48,7 @@
                                     'points': points,
                                     'passkey': passkey,
                                     'accessToken': accessToken,
-                                    'csrf_token': $("#csrf_token").val(),
+                                    'csrf_token': odoo.csrf_token,
                                 };
                                 $.ajaxSetup({async: false});
                                 return $.post( "/pi-points", data).done(function(data) {
@@ -69,7 +69,7 @@
                                             'pi_user_id': pi_user_id,
                                             'pi_user_code': pi_user_code,
                                             'accessToken': accessToken,
-                                            'csrf_token': $("#csrf_token").val(),
+                                            'csrf_token': odoo.csrf_token,
                                         };
                                 $.ajaxSetup({async: false});
                                 return $.post( "/get-user", data).done(function(data) {
@@ -216,7 +216,6 @@
                 </head>
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
-                    <input type="hidden" id="csrf_token" t-att-value="request.csrf_token()"/>
                     <div class="container" style="text-align:center">
                         <br/><img width="30" height="30" id="play" src="/website_pinetwork_games_odoo/static/src/music/music.png" alt="Music" style="margin-left: auto; margin-right: auto" />  
                         Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase. <strong>Clear Pi Browser cache</strong> if it is not working).<br/>
