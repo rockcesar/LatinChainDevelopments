@@ -38,6 +38,9 @@
                         var accessToken = "";
                         var passkey = "";
                         const Pi = window.Pi;
+                        
+                        var leaderboard = "/get-points/";
+                        var winnerboard = "/get-winners/";
 
                         function set_points(points) {
                             if(pi_user_id != "" &amp;&amp; pi_user_code != "")
@@ -139,8 +142,11 @@
                                         accessToken = auth.accessToken;
                                         $("#username").html(" " + auth.user.username);
                                         
-                                        $("#leaderboard").attr("href", "/get-points/" + auth.user.username);
-                                        $("#winnerboard").attr("href", "/get-winners/" + auth.user.username);
+                                        leaderboard = "/get-points/" + auth.user.username;
+                                        winnerboard = "/get-winners/" + auth.user.username;
+                                        
+                                        /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
+                                        $("#winnerboard").attr("href", "/get-winners/" + auth.user.username);*/
                                         
                                         //get_user();
                                         set_points(0);
@@ -191,6 +197,14 @@
                             
                             $( "#rules_button" ).click(function() {
                                 $.colorbox({href:"/modal-rules", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                            });
+                            
+                            $( "#leaderboard" ).click(function() {
+                                $.colorbox({href:leaderboard, iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                            });
+                            
+                            $( "#winnerboard" ).click(function() {
+                                $.colorbox({href:winnerboard, iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
                             });
                             
                             $( "#clear_cache" ).click(function() {
@@ -307,8 +321,10 @@
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                             <br/>Leaders and rules:<br/><br/>
                             <button id="rules_button" class="btn btn-warning">Rules</button><br/><br/>
-                            <a href="/get-points/" id="leaderboard" class="btn btn-info">Leaders Board</a><br/><br/>
-                            <a href="/get-winners/" id="winnerboard" class="btn btn-success">Top 10 Board</a>
+                            <button id="leaderboard" class="btn btn-info">Leaders Board</button><br/><br/>
+                            <button id="winnerboard" class="btn btn-success">Top 10 Board</button>
+                            <!--<a href="/get-points/" id="leaderboard" class="btn btn-info">Leaders Board</a><br/><br/>
+                            <a href="/get-winners/" id="winnerboard" class="btn btn-success">Top 10 Board</a>-->
                           </div>
                         </div>
                         <!--<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app.<br/><br/>
