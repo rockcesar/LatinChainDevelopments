@@ -20,7 +20,7 @@
                         <t t-if="pi_users_count >= 0">
                             Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
                         </t>
-                        <t t-if="pi_users_count >= 0">
+                        <t t-if="pi_users_verified_count >= 0">
                             Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/>
                         </t>
                         <strong>Leaders:</strong><br/>
