@@ -192,19 +192,19 @@
                             });
                             
                             $( "#vote" ).click(function() {
-                                $.colorbox({href:"/modal-vote", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                                $.colorbox({href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
                             $( "#rules_button" ).click(function() {
-                                $.colorbox({href:"/modal-rules", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                                $.colorbox({href:"/modal-rules", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
                             $( "#leaderboard" ).click(function() {
-                                $.colorbox({href:leaderboard, iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                                $.colorbox({href:leaderboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
                             $( "#winnerboard" ).click(function() {
-                                $.colorbox({href:winnerboard, iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                                $.colorbox({href:winnerboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
                             $( "#clear_cache" ).click(function() {
