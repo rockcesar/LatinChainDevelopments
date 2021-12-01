@@ -29,53 +29,53 @@ function set_points(points) {
     }
 }
 
-function get_user() {
-    if(pi_user_id != "" && pi_user_code != "")
-    {
-        var data = {
-                    'pi_user_id': pi_user_id,
-                    'pi_user_code': pi_user_code,
-                    'accessToken': accessToken,
-                    'csrf_token': odoo.csrf_token,
-                };
-        $.ajaxSetup({async: false});
-        return $.post( "/get-user", data).done(function(data) {
-            data = JSON.parse(data);
-            if(data.result)
-            {
-                passkey=data.passkey;
-                if(data.unblocked)
+$( document ).ready(function() {
+    function get_user() {
+        if(pi_user_id != "" && pi_user_code != "")
+        {
+            var data = {
+                        'pi_user_id': pi_user_id,
+                        'pi_user_code': pi_user_code,
+                        'accessToken': accessToken,
+                        'csrf_token': odoo.csrf_token,
+                    };
+            $.ajaxSetup({async: false});
+            return $.post( "/get-user", data).done(function(data) {
+                data = JSON.parse(data);
+                if(data.result)
                 {
-                    $("#pi_donate").hide();
-                    $("#button_click").hide();
-                    $('#chess-tab').show();
-                    $('#chess-tab').click();
-                    if(all_was_loaded)
+                    passkey=data.passkey;
+                    if(data.unblocked)
                     {
-                        setTimeout(function() {
-                            setDesktopBoard();
-                        }, 1000);
-                    }else{
-                        setTimeout(function() {
-                            setDesktopBoard();
-                        }, 10000);
+                        $("#pi_donate").hide();
+                        $("#button_click").hide();
+                        $('#chess-tab').show();
+                        $('#chess-tab').click();
+                        if(all_was_loaded)
+                        {
+                            setTimeout(function() {
+                                setDesktopBoard();
+                            }, 1000);
+                        }else{
+                            setTimeout(function() {
+                                setDesktopBoard();
+                            }, 10000);
+                        }
+                    }
+                    else
+                    {
+                        $("#pi_donate").hide();
+                        $("#button_click").show();
+                        $('#chess-tab').hide();
+                        $("#home-tab").click();
                     }
                 }
-                else
-                {
-                    $("#pi_donate").hide();
-                    $("#button_click").show();
-                    $('#chess-tab').hide();
-                    $("#home-tab").click();
-                }
-            }
-        }).fail(function() {
-            
-        });
+            }).fail(function() {
+                
+            });
+        }
     }
-}
-
-$( document ).ready(function() {
+    
     $('.timer_white').countimer({
 			autoStart : false
 			});
