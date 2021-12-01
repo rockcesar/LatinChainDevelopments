@@ -49,16 +49,32 @@ $( document ).ready(function() {
                         $("#button_click").hide();
                         $('#chess-tab').show();
                         $('#chess-tab').click();
+                        alert(all_was_loaded_lib);
                         alert(all_was_loaded);
-                        if(all_was_loaded)
+                        if(all_was_loaded_lib == "mobile")
                         {
-                            setTimeout(function() {
-                                setDesktopBoard();
-                            }, 1000);
-                        }else{
-                            setTimeout(function() {
-                                setDesktopBoard();
-                            }, 10000);
+                            if(all_was_loaded)
+                            {
+                                setTimeout(function() {
+                                    setMobileBoard();
+                                }, 1000);
+                            }else{
+                                setTimeout(function() {
+                                    setMobileBoard();
+                                }, 10000);
+                            }
+                        }else if(all_was_loaded_lib == "desktop")
+                        {
+                            if(all_was_loaded)
+                            {
+                                setTimeout(function() {
+                                    setDesktopBoard();
+                                }, 1000);
+                            }else{
+                                setTimeout(function() {
+                                    setDesktopBoard();
+                                }, 10000);
+                            }
                         }
                     }
                     else

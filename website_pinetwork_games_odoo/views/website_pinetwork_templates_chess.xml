@@ -230,6 +230,7 @@
 
                     <script>
                         var all_was_loaded = false;
+                        var all_was_loaded_lib = false;
                         $( document ).ready(function() {
                             function is_touch_device() {
                                 return 'ontouchstart' in window || navigator.maxTouchPoints;
@@ -283,6 +284,7 @@
                                     if (mobileLibs == 0) {
                                         console.log('Mobile loaded');
                                         all_was_loaded = true;
+                                        all_was_loaded_lib = lib;
                                         /*setTimeout(function() {
                                             setMobileBoard();
                                         }, 10000);*/
@@ -294,6 +296,7 @@
                                     if (desktopLibs == 0) {
                                         console.log('Desktop loaded');
                                         all_was_loaded = true;
+                                        all_was_loaded_lib = lib;
                                         /*setTimeout(function() {
                                             setDesktopBoard();
                                         }, 10000);*/
