@@ -4,8 +4,6 @@ var accessToken = "";
 var passkey = "";
 const Pi = window.Pi;
 
-var all_was_loaded = false;
-
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {

@@ -229,6 +229,7 @@
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/ltpgnviewer.js"></script>
 
                     <script>
+                        var all_was_loaded = false;
                         $( document ).ready(function() {
                             function is_touch_device() {
                                 return 'ontouchstart' in window || navigator.maxTouchPoints;
