@@ -39,7 +39,7 @@ function load_all_boards()
         }else{
             setTimeout(function() {
                 load_all_boards();
-            }, 3000);
+            }, 5000);
         }
     }else if(all_was_loaded_lib == "desktop")
     {
@@ -51,7 +51,7 @@ function load_all_boards()
         }else{
             setTimeout(function() {
                 load_all_boards();
-            }, 3000);
+            }, 5000);
         }
     }
 }
