@@ -27,6 +27,35 @@ function set_points(points) {
     }
 }
 
+function load_all_boards()
+{
+    if(all_was_loaded_lib == "mobile")
+    {
+        if(all_was_loaded)
+        {
+            setTimeout(function() {
+                setMobileBoard();
+            }, 1000);
+        }else{
+            setTimeout(function() {
+                load_all_boards();
+            }, 3000);
+        }
+    }else if(all_was_loaded_lib == "desktop")
+    {
+        if(all_was_loaded)
+        {
+            setTimeout(function() {
+                setDesktopBoard();
+            }, 1000);
+        }else{
+            setTimeout(function() {
+                load_all_boards();
+            }, 3000);
+        }
+    }
+}
+
 function get_user() {
     if(pi_user_id != "" && pi_user_code != "")
     {
@@ -49,31 +78,7 @@ function get_user() {
                     $('#chess-tab').show();
                     $('#chess-tab').click();
                     
-                    if(all_was_loaded_lib == "mobile")
-                    {
-                        if(all_was_loaded)
-                        {
-                            setTimeout(function() {
-                                setMobileBoard();
-                            }, 1000);
-                        }else{
-                            setTimeout(function() {
-                                setMobileBoard();
-                            }, 5000);
-                        }
-                    }else if(all_was_loaded_lib == "desktop")
-                    {
-                        if(all_was_loaded)
-                        {
-                            setTimeout(function() {
-                                setDesktopBoard();
-                            }, 1000);
-                        }else{
-                            setTimeout(function() {
-                                setDesktopBoard();
-                            }, 5000);
-                        }
-                    }
+                    load_all_boards();
                 }
                 else
                 {
