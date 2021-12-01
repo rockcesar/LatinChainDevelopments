@@ -27,69 +27,69 @@ function set_points(points) {
     }
 }
 
-$( document ).ready(function() {
-    function get_user() {
-        if(pi_user_id != "" && pi_user_code != "")
-        {
-            var data = {
-                        'pi_user_id': pi_user_id,
-                        'pi_user_code': pi_user_code,
-                        'accessToken': accessToken,
-                        'csrf_token': odoo.csrf_token,
-                    };
-            $.ajaxSetup({async: false});
-            return $.post( "/get-user", data).done(function(data) {
-                data = JSON.parse(data);
-                if(data.result)
+function get_user() {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'accessToken': accessToken,
+                    'csrf_token': odoo.csrf_token,
+                };
+        $.ajaxSetup({async: false});
+        return $.post( "/get-user", data).done(function(data) {
+            data = JSON.parse(data);
+            if(data.result)
+            {
+                passkey=data.passkey;
+                if(data.unblocked)
                 {
-                    passkey=data.passkey;
-                    if(data.unblocked)
+                    $("#pi_donate").hide();
+                    $("#button_click").hide();
+                    $('#chess-tab').show();
+                    $('#chess-tab').click();
+                    
+                    if(all_was_loaded_lib == "mobile")
                     {
-                        $("#pi_donate").hide();
-                        $("#button_click").hide();
-                        $('#chess-tab').show();
-                        $('#chess-tab').click();
-                        
-                        if(all_was_loaded_lib == "mobile")
+                        if(all_was_loaded)
                         {
-                            if(all_was_loaded)
-                            {
-                                setTimeout(function() {
-                                    setMobileBoard();
-                                }, 1000);
-                            }else{
-                                setTimeout(function() {
-                                    setMobileBoard();
-                                }, 10000);
-                            }
-                        }else if(all_was_loaded_lib == "desktop")
+                            setTimeout(function() {
+                                setMobileBoard();
+                            }, 1000);
+                        }else{
+                            setTimeout(function() {
+                                setMobileBoard();
+                            }, 5000);
+                        }
+                    }else if(all_was_loaded_lib == "desktop")
+                    {
+                        if(all_was_loaded)
                         {
-                            if(all_was_loaded)
-                            {
-                                setTimeout(function() {
-                                    setDesktopBoard();
-                                }, 1000);
-                            }else{
-                                setTimeout(function() {
-                                    setDesktopBoard();
-                                }, 10000);
-                            }
+                            setTimeout(function() {
+                                setDesktopBoard();
+                            }, 1000);
+                        }else{
+                            setTimeout(function() {
+                                setDesktopBoard();
+                            }, 5000);
                         }
                     }
-                    else
-                    {
-                        $("#pi_donate").hide();
-                        $("#button_click").show();
-                        $('#chess-tab').hide();
-                        $("#home-tab").click();
-                    }
                 }
-            }).fail(function() {
-                
-            });
-        }
+                else
+                {
+                    $("#pi_donate").hide();
+                    $("#button_click").show();
+                    $('#chess-tab').hide();
+                    $("#home-tab").click();
+                }
+            }
+        }).fail(function() {
+            
+        });
     }
-    
+}
+
+$( document ).ready(function() {
     $('.timer_white').countimer({
 			autoStart : false
 			});
