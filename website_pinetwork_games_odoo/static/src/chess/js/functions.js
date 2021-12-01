@@ -4,6 +4,8 @@ var accessToken = "";
 var passkey = "";
 const Pi = window.Pi;
 
+var all_was_loaded = false;
+
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
@@ -48,6 +50,16 @@ function get_user() {
                     $("#button_click").hide();
                     $('#chess-tab').show();
                     $('#chess-tab').click();
+                    if(all_was_loaded)
+                    {
+                        setTimeout(function() {
+                            setDesktopBoard();
+                        }, 1000);
+                    }else{
+                        setTimeout(function() {
+                            setDesktopBoard();
+                        }, 10000);
+                    }
                 }
                 else
                 {

@@ -281,9 +281,10 @@
                                     mobileLibs--;
                                     if (mobileLibs == 0) {
                                         console.log('Mobile loaded');
-                                        setTimeout(function() {
+                                        all_was_loaded = true;
+                                        /*setTimeout(function() {
                                             setMobileBoard();
-                                        }, 10000);
+                                        }, 10000);*/
                                     }
                                 }
 
@@ -291,9 +292,10 @@
                                     desktopLibs--;
                                     if (desktopLibs == 0) {
                                         console.log('Desktop loaded');
-                                        setTimeout(function() {
+                                        all_was_loaded = true;
+                                        /*setTimeout(function() {
                                             setDesktopBoard();
-                                        }, 10000);
+                                        }, 10000);*/
                                     }
                                 }
 
