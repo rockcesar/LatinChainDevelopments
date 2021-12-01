@@ -49,8 +49,7 @@ $( document ).ready(function() {
                         $("#button_click").hide();
                         $('#chess-tab').show();
                         $('#chess-tab').click();
-                        alert(all_was_loaded_lib);
-                        alert(all_was_loaded);
+                        
                         if(all_was_loaded_lib == "mobile")
                         {
                             if(all_was_loaded)
