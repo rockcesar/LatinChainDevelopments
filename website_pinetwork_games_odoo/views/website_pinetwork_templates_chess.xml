@@ -53,7 +53,7 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <span align="center">
-                                    <img width="30" height="30" id="play" src="/website_pinetwork_games_odoo/static/src/music/music.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
+                                    <br/><img width="30" height="30" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
                                     <img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/chess/img/icons/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
                                     <h1 align="center" style="font-weight:600">Pi Chess</h1>
                                     
@@ -321,11 +321,13 @@
                                 {
                                     audioElement.play();
                                     status_audio = true;
+                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
                                 }
                                 else
                                 {
                                     audioElement.pause();
                                     status_audio = false;
+                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
                                 }
                             });
                         
