@@ -311,7 +311,7 @@
                         $( document ).ready(function() {
                             var status_audio = false;
                             var audioElement = document.createElement('audio');
-                            audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/Right_Here_Beside_You-Spence.mp3');
+                            audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
                             audioElement.addEventListener('ended', function() {
                                 this.play();
                             }, false);
