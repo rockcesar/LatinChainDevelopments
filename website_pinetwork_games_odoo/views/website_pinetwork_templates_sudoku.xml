@@ -114,7 +114,7 @@
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
                                 <div style="text-align:center">
-                                    <img width="30" height="30" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
+                                    <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                                     <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
                                     <br />
                                     <br />
