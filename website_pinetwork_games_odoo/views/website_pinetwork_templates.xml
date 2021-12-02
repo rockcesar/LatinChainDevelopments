@@ -83,7 +83,7 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container form-group" style="text-align:center !important">
-                        <img width="30" height="30" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
+                        <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                         <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" lang="en-US"/>
                         <input id="button_click" name="button_click" value="Donate" type="button" class="btn btn-primary"/>
                         
