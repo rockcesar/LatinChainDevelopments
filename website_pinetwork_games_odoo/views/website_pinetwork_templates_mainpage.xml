@@ -80,6 +80,7 @@
                                     if(data.result)
                                     {
                                         passkey=data.passkey;
+                                        alert("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         if(data.unblocked)
                                         {
                                             $("#verified").html(" (verified)");
@@ -88,12 +89,12 @@
                                             $("#user_logged").html(data.pi_user_code);
                                             $("#user_status").html("verified");
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake ", Sudoku: " + data.points_sudoku + ")");
+                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
                                             $("#user_status").html("Not verified. You should go to a game and unlock.");
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake ", Sudoku: " + data.points_sudoku + ")");
+                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }
                                     }
                                 }).fail(function() {
