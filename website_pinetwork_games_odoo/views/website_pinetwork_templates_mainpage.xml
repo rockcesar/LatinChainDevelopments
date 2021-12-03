@@ -331,7 +331,7 @@
                             <!--<a href="https://weblatin.latin-chain.com" class="btn btn-link">LATINCHAIN</a><br/><br/>-->
                             <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a>
                           </div>
-                          <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab" style="max-height: 300px; overflow: auto;">
+                          <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab" style="max-height: 350px; overflow: auto;">
                             <br/>Video presentation:<br/><br/>
                             <iframe width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                             <br/><br/>Enjoy:<br/><br/>
