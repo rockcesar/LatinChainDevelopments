@@ -80,7 +80,6 @@
                                     if(data.result)
                                     {
                                         passkey=data.passkey;
-                                        alert("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         if(data.unblocked)
                                         {
                                             $("#verified").html(" (verified)");
