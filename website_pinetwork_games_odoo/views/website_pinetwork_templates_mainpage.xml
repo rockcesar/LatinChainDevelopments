@@ -81,9 +81,19 @@
                                     {
                                         passkey=data.passkey;
                                         if(data.unblocked)
-                                        {   
-                                            $("#verified").html(" (verified)");                 
+                                        {
+                                            $("#verified").html(" (verified)");
                                             $("#verified").show();
+                                            
+                                            $("#user_logged").html(data.pi_user_code);
+                                            $("#user_status").html("verified");
+                                            $("#user_points").html(data.points);
+                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake ", Sudoku: " + data.points_sudoku + ")");
+                                        }else{
+                                            $("#user_logged").html(data.pi_user_code);
+                                            $("#user_status").html("Not verified. You should go to a game and unlock.");
+                                            $("#user_points").html(data.points);
+                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake ", Sudoku: " + data.points_sudoku + ")");
                                         }
                                     }
                                 }).fail(function() {
@@ -247,6 +257,10 @@
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
                             <ul class="dropdown-menu">
                               <li>
+                                <a class="dropdown-item" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false">User</a>
+                              </li>
+                              <li><hr class="dropdown-divider"/></li>
+                              <li>
                                 <a class="dropdown-item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Dev</a>
                               </li>
                               <li><hr class="dropdown-divider"/></li>
@@ -327,6 +341,12 @@
                             <button id="winnerboard" class="btn btn-success">Top 10 Board</button>
                             <!--<a href="/get-points/" id="leaderboard" class="btn btn-info">Leaders Board</a><br/><br/>
                             <a href="/get-winners/" id="winnerboard" class="btn btn-success">Top 10 Board</a>-->
+                          </div>
+                          <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
+                            <br/>User: <strong id="user_logged">invite</strong><br/>
+                            <br/>Status: <strong id="user_status">invite</strong><br/>
+                            <br/>Total points: <strong id="user_points">0</strong><br/>
+                            <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
                           </div>
                         </div>
                         <!--<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app.<br/><br/>
