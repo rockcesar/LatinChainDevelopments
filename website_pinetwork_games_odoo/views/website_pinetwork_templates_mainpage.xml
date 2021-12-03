@@ -325,6 +325,7 @@
                           </div>
                           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <br/>INFO:<br/><br/>
+                            Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.<br/><br/>
                         
                             <img src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /><br/><br/>
                             <!--<a href="https://weblatin.latin-chain.com" class="btn btn-link">LATINCHAIN</a><br/><br/>-->
