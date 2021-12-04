@@ -86,7 +86,7 @@
                                             $("#verified").show();
                                             
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("<br/>verified<br/>");
+                                            $(".user_status").html("<br/>verified. Days available: " + data.days_available +<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }else{
@@ -300,7 +300,7 @@
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <strong class="user_status"></strong>
                             <br/>Choose your app:<br/><br/>
-                        
+                            
                             <div class="container" style="text-align:center">
                                 <div class="row">
                                     <div class="col"><a href="/chess" class="btn btn-success">CHESS</a></div>

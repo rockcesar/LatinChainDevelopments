@@ -205,6 +205,7 @@ class pi_users(models.Model):
     unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
     user_agent = fields.Char('User agent')
     last_connection = fields.Datetime(string='Last connection', default="")
+    days_available = fields.Integer('Days available', store=True, default=0)
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
@@ -226,11 +227,18 @@ class pi_users(models.Model):
 
     def check_users(self):
         for piu in self:
-            transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids)], order="create_date desc", limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
-                piu.write({'unblocked': False})
+                piu.write({'unblocked': False, 'days_available': 0})
             else:
+                days_available = 30 - (datetime.now() - transaction[0].create_date).days
+                
+                if days_available < 0:
+                    days_available = 0
+                    
+                piu.write({'days_available': days_available})
+                
                 for t in transaction:
                     if (datetime.now() - t.create_date).days >= 30:
                         piu.write({'unblocked': False})
