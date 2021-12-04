@@ -26,6 +26,7 @@ class Website(Website):
 """
 
 winner_domain = [('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
+leaders_domain = [('unblocked', '=', True)]
 
 class CustomerPortalInherit(CustomerPortal):
     @http.route('/my/security', type='http', auth='user', website=True, methods=['GET', 'POST'])
@@ -185,7 +186,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
         
-        pi_users_list = request.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked desc,id asc")
+        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked desc,id asc")
         
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
@@ -197,7 +198,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
         
-        pi_users_list = request.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked desc,id asc")
+        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked desc,id asc")
         
         return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
     
