@@ -23,6 +23,7 @@
                                     <field name="user_agent" readonly="True"/>
                                     <field name="last_connection" readonly="True"/>
                                     <field name="days_available" readonly="True"/>
+                                    <field name="pi_transactions_ids" readonly="True"/>
                                 </group>
                             </group>
                         </page>
