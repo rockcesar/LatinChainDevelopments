@@ -182,7 +182,7 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_points_user(self, pi_user_code, **kw):
-        pi_users_verified_count = request.env["pi.users"].sudo().search_count([('unblocked', '=', True)])
+        pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
         
@@ -194,7 +194,7 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-points/', type='http', auth="public", website=True)
     def get_points(self, **kw):
-        pi_users_verified_count = request.env["pi.users"].sudo().search_count([('unblocked', '=', True)])
+        pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
         
