@@ -47,8 +47,8 @@
                 <field name="paid"/>
                 <field name="paid_in_transactions"/>
                 <field name="unblocked"/>
-                <field name="last_connection"/>
                 <field name="days_available"/>
+                <field name="last_connection"/>
             </tree>
         </field>
     </record>
