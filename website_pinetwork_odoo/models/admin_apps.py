@@ -239,6 +239,5 @@ class pi_users(models.Model):
                     
                 piu.write({'days_available': days_available})
                 
-                for t in transaction:
-                    if (datetime.now() - t.create_date).days >= 30:
-                        piu.write({'unblocked': False})
+                if days_available == 0:
+                    piu.write({'unblocked': False})
