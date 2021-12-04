@@ -86,12 +86,12 @@
                                             $("#verified").show();
                                             
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("verified");
+                                            $(".user_status").html("<br/>verified<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("Not verified. Each 30 days you should unlock the app paying 1 Pi. Go to one of the games to do it.");
+                                            $(".user_status").html("<br/>Not verified. Each 30 days you should unlock the app paying 1 Pi. Go to one of the games to do it.<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }
@@ -298,7 +298,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <strong class="user_status"><br/> </strong>
+                            <strong class="user_status"></strong>
                             <br/>Choose your app:<br/><br/>
                         
                             <div class="container" style="text-align:center">
