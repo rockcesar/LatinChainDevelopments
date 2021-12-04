@@ -86,7 +86,7 @@
                                             $("#verified").show();
                                             
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("<br/>verified. Days available: " + data.days_available +<br/>");
+                                            $(".user_status").html("<br/>verified. Days available: " + data.days_available + "<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }else{
