@@ -224,7 +224,6 @@ class pi_users(models.Model):
             
             if i.paid_in_transactions > 0:
                 i.unblocked = True
-                i.days_available = 30
                 
             transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
             
