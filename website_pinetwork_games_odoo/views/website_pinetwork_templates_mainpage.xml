@@ -348,7 +348,7 @@
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
                             <br/>User: <strong id="user_logged">--</strong><br/>
-                            <br/>Status: <strong class="user_status">Access through Pi Browser.</strong><br/>
+                            <br/>Status: <strong class="user_status">Access through Pi Browser.<br/></strong>
                             <br/>Total points: <strong id="user_points">0</strong><br/>
                             <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
                           </div>
