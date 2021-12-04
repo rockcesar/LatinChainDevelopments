@@ -21,5 +21,18 @@
            <field name="code">model.search([('action', 'in', ['approve', 'cancelled'])]).check_transactions()</field>
            <field eval="False" name="doall"/>
         </record>
+        
+        <record forcecreate="True" id="check_pi_users_base_v1" model="ir.cron">
+           <field name="name">Check Pi Users</field>
+           <field eval="True" name="active" />
+           <field name="user_id" ref="base.user_root" />
+           <field name="interval_number">12</field>
+           <field name="interval_type">hours</field>
+           <field name="numbercall">-1</field>
+           <field ref="model_pi_users" name="model_id" />
+            <field name="state">code</field>
+           <field name="code">model.search([('unblocked', '=', True)]).check_users()</field>
+           <field eval="False" name="doall"/>
+        </record>
     </data>
 </odoo>

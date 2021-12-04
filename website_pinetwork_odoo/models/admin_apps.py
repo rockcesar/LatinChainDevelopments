@@ -223,3 +223,11 @@ class pi_users(models.Model):
             
             if i.paid_in_transactions > 0:
                 i.unblocked = True
+
+    def check_users(self):
+        for piu in self:
+            transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids)], order="create_date desc", limit=1)
+            
+            for t in transaction:
+                if (datetime.now() - t.create_date).days >= 30:
+                    piu.write({'unblocked': False})
