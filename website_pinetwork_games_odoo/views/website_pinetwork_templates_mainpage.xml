@@ -86,12 +86,12 @@
                                             $("#verified").show();
                                             
                                             $("#user_logged").html(data.pi_user_code);
-                                            $("#user_status").html("verified");
+                                            $(".user_status").html("verified");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
-                                            $("#user_status").html("Not verified. Each 30 days you should unlock the app paying 1 Pi. Go to one of the games to do it.");
+                                            $(".user_status").html("Not verified. Each 30 days you should unlock the app paying 1 Pi. Go to one of the games to do it.");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }
@@ -298,6 +298,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <br/><strong class="user_status"></strong><br/>
                             <br/>Choose your app:<br/><br/>
                         
                             <div class="container" style="text-align:center">
@@ -347,7 +348,7 @@
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
                             <br/>User: <strong id="user_logged">--</strong><br/>
-                            <br/>Status: <strong id="user_status">Access through Pi Browser.</strong><br/>
+                            <br/>Status: <strong class="user_status">Access through Pi Browser.</strong><br/>
                             <br/>Total points: <strong id="user_points">0</strong><br/>
                             <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
                           </div>
