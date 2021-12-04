@@ -224,6 +224,21 @@ class pi_users(models.Model):
             
             if i.paid_in_transactions > 0:
                 i.unblocked = True
+                i.days_available = 30
+                
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
+            
+            if len(transaction) == 0:
+                i.unblocked = False
+                i.days_available = 0
+            else:
+                i.days_available = 30 - (datetime.now() - transaction[0].create_date).days
+                
+                if i.days_available < 0:
+                    i.days_available = 0
+                
+                if i.days_available == 0:
+                    i.unblocked = False
 
     def check_users(self):
         for piu in self:
