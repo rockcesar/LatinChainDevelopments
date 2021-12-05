@@ -51,6 +51,7 @@
                 <field name="cancelled"/>
                 <!--<field name="txid"/>-->
                 <field name="pi_user"/>
+                <field name="amount"/>
             </tree>
         </field>
     </record>
