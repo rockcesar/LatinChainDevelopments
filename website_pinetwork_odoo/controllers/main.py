@@ -114,6 +114,11 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_points(self, **kw):
+        admin_apps_block_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform"), ('block_points', '=', True)])
+        
+        if len(admin_apps_block_list) > 0:
+            return json.dumps({'result': False})
+        
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         #_logger.info(kw['accessToken'])
         try:

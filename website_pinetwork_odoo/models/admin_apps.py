@@ -102,6 +102,7 @@ class admin_apps(models.Model):
     pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners')
     pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', pi_users_winners_ids)]")
     pi_users_winners_html = fields.Html('Winners HTML')
+    block_points = fields.Boolean('Block points', default=False)
     
     def pi_api(self, kw):
         
