@@ -99,6 +99,9 @@ class admin_apps(models.Model):
     admin_key = fields.Char('Admin Key', required=True)
     sandbox = fields.Boolean('Sandbox', required=True)
     pi_transactions_ids = fields.One2many('pi.transactions', 'app_id')
+    pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners')
+    pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', pi_users_winners_ids)]")
+    pi_users_winners_html = fields.Html('Winners HTML')
     
     def pi_api(self, kw):
         
@@ -206,6 +209,8 @@ class pi_users(models.Model):
     user_agent = fields.Char('User agent')
     last_connection = fields.Datetime(string='Last connection', default="")
     days_available = fields.Integer('Days available', store=True, default=0)
+    admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners')
+    admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', admin_apps_winners_ids)]")
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):

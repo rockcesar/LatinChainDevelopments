@@ -8,23 +8,23 @@
                 <sheet>
                     <notebook>
                         <page string="Pi Users">
-                            <group col="4">
-                                <group colspan="2" col="2">
-                                    <field name="name"/>
-                                    <field name="pi_user_id" readonly="True"/>
-                                    <field name="pi_user_code" readonly="True"/>
-                                    <field name="points" readonly="True"/>
-                                    <field name="points_chess" readonly="True"/>
-                                    <field name="points_sudoku" readonly="True"/>
-                                    <field name="points_snake" readonly="True"/>
-                                    <field name="paid" readonly="True"/>
-                                    <field name="paid_in_transactions" readonly="True"/>
-                                    <field name="unblocked" readonly="False"/>
-                                    <field name="user_agent" readonly="True"/>
-                                    <field name="last_connection" readonly="True"/>
-                                    <field name="days_available" readonly="True"/>
-                                    <field name="pi_transactions_ids" readonly="True"/>
-                                </group>
+                            <group>
+                                <field name="name"/>
+                                <field name="pi_user_id" readonly="True"/>
+                                <field name="pi_user_code" readonly="True"/>
+                                <field name="points" readonly="True"/>
+                                <field name="points_chess" readonly="True"/>
+                                <field name="points_sudoku" readonly="True"/>
+                                <field name="points_snake" readonly="True"/>
+                                <field name="paid" readonly="True"/>
+                                <field name="paid_in_transactions" readonly="True"/>
+                                <field name="unblocked" readonly="False"/>
+                                <field name="user_agent" readonly="True"/>
+                                <field name="last_connection" readonly="True"/>
+                                <field name="days_available" readonly="True"/>
+                                <field name="admin_apps_winners_ids" widget="many2many_tags"/>
+                                <field name="admin_apps_winners_paid_ids" widget="many2many_tags"/>
+                                <field name="pi_transactions_ids" readonly="True"/>
                             </group>
                         </page>
                     </notebook>
@@ -39,7 +39,7 @@
         <field name="arch" type="xml">
             <tree string="Pi Users">
                 <field name="name"/>
-                <field name="pi_user_id"/>
+                <!--<field name="pi_user_id"/>-->
                 <field name="pi_user_code"/>
                 <field name="points"/>
                 <field name="points_chess"/>

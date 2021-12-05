@@ -8,26 +8,24 @@
                 <sheet>
                     <notebook>
                         <page string="Pi Transactions">
-                            <group col="4">
-                                <group colspan="2" col="2">
-                                    <field name="name"/>
-                                    <field name="app_id" readonly="True"/>
-                                    <field name="app"/>
-                                    <field name="action" readonly="True"/>
-                                    <field name="payment_id" readonly="True"/>
-                                    <field name="txid" readonly="True"/>
-                                    <field name="pi_user_id" readonly="True"/>
-                                    <field name="pi_user" readonly="True"/>
-                                    <field name="amount" readonly="True"/>
-                                    <field name="memo" readonly="True"/>
-                                    <field name="to_address" readonly="True"/>
-                                    <field name="developer_approved" readonly="True"/>
-                                    <field name="transaction_verified" readonly="True"/>
-                                    <field name="developer_completed" readonly="True"/>
-                                    <field name="cancelled" readonly="True"/>
-                                    <field name="user_cancelled" readonly="True"/>
-                                    <field name="json_result" readonly="True"/>
-                                </group>
+                            <group>
+                                <field name="name"/>
+                                <field name="app_id" readonly="True"/>
+                                <field name="app"/>
+                                <field name="action" readonly="True"/>
+                                <field name="payment_id" readonly="True"/>
+                                <field name="txid" readonly="True"/>
+                                <field name="pi_user_id" readonly="True"/>
+                                <field name="pi_user" readonly="True"/>
+                                <field name="amount" readonly="True"/>
+                                <field name="memo" readonly="True"/>
+                                <field name="to_address" readonly="True"/>
+                                <field name="developer_approved" readonly="True"/>
+                                <field name="transaction_verified" readonly="True"/>
+                                <field name="developer_completed" readonly="True"/>
+                                <field name="cancelled" readonly="True"/>
+                                <field name="user_cancelled" readonly="True"/>
+                                <field name="json_result" readonly="True"/>
                             </group>
                         </page>
                     </notebook>
@@ -46,8 +44,12 @@
                 </header>
                 <field name="app"/>
                 <field name="action"/>
-                <field name="payment_id"/>
-                <field name="txid"/>
+                <!--<field name="payment_id"/>-->
+                <field name="developer_approved"/>
+                <field name="transaction_verified"/>
+                <field name="developer_completed"/>
+                <field name="cancelled"/>
+                <!--<field name="txid"/>-->
                 <field name="pi_user"/>
             </tree>
         </field>

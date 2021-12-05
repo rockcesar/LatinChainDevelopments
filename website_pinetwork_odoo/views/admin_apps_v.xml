@@ -8,14 +8,17 @@
                 <sheet>
                     <notebook>
                         <page string="Admin Pi App">
-                            <group col="4">
-                                <group colspan="2" col="2">
+                            <group><!--<group col="4">
+                                <group colspan="2" col="2">-->
                                     <field name="name"/>
                                     <field name="app"/>
                                     <field name="admin_key"/>
                                     <field name="sandbox"/>
+                                    <field name="pi_users_winners_ids" widget="many2many_tags"/>
+                                    <field name="pi_users_winners_paid_ids" widget="many2many_tags"/>
+                                    <field name="pi_users_winners_html"/>
                                     <field name="pi_transactions_ids"/>
-                                </group>
+                                <!--</group>-->
                             </group>
                         </page>
                     </notebook>
