@@ -15,7 +15,7 @@
                 <body>
                     <div class="container" style="text-align:center">
                         <t t-if="pi_user">
-                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/><br/>
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
                             Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
@@ -34,7 +34,7 @@
                                     <t t-set="style" t-value="''" />
                                 </t>
                                 
-                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
                                 <t t-set="i" t-value="i+1"/>
                             </t>
                         </ul>
@@ -58,7 +58,7 @@
                 <body>
                     <div class="container" style="text-align:center">
                         <t t-if="pi_user">
-                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/><br/>
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
                             Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
@@ -77,7 +77,7 @@
                                     <t t-set="style" t-value="''" />
                                 </t>
                                 
-                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
                                 <t t-set="i" t-value="i+1"/>
                             </t>
                         </ul>
