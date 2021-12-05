@@ -16,6 +16,7 @@
                                 <field name="points_chess" readonly="True"/>
                                 <field name="points_sudoku" readonly="True"/>
                                 <field name="points_snake" readonly="True"/>
+                                <field name="points_datetime" readonly="True"/>
                                 <field name="paid" readonly="True"/>
                                 <field name="paid_in_transactions" readonly="True"/>
                                 <field name="unblocked" readonly="False"/>
@@ -50,6 +51,7 @@
                 <field name="unblocked"/>
                 <field name="days_available"/>
                 <field name="last_connection"/>
+                <field name="points_datetime"/>
             </tree>
         </field>
     </record>

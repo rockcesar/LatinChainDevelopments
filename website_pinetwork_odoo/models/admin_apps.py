@@ -202,6 +202,7 @@ class pi_users(models.Model):
     points_chess = fields.Float('Chess Points', required=True, default=0)
     points_sudoku = fields.Float('Sudoku Points', required=True, default=0)
     points_snake = fields.Float('Snake Points', required=True, default=0)
+    points_datetime = fields.Datetime('Points Datetime', compute="_compute_points_datetime", store=True)
     paid = fields.Float('Paid by user')
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True)
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user')
@@ -216,6 +217,11 @@ class pi_users(models.Model):
     def _total_points(self):
         for i in self:
             i.points = i.points_chess + i.points_sudoku + i.points_snake
+            
+    @api.depends("points_chess", "points_sudoku", "points_snake")
+    def _compute_points_datetime(self):
+        for i in self:
+            i.points_datetime = datetime.now()
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
