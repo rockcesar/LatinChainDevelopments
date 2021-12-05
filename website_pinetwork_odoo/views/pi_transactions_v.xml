@@ -52,6 +52,7 @@
                 <!--<field name="txid"/>-->
                 <field name="pi_user"/>
                 <field name="amount"/>
+                <field name="create_date"/>
             </tree>
         </field>
     </record>
