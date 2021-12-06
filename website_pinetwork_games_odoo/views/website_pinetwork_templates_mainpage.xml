@@ -309,7 +309,7 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-4"><a href="/pinetwork" class="btn btn-primary">APP EXAMPLE</a></div>
+                                    <div class="col-4"><a href="/pinetwork" class="btn btn-primary">DONATION APP</a></div>
                                     <div class="col-8"><button id="clear_cache" class="btn btn-info">Clear Cache</button></div>
                                 </div>
                             </div>
