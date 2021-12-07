@@ -21,3 +21,15 @@ Check our apps published: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-pub
 To test, you have to use Pi Browser.
 
 Main page: /
+
+Based on the following softwares:
+
+sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License)
+
+snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License)
+
+chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3)
+
+piapp-example (AGPLv3) is a test and example of how to use Pi Apps API in a Webpage.
+
+More Info: https://github.com/rockcesar/PiNetworkDevelopments
