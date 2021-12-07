@@ -1,6 +1,8 @@
 Pi Network Games Engine and Platform for Odoo
 -----------------
 
+Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
+
 Games Leaders board, Pi API Platform integration, Games.
 
 Pi is a new digital currency developed by Stanford PhDs, with over 18 million members worldwide (at July 2021). To claim your Pi, follow this link https://minepi.com/rockcesar and use my username (rockcesar) as your invitation code.
