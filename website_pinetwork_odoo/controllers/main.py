@@ -260,6 +260,7 @@ class PiNetworkBaseController(http.Controller):
         searchValue = kw["search[value]"]
         
         pi_users_count = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
+        pi_users_count_filter = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
@@ -267,4 +268,4 @@ class PiNetworkBaseController(http.Controller):
         for i in pi_users_list:
             data.append({'pi_user_code': i.pi_user_code})
         
-        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": rowperpage})
+        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
