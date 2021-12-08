@@ -267,4 +267,4 @@ class PiNetworkBaseController(http.Controller):
         for i in pi_users_list:
             data.append({'pi_user_code': i.pi_user_code})
         
-        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": len(pi_users_list)})
+        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": rowperpage})
