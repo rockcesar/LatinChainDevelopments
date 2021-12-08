@@ -271,6 +271,6 @@ class PiNetworkBaseController(http.Controller):
                 verified = "(verified)"
             else:
                 verified = ""
-            data.append({'pi_user_code': i.pi_user_code + " " + verfied})
+            data.append({'pi_user_code': i.pi_user_code + " " + verified})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
