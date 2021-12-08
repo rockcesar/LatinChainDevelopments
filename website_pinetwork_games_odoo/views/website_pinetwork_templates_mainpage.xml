@@ -219,6 +219,10 @@
                                 $.colorbox({href:winnerboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
+                            $( "#credits" ).click(function() {
+                                $.colorbox({href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
@@ -342,7 +346,8 @@
                             <br/>Leaders and rules:<br/><br/>
                             <button id="rules_button" class="btn btn-warning">Rules</button><br/><br/>
                             <button id="leaderboard" class="btn btn-info">Leaders Board</button><br/><br/>
-                            <button id="winnerboard" class="btn btn-success">Top 10 Board</button>
+                            <button id="winnerboard" class="btn btn-success">Top 10 Board</button><br/><br/>
+                            <button id="credits" class="btn btn-success">Credits</button>
                             <!--<a href="/get-points/" id="leaderboard" class="btn btn-info">Leaders Board</a><br/><br/>
                             <a href="/get-winners/" id="winnerboard" class="btn btn-success">Top 10 Board</a>-->
                           </div>
