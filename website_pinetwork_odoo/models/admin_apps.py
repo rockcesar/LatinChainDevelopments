@@ -26,7 +26,7 @@ class pi_transactions(models.Model):
     txid = fields.Text('TXID')
     pi_user_id = fields.Char('Pi User ID')
     pi_user = fields.Many2one('pi.users', ondelete='restrict')
-    amount = fields.Float('Amount')
+    amount = fields.Float('Amount', digits=(50,8))
     memo = fields.Char('Memo')
     to_address = fields.Char('To address')
     developer_approved = fields.Boolean('developer_approved')
