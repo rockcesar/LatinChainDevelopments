@@ -246,6 +246,6 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_count = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
         
-        pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example')], order="pi_user_code asc, unblocked desc")
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example')], order="unblocked desc, pi_user_code asc")
         
         return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_list': pi_users_list, 'pi_users_count': pi_users_count})
