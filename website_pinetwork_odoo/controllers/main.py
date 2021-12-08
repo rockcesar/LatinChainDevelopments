@@ -266,6 +266,11 @@ class PiNetworkBaseController(http.Controller):
         
         data = []
         for i in pi_users_list:
-            data.append({'pi_user_code': i.pi_user_code})
+            verified = ""
+            if i.unblocked:
+                verified = "(verified)"
+            else:
+                verified = ""
+            data.append({'pi_user_code': i.pi_user_code + " " + verfied})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
