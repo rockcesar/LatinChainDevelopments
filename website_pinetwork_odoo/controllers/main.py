@@ -260,7 +260,7 @@ class PiNetworkBaseController(http.Controller):
         searchValue = kw["search[value]"]
         
         pi_users_count = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
-        pi_users_count_filter = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        pi_users_count_filter = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder)
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
