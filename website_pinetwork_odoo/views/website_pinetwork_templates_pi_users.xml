@@ -117,7 +117,6 @@
                         <t t-if="pi_users_count >= 0">
                             Total donators: <strong><t t-esc="pi_users_count" /></strong><br/>
                         </t>
-                        <t t-set="i" t-value="1"/>
                         <table id="donators" class="display">
                             <thead>
                                 <tr>
@@ -128,10 +127,9 @@
                                 <t t-foreach="pi_users_list" t-as="pi_user">
                                     <tr>
                                         <td>
-                                            <span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
+                                            <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
                                         </td>
                                     </tr>
-                                    <t t-set="i" t-value="i+1"/>
                                 </t>
                             </tbody>
                         </table>
