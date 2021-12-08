@@ -104,7 +104,14 @@
                     <script type="text/javascript">
                         $(document).ready( function () {
                             $('#donators').DataTable( {
-                                responsive: true
+                                responsive: true,
+                                ajax: '/get-credits-data',
+                                processing: true,
+                                serverSide: true,
+                                serverMethod: 'post',
+                                columns: [
+                                    { data: 'pi_user_code' },
+                                ],
                             } );
                         } );
                     </script>
@@ -124,13 +131,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="pi_users_list" t-as="pi_user">
+                                <!--<t t-foreach="pi_users_list" t-as="pi_user">
                                     <tr>
                                         <td>
                                             <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
                                         </td>
                                     </tr>
-                                </t>
+                                </t>-->
                             </tbody>
                         </table>
                         <br/>

@@ -243,9 +243,28 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-credits/', type='http', auth="public", website=True)
     def get_credits(self, **kw):
+        pi_users_count = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
+        
+        return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_count': pi_users_count})
+
+    @http.route('/get-credits-data/', type='http', auth="public", website=True, methods=['POST', 'GET'], csrf=False)
+    def get_credits_data(self, **kw):
+        #_logger.info(str(kw))
+        
+        draw = kw['draw'];
+        row = kw['start'];
+        rowperpage = kw['length'];
+        columnIndex = kw["order[0][column]"]
+        columnName = kw["columns[0][data]"]
+        columnSortOrder = kw["order[0][dir]"]
+        searchValue = kw["search[value]"]
         
         pi_users_count = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
         
-        pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example')], order="unblocked desc, pi_user_code asc")
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
-        return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_list': pi_users_list, 'pi_users_count': pi_users_count})
+        data = []
+        for i in pi_users_list:
+            data.append({'pi_user_code': i.pi_user_code})
+        
+        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": len(pi_users_list)})
