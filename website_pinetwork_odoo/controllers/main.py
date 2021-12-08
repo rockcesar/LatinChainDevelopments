@@ -247,7 +247,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_count': pi_users_count})
 
-    @http.route('/get-credits-data/', type='http', auth="public", website=True, methods=['POST', 'GET'], csrf=False)
+    @http.route('/get-credits-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_credits_data(self, **kw):
         #_logger.info(str(kw))
         
