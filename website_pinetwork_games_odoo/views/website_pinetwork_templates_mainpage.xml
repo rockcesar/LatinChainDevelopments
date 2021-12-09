@@ -247,6 +247,19 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
+                        <div id="google_translate_element"></div>
+
+                        <script type="text/javascript">
+                        function googleTranslateElementInit() {
+                          new google.translate.TranslateElement({
+                                pageLanguage: 'en',
+                            }, 
+                            'google_translate_element');
+                        }
+                        </script>
+
+                        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        
                         <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />  
                         Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase, try in Pi Browser. <strong>Clear Pi Browser cache</strong> if it is not working).<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>
@@ -307,14 +320,17 @@
                             
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col"><a href="/chess" class="btn btn-success">CHESS</a></div>
-                                    <div class="col"><a href="/sudoku" class="btn btn-primary">SUDOKU</a></div>
-                                    <div class="col"><a href="/snake" class="btn btn-primary">SNAKE</a></div>
+                                    <div class="col-6"><a href="/chess" class="btn btn-success">CHESS</a></div>
+                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary">SUDOKU</a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-4"><a href="/pinetwork" class="btn btn-primary">DONATION APP</a></div>
-                                    <div class="col-8"><button id="clear_cache" class="btn btn-info">Clear Cache</button></div>
+                                    <div class="col-6"><a href="/snake" class="btn btn-primary">SNAKE</a></div>
+                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary">DONATE</a></div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-12"><button id="clear_cache" class="btn btn-info">Clear Cache</button></div>
                                 </div>
                             </div>
                           </div>
@@ -322,9 +338,13 @@
                             <br/>Other developments:<br/><br/>
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary">ODOO APP</a></div>
-                                    <div class="col"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary">PLATFORM IN ODOO</a></div>
-                                    <div class="col"><a href="https://github.com/rockcesar/PiNetworkDevelopments" target="_blank" class="btn btn-secondary">GITHUB REPO</a></div>
+                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary">Odoo App</a></div>
+                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary">Platform</a></div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-6"><a href="https://github.com/rockcesar/PiNetworkDevelopments" target="_blank" class="btn btn-secondary">Repository</a></div>
+                                    <div class="col-6"></div>
                                 </div>
                             </div>
                           </div>
