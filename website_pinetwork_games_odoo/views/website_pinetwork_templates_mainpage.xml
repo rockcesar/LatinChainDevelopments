@@ -247,19 +247,6 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
-                        <div id="google_translate_element"></div>
-
-                        <script type="text/javascript">
-                        function googleTranslateElementInit() {
-                          new google.translate.TranslateElement({
-                                pageLanguage: 'en',
-                            }, 
-                            'google_translate_element');
-                        }
-                        </script>
-
-                        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                        
                         <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />  
                         Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (testing phase, try in Pi Browser. <strong>Clear Pi Browser cache</strong> if it is not working).<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>
