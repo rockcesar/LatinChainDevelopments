@@ -131,6 +131,15 @@ var init_tabs = function(){
     }); 
 };
 
+var refresh_board = function(){
+    var tab_name = get_tab();
+    if(tab_name !== "import"){
+        show_puzzle(tab_name, true);
+        $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
+        alert("access");
+    }
+}
+
 var init_controls = function(){
     /* Initialize the controls
     */
@@ -141,12 +150,14 @@ var init_controls = function(){
         */
         e.preventDefault();
         var tab_name = get_tab();
-        if(tab_name !== "import"){
-            var r = confirm("Do you want to refresh?, it will reload the puzzle.");
-            if (r == true) {
+        var r = confirm("Do you want to refresh?, it will reload the puzzle.");
+        if (r == true) {
+            refresh_board();
+            /*var tab_name = get_tab();
+            if(tab_name !== "import"){
                 show_puzzle(tab_name, true);
                 $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
-            }
+            }*/
         }
     });
     

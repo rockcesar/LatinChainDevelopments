@@ -24,6 +24,7 @@ function set_points(points) {
                 alert("You won " + points + " points");
                 $("#refresh").click();
             }
+            refresh_board();
             
         }).fail(function() {
             
