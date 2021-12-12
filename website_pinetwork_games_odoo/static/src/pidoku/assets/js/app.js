@@ -434,8 +434,8 @@ $(function(){
     
     // Start with generating an easy puzzle
     //click_tab("easy");
-    //click_tab("hard");
-    $("#hard").click();
+    click_tab("hard");
+    //$("#hard").click();
     
     // Hide the loading screen, show the app
     $("#app-wrap").removeClass("hidden");
