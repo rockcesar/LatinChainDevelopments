@@ -140,10 +140,10 @@ var init_controls = function(){
         /* Refresh the current puzzle
         */
         e.preventDefault();
-        var r = confirm("Do you want to refresh?, it will reload the puzzle.");
-        if (r == true) {
-            var tab_name = get_tab();
-            if(tab_name !== "import"){
+        var tab_name = get_tab();
+        if(tab_name !== "import"){
+            var r = confirm("Do you want to refresh?, it will reload the puzzle.");
+            if (r == true) {
                 show_puzzle(tab_name, true);
                 $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
             }
@@ -183,10 +183,10 @@ var init_controls = function(){
         /* Refresh the current puzzle
         */
         e.preventDefault();
-        var r = confirm("Do you want to clear?, it will clear the puzzle, to its initial state.");
-        if (r == true) {
-            var tab_name = get_tab();
-            if(tab_name !== "import"){
+        var tab_name = get_tab();
+        if(tab_name !== "import"){
+            var r = confirm("Do you want to clear?, it will clear the puzzle, to its initial state.");
+            if (r == true) {
                 clear_puzzle(tab_name);
             }
         }
