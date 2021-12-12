@@ -20,8 +20,10 @@ function set_points(points) {
         return $.post( "/pi-points", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result && points > 0)
+            {
                 alert("You won " + points + " points");
-            $("#refresh").click();
+                $("#refresh").click();
+            }
             
         }).fail(function() {
             
