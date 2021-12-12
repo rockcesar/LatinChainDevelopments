@@ -183,9 +183,12 @@ var init_controls = function(){
         /* Refresh the current puzzle
         */
         e.preventDefault();
-        var tab_name = get_tab();
-        if(tab_name !== "import"){
-            clear_puzzle(tab_name);
+        var r = confirm("Do you want to clear?, it will clear the puzzle, to its initial state.");
+        if (r == true) {
+            var tab_name = get_tab();
+            if(tab_name !== "import"){
+                clear_puzzle(tab_name);
+            }
         }
     });
     
