@@ -22,9 +22,8 @@ function set_points(points) {
             if(data.result && points > 0)
             {
                 alert("You won " + points + " points");
-                $("#refresh").click();
+                refresh_board();
             }
-            refresh_board();
             
         }).fail(function() {
             

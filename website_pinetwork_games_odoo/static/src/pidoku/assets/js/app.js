@@ -136,7 +136,6 @@ var refresh_board = function(){
     if(tab_name !== "import"){
         show_puzzle(tab_name, true);
         $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
-        alert("access");
     }
 }
 
