@@ -144,28 +144,28 @@
                                     
                                     <!-- Tabs -->
                                     <ul id="generator-tabs" class="nav nav-tabs">
-                                        <li>
+                                        <!--<li style="display:none">
                                             <a id="easy" rel="tooltip" title="Easy puzzle" 
                                                     href="#">Easy</a>
                                         </li>
-                                        <li>
+                                        <li style="display:none">
                                             <a id="medium" rel="tooltip" 
                                                     title="Medium puzzle" href="#">Medium</a>
-                                        </li>
-                                        <li>
-                                            <a id="hard" rel="tooltip" title="Hard puzzle" 
-                                                    href="#">Hard</a>
+                                        </li>-->
+                                        <li class="active">
+                                            <a id="hard" rel="tooltip" title="Medium puzzle" 
+                                                    href="#">Medium</a>
                                         </li>
                                         <li>
                                             <a id="very-hard" rel="tooltip" 
-                                                    title="Very hard puzzle" href="#">
-                                                Very hard    
+                                                    title="Hard puzzle" href="#">
+                                                Hard
                                             </a>
                                         </li>
                                         <li>
                                             <a id="insane" rel="tooltip" 
-                                                    title="Insane puzzle" href="#">
-                                                Insane
+                                                    title="Very Hard puzzle" href="#">
+                                                Very Hard
                                             </a>
                                         </li>
                                         <li>
