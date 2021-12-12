@@ -144,22 +144,22 @@
                                     
                                     <!-- Tabs -->
                                     <ul id="generator-tabs" class="nav nav-tabs">
-                                        <li style="display:none">
+                                        <li>
                                             <a id="easy" rel="tooltip" title="Easy puzzle" 
                                                     href="#">Easy</a>
                                         </li>
-                                        <li style="display:none">
+                                        <li>
                                             <a id="medium" rel="tooltip" 
                                                     title="Medium puzzle" href="#">Medium</a>
                                         </li>
                                         <li>
-                                            <a id="hard" rel="tooltip" title="Medium puzzle" 
-                                                    href="#">Medium</a>
+                                            <a id="hard" rel="tooltip" title="Hard puzzle" 
+                                                    href="#">Hard</a>
                                         </li>
                                         <li>
                                             <a id="very-hard" rel="tooltip" 
-                                                    title="Hard puzzle" href="#">
-                                                Hard
+                                                    title="Very hard puzzle" href="#">
+                                                Very hard    
                                             </a>
                                         </li>
                                         <li>
