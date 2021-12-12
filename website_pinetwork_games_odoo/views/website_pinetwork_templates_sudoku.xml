@@ -144,11 +144,11 @@
                                     
                                     <!-- Tabs -->
                                     <ul id="generator-tabs" class="nav nav-tabs">
-                                        <li>
+                                        <li style="display:none">
                                             <a id="easy" rel="tooltip" title="Easy puzzle" 
                                                     href="#">Easy</a>
                                         </li>
-                                        <li>
+                                        <li style="display:none">
                                             <a id="medium" rel="tooltip" 
                                                     title="Medium puzzle" href="#">Medium</a>
                                         </li>
