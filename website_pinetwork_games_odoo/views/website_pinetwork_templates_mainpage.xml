@@ -2,7 +2,7 @@
 <odoo>
 
         <template id="remove_header" inherit_id="portal.frontend_layout" name="Remove Header">
-            <xpath expr="//nav[@class='navbar navbar-expand navbar-light bg-light']/div/ul[@id='top_menu']" position="replace">
+            <xpath expr="//nav/div/ul[@id='top_menu']" position="replace">
                 <t t-call="portal.user_dropdown">
                     <t t-set="_user_name" t-value="true"/>
                     <t t-set="_item_class" t-value="'nav-item dropdown'"/>
