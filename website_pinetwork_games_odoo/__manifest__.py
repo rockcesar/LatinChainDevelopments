@@ -53,7 +53,7 @@ Check our apps published: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-pub
 To test, you have to use Pi Browser.
 
 Main page: /""",
-    'depends': ['website', 'website_pinetwork_odoo'],
+    'depends': ['website', 'portal', 'website_pinetwork_odoo'],
     'data': [
         'views/website_pinetwork_templates.xml',
         'views/website_pinetwork_templates_sudoku.xml',
