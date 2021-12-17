@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+        <template id="remove_header" inherit_id="portal.frontend_layout" name="Remove Header">
+            <xpath expr="//ul[@id='top_menu']" position="replace">
+                <t t-call="portal.user_dropdown">
+                    <t t-set="_user_name" t-value="true"/>
+                    <t t-set="_item_class" t-value="'nav-item dropdown'"/>
+                    <t t-set="_link_class" t-value="'nav-link'"/>
+                    <t t-set="_dropdown_menu_class" t-value="'dropdown-menu-right'"/>
+                </t>
+            </xpath>
+        </template>
+
         <template id="mainpage" name="Mainpage View">
             <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
