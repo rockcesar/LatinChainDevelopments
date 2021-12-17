@@ -223,10 +223,6 @@
                                 $.colorbox({href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
-                            $( "#chess_button" ).click(function() {
-                                $.colorbox({href:"/chess", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                            });
-                            
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
@@ -324,7 +320,7 @@
                             
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-6"><button id="chess_button" class="btn btn-success">CHESS</button><!--<a href="/chess" class="btn btn-success">CHESS</a>--></div>
+                                    <div class="col-6"><a href="/chess" class="btn btn-success">CHESS</a></div>
                                     <div class="col-6"><a href="/sudoku" class="btn btn-primary">SUDOKU</a></div>
                                 </div>
                                 <br/>
