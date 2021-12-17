@@ -12,6 +12,7 @@ _logger = logging.getLogger(__name__)
 from odoo.addons.website.controllers.main import Website
 
 class Website(Website):
+    """
     @http.route('/', type='http', auth="public", website=True)
     def index(self, **kw):
         #super(Website, self).index(**kw)
@@ -24,6 +25,7 @@ class Website(Website):
             sandbox = admin_app_list[0].sandbox
         
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox})
+    """
 
 class PiNetworkController(http.Controller):
     @http.route('/pinetwork', type='http', auth="public", website=True)
