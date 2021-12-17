@@ -23,7 +23,7 @@ class Website(Website):
         else:
             sandbox = admin_app_list[0].sandbox
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox, 'no_header': False})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox})
 
 class PiNetworkController(http.Controller):
     @http.route('/pinetwork', type='http', auth="public", website=True)
