@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <!--<template id="remove_header" inherit_id="portal.user_sign_in" name="Remove Header">
-            <xpath expr="//a[@href='/web/login']" position="attributes">
+        <template id="credirect.remove_header" inherit_id="website.user_navbar" name="Remove Header">
+            <xpath expr="//nav[@id='oe_main_menu_navbar']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
-        </template>-->
+        </template>
 
         <template id="mainpage" name="Mainpage View">
             <t t-call="website.layout">
