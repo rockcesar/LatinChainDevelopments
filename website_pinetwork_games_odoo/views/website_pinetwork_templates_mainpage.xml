@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    
+    <template id="user_sign_in" name="User Sign In" customize_show="True" inherit_id="portal.user_sign_in">
+        <xpath expr="." position="inside">
+            <li groups="base.group_public" t-attf-class="#{_item_class} o_no_autohide_item">
+                <a t-attf-href="/web/login" t-attf-class="#{_link_class}">Sign in</a>
+            </li>
+        </xpath>
+    </template>
 
         <template id="mainpage" name="Mainpage View">
             <t t-call="website.layout">
