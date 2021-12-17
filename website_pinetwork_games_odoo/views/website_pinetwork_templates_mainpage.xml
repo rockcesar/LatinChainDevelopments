@@ -7,13 +7,12 @@
     
     <template id="assets_frontend" name="your_module_name assets" inherit_id="website.assets_frontend">  
         <xpath expr="link[last()]" position="after">  
-            <script src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+            <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/modals/colorbox/example1/colorbox.css" />
         </xpath>  
         <xpath expr="script[last()]" position="after">  
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     
             <script src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
-            <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/modals/colorbox/example1/colorbox.css" />
         </xpath>  
     </template>
 
