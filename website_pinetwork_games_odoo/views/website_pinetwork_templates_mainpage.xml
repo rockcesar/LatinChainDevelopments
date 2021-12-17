@@ -2,7 +2,7 @@
 <odoo>
 
         <template id="mainpage" name="Mainpage View">
-            <t t-call="web.layout">
+            <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
