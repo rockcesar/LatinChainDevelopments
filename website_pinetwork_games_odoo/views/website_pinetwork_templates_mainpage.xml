@@ -104,7 +104,7 @@
 
                         $( document ).ready(function() {
                         
-                            $('.o_main_navbar').hide();
+                            $('#top_menu').hide();
                         
                             var status_audio = false;
                             var audioElement = document.createElement('audio');
