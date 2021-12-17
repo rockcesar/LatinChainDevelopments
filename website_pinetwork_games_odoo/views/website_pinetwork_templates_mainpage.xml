@@ -5,11 +5,7 @@
         <field name="customize_show" eval="True"/>
     </record>
     
-    <template id="assets_frontend" name="hello_world assets" inherit_id="web.assets_frontend">
-        <xpath expr="." position="inside">
-            <script type="text/javascript" src="/hello_world/static/src/js/hello_world.js"></script>
-        </xpath>
-    </template>
+
 
         <template id="mainpage" name="Mainpage View">
             <t t-call="website.layout">
