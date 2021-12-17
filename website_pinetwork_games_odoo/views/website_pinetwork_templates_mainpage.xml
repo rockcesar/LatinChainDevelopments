@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+        <template id="remove_header" inherit_id="web.frontend_layout" name="Remove Header">
+            <xpath expr="//header" position="replace">
+                
+            </xpath>
+        </template>
+
         <template id="mainpage" name="Mainpage View">
             <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
