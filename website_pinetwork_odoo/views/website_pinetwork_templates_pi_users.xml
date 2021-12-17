@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    
-    <template id="remove_header" inherit_id="website.user_navbar" name="Remove Header">
-        <xpath expr="//nav[@id='oe_main_menu_navbar']" position="attributes">
-            <attribute name="groups">website_pinetwork_odoo.group_pi_admin</attribute>
-        </xpath>
-    </template>
 
         <template id="list_points" name="Points View">
             &lt;!DOCTYPE html&gt;
