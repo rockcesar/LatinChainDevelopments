@@ -104,8 +104,6 @@
 
                         $( document ).ready(function() {
                         
-                            $('header').hide();
-                        
                             var status_audio = false;
                             var audioElement = document.createElement('audio');
                             audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
