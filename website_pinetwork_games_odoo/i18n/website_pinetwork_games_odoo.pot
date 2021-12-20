@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-20 11:12+0000\n"
-"PO-Revision-Date: 2021-12-20 11:12+0000\n"
+"POT-Creation-Date: 2021-12-20 11:22+0000\n"
+"PO-Revision-Date: 2021-12-20 11:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,13 +20,6 @@ msgstr ""
 msgid ""
 "(Remember <strong>clear the Pi Browser cache</strong> if it is not working "
 "well)."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"(try in Pi Browser. <strong>Clear Pi Browser cache</strong> if it is not "
-"working).<br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -117,11 +110,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/><br/>Enjoy:<br/><br/>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<br/><span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -244,6 +232,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -374,7 +367,10 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>."
+msgid ""
+"Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
+"to Pi Network Games from Latin America (try in Pi Browser. <strong>Clear Pi "
+"Browser cache</strong> if it is not working).<br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -657,11 +653,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "We won an Honorable mention!!!:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Welcome to Pi Network Games from Latin America"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
