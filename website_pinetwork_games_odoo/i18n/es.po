@@ -80,8 +80,8 @@ msgid ""
 "than 20 points in Snake, <strong>and</strong> have more than 200 in total "
 "points."
 msgstr ""
-"2.- Tener 20 o más puntos en Ajedrez, más de 18 puntos en Sudoku y más de 20"
-" puntos en Serpiente, <strong>y</strong> tener más de 200 puntos en total."
+"2.- Tener 20 o más puntos en Chess, más de 18 puntos en Sudoku y más de 20"
+" puntos en Snake, <strong>y</strong> tener más de 200 puntos en total."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -267,12 +267,12 @@ msgstr "Negras"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "CHESS"
-msgstr "AJEDREZ"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Chess"
-msgstr "Ajedrez"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -490,7 +490,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pi Hackathon winners"
-msgstr "Ganadores de Pi Hackathon"
+msgstr "Ganadores del Pi Hackathon"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -535,7 +535,7 @@ msgstr "Reglas"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "SNAKE"
-msgstr "SERPIENTE"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
