@@ -156,7 +156,7 @@ msgid ""
 "                            <br/>Points per game: <strong id=\"user_points_per_game\">0</strong><br/>"
 msgstr ""
 "<br/>Usuario: <strong id=\"user_logged\">--</strong><br/>\n"
-"                            <br/>Estatus: <strong class=\"user_status\">Accede a través de Pi Browser.<br/></strong>\n"
+"                            <br/>Estatus: <strong class=\"user_status\">Accede a través del Pi Browser.<br/></strong>\n"
 "                            <br/>Puntos totales: <strong id=\"user_points\">0</strong><br/>\n"
 "                            <br/>Puntos por juego: <strong id=\"user_points_per_game\">0</strong><br/>"
 
