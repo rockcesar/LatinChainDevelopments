@@ -123,7 +123,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Choose your app:<br/><br/>"
-msgstr "<br/>Escoge to app:<br/><br/>"
+msgstr "<br/>Escoge tu app:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
