@@ -60,7 +60,7 @@
                 </head>
                 <body>
                     <div class="container" style="text-align:center">
-                        <span t-esc="datetime.datetime.now()" /><br/><br/>
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/><br/>
                         </t>
@@ -125,7 +125,7 @@
                 </head>
                 <body>
                     <div class="container" style="text-align:center">
-                        <span t-esc="datetime.datetime.now()" /><br/><br/>
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>
                         <t t-if="pi_users_count >= 0">
                             Total donators: <strong><t t-esc="pi_users_count" /></strong><br/>
