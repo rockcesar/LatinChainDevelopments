@@ -672,7 +672,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Welcome to Pi Network Games from Latin America"
-msgstr ""
+msgstr "Bienvenido a Pi Network Games from Latin America"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
