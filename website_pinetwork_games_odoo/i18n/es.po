@@ -383,8 +383,8 @@ msgid ""
 "Browser cache</strong> if it is not working).<br/>"
 msgstr ""
 "Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Bienvenido "
-"a Pi Network Games from Latin America (Pruébalo en el Pi Browser. <strong>Clear Pi "
-"Browser cache</strong> if it is not working).<br/>"
+"a Pi Network Games from Latin America (Pruébalo en el Pi Browser. <strong>Borra el caché del Pi "
+"Browser</strong> si no está funcionando).<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
