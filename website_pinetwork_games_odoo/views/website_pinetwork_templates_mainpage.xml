@@ -258,19 +258,6 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
-                        <!--<div id="google_translate_element"></div>
-
-                        <script type="text/javascript">
-                        function googleTranslateElementInit() {
-                          new google.translate.TranslateElement({
-                                pageLanguage: 'en',
-                            }, 
-                            'google_translate_element');
-                        }
-                        </script>
-
-                        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
-                        
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />
                         Hi<strong><span id="username"></span></strong><span id="verified"></span>. 
@@ -303,28 +290,6 @@
                               </li>
                             </ul>
                           </li>
-                          <!--<li class="nav-item" role="presentation">
-                            <button class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false">Leaders</button>
-                          </li>
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Dev</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Info</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Video</button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false">Leaders</button>
-                          </li>-->
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
