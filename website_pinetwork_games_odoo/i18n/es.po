@@ -250,8 +250,6 @@ msgid ""
 "<strong class=\"user_status\"/>\n"
 "                            <br/>Choose your app:<br/><br/>"
 msgstr ""
-"<strong class=\"user_status\"/>\n"
-"                            <br/>Elige tu app:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -386,9 +384,6 @@ msgid ""
 "to Pi Network Games from Latin America (try in Pi Browser. <strong>Clear Pi "
 "Browser cache</strong> if it is not working).<br/>"
 msgstr ""
-"Hola<strong><span id='username'/></strong><span id='verified'/>. Bienvenido "
-"a Pi Network Games from Latin America (pruebalo en Pi Browser. <strong>Borra el caché de Pi "
-"Browser</strong> si no está funcionando).<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
