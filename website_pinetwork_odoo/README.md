@@ -1,6 +1,8 @@
 Pi Network First App for Odoo
 -----------------
 
+Pi Hackathon winners: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
+
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
 Games Leaders board, Pi API Platform integration, Games.

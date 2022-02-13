@@ -28,6 +28,8 @@
     ],
     "license": "AGPL-3",
     'description': """
+Pi Hackathon winners: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
+
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
 Pi Network Games Engine and Platform for Odoo
