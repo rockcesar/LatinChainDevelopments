@@ -109,7 +109,7 @@ $( document ).ready(function() {
                 get_user(false);
             
               $( "#button_click" ).click(function() {
-                    if(parseFloat($("#pi_donate").val()) > 0)
+                    if(parseFloat($("#pi_donate").val()) >= 1)
                     {
                         $("#button_click").prop( "disabled", true );
                         /*setTimeout(function ()
@@ -117,8 +117,9 @@ $( document ).ready(function() {
                             $("#button_click").prop( "disabled", false );
                         }, 10000);*/
                         transfer();
+                    }else{
+                        alert("You can't pay less than 1 Pi.");
                     }
-                    //alert("Click");
                 });
                 //alert('Hello ' + auth.user.username);
             }).catch(function(error) {
