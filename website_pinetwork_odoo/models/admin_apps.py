@@ -215,7 +215,7 @@ class pi_users(models.Model):
     admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', admin_apps_winners_ids)]")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
     
-    @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id.app")
+    @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
         for i in self:
             i.donator = False
