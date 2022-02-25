@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-20 11:23+0000\n"
-"PO-Revision-Date: 2021-12-20 11:23+0000\n"
+"POT-Creation-Date: 2022-02-25 18:12+0000\n"
+"PO-Revision-Date: 2022-02-25 18:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -118,6 +118,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/><br/>Enjoy:<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<br/><span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -246,11 +251,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -383,12 +383,14 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
-"to Pi Network Games from Latin America (<strong>Testing phase</strong>. Try in Pi Browser. <strong>Clear Pi "
-"Browser cache</strong> if it is not working).<br/>"
+"to Pi Network Games from Latin America (<strong>Testing phase</strong>. Try "
+"in Pi Browser. <strong>Clear Pi Browser cache</strong> if it is not "
+"working).<br/>"
 msgstr ""
-"Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Bienvenido "
-"a Pi Network Games from Latin America (<strong>Fase de prueba</strong>. Pruébalo en el Pi Browser. <strong>Borra el caché del Pi "
-"Browser</strong> si no está funcionando).<br/>"
+"Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
+"Bienvenido a Pi Network Games from Latin America (<strong>Fase de prueba</strong>. Pruébalo en el Pi Browser."
+" <strong>Borra el caché del Pi Browser</strong> si no está "
+"funcionando).<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -510,12 +512,12 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Play Chess Against the best AI Chess Player (Stockfish)"
-msgstr ""
+msgstr "Juega Ajedrez contra la mejor AI Chess Player (Stockfish)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Play Sudoku any time you want"
-msgstr ""
+msgstr "Juega Sudoku en el momento que quieras"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
