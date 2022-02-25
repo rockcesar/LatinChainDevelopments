@@ -383,11 +383,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
-"to Pi Network Games from Latin America (try in Pi Browser. <strong>Clear Pi "
+"to Pi Network Games from Latin America (<strong>Testing phase</strong>. Try in Pi Browser. <strong>Clear Pi "
 "Browser cache</strong> if it is not working).<br/>"
 msgstr ""
 "Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Bienvenido "
-"a Pi Network Games from Latin America (Pruébalo en el Pi Browser. <strong>Borra el caché del Pi "
+"a Pi Network Games from Latin America (<strong>Fase de prueba</strong>. Pruébalo en el Pi Browser. <strong>Borra el caché del Pi "
 "Browser</strong> si no está funcionando).<br/>"
 
 #. module: website_pinetwork_games_odoo
