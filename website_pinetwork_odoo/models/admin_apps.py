@@ -219,10 +219,12 @@ class pi_users(models.Model):
     def _compute_donator(self):
         for i in self:
             i.donator = False
-            for t in i.pi_transactions_ids:
-                if t.app_id.app == 'auth_example' and t.action == 'complete':
-                    i.donator = True
-                    break
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')], limit=1)
+            
+            if len(transaction) == 0:
+                i.donator = False
+            else:
+                i.donator = True
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
