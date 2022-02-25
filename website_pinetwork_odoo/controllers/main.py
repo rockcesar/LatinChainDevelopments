@@ -249,8 +249,15 @@ class PiNetworkBaseController(http.Controller):
         for i in pi_users_count:
             if request.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
                 counter += 1
+                
+        pi_users_count_unblocked = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('unblocked', '=', True)])
         
-        return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_count': counter})
+        counter_unblocked = 0
+        for i in pi_users_count_unblocked:
+            if request.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+                counter_unblocked += 1
+        
+        return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_count': counter, 'pi_users_count_unblocked': counter_unblocked})
 
     @http.route('/get-credits-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_credits_data(self, **kw):
