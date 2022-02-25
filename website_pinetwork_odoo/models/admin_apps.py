@@ -213,6 +213,16 @@ class pi_users(models.Model):
     days_available = fields.Integer('Days available', store=True, default=0)
     admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners')
     admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', admin_apps_winners_ids)]")
+    donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
+    
+    @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
+    def _compute_donator(self):
+        for i in self:
+            i.donator = False
+            for t in i.pi_transactions_ids:
+                if t.app_id.app == 'auth_example' and t.action == 'complete':
+                    i.donator = True
+                    break
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
