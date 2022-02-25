@@ -388,8 +388,8 @@ msgid ""
 "working).<br/>"
 msgstr ""
 "Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
-"Bienvenido a Pi Network Games from Latin America (<strong>Fase de prueba</strong>. Pruébalo en el Pi Browser."
-" <strong>Borra el caché del Pi Browser</strong> si no está "
+"Bienvenido a Pi Network Games from Latin America (<strong>Fase de prueba</strong>. Pruébalo "
+"en el Pi Browser. <strong>Borra el caché del Pi Browser</strong> si no está "
 "funcionando).<br/>"
 
 #. module: website_pinetwork_games_odoo
