@@ -247,7 +247,7 @@ class PiNetworkBaseController(http.Controller):
 
         counter = 0
         for i in pi_users_count:
-            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+            if request.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
                 counter += 1
         
         return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_count': counter})
@@ -268,14 +268,14 @@ class PiNetworkBaseController(http.Controller):
         
         counter = 0
         for i in pi_users_count:
-            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+            if request.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
                 counter += 1
         
         pi_users_count_filter = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')])
         
         counter_filter = 0
         for i in pi_users_count_filter:
-            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+            if request.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
                 counter_filter += 1
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
@@ -288,7 +288,7 @@ class PiNetworkBaseController(http.Controller):
             else:
                 verified = ""
             
-            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+            if request.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
                 data.append({'pi_user_code': i.pi_user_code + " " + verified})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": counter, "iTotalDisplayRecords": counter_filter})
