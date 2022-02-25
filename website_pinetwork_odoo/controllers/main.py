@@ -280,11 +280,6 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
-        counter_filter = 0
-        for i in pi_users_list:
-            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) == 0:
-                del i
-        
         data = []
         for i in pi_users_list:
             verified = ""
@@ -292,9 +287,11 @@ class PiNetworkBaseController(http.Controller):
                 verified = "(verified)"
             else:
                 verified = ""
-            data.append({'pi_user_code': i.pi_user_code + " " + verified})
+            
+            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+                data.append({'pi_user_code': i.pi_user_code + " " + verified})
         
-        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
+        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": counter, "iTotalDisplayRecords": counter_filter})
         
     @http.route('/validation-key.txt', type='http', auth="public", website=True, csrf=False)
     def validation_txt(self, **kw):
