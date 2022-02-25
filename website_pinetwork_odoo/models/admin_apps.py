@@ -222,10 +222,8 @@ class pi_users(models.Model):
             transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')], limit=1)
             
             if len(transaction) == 0:
-                _logger.info("Donator False")
                 i.donator = False
             else:
-                _logger.info("Donator True")
                 i.donator = True
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
