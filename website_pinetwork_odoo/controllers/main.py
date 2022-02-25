@@ -243,9 +243,14 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-credits/', type='http', auth="public", website=True)
     def get_credits(self, **kw):
-        pi_users_count = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
+        pi_users_count = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
+
+        counter = 0
+        for i in pi_users_count:
+            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+                counter += 1
         
-        return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_count': pi_users_count})
+        return http.request.render('website_pinetwork_odoo.list_credits', {'pi_users_count': counter})
 
     @http.route('/get-credits-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_credits_data(self, **kw):
@@ -259,10 +264,26 @@ class PiNetworkBaseController(http.Controller):
         columnSortOrder = kw["order[0][dir]"]
         searchValue = kw["search[value]"]
         
-        pi_users_count = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
-        pi_users_count_filter = request.env["pi.users"].sudo().search_count([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')])
+        pi_users_count = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example')])
+        
+        counter = 0
+        for i in pi_users_count:
+            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+                counter += 1
+        
+        pi_users_count_filter = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')])
+        
+        counter_filter = 0
+        for i in pi_users_count_filter:
+            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) > 0:
+                counter_filter += 1
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_transactions_ids.app_id.app', '=', 'auth_example'), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        
+        counter_filter = 0
+        for i in pi_users_list:
+            if self.env['pi.transactions'].sudo().search_count([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')]) == 0:
+                del i
         
         data = []
         for i in pi_users_list:
