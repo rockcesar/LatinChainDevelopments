@@ -24,6 +24,7 @@ class pi_transactions(models.Model):
     action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True)
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
+    txid_url = fields.Text('TXID URL', compute="_compute_txid_url")
     pi_user_id = fields.Char('Pi User ID')
     pi_user = fields.Many2one('pi.users', ondelete='restrict')
     amount = fields.Float('Amount', digits=(50,8))
@@ -35,6 +36,11 @@ class pi_transactions(models.Model):
     cancelled = fields.Boolean('cancelled')
     user_cancelled = fields.Boolean('user_cancelled')
     json_result = fields.Text('JSON Result', required=True)
+    
+    def _compute_txid_url(self):
+        for pit in self:
+            if pit.txid:
+                pit.txid_url = "https://minepi.com/blockexplorer/tx/" + pit.txid
     
     def check_transactions(self):
         for pit in self:
