@@ -72,7 +72,7 @@
     <menuitem
         id="menu_pi_users"
         name="Pi Users"
-        groups="website_pinetwork_odoo.group_pi_admin,website_pinetwork_odoo.group_pi_external_user,base.group_system"
+        groups="website_pinetwork_odoo.group_pi_admin,website_pinetwork_odoo.group_pi_external_user,website_pinetwork_odoo.group_pi_internal_company_user,base.group_system"
         parent="menu_config_admin_pi_apps"
         action="pi_users_action"
         sequence="75"/>
