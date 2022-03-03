@@ -41,6 +41,8 @@ class pi_transactions(models.Model):
         for pit in self:
             if pit.txid:
                 pit.txid_url = "https://minepi.com/blockexplorer/tx/" + pit.txid
+            else:
+                pit.txid_url = ""
     
     def check_transactions(self):
         for pit in self:
