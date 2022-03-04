@@ -57,6 +57,7 @@
         id="menu_config_admin_pi_apps"
         name="Config Admin Pi Apps"
         groups="website_pinetwork_odoo.group_pi_admin,website_pinetwork_odoo.group_pi_internal_company_user,website_pinetwork_odoo.group_pi_external_user,base.group_system"
+        web_icon="website_pinetwork_odoo,static/src/img/latin-chain-logo.jpeg"
         sequence="75"/>
             
     <menuitem
