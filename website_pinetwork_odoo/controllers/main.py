@@ -52,7 +52,7 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/api-docs/', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def api_external_user(self, **kw):
-        return http.request.render('website_pinetwork_odoo.api_doc')
+        return http.request.redirect('https://github.com/rockcesar/PiNetworkDevelopments/tree/master/docs')
     
     @http.route('/api/get-external-user/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def get_external_user(self, pi_user_code, **kw):

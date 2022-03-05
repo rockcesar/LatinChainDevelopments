@@ -323,7 +323,7 @@
                                 <br/>
                                 <div class="row">
                                     <div class="col-6"><a href="https://github.com/rockcesar/PiNetworkDevelopments" target="_blank" class="btn btn-secondary">Repository</a></div>
-                                    <div class="col-6"></div>
+                                    <div class="col-6"><a href="/api-docs" target="_blank" class="btn btn-secondary">LatinChain API</a></div>
                                 </div>
                             </div>
                           </div>
