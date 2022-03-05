@@ -50,7 +50,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
-    @http.route('/api-docs/', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    @http.route('/api-docs/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def api_external_user(self, **kw):
         return http.request.redirect('https://github.com/rockcesar/PiNetworkDevelopments/tree/master/docs')
     
