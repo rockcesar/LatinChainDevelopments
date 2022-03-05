@@ -42,6 +42,7 @@ GET /api/get-external-user/{pi_user_code}
 "points_chess": float, // Total points in chess
 "points_sudoku": float, // Total points in sudoku
 "points_snake": float, // Total points in snake
+"points_datetime": string, // Datetime of the last update of points in any game
 "unblocked": boolean // If the user is verified: True is verified, False is not verified
 }
 ```
