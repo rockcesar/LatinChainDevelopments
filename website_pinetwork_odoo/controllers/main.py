@@ -64,7 +64,8 @@ class PiNetworkBaseController(http.Controller):
         return json.dumps({'result': True, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
-                            'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked})
+                            'points_snake': pi_users_list[0].points_snake, 'points_datetime': pi_users_list[0].points_datetime,
+                            'unblocked': pi_users_list[0].unblocked})
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
