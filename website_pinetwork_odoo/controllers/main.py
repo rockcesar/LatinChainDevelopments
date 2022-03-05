@@ -101,13 +101,6 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list[0].sudo().write({'passkey': passkey})
         
-        headers = {'Content-Type': 'application/json'}
-        return Response(json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
-                            'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
-                            'points_sudoku': pi_users_list[0].points_sudoku,
-                            'points_snake': pi_users_list[0].points_snake, 'unblocked': pi_users_list[0].unblocked,
-                            'days_available': pi_users_list[0].days_available,
-                            'passkey': passkey}), headers=headers)
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
