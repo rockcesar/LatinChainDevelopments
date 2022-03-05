@@ -36,13 +36,13 @@ GET /api/get-external-user/{pi_user_code}
 
 ```typescript
 {
-"result": boolean, 
-"pi_user_code": string,
-"points": float,
-"points_chess": float, 
-"points_sudoku": float,
-"points_snake": float,
-"unblocked": boolean
+"result": boolean, // Result Ok or fail
+"pi_user_code": string, // Pi code of the user
+"points": float, // Total points in games
+"points_chess": float, // Total points in chess
+"points_sudoku": float, // Total points in sudoku
+"points_snake": float, // Total points in snake
+"unblocked": boolean // If the user is verified
 }
 ```
 
@@ -50,6 +50,6 @@ GET /api/get-external-user/{pi_user_code}
 
 ```typescript
 {
-"result": boolean
+"result": boolean // Result Ok or fail
 }
 ```
