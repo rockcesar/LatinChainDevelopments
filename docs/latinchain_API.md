@@ -16,14 +16,14 @@ You only are going to read info, no authorization required.
 
 ### Users
 
-Base path: `/api/get-post-external-user`.
+Base path: `/api/get-external-user`.
 
 #### Get an user:
 
 Get information about an user.
 
 ```
-GET /api/get-post-external-user/{pi_user_code}
+GET /api/get-external-user/{pi_user_code}
 ```
 
 * Response type: [UserDTO](#UserDTO)
