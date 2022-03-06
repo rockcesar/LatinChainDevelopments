@@ -64,14 +64,17 @@
                                     'accessToken': accessToken,
                                     'csrf_token': odoo.csrf_token,
                                 };
-                                $.ajaxSetup({async: false});
+                                //$.ajaxSetup({async: false});
                                 return $.post( "/pi-points", data).done(function(data) {
+                                    alert("hello 1");
                                     data = JSON.parse(data);
                                     //if(data.result)
                                     //    alert("You won " + points + " points");
                                     //$("#refresh").click();
-                                }).fail(function() {
                                     
+                                    return true;
+                                }).fail(function() {
+                                    return true;
                                 });
                             }
                         }
@@ -85,8 +88,9 @@
                                             'accessToken': accessToken,
                                             'csrf_token': odoo.csrf_token,
                                         };
-                                $.ajaxSetup({async: false});
+                                //$.ajaxSetup({async: false});
                                 return $.post( "/get-user", data).done(function(data) {
+                                    alert("hello 2");
                                     data = JSON.parse(data);
                                     if(data.result)
                                     {
@@ -107,8 +111,10 @@
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                         }
                                     }
-                                }).fail(function() {
                                     
+                                    return true;
+                                }).fail(function() {
+                                    return true;
                                 });
                             }
                         }
