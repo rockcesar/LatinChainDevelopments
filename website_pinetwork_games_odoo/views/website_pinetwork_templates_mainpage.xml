@@ -66,7 +66,6 @@
                                 };
                                 //$.ajaxSetup({async: false});
                                 return $.post( "/pi-points", data).done(function(data) {
-                                    alert("hello 1");
                                     data = JSON.parse(data);
                                     //if(data.result)
                                     //    alert("You won " + points + " points");
@@ -88,7 +87,6 @@
                                         };
                                 //$.ajaxSetup({async: false});
                                 return $.post( "/get-user", data).done(function(data) {
-                                    alert("hello 2");
                                     data = JSON.parse(data);
                                     if(data.result)
                                     {
