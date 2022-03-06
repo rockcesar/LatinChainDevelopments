@@ -71,10 +71,8 @@
                                     //if(data.result)
                                     //    alert("You won " + points + " points");
                                     //$("#refresh").click();
-                                    
-                                    return true;
+
                                 }).fail(function() {
-                                    return true;
                                 });
                             }
                         }
@@ -112,9 +110,7 @@
                                         }
                                     }
                                     
-                                    return true;
                                 }).fail(function() {
-                                    return true;
                                 });
                             }
                         }
