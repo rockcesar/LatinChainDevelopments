@@ -127,21 +127,22 @@ $( document ).ready(function() {
                 
                 //get_user();
                 set_points(0).always(function(){
-                    get_user();
-                });
-                
-              $( "#button_click" ).click(function() {
-                    if(parseFloat($("#pi_donate").val()) >= 1)
-                    {
-                        $("#button_click").prop( "disabled", true );
-                        /*setTimeout(function ()
-                        {
-                            $("#button_click").prop( "disabled", false );
-                        }, 10000);*/
-                        transfer();
-                    }else{
-                        alert("You can't pay less than 1 Pi.");
-                    }
+                    get_user().always(function(){
+                        $( "#button_click" ).click(function() {
+                            if(parseFloat($("#pi_donate").val()) >= 1)
+                            {
+                                $("#button_click").prop( "disabled", true );
+                                /*setTimeout(function ()
+                                {
+                                    $("#button_click").prop( "disabled", false );
+                                }, 10000);*/
+                                transfer();
+                            }else{
+                                alert("You can't pay less than 1 Pi.");
+                            }
+                        });
+                        $("#button_click").prop( "disabled", false );
+                    });
                 });
             }).catch(function(error) {
                 //Pi.openShareDialog("Error", error);
