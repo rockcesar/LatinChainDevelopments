@@ -178,8 +178,9 @@
                                         $("#winnerboard").attr("href", "/get-winners/" + auth.user.username);*/
                                         
                                         //get_user();
-                                        set_points(0);
-                                        get_user();
+                                        set_points(0).always(function(){
+                                            get_user();
+                                        });
                                     }).catch(function(error) {
                                         //Pi.openShareDialog("Error", error);
                                         //alert(err);
