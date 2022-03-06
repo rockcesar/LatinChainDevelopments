@@ -1,6 +1,6 @@
 # Interaction with LatinChain Platform
 
-You can play games at https://latinchain.com, but you can also browse data as developer, as easy as send a request to:
+You can play games at https://latin-chain.com, but you can also browse data as developer, as easy as send a request to:
 
 https://latin-chain.com/api/get-external-user/{pi_user_code}
 
