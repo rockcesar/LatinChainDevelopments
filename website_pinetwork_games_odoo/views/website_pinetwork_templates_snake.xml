@@ -31,6 +31,7 @@
                 </script>
                 
                 <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/jquery-3.5.1.min.js"></script>
+                <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                 <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js"></script>
                 
@@ -54,23 +55,7 @@
                 <script type="text/javascript">
                     $( document ).ready(function() {
                         var $reveal = $("#up");
-                        $reveal.draggable({ 
-                            axis: "x",
-                            containment: "parent",
-                            iframeFix: true,
-                            refreshPositions: true,
-                            drag: function()
-                            {
-                              var position = $(this).position();
-                              var parentWidth = $(this).parent().width();
-                              var width = (position.left / parentWidth) * 100
-                              $(".featured").width(width + "%");
-                            }
-                          });
-
-                        $(window).resize(function() {       
-                            $reveal.css('left', $(".featured").width()+'px')
-                        });
+                        $reveal.draggable();
                         
                         function press(key)
                         {
