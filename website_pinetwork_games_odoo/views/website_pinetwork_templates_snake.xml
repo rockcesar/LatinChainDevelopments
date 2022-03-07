@@ -53,6 +53,25 @@
                 
                 <script type="text/javascript">
                     $( document ).ready(function() {
+                        var $reveal = $("#up");
+                        $reveal.draggable({ 
+                            axis: "x",
+                            containment: "parent",
+                            iframeFix: true,
+                            refreshPositions: true,
+                            drag: function()
+                            {
+                              var position = $(this).position();
+                              var parentWidth = $(this).parent().width();
+                              var width = (position.left / parentWidth) * 100
+                              $(".featured").width(width + "%");
+                            }
+                          });
+
+                        $(window).resize(function() {       
+                            $reveal.css('left', $(".featured").width()+'px')
+                        });
+                        
                         function press(key)
                         {
                             var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
