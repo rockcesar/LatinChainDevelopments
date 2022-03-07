@@ -49,6 +49,21 @@
                     position: absolute;
                     bottom: 40px;
                 }
+                .mydiv {
+                    position: absolute;
+                    z-index: 9;
+                    background-color: #f1f1f1;
+                    border: 1px solid #d3d3d3;
+                    text-align: center;
+                }
+
+                .mydivheader {
+                    padding: 10px;
+                    cursor: move;
+                    z-index: 10;
+                    background-color: #2196F3;
+                    color: #fff;
+                }
                 </style>
                 
                 <script type="text/javascript">
@@ -140,13 +155,13 @@
                     <p>
                         <!--<div style="min-height: 60px;"></div>-->
                         <div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
-                        <div class="square" id="up">&#8593;</div>
+                        <div class="square mydiv" id="up"><div class="mydivheader">move</div>&#8593;</div>
                         <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div>
-                        <div class="square" id="left">&#8592;</div>
+                        <div class="square mydiv" id="left"><div class="mydivheader">move</div>&#8592;</div>
                         <div class="square-borderless"></div>
-                        <div class="square" id="right">&#8594;</div>
+                        <div class="square mydiv" id="right"><div class="mydivheader">move</div>&#8594;</div>
                         <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
-                        <div class="square" id="down">&#8595;</div></p>
+                        <div class="square mydiv" id="down"><div class="mydivheader">move</div>&#8595;</div></p>
                     <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
                 </div>
 

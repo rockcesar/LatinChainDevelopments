@@ -15,7 +15,7 @@
             <field name="sandbox">False</field>
         </record>
         <record id="example_app" model="admin.apps">
-            <field name="name">Example</field>
+            <field name="name">Donation</field>
             <field name="app">auth_example</field>
             <field name="admin_key">Your Server API Key</field>
             <field name="sandbox">False</field>
