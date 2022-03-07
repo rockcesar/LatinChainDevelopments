@@ -55,22 +55,27 @@
                 
                 <script type="text/javascript">
                     $( document ).ready(function() {
+                        $("#up").draggable();
+                        $("#left").draggable();
+                        $("#down").draggable();
+                        $("#right").draggable();
+                    
                         function press(key)
                         {
                             var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
                             jQuery( "body" ).trigger( e );
                         }
                         
-                        $( "#left" ).click(function() {
+                        $( "#left" ).mousedown(function() {
                             press(37);
                         });
-                        $( "#up" ).click(function() {
+                        $( "#up" ).mousedown(function() {
                             press(38);
                         });
-                        $( "#down" ).click(function() {
+                        $( "#down" ).mousedown(function() {
                             press(40);
                         });
-                        $( "#right" ).click(function() {
+                        $( "#right" ).mousedown(function() {
                             press(39);
                         });
                         $( "#reset" ).click(function() {
@@ -88,11 +93,6 @@
                         $( "#plus" ).click(function() {
                             press(187);
                         });*/
-                        
-                        $("#up").draggable();
-                        $("#left").draggable();
-                        $("#down").draggable();
-                        $("#right").draggable();
                         
                         var status_audio = false;
                         var audioElement = document.createElement('audio');
