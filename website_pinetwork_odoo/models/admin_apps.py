@@ -219,8 +219,8 @@ class pi_users(models.Model):
     user_agent = fields.Char('User agent')
     last_connection = fields.Datetime(string='Last connection', default="")
     days_available = fields.Integer('Days available', store=True, default=0)
-    admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners')
-    admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', admin_apps_winners_ids)]")
+    admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners Apps')
+    admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', domain="[('id', 'in', admin_apps_winners_ids)]")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
