@@ -55,8 +55,10 @@
                 
                 <script type="text/javascript">
                     $( document ).ready(function() {
-                        var $reveal = $("#up");
-                        $reveal.draggable();
+                        $("#up").draggable();
+                        $("#left").draggable();
+                        $("#down").draggable();
+                        $("#right").draggable();
                         
                         function press(key)
                         {
