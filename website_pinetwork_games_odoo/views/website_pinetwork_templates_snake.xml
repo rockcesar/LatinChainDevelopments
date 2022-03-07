@@ -49,27 +49,58 @@
                     position: absolute;
                     bottom: 40px;
                 }
-                #mydiv {
-                    position: absolute;
-                    z-index: 9;
-                    background-color: #f1f1f1;
-                    border: 1px solid #d3d3d3;
-                    text-align: center;
+                .mydivup {
+                  position: absolute;
+                  z-index: 9;
+                  left: 120px;
+                  border: 1px solid #d3d3d3;
+                  text-align: center;
+                  background-color: #f1f1f1;
+                }
+                
+                .mydivleft {
+                  position: absolute;
+                  z-index: 9;
+                  left: 40px;
+                  border: 1px solid #d3d3d3;
+                  text-align: center;
+                  background-color: #f1f1f1;
+                }
+                
+                .mydivdown {
+                  position: absolute;
+                  z-index: 9;
+                  left: 120px;
+                  border: 1px solid #d3d3d3;
+                  text-align: center;
+                  background-color: #f1f1f1;
+                }
+                
+                .mydivright {
+                  position: absolute;
+                  z-index: 9;
+                  left: 200px;
+                  border: 1px solid #d3d3d3;
+                  text-align: center;
+                  background-color: #f1f1f1;
                 }
 
-                #mydivheader {
-                    padding: 10px;
-                    cursor: move;
-                    z-index: 10;
-                    background-color: #2196F3;
-                    color: #fff;
+                .mydivheader {
+                  padding: 10px;
+                  cursor: move;
+                  z-index: 10;
+                  background-color: #2196F3;
+                  color: #fff;
                 }
                 </style>
                 
                 <script type="text/javascript">
                     $( document ).ready(function() {
                          // Make the DIV element draggable:
-                        dragElement(document.getElementById("mydiv"));
+                        dragElement(document.getElementById("up"));
+                        dragElement(document.getElementById("left"));
+                        dragElement(document.getElementById("right"));
+                        dragElement(document.getElementById("down"));
 
                         function dragElement(elmnt) {
                           var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -198,14 +229,14 @@
                     </p>
                     <p>
                         <!--<div style="min-height: 60px;"></div>-->
-                        <div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
-                        <div class="square" id="mydiv"><div id="mydivheader">move</div>&#8593;</div>
+                        <div class="square-borderless" style="margin-left: 80px"></div><div class="square-borderless"></div><div class="square-borderless"></div>
+                        <div class="mydivup transparent" id="up"><div class="mydivheader" id="upheader">move</div>&#8593;</div>
                         <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div>
-                        <div class="square" id="left">&#8592;</div>
-                        <div class="square-borderless"></div>
-                        <div class="square" id="right">&#8594;</div>
-                        <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
-                        <div class="square" id="down">&#8595;</div></p>
+                        <div class="mydivleft transparent" id="left"><div class="mydivheader" id="leftheader">move</div>&#8592;</div>
+                        <div class="square-borderless" style="margin-left: 160px"></div>
+                        <div class="mydivright transparent" id="right"><div class="mydivheader" id="rightheader">move</div>&#8594;</div>
+                        <br/><br/><div style="margin-left: 180px"></div>
+                        <div class="mydivdown transparent" id="down"><div class="mydivheader" id="downheader">move</div>&#8595;</div></p>
                     <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
                 </div>
 
