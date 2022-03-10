@@ -292,6 +292,53 @@ class PiNetworkBaseController(http.Controller):
             data.append({'pi_user_code': i.pi_user_code + " " + verified})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
+    
+    @http.route('/get-transactions/', type='http', auth="public", website=True)
+    def get_transactions(self, **kw):
+        return http.request.render('website_pinetwork_odoo.list_transactions')
+
+    @http.route('/get-transactions-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
+    def get_credits_data(self, **kw):
+        #_logger.info(str(kw))
+        
+        draw = kw['draw'];
+        row = kw['start'];
+        rowperpage = kw['length'];
+        columnIndex = kw["order[0][column]"]
+        columnName = kw["columns[0][data]"]
+        columnSortOrder = kw["order[0][dir]"]
+        searchValue = kw["search[value]"]
+        
+        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        #_logger.info(kw['accessToken'])
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
+        except Exception:
+            _logger.info("Authorization error")
+            return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
+        
+        pi_user = request.env["pi.users"].sudo().search_count([('pi_user_code', '=', kw["pi_user_code"])])
+        
+        if len(pi_user) == 0:
+            return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
+        
+        pi_transactions_count = request.env["pi.transactions"].sudo().search_count([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete')])
+        
+        pi_transactions_count_filter = request.env["pi.transactions"].sudo().search_count([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')])
+        
+        pi_transactions_list = request.env["pi.transactions"].sudo().search([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        
+        data = []
+        for i in pi_transactions_list:
+            data.append({'pi_transaction': i.memo + " by " + str(i.amount) + " Pi <a href='" + i.txid_url + "'>Transaction</a>"})
+        
+        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
         
     @http.route('/validation-key.txt', type='http', auth="public", website=True, csrf=False)
     def validation_txt(self, **kw):

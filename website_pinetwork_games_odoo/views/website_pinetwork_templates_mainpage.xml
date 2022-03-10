@@ -354,7 +354,8 @@
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-12"><button id="credits" class="btn btn-success">Credits</button></div>
+                                <div class="col-6"><button id="credits" class="btn btn-success">Credits</button></div>
+                                <div class="col-6"><a href="/get-transactions/" class="btn btn-success">Transactions</a></div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
