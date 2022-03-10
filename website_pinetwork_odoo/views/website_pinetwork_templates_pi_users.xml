@@ -172,7 +172,7 @@
                     
                     <script type="text/javascript">
                         $(document).ready( function () {
-                            $('#transactions').DataTable();
+                            var table = $('#transactions').DataTable();
                             const Pi = window.Pi;
                             
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -187,7 +187,7 @@
 
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         $('#username').html(" " + auth.user.username);
-                                        $('#transactions').destroy();
+                                        table.destroy();
                                         $('#transactions').DataTable( {
                                             responsive: true,
                                             //ajax: '/get-transactions-data',
