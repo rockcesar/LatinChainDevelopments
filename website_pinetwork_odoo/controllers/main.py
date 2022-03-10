@@ -343,7 +343,7 @@ class PiNetworkBaseController(http.Controller):
         
         data = []
         for i in pi_transactions_list:
-            data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <a href='" + i.txid_url + "'>Transaction</a>"})
+            data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-success' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, width: \"100%\", height: \"100%\", maxWidth: \"100%\", maxHeight: \"100%\"});'>Transaction</button>"})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_transactions_count, "iTotalDisplayRecords": pi_transactions_count_filter})
         
