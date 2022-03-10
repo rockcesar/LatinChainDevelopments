@@ -189,7 +189,7 @@
                                         $('#username').html(" " + auth.user.username);
                                         table.destroy();
                                         $('#transactions').DataTable( {
-                                            responsive: true,
+                                            //responsive: true,
                                             //ajax: '/get-transactions-data',
                                             ajax: {
                                                 'type': 'POST',
