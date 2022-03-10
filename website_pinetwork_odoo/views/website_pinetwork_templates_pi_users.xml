@@ -231,7 +231,6 @@
                                     <th>Memo</th>
                                     <th>Amount</th>
                                     <th>TXID</th>
-                                    <th>Datetime</th>
                                 </tr>
                             </thead>
                             <tbody>
