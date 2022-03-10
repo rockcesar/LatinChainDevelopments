@@ -332,11 +332,11 @@ class PiNetworkBaseController(http.Controller):
         
         pi_transactions_count_filter = request.env["pi.transactions"].sudo().search_count([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')])
         
-        pi_transactions_list = request.env["pi.transactions"].sudo().search([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')], order=columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        pi_transactions_list = request.env["pi.transactions"].sudo().search([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')], order="create_date desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
         data = []
         for i in pi_transactions_list:
-            data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <a href='" + i.txid_url + "'>Transaction</a>", 'create_date': str(i.create_date)})
+            data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <a href='" + i.txid_url + "'>Transaction</a>"})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_transactions_count, "iTotalDisplayRecords": pi_transactions_count_filter})
         

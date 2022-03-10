@@ -205,7 +205,6 @@
                                                 { data: 'memo', },
                                                 { data: 'amount', },
                                                 { data: 'txid', },
-                                                { data: 'create_date', },
                                             ],
                                         } );
                                     }).catch(function(error) {
