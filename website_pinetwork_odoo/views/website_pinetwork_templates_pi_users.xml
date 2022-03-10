@@ -154,6 +154,7 @@
 		</template>
         
         <template id="list_transactions" name="Credits">
+            <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -165,8 +166,8 @@
                     
                     <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
                     
-                    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
-                    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                    <!--<link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
+                    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>-->
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
@@ -250,6 +251,7 @@
                     </div>
                 </body>
             </html>
+            </t>
 		</template>
 
 </odoo>
