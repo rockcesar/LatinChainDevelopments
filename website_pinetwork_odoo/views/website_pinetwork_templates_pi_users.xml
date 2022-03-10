@@ -202,7 +202,9 @@
                                             serverSide: true,
                                             serverMethod: 'post',
                                             columns: [
-                                                { data: 'pi_transaction', },
+                                                { data: 'memo', },
+                                                { data: 'amount', },
+                                                { data: 'txid', },
                                             ],
                                         } );
                                     }).catch(function(error) {
@@ -226,6 +228,8 @@
                         <table id="transactions" class="display">
                             <thead>
                                 <tr>
+                                    <th>Memo</th>
+                                    <th>Amount</th>
                                     <th>Transaction</th>
                                 </tr>
                             </thead>
