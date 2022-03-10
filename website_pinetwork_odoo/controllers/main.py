@@ -299,7 +299,7 @@ class PiNetworkBaseController(http.Controller):
 
     @http.route('/get-transactions-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_credits_data(self, **kw):
-        _logger.info(str(kw))
+        #_logger.info(str(kw))
         
         draw = kw['draw']
         row = kw['start']
@@ -308,6 +308,8 @@ class PiNetworkBaseController(http.Controller):
         columnName = kw["columns[0][data]"]
         #columnSortOrder = kw["order[0][dir]"]
         searchValue = kw["search[value]"]
+        
+        return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
         
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         #_logger.info(kw['accessToken'])
