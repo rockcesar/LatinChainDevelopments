@@ -205,6 +205,7 @@
                                                 { data: 'memo', },
                                                 { data: 'amount', },
                                                 { data: 'txid', },
+                                                { data: 'create_date', },
                                             ],
                                         } );
                                     }).catch(function(error) {
@@ -230,7 +231,8 @@
                                 <tr>
                                     <th>Memo</th>
                                     <th>Amount</th>
-                                    <th>Transaction</th>
+                                    <th>TXID</th>
+                                    <th>Datetime</th>
                                 </tr>
                             </thead>
                             <tbody>
