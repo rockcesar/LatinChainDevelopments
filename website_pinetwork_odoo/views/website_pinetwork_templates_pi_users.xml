@@ -197,7 +197,7 @@
                                                     {"pi_user_code": auth.user.username,},
                                                     {"accessToken": auth.accessToken,}
                                                 ],
-                                            }
+                                            },
                                             processing: true,
                                             serverSide: true,
                                             serverMethod: 'post',
