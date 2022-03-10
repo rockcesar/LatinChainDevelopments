@@ -323,7 +323,7 @@ class PiNetworkBaseController(http.Controller):
             _logger.info("Authorization error")
             return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
         
-        pi_user = request.env["pi.users"].sudo().search_count([('pi_user_code', '=', kw["pi_user_code"])])
+        pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw["pi_user_code"])])
         
         if len(pi_user) == 0:
             return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
