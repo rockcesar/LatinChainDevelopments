@@ -187,6 +187,7 @@
 
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         $('#username').html(" " + auth.user.username);
+                                        $('#transactions').destroy();
                                         $('#transactions').DataTable( {
                                             responsive: true,
                                             //ajax: '/get-transactions-data',
