@@ -332,7 +332,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_transactions_count_filter = request.env["pi.transactions"].sudo().search_count([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')])
         
-        pi_transactions_list = request.env["pi.transactions"].sudo().search([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        pi_transactions_list = request.env["pi.transactions"].sudo().search([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'like', '%' + searchValue + '%'), '|', ('memo', 'like', '%' + searchValue + '%'), ('txid', 'like', '%' + searchValue + '%')], order="create_date desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
         data = []
         for i in pi_transactions_list:
