@@ -172,6 +172,7 @@
                     
                     <script type="text/javascript">
                         $(document).ready( function () {
+                            $('#transactions').DataTable();
                             const Pi = window.Pi;
                             
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
