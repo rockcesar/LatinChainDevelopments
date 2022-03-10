@@ -295,7 +295,14 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/get-transactions/', type='http', auth="public", website=True)
     def get_transactions(self, **kw):
-        return http.request.render('website_pinetwork_odoo.list_transactions')
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+        else:
+            sandbox = admin_app_list[0].sandbox
+        
+        return http.request.render('website_pinetwork_odoo.list_transactions', {'sandbox': sandbox})
 
     @http.route('/get-transactions-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_transactions_data(self, **kw):
