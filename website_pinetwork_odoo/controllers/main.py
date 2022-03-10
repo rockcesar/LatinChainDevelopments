@@ -338,7 +338,7 @@ class PiNetworkBaseController(http.Controller):
         for i in pi_transactions_list:
             data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <a href='" + i.txid_url + "'>Transaction</a>"})
         
-        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
+        return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_transactions_count, "iTotalDisplayRecords": pi_transactions_count_filter})
         
     @http.route('/validation-key.txt', type='http', auth="public", website=True, csrf=False)
     def validation_txt(self, **kw):
