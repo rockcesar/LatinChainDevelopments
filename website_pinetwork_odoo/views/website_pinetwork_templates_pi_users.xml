@@ -154,7 +154,6 @@
 		</template>
         
         <template id="list_transactions" name="Credits">
-            <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -190,7 +189,7 @@
                                         $('#username').html(" " + auth.user.username);
                                         table.destroy();
                                         $('#transactions').DataTable( {
-                                            //responsive: true,
+                                            responsive: true,
                                             //ajax: '/get-transactions-data',
                                             ajax: {
                                                 'type': 'POST',
@@ -251,7 +250,6 @@
                     </div>
                 </body>
             </html>
-            </t>
 		</template>
 
 </odoo>
