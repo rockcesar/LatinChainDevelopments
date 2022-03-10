@@ -336,7 +336,7 @@ class PiNetworkBaseController(http.Controller):
         
         data = []
         for i in pi_transactions_list:
-            data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <a href='" + i.txid_url + "'>Transaction</a>", 'create_date'})
+            data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <a href='" + i.txid_url + "'>Transaction</a>", 'create_date': i.create_date})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_transactions_count, "iTotalDisplayRecords": pi_transactions_count_filter})
         
