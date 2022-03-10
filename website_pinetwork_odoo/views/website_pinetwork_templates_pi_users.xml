@@ -189,7 +189,7 @@
                                         $('#transactions').DataTable( {
                                             responsive: true,
                                             //ajax: '/get-transactions-data',
-                                            "ajax": {
+                                            ajax: {
                                                 'type': 'POST',
                                                 'url': '/get-transactions-data',
                                                 'data': {
@@ -206,6 +206,7 @@
                                                 { data: 'amount', },
                                                 { data: 'txid', },
                                             ],
+                                            ordering: false,
                                         } );
                                     }).catch(function(error) {
                                         console.error(error);
