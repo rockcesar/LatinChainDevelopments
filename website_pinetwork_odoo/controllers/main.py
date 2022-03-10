@@ -309,8 +309,6 @@ class PiNetworkBaseController(http.Controller):
         #columnSortOrder = kw["order[0][dir]"]
         searchValue = kw["search[value]"]
         
-        return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
-        
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         #_logger.info(kw['accessToken'])
         try:
