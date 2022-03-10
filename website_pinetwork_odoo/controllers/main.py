@@ -277,9 +277,9 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_count = request.env["pi.users"].sudo().search_count([('donator', '=', True)])
         
-        pi_users_count_filter = request.env["pi.users"].sudo().search_count([('donator', '=', True), ('pi_user_code', 'like', '%' + searchValue + '%')])
+        pi_users_count_filter = request.env["pi.users"].sudo().search_count([('donator', '=', True), ('pi_user_code', 'ilike', '%' + searchValue + '%')])
         
-        pi_users_list = request.env["pi.users"].sudo().search([('donator', '=', True), ('pi_user_code', 'like', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        pi_users_list = request.env["pi.users"].sudo().search([('donator', '=', True), ('pi_user_code', 'ilike', '%' + searchValue + '%')], order="unblocked desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
         data = []
         for i in pi_users_list:
@@ -298,7 +298,7 @@ class PiNetworkBaseController(http.Controller):
         return http.request.render('website_pinetwork_odoo.list_transactions')
 
     @http.route('/get-transactions-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
-    def get_credits_data(self, **kw):
+    def get_transactions_data(self, **kw):
         #_logger.info(str(kw))
         
         draw = kw['draw']
