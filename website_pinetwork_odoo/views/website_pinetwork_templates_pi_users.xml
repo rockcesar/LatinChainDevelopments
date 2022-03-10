@@ -154,7 +154,6 @@
 		</template>
         
         <template id="list_transactions" name="Credits">
-            <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -251,7 +250,6 @@
                     </div>
                 </body>
             </html>
-            </t>
 		</template>
 
 </odoo>
