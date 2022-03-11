@@ -9,6 +9,7 @@
                     <notebook>
                         <page string="Pi Transactions">
                             <group>
+                                <field name="id"/>
                                 <field name="name"/>
                                 <field name="app_id" readonly="True"/>
                                 <field name="app"/>
@@ -43,6 +44,7 @@
                 <header>
                     <button name="check_transactions" type="object" string="Check Transactions" class="oe_highlight"/>
                 </header>
+                <field name="id"/>
                 <field name="app"/>
                 <field name="action"/>
                 <!--<field name="payment_id"/>-->

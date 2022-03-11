@@ -10,6 +10,7 @@
                         <page string="Admin Pi App">
                             <group><!--<group col="4">
                                 <group colspan="2" col="2">-->
+                                    <field name="id"/>
                                     <field name="name"/>
                                     <field name="app"/>
                                     <field name="admin_key"/>
@@ -33,6 +34,7 @@
         <field name="model">admin.apps</field>
         <field name="arch" type="xml">
             <tree string="Admin App">
+                <field name="id"/>
                 <field name="name"/>
                 <field name="app"/>
                 <field name="admin_key"/>
