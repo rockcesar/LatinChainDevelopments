@@ -171,11 +171,11 @@
                             var myData ={};
                             
                             function copyToClipboard(text) {
-                                var $temp = $("<input>");
+                                var temp = $("<input>");
                                 $("body").append($temp);
-                                $temp.val(text).select();
+                                temp.val(text).select();
                                 document.execCommand("copy");
-                                $temp.remove();
+                                temp.remove();
                             }
                             
                             myData.pi_user_code = pi_user_code;
