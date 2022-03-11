@@ -165,20 +165,18 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
                     <script type="text/javascript">
+                        function copyToClipboard(text) {
+                            var sampleTextarea = document.createElement("textarea");
+                            document.body.appendChild(sampleTextarea);
+                            sampleTextarea.value = text; //save main text in it
+                            sampleTextarea.select(); //select textarea contenrs
+                            document.execCommand("copy");
+                            document.body.removeChild(sampleTextarea);
+                        }
                         $(document).ready( function () {
                             var pi_user_id = "", pi_user_code = "", accessToken = "";
                         
                             var myData ={};
-                            
-                            function copyToClipboard(text) {
-                                var sampleTextarea = document.createElement("textarea");
-                                document.body.appendChild(sampleTextarea);
-                                sampleTextarea.value = text; //save main text in it
-                                sampleTextarea.select(); //select textarea contenrs
-                                document.execCommand("copy");
-                                document.body.removeChild(sampleTextarea);
-                            }
-
                             
                             myData.pi_user_code = pi_user_code;
                             myData.pi_user_id = pi_user_id;
