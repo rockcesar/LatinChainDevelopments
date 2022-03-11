@@ -171,12 +171,14 @@
                             var myData ={};
                             
                             function copyToClipboard(text) {
-                                var temp = $("<input>");
-                                $("body").append($temp);
-                                temp.val(text).select();
+                                var sampleTextarea = document.createElement("textarea");
+                                document.body.appendChild(sampleTextarea);
+                                sampleTextarea.value = text; //save main text in it
+                                sampleTextarea.select(); //select textarea contenrs
                                 document.execCommand("copy");
-                                temp.remove();
+                                document.body.removeChild(sampleTextarea);
                             }
+
                             
                             myData.pi_user_code = pi_user_code;
                             myData.pi_user_id = pi_user_id;
