@@ -308,6 +308,9 @@ class PiNetworkBaseController(http.Controller):
     def get_transactions_data(self, **kw):
         #_logger.info(str(kw))
         
+        if 'accessToken' not in kw or kw['accessToken'] == "":
+            return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
+        
         draw = kw['draw']
         row = kw['start']
         rowperpage = kw['length']
