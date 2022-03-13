@@ -329,6 +329,10 @@
                                     <div class="col-6"><a href="https://github.com/rockcesar/PiNetworkDevelopments" target="_blank" class="btn btn-secondary">Repository</a></div>
                                     <div class="col-6"><a href="/api-docs" target="_blank" class="btn btn-secondary">LatinChain API</a></div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-6"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="btn btn-secondary">LatinChain Social Networks</a></div>
+                                    <div class="col-6"></div>
+                                </div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
