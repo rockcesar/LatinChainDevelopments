@@ -167,7 +167,7 @@
                                                 <span class="label">Select Engine's Level:</span>
                                                 <span class="close"></span>
                                                 <div class="values">
-                                                    <!--<span class="1">1</span>
+                                                    <span class="1">1</span>
                                                     <span class="2">2</span>
                                                     <span class="3">3</span>
                                                     <span class="4">4</span>
@@ -185,8 +185,8 @@
                                                     <span class="16">16</span>
                                                     <span class="17">17</span>
                                                     <span class="18">18</span>
-                                                    <span class="19">19</span>-->
-                                                    <span class="20 selected">20</span>
+                                                    <span class="19">19</span>
+                                                    <span class="20">20</span>
                                                 </div>
                                             </div>
                                             <div class="turns-history" id="game-turns-history">
