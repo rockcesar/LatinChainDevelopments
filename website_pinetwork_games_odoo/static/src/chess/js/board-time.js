@@ -36,15 +36,6 @@ function startTimer(game) {
     }
 
   }, 1000);
-  
-    for(var i = 1; i <= 20; i++)
-    {
-        if(!$('.' + i).hasClass('selected'))
-        {
-            if(!$('.' + i).hasClass('hidden'))
-                $('.' + i).addClass('hidden');
-        }
-    }
 
     if(game == undefined || game == "stop-both")
     {
@@ -56,11 +47,29 @@ function startTimer(game) {
             $('#btn-switch-sides').removeClass('hidden');
     }else if(game.turn() == "b")
     {
+        for(var i = 1; i <= 20; i++)
+        {
+            if(!$('.' + i).hasClass('selected'))
+            {
+                if(!$('.' + i).hasClass('hidden'))
+                    $('.' + i).addClass('hidden');
+            }
+        }
     	$('.timer_white').countimer('stop');
     	$('.timer_black').countimer('resume');
         if(!$('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').addClass('hidden');
     }else if(game.turn() == "w"){
+        
+        for(var i = 1; i <= 20; i++)
+        {
+            if(!$('.' + i).hasClass('selected'))
+            {
+                if(!$('.' + i).hasClass('hidden'))
+                    $('.' + i).addClass('hidden');
+            }
+        }
+        
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('resume');
         if(!$('#btn-switch-sides').hasClass('hidden'))
@@ -120,11 +129,29 @@ function stopTimer(game) {
         $('.timer_black').countimer('resume');
         if(!$('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').addClass('hidden');
+            
+        for(var i = 1; i <= 20; i++)
+        {
+            if(!$('.' + i).hasClass('selected'))
+            {
+                if(!$('.' + i).hasClass('hidden'))
+                    $('.' + i).addClass('hidden');
+            }
+        }
     }else if(game.turn() == "w"){
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('resume');
         if(!$('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').addClass('hidden');
+            
+        for(var i = 1; i <= 20; i++)
+        {
+            if(!$('.' + i).hasClass('selected'))
+            {
+                if(!$('.' + i).hasClass('hidden'))
+                    $('.' + i).addClass('hidden');
+            }
+        }
     }
 
     if(game == undefined || game == "stop-both")
