@@ -39,6 +39,10 @@ function startTimer(game) {
 
     if(game == undefined || game == "stop-both")
     {
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
         $('.timer_white').countimer('start');
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
@@ -117,6 +121,10 @@ function stopTimer(game) {
 
   if(game == undefined || game == "stop-both")
     {
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
         $('.timer_white').countimer('start');
         $('.timer_white').countimer('stop');
         $('.timer_black').countimer('start');
