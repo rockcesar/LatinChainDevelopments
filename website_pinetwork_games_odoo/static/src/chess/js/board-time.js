@@ -106,15 +106,6 @@ function stopTimer(game) {
   clearInterval(gameTimer);
   $('#game-timer').text('00:00');
 
-    for(var i = 1; i <= 20; i++)
-    {
-        if(!$('.' + i).hasClass('selected'))
-        {
-            if(!$('.' + i).hasClass('hidden'))
-                $('.' + i).addClass('hidden');
-        }
-    }
-
   if(game == undefined || game == "stop-both")
     {
         $('.timer_white').countimer('start');
