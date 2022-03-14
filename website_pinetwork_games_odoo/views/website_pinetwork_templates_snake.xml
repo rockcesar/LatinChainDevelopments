@@ -79,7 +79,11 @@
                             press(39);
                         });
                         $( "#reset" ).click(function() {
-                            press(82);
+                            var result = confirm("Are you sure you want to Reset?, it will restart the game.");
+                            if(result)
+                            {
+                                press(82);
+                            }
                         });
                         $( "#pause" ).click(function() {
                             press(32);
