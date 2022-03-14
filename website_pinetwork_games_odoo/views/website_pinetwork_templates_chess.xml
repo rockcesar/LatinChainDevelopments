@@ -176,7 +176,7 @@
                                                     <span class="7">7</span>
                                                     <span class="8">8</span>
                                                     <span class="9">9</span>
-                                                    <span class="10 selected">10</span>
+                                                    <span class="10">10</span>
                                                     <span class="11">11</span>
                                                     <span class="12">12</span>
                                                     <span class="13">13</span>
@@ -186,7 +186,7 @@
                                                     <span class="17">17</span>
                                                     <span class="18">18</span>
                                                     <span class="19">19</span>
-                                                    <span class="20">20</span>
+                                                    <span class="20 selected">20</span>
                                                 </div>
                                             </div>
                                             <div class="turns-history" id="game-turns-history">

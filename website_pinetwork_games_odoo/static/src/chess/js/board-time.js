@@ -36,6 +36,15 @@ function startTimer(game) {
     }
 
   }, 1000);
+  
+    for(var i = 1; i <= 20; i++)
+    {
+        if(!$('.' + i).hasClass('selected'))
+        {
+            if(!$('.' + i).hasClass('hidden'))
+                $('.' + i).addClass('hidden');
+        }
+    }
 
     if(game == undefined || game == "stop-both")
     {
@@ -82,6 +91,15 @@ function stopTimer(game) {
   clearInterval(gameTimer);
   $('#game-timer').text('00:00');
 
+    for(var i = 1; i <= 20; i++)
+    {
+        if(!$('.' + i).hasClass('selected'))
+        {
+            if(!$('.' + i).hasClass('hidden'))
+                $('.' + i).addClass('hidden');
+        }
+    }
+
   if(game == undefined || game == "stop-both")
     {
         $('.timer_white').countimer('start');
@@ -110,15 +128,27 @@ function stopTimer(game) {
         $('.timer_white').countimer('stop');
         if($('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').removeClass('hidden');
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
     }else if (game.in_draw()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
         if($('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').removeClass('hidden');
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
     }else if (game.in_stalemate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
         if($('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').removeClass('hidden');
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
     }
 }
