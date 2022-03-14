@@ -74,16 +74,31 @@ function startTimer(game) {
         $('.timer_white').countimer('stop');
         if($('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').removeClass('hidden');
+        
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
     }else if (game.in_draw()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
         if($('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').removeClass('hidden');
+        
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
     }else if (game.in_stalemate()) {
         $('.timer_black').countimer('stop');
         $('.timer_white').countimer('stop');
         if($('#btn-switch-sides').hasClass('hidden'))
             $('#btn-switch-sides').removeClass('hidden');
+        
+        for(var i = 1; i <= 20; i++)
+        {
+            $('.' + i).removeClass('hidden');
+        }
     }
 }
 
