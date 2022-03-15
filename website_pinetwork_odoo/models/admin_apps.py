@@ -222,6 +222,7 @@ class pi_users(models.Model):
     admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners Apps')
     admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', domain="[('id', 'in', admin_apps_winners_ids)]")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
+    paid_in_donations = fields.Boolean('Paid by user in donations', compute="_total_paid_transactions", store=True)
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
@@ -233,6 +234,13 @@ class pi_users(models.Model):
                 i.donator = False
             else:
                 i.donator = True
+            
+            total = 0    
+            for j in i.pi_transactions_ids:
+                if j.action == "complete" and j.app_id.app == "auth_example":
+                    total += j.amount
+            
+            i.paid_in_donations = total
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):

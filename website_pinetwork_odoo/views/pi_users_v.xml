@@ -12,6 +12,7 @@
                                 <field name="id"/>
                                 <field name="name"/>
                                 <field name="donator" readonly="True"/>
+                                <field name="paid_in_donations" readonly="True"/>
                                 <field name="pi_user_id" readonly="True"/>
                                 <field name="pi_user_code" readonly="True"/>
                                 <field name="points" readonly="True"/>
@@ -44,6 +45,7 @@
                 <field name="id"/>
                 <field name="name"/>
                 <field name="donator"/>
+                <field name="paid_in_donations"/>
                 <!--<field name="pi_user_id"/>-->
                 <field name="pi_user_code"/>
                 <field name="points"/>
