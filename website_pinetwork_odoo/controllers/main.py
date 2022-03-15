@@ -279,7 +279,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_count_filter = request.env["pi.users"].sudo().search_count([('donator', '=', True), ('pi_user_code', 'ilike', '%' + searchValue + '%')])
         
-        pi_users_list = request.env["pi.users"].sudo().search([('donator', '=', True), ('pi_user_code', 'ilike', '%' + searchValue + '%')], order="unblocked desc, paid_in_total_donations desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        pi_users_list = request.env["pi.users"].sudo().search([('donator', '=', True), ('pi_user_code', 'ilike', '%' + searchValue + '%')], order="unblocked desc, paid_in_all_donations desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
         
         data = []
         for i in pi_users_list:
@@ -289,7 +289,7 @@ class PiNetworkBaseController(http.Controller):
             else:
                 verified = ""
             
-            data.append({'pi_user_code': i.pi_user_code + verified + ". Donation: " + str(i.paid_in_total_donations)})
+            data.append({'pi_user_code': i.pi_user_code + verified + ". Donation: " + str(i.paid_in_all_donations)})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
     

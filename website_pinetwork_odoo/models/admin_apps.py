@@ -212,8 +212,8 @@ class pi_users(models.Model):
     points_sudoku = fields.Float('Sudoku Points', required=True, default=0)
     points_snake = fields.Float('Snake Points', required=True, default=0)
     points_datetime = fields.Datetime('Points Datetime', compute="_compute_points_datetime", store=True)
-    paid = fields.Float('Paid by user')
-    paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True)
+    paid = fields.Float('Paid by user', digits=(50,8))
+    paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,8))
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user')
     unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
     user_agent = fields.Char('User agent')
@@ -222,7 +222,7 @@ class pi_users(models.Model):
     admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners Apps')
     admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', domain="[('id', 'in', admin_apps_winners_ids)]")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
-    paid_in_total_donations = fields.Boolean('Paid by user in donations', compute="_compute_donator", store=True)
+    paid_in_all_donations = fields.Float('Paid by user in donations', compute="_compute_donator", store=True, digits=(50,8))
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
@@ -240,7 +240,7 @@ class pi_users(models.Model):
                 if j.action == "complete" and j.app_id.app == "auth_example":
                     total += j.amount
             
-            i.paid_in_total_donations = total
+            i.paid_in_all_donations = total
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
