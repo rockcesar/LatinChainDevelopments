@@ -117,6 +117,7 @@
                                 columns: [
                                     { data: 'pi_user_code' },
                                 ],
+                                ordering: false,
                             } );
                         } );
                     </script>

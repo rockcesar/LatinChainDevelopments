@@ -270,16 +270,16 @@ class PiNetworkBaseController(http.Controller):
         draw = kw['draw'];
         row = kw['start'];
         rowperpage = kw['length'];
-        columnIndex = kw["order[0][column]"]
+        #columnIndex = kw["order[0][column]"]
         columnName = kw["columns[0][data]"]
-        columnSortOrder = kw["order[0][dir]"]
+        #columnSortOrder = kw["order[0][dir]"]
         searchValue = kw["search[value]"]
         
         pi_users_count = request.env["pi.users"].sudo().search_count([('donator', '=', True)])
         
         pi_users_count_filter = request.env["pi.users"].sudo().search_count([('donator', '=', True), '|', ('pi_user_code', 'ilike', '%' + searchValue + '%'), ('paid_in_all_donations', 'ilike', '%' + searchValue + '%')])
         
-        pi_users_list = request.env["pi.users"].sudo().search([('donator', '=', True), '|', ('pi_user_code', 'ilike', '%' + searchValue + '%'), ('paid_in_all_donations', 'ilike', '%' + searchValue + '%')], order="unblocked desc, paid_in_all_donations desc, " + columnName + " " + columnSortOrder, limit=int(rowperpage), offset=int(row))
+        pi_users_list = request.env["pi.users"].sudo().search([('donator', '=', True), '|', ('pi_user_code', 'ilike', '%' + searchValue + '%'), ('paid_in_all_donations', 'ilike', '%' + searchValue + '%')], order="unblocked desc, paid_in_all_donations desc", limit=int(rowperpage), offset=int(row))
         
         data = []
         for i in pi_users_list:
