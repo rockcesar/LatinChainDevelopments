@@ -146,7 +146,7 @@
                     Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2>
                     <p>
                         <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US" value="1"/>
-                        <input id="button_click" name="button_click" value="Unblock with 1 Pi" type="button" class="transparent"/>
+                        <input id="button_click" name="button_click" value="Unblock with 1 Pi" type="button" class="transparent" disabled="true"/>
                     </p>
                     <p>
                         <!--<div style="min-height: 60px;"></div>-->

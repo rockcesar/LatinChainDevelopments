@@ -123,7 +123,7 @@
                                     
                                     <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US" value="1"/>
                                     <br/>
-                                    <input id="button_click" name="button_click" value="Unblock with 1 Pi" type="button" class="btn btn-success"/>
+                                    <input id="button_click" name="button_click" value="Unblock with 1 Pi" type="button" class="btn btn-success" disabled="true"/>
                                     <br/>
                                     <span id="loading_word" style="display: none;">Loading...</span>
                                     <br/>Enjoy:<br/><br/>
