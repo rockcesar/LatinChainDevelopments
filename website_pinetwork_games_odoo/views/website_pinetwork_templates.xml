@@ -76,6 +76,14 @@
                                     }
                                 }
                             });
+                            
+                            $( "#back" ).click(function() {
+                                var result = confirm("Are you sure you want to go back?.");
+                                if(result)
+                                {
+                                    history.back();
+                                }
+                            });
                         });
 
                     </script>
@@ -92,7 +100,7 @@
                         <br />
                         <button id="clear_cache" class="btn btn-info">Clear Cache</button>
                         <br/><br/>
-                        <button onclick="history.back()" class="btn btn-info">Back</button>
+                        <button id="back" class="btn btn-info">Back</button>
                         
                         <br/><br/>
                         <a href="https://github.com/rockcesar/PiNetworkDevelopments/" target="_blank" class="btn btn-link">Watch code</a>
