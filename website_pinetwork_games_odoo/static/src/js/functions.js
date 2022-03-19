@@ -108,7 +108,7 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user(false).always(function(){
                         $( "#button_click" ).click(function() {
-                            if(parseFloat($("#pi_donate").val()) >= 1)
+                            if(parseFloat($("#pi_donate").val()) >= parseFloat($("#amount").val()))
                             {
                                 $("#button_click").prop( "disabled", true );
                                 /*setTimeout(function ()
