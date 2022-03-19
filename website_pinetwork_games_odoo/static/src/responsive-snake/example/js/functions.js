@@ -133,7 +133,7 @@ $( document ).ready(function() {
                                 }, 10000);*/
                                 transfer();
                             }else{
-                                alert("You can't pay less than 1 Pi.");
+                                alert("You can't pay less than " + $("#amount").val() + " Pi.");
                             }
                         });
                         $("#button_click").prop( "disabled", false );

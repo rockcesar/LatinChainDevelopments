@@ -111,6 +111,7 @@ class admin_apps(models.Model):
     pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', pi_users_winners_ids)]")
     pi_users_winners_html = fields.Html('Winners HTML')
     block_points = fields.Boolean('Block points', default=False)
+    amount = fields.Float('Amount', digits=(50,8), default=1)
     
     def pi_api(self, kw):
         
@@ -180,7 +181,7 @@ class admin_apps(models.Model):
                         users = transaction[0].pi_user
                         
                         if len(users) > 0:
-                            if (users[0].paid + float(result_dict["amount"])) >= 1:
+                            if (users[0].paid + float(result_dict["amount"])) >= admin_app_list[0].amount:
                                 users[0].sudo().write({'unblocked': True})
                                                     
                             users[0].sudo().write({'paid': users[0].paid + float(result_dict["amount"])})
