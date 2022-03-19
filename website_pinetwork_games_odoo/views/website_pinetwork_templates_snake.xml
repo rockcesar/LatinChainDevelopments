@@ -154,7 +154,7 @@
                     <h2><img class="transparent" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /> 
                     Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2>
                     <p>
-                        <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US" value="1"/>
+                        <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US"/>
                         <input id="button_click" name="button_click" t-att-value="'Unblock with ' + str(amount) + ' Pi'" type="button" class="transparent" disabled="true"/>
                     </p>
                     <p>
