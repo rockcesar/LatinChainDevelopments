@@ -176,9 +176,9 @@
                     
                     <div class="bottom">
                         <p>
-                            <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><span id="loading_word" style="display: none;">Loading...</span>
+                            <span id="loading_word" style="display: none;">Loading...</span><br/><div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><div class="square-borderless fps-counter"></div>
                             <!--<div class="square" id="bot">Bot</div><div class="square" id="minus">-</div>
-                            <div class="square" id="plus">+</div>--><div class="square-borderless fps-counter"></div>
+                            <div class="square" id="plus">+</div>-->
                             </p>
                         <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
                     </div>
