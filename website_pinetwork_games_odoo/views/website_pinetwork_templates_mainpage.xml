@@ -314,11 +314,11 @@
                                 </div>
                               </div>
                             </div>
-                            <a class="carousel-control-prev o_not_editable o_we_no_overlay" href="#myCarousel1647794696348" data-slide="prev" role="img" aria-label="Anterior" title="Anterior">
+                            <a class="carousel-control-prev o_not_editable o_we_no_overlay" href="#myCarousel1647794696348" data-slide="prev" role="img" aria-label="Previous" title="Previous">
                               <span class="carousel-control-prev-icon"/>
                               <span class="sr-only o_default_snippet_text">Previous</span>
                             </a>
-                            <a class="carousel-control-next o_not_editable o_we_no_overlay" href="#myCarousel1647794696348" data-slide="next" role="img" aria-label="Siguiente" title="Siguiente">
+                            <a class="carousel-control-next o_not_editable o_we_no_overlay" href="#myCarousel1647794696348" data-slide="next" role="img" aria-label="Next" title="Next">
                               <span class="carousel-control-next-icon"/>
                               <span class="sr-only o_default_snippet_text">Next</span>
                             </a>

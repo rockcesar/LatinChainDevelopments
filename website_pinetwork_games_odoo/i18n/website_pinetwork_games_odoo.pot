@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 18:28+0000\n"
-"PO-Revision-Date: 2022-02-25 18:28+0000\n"
+"POT-Creation-Date: 2022-03-21 00:04+0000\n"
+"PO-Revision-Date: 2022-03-21 00:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -159,15 +159,64 @@ msgid "<br/>Video presentation:<br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-telegram\"/> Join Telegram Group"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-youtube\"/> Subscribe Youtube Channel"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa-brands fa-discord\"/> Join Discord Server"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "<span class=\"20 selected\">20</span>"
+msgid ""
+"<span class=\"1\">1</span>\n"
+"                                                    <span class=\"2\">2</span>\n"
+"                                                    <span class=\"3\">3</span>\n"
+"                                                    <span class=\"4\">4</span>\n"
+"                                                    <span class=\"5\">5</span>\n"
+"                                                    <span class=\"6\">6</span>\n"
+"                                                    <span class=\"7\">7</span>\n"
+"                                                    <span class=\"8\">8</span>\n"
+"                                                    <span class=\"9\">9</span>\n"
+"                                                    <span class=\"10 selected\">10</span>\n"
+"                                                    <span class=\"11\">11</span>\n"
+"                                                    <span class=\"12\">12</span>\n"
+"                                                    <span class=\"13\">13</span>\n"
+"                                                    <span class=\"14\">14</span>\n"
+"                                                    <span class=\"15\">15</span>\n"
+"                                                    <span class=\"16\">16</span>\n"
+"                                                    <span class=\"17\">17</span>\n"
+"                                                    <span class=\"18\">18</span>\n"
+"                                                    <span class=\"19\">19</span>\n"
+"                                                    <span class=\"20\">20</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<span class=\"carousel-control-next-icon\"/>\n"
+"                              <span class=\"sr-only o_default_snippet_text\">Next</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<span class=\"carousel-control-prev-icon\"/>\n"
+"                              <span class=\"sr-only o_default_snippet_text\">Previous</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid ""
 "<span class=\"label\">Level</span>\n"
-"                                                    <span class=\"value\" id=\"game-difficulty-skill-value\">20</span>"
+"                                                    <span class=\"value\" id=\"game-difficulty-skill-value\">10</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -246,7 +295,20 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Anterior"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Apps"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Back"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -369,9 +431,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
-"to Pi Network Games from Latin America (<strong>Testing phase</strong>. Try "
-"in Pi Browser. <strong>Clear Pi Browser cache</strong> if it is not "
-"working).<br/>"
+"to Pi Network Games from Latin America.<br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -393,6 +453,16 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LatinChain"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LatinChain API"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LatinChain dSocial"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -569,6 +639,11 @@ msgid "Show Hint"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Siguiente"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Start"
@@ -619,6 +694,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Top 10 Board"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Transactions"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
