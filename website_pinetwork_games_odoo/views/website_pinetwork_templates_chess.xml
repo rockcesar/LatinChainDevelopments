@@ -207,9 +207,9 @@
                                                 </span>
                                                 <span id="btn-settings" title="Choose The Engine's Skill Level" class="btn settings"></span>
                                                 <span id="btn-resign" title="Resign" class="btn resign"></span>
-                                                <span id="btn-analyze" style="display:none;" title="Request Engine Evaluation" class="btn analyze">
+                                                <!--<span id="btn-analyze" style="display:none;" title="Request Engine Evaluation" class="btn analyze">
                                     <i class="icon"></i>
-                                  </span>
+                                  </span>-->
                                             </div>
                                             <div class="params">
                                                 <div class="cell side" id="game-player-side" style="display: none;">
