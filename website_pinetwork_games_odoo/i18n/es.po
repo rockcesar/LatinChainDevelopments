@@ -175,7 +175,7 @@ msgstr "<br/>Video presentación:<br/><br/>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<i class=\"fa fa-telegram\"/> Join Telegram Group"
-msgstr "<i class=\"fa fa-telegram\"/> Únirse al Telegram"
+msgstr "<i class=\"fa fa-telegram\"/> Unirse al Telegram"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -185,7 +185,7 @@ msgstr "<i class=\"fa fa-youtube\"/> Suscribirse a Youtube"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<i class=\"fa-brands fa-discord\"/> Join Discord Server"
-msgstr "<i class=\"fa-brands fa-discord\"/> Únirse al Discord"
+msgstr "<i class=\"fa-brands fa-discord\"/> Unirse al Discord"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
