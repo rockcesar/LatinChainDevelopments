@@ -275,7 +275,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="https://youtube.com/c/CesarOpenSourceExpert" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><i class="fa fa-youtube"></i> Subscribe the Youtube Channel</a>
+                                          <a href="https://youtube.com/c/CesarOpenSourceExpert" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><i class="fa fa-youtube"></i> Subscribe Youtube Channel</a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -306,7 +306,7 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><i class="fa-brands fa-discord"></i> Join Discord Group</a>
+                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><i class="fa-brands fa-discord"></i> Join Discord Server</a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -328,7 +328,7 @@
                     <div class="container" style="text-align:center">
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />
-                        Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America (<strong>Testing phase</strong>. Try in Pi Browser. <strong>Clear Pi Browser cache</strong> if it is not working).<br/>
+                        Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America.<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><br/>
                         <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
