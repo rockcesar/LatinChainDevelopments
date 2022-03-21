@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 00:05+0000\n"
-"PO-Revision-Date: 2022-03-21 00:05+0000\n"
+"POT-Creation-Date: 2022-03-21 00:32+0000\n"
+"PO-Revision-Date: 2022-03-21 00:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -123,7 +123,9 @@ msgstr "<br/><br/>Disfrute:<br/><br/>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/><span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
-msgstr "<br/><span id=\"loading_word\" style=\"display: none;\">Cargando...<br/></span>"
+msgstr ""
+"<br/><span id=\"loading_word\" style=\"display: "
+"none;\">Cargando...<br/></span>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -337,11 +339,6 @@ msgstr "IA"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Anterior"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Apps"
 msgstr ""
 
@@ -440,7 +437,9 @@ msgstr "Cambiar PC (On/Off)"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
-msgstr "Introduce un juego de sudoku como cadena de 81 dígitos, 1-9, y '.' como espacios."
+msgstr ""
+"Introduce un juego de sudoku como cadena de 81 dígitos, 1-9, y '.' como "
+"espacios."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -475,8 +474,8 @@ msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
 "to Pi Network Games from Latin America.<br/>"
 msgstr ""
-"Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Bienvenido "
-"a Pi Network Games from Latin America.<br/>"
+"Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
+"Bienvenido a Pi Network Games from Latin America.<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -569,6 +568,11 @@ msgid "Music"
 msgstr "Música"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Next"
+msgstr "Siguiente"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "No"
 msgstr ""
@@ -614,6 +618,11 @@ msgstr "Juega Ajedrez contra la mejor AI Chess Player (Stockfish)"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Play Sudoku any time you want"
 msgstr "Juega Sudoku en el momento que quieras"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Previous"
+msgstr "Anterior"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -681,11 +690,6 @@ msgstr "Compartir en Redes Sociales:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Show Hint"
 msgstr "Muestra Pista"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Siguiente"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
