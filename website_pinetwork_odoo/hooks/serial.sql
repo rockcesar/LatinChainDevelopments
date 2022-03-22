@@ -4,3 +4,7 @@ alter table pi_users alter id type bigint;
 alter sequence pi_transactions_id_seq as bigint;
 alter sequence admin_apps_id_seq as bigint;
 alter sequence pi_users_id_seq as bigint;
+
+/*
+ALTER SEQUENCE pi_transactions_id_seq RESTART;
+*/
