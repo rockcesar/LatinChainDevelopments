@@ -2,6 +2,7 @@
 <odoo>
 
         <template id="list_points" name="Points View">
+            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -44,9 +45,11 @@
                     </div>
                 </body>
             </html>
+            </t>
 		</template>
         
         <template id="list_winners" name="Top 10 View">
+            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -89,9 +92,11 @@
                     </div>
                 </body>
             </html>
+            </t>
 		</template>
         
         <template id="list_credits" name="Credits">
+            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
@@ -152,6 +157,7 @@
                     </div>
                 </body>
             </html>
+            </t>
 		</template>
         
         <template id="list_transactions" name="Credits">
