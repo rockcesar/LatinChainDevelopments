@@ -468,7 +468,7 @@ msgid ""
 "to Pi Network Games from Latin America.<br/>"
 msgstr ""
 "Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
-"Bienvenido a Pi Network Games from Latin America.<br/>"
+"Bienvenido(a) a Pi Network Games from Latin America.<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
