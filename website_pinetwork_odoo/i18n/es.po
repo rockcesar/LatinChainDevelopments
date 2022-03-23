@@ -36,7 +36,7 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
 msgid ". Choose your app:<br/><br/>"
-msgstr ". Escoge tu app:<br/><br/>"
+msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
@@ -44,6 +44,8 @@ msgid ""
 "<br/>\n"
 "                            Total verified donators:"
 msgstr ""
+"<br/>\n"
+"                            Total de donadores verificados:"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
@@ -412,19 +414,19 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 msgid "Total donators:"
-msgstr ""
+msgstr "Total de donadores:"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 msgid "Total users in the app:"
-msgstr ""
+msgstr "Total de usuarios en la app:"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 msgid "Total verified users in the app:"
-msgstr ""
+msgstr "Total de usuarios verificados en la app:"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
@@ -444,6 +446,8 @@ msgid ""
 "UTC<br/><br/>\n"
 "                        <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>"
 msgstr ""
+"UTC<br/><br/>\n"
+"                        <strong>LatinChain les da las gracias a todos los donadores quienes donaron Pi:</strong><br/>"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
@@ -467,7 +471,7 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 msgid "Username"
-msgstr ""
+msgstr "Usuario"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.example
@@ -518,7 +522,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 msgid "Your points:"
-msgstr ""
+msgstr "Tus puntos:"
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__cancelled
@@ -539,13 +543,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 msgid "has"
-msgstr ""
+msgstr "tiene"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 msgid "points at"
-msgstr ""
+msgstr "puntos a las"
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__transaction_verified
