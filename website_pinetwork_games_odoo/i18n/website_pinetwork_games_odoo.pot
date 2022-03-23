@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 12:00+0000\n"
-"PO-Revision-Date: 2022-03-21 12:00+0000\n"
+"POT-Creation-Date: 2022-03-23 18:07+0000\n"
+"PO-Revision-Date: 2022-03-23 18:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -169,11 +169,6 @@ msgid "<i class=\"fa fa-youtube\"/> Subscribe Youtube Channel"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa-brands fa-discord\"/> Join Discord Server"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid ""
 "<span class=\"1\">1</span>\n"
@@ -282,7 +277,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
+msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -449,6 +444,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Join Discord Server"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LatinChain"
 msgstr ""
 
@@ -510,6 +510,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Menu"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "More Info"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -583,6 +588,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Previous"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Read the blog"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
