@@ -8,3 +8,4 @@ access_pi_admin_group_system_3,pi.admin.group.system.3,website_pinetwork_odoo.mo
 access_group_pi_external_user_1,group.pi.external.user.1,website_pinetwork_odoo.model_pi_users,website_pinetwork_odoo.group_pi_external_user,1,0,0,0
 access_group_pi_internal_company_user_1,group.pi.company.user.1,website_pinetwork_odoo.model_pi_users,website_pinetwork_odoo.group_pi_internal_company_user,1,0,0,0
 access_group_pi_internal_company_user_2,group.pi.internal.company.user.2,website_pinetwork_odoo.model_pi_transactions,website_pinetwork_odoo.group_pi_internal_company_user,1,0,0,0
+access_group_pi_internal_company_user_3,group.pi.internal.company.user.3,website_pinetwork_odoo.model_admin_apps,website_pinetwork_odoo.group_pi_internal_company_user,1,0,0,0

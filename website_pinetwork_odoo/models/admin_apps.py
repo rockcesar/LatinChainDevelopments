@@ -104,7 +104,7 @@ class admin_apps(models.Model):
 
     name = fields.Char('Name')
     app = fields.Char('App code', required=True)
-    admin_key = fields.Char('Admin Key', required=True)
+    admin_key = fields.Char('Admin Key', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     sandbox = fields.Boolean('Sandbox', required=True)
     pi_transactions_ids = fields.One2many('pi.transactions', 'app_id')
     pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners')
@@ -205,7 +205,7 @@ class pi_users(models.Model):
     ]
 
     name = fields.Char('Name')
-    pi_user_id = fields.Char('Pi User ID', required=True)
+    pi_user_id = fields.Char('Pi User ID', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_user_code = fields.Char('Pi User Code', required=True)
     passkey = fields.Char('Pass Key')
     points = fields.Float('Pi User Points', compute="_total_points", store=True, digits=(50,8))
@@ -213,15 +213,15 @@ class pi_users(models.Model):
     points_sudoku = fields.Float('Sudoku Points', required=True, default=0, digits=(50,8))
     points_snake = fields.Float('Snake Points', required=True, default=0, digits=(50,8))
     points_datetime = fields.Datetime('Points Datetime', compute="_compute_points_datetime", store=True)
-    paid = fields.Float('Paid by user', digits=(50,8))
+    paid = fields.Float('Paid by user', digits=(50,8), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,8))
-    pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user')
+    pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
     user_agent = fields.Char('User agent')
     last_connection = fields.Datetime(string='Last connection', default="")
     days_available = fields.Integer('Days available', store=True, default=0)
-    admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners Apps')
-    admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', domain="[('id', 'in', admin_apps_winners_ids)]")
+    admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners Apps', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', domain="[('id', 'in', admin_apps_winners_ids)]", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
     paid_in_all_donations = fields.Float('Paid by user in donations', compute="_compute_donator", store=True, digits=(50,8))
     
