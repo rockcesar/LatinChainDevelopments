@@ -289,7 +289,7 @@ class PiNetworkBaseController(http.Controller):
             else:
                 verified = ""
             
-            data.append({'pi_user_code': i.pi_user_code + verified + ". Donation: " + str(i.paid_in_all_donations) + " Pi"})
+            data.append({'pi_user_code': "<strong>" + i.pi_user_code + "</strong>" + verified + ". Donation: " + str(i.paid_in_all_donations) + " Pi"})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
     
