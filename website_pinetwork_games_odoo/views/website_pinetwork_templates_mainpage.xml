@@ -320,7 +320,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="/blog" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text">Read the blog</a>
+                                      <a href="/blog" class="btn btn-primary mb-2 o_default_snippet_text">Read the blog</a>
                                       </h2>
                                       <br/>
                                     </div>
