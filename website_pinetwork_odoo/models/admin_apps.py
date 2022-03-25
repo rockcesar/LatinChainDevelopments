@@ -80,8 +80,7 @@ class pi_transactions(models.Model):
                                         'memo': result_dict["memo"],
                                         'to_address': result_dict["to_address"]})
                             
-                        pit.write({'name': pit.action + ". PaymentId: " + pit.payment_id,
-                                'developer_approved': result_dict["status"]["developer_approved"], 
+                        pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
                                 'transaction_verified': result_dict["status"]["transaction_verified"], 
                                 'developer_completed': result_dict["status"]["developer_completed"], 
                                 'cancelled': result_dict["status"]["cancelled"], 
@@ -89,7 +88,7 @@ class pi_transactions(models.Model):
                                 'json_result': str(result_dict)})
                         
                         if pit.action == "cancelled" and (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                            (datetime.now() - pit.create_date).days >= 1:
+                            (datetime.now() - pit.create_date).minutes >= 5:
                             pit.unlink()
                         elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
                             result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
