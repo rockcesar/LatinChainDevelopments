@@ -88,9 +88,15 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
+        except IOError as (errno, strerror):
+        except ValueError:
         except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
+        else:
+            _logger.info("Cool")
+        finally:
+            _logger.info("Cool!")
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
@@ -120,6 +126,8 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
+        except IOError as (errno, strerror):
+        except ValueError:
         except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
@@ -143,6 +151,8 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
+        except IOError as (errno, strerror):
+        except ValueError:
         except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
@@ -329,6 +339,8 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
+        except IOError as (errno, strerror):
+        except ValueError:
         except:
             _logger.info("Authorization error")
             return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
