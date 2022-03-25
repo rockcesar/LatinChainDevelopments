@@ -89,7 +89,7 @@ class pi_transactions(models.Model):
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).days >= 1:
                     pit.unlink()
-            except IOError as (errno, strerror):
+            except IOError:
                 _logger.info(str(re))
             except ValueError:
                 _logger.info(str(re))
