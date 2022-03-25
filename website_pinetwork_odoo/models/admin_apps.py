@@ -88,7 +88,7 @@ class pi_transactions(models.Model):
                                 'json_result': str(result_dict)})
                         
                         if pit.action == "cancelled" and (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                            (datetime.now() - pit.create_date).minutes >= 5:
+                            (datetime.now() - pit.create_date).seconds/60 >= 5:
                             pit.unlink()
                         elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
                             result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
