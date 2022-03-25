@@ -88,7 +88,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-        except Exception:
+        except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
         
@@ -120,7 +120,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-        except Exception:
+        except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
         
@@ -143,7 +143,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-        except Exception:
+        except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
         
@@ -329,7 +329,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
-        except Exception:
+        except:
             _logger.info("Authorization error")
             return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
         

@@ -44,7 +44,7 @@ class pi_transactions(models.Model):
             else:
                 pit.txid_url = ""
     
-    def check_transactions(self):
+    def check_transactions(self, counter=1):
         for pit in self:
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
@@ -90,7 +90,7 @@ class pi_transactions(models.Model):
                     (datetime.now() - pit.create_date).days >= 1:
                     pit.unlink()
                     
-            except Exception:
+            except:
                 _logger.info(str(re))
 
 class admin_apps(models.Model):
@@ -190,7 +190,7 @@ class admin_apps(models.Model):
             else:
                 result = {"result": True, "completed": False, "approved": False}
                 
-        except Exception:
+        except:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         
         return json.dumps(result)
