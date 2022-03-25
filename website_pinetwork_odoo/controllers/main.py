@@ -4,6 +4,10 @@ from odoo import http
 from odoo.http import request, Response
 import json
 
+import time
+
+import odoo
+
 import requests
 
 import logging
@@ -104,8 +108,21 @@ class PiNetworkBaseController(http.Controller):
         
         passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789%^*(-_=+)') for i in range(10)])
         
-        pi_users_list[0].sudo().write({'passkey': passkey})
-        
+        request.env.cr.commit()
+        while True:
+            try:
+                # make the conflict-prone UPDATE and break if success
+                pi_users_list[0].sudo().write({'passkey': passkey})
+                break
+            except OperationalError as e:
+                if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                    # prepare for retry
+                    self.env.cr.rollback()
+                    time.sleep(.1)
+                else:
+                    # don't hide non-concurrency errors
+                    raise
+                    
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
@@ -205,8 +222,21 @@ class PiNetworkBaseController(http.Controller):
                         values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
             elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
                 return json.dumps({'result': False})
-                    
-            pi_users_list[0].sudo().write(values)
+            
+            request.env.cr.commit()
+            while True:
+                try:
+                    # make the conflict-prone UPDATE and break if success
+                    pi_users_list[0].sudo().write(values)
+                    break
+                except OperationalError as e:
+                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                        # prepare for retry
+                        self.env.cr.rollback()
+                        time.sleep(.1)
+                    else:
+                        # don't hide non-concurrency errors
+                        raise
         
         return json.dumps({'result': True})
         

@@ -7,6 +7,10 @@ from odoo.exceptions import ValidationError
 import requests
 import json
 
+import time
+
+import odoo
+
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -53,45 +57,58 @@ class pi_transactions(models.Model):
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
             
             try:
+                
                 result = re.json()
                 
                 result_dict = json.loads(str(json.dumps(result)))
                 
-                if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
-                    pit.write({'action': 'cancelled'})
-                elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
-                    pit.write({'action': 'approve'})
-                if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete":
-                    pit.write({'name': "complete. PaymentId: " + pit.payment_id,
-                                'action': 'complete',
-                                'payment_id': pit.payment_id,
-                                'txid': result_dict["transaction"]["txid"],
-                                'pi_user_id': result_dict["user_uid"],
-                                'amount': result_dict["amount"],
-                                'memo': result_dict["memo"],
-                                'to_address': result_dict["to_address"]})
-                    
-                pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
-                        'transaction_verified': result_dict["status"]["transaction_verified"], 
-                        'developer_completed': result_dict["status"]["developer_completed"], 
-                        'cancelled': result_dict["status"]["cancelled"], 
-                        'user_cancelled': result_dict["status"]["user_cancelled"],
-                        'json_result': str(result_dict)})
-                
-                if pit.action == "cancelled" and (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                    (datetime.now() - pit.create_date).days >= 1:
-                    pit.unlink()
-                elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
-                    result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
-                    not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
-                    self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
-                                                        'app_client': pit.app, 'paymentId': pit.payment_id})
-                elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
-                    not result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
-                    not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                    (datetime.now() - pit.create_date).days >= 1:
-                    pit.unlink()
-                self._cr.commit()
+                self.env.cr.commit()
+                while True:
+                    try:
+                        # make the conflict-prone UPDATE and break if success
+                        if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
+                            pit.write({'action': 'cancelled'})
+                        elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
+                            pit.write({'action': 'approve'})
+                        if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete":
+                            pit.write({'name': "complete. PaymentId: " + pit.payment_id,
+                                        'action': 'complete',
+                                        'payment_id': pit.payment_id,
+                                        'txid': result_dict["transaction"]["txid"],
+                                        'pi_user_id': result_dict["user_uid"],
+                                        'amount': result_dict["amount"],
+                                        'memo': result_dict["memo"],
+                                        'to_address': result_dict["to_address"]})
+                            
+                        pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
+                                'transaction_verified': result_dict["status"]["transaction_verified"], 
+                                'developer_completed': result_dict["status"]["developer_completed"], 
+                                'cancelled': result_dict["status"]["cancelled"], 
+                                'user_cancelled': result_dict["status"]["user_cancelled"],
+                                'json_result': str(result_dict)})
+                        
+                        if pit.action == "cancelled" and (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
+                            (datetime.now() - pit.create_date).days >= 1:
+                            pit.unlink()
+                        elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
+                            result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
+                            not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
+                            self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
+                                                                'app_client': pit.app, 'paymentId': pit.payment_id})
+                        elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
+                            not result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
+                            not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
+                            (datetime.now() - pit.create_date).days >= 1:
+                            pit.unlink()
+                        break
+                    except OperationalError as e:
+                        if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                            # prepare for retry
+                            self.env.cr.rollback()
+                            time.sleep(.1)
+                        else:
+                            # don't hide non-concurrency errors
+                            raise
             except errors.InFailedSqlTransaction:
                 _logger.info(str(re))
             except:
@@ -135,6 +152,7 @@ class admin_apps(models.Model):
         re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
         try:
+            
             result = re.json()
             
             result_dict = json.loads(str(json.dumps(result)))
@@ -161,7 +179,12 @@ class admin_apps(models.Model):
                                                             
                 result = {"result": True, "approved": True}
             elif kw['action'] == "complete":
-                self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(
+                
+                self.env.cr.commit()
+                while True:
+                    try:
+                        # make the conflict-prone UPDATE and break if success
+                        self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(
                                                                 {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
                                                                 'app_id': admin_app_list[0].id,
                                                                 'action': kw['action'],
@@ -177,20 +200,29 @@ class admin_apps(models.Model):
                                                                 'developer_completed': result_dict["status"]["developer_completed"], 
                                                                 'cancelled': result_dict["status"]["cancelled"], 
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
-                transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
-                
-                result = {"result": True, "completed": False}
-                if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
-                    if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                        users = transaction[0].pi_user
+                        transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
                         
-                        if len(users) > 0:
-                            if (users[0].paid + float(result_dict["amount"])) >= admin_app_list[0].amount:
-                                users[0].sudo().write({'unblocked': True})
-                                                    
-                            users[0].sudo().write({'paid': users[0].paid + float(result_dict["amount"])})
-                            
-                        result = {"result": True, "completed": True}
+                        result = {"result": True, "completed": False}
+                        if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
+                            if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                                users = transaction[0].pi_user
+                                
+                                if len(users) > 0:
+                                    if (users[0].paid + float(result_dict["amount"])) >= admin_app_list[0].amount:
+                                        users[0].sudo().write({'unblocked': True})
+                                    
+                                    users[0].sudo().write({'paid': users[0].paid + float(result_dict["amount"])})
+                                    
+                                result = {"result": True, "completed": True}
+                        break
+                    except OperationalError as e:
+                        if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                            # prepare for retry
+                            self.env.cr.rollback()
+                            time.sleep(.1)
+                        else:
+                            # don't hide non-concurrency errors
+                            raise
             else:
                 result = {"result": True, "completed": False, "approved": False}
         except errors.InFailedSqlTransaction:
@@ -289,15 +321,28 @@ class pi_users(models.Model):
         for piu in self:
             transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
             
-            if len(transaction) == 0:
-                piu.write({'unblocked': False, 'days_available': 0})
-            else:
-                days_available = 30 - (datetime.now() - transaction[0].create_date).days
-                
-                if days_available < 0:
-                    days_available = 0
-                    
-                piu.write({'days_available': days_available})
-                
-                if days_available == 0:
-                    piu.write({'unblocked': False})
+            self.env.cr.commit()
+            while True:
+                try:
+                    # make the conflict-prone UPDATE and break if success
+                    if len(transaction) == 0:
+                        piu.write({'unblocked': False, 'days_available': 0})
+                    else:
+                        days_available = 30 - (datetime.now() - transaction[0].create_date).days
+                        
+                        if days_available < 0:
+                            days_available = 0
+                            
+                        piu.write({'days_available': days_available})
+                        
+                        if days_available == 0:
+                            piu.write({'unblocked': False})
+                    break
+                except OperationalError as e:
+                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                        # prepare for retry
+                        self.env.cr.rollback()
+                        time.sleep(.1)
+                    else:
+                        # don't hide non-concurrency errors
+                        raise
