@@ -98,7 +98,7 @@ class pi_transactions(models.Model):
                         elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
                             not result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                             not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                            (datetime.now() - pit.create_date).seconds/3600 >= 6:
+                            (datetime.now() - pit.create_date).days >= 1:
                             pit.unlink()
                         break
                     except OperationalError as e:
