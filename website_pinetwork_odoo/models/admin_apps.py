@@ -14,6 +14,8 @@ from datetime import datetime
 
 from dateutil.relativedelta import relativedelta, MO
 
+from psycopg2 import OperationalError, errorcodes, errors
+
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
@@ -89,9 +91,7 @@ class pi_transactions(models.Model):
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).days >= 1:
                     pit.unlink()
-            except IOError:
-                _logger.info(str(re))
-            except ValueError:
+            except errors.InFailedSqlTransaction:
                 _logger.info(str(re))
             except:
                 _logger.info(str(re))
@@ -192,9 +192,7 @@ class admin_apps(models.Model):
                         result = {"result": True, "completed": True}
             else:
                 result = {"result": True, "completed": False, "approved": False}
-        except IOError:
-            result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
-        except ValueError:
+        except errors.InFailedSqlTransaction:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         except:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}

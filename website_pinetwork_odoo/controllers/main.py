@@ -17,6 +17,8 @@ from random import choice
 
 from datetime import datetime
 
+from psycopg2 import OperationalError, errorcodes, errors
+
 """
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
@@ -88,10 +90,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-        except IOError:
-            _logger.info("Authorization error")
-            return json.dumps({'result': False})
-        except ValueError:
+        except errors.InFailedSqlTransaction:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
         except:
@@ -126,10 +125,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-        except IOError:
-            _logger.info("Authorization error")
-            return json.dumps({'result': False})
-        except ValueError:
+        except errors.InFailedSqlTransaction:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
         except:
@@ -155,10 +151,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-        except IOError:
-            _logger.info("Authorization error")
-            return json.dumps({'result': False})
-        except ValueError:
+        except errors.InFailedSqlTransaction:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
         except:
@@ -347,10 +340,7 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
-        except IOError:
-            _logger.info("Authorization error")
-            return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
-        except ValueError:
+        except errors.InFailedSqlTransaction:
             _logger.info("Authorization error")
             return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
         except:
