@@ -80,7 +80,8 @@ class pi_transactions(models.Model):
                                         'memo': result_dict["memo"],
                                         'to_address': result_dict["to_address"]})
                             
-                        pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
+                        pit.write({'name': pit.action + ". PaymentId: " + pit.payment_id,
+                                'developer_approved': result_dict["status"]["developer_approved"], 
                                 'transaction_verified': result_dict["status"]["transaction_verified"], 
                                 'developer_completed': result_dict["status"]["developer_completed"], 
                                 'cancelled': result_dict["status"]["cancelled"], 
