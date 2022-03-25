@@ -90,7 +90,9 @@ class pi_transactions(models.Model):
                     (datetime.now() - pit.create_date).days >= 1:
                     pit.unlink()
             except IOError as (errno, strerror):
+                _logger.info(str(re))
             except ValueError:
+                _logger.info(str(re))
             except:
                 _logger.info(str(re))
 
