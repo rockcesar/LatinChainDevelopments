@@ -192,7 +192,10 @@ class admin_apps(models.Model):
                         result = {"result": True, "completed": True}
             else:
                 result = {"result": True, "completed": False, "approved": False}
-                
+        except IOError:
+            result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
+        except ValueError:
+            result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         except:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         
