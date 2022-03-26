@@ -45,10 +45,22 @@ class pi_transactions(models.Model):
     
     def _compute_txid_url(self):
         for pit in self:
-            if pit.txid:
-                pit.txid_url = "https://minepi.com/blockexplorer/tx/" + pit.txid
-            else:
-                pit.txid_url = ""
+            self.env.cr.commit()
+            while True:
+                try:
+                    if pit.txid:
+                        pit.txid_url = "https://minepi.com/blockexplorer/tx/" + pit.txid
+                    else:
+                        pit.txid_url = ""
+                    break
+                except OperationalError as e:
+                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                        # prepare for retry
+                        self.env.cr.rollback()
+                        time.sleep(.1)
+                    else:
+                        # don't hide non-concurrency errors
+                        raise
     
     def check_transactions(self, counter=1):
         for pit in self:
@@ -265,57 +277,105 @@ class pi_users(models.Model):
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
         for i in self:
-            i.donator = False
-            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')], limit=1)
-            
-            if len(transaction) == 0:
-                i.donator = False
-            else:
-                i.donator = True
-            
-            total = 0    
-            for j in i.pi_transactions_ids:
-                if j.action == "complete" and j.app_id.app == "auth_example":
-                    total += j.amount
-            
-            i.paid_in_all_donations = total
+            self.env.cr.commit()
+            while True:
+                try:
+                    i.donator = False
+                    transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')], limit=1)
+                    
+                    if len(transaction) == 0:
+                        i.donator = False
+                    else:
+                        i.donator = True
+                    
+                    total = 0    
+                    for j in i.pi_transactions_ids:
+                        if j.action == "complete" and j.app_id.app == "auth_example":
+                            total += j.amount
+                    
+                    i.paid_in_all_donations = total
+                    break
+                except OperationalError as e:
+                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                        # prepare for retry
+                        self.env.cr.rollback()
+                        time.sleep(.1)
+                    else:
+                        # don't hide non-concurrency errors
+                        raise
     
     @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
     def _total_points(self):
         for i in self:
-            i.points = i.points_chess + i.points_sudoku + i.points_snake
-            
+            self.env.cr.commit()
+            while True:
+                try:
+                    i.points = i.points_chess + i.points_sudoku + i.points_snake
+                    break
+                except OperationalError as e:
+                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                        # prepare for retry
+                        self.env.cr.rollback()
+                        time.sleep(.1)
+                    else:
+                        # don't hide non-concurrency errors
+                        raise
+                        
     @api.depends("points_chess", "points_sudoku", "points_snake")
     def _compute_points_datetime(self):
         for i in self:
-            i.points_datetime = datetime.now()
+            self.env.cr.commit()
+            while True:
+                try:
+                    i.points_datetime = datetime.now()
+                    break
+                except OperationalError as e:
+                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                        # prepare for retry
+                        self.env.cr.rollback()
+                        time.sleep(.1)
+                    else:
+                        # don't hide non-concurrency errors
+                        raise
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
         for i in self:
-            total = 0
-            for j in i.pi_transactions_ids:
-                if j.action == "complete":
-                    total += j.amount
-            
-            i.paid_in_transactions = total
-            
-            if i.paid_in_transactions > 0:
-                i.unblocked = True
-                
-            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
-            
-            if len(transaction) == 0:
-                i.unblocked = False
-                i.days_available = 0
-            else:
-                i.days_available = 30 - (datetime.now() - transaction[0].create_date).days
-                
-                if i.days_available < 0:
-                    i.days_available = 0
-                
-                if i.days_available == 0:
-                    i.unblocked = False
+            self.env.cr.commit()
+            while True:
+                try:
+                    total = 0
+                    for j in i.pi_transactions_ids:
+                        if j.action == "complete":
+                            total += j.amount
+                    
+                    i.paid_in_transactions = total
+                    
+                    if i.paid_in_transactions > 0:
+                        i.unblocked = True
+                        
+                    transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
+                    
+                    if len(transaction) == 0:
+                        i.unblocked = False
+                        i.days_available = 0
+                    else:
+                        i.days_available = 30 - (datetime.now() - transaction[0].create_date).days
+                        
+                        if i.days_available < 0:
+                            i.days_available = 0
+                        
+                        if i.days_available == 0:
+                            i.unblocked = False
+                    break
+                except OperationalError as e:
+                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
+                        # prepare for retry
+                        self.env.cr.rollback()
+                        time.sleep(.1)
+                    else:
+                        # don't hide non-concurrency errors
+                        raise
 
     def check_users(self):
         for piu in self:
