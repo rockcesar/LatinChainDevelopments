@@ -117,7 +117,7 @@ class PiNetworkBaseController(http.Controller):
             except OperationalError as e:
                 if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
                     # prepare for retry
-                    self.env.cr.rollback()
+                    request.env.cr.rollback()
                     time.sleep(.1)
                 else:
                     # don't hide non-concurrency errors
@@ -232,7 +232,7 @@ class PiNetworkBaseController(http.Controller):
                 except OperationalError as e:
                     if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
                         # prepare for retry
-                        self.env.cr.rollback()
+                        request.env.cr.rollback()
                         time.sleep(.1)
                     else:
                         # don't hide non-concurrency errors
