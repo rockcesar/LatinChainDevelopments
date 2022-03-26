@@ -45,22 +45,10 @@ class pi_transactions(models.Model):
     
     def _compute_txid_url(self):
         for pit in self:
-            self.env.cr.commit()
-            while True:
-                try:
-                    if pit.txid:
-                        pit.txid_url = "https://minepi.com/blockexplorer/tx/" + pit.txid
-                    else:
-                        pit.txid_url = ""
-                    break
-                except OperationalError as e:
-                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
-                        # prepare for retry
-                        self.env.cr.rollback()
-                        time.sleep(.1)
-                    else:
-                        # don't hide non-concurrency errors
-                        raise
+            if pit.txid:
+                pit.txid_url = "https://minepi.com/blockexplorer/tx/" + pit.txid
+            else:
+                pit.txid_url = ""
     
     def check_transactions(self, counter=1):
         for pit in self:
