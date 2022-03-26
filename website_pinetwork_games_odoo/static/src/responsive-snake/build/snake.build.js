@@ -875,8 +875,8 @@ Snake.prototype.drawLoop = function() {
       this.scorePoint();
       //Increase Frames Per Second
       //if (this.score % 2) {
-        if(this.score % 20 == 0)
-            set_points(this.score/10);
+        if(this.score % 5 == 0)
+            set_points(this.score/5);
             
         this.fps += 0.5;
       //}
