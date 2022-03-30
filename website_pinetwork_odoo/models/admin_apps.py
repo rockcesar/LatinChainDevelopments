@@ -165,7 +165,7 @@ class admin_apps(models.Model):
             result_dict = json.loads(str(json.dumps(result)))
             
             if kw['action'] == "approve":
-                """pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+                pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
                 self.env["pi.transactions"].sudo().create({'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
                                                                 'app_id': admin_app_list[0].id,
                                                                 'action': kw['action'],
@@ -183,7 +183,6 @@ class admin_apps(models.Model):
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
                 self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                             ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions()
-                """
                                                             
                 result = {"result": True, "approved": True}
             elif kw['action'] == "complete":
