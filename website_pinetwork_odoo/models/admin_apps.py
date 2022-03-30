@@ -128,11 +128,18 @@ class admin_apps(models.Model):
     admin_key = fields.Char('Admin Key', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     sandbox = fields.Boolean('Sandbox', required=True)
     pi_transactions_ids = fields.One2many('pi.transactions', 'app_id')
+    pi_users_winners_datetime = fields.Datetime(string='Winners datetime', default="")
+    pi_users_winners_count = fields.Integer(string='Winners count', compute="_compute_pi_users_winners_count")
     pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners')
     pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', pi_users_winners_ids)]")
     pi_users_winners_html = fields.Html('Winners HTML')
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,8), default=1)
+    
+    @api.depends("pi_users_winners_ids")
+    def _compute_pi_users_winners_count(self):
+        for i in self:
+            i.pi_users_winners_count = len(i.pi_users_winners_ids)
     
     def pi_api(self, kw):
         
