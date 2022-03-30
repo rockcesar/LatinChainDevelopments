@@ -191,22 +191,28 @@ class admin_apps(models.Model):
                 while True:
                     try:
                         # make the conflict-prone UPDATE and break if success
-                        self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(
-                                                                {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
-                                                                'app_id': admin_app_list[0].id,
-                                                                'action': kw['action'],
-                                                                'payment_id': kw['paymentId'],
-                                                                'txid': kw['txid'],
-                                                                'json_result': str(result_dict),
-                                                                'pi_user_id': result_dict["user_uid"],
-                                                                'amount': result_dict["amount"],
-                                                                'memo': result_dict["memo"],
-                                                                'to_address': result_dict["to_address"],
-                                                                'developer_approved': result_dict["status"]["developer_approved"], 
-                                                                'transaction_verified': result_dict["status"]["transaction_verified"], 
-                                                                'developer_completed': result_dict["status"]["developer_completed"], 
-                                                                'cancelled': result_dict["status"]["cancelled"], 
-                                                                'user_cancelled': result_dict["status"]["user_cancelled"]})
+                        data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                    'app_id': admin_app_list[0].id,
+                                    'action': kw['action'],
+                                    'payment_id': kw['paymentId'],
+                                    'txid': kw['txid'],
+                                    'json_result': str(result_dict),
+                                    'pi_user_id': result_dict["user_uid"],
+                                    'amount': result_dict["amount"],
+                                    'memo': result_dict["memo"],
+                                    'to_address': result_dict["to_address"],
+                                    'developer_approved': result_dict["status"]["developer_approved"], 
+                                    'transaction_verified': result_dict["status"]["transaction_verified"], 
+                                    'developer_completed': result_dict["status"]["developer_completed"], 
+                                    'cancelled': result_dict["status"]["cancelled"], 
+                                    'user_cancelled': result_dict["status"]["user_cancelled"]}
+                        
+                        transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
+                        if len(transaction_count) == 0:
+                            self.env["pi.transactions"].sudo().create(data_dict)
+                        else:
+                            self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
+                            
                         transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
                         
                         result = {"result": True, "completed": False}
