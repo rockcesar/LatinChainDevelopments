@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-23 18:07+0000\n"
-"PO-Revision-Date: 2022-03-23 18:07+0000\n"
+"POT-Creation-Date: 2022-03-30 16:26+0000\n"
+"PO-Revision-Date: 2022-03-30 16:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,6 +41,11 @@ msgstr "* Reglas para estar en el Top 10 Board:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Rules to be in the Winners Board:"
+msgstr "* Reglas para estar en el Winners Board:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "* Rules to be verified:"
 msgstr "* Reglas para ser verificado:"
 
@@ -67,6 +72,14 @@ msgid ""
 msgstr ""
 "1.- Cada 30 días debes desbloquear la aplicación pagando 1 Pi. Ve a uno de "
 "los juegos para hacerlo."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"2.- Be in the first 10 on the Leaders Board or in the Top 10 Board. It is "
+"filled manually each some time."
+msgstr "2.- Estar entre los 10 primeros en el Leaders Board ó en el Top 10 Board. Esto es "
+"llenado manualmente, cada cierto tiempo."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -803,6 +816,11 @@ msgstr "Ganamos una mención Honorable!!!:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "White"
 msgstr "Blancas"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Winners Board"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
