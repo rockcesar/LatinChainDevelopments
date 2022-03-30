@@ -191,11 +191,14 @@ class admin_apps(models.Model):
                 while True:
                     try:
                         # make the conflict-prone UPDATE and break if success
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
                         data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
                                     'app_id': admin_app_list[0].id,
                                     'action': kw['action'],
                                     'payment_id': kw['paymentId'],
                                     'txid': kw['txid'],
+                                    'pi_user_id': result_dict["user_uid"],
+                                    'pi_user': pi_user[0].id,
                                     'json_result': str(result_dict),
                                     'pi_user_id': result_dict["user_uid"],
                                     'amount': result_dict["amount"],
@@ -208,7 +211,7 @@ class admin_apps(models.Model):
                                     'user_cancelled': result_dict["status"]["user_cancelled"]}
                         
                         transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
-                        if transaction_count == 0:
+                        if len(transaction_count) == 0:
                             self.env["pi.transactions"].sudo().create(data_dict)
                         else:
                             self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
