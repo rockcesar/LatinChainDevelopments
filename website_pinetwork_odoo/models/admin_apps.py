@@ -208,7 +208,7 @@ class admin_apps(models.Model):
                                     'user_cancelled': result_dict["status"]["user_cancelled"]}
                         
                         transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
-                        if len(transaction_count) == 0:
+                        if transaction_count == 0:
                             self.env["pi.transactions"].sudo().create(data_dict)
                         else:
                             self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
