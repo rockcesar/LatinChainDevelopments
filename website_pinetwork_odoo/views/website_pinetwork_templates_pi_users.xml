@@ -131,6 +131,9 @@
                                     <t t-set="style" t-value="'background-color:#a0ec97'" />
                                 </t>
                                 <t t-else="">
+                                    <t t-if="i == 11">
+                                        <t t-set="i" t-value="1"/>
+                                    </t>
                                     <t t-set="style" t-value="''" />
                                 </t>
                                 
