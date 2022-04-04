@@ -176,9 +176,9 @@
                             <t t-set="i" t-value="1"/>
                             <t t-foreach="pi_users_list" t-as="pi_user">
                                 <t t-set="style" t-value="'background-color:#a0ec97'" />
-                                <t t-if="i == 11">
+                                <!--<t t-if="i == 11">
                                     <t t-set="i" t-value="1"/>
-                                </t>
+                                </t>-->
                                 
                                 <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
                                 <t t-set="i" t-value="i+1"/>
