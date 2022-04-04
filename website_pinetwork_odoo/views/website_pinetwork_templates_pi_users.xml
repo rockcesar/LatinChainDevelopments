@@ -88,7 +88,7 @@
                                 <t t-set="i" t-value="i+1"/>
                             </t>
                         </ul>
-                        <br/><br/>
+                        <br/>
                         <strong>Top 10 zone Chess <span style="color:#a0ec97">●</span>:</strong><br/>
                         <ul class="list-group">
                             <t t-set="i" t-value="1"/>
@@ -104,7 +104,7 @@
                                 <t t-set="i" t-value="i+1"/>
                             </t>
                         </ul>
-                        <br/><br/>
+                        <br/>
                         <strong>Top 10 zone Snake <span style="color:#a0ec97">●</span>:</strong><br/>
                         <ul class="list-group">
                             <t t-set="i" t-value="1"/>
@@ -120,7 +120,7 @@
                                 <t t-set="i" t-value="i+1"/>
                             </t>
                         </ul>
-                        <br/><br/>
+                        <br/>
                         <strong>Top 10 zone Sudoku <span style="color:#a0ec97">●</span>:</strong><br/>
                         <ul class="list-group">
                             <t t-set="i" t-value="1"/>
