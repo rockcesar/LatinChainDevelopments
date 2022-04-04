@@ -128,13 +128,47 @@ class admin_apps(models.Model):
     admin_key = fields.Char('Admin Key', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     sandbox = fields.Boolean('Sandbox', required=True)
     pi_transactions_ids = fields.One2many('pi.transactions', 'app_id')
-    pi_users_winners_datetime = fields.Datetime(string='Winners datetime', default="")
-    pi_users_winners_count = fields.Integer(string='Winners count', compute="_compute_pi_users_winners_count")
-    pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners')
-    pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', pi_users_winners_ids)]")
-    pi_users_winners_html = fields.Html('Winners HTML')
+    pi_users_winners_datetime = fields.Datetime(string='Winners datetime', default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_count = fields.Integer(string='Winners count', compute="_compute_pi_users_winners_count", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', pi_users_winners_ids)]", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_html = fields.Html('Winners HTML', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,8), default=1)
+    
+    def fill_winners(self):
+        winner_domain = [('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
+        leaders_domain = [('unblocked', '=', True)]
+        
+        pi_users_leaders = self.env["pi.users"].search(leaders_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
+        pi_users_list = self.env["pi.users"].search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
+        pi_users_list_chess = self.env["pi.users"].search(winner_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc")
+        pi_users_list_snake = self.env["pi.users"].search(winner_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc")
+        pi_users_list_sudoku = self.env["pi.users"].search(winner_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc")
+        
+        point_list = []
+        point_list_name = []
+        
+        for i in pi_users_leaders:
+            point_list.append(i.id)
+            point_list_name.append(i.name)
+        for i in pi_users_list:
+            point_list.append(i.id)
+        for i in pi_users_list_chess:
+            point_list.append(i.id)
+        for i in pi_users_list_snake:
+            point_list.append(i.id)
+        for i in pi_users_list_sudoku:
+            point_list.append(i.id)
+        
+        for i in self:
+            i.pi_users_winners_ids = [(6, 0, point_list)]
+            i.pi_users_winners_datetime = datetime.now()
+            
+    def delete_winners(self):
+        for i in self:
+            i.pi_users_winners_ids = [(6, 0, [])]
+            i.pi_users_winners_datetime = ""
     
     @api.depends("pi_users_winners_ids")
     def _compute_pi_users_winners_count(self):
@@ -251,6 +285,7 @@ class admin_apps(models.Model):
 class pi_users(models.Model):
     _name = "pi.users"
     _description = "Pi Users"
+    _order = "points desc,unblocked desc,points_datetime asc"
     
     _sql_constraints = [
         # Partial constraint, complemented by a python constraint (see below).

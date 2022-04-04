@@ -5,6 +5,10 @@
         <field name="model">admin.apps</field>
         <field name="arch" type="xml">
             <form string="Admin Pi App">
+                <header>
+                    <button name="fill_winners" type="object" string="Fill Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                    <button name="delete_winners" type="object" string="Delete Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                </header>
                 <sheet>
                     <notebook>
                         <page string="Admin Pi App">
