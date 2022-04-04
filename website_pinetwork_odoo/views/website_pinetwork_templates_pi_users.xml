@@ -88,6 +88,54 @@
                                 <t t-set="i" t-value="i+1"/>
                             </t>
                         </ul>
+                        <br/><br/>
+                        <strong>Top 10 zone Chess <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_chess" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/><br/>
+                        <strong>Top 10 zone Snake <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_snake" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/><br/>
+                        <strong>Top 10 zone Sudoku <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_sudoku" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
                         <br/>
                     </div>
                 </body>

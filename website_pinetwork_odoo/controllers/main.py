@@ -262,6 +262,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
     
+    """
     @http.route('/get-winners/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_winners_user(self, pi_user_code, **kw):
         pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
@@ -273,6 +274,7 @@ class PiNetworkBaseController(http.Controller):
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
         return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
+    """
         
     @http.route('/get-winners/', type='http', auth="public", website=True)
     def get_winners(self, **kw):
@@ -282,7 +284,11 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
         
-        return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
+        pi_users_list_chess = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc")
+        pi_users_list_snake = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc")
+        pi_users_list_sudoku = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc")
+        
+        return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_list_chess': pi_users_list_chess, 'pi_users_list_snake': pi_users_list_snake, 'pi_users_list_sudoku': pi_users_list_sudoku})
     
     @http.route('/get-winners/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_winners_user(self, pi_user_code, **kw):
@@ -292,9 +298,13 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
         
+        pi_users_list_chess = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc")
+        pi_users_list_snake = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc")
+        pi_users_list_sudoku = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc")
+        
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
-        return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
+        return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user, 'pi_users_list_chess': pi_users_list_chess, 'pi_users_list_snake': pi_users_list_snake, 'pi_users_list_sudoku': pi_users_list_sudoku})
         
     @http.route('/get-winners-zone/', type='http', auth="public", website=True)
     def get_winners_zone(self, **kw):
