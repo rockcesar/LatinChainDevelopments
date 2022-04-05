@@ -284,9 +284,9 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
         
-        pi_users_list_chess = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc")
-        pi_users_list_snake = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc")
-        pi_users_list_sudoku = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc")
+        pi_users_list_chess = request.env["pi.users"].sudo().search(leaders_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc")
+        pi_users_list_snake = request.env["pi.users"].sudo().search(leaders_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc")
+        pi_users_list_sudoku = request.env["pi.users"].sudo().search(leaders_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc")
         
         return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_list_chess': pi_users_list_chess, 'pi_users_list_snake': pi_users_list_snake, 'pi_users_list_sudoku': pi_users_list_sudoku})
     
@@ -298,9 +298,9 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
         
-        pi_users_list_chess = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc")
-        pi_users_list_snake = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc")
-        pi_users_list_sudoku = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc")
+        pi_users_list_chess = request.env["pi.users"].sudo().search(leaders_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc")
+        pi_users_list_snake = request.env["pi.users"].sudo().search(leaders_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc")
+        pi_users_list_sudoku = request.env["pi.users"].sudo().search(leaders_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc")
         
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
