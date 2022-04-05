@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-30 16:26+0000\n"
-"PO-Revision-Date: 2022-03-30 16:26+0000\n"
+"POT-Creation-Date: 2022-04-05 20:31+0000\n"
+"PO-Revision-Date: 2022-04-05 20:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,15 +84,30 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"2.- Have 20 or more points in Chess, more than 18 points in Sudoku and more "
-"than 20 points in Snake, <strong>and</strong> have more than 200 in total "
-"points."
+"2.- For Top 10 zone: Have 20 or more points in Chess, more than 18 points in"
+" Sudoku and more than 20 points in Snake, <strong>and</strong> have more "
+"than 200 in total points."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "2.- In the mainscreen of latin-chain.com, you can watch your available days."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "3.- For Top 10 zone Chess: Have 20 or more points in Chess."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "4.- For Top 10 zone Snake: Have more than 20 points in Snake."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

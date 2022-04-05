@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-30 16:26+0000\n"
-"PO-Revision-Date: 2022-03-30 16:26+0000\n"
+"POT-Creation-Date: 2022-04-05 20:32+0000\n"
+"PO-Revision-Date: 2022-04-05 20:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,8 +78,9 @@ msgstr ""
 msgid ""
 "2.- Be in the first 10 on the Leaders Board or in the Top 10 Board. It is "
 "filled manually each some time."
-msgstr "2.- Estar entre los 10 primeros en el Leaders Board ó en el Top 10 Board. Esto es "
-"llenado manualmente, cada cierto tiempo."
+msgstr ""
+"2.- Estar entre los 10 primeros en el Leaders Board ó en el Top 10 Board. "
+"Esto es llenado manualmente, cada cierto tiempo."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -89,11 +90,11 @@ msgstr "2.- Ser uno de los primeros 50 usuarios con más puntos totales."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"2.- Have 20 or more points in Chess, more than 18 points in Sudoku and more "
-"than 20 points in Snake, <strong>and</strong> have more than 200 in total "
-"points."
+"2.- For Top 10 zone: Have 20 or more points in Chess, more than 18 points in"
+" Sudoku and more than 20 points in Snake, <strong>and</strong> have more "
+"than 200 in total points."
 msgstr ""
-"2.- Tener 20 o más puntos en Chess, más de 18 puntos en Sudoku y más de 20 "
+"2.- Para el Top 10 zone: Tener 20 o más puntos en Chess, más de 18 puntos en Sudoku y más de 20 "
 "puntos en Snake, <strong>y</strong> tener más de 200 puntos en total."
 
 #. module: website_pinetwork_games_odoo
@@ -103,6 +104,21 @@ msgid ""
 msgstr ""
 "2.- En la pantalla principal de latin-chain.com, puede ver sus días "
 "disponibles."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "3.- For Top 10 zone Chess: Have 20 or more points in Chess."
+msgstr "3.- Para el Top 10 zone Chess: Tener 20 ó más puntos en Chess."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "4.- For Top 10 zone Snake: Have more than 20 points in Snake."
+msgstr "4.- Para el Top 10 zone Snake: Tener más de 20 puntos en Snake."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku."
+msgstr "5.- Para el Top 10 zone Sudoku: Tener más de 18 puntos en Sudoku."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -326,7 +342,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span><br/>"
-msgstr ""
+msgstr "<span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
