@@ -40,7 +40,7 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js"></script>
                     
-                    <!--<script async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>-->
+                    <script async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
 
                     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                     <!--[if lt IE 9]>
