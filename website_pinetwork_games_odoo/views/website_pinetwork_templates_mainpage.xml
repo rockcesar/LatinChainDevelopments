@@ -121,6 +121,10 @@
 
                         $( document ).ready(function() {
                         
+                            $("#a-ads").prop('src', '//ad.a-ads.com/1980323?size=728x90');
+                            $("#latin-chain").prop('src', 'https://www.youtube.com/embed/9KqcyAoCZzo');
+                            $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui');
+                        
                             var status_audio = false;
                             var audioElement = document.createElement('audio');
                             audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
@@ -448,9 +452,9 @@
                           </div>
                           <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
                             <br/>Video presentation:<br/><br/>
-                            <iframe width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                            <iframe id="latin-chain" width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                             <br/><br/>Enjoy:<br/><br/>
-                            <iframe width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                            <iframe id="tiesto" width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                           </div>
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                             <br/>Leaders and rules:<br/><br/>
