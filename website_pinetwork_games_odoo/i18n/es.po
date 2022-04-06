@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 20:32+0000\n"
-"PO-Revision-Date: 2022-04-05 20:32+0000\n"
+"POT-Creation-Date: 2022-04-06 16:32+0000\n"
+"PO-Revision-Date: 2022-04-06 16:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -94,8 +94,9 @@ msgid ""
 " Sudoku and more than 20 points in Snake, <strong>and</strong> have more "
 "than 200 in total points."
 msgstr ""
-"2.- Para el Top 10 zone: Tener 20 o más puntos en Chess, más de 18 puntos en Sudoku y más de 20 "
-"puntos en Snake, <strong>y</strong> tener más de 200 puntos en total."
+"2.- Para el Top 10 zone: Tener 20 o más puntos en Chess, más de 18 puntos en"
+" Sudoku y más de 20 puntos en Snake, <strong>y</strong> tener más de 200 "
+"puntos en total."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -346,8 +347,33 @@ msgstr "<span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid ""
+"<strong>Publicity:</strong>\n"
+"                                    <br/>"
+msgstr ""
+"<strong>Publicidad:</strong>\n"
+"                                    <br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid ""
+"<strong>Publicity:</strong>\n"
+"                        <br/>"
+msgstr ""
+"<strong>Publicidad:</strong>\n"
+"                        <br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "AI"
 msgstr "IA"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "App Store"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -489,10 +515,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
-"to Pi Network Games from Latin America.<br/>"
+"to Pi Network Games from Latin America. Download Pi Browser on"
 msgstr ""
-"Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
-"Bienvenido(a) a Pi Network Games from Latin America.<br/>"
+"Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Bienvenido(a) "
+"a Pi Network Games from Latin America. Descarga Pi Browser en"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -647,6 +673,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Play Chess Against the best AI Chess Player (Stockfish)"
 msgstr "Juega Ajedrez contra la mejor AI Chess Player (Stockfish)"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Play Store"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -865,3 +896,13 @@ msgstr "Tu propio juego"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "https://minepi.com/rockcesar"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "or"
+msgstr "ó"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "to watch it working.<br/>"
+msgstr "para verlo funcionando.<br/>"

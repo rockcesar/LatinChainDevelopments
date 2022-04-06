@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 20:31+0000\n"
-"PO-Revision-Date: 2022-04-05 20:31+0000\n"
+"POT-Creation-Date: 2022-04-06 16:32+0000\n"
+"PO-Revision-Date: 2022-04-06 16:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -309,7 +309,28 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid ""
+"<strong>Publicity:</strong>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid ""
+"<strong>Publicity:</strong>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "AI"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "App Store"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -450,7 +471,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
-"to Pi Network Games from Latin America.<br/>"
+"to Pi Network Games from Latin America. Download Pi Browser on"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -605,6 +626,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Play Chess Against the best AI Chess Player (Stockfish)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Play Store"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -823,4 +849,14 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "https://minepi.com/rockcesar"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "or"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "to watch it working.<br/>"
 msgstr ""
