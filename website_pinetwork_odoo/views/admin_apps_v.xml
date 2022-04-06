@@ -20,6 +20,9 @@
                                     <field name="admin_key"/>
                                     <field name="sandbox"/>
                                     <field name="amount"/>
+                                    <field name="google_adsense"/>
+                                    <field name="a_ads"/>
+                                    <field name="a_ads_data"/>
                                     <field name="pi_users_winners_datetime" attrs="{'required': [('pi_users_winners_count', '>', 0)]}"/>
                                     <field name="pi_users_winners_count"/>
                                     <field name="pi_users_winners_ids" widget="many2many_tags"/>

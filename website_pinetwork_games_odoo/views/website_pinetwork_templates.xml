@@ -36,11 +36,11 @@
                     
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js"></script>
                     
-                    <script async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
                         $( document ).ready(function() {
-                            $("#a-ads").prop('src', '//ad.a-ads.com/1980323?size=728x90');
+                            $("#a-ads").prop('src', $("#a_ads_val").val());
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui');
                         
                             var status_audio = false;
@@ -97,11 +97,12 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="amount" t-att-value="amount"/>
+                    <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <div class="container form-group" style="text-align:center !important">
                         <strong>Publicity:</strong>
                         <br/>
                         <div style='overflow: auto; width:100%;'>
-                            <iframe id="a-ads" data-aa='1980323' src='//ad.a-ads.com/1980323?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+                            <iframe id="a-ads" t-att-data-aa="a_ads_data" t-att-src="a_ads" style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
                         </div>
                         <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                         <br/><input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" lang="en-US"/>

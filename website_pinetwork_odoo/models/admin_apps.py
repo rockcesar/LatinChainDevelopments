@@ -135,6 +135,9 @@ class admin_apps(models.Model):
     pi_users_winners_html = fields.Html('Winners HTML', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,8), default=1)
+    google_adsense = fields.Char('Google Adsense src', required=True, default="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386")
+    a_ads = fields.Char('A-Ads.com src', required=True, default="//ad.a-ads.com/1980323?size=728x90")
+    a_ads_data = fields.Char('A-Ads.com data', required=True, default="1980323")
     
     def fill_winners(self):
         winner_domain = [('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
