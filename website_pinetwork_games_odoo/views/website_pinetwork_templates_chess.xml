@@ -55,7 +55,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <span align="center" style="text-align: center" class="container">
+                                <div align="center" class="container" style="text-align:center">
                                     <strong>Publicity:</strong>
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
@@ -94,7 +94,7 @@
                                     .cont { text-align:center; font-size:30px}
 
                                     </style>
-                                </span>
+                                </div>
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
                                   <br/>
