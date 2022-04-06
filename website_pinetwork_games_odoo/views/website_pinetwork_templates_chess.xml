@@ -82,7 +82,7 @@
                                     </div>
                                     <div style="text-align:center">
                                         <br/>Enjoy:<br/><br/>
-                                        <iframe style="text-align:center" width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                                        <iframe id="tiesto" style="text-align:center" width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                                     </div>
                                     
                                     <style>
@@ -240,6 +240,8 @@
                         var all_was_loaded = false;
                         var all_was_loaded_lib = false;
                         $( document ).ready(function() {
+                            $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui');
+                        
                             function is_touch_device() {
                                 return 'ontouchstart' in window || navigator.maxTouchPoints;
                             };
