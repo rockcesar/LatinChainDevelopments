@@ -53,6 +53,7 @@
                     
                     <script type="text/javascript">
                         $( document ).ready(function() {
+                            $("#a-ads").prop('src', '//ad.a-ads.com/1980323?size=728x90');
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui');
                         
                             var status_audio = false;
@@ -126,6 +127,12 @@
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
                                 <div style="text-align:center">
+                                    <strong>Publicity:</strong>
+                                    <br/>
+                                    <div style='overflow: auto; width:100%;'>
+                                        <iframe id="a-ads" data-aa='1980323' src='//ad.a-ads.com/1980323?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+                                    </div>
+                                    <br/>
                                     <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                                     <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
                                     <br />

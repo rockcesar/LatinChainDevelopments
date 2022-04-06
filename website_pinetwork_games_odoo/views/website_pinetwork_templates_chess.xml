@@ -56,6 +56,11 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <span align="center">
+                                    <strong>Publicity:</strong>
+                                    <br/>
+                                    <div style='overflow: auto; width:100%;'>
+                                        <iframe id="a-ads" data-aa='1980323' src='//ad.a-ads.com/1980323?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+                                    </div>
                                     <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
                                     <img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/chess/img/icons/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
                                     <h1 align="center" style="font-weight:600">Pi Chess</h1>
@@ -240,6 +245,7 @@
                         var all_was_loaded = false;
                         var all_was_loaded_lib = false;
                         $( document ).ready(function() {
+                            $("#a-ads").prop('src', '//ad.a-ads.com/1980323?size=728x90');
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui');
                         
                             function is_touch_device() {
