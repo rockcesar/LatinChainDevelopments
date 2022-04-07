@@ -310,7 +310,7 @@ class pi_users(models.Model):
             
             i.paid_in_all_donations = total
                         
-    @api.depends("points_chess", "points_sudoku", "points_snake", "unblocked")
+    @api.depends("points_chess", "points_sudoku", "points_snake")
     def _total_points(self):
         for i in self:
             i.points = i.points_chess + i.points_sudoku + i.points_snake
