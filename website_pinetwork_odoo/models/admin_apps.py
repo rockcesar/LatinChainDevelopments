@@ -96,8 +96,7 @@ class pi_transactions(models.Model):
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).days >= 1:
                     pit.unlink()
-            except errors.InFailedSqlTransaction:
-                _logger.info(str(re))
+                self.env.cr.commit()
             except:
                 _logger.info(str(re))
 
@@ -359,3 +358,5 @@ class pi_users(models.Model):
                 
                 if days_available == 0:
                     piu.write({'unblocked': False})
+                
+            self.env.cr.commit()
