@@ -349,7 +349,7 @@ class pi_users(models.Model):
                         # don't hide non-concurrency errors
                         raise
     
-    @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "unblocked", "pi_user_id")
+    @api.depends("points_chess", "points_sudoku", "points_snake", "paid", "pi_user_id")
     def _total_points(self):
         for i in self:
             self.env.cr.commit()
