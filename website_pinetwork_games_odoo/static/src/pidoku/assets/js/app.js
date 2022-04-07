@@ -75,7 +75,7 @@ var init_board = function(){
         */
         var $square = $(this);
         var nr_digits = $square.val().length;
-        var font_size = "40px";
+        var font_size = "15px";
         if(nr_digits === 3){
             font_size = "35px";
         } else if(nr_digits === 4){
