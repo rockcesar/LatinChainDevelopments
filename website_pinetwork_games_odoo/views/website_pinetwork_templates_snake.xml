@@ -179,7 +179,7 @@
                     
                     <div class="bottom">
                         <p>
-                            <span id="loading_word" style="display: none;">Loading...</span><br/><div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><div class="square" id="minus">-</div><div class="square" id="plus">+</div><br/><div class="square-borderless fps-counter"></div>
+                            <span id="loading_word" style="display: none;">Loading...</span><br/><div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/><div class="square" id="minus">-</div><div class="square" id="plus">+</div><br/><div class="square-borderless fps-counter"></div>
                             <!--<div class="square" id="bot">Bot</div>-->
                             
                             </p>
