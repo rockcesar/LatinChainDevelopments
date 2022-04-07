@@ -308,16 +308,12 @@ class pi_users(models.Model):
                     total += j.amount
             
             i.paid_in_all_donations = total
-            
-            self.env.cr.commit()
                         
     @api.depends("points_chess", "points_sudoku", "points_snake")
     def _total_points(self):
         for i in self:
             i.points = i.points_chess + i.points_sudoku + i.points_snake
             i.points_datetime = datetime.now()
-            
-            self.env.cr.commit()
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
@@ -345,8 +341,6 @@ class pi_users(models.Model):
                 
                 if i.days_available == 0:
                     i.unblocked = False
-            
-            self.env.cr.commit()
 
     def check_users(self):
         for piu in self:
