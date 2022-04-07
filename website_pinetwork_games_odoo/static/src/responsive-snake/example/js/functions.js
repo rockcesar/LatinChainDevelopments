@@ -46,6 +46,8 @@ function get_user(pause) {
                 {
                     $("#pause").show();
                     $("#reset").show();
+                    $("#minus").show();
+                    $("#plus").show();
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     
@@ -55,6 +57,9 @@ function get_user(pause) {
                 else
                 {
                     $("#pause").hide();
+                    $("#reset").hide();
+                    $("#minus").hide();
+                    $("#plus").hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
                 }
