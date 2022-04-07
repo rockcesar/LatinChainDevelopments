@@ -111,20 +111,7 @@ class PiNetworkBaseController(http.Controller):
         
         passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789%^*(-_=+)') for i in range(10)])
         
-        request.env.cr.commit()
-        while True:
-            try:
-                # make the conflict-prone UPDATE and break if success
-                pi_users_list[0].sudo().write({'passkey': passkey})
-                break
-            except OperationalError as e:
-                if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
-                    # prepare for retry
-                    request.env.cr.rollback()
-                    time.sleep(.1)
-                else:
-                    # don't hide non-concurrency errors
-                    raise
+        pi_users_list[0].sudo().write({'passkey': passkey})
                     
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
@@ -226,20 +213,7 @@ class PiNetworkBaseController(http.Controller):
             elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
                 return json.dumps({'result': False})
             
-            request.env.cr.commit()
-            while True:
-                try:
-                    # make the conflict-prone UPDATE and break if success
-                    pi_users_list[0].sudo().write(values)
-                    break
-                except OperationalError as e:
-                    if e.code in odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY:
-                        # prepare for retry
-                        request.env.cr.rollback()
-                        time.sleep(.1)
-                    else:
-                        # don't hide non-concurrency errors
-                        raise
+            pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
         
