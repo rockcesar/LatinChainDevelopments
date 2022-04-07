@@ -98,7 +98,8 @@
                                 var result = confirm("Are you sure you want to go back?.");
                                 if(result)
                                 {
-                                    history.back();
+                                    //history.back();
+                                    location.href="/";
                                 }
                             });
                         });
