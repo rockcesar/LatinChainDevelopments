@@ -179,7 +179,7 @@
                     
                     <div class="bottom">
                         <p>
-                            <span id="loading_word" style="display: none;">Loading...</span><br/><div class="square" id="minus" style="display: none;">-</div><div class="square" id="plus" style="display: none;">+</div><br/><div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/>            <!--<div class="square" id="bot">Bot</div>-->
+                            <span id="loading_word" style="display: none;">Loading...</span><br/><div class="square" id="minus" style="display: none;">-</div><div class="square" id="plus" style="display: none;">+</div><br/><br/><div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/>            <!--<div class="square" id="bot">Bot</div>-->
                             
                             </p>
                         <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
