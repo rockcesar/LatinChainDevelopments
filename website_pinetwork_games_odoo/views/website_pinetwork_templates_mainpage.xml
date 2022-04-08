@@ -122,6 +122,25 @@
 
                         $( document ).ready(function() {
                         
+                            var toSSL = function() {
+                                var host = location.host;
+                                $('a[*=' + host + ']', 'body').each(function() {
+                                
+                                    var $a = $(this);
+                                    var href = $a.attr('href');
+                                    
+                                    if(href.indexOf('https') == -1) {
+                                    
+                                        var ssl = href.replace('http', 'https');
+                                        $a.attr('href', ssl);
+                                    
+                                    }
+                                
+                                });
+                            };
+                            
+                            toSSl();
+                        
                             $("#a-ads").prop('src', $("#a_ads_val").val());
                             $("#latin-chain").prop('src', 'https://www.youtube.com/embed/9KqcyAoCZzo');
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui');
