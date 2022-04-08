@@ -123,8 +123,8 @@
                         $( document ).ready(function() {
                         
                             var toSSL = function() {
-                                var host = location.host;
-                                $('a[*=' + host + ']', 'body').each(function() {
+                                //var host = location.host;
+                                $('a').each(function() {
                                 
                                     var $a = $(this);
                                     var href = $a.attr('href');
