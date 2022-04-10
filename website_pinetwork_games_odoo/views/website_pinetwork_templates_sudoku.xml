@@ -133,38 +133,46 @@
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
                                         <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
-                                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                          <!-- Indicators -->
-                                          <ol class="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                                          </ol>
+                                        <!-- Carousel container -->
+                                        <div id="my-pics" class="carousel slide" data-ride="carousel" style="width:300px;margin:auto;">
 
-                                          <!-- Wrapper for slides -->
-                                          <div class="carousel-inner">
+                                            <!-- Indicators -->
+                                            <ol class="carousel-indicators">
+                                            <li data-target="#my-pics" data-slide-to="0" class="active"></li>
+                                            <li data-target="#my-pics" data-slide-to="1"></li>
+                                            <li data-target="#my-pics" data-slide-to="2"></li>
+                                            </ol>
+
+                                            <!-- Content -->
+                                            <div class="carousel-inner" role="listbox">
+
+                                            <!-- Slide 1 -->
                                             <div class="item active">
-                                              <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
+                                            <img src="/pix/samples/16l.jpg" alt="Sunset over beach">
                                             </div>
 
+                                            <!-- Slide 2 -->
                                             <div class="item">
-                                              <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
+                                            <img src="/pix/samples/4l.jpg" alt="Rob Roy Glacier">
                                             </div>
 
+                                            <!-- Slide 3 -->
                                             <div class="item">
-                                              <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
+                                            <img src="/pix/samples/15l.jpg" alt="Longtail boats at Phi Phi">
                                             </div>
-                                          </div>
 
-                                          <!-- Left and right controls -->
-                                          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                            </div>
+
+                                            <!-- Previous/Next controls -->
+                                            <a class="left carousel-control" href="#my-pics" role="button" data-slide="prev">
+                                            <span class="icon-prev" aria-hidden="true"></span>
                                             <span class="sr-only">Previous</span>
-                                          </a>
-                                          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </a>
+                                            <a class="right carousel-control" href="#my-pics" role="button" data-slide="next">
+                                            <span class="icon-next" aria-hidden="true"></span>
                                             <span class="sr-only">Next</span>
-                                          </a>
+                                            </a>
+
                                         </div>
                                         <!--<a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a><br/><br/>
                                         <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
