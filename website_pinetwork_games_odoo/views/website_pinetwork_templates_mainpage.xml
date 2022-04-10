@@ -371,7 +371,7 @@
                         <br/>
                         <div style='overflow: auto; width:100%;'>
                             <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
-                            <div id="myCarouselPublicity" class="carousel slide">
+                            <div id="myCarouselPublicity"  class="carousel slide" data-bs-ride="carousel">
                                 <ol class="carousel-indicators o_we_no_overlay">
                                   <li data-target="#myCarouselPublicity" data-slide-to="0" class="active"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="1"/>
