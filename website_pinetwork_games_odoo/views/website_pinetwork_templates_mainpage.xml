@@ -371,7 +371,8 @@
                         <br/>
                         <div style='overflow: auto; width:100%;'>
                             <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
-                            <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
+                            <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a><br/><br/>
+                            <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
                         </div>
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />
