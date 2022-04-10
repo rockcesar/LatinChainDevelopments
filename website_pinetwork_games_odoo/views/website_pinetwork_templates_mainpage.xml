@@ -380,25 +380,25 @@
                                 <div class="carousel-inner">
                                   <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
                                     <div class="container">
-                                        <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img class="d-block w-100" src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
+                                        <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img class="d-block w-100" class="d-block w-100" src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
                                         <br/><br/>
                                     </div>
                                   </div>
                                   <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
                                     <div class="container">
-                                        <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
+                                        <a target="_blank" href="https://pipeflare.io/r/1sss"><img class="d-block w-100" src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
                                         <br/><br/>
                                     </div>
                                   </div>
                                   <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
                                     <div class="container">
-                                        <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
+                                        <a target="_blank" href="https://myubi.global/wallet"><img class="d-block w-100" src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
                                         <br/><br/>
                                     </div>
                                   </div>
                                   <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
                                     <div class="container">
-                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
+                                        <iframe class="d-block w-100" id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
                                         <br/><br/>
                                     </div>
                                   </div>
