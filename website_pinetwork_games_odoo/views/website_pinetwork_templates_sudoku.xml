@@ -146,19 +146,16 @@
                                             <!-- Content -->
                                             <div class="carousel-inner" role="listbox">
 
-                                            <!-- Slide 1 -->
                                             <div class="item active">
-                                            <img src="/pix/samples/16l.jpg" alt="Sunset over beach">
+                                              <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
                                             </div>
 
-                                            <!-- Slide 2 -->
                                             <div class="item">
-                                            <img src="/pix/samples/4l.jpg" alt="Rob Roy Glacier">
+                                              <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
                                             </div>
 
-                                            <!-- Slide 3 -->
                                             <div class="item">
-                                            <img src="/pix/samples/15l.jpg" alt="Longtail boats at Phi Phi">
+                                              <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
                                             </div>
 
                                             </div>
