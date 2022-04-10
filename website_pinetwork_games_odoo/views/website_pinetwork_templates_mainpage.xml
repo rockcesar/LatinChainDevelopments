@@ -278,7 +278,7 @@
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <div id="wrap">
                         <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
-                          <div id="myCarousel1647794696348" class="s_carousel s_carousel_default carousel slide" data-bs-ride="carousel">
+                          <div id="myCarousel1647794696348" class="s_carousel s_carousel_default carousel slide" data-interval="10000">
                             <ol class="carousel-indicators o_we_no_overlay">
                               <li data-target="#myCarousel1647794696348" data-slide-to="0" class="active"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="1"/>
@@ -371,7 +371,7 @@
                         <br/>
                         <div style='overflow: auto; width:100%;'>
                             <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
-                            <div id="myCarouselPublicity"  class="carousel slide" data-bs-ride="carousel">
+                            <div id="myCarouselPublicity"  class="carousel slide" data-interval="3000">
                                 <ol class="carousel-indicators o_we_no_overlay">
                                   <li data-target="#myCarouselPublicity" data-slide-to="0" class="active"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="1"/>
