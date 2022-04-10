@@ -130,7 +130,7 @@
                     <div id="app-wrap" class="container-narrow hidden">
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
-                                <div style="text-align:center">
+                                <div>
                                     <strong>Publicity:</strong>
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
@@ -138,9 +138,9 @@
                                           <!-- Carousel items -->
                                           <div class="carousel-inner">
                                             <div class="item active">
-                                                <div class="container" align="center" style="text-align:center">
+                                                
                                                     <a target="_blank" href="https://accounts.binance.me/en/register?ref=38753015"><img src="/website_pinetwork_games_odoo/static/src/img/bnc_720x223.png" t-att-style='a_ads_style'/></a>
-                                                </div>
+                                                
                                             </div>
                                             
                                             <div class="item">
