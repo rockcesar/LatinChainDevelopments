@@ -104,8 +104,69 @@
                         <br/>
                         <div style='overflow: auto; width:100%;'>
                             <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
-                            <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a><br/><br/>
-                            <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
+                            <div id="myCarouselPublicity" class="s_carousel s_carousel_default carousel slide" data-interval="10000">
+                                <ol class="carousel-indicators o_we_no_overlay">
+                                  <li data-target="#myCarouselPublicity" data-slide-to="0" class="active"/>
+                                  <li data-target="#myCarouselPublicity" data-slide-to="1"/>
+                                  <li data-target="#myCarouselPublicity" data-slide-to="2"/>
+                                </ol>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
+                                    <div class="container">
+                                      <div class="row content">
+                                        <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                          <h2 style="font-size: 30px;" class="o_default_snippet_text">
+                                              <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
+                                          </h2>
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
+                                    <div class="container">
+                                      <div class="row content">
+                                        <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                          <h2 style="font-size: 20px;" class="o_default_snippet_text">
+                                              <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
+                                          </h2>
+                                          <!--<div class="s_hr pt8 pb10" data-snippet="s_hr" data-name="Separator">
+                                            <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
+                                          </div>-->
+                                          <!--<p>
+                                            <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text">Telegram Group</a>
+                                          </p>-->
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
+                                    <div class="container">
+                                      <div class="row content">
+                                        <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                          <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
+                                          <h2 style="font-size: 30px;" class="o_default_snippet_text">
+                                          <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
+                                          </h2>
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <a class="carousel-control-prev o_not_editable o_we_no_overlay" href="#myCarouselPublicity" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                  <span class="carousel-control-prev-icon"/>
+                                  <span class="sr-only o_default_snippet_text">Previous</span>
+                                </a>
+                                <a class="carousel-control-next o_not_editable o_we_no_overlay" href="#myCarouselPublicity" data-slide="next" role="img" aria-label="Next" title="Next">
+                                  <span class="carousel-control-next-icon"/>
+                                  <span class="sr-only o_default_snippet_text">Next</span>
+                                </a>
+                            </div>
+                            <!--<a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a><br/><br/>
+                            <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
+                            <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>-->
                         </div>
                         <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                         <br/><input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" lang="en-US"/>
