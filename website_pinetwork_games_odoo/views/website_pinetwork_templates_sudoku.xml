@@ -132,7 +132,8 @@
                                     <strong>Publicity:</strong>
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
-                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
+                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
+                                        <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
                                     </div>
                                     <br/>
                                     <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
