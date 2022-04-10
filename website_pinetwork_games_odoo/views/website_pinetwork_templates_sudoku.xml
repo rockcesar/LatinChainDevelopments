@@ -133,7 +133,7 @@
                                 <div style="text-align:center">
                                     <strong>Publicity:</strong>
                                     <br/>
-                                    <div style='overflow: auto; width:100%;'>
+                                    <div >
                                         <div id="myCarousel" class="carousel slide">
                                           <!-- Carousel items -->
                                           <div class="carousel-inner">
