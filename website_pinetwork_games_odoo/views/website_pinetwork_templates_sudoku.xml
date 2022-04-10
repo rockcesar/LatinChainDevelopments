@@ -102,6 +102,8 @@
                                     location.href="/";
                                 }
                             });
+                            
+                            $('.carousel').carousel();
                         });
 
                     </script>
@@ -133,43 +135,25 @@
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
                                         <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
-                                        <!-- Carousel container -->
-                                        <div id="my-pics" class="carousel slide" data-ride="carousel" style="width:300px;margin:auto;">
-
-                                            <!-- Indicators -->
-                                            <ol class="carousel-indicators">
-                                            <li data-target="#my-pics" data-slide-to="0" class="active"></li>
-                                            <li data-target="#my-pics" data-slide-to="1"></li>
-                                            <li data-target="#my-pics" data-slide-to="2"></li>
-                                            </ol>
-
-                                            <!-- Content -->
-                                            <div class="carousel-inner" role="listbox">
-
-                                            <div class="carousel-item active">
+                                        
+                                        <div id="myCarousel" class="carousel slide">
+                                          <!-- Carousel items -->
+                                          <div class="carousel-inner">
+                                            <div class="item active">
                                               <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
                                             </div>
 
-                                            <div class="carousel-item">
+                                            <div class="item">
                                               <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
                                             </div>
 
-                                            <div class="carousel-item">
+                                            <div class="item">
                                               <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
                                             </div>
-
-                                            </div>
-
-                                            <!-- Previous/Next controls -->
-                                            <a class="left carousel-control" href="#my-pics" role="button" data-slide="prev">
-                                            <span class="icon-prev" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                            </a>
-                                            <a class="right carousel-control" href="#my-pics" role="button" data-slide="next">
-                                            <span class="icon-next" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                            </a>
-
+                                          </div>
+                                          <!-- Carousel nav -->
+                                          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                                          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
                                         </div>
                                         <!--<a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a><br/><br/>
                                         <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
