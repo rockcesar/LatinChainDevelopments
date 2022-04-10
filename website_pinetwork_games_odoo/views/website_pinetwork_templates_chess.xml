@@ -60,12 +60,12 @@
                                     <strong>Publicity:</strong>
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
-                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                           <div class="carousel-indicators">
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                                           </div>
                                           <div class="carousel-inner">
                                             <div class="carousel-item active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;">
@@ -78,6 +78,10 @@
                                             </div>
                                             <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;">
                                               <a target="_blank" href="https://myubi.global/wallet"><img class="d-block w-100" src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
+                                              <br/><br/>
+                                            </div>
+                                            <div class="item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;">
+                                              <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
                                               <br/><br/>
                                             </div>
                                           </div>

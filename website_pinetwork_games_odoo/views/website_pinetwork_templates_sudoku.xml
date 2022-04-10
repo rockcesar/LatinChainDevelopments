@@ -134,8 +134,6 @@
                                     <strong>Publicity:</strong>
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
-                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
-                                        
                                         <div id="myCarousel" class="carousel slide">
                                           <!-- Carousel items -->
                                           <div class="carousel-inner">
@@ -153,6 +151,12 @@
                                               <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
                                               <br/><br/>
                                             </div>
+                                            
+                                            <div class="item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;">
+                                              <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
+                                              <br/><br/>
+                                            </div>
+                                            
                                           </div>
                                           <!-- Carousel nav -->
                                           <a class="carousel-control left" href="#myCarousel" data-slide="prev"><span>&#8249;</span></a>

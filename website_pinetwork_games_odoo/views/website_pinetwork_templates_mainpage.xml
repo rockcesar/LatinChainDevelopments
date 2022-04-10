@@ -370,12 +370,12 @@
                         <strong>Publicity:</strong>
                         <br/>
                         <div style='overflow: auto; width:100%;'>
-                            <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" style='display:none;'></iframe>
                             <div id="myCarouselPublicity"  class="carousel slide" data-interval="5000" data-ride="carousel">
                                 <ol class="carousel-indicators o_we_no_overlay">
                                   <li data-target="#myCarouselPublicity" data-slide-to="0" class="active"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="1"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="2"/>
+                                  <li data-target="#myCarouselPublicity" data-slide-to="3"/>
                                 </ol>
                                 <div class="carousel-inner">
                                   <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
@@ -415,6 +415,19 @@
                                           <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                           <h2 style="font-size: 30px;" class="o_default_snippet_text">
                                           <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
+                                          </h2>
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
+                                    <div class="container">
+                                      <div class="row content">
+                                        <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                          <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
+                                          <h2 style="font-size: 30px;" class="o_default_snippet_text">
+                                          <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
                                           </h2>
                                           <br/>
                                         </div>
