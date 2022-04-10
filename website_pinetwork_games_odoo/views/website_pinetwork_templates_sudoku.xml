@@ -139,16 +139,19 @@
                                         <div id="myCarousel" class="carousel slide">
                                           <!-- Carousel items -->
                                           <div class="carousel-inner">
-                                            <div class="item active">
+                                            <div class="item active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;">
                                               <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
+                                              <br/><br/>
                                             </div>
 
-                                            <div class="item">
+                                            <div class="item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;">
                                               <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a>
+                                              <br/><br/>
                                             </div>
 
-                                            <div class="item">
+                                            <div class="item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;">
                                               <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
+                                              <br/><br/>
                                             </div>
                                           </div>
                                           <!-- Carousel nav -->
