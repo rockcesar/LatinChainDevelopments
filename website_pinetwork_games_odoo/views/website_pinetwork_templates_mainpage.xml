@@ -377,6 +377,7 @@
                                   <li data-target="#myCarouselPublicity" data-slide-to="2"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="3"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="4"/>
+                                  <li data-target="#myCarouselPublicity" data-slide-to="5"/>
                                 </ol>
                                 <div class="carousel-inner">
                                   <div class="carousel-item active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
@@ -397,6 +398,11 @@
                                   <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
                                     <div class="container" align="center" style="text-align:center">
                                         <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
+                                    <div class="container" align="center" style="text-align:center">
+                                        <a target="_blank" href="https://jamonswap.com"><img src="/website_pinetwork_games_odoo/static/src/img/jamonswap.png" t-att-style='a_ads_style'/></a>
                                     </div>
                                   </div>
                                   <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
