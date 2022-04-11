@@ -110,17 +110,11 @@
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
                               </div>
                               <div class="carousel-inner">
                                 <div class="carousel-item active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px">
                                     <div class="container" align="center" style="text-align:center">
                                         <a target="_blank" href="https://accounts.binance.me/en/register?ref=38753015"><img src="/website_pinetwork_games_odoo/static/src/img/bnc_720x223.png" t-att-style='a_ads_style'/></a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px">
-                                    <div class="container" align="center" style="text-align:center">
-                                        <a target="_blank" href="https://jamonswap.com"><img src="/website_pinetwork_games_odoo/static/src/img/jamonswap.png" t-att-style='a_ads_style'/></a>
                                     </div>
                                 </div>
                                 <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px">
