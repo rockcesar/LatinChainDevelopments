@@ -14,11 +14,15 @@
         <xpath expr="script[last()]" position="after"> 
             <script type="text/javascript">
                 var adfly_id = 15567427;
-                var popunder_frequency_delay = 0;
-                var adfly_google_compliant = true;
+                var adfly_advert = 'int';
                 var adfly_protocol = 'https';
+                var adfly_domain = 'adf.ly';
+                var domains = ['depositfiles.com','rapidshare.com','vip-file.com'];
+                var adfly_nofollow = true;
+                var popunder = true;
+                var adfly_google_compliant = true;
             </script>
-            <script src="https://cdn.adf.ly/js/display.js"></script>
+            <script src="https://cdn.adf.ly/js/link-converter.js"></script>
             
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     
