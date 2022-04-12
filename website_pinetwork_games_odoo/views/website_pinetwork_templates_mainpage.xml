@@ -29,13 +29,13 @@
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
-                    <script type="text/javascript">
+                    <!-- <script type="text/javascript">
                         var adfly_id = 15567427;
                         var popunder_frequency_delay = 0;
                         var adfly_google_compliant = true;
                         var adfly_protocol = 'https';
                     </script>
-                    <script src="https://cdn.adf.ly/js/display.js"></script> 
+                    <script src="https://cdn.adf.ly/js/display.js"></script> -->
                     
                     <meta charset="UTF-8"/>
                     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -389,6 +389,11 @@
                                 <div class="carousel-inner">
                                   <div class="carousel-item active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
                                     <div class="container" align="center" style="text-align:center">
+                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
+                                    <div class="container" align="center" style="text-align:center">
                                         <a target="_blank" href="https://minepi.com/rockcesar"><img src="/website_pinetwork_games_odoo/static/src/img/share_card_v2.png" t-att-style='a_ads_style'/></a>
                                     </div>
                                   </div>
@@ -410,11 +415,6 @@
                                   <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
                                     <div class="container" align="center" style="text-align:center">
                                         <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
-                                    </div>
-                                  </div>
-                                  <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
-                                    <div class="container" align="center" style="text-align:center">
-                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
                                     </div>
                                   </div>
                                 </div>
