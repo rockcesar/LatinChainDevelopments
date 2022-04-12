@@ -17,7 +17,7 @@
                 var adfly_advert = 'int';
                 var adfly_protocol = 'https';
                 var adfly_domain = 'adf.ly';
-                var domains = ['depositfiles.com','rapidshare.com','vip-file.com'];
+                var domains = ['depositfiles.com','rapidshare.com','vip-file.com', 'latin-chain.com'];
                 var adfly_nofollow = true;
                 var popunder = true;
                 var adfly_google_compliant = true;
