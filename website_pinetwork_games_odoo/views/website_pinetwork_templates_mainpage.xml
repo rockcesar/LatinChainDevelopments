@@ -31,13 +31,12 @@
                 <head>
                     
                     <script type="text/javascript">
-                    var adfly_id = 15567427;
-                    var adfly_advert = 'int';
-                    var adfly_protocol = 'http';
-                    var adfly_domain = 'adf.ly';
-                    var domains = ['depositfiles.com','rapidshare.com','vip-file.com'];
+                        var adfly_id = 15567427;
+                        var popunder_frequency_delay = 0;
+                        var adfly_google_compliant = false;
+                        var adfly_protocol = 'https';
                     </script>
-                    <script src="https://cdn.adf.ly/js/link-converter.js"></script>
+                    <script src="https://cdn.adf.ly/js/display.js"></script> 
                     
                     <meta charset="UTF-8"/>
                     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
