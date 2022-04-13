@@ -24,9 +24,15 @@
         </xpath>
     </template>
     
-        <template id="new_header" inherit_id="website.layout">
-           <xpath expr="//header" position="after">
-               <div id="google_translate_element"></div>
+        <template id="new_header" inherit_id="web.layout">
+           <xpath expr="//head" position="after">
+               <t t-if="not hide_google_translate">
+                   <t t-set="hide_google_translate" t-value=""/>
+               </t>
+               <t t-elif="hide_google_translate == True">
+                   <t t-set="hide_google_translate" t-value="display: none !important;"/>
+               </t>
+               <div id="google_translate_element" t-att-style="hide_google_translate"></div>
                     
                 <style>
                     .goog-te-banner-frame.skiptranslate {
@@ -49,12 +55,15 @@
 
                 <script type="text/javascript">
                 function googleTranslateElementInit() {
-                  var lang_google='en';
-                  if(location.pathname.substring(0, 3) == "/es")
-                      lang_google='es';
-                  new google.translate.TranslateElement({pageLanguage: lang_google, 
-                                                        layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                        'google_translate_element');
+                  if(location.pathname.substring(0, 4) != "/web")
+                  {
+                      var lang_google='en';
+                      if(location.pathname.substring(0, 3) == "/es")
+                          lang_google='es';
+                      new google.translate.TranslateElement({pageLanguage: lang_google, 
+                                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                            'google_translate_element');
+                  }
                 }
                 </script>
 

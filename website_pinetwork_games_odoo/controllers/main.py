@@ -97,7 +97,10 @@ class PiNetworkController(http.Controller):
             a_ads_data = admin_app_list[0].a_ads_data
             a_ads_style = admin_app_list[0].a_ads_style
         
-        return http.request.render('website_pinetwork_games_odoo.snake', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style})
+        return http.request.render('website_pinetwork_games_odoo.snake', {'sandbox': sandbox, 'amount': amount, 
+                                                                        'google_adsense': google_adsense, 'a_ads': a_ads, 
+                                                                        'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style,
+                                                                        'hide_google_translate': True})
         
     @http.route('/chess', type='http', auth="public", website=True)
     def chess(self, **kw):
