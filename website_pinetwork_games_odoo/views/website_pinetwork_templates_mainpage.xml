@@ -24,8 +24,8 @@
         </xpath>
     </template>
     
-        <template id="new_header" inherit_id="website.layout">
-           <xpath expr="//header" position="after">
+        <template id="new_header" inherit_id="web.layout">
+           <xpath expr="//head" position="after">
                <div id="google_translate_element"></div>
                     
                 <style>
