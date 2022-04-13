@@ -282,6 +282,25 @@
                 </head>
                 <body>
                     <div id="google_translate_element"></div>
+                    
+                    <style>
+                        .goog-te-banner-frame.skiptranslate {
+                            display: none !important;
+                        } 
+                        body {
+                            top: 0px !important; 
+                        }
+
+                        .goog-te-menu-frame {
+                        max-width:100% !important; 
+                        }
+                        .goog-te-menu2 { 
+                        max-width: 100% !important;
+                        overflow-x: scroll !important;
+                        box-sizing:border-box !important; 
+                        height:auto !important; 
+                        }
+                    </style>
 
                     <script type="text/javascript">
                     function googleTranslateElementInit() {
