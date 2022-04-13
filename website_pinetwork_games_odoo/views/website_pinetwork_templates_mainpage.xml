@@ -37,6 +37,8 @@
                     </script>
                     <script src="https://cdn.adf.ly/js/display.js"></script> -->
                     
+                    <script type="text/javascript" src="https://app.web3ads.net/main.js" async="true"></script>
+                    
                     <meta charset="UTF-8"/>
                     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
                     <title>LatinChain Platform</title>
@@ -55,8 +57,6 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    
-                    <script type="text/javascript" src="https://app.web3ads.net/main.js" async="true"></script>
 
                     <script type="text/javascript">
                         var pi_user_id = "";
