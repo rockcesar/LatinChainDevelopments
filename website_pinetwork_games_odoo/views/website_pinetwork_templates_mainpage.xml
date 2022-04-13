@@ -49,7 +49,10 @@
 
                 <script type="text/javascript">
                 function googleTranslateElementInit() {
-                  new google.translate.TranslateElement({pageLanguage: 'en', 
+                  var lang_google='en';
+                  if(location.pathname.substring(0, 3) == "/es")
+                      lang_google='es';
+                  new google.translate.TranslateElement({pageLanguage: lang_google, 
                                                         layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                         'google_translate_element');
                 }
