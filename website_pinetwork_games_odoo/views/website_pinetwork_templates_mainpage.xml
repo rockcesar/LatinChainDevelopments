@@ -26,7 +26,7 @@
     
         <template id="new_header" inherit_id="web.layout">
            <xpath expr="//head" position="after">
-               <t t-if="not hide_google_translate">
+               <t t-if="hide_google_translate == None or hide_google_translate == False">
                    <t t-set="hide_google_translate" t-value=""/>
                </t>
                <t t-elif="hide_google_translate == True">
