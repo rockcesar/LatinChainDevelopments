@@ -397,7 +397,7 @@
                                   </div>
                                   <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
                                     <div class="container" align="center" style="text-align:center">
-                                        <div class="_0cbf1c3d417e250a" data-zone="64931db1beea4376b57d8f8ecf94a5af" t-att-style='a_ads_style'></div>
+                                        <div class="_0cbf1c3d417e250a" data-zone="64931db1beea4376b57d8f8ecf94a5af" t-att-style='a_ads_style' style="width:320px;height:50px;display: inline-block;margin: 0 auto"></div>
                                     </div>
                                   </div>
                                   <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
