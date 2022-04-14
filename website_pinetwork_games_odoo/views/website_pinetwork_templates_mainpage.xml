@@ -72,7 +72,7 @@
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 
                 <script type="text/javascript">
-                    $( document ).ready(function() {
+                    document.addEventListener("DOMContentLoaded", function(event) {
                         if(location.pathname.substring(0, 4) != "/web")
                         {
                             if (!navigator.userAgent.match(/PiBrowser/i)) {
