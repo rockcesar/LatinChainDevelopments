@@ -101,6 +101,38 @@
                             press(187);
                         });
                         
+                        var enable_drag = true;
+                        $('#enable_dragging').html("Undrag controls");
+                        $('#enable_dragging').click(function() {
+                            if(enable_drag)
+                            {
+                                $("#up").draggable({ disabled: true });
+                                $("#left").draggable({ disabled: true });
+                                $("#down").draggable({ disabled: true });
+                                $("#right").draggable({ disabled: true });
+                                
+                                $("#up").css({ 'color': 'red' });
+                                $("#left").css({ 'color': 'red' });
+                                $("#down").css({ 'color': 'red' });
+                                $("#right").css({ 'color': 'red' });
+                                enable_drag = false;
+                                $('#enable_dragging').html("Drag controls");
+                            }else
+                            {
+                                $("#up").draggable({ disabled: false });
+                                $("#left").draggable({ disabled: false });
+                                $("#down").draggable({ disabled: false });
+                                $("#right").draggable({ disabled: false });
+                                
+                                $("#up").css({ 'color': 'black' });
+                                $("#left").css({ 'color': 'black' });
+                                $("#down").css({ 'color': 'black' });
+                                $("#right").css({ 'color': 'black' });
+                                enable_drag = true;
+                                $('#enable_dragging').html("Undrag controls");
+                            }
+                        });
+                        
                         var status_audio = false;
                         var audioElement = document.createElement('audio');
                         audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
@@ -179,7 +211,11 @@
                     
                     <div class="bottom">
                         <p>
-                            <span id="loading_word" style="display: none;">Loading...</span><br/><div class="square" id="minus" style="display: none;">-</div><div class="square" id="plus" style="display: none;">+</div><br/><br/><div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/>            <!--<div class="square" id="bot">Bot</div>-->
+                            <span id="loading_word" style="display: none;">Loading...</span><br/>
+                            <div class="square" id="minus" style="display: none;">-</div><div class="square" id="plus" style="display: none;">+</div><br/><br/>
+                            <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/>
+                            <div class="square" id="enable_dragging" style="display: none;">Undrag controls</div><br/>
+                            <div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/>            <!--<div class="square" id="bot">Bot</div>-->
                             
                             </p>
                         <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
