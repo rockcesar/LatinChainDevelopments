@@ -68,7 +68,6 @@
                 </script>
 
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                
            </xpath>
         </template>
 
@@ -435,18 +434,11 @@
                                   <li data-target="#myCarouselPublicity" data-slide-to="3"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="4"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="5"/>
-                                  <li data-target="#myCarouselPublicity" data-slide-to="6"/>
                                 </ol>
                                 <div class="carousel-inner">
                                   <div class="carousel-item active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
                                     <div class="container" align="center" style="text-align:center">
                                         <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
-                                    </div>
-                                  </div>
-                                  <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
-                                    <div class="container" align="center" style="text-align:center">
-                                        <script type="text/javascript" src="https://app.web3ads.net/main.js" async="true"></script>
-                                        <div class="_0cbf1c3d417e250a" data-zone="64931db1beea4376b57d8f8ecf94a5af" t-att-style='a_ads_style'></div>
                                     </div>
                                   </div>
                                   <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
