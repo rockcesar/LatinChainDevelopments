@@ -20,7 +20,6 @@
                                 <field name="points_sudoku" readonly="True"/>
                                 <field name="points_snake" readonly="True"/>
                                 <field name="points_datetime" readonly="True"/>
-                                <field name="paid" readonly="True"/>
                                 <field name="paid_in_transactions" readonly="True"/>
                                 <field name="unblocked" readonly="False"/>
                                 <field name="user_agent" readonly="True"/>
@@ -52,7 +51,6 @@
                 <field name="points_chess"/>
                 <field name="points_sudoku"/>
                 <field name="points_snake"/>
-                <field name="paid"/>
                 <field name="paid_in_transactions"/>
                 <field name="unblocked"/>
                 <field name="days_available"/>

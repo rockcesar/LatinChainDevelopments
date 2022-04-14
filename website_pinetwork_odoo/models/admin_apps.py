@@ -246,10 +246,8 @@ class admin_apps(models.Model):
                         users = transaction[0].pi_user
                         
                         if len(users) > 0:
-                            if (users[0].paid + float(result_dict["amount"])) >= admin_app_list[0].amount:
+                            if users[0].paid_in_transactions >= admin_app_list[0].amount:
                                 users[0].sudo().write({'unblocked': True})
-                            
-                            users[0].sudo().write({'paid': users[0].paid + float(result_dict["amount"])})
                             
                         result = {"result": True, "completed": True}
             else:
@@ -280,8 +278,7 @@ class pi_users(models.Model):
     points_sudoku = fields.Float('Sudoku Points', required=True, default=0, digits=(50,8))
     points_snake = fields.Float('Snake Points', required=True, default=0, digits=(50,8))
     points_datetime = fields.Datetime('Points Datetime', compute="_total_points", store=True)
-    paid = fields.Float('Paid by user', digits=(50,8), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,8))
+    paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,8), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
     user_agent = fields.Char('User agent')
