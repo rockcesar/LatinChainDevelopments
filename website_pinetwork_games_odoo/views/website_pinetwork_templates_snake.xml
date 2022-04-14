@@ -102,7 +102,7 @@
                         });
                         
                         var enable_drag = true;
-                        $('#enable_dragging').html("Undrag controls");
+                        $('#enable_dragging').html("Drag controls");
                         $('#enable_dragging').click(function() {
                             if(enable_drag)
                             {
@@ -214,7 +214,7 @@
                             <span id="loading_word" style="display: none;">Loading...</span><br/>
                             <div class="square" id="minus" style="display: none;">-</div><div class="square" id="plus" style="display: none;">+</div><br/><br/>
                             <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/>
-                            <div class="square" id="enable_dragging" style="display: none;">Undrag controls</div><br/>
+                            <div class="square" id="enable_dragging" style="display: none;">Drag controls</div><br/>
                             <div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/>            <!--<div class="square" id="bot">Bot</div>-->
                             
                             </p>
