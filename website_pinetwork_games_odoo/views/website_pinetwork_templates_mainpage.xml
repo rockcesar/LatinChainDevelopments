@@ -73,9 +73,10 @@
                 
                 <script type="text/javascript">
                     if(location.pathname.substring(0, 4) != "/web")
-                        var isPiBrowser = /PiBrowser|PiBrowser/i.test(navigator.userAgent);
+                    {
+                        var isPiBrowser = /PiBrowser/i.test(navigator.userAgent);
                         if (!isPiBrowser) {
-                            alert("For better experience use Pi Browser minepi.com/rockcesar"):
+                            alert("For better experience use Pi Browser: https://minepi.com/rockcesar"):
                         }
                     }
                 </script>
