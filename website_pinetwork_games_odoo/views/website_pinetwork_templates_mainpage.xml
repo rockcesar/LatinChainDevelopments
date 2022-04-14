@@ -163,11 +163,13 @@
                                             $(".user_status").html("<br/>verified. Days available: " + data.days_available + "<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
+                                            $("#user_points_datetime").html(data.points_datetime);
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
                                             $(".user_status").html("<br/>Not verified. Each 30 days you should unlock the app paying 1 Pi. Go to one of the games to do it.<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
+                                            $("#user_points_datetime").html(data.points_datetime);
                                         }
                                     }
                                     
@@ -594,6 +596,7 @@
                             <br/>User: <strong id="user_logged">--</strong><br/>
                             <br/>Status: <strong class="user_status">Access through Pi Browser.<br/></strong>
                             <br/>Total points: <strong id="user_points">0</strong><br/>
+                            <br/>At: <strong id="user_points_datetime"></strong><br/>
                             <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
                           </div>
                         </div>
