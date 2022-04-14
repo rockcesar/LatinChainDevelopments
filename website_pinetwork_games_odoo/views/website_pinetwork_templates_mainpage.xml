@@ -43,13 +43,24 @@
                     }
 
                     .goog-te-menu-frame {
-                    max-width:100% !important; 
+                        max-width:100% !important; 
                     }
                     .goog-te-menu2 { 
-                    max-width: 100% !important;
-                    overflow-x: scroll !important;
-                    box-sizing:border-box !important; 
-                    height:auto !important; 
+                        max-width: 100% !important;
+                        overflow-x: scroll !important;
+                        box-sizing:border-box !important; 
+                        height:auto !important; 
+                    }
+                    .goog-tooltip {
+                        display: none !important;
+                    }
+                    .goog-tooltip:hover {
+                        display: none !important;
+                    }
+                    .goog-text-highlight {
+                        background-color: transparent !important;
+                        border: none !important; 
+                        box-shadow: none !important;
                     }
                 </style>
 
