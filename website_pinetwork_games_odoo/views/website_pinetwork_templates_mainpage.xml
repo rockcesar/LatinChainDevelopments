@@ -27,10 +27,10 @@
         <template id="new_header" inherit_id="web.layout">
            <xpath expr="//head" position="after">
                <t t-if="hide_google_translate">
-                   <t t-set="hide_google_translate_2" t-value="display: none !important;"/>
+                   <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
                </t>
                <t t-else="">
-                   <t t-set="hide_google_translate_2" t-value=""/>
+                   <t t-set="hide_google_translate_2" t-value="''"/>
                </t>
                <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     
