@@ -27,12 +27,12 @@
         <template id="new_header" inherit_id="web.layout">
            <xpath expr="//head" position="after">
                <t t-if="hide_google_translate == None or hide_google_translate == False">
-                   <t t-set="hide_google_translate" t-value=""/>
+                   <t t-set="hide_google_translate_2" t-value=""/>
                </t>
                <t t-elif="hide_google_translate == True">
-                   <t t-set="hide_google_translate" t-value="display: none !important;"/>
+                   <t t-set="hide_google_translate_2" t-value="display: none !important;"/>
                </t>
-               <div id="google_translate_element" t-att-style="hide_google_translate"></div>
+               <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     
                 <style>
                     .goog-te-banner-frame.skiptranslate {
