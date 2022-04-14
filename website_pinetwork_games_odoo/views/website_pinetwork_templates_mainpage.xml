@@ -25,7 +25,7 @@
     </template>
     
         <template id="new_header" inherit_id="web.layout">
-           <xpath expr="//head" position="after">
+           <xpath expr="//body" position="before">
                <t t-if="hide_google_translate">
                    <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
                </t>
