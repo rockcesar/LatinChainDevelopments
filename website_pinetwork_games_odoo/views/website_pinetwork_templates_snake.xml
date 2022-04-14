@@ -101,7 +101,7 @@
                             press(187);
                         });
                         
-                        var enable_drag = true;
+                        var enable_drag = false;
                         $('#enable_dragging').html("Drag controls");
                         $('#enable_dragging').click(function() {
                             if(enable_drag)
