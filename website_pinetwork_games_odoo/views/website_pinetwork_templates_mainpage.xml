@@ -75,8 +75,7 @@
                     $( document ).ready(function() {
                         if(location.pathname.substring(0, 4) != "/web")
                         {
-                            var isPiBrowser = /PiBrowser/i.test(navigator.userAgent);
-                            if (!isPiBrowser) {
+                            if (!navigator.userAgent.match(/PiBrowser/i)) {
                                 alert("For better experience use Pi Browser: https://minepi.com/rockcesar"):
                             }
                         }
