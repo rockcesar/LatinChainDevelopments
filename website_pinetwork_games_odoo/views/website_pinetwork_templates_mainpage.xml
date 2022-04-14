@@ -74,7 +74,7 @@
            </xpath>
            
            <xpath expr="//body" position="after">
-               <script t-if="not sandbox" type="text/javascript">
+               <!--<script t-if="not sandbox" type="text/javascript">
                     document.addEventListener("DOMContentLoaded", function(event) {
                         if(location.pathname.substring(0, 4) != "/web")
                         {
@@ -83,7 +83,7 @@
                             }
                         }
                     });
-                </script>
+                </script>-->
            </xpath>
         </template>
 
