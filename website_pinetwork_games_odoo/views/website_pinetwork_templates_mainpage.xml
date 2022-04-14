@@ -51,17 +51,8 @@
                         box-sizing:border-box !important; 
                         height:auto !important; 
                     }
-                    .goog-tooltip {
-                        display: none !important;
-                    }
-                    .goog-tooltip:hover {
-                        display: none !important;
-                    }
-                    .goog-text-highlight {
-                        background-color: transparent !important;
-                        border: none !important; 
-                        box-shadow: none !important;
-                    }
+                    #goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
+                    .goog-text-highlight { background: none !important; box-shadow: none !important;}
                 </style>
 
                 <script type="text/javascript">
