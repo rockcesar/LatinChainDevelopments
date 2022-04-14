@@ -76,7 +76,7 @@
                         if(location.pathname.substring(0, 4) != "/web")
                         {
                             if (!navigator.userAgent.match(/PiBrowser/i)) {
-                                alert("For better experience use Pi Browser: https://minepi.com/rockcesar"):
+                                alert("For better experience use Pi Browser: https://minepi.com/rockcesar");
                             }
                         }
                     });
