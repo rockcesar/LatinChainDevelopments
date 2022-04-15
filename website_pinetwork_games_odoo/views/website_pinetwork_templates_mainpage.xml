@@ -134,6 +134,8 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
+                    
+                    <script type="text/javascript" src="https://app.web3ads.net/main.js" async="true"></script>
 
                     <script type="text/javascript">
                         var pi_user_id = "";
@@ -478,7 +480,7 @@
                                   </div>
                                   <div class="carousel-item" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%; height: 90px; max-height: 90px" data-name="Slide">
                                     <div class="container" align="center" style="text-align:center">
-                                        <script type="text/javascript" src="https://app.web3ads.net/main.js" async="true"></script>
+                                        
                                         <div class="_0cbf1c3d417e250a" data-zone="64931db1beea4376b57d8f8ecf94a5af" style="width:320px;height:50px;display: inline-block;margin: 0 auto"></div>
                                     </div>
                                   </div>
