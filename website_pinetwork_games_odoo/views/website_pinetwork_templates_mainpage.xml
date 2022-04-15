@@ -78,9 +78,7 @@
                     }
                 
                     document.addEventListener("DOMContentLoaded", function(event) {
-                        if(location.pathname.substring(0, 4) != "/web")
-                        {
-                        }else
+                        if(location.pathname.substring(0, 4) == "/web")
                         {
                             document.getElementById("translate_text_latinchain").style.display = "none !important;";
                         }
