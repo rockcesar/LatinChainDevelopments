@@ -32,7 +32,7 @@
                <t t-else="">
                    <t t-set="hide_google_translate_2" t-value="''"/>
                </t>
-               <div id="translate_text_latinchain">
+               <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
                </div>
                <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     
