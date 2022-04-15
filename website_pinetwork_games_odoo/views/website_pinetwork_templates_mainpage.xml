@@ -32,6 +32,7 @@
                <t t-else="">
                    <t t-set="hide_google_translate_2" t-value="''"/>
                </t>
+               <strong>Translate</strong>
                <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     
                 <style>
@@ -51,8 +52,12 @@
                         box-sizing:border-box !important; 
                         height:auto !important; 
                     }
+                    
                     #goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
                     .goog-text-highlight { background: none !important; box-shadow: none !important;}
+                    
+                    .goog-logo-link{display: none !important;}
+                    .goog-te-gadget{height: 28px !important;  overflow: hidden;}
                 </style>
 
                 <script type="text/javascript">
