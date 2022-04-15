@@ -81,7 +81,7 @@
                         if(location.pathname.substring(0, 4) == "/web")
                         {
                             alert("123");
-                            document.getElementById("translate_text_latinchain").style.display = "none !important;";
+                            document.getElementById("translate_text_latinchain").style.display = "none";
                         }
                     });
                 </script>
