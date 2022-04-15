@@ -33,6 +33,7 @@
                    <t t-set="hide_google_translate_2" t-value="''"/>
                </t>
                <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
+                   <strong>Translate</strong>
                </div>
                <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     
@@ -79,11 +80,9 @@
                     document.addEventListener("DOMContentLoaded", function(event) {
                         if(location.pathname.substring(0, 4) != "/web")
                         {
-                            document.getElementById("translate_text_latinchain").innerHTML = "<strong>Translate</strong>";
-                            if(location.pathname.substring(0, 3) == "/es")
-                            {
-                                document.getElementById("translate_text_latinchain").innerHTML = "<strong>Traducir</strong>";
-                            }
+                        }else
+                        {
+                            document.getElementById("translate_text_latinchain").style.diplay = "none !important;";
                         }
                     });
                 </script>

@@ -49,6 +49,7 @@ function get_user(pause) {
                     $("#minus").show();
                     $("#plus").show();
                     $("#enable_dragging").show();
+                    $('#disable_dragging').hide();
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     
@@ -62,6 +63,7 @@ function get_user(pause) {
                     $("#minus").hide();
                     $("#plus").hide();
                     $("#enable_dragging").hide();
+                    $('#disable_dragging').hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
                 }

@@ -103,11 +103,6 @@
                         
                         var enable_drag = false;
                         
-                        $('#enable_dragging').html("Drag controls");
-                        if(location.pathname.substring(0, 3) == "/es")
-                        {
-                            $('#enable_dragging').html("Mover controles");
-                        }
                         $('#enable_dragging').click(function() {
                             if(enable_drag)
                             {
@@ -121,12 +116,14 @@
                                 $("#down").css({ 'color': 'black' });
                                 $("#right").css({ 'color': 'black' });
                                 enable_drag = false;
-                                $('#enable_dragging').html("Drag controls");
-                                if(location.pathname.substring(0, 3) == "/es")
-                                {
-                                    $('#enable_dragging').html("Mover controles");
-                                }
-                            }else
+                                
+                                $('#enable_dragging').hide();
+                                $('#disable_dragging').show();
+                            }
+                        });
+                        
+                        $('#disable_dragging').click(function() {
+                            if(!enable_drag)
                             {
                                 $("#up").draggable({ disabled: false });
                                 $("#left").draggable({ disabled: false });
@@ -138,11 +135,9 @@
                                 $("#down").css({ 'color': 'red' });
                                 $("#right").css({ 'color': 'red' });
                                 enable_drag = true;
-                                $('#enable_dragging').html("Set controls");
-                                if(location.pathname.substring(0, 3) == "/es")
-                                {
-                                    $('#enable_dragging').html("Fijar controles");
-                                }
+                                
+                                $('#disable_dragging').hide();
+                                $('#enable_dragging').show();
                             }
                         });
                         
@@ -227,7 +222,7 @@
                             <span id="loading_word" style="display: none;">Loading...</span><br/>
                             <div class="square" id="minus" style="display: none;">-</div><div class="square" id="plus" style="display: none;">+</div><br/><br/>
                             <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/>
-                            <div class="square" id="enable_dragging" style="display: none;"></div><br/>
+                            <div class="square" id="enable_dragging" style="display: none;"></div><div class="square" id="disable_dragging" style="display: none;"></div><br/>
                             <div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/>            <!--<div class="square" id="bot">Bot</div>-->
                             
                             </p>
