@@ -359,6 +359,7 @@
                               <li data-target="#myCarousel1647794696348" data-slide-to="2"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="3"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="4"/>
+                              <li data-target="#myCarousel1647794696348" data-slide-to="5"/>
                             </ol>
                             <div class="carousel-inner">
                               <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
@@ -373,7 +374,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
+                              <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;" data-name="Slide">
                                 <div class="container">
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
