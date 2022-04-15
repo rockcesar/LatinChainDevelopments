@@ -104,25 +104,6 @@
                         var enable_drag = false;
                         
                         $('#enable_dragging').click(function() {
-                            if(enable_drag)
-                            {
-                                $("#up").draggable({ disabled: true });
-                                $("#left").draggable({ disabled: true });
-                                $("#down").draggable({ disabled: true });
-                                $("#right").draggable({ disabled: true });
-                                
-                                $("#up").css({ 'color': 'black' });
-                                $("#left").css({ 'color': 'black' });
-                                $("#down").css({ 'color': 'black' });
-                                $("#right").css({ 'color': 'black' });
-                                enable_drag = false;
-                                
-                                $('#enable_dragging').hide();
-                                $('#disable_dragging').show();
-                            }
-                        });
-                        
-                        $('#disable_dragging').click(function() {
                             if(!enable_drag)
                             {
                                 $("#up").draggable({ disabled: false });
@@ -135,6 +116,25 @@
                                 $("#down").css({ 'color': 'red' });
                                 $("#right").css({ 'color': 'red' });
                                 enable_drag = true;
+                                
+                                $('#enable_dragging').hide();
+                                $('#disable_dragging').show();
+                            }
+                        });
+                        
+                        $('#disable_dragging').click(function() {
+                            if(enable_drag)
+                            {
+                                $("#up").draggable({ disabled: true });
+                                $("#left").draggable({ disabled: true });
+                                $("#down").draggable({ disabled: true });
+                                $("#right").draggable({ disabled: true });
+                                
+                                $("#up").css({ 'color': 'black' });
+                                $("#left").css({ 'color': 'black' });
+                                $("#down").css({ 'color': 'black' });
+                                $("#right").css({ 'color': 'black' });
+                                enable_drag = false;
                                 
                                 $('#disable_dragging').hide();
                                 $('#enable_dragging').show();
