@@ -133,7 +133,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
 
                     <script type="text/javascript">
                         var pi_user_id = "";
