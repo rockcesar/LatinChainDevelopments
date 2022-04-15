@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-06 16:32+0000\n"
-"PO-Revision-Date: 2022-04-06 16:32+0000\n"
+"POT-Creation-Date: 2022-04-15 17:11+0000\n"
+"PO-Revision-Date: 2022-04-15 17:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -190,12 +190,9 @@ msgid ""
 "<br/>User: <strong id=\"user_logged\">--</strong><br/>\n"
 "                            <br/>Status: <strong class=\"user_status\">Access through Pi Browser.<br/></strong>\n"
 "                            <br/>Total points: <strong id=\"user_points\">0</strong><br/>\n"
+"                            <br/>At: <strong id=\"user_points_datetime\"/><br/>\n"
 "                            <br/>Points per game: <strong id=\"user_points_per_game\">0</strong><br/>"
 msgstr ""
-"<br/>Usuario: <strong id=\"user_logged\">--</strong><br/>\n"
-"                            <br/>Estatus: <strong class=\"user_status\">Accede a través del Pi Browser.<br/></strong>\n"
-"                            <br/>Puntos totales: <strong id=\"user_points\">0</strong><br/>\n"
-"                            <br/>Puntos por juego: <strong id=\"user_points_per_game\">0</strong><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -238,6 +235,27 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid ""
+"<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"/>\n"
+"                                            <span class=\"visually-hidden\">Next</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid ""
+"<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"/>\n"
+"                                <span class=\"visually-hidden\">Next</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<span class=\"carousel-control-next-icon\"/>\n"
+"                                  <span class=\"sr-only o_default_snippet_text\">Next</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<span class=\"carousel-control-next-icon\"/>\n"
@@ -245,6 +263,27 @@ msgid ""
 msgstr ""
 "<span class=\"carousel-control-next-icon\"/>\n"
 "                              <span class=\"sr-only o_default_snippet_text\">Siguiente</span>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid ""
+"<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"/>\n"
+"                                            <span class=\"visually-hidden\">Previous</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid ""
+"<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"/>\n"
+"                                <span class=\"visually-hidden\">Previous</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<span class=\"carousel-control-prev-icon\"/>\n"
+"                                  <span class=\"sr-only o_default_snippet_text\">Previous</span>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -366,6 +405,11 @@ msgstr ""
 "                        <br/>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header
+msgid "<strong>Translate</strong>"
+msgstr "<strong>Traducir</strong>"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "AI"
 msgstr "IA"
@@ -463,6 +507,11 @@ msgid "Donate"
 msgstr "Donar"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
+msgid "Drag controls"
+msgstr "Mover controles"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Easy"
 msgstr "Fácil"
@@ -517,8 +566,8 @@ msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
 "to Pi Network Games from Latin America. Download Pi Browser on"
 msgstr ""
-"Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Bienvenido(a) "
-"a Pi Network Games from Latin America. Descarga Pi Browser en"
+"Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
+"Bienvenido(a) a Pi Network Games from Latin America. Descarga Pi Browser en"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -747,6 +796,11 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
+msgid "Set controls"
+msgstr "Fijar controles"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Share"
 msgstr "Compartir"
@@ -760,6 +814,42 @@ msgstr "Compartir en Redes Sociales:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Show Hint"
 msgstr "Muestra Pista"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Slide 1"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Slide 2"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Slide 3"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Slide 4"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Slide 5"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Slide 6"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
