@@ -32,7 +32,8 @@
                <t t-else="">
                    <t t-set="hide_google_translate_2" t-value="''"/>
                </t>
-               <strong>Translate</strong>
+               <div id="translate_text_latinchain">
+               </div>
                <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     
                 <style>
@@ -65,8 +66,12 @@
                   if(location.pathname.substring(0, 4) != "/web")
                   {
                       var lang_google='en';
+                      document.getElementById("translate_text_latinchain").innerHTML = "<strong>Translate</strong>";
                       if(location.pathname.substring(0, 3) == "/es")
+                      {
+                          document.getElementById("translate_text_latinchain").innerHTML = "<strong>Traducir</strong>";
                           lang_google='es';
+                      }
                       new google.translate.TranslateElement({pageLanguage: lang_google, 
                                                             layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                             'google_translate_element');
