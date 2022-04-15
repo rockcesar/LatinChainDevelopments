@@ -82,7 +82,7 @@
                         {
                         }else
                         {
-                            document.getElementById("translate_text_latinchain").style.diplay = "none !important;";
+                            document.getElementById("translate_text_latinchain").style.display = "none !important;";
                         }
                     });
                 </script>
