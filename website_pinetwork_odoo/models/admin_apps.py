@@ -310,8 +310,10 @@ class pi_users(models.Model):
     @api.depends("points_chess", "points_sudoku", "points_snake")
     def _total_points(self):
         for i in self:
+            total_points = i.points
             i.points = i.points_chess + i.points_sudoku + i.points_snake
-            i.points_datetime = datetime.now()
+            if i.points > total_points:
+                i.points_datetime = datetime.now()
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
