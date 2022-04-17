@@ -103,7 +103,7 @@
                                 }
                             });
                             
-                            $('.carousel').carousel();
+                            $('.carousel').carousel({'interval': 9000});
                         });
 
                     </script>
@@ -134,7 +134,7 @@
                                     <strong>Publicity:</strong>
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
-                                        <div id="myCarousel" class="carousel slide" data-interval="9000">
+                                        <div id="myCarousel" class="carousel slide">
                                           <!-- Carousel items -->
                                           <div class="carousel-inner">
                                             <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 90px; max-height: 90px'"/>
