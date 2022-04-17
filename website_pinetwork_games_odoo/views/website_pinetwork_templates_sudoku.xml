@@ -103,7 +103,7 @@
                                 }
                             });
                             
-                            $('.carousel').carousel({'interval': 9000});
+                            $('.carousel').carousel({'interval': 11000});
                         });
 
                     </script>
