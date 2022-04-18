@@ -461,7 +461,7 @@
                         <strong>Publicity:</strong>
                         <br/>
                         <div style='overflow: auto; width:100%;'>
-                            <div id="myCarouselPublicity"  class="s_carousel s_carousel_default carousel slide" data-interval="11000" data-ride="carousel">
+                            <div id="myCarouselPublicity"  class="s_carousel s_carousel_default carousel slide" data-interval="20000" data-ride="carousel">
                                 <ol class="carousel-indicators o_we_no_overlay">
                                   <li data-target="#myCarouselPublicity" data-slide-to="0" class="active"/>
                                   <li data-target="#myCarouselPublicity" data-slide-to="1"/>
