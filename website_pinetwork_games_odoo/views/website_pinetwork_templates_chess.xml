@@ -2,7 +2,7 @@
 <odoo>
 
         <template id="chess" name="Chess">
-            <t t-call="web.frontend_layout">
+            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
 
