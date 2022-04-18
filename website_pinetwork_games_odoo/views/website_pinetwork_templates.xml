@@ -106,11 +106,11 @@
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="11000">
                               <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <!--<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>-->
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
                               </div>
                               <div class="carousel-inner">
                                 <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 90px; max-height: 90px'"/>
@@ -119,7 +119,7 @@
                                         <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
                                     </div>
                                 </div>
-                                <!--<div class="carousel-item" t-att-style="background">
+                                <div class="carousel-item" t-att-style="background">
                                     <div align="center" style="text-align:center">
                                         <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>
                                     </div>
@@ -143,7 +143,7 @@
                                     <div align="center" style="text-align:center">
                                         <a target="_blank" href="https://pipeflare.io/r/1sss"><img src="/website_pinetwork_games_odoo/static/src/img/Type2_Pipeflare-promo-banner-486x60.jpg" t-att-style='a_ads_style'/></a>
                                     </div>
-                                </div>-->
+                                </div>
                               </div>
                               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
