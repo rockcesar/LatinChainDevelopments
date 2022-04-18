@@ -109,66 +109,66 @@
            <xpath expr="//span[@name='website_translation_latin_chain']" position="replace">
            </xpath>
            <xpath expr="//header" position="after">
-                   <t t-if="hide_google_translate">
-                       <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
-                   </t>
-                   <t t-else="">
-                       <t t-set="hide_google_translate_2" t-value="''"/>
-                   </t>
-                   <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
-                       <strong>Translate</strong>
-                   </div>
-                   <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
-                        
-                    <style>
-                        .goog-te-banner-frame.skiptranslate {
-                            display: none !important;
-                        } 
-                        body {
-                            top: 0px !important; 
-                        }
-
-                        .goog-te-menu-frame {
-                            max-width:100% !important; 
-                        }
-                        .goog-te-menu2 { 
-                            max-width: 100% !important;
-                            overflow-x: scroll !important;
-                            box-sizing:border-box !important; 
-                            height:auto !important; 
-                        }
-                        
-                        #goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
-                        .goog-text-highlight { background: none !important; box-shadow: none !important;}
-                        
-                        .goog-logo-link{display: none !important;}
-                        .goog-te-gadget{height: 28px !important;  overflow: hidden;}
-                    </style>
-
-                    <script type="text/javascript">
-                        function googleTranslateElementInit() {
-                          if(location.pathname.substring(0, 4) != "/web")
-                          {
-                              var lang_google='en';
-                              if(location.pathname.substring(0, 3) == "/es")
-                              {
-                                  lang_google='es';
-                              }
-                              new google.translate.TranslateElement({pageLanguage: lang_google, 
-                                                                    layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                                    'google_translate_element');
-                          }
-                        }
+               <t t-if="hide_google_translate">
+                   <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
+               </t>
+               <t t-else="">
+                   <t t-set="hide_google_translate_2" t-value="''"/>
+               </t>
+               <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
+                   <strong>Translate</strong>
+               </div>
+               <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     
-                        document.addEventListener("DOMContentLoaded", function(event) {
-                            if(location.pathname.substring(0, 4) == "/web")
-                            {
-                                document.getElementById("translate_text_latinchain").style.display = "none";
-                            }
-                        });
-                    </script>
+                <style>
+                    .goog-te-banner-frame.skiptranslate {
+                        display: none !important;
+                    } 
+                    body {
+                        top: 0px !important; 
+                    }
 
-                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    .goog-te-menu-frame {
+                        max-width:100% !important; 
+                    }
+                    .goog-te-menu2 { 
+                        max-width: 100% !important;
+                        overflow-x: scroll !important;
+                        box-sizing:border-box !important; 
+                        height:auto !important; 
+                    }
+                    
+                    #goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
+                    .goog-text-highlight { background: none !important; box-shadow: none !important;}
+                    
+                    .goog-logo-link{display: none !important;}
+                    .goog-te-gadget{height: 28px !important;  overflow: hidden;}
+                </style>
+
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                      if(location.pathname.substring(0, 4) != "/web")
+                      {
+                          var lang_google='en';
+                          if(location.pathname.substring(0, 3) == "/es")
+                          {
+                              lang_google='es';
+                          }
+                          new google.translate.TranslateElement({pageLanguage: lang_google, 
+                                                                layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                                'google_translate_element');
+                      }
+                    }
+                
+                    document.addEventListener("DOMContentLoaded", function(event) {
+                        if(location.pathname.substring(0, 4) == "/web")
+                        {
+                            document.getElementById("translate_text_latinchain").style.display = "none";
+                        }
+                    });
+                </script>
+
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 
            </xpath>
            
