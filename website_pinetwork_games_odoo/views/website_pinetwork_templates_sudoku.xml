@@ -131,7 +131,7 @@
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
                                 <div style="text-align:center">
-                                    <strong>Publicity:</strong>
+                                    <!--<strong>Publicity:</strong>-->
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
                                         <div id="myCarousel" class="carousel slide">

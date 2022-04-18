@@ -541,7 +541,7 @@
                         </section>
                     </div>
                     <div class="container" style="text-align:center">
-                        <strong>Publicity:</strong>
+                        <!--<strong>Publicity:</strong>-->
                         <br/>
                         <div style='overflow: auto; width:100%;'>
                             <div id="myCarouselPublicity"  class="s_carousel s_carousel_default carousel slide" data-interval="30000" data-ride="carousel">

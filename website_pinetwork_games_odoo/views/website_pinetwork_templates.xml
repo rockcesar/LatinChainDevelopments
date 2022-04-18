@@ -100,7 +100,7 @@
                     <input type="hidden" id="amount" t-att-value="amount"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <div class="container form-group" style="text-align:center !important">
-                        <strong>Publicity:</strong>
+                        <!--<strong>Publicity:</strong>-->
                         <br/>
                         <div style='overflow: auto; width:100%;'>
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="30000">

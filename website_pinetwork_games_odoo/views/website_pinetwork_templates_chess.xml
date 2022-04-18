@@ -57,7 +57,7 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div align="center" class="container" style="text-align:center">
-                                    <strong>Publicity:</strong>
+                                    <!--<strong>Publicity:</strong>-->
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="30000">
