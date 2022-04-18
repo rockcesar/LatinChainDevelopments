@@ -141,7 +141,7 @@
                                             
                                             <div class="item active" t-att-style="background">
                                                 <div align="center" style="text-align:center">
-                                                    <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
+                                                    <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
                                                 </div>
                                             </div>
                                             

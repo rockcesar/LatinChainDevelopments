@@ -116,7 +116,7 @@
                                 <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 90px; max-height: 90px'"/>
                                 <div class="carousel-item active" t-att-style="background">
                                     <div align="center" style="text-align:center">
-                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' t-att-src="a_ads" t-att-style='a_ads_style'></iframe>
+                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
                                     </div>
                                 </div>
                                 <div class="carousel-item" t-att-style="background">
