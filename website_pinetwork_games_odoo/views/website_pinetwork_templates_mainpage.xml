@@ -24,8 +24,8 @@
         </xpath>
     </template>
     
-        <template id="new_header" inherit_id="web.layout">
-           <xpath expr="//body" position="before">
+        <template id="new_header" inherit_id="web.frontend_layout">
+           <xpath expr="//header" position="after">
                <t t-if="hide_google_translate">
                    <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
                </t>
@@ -89,7 +89,7 @@
                 
            </xpath>
            
-           <xpath expr="//body" position="after">
+           <xpath expr="//header" position="after">
                <!--<script t-if="not sandbox" type="text/javascript">
                     document.addEventListener("DOMContentLoaded", function(event) {
                         if(location.pathname.substring(0, 4) != "/web")

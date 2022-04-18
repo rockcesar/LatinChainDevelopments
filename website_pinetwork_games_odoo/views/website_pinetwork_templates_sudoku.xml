@@ -2,7 +2,7 @@
 <odoo>
 
         <template id="sudoku" name="Pidoku">
-            <t t-call="web.layout">
+            <t t-call="web.frontend_layout">
             &lt;!DOCTYPE html&gt;
             <html lang="en">
                 <head>
