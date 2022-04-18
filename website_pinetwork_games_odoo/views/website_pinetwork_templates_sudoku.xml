@@ -53,7 +53,7 @@
                     
                     <script type="text/javascript">
                         $( document ).ready(function() {
-                            //$("#a-ads").prop('src', $("#a_ads_val").val());
+                            $("#a-ads").prop('src', $("#a_ads_val").val());
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdVIC-7zyVo0jgi5l7RuyWui');
                         
                             var status_audio = false;
