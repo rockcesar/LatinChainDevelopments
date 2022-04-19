@@ -279,7 +279,7 @@
                                             $("#user_points_datetime").html(data.points_datetime);
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("<br/>Not verified. Each 30 days you should unlock the app paying 1 Pi. Go to one of the games to do it.<br/>");
+                                            $(".user_status").html("<br/>Not verified. Each 30 days you should unlock the app paying " + data.amount + " Pi. Go to one of the games to do it.<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                             $("#user_points_datetime").html(data.points_datetime);

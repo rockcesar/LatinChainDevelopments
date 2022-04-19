@@ -109,6 +109,11 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         
+        apps_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+        
+        if len(apps_list) == 0:
+            return json.dumps({'result': False})
+        
         passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789%^*(-_=+)') for i in range(10)])
         
         pi_users_list[0].sudo().write({'passkey': passkey})
@@ -119,6 +124,7 @@ class PiNetworkBaseController(http.Controller):
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
                             'unblocked': pi_users_list[0].unblocked,
                             'days_available': pi_users_list[0].days_available,
+                            'amount': apps_list[0].amount,
                             'passkey': passkey})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
