@@ -108,7 +108,7 @@
         <template id="new_header_layout" inherit_id="website.layout">
            <xpath expr="//span[@name='website_translation_latin_chain']" position="replace">
            </xpath>
-           <xpath expr="//header" position="inside">
+           <xpath expr="//main" position="before">
                 <t t-if="hide_google_translate">
                     <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
                 </t>
