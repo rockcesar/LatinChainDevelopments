@@ -51,7 +51,8 @@ class pi_transactions(models.Model):
                 pit.txid_url = ""
     
     def check_transactions(self, counter=1):
-        for pit in self:
+        records = self.search([('action', 'in', ['approve', 'cancelled'])])
+        for pit in records:
             try:
                 if pit.action == "cancelled" and (pit.cancelled or pit.user_cancelled) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
@@ -65,7 +66,8 @@ class pi_transactions(models.Model):
             except:
                 _logger.info(str(re))
         
-        for pit in self:
+        records = self.search([('action', 'in', ['approve', 'cancelled'])])
+        for pit in records:
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
