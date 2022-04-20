@@ -68,6 +68,9 @@ class pi_transactions(models.Model):
         
         records = self.search([('action', 'in', ['approve', 'cancelled'])])
         for pit in records:
+            if (datetime.now() - pit.create_date).seconds < 39600:
+                continue
+            
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
