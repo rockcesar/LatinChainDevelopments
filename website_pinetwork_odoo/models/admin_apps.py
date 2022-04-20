@@ -52,25 +52,8 @@ class pi_transactions(models.Model):
     
     def check_transactions(self, counter=1):
         records = self.search([('action', 'in', ['approve', 'cancelled'])])
-        for pit in records:
-            try:
-                if pit.action == "cancelled" and (pit.cancelled or pit.user_cancelled) and \
-                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
-                    pit.unlink()
-                elif pit.action == "approve" and pit.developer_approved and \
-                    not pit.transaction_verified and not pit.developer_completed and \
-                    not (pit.cancelled or pit.user_cancelled) and \
-                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
-                    pit.unlink()
-                self.env.cr.commit()
-            except:
-                _logger.info(str(re))
         
-        records = self.search([('action', 'in', ['approve', 'cancelled'])])
         for pit in records:
-            if (datetime.now() - pit.create_date).seconds < 39600:
-                continue
-            
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
