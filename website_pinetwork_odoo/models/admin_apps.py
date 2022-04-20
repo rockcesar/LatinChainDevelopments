@@ -84,7 +84,7 @@ class pi_transactions(models.Model):
                         'json_result': str(result_dict)})
                 
                 if pit.action == "cancelled" and (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                    (datetime.now() - pit.create_date).days >= 1:
+                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
                 elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
                     result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
@@ -94,7 +94,7 @@ class pi_transactions(models.Model):
                 elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
                     not result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                    (datetime.now() - pit.create_date).days >= 1:
+                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
                 self.env.cr.commit()
             except:

@@ -27,16 +27,18 @@
         <template id="new_header" inherit_id="web.layout">
            <xpath expr="//body" position="before">
                <span id="website_translation_latin_chain" name="website_translation_latin_chain">
-                   <t t-if="hide_google_translate">
-                       <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
-                   </t>
-                   <t t-else="">
-                       <t t-set="hide_google_translate_2" t-value="''"/>
-                   </t>
-                   <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
-                       <strong>Translate</strong>
-                   </div>
-                   <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
+                    <t t-if="hide_google_translate">
+                        <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
+                    </t>
+                    <t t-else="">
+                        <t t-set="hide_google_translate_2" t-value="''"/>
+                    </t>
+                    <div style="text-align:center">
+                        <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
+                            <strong>Translate</strong>
+                        </div>                    
+                        <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
+                    </div>
                         
                     <style>
                         .goog-te-banner-frame.skiptranslate {
