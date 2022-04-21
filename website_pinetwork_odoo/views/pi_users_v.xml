@@ -10,7 +10,8 @@
                         <page string="Pi Users">
                             <group>
                                 <field name="id"/>
-                                <field name="name"/>
+                                <field name="name" readonly="True"/>
+                                <field name="email" readonly="True"/>
                                 <field name="donator" readonly="True"/>
                                 <field name="paid_in_all_donations" readonly="True"/>
                                 <field name="pi_user_id" readonly="True"/>

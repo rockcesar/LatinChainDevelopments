@@ -272,6 +272,7 @@ class pi_users(models.Model):
     ]
 
     name = fields.Char('Name')
+    email = fields.Char('Email')
     pi_user_id = fields.Char('Pi User ID', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_user_code = fields.Char('Pi User Code', required=True)
     passkey = fields.Char('Pass Key')
