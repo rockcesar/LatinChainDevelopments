@@ -207,7 +207,7 @@ msgstr "<i class=\"fa fa-telegram\"/> Unirse al Telegram"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<i class=\"fa fa-twitter\"/> Join Twitter"
-msgid "<i class=\"fa fa-twitter\"/> Unirse al Twitter"
+msgstr "<i class=\"fa fa-twitter\"/> Unirse al Twitter"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
