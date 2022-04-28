@@ -51,9 +51,8 @@ class pi_transactions(models.Model):
                 pit.txid_url = ""
     
     def check_transactions(self, counter=1):
-        records = self.search([('action', 'in', ['approve', 'cancelled'])])
-        
-        for pit in records:
+        #records = self.search([('action', 'in', ['approve', 'cancelled'])])
+        for pit in self:
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
             re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
