@@ -115,7 +115,7 @@ class pi_transactions(models.Model):
                 
                 self.env.cr.commit()
             except:
-                _logger.info(str(re))
+                _logger.info(str("ERROR TRANSACTIONS"))
 
 class admin_apps(models.Model):
     _name = "admin.apps"
