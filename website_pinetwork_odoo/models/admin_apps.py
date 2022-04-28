@@ -50,15 +50,35 @@ class pi_transactions(models.Model):
             else:
                 pit.txid_url = ""
     
-    def check_transactions(self, counter=1):
-        #records = self.search([('action', 'in', ['approve', 'cancelled'])])
+    def check_transactions(self):
         for pit in self:
-            #url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
+            try:
+                
+                if pit.action == "cancelled" and (pit.cancelled or pit.user_cancelled) and \
+                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
+                    pit.unlink()
+                elif pit.action == "approve" and pit.developer_approved and \
+                    pit.transaction_verified and not pit.developer_completed and \
+                    not (pit.cancelled or pit.user_cancelled):
+                    self.env["admin.apps"].pi_api({'action': "complete", 'txid': pit.txid, 
+                                                        'app_client': pit.app, 'paymentId': pit.payment_id})
+                elif pit.action == "approve" and pit.developer_approved and \
+                    not pit.transaction_verified and not pit.developer_completed and \
+                    not (pit.cancelled or pit.user_cancelled) and \
+                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
+                    pit.unlink()
+                
+                self.env.cr.commit()
+            except:
+                _logger.info(str("ERROR TRANSACTIONS"))
+    
+    def check_transactions_one_user(self):
+        for pit in self:
+            url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
-            #re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
+            re = requests.get(url,headers={'Authorization': "Key " + pit.app_id.admin_key})
             
             try:
-                """
                 result = re.json()
                 
                 result_dict = json.loads(str(json.dumps(result)))
@@ -97,25 +117,10 @@ class pi_transactions(models.Model):
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
-                """
-                
-                if pit.action == "cancelled" and (pit.cancelled or pit.user_cancelled) and \
-                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
-                    pit.unlink()
-                elif pit.action == "approve" and pit.developer_approved and \
-                    pit.transaction_verified and not pit.developer_completed and \
-                    not (pit.cancelled or pit.user_cancelled):
-                    self.env["admin.apps"].pi_api({'action': "complete", 'txid': pit.txid, 
-                                                        'app_client': pit.app, 'paymentId': pit.payment_id})
-                elif pit.action == "approve" and pit.developer_approved and \
-                    not pit.transaction_verified and not pit.developer_completed and \
-                    not (pit.cancelled or pit.user_cancelled) and \
-                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
-                    pit.unlink()
                 
                 self.env.cr.commit()
             except:
-                _logger.info(str("ERROR TRANSACTIONS"))
+                _logger.info(str(re))
 
 class admin_apps(models.Model):
     _name = "admin.apps"
@@ -226,7 +231,7 @@ class admin_apps(models.Model):
                                                                 'cancelled': result_dict["status"]["cancelled"], 
                                                                 'user_cancelled': result_dict["status"]["user_cancelled"]})
                 self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
-                                                            ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions()
+                                                            ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
                                                             
                 result = {"result": True, "approved": True}
             elif kw['action'] == "complete":
