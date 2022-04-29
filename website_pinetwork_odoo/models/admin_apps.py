@@ -370,7 +370,8 @@ class pi_users(models.Model):
             transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
-                piu.write({'unblocked': False, 'days_available': 0})
+                if piu.unblocked != False or piu.days_available != 0:
+                    piu.write({'unblocked': False, 'days_available': 0})
             else:
                 days_available = 30 - (datetime.now() - transaction[0].create_date).days
                 
