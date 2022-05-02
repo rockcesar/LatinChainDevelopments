@@ -117,6 +117,10 @@ class PiNetworkBaseController(http.Controller):
         passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789%^*(-_=+)') for i in range(10)])
         
         pi_users_list[0].sudo().write({'passkey': passkey})
+        
+        im_winner = False
+        if pi_users_list[0].id in apps_list.pi_users_winners_ids.ids:
+            im_winner = True
                     
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
@@ -125,7 +129,8 @@ class PiNetworkBaseController(http.Controller):
                             'unblocked': pi_users_list[0].unblocked,
                             'days_available': pi_users_list[0].days_available,
                             'amount': apps_list[0].amount,
-                            'passkey': passkey})
+                            'passkey': passkey,
+                            'im_winner': im_winner})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
