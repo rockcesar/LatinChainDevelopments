@@ -266,7 +266,17 @@ var init_controls = function(){
             
             var tab_name = get_tab();
             if(tab_name != "import")
+            {
+                for(var r = 0; r < 9; ++r){
+                    for(var c = 0; c < 9; ++c){
+                        var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
+                        $square.attr("disabled", "disabled");
+                        // Fire off a change event on the square
+                        $square.change();
+                    }
+                }
                 set_points(points_values[get_tab()]);
+            }
         }
     });
     
