@@ -207,77 +207,77 @@ class admin_apps(models.Model):
         
         re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
-        try:
+        #try:
             
-            result = re.json()
+        result = re.json()
+        
+        result_dict = json.loads(str(json.dumps(result)))
+        
+        if kw['action'] == "approve":
+            pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+            self.env["pi.transactions"].sudo().create({'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                                            'app_id': admin_app_list[0].id,
+                                                            'action': kw['action'],
+                                                            'payment_id': kw['paymentId'],
+                                                            'json_result': str(result_dict),
+                                                            'pi_user_id': result_dict["user_uid"],
+                                                            'pi_user': pi_user[0].id,
+                                                            'amount': result_dict["amount"],
+                                                            'memo': result_dict["memo"],
+                                                            'to_address': result_dict["to_address"],
+                                                            'developer_approved': result_dict["status"]["developer_approved"], 
+                                                            'transaction_verified': result_dict["status"]["transaction_verified"], 
+                                                            'developer_completed': result_dict["status"]["developer_completed"], 
+                                                            'cancelled': result_dict["status"]["cancelled"], 
+                                                            'user_cancelled': result_dict["status"]["user_cancelled"]})
+            self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
+                                                        ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
+                                                        
+            result = {"result": True, "approved": True}
+        elif kw['action'] == "complete":
+            pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+            data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                        'app_id': admin_app_list[0].id,
+                        'action': kw['action'],
+                        'payment_id': kw['paymentId'],
+                        'txid': kw['txid'],
+                        'pi_user_id': result_dict["user_uid"],
+                        'pi_user': pi_user[0].id,
+                        'json_result': str(result_dict),
+                        'pi_user_id': result_dict["user_uid"],
+                        'amount': result_dict["amount"],
+                        'memo': result_dict["memo"],
+                        'to_address': result_dict["to_address"],
+                        'developer_approved': result_dict["status"]["developer_approved"], 
+                        'transaction_verified': result_dict["status"]["transaction_verified"], 
+                        'developer_completed': result_dict["status"]["developer_completed"], 
+                        'cancelled': result_dict["status"]["cancelled"], 
+                        'user_cancelled': result_dict["status"]["user_cancelled"]}
             
-            result_dict = json.loads(str(json.dumps(result)))
-            
-            if kw['action'] == "approve":
-                pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
-                self.env["pi.transactions"].sudo().create({'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
-                                                                'app_id': admin_app_list[0].id,
-                                                                'action': kw['action'],
-                                                                'payment_id': kw['paymentId'],
-                                                                'json_result': str(result_dict),
-                                                                'pi_user_id': result_dict["user_uid"],
-                                                                'pi_user': pi_user[0].id,
-                                                                'amount': result_dict["amount"],
-                                                                'memo': result_dict["memo"],
-                                                                'to_address': result_dict["to_address"],
-                                                                'developer_approved': result_dict["status"]["developer_approved"], 
-                                                                'transaction_verified': result_dict["status"]["transaction_verified"], 
-                                                                'developer_completed': result_dict["status"]["developer_completed"], 
-                                                                'cancelled': result_dict["status"]["cancelled"], 
-                                                                'user_cancelled': result_dict["status"]["user_cancelled"]})
-                self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
-                                                            ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
-                                                            
-                result = {"result": True, "approved": True}
-            elif kw['action'] == "complete":
-                pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
-                data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
-                            'app_id': admin_app_list[0].id,
-                            'action': kw['action'],
-                            'payment_id': kw['paymentId'],
-                            'txid': kw['txid'],
-                            'pi_user_id': result_dict["user_uid"],
-                            'pi_user': pi_user[0].id,
-                            'json_result': str(result_dict),
-                            'pi_user_id': result_dict["user_uid"],
-                            'amount': result_dict["amount"],
-                            'memo': result_dict["memo"],
-                            'to_address': result_dict["to_address"],
-                            'developer_approved': result_dict["status"]["developer_approved"], 
-                            'transaction_verified': result_dict["status"]["transaction_verified"], 
-                            'developer_completed': result_dict["status"]["developer_completed"], 
-                            'cancelled': result_dict["status"]["cancelled"], 
-                            'user_cancelled': result_dict["status"]["user_cancelled"]}
-                
-                transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
-                if transaction_count == 0:
-                    self.env["pi.transactions"].sudo().create(data_dict)
-                else:
-                    self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
-                    
-                transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
-                
-                result = {"result": True, "completed": False}
-                if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
-                    if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                        users = transaction[0].pi_user
-                        
-                        if len(users) > 0:
-                            if users[0].paid_in_transactions >= admin_app_list[0].amount:
-                                users[0].sudo().write({'unblocked': True})
-                            
-                        result = {"result": True, "completed": True}
+            transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
+            if transaction_count == 0:
+                self.env["pi.transactions"].sudo().create(data_dict)
             else:
-                result = {"result": True, "completed": False, "approved": False}
-        except errors.InFailedSqlTransaction:
-            result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
-        except:
-            result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
+                self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
+                
+            transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
+            
+            result = {"result": True, "completed": False}
+            if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
+                if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                    users = transaction[0].pi_user
+                    
+                    if len(users) > 0:
+                        if users[0].paid_in_transactions >= admin_app_list[0].amount:
+                            users[0].sudo().write({'unblocked': True})
+                        
+                    result = {"result": True, "completed": True}
+        else:
+            result = {"result": True, "completed": False, "approved": False}
+        #except errors.InFailedSqlTransaction:
+        #    result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
+        #except:
+        #    result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         
         return json.dumps(result)
 
