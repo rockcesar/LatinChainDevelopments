@@ -42,7 +42,7 @@
         <field name="arch" type="xml">
             <tree string="Pi Transactions">
                 <header>
-                    <button name="check_transactions" type="object" string="Check Transactions" class="oe_highlight"/>
+                    <button name="check_transactions_one_user" type="object" string="Check Transactions" class="oe_highlight"/>
                 </header>
                 <field name="id"/>
                 <field name="app"/>
