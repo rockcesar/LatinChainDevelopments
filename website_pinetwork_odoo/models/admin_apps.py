@@ -275,6 +275,8 @@ class admin_apps(models.Model):
                                 users[0].sudo().write({'unblocked': True})
                             
                         result = {"result": True, "completed": True}
+                    else:
+                        result = {"result": True, "completed": True}
             else:
                 result = {"result": True, "completed": False, "approved": False}
         except errors.InFailedSqlTransaction:
