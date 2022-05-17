@@ -113,7 +113,7 @@ class pi_transactions(models.Model):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                 elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
-                    not result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
+                    not result_dict["status"]["transaction_verified"] and \
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
@@ -275,7 +275,7 @@ class admin_apps(models.Model):
                                 users[0].sudo().write({'unblocked': True})
                             
                         result = {"result": True, "completed": True}
-                    else:
+                    elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                         transaction[0].sudo().write({'action': 'approve'})
             else:
                 result = {"result": True, "completed": False, "approved": False}
