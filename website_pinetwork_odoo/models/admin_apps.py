@@ -197,7 +197,10 @@ class admin_apps(models.Model):
             obj = {}
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
-            obj = {'txid': kw['txid']}
+            if kw['txid'] == "":
+                obj = {}
+            else:
+                obj = {'txid': kw['txid']}
             
         admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
         

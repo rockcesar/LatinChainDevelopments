@@ -74,10 +74,16 @@ $( document ).ready(function() {
             const scopes = ['username', 'payments'];
             function onIncompletePaymentFound(payment) {
                 
+                try {
+                    var txid = payment.transaction.txid;
+                } catch (e) {
+                    var txid = "";
+                }
+                
                 var data = {
                         'action': 'complete',
                         'paymentId': payment.identifier,
-                        'txid': payment.transaction.txid,
+                        'txid': txid,
                         'app_client': 'auth_example',
                         'csrf_token': odoo.csrf_token,
                         'accessToken': accessToken,
