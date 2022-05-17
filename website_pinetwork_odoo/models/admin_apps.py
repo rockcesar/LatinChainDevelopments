@@ -276,7 +276,7 @@ class admin_apps(models.Model):
                             
                         result = {"result": True, "completed": True}
                     else:
-                        result = {"result": True, "completed": True}
+                        result = {"result": True, "completed": False}
             else:
                 result = {"result": True, "completed": False, "approved": False}
         except errors.InFailedSqlTransaction:
