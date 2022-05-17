@@ -63,7 +63,7 @@ class pi_transactions(models.Model):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': pit.txid, 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                 elif pit.action == "approve" and pit.developer_approved and \
-                    not pit.transaction_verified and not pit.developer_completed and \
+                    not pit.transaction_verified and \
                     not (pit.cancelled or pit.user_cancelled) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
