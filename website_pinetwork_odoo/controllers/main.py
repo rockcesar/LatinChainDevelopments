@@ -64,7 +64,7 @@ class PiNetworkBaseController(http.Controller):
         return http.request.redirect('https://github.com/rockcesar/PiNetworkDevelopments/tree/master/docs')
     
     @http.route('/api/get-external-winners/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
-    def get_external_winners(self, pi_user_code, **kw):
+    def get_external_winners(self, **kw):
 
         """
         headers = {'Content-Type': 'application/json'}
