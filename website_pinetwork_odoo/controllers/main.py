@@ -63,6 +63,37 @@ class PiNetworkBaseController(http.Controller):
     def api_external_user(self, **kw):
         return http.request.redirect('https://github.com/rockcesar/PiNetworkDevelopments/tree/master/docs')
     
+    @http.route('/api/get-external-winners/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def get_external_winners(self, pi_user_code, **kw):
+
+        """
+        headers = {'Content-Type': 'application/json'}
+        return Response(json.dumps({'result': True, 'pi_user_code': pi_users_list[0].pi_user_code,
+                            'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
+                            'points_sudoku': pi_users_list[0].points_sudoku,
+                            'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
+                            'unblocked': pi_users_list[0].unblocked}), headers=headers)
+        """
+        
+        app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
+        
+        if len(app) == 0:
+            return json.dumps({'result': False})
+        
+        pi_winner_list = []
+        for pi_user in app.pi_users_winners_ids:
+            is_winner = False
+            if pi_user.id in app.pi_users_winners_ids.ids:
+                is_winner = True
+            
+            pi_winner_list.append({'pi_user_code': pi_user.pi_user_code,
+                    'points': pi_user.points, 'points_chess': pi_user.points_chess, 
+                    'points_sudoku': pi_user.points_sudoku,
+                    'points_snake': pi_user.points_snake, 'points_datetime': str(pi_user.points_datetime) + " UTC",
+                    'unblocked': pi_user.unblocked, 'is_winner': is_winner})
+        
+        return json.dumps({'result': True, 'pi_winner_list': pi_winner_list})
+    
     @http.route('/api/get-external-user/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def get_external_user(self, pi_user_code, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
@@ -79,11 +110,20 @@ class PiNetworkBaseController(http.Controller):
                             'unblocked': pi_users_list[0].unblocked}), headers=headers)
         """
         
+        app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
+        
+        if len(app) == 0:
+            return json.dumps({'result': False})
+        
+        is_winner = False
+        if pi_users_list[0].id in app.pi_users_winners_ids.ids:
+            is_winner = True
+        
         return json.dumps({'result': True, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
-                            'unblocked': pi_users_list[0].unblocked})
+                            'unblocked': pi_users_list[0].unblocked, 'is_winner': is_winner})
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
