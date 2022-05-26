@@ -1,5 +1,7 @@
 # Interaction with LatinChain Platform (LatinChain API docs)
 
+Watch these docs also at: https://latin-chain.com/api-docs/
+
 You can play games at https://latin-chain.com, but you can also browse data as developer, as easy as send a request to:
 
 https://latin-chain.com/api/get-external-user/{pi_user_code}
