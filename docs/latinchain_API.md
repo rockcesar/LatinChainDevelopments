@@ -30,6 +30,22 @@ GET /api/get-external-user/{pi_user_code}
 
 * In case the user doesn't exists, the response is type: [FailDTO](#FailDTO)
 
+### Winner users
+
+Base path: `/api/get-external-winners`.
+
+#### Get winners:
+
+Get information about winners.
+
+```
+GET /api/get-external-winners
+```
+
+* Response type: [WinnerDTO](#WinnerDTO)
+
+* In case the user doesn't exists, the response is type: [FailDTO](#FailDTO)
+
 ## Resource types
 
 ### `UserDTO`
@@ -43,7 +59,28 @@ GET /api/get-external-user/{pi_user_code}
 "points_sudoku": float, // Total points in sudoku
 "points_snake": float, // Total points in snake
 "points_datetime": string, // Datetime of the last update of points in any game
-"unblocked": boolean // If the user is verified: True is verified, False is not verified
+"unblocked": boolean, // If the user is verified: True is verified, False is not verified
+"is_winner": boolean // If the user is winner: True is winner, False is not winner
+}
+```
+
+### `WinnerDTO`
+
+```typescript
+{
+"result": boolean, // Result: True is ok, False is fail
+[ // List of winners
+    { // For each winner:
+        "pi_user_code": string, // Pi code of the user
+        "points": float, // Total points in games
+        "points_chess": float, // Total points in chess
+        "points_sudoku": float, // Total points in sudoku
+        "points_snake": float, // Total points in snake
+        "points_datetime": string, // Datetime of the last update of points in any game
+        "unblocked": boolean, // If the user is verified: True is verified, False is not verified
+        "is_winner": boolean // If the user is winner: True is winner, False is not winner
+    }
+]
 }
 ```
 

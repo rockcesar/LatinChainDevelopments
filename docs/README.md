@@ -8,6 +8,10 @@ Changing {pi_user_code}, by your user. Example:
 
 https://latin-chain.com/api/get-external-user/rockcesar
 
+Or you can browse at the following, to get the winners:
+
+https://latin-chain.com/api/get-external-winners/
+
 ## Usage
 
 ### Find an user
