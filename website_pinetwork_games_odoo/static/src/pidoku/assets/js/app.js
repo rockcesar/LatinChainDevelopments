@@ -136,6 +136,15 @@ var refresh_board = function(){
     if(tab_name !== "import"){
         show_puzzle(tab_name, true);
         $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
+        var tabs_names = ["hard",
+                         "very-hard",
+                         "insane",
+                         "inhuman",
+                         "import"];
+
+        for(var i = 0; i < 5; i++){
+            $("#"+tabs_names[i]).parent().show();
+        }
     }
 }
 
@@ -263,10 +272,19 @@ var init_controls = function(){
         {
             $('.timer').countimer('stop');
             solve_puzzle(get_tab());
-            
             var tab_name = get_tab();
+            var tabs_names = ["hard",
+                         "very-hard",
+                         "insane",
+                         "inhuman",
+                         "import"];
+
             if(tab_name != "import")
             {
+                for(var i = 0; i < 5; i++){
+                    if(tab_name != tabs_names[i])
+                        $("#"+tabs_names[i]).parent().hide();
+                }
                 for(var r = 0; r < 9; ++r){
                     for(var c = 0; c < 9; ++c){
                         var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
