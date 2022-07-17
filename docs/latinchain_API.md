@@ -69,7 +69,7 @@ GET /api/get-external-winners
 ```typescript
 {
 "result": boolean, // Result: True is ok, False is fail
-[ // List of winners
+"pi_winner_list": [ // List of winners
     { // For each winner:
         "pi_user_code": string, // Pi code of the user
         "points": float, // Total points in games
