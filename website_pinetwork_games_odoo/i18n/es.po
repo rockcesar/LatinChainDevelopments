@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-02 15:14+0000\n"
-"PO-Revision-Date: 2022-05-02 15:14+0000\n"
+"POT-Creation-Date: 2022-07-26 10:08+0000\n"
+"PO-Revision-Date: 2022-07-26 10:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,9 +80,9 @@ msgid ""
 "zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is "
 "filled automatically at 16:00 UTC."
 msgstr ""
-"2.- Estar en los 10 primeros en el Leaders Board ó en el Top 10 Board (Top 10 "
-"zone, Top 10 zone Chess, Top 10 zone Snake ó Top 10 zone Sudoku). Esto es "
-"llenado automáticamente a las 16:00 UTC."
+"2.- Estar en los 10 primeros en el Leaders Board ó en el Top 10 Board (Top "
+"10 zone, Top 10 zone Chess, Top 10 zone Snake ó Top 10 zone Sudoku). Esto es"
+" llenado automáticamente a las 16:00 UTC."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -129,6 +129,8 @@ msgid ""
 "<br/>\n"
 "                                                <span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
 msgstr ""
+"<br/>\n"
+"                                                <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -137,6 +139,9 @@ msgid ""
 "                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
 "                                    <br/>Enjoy:<br/><br/>"
 msgstr ""
+"<br/>\n"
+"                                    <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
+"                                    <br/>Disfrute:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -146,6 +151,10 @@ msgid ""
 "                        <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
 "                        <br/><br/>Enjoy:<br/><br/>"
 msgstr ""
+"<br/>\n"
+"                        <br/>\n"
+"                        <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
+"                        <br/><br/>Disfrute:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -155,9 +164,7 @@ msgstr "<br/><br/>Disfrute:<br/><br/>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/><span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
-msgstr ""
-"<br/><span id=\"loading_word\" style=\"display: "
-"none;\">Cargando...<br/></span>"
+msgstr "<br/><span id=\"loading_word\" style=\"display: none;\">Cargando...<br/></span>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -401,6 +408,11 @@ msgstr "<strong>Traducir</strong>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "AI"
 msgstr "IA"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "API Docs"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
