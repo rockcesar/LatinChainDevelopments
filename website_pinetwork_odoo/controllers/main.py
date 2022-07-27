@@ -474,4 +474,4 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/validation-key.txt', type='http', auth="public", website=True, csrf=False)
     def validation_txt(self, **kw):
-        return "440b3e77563e4151952010f7a7768ae060bb0408c33604322acca070824ce31fc8bdb73cc819e4acd4600d7f8aabce29ff4242fb00a1ae79bca414c11b7ad0b4"
+        return "9ab0680599b4a0d44a5c46a500ef78ba0753c8772401d6df13e5a1158f293cd603c4a257723d964e300759deb38470fa1bd000018823d156bfc618f88bba81b5"
