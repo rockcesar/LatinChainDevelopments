@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 10:08+0000\n"
-"PO-Revision-Date: 2022-07-26 10:08+0000\n"
+"POT-Creation-Date: 2022-07-30 10:40+0000\n"
+"PO-Revision-Date: 2022-07-30 10:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -66,12 +66,8 @@ msgstr "1.- Ser verificado en LatinChain Platform."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"1.- Each 30 days you should unlock the app paying 1 Pi. Go to one of the "
-"games to do it."
-msgstr ""
-"1.- Cada 30 días debes desbloquear la aplicación pagando 1 Pi. Ve a uno de "
-"los juegos para hacerlo."
+msgid "1.- Each 30 days you should unlock the app paying"
+msgstr "1.- Cada 30 días debes desbloquear la app pagando"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -164,7 +160,9 @@ msgstr "<br/><br/>Disfrute:<br/><br/>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/><span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
-msgstr "<br/><span id=\"loading_word\" style=\"display: none;\">Cargando...<br/></span>"
+msgstr ""
+"<br/><span id=\"loading_word\" style=\"display: "
+"none;\">Cargando...<br/></span>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -712,6 +710,11 @@ msgstr "Anuncio de Pi Hackathon"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pi Hackathon winners"
 msgstr "Ganadores del Pi Hackathon"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi. Go to one of the games to do it."
+msgstr "Pi. Ve a uno de los juegos para hacerlo."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
