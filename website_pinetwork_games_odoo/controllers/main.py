@@ -130,7 +130,7 @@ class PiNetworkController(http.Controller):
         
     @http.route('/modal-rules', type='http', auth="public", website=True, csrf=False)
     def modal_rules(self, **kw):
-		admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
             amount = False
