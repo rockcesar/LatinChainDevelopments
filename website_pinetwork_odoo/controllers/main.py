@@ -474,4 +474,12 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/validation-key.txt', type='http', auth="public", website=True, csrf=False)
     def validation_txt(self, **kw):
-        return "9ab0680599b4a0d44a5c46a500ef78ba0753c8772401d6df13e5a1158f293cd603c4a257723d964e300759deb38470fa1bd000018823d156bfc618f88bba81b5"
+		admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            validation_key = ""
+        else:
+            validation_key = admin_app_list[0].validation_key
+		
+		#"9ab0680599b4a0d44a5c46a500ef78ba0753c8772401d6df13e5a1158f293cd603c4a257723d964e300759deb38470fa1bd000018823d156bfc618f88bba81b5"
+        return validation_key

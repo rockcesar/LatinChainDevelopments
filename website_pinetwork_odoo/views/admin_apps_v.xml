@@ -17,6 +17,7 @@
                                     <field name="id"/>
                                     <field name="name"/>
                                     <field name="app"/>
+                                    <field name="validation_key"/>
                                     <field name="admin_key"/>
                                     <field name="sandbox"/>
                                     <field name="amount"/>
