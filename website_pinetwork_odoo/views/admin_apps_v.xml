@@ -20,6 +20,7 @@
                                     <field name="validation_key"/>
                                     <field name="admin_key"/>
                                     <field name="sandbox"/>
+                                    <field name="mainnet"/>
                                     <field name="amount"/>
                                     <field name="google_adsense"/>
                                     <field name="a_ads"/>
@@ -52,6 +53,7 @@
                 <field name="app"/>
                 <field name="admin_key"/>
                 <field name="sandbox"/>
+                <field name="mainnet"/>
                 <!--<field name="pi_transactions_ids"/>-->
             </tree>
         </field>

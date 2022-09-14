@@ -136,6 +136,7 @@ class admin_apps(models.Model):
     admin_key = fields.Char('Admin Key', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     validation_key = fields.Char('Validation Key', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     sandbox = fields.Boolean('Sandbox', required=True)
+    mainnet = fields.Boolean('Mainnet', required=True, default=False)
     pi_transactions_ids = fields.One2many('pi.transactions', 'app_id')
     pi_users_winners_datetime = fields.Datetime(string='Winners datetime', default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_count = fields.Integer(string='Winners count', compute="_compute_pi_users_winners_count", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
