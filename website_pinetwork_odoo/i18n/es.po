@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-02 15:29+0000\n"
-"PO-Revision-Date: 2022-05-02 15:29+0000\n"
+"POT-Creation-Date: 2022-09-20 19:14+0000\n"
+"PO-Revision-Date: 2022-09-20 19:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -347,6 +347,11 @@ msgid "MORE INFO"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__mainnet
+msgid "Mainnet"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__memo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
 msgid "Memo"
@@ -392,6 +397,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__payment_id
 msgid "PaymentId"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Pi"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -487,6 +497,11 @@ msgid "To address"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "To pay to winners:"
+msgstr "A pagar a ganadores:"
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 msgid "Total donators:"
 msgstr "Total de donadores:"
@@ -553,6 +568,11 @@ msgid "Username"
 msgstr "Usuario"
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__validation_key
+msgid "Validation Key"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.example
 msgid "Watch code"
 msgstr ""
@@ -585,6 +605,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__admin_apps_winners_paid_ids
 msgid "Winners Paid Apps"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_to_pay
+msgid "Winners To Pay"
 msgstr ""
 
 #. module: website_pinetwork_odoo

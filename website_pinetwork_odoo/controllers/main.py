@@ -315,7 +315,7 @@ class PiNetworkBaseController(http.Controller):
         pi_users_list_chess = request.env["pi.users"].sudo().search(winner_chess_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc,points desc")
         pi_users_list_snake = request.env["pi.users"].sudo().search(winner_snake_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc,points desc")
         pi_users_list_sudoku = request.env["pi.users"].sudo().search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc,points desc")
-        
+
         return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_list_chess': pi_users_list_chess, 'pi_users_list_snake': pi_users_list_snake, 'pi_users_list_sudoku': pi_users_list_sudoku})
     
     @http.route('/get-winners/<string:pi_user_code>', type='http', auth="public", website=True)
@@ -341,9 +341,11 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             user_winners = []
             pi_users_winners_datetime = ""
+            pi_users_winners_to_pay = 0
         else:
             user_winners = admin_app_list[0].pi_users_winners_ids
             pi_users_winners_datetime = admin_app_list[0].pi_users_winners_datetime
+            pi_users_winners_to_pay = admin_app_list[0].pi_users_winners_to_pay
         
         pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
@@ -351,7 +353,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = user_winners
         
-        return http.request.render('website_pinetwork_odoo.list_winners_zone', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_winners_datetime': pi_users_winners_datetime})
+        return http.request.render('website_pinetwork_odoo.list_winners_zone', {'pi_users_winners_to_pay': pi_users_winners_to_pay, 'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_winners_datetime': pi_users_winners_datetime})
 
     @http.route('/get-winners-zone/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_winners_zone_user(self, pi_user_code, **kw):

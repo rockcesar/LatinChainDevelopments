@@ -30,6 +30,7 @@
                                     <field name="pi_users_winners_count"/>
                                     <field name="pi_users_winners_ids" widget="many2many_tags"/>
                                     <field name="pi_users_winners_paid_ids" widget="many2many_tags"/>
+                                    <field name="pi_users_winners_to_pay"/>
                                     <field name="block_points"/>
                                     <field name="pi_users_winners_html"/>
                                     <field name="pi_transactions_ids"/>

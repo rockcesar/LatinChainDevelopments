@@ -14,7 +14,7 @@ import odoo
 import logging
 _logger = logging.getLogger(__name__)
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from dateutil.relativedelta import relativedelta, MO
 
@@ -143,6 +143,7 @@ class admin_apps(models.Model):
     pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', domain="[('id', 'in', pi_users_winners_ids)]", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_html = fields.Html('Winners HTML', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_to_pay = fields.Float('Winners To Pay', digits=(50,8), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,8), default=1)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -179,6 +180,16 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
+            transactions_domain = [('action', '=', 'complete'), ('create_date', '>=', datetime.now() - timedelta(days=30))]
+
+            transactions_ids = self.env["pi.transactions"].search(transactions_domain)
+
+            i.pi_users_winners_to_pay = 0
+            for t in transactions_ids:
+                i.pi_users_winners_to_pay += t.amount
+                
+            i.pi_users_winners_to_pay = i.pi_users_winners_to_pay * 0.10
+
             i.pi_users_winners_ids = [(6, 0, point_list)]
             i.pi_users_winners_datetime = datetime.now()
             
@@ -186,6 +197,7 @@ class admin_apps(models.Model):
         for i in self:
             i.pi_users_winners_ids = [(6, 0, [])]
             i.pi_users_winners_datetime = ""
+            i.pi_users_winners_to_pay = 0
     
     @api.depends("pi_users_winners_ids")
     def _compute_pi_users_winners_count(self):
