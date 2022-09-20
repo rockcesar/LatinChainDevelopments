@@ -496,7 +496,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "To pay to winners:"
+msgid "Jackpot to pay to winners:"
 msgstr ""
 
 #. module: website_pinetwork_odoo
