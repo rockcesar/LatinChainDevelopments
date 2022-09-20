@@ -498,8 +498,8 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "To pay to winners:"
-msgstr "A pagar a ganadores:"
+msgid "Jackpot to pay to winners:"
+msgstr "Total a pagar a ganadores:"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
