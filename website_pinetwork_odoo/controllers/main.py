@@ -362,9 +362,11 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             user_winners = []
             pi_users_winners_datetime = ""
+            pi_users_winners_to_pay = 0
         else:
             user_winners = admin_app_list[0].pi_users_winners_ids
             pi_users_winners_datetime = admin_app_list[0].pi_users_winners_datetime
+            pi_users_winners_to_pay = admin_app_list[0].pi_users_winners_to_pay
         
         pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
