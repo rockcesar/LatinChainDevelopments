@@ -27,13 +27,13 @@
                     <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/styles.css" rel="stylesheet" />
                     <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
                     
-                    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"/>
+                    <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/jquerysctipttop.css" rel="stylesheet" type="text/css"/>
                     
                     <!-- javascript
                          (Placed at the bottom so the DOM loads faster) -->
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/jquery.min.js"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/bootstrap.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/js/moment.js/2.18.1/moment.min.js"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/watch/dist/ez.countimer.js"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/sudoku.js"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/app.js"></script>
