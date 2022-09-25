@@ -345,7 +345,7 @@ class PiNetworkBaseController(http.Controller):
             pi_users_winners_to_pay = 0
         else:
             user_winners = admin_app_list[0].pi_users_winners_ids
-            pi_users_winners_count = len(admin_app_list[0].pi_users_winners_ids)
+            pi_users_winners_count = admin_app_list[0].pi_users_winners_count
             pi_users_winners_datetime = admin_app_list[0].pi_users_winners_datetime
             pi_users_winners_to_pay = admin_app_list[0].pi_users_winners_to_pay
         
@@ -368,7 +368,7 @@ class PiNetworkBaseController(http.Controller):
             pi_users_winners_to_pay = 0
         else:
             user_winners = admin_app_list[0].pi_users_winners_ids
-            pi_users_winners_count = len(admin_app_list[0].pi_users_winners_ids)
+            pi_users_winners_count = admin_app_list[0].pi_users_winners_count
             pi_users_winners_datetime = admin_app_list[0].pi_users_winners_datetime
             pi_users_winners_to_pay = admin_app_list[0].pi_users_winners_to_pay
         
