@@ -25,6 +25,7 @@ class Website(Website):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
+            mainnet = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -32,6 +33,7 @@ class Website(Website):
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
             a_ads_style = admin_app_list[0].a_ads_style
+            mainnet = admin_app_list[0].mainnet
         
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style})
 
