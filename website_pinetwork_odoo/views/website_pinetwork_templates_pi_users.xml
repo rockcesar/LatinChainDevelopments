@@ -177,7 +177,9 @@
                         <t t-if="pi_users_verified_count >= 0">
                             Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
                         </t>
+                        <!--
                         Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
+                        -->
                         
                         <strong>Winners zone <span style="color:#a0ec97">●</span>:</strong><br/>
                         <ul class="list-group">
