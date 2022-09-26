@@ -25,7 +25,7 @@ class Website(Website):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
-            mainnet = False
+            mainnet = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
