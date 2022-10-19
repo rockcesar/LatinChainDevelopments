@@ -315,6 +315,7 @@ class pi_users(models.Model):
     email = fields.Char('Email')
     pi_user_id = fields.Char('Pi User ID', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_user_code = fields.Char('Pi User Code', required=True)
+    pi_user_role = fields.Selection([('pi_user', 'Pi User'), ('latinchain_dev', 'LatinChain Dev'), ('latinchain_adm', 'LatinChain Administration')], 'Pi User Role', required=True, default="pi_user")
     passkey = fields.Char('Pass Key')
     points = fields.Float('Pi User Points', compute="_total_points", store=True, digits=(50,8))
     points_chess = fields.Float('Chess Points', required=True, default=0, digits=(50,8))
