@@ -181,7 +181,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            transactions_domain = [('action', '=', 'complete'), ('create_date', '>=', datetime.now() - timedelta(days=28))]
+            transactions_domain = [('action', '=', 'complete'), ('create_date', '>=', datetime.now() - timedelta(days=1))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
