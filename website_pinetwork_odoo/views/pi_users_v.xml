@@ -16,6 +16,7 @@
                                 <field name="paid_in_all_donations" readonly="True"/>
                                 <field name="pi_user_id" readonly="True"/>
                                 <field name="pi_user_code" readonly="True"/>
+                                <field name="pi_user_role" />
                                 <field name="points" readonly="True"/>
                                 <field name="points_chess" readonly="True"/>
                                 <field name="points_sudoku" readonly="True"/>
@@ -48,6 +49,7 @@
                 <field name="paid_in_all_donations"/>
                 <!--<field name="pi_user_id"/>-->
                 <field name="pi_user_code"/>
+                <field name="pi_user_role"/>
                 <field name="points"/>
                 <field name="points_chess"/>
                 <field name="points_sudoku"/>
