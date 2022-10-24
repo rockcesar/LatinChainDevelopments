@@ -137,7 +137,7 @@ msgid ""
 msgstr ""
 "<br/>\n"
 "                                    <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
-"                                    <br/>Disfrute:<br/><br/>"
+"                                    <br/>Noticias cripto:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -150,7 +150,7 @@ msgstr ""
 "<br/>\n"
 "                        <br/>\n"
 "                        <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
-"                        <br/><br/>Disfrute:<br/><br/>"
+"                        <br/><br/>Noticias cripto:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -180,7 +180,7 @@ msgstr "<br/>Escoge tu app:<br/><br/>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "<br/>Crypto news:<br/><br/>"
-msgstr ""
+msgstr "<br/>Noticias cripto:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
