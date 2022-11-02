@@ -63,7 +63,7 @@ class PiNetworkBaseController(http.Controller):
     def api_external_user(self, **kw):
         return http.request.redirect('https://github.com/rockcesar/PiNetworkDevelopments/tree/master/docs')
     
-    @http.route('/api/get-external-winners/', type='json', auth="public", website=True, csrf=False, methods=['GET'])
+    @http.route('/api/get-external-winners/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def get_external_winners(self, **kw):
 
         """
@@ -96,7 +96,7 @@ class PiNetworkBaseController(http.Controller):
         headers = {'Content-Type': 'application/json'}
         return Response(json.dumps({'result': True, 'pi_winner_list': pi_winner_list}), headers=headers)
     
-    @http.route('/api/get-external-user/<string:pi_user_code>', type='json', auth="public", website=True, csrf=False, methods=['GET'])
+    @http.route('/api/get-external-user/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def get_external_user(self, pi_user_code, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
