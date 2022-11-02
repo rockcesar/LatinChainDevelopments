@@ -78,7 +78,8 @@ class PiNetworkBaseController(http.Controller):
         app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
         
         if len(app) == 0:
-            return json.dumps({'result': False})
+            headers = {'Content-Type': 'application/json'}
+            return Response(json.dumps({'result': False}), headers=headers)
         
         pi_winner_list = []
         for pi_user in app.pi_users_winners_ids:
@@ -92,14 +93,16 @@ class PiNetworkBaseController(http.Controller):
                     'points_snake': pi_user.points_snake, 'points_datetime': str(pi_user.points_datetime) + " UTC",
                     'unblocked': pi_user.unblocked, 'is_winner': is_winner})
         
-        return json.dumps({'result': True, 'pi_winner_list': pi_winner_list})
+        headers = {'Content-Type': 'application/json'}
+        return Response(json.dumps({'result': True, 'pi_winner_list': pi_winner_list}), headers=headers)
     
     @http.route('/api/get-external-user/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def get_external_user(self, pi_user_code, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
         if len(pi_users_list) == 0:
-            return json.dumps({'result': False})
+            headers = {'Content-Type': 'application/json'}
+            return Response(json.dumps({'result': False}), headers=headers)
 
         """
         headers = {'Content-Type': 'application/json'}
@@ -113,17 +116,19 @@ class PiNetworkBaseController(http.Controller):
         app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
         
         if len(app) == 0:
-            return json.dumps({'result': False})
+            headers = {'Content-Type': 'application/json'}
+            return Response(json.dumps({'result': False}), headers=headers)
         
         is_winner = False
         if pi_users_list[0].id in app.pi_users_winners_ids.ids:
             is_winner = True
         
-        return json.dumps({'result': True, 'pi_user_code': pi_users_list[0].pi_user_code,
+        headers = {'Content-Type': 'application/json'}
+        return Response(json.dumps({'result': True, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
-                            'unblocked': pi_users_list[0].unblocked, 'is_winner': is_winner})
+                            'unblocked': pi_users_list[0].unblocked, 'is_winner': is_winner}), headers=headers)
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
