@@ -304,7 +304,7 @@ class admin_apps(models.Model):
 class pi_users(models.Model):
     _name = "pi.users"
     _description = "Pi Users"
-    _order = "points desc,unblocked desc,points_datetime asc"
+    _order = "points desc,unblocked desc,points_datetime asc,id asc"
     
     _sql_constraints = [
         # Partial constraint, complemented by a python constraint (see below).
