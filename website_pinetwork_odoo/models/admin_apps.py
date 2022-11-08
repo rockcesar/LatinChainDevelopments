@@ -159,11 +159,11 @@ class admin_apps(models.Model):
         winner_snake_domain = [('unblocked', '=', True), ('points_snake', '>', 20)]
         leaders_domain = [('unblocked', '=', True)]
         
-        pi_users_leaders = self.env["pi.users"].search(leaders_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
-        pi_users_list = self.env["pi.users"].search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc")
-        pi_users_list_chess = self.env["pi.users"].search(winner_chess_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc,points desc")
-        pi_users_list_snake = self.env["pi.users"].search(winner_snake_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc,points desc")
-        pi_users_list_sudoku = self.env["pi.users"].search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc,points desc")
+        pi_users_leaders = self.env["pi.users"].search(leaders_domain, limit=10, order="points desc,unblocked desc,points_datetime asc,id asc")
+        pi_users_list = self.env["pi.users"].search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc,id asc")
+        pi_users_list_chess = self.env["pi.users"].search(winner_chess_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc,points desc,id asc")
+        pi_users_list_snake = self.env["pi.users"].search(winner_snake_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc,points desc,id asc")
+        pi_users_list_sudoku = self.env["pi.users"].search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc,points desc,id asc")
         
         point_list = []
         point_list_name = []
