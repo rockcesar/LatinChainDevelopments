@@ -266,6 +266,11 @@ class PiNetworkBaseController(http.Controller):
                 #    if pi_users_winnners_count >= 10:
                 #        return json.dumps({'result': False})
                 
+                if float(kw['points']) > 0 and (not (pi_users_list[0].pi_user_id == kw['pi_user_id'] and 
+                        pi_users_list[0].pi_user_code == kw['pi_user_code'])):
+                    _logger.info("Authorization failed")
+                    return json.dumps({'result': False})
+                
                 if 'app_client' in kw:
                     if kw['app_client'] == "auth_platform":
                         values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
