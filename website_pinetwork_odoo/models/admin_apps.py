@@ -28,6 +28,7 @@ class pi_transactions(models.Model):
     app_id = fields.Many2one('admin.apps', required=True, ondelete='restrict')
     app = fields.Char(related="app_id.app")
     action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True)
+    action_type = fields.Selection([('receive', 'Receive'), ('send', 'Send')], 'Action type', default="receive")
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
     txid_url = fields.Text('TXID URL', compute="_compute_txid_url")
