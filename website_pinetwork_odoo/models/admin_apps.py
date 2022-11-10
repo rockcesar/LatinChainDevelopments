@@ -182,7 +182,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            transactions_domain = [('action', '=', 'complete'), ('create_date', '>=', datetime.now() - timedelta(days=28))]
+            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=28))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
@@ -338,7 +338,7 @@ class pi_users(models.Model):
     def _compute_donator(self):
         for i in self:
             i.donator = False
-            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete')], limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete'), ('action_type', '=', 'receive')], limit=1)
             
             if len(transaction) == 0:
                 i.donator = False
@@ -347,7 +347,7 @@ class pi_users(models.Model):
             
             total = 0    
             for j in i.pi_transactions_ids:
-                if j.action == "complete" and j.app_id.app == "auth_example":
+                if j.action == "complete" and j.action_type == "receive" and j.app_id.app == "auth_example":
                     total += j.amount
             
             i.paid_in_all_donations = total
@@ -365,7 +365,7 @@ class pi_users(models.Model):
         for i in self:
             total = 0
             for j in i.pi_transactions_ids:
-                if j.action == "complete":
+                if j.action == "complete" and j.action_type == "receive":
                     total += j.amount
             
             i.paid_in_transactions = total
@@ -373,7 +373,7 @@ class pi_users(models.Model):
             if i.paid_in_transactions > 0:
                 i.unblocked = True
                 
-            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
                 i.unblocked = False
@@ -389,7 +389,7 @@ class pi_users(models.Model):
 
     def check_users(self):
         for piu in self:
-            transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete')], order="create_date desc", limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
                 piu.write({'unblocked': False, 'days_available': 0})
