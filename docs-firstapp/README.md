@@ -3,6 +3,7 @@
 I used Odoo to develop this Pi App:
 
 Mainnet: https://latin-chain.com
+
 Testnet: https://test.latin-chain.com
 
 You maybe could use your Framework election.
