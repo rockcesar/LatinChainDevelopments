@@ -14,6 +14,8 @@ https://developers.minepi.com/
 Official Pi App Demo example code:
 https://github.com/pi-apps/demo
 
+# Simpliest example
+
 And the following is my Working Example for receiving Payments in Pi Platform:
 
 This is for client side (HTML, JavaScript):
