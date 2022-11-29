@@ -676,16 +676,16 @@
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>
                         <div style="text-align:center" class="form-group container">
                             <div class="row">
-                                <div class="col-3">
+                                <div class="col-1">
                                 </div>
-                                <div class="col-6">
+                                <div class="col-10">
                                     Set your Pi wallet address (DON'T YOUR PASSPHRASE):
                                     <br/>
                                     <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
                                     <br/>
                                     <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-1">
                                 </div>
                             </div>
                         </div>
