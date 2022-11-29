@@ -201,10 +201,7 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
-            if pi_users_list[0].unblocked:
-                values = {'pi_wallet_address': kw['pi_wallet_address']}
-            else:
-                return json.dumps({'result': False})
+            values = {'pi_wallet_address': kw['pi_wallet_address']}
         
         pi_users_list[0].sudo().write(values)
         
