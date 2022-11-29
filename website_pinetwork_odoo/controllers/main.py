@@ -175,7 +175,40 @@ class PiNetworkBaseController(http.Controller):
                             'days_available': pi_users_list[0].days_available,
                             'amount': apps_list[0].amount,
                             'passkey': passkey,
-                            'im_winner': im_winner})
+                            'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address})
+    
+    @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    def set_pi_wallet(self, **kw):
+        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+        except errors.InFailedSqlTransaction:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        except:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        else:
+            if pi_users_list[0].unblocked:
+                values = {'pi_wallet_address': kw['pi_wallet_address']}
+            else:
+                return json.dumps({'result': False})
+        
+        pi_users_list[0].sudo().write(values)
+        
+        return json.dumps({'result': True})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
