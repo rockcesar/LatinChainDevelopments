@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-20 19:14+0000\n"
-"PO-Revision-Date: 2022-09-20 19:14+0000\n"
+"POT-Creation-Date: 2022-11-29 18:43+0000\n"
+"PO-Revision-Date: 2022-11-29 18:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -116,6 +116,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__action
 msgid "Action"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__action_type
+msgid "Action type"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -332,6 +337,16 @@ msgid "Last connection"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_users__pi_user_role__latinchain_adm
+msgid "LatinChain Administration"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_users__pi_user_role__latinchain_dev
+msgid "LatinChain Dev"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
 msgid "Leaders Board"
 msgstr ""
@@ -349,6 +364,16 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__mainnet
 msgid "Mainnet"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__mainnet_off
+msgid "Mainnet OFF"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__mainnet_on
+msgid "Mainnet ON"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -400,11 +425,6 @@ msgid "PaymentId"
 msgstr ""
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "Pi"
-msgstr ""
-
-#. module: website_pinetwork_odoo
 #: model:res.groups,name:website_pinetwork_odoo.group_pi_admin
 msgid "Pi Admin Group"
 msgstr ""
@@ -432,6 +452,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__pi_user
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_users__pi_user_role__pi_user
 msgid "Pi User"
 msgstr ""
 
@@ -452,6 +473,11 @@ msgid "Pi User Points"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_user_role
+msgid "Pi User Role"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.actions.act_window,name:website_pinetwork_odoo.pi_users_action
 #: model:ir.model,name:website_pinetwork_odoo.model_pi_users
 #: model:ir.ui.menu,name:website_pinetwork_odoo.menu_pi_users
@@ -466,8 +492,18 @@ msgid "Points Datetime"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action_type__receive
+msgid "Receive"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__sandbox
 msgid "Sandbox"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action_type__send
+msgid "Send"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -492,14 +528,19 @@ msgid "TXID URL"
 msgstr ""
 
 #. module: website_pinetwork_odoo
-#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__to_address
-msgid "To address"
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__testnet_off
+msgid "Testnet OFF"
 msgstr ""
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "Jackpot to pay to winners:"
-msgstr "Total a pagar a ganadores:"
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__testnet_on
+msgid "Testnet ON"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__to_address
+msgid "To address"
+msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
@@ -525,6 +566,11 @@ msgstr "Total de usuarios verificados en la app:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "UTC (Chess:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "UTC,"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -570,6 +616,11 @@ msgstr "Usuario"
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__validation_key
 msgid "Validation Key"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_wallet_address
+msgid "Wallet Address"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -623,6 +674,11 @@ msgid "Winners datetime"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_paid_datetime
+msgid "Winners paid datetime"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.constraint,message:website_pinetwork_odoo.constraint_admin_apps_admin_apps_unique_key
 msgid "You can not have two app with the same App code!"
 msgstr ""
@@ -633,6 +689,11 @@ msgid "You can not have two users with the same User code!"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "You have been paid"
+msgstr "Te enviamos un pago"
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
@@ -640,9 +701,19 @@ msgid "Your points:"
 msgstr "Tus puntos:"
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "at"
+msgstr "a las"
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__cancelled
 msgid "cancelled"
 msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "check in your Pi wallet."
+msgstr "revisa tu Pi wallet."
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__developer_approved

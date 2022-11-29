@@ -169,6 +169,14 @@
                                 <span t-if="winner_app.app == 'auth_platform'">
                                     <strong> You are winner, check in this winner list.</strong>
                                 </span>
+                            </t>
+                            <t t-foreach="pi_user.admin_apps_winners_paid_ids" t-as="winner_app">
+                                <span t-if="winner_app.app == 'auth_platform'">
+                                    <strong> You have been paid
+                                    <span t-if="winner_app.pi_users_winners_paid_datetime">
+                                        at <t t-esc="winner_app.pi_users_winners_paid_datetime" /> UTC,
+                                    </span> check in your Pi wallet.</strong>
+                                </span>
                             </t><br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
