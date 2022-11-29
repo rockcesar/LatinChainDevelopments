@@ -32,6 +32,7 @@
                                     <field name="pi_users_winners_paid_ids" widget="many2many_tags"/>
                                     <field name="pi_users_winners_ids_text"/>
                                     <field name="pi_users_winners_paid_ids_text"/>
+                                    <field name="pi_users_winners_ids_wallets"/>
                                     <field name="pi_users_winners_paid_datetime"/>
                                     <field name="pi_users_winners_to_pay"/>
                                     <field name="block_points"/>

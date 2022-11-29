@@ -143,8 +143,9 @@ class admin_apps(models.Model):
     pi_users_winners_count = fields.Integer(string='Winners count', compute="_compute_pi_users_winners_count", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_winners_ids_text = fields.Text(string='Winners', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_winners_paid_ids_text = fields.Text(string='Winners Paid', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_ids_text = fields.Text(string='Winners Text', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_paid_ids_text = fields.Text(string='Winners Paid Text', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_ids_wallets = fields.Text(string='Winners pi wallet addresses', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_paid_datetime = fields.Datetime(string='Winners paid datetime', default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_html = fields.Html('Winners HTML', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay = fields.Float('Winners To Pay', digits=(50,7), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -218,6 +219,10 @@ class admin_apps(models.Model):
             i.pi_users_winners_paid_ids_text = ""
             for paid in i.pi_users_winners_paid_ids:
                 i.pi_users_winners_paid_ids_text += str(paid.name) + ", "
+                
+            i.pi_users_winners_ids_wallets = ""
+            for winner in i.pi_users_winners_ids:
+                i.pi_users_winners_ids_wallets += str(winner.pi_wallet_address) + ", "
     
     def pi_api(self, kw):
         
