@@ -35,6 +35,7 @@
                                     <field name="pi_users_winners_ids_wallets"/>
                                     <field name="pi_users_winners_paid_datetime"/>
                                     <field name="pi_users_winners_to_pay"/>
+                                    <field name="pi_users_winners_to_pay_per_user"/>
                                     <field name="block_points"/>
                                     <field name="pi_users_winners_html"/>
                                     <field name="pi_transactions_ids"/>

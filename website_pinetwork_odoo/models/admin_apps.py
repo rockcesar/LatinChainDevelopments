@@ -149,6 +149,7 @@ class admin_apps(models.Model):
     pi_users_winners_paid_datetime = fields.Datetime(string='Winners paid datetime', default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_html = fields.Html('Winners HTML', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay = fields.Float('Winners To Pay', digits=(50,7), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), compute="_compute_to_pay", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), default=1)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -208,6 +209,16 @@ class admin_apps(models.Model):
     def _compute_pi_users_winners_count(self):
         for i in self:
             i.pi_users_winners_count = len(i.pi_users_winners_ids)
+    
+    pi_users_winners_to_pay_per_user
+    
+    @api.depends("pi_users_winners_to_pay")
+    def _compute_to_pay(self):
+        for i in self:
+            if len(i.pi_users_winners_ids) == 0:
+                i.pi_users_winners_to_pay_per_user = 0
+            else:
+                i.pi_users_winners_to_pay_per_user = i.pi_users_winners_to_pay / len(i.pi_users_winners_ids)
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_pi_winner_text(self):
