@@ -325,7 +325,7 @@
                                 var pi_wallet = $("#pi_wallet_address").val().trim();
                                 if(pi_wallet.length != 56)
                                     alert("Not real wallet address (Wrong wallet address length)");
-                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                else if(pi_user_id != "" &amp;&amp; pi_user_code != "")
                                 {
                                     $("#button_click").prop( "disabled", true );
                                     $("#pi_wallet_address").prop( "disabled", true );
