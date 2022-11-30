@@ -683,7 +683,7 @@
                                 </div>
                                 <div class="col-10">
                                     A normal Pi wallet address looks like this:<br/>
-                                    <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABC</div>
+                                    <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQRSTUVWXYZ...</div>
                                     <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
                                     <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
                                     <br/>
