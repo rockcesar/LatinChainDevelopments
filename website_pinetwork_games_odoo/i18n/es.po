@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-29 15:04+0000\n"
-"PO-Revision-Date: 2022-11-29 15:04+0000\n"
+"POT-Creation-Date: 2022-11-30 00:09+0000\n"
+"PO-Revision-Date: 2022-11-30 00:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -405,10 +405,24 @@ msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span><br/>
 msgstr "<span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<strong>Set your Pi wallet address here and click in Save</strong> (DON'T "
+"SEND YOUR PASSPHRASE):"
+msgstr ""
+"<strong>Coloca tu dirección de Pi wallet aquí y dale click en Guardar</strong> (NO "
+"ENVÍES TU PASSPHRASE):"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header_layout
 msgid "<strong>Translate</strong>"
 msgstr "<strong>Traducir</strong>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "A normal Pi wallet address looks like this:<br/>"
+msgstr "Una dirección de Pi wallet normal luce como esto:<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -548,6 +562,11 @@ msgstr "Primer Turno:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Flip Board"
 msgstr "Intercambia Tablero"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "GAABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -824,16 +843,7 @@ msgstr "Fijar controles"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Set your Pi wallet address"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"Set your Pi wallet address (DON'T YOUR PASSPHRASE):\n"
-"                                    <br/>"
-msgstr ""
-"Envía tu dirección de Pi wallet (NO TU PASSPHRASE):\n"
-"                                    <br/>"
+msgstr "Coloca tu dirección de Pi wallet"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage

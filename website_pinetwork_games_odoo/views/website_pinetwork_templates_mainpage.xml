@@ -679,8 +679,9 @@
                                 <div class="col-1">
                                 </div>
                                 <div class="col-10">
-                                    Set your Pi wallet address (DON'T YOUR PASSPHRASE):
-                                    <br/>
+                                    A normal Pi wallet address looks like this:<br/>
+                                    <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABC</div>
+                                    <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
                                     <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
                                     <br/>
                                     <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
