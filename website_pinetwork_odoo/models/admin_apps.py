@@ -349,7 +349,7 @@ class pi_users(models.Model):
     last_connection = fields.Datetime(string='Last connection', default="")
     days_available = fields.Integer('Days available', store=True, default=0)
     admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners Apps', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', domain="[('id', 'in', admin_apps_winners_ids)]", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
     paid_in_all_donations = fields.Float('Paid by user in donations', compute="_compute_donator", store=True, digits=(50,7))
     
