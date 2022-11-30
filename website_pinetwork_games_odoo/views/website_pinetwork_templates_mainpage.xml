@@ -677,22 +677,37 @@
                         <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />
                         Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. Download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link">App Store</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link">Play Store</a> to watch it working.<br/>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>
-                        <div style="text-align:center" class="form-group container">
-                            <div class="row">
-                                <div class="col-1">
-                                </div>
-                                <div class="col-10">
-                                    A normal Pi wallet address looks like this:<br/>
-                                    <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
-                                    <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
-                                    <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
-                                    <br/>
-                                    <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
-                                </div>
-                                <div class="col-1">
-                                </div>
+                        
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Wallet
+                              </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">
+                                  <div style="text-align:center" class="form-group container">
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col-10">
+                                            A normal Pi wallet address looks like this:<br/>
+                                            <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
+                                            <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
+                                            <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
+                                            <br/>
+                                            <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
+                                        </div>
+                                        <div class="col-1">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
                             </div>
+                          </div>
                         </div>
+                        
                         <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</a>
