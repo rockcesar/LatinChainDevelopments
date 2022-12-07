@@ -102,7 +102,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"3.- You should fill the Pi Wallet address in the Mainscreen on latin-"
+"3.- You should fill your Pi Wallet address in the mainscreen on latin-"
 "chain.com, to receive prizes as winner on Pi Mainnet."
 msgstr ""
 
