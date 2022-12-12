@@ -25,6 +25,12 @@ class Website(Website):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = ""
         else:
             sandbox = admin_app_list[0].sandbox
@@ -33,9 +39,15 @@ class Website(Website):
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
             a_ads_style = admin_app_list[0].a_ads_style
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
     @http.route('/pinetwork', type='http', auth="public", website=True)
@@ -49,6 +61,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -56,8 +74,14 @@ class PiNetworkController(http.Controller):
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
             a_ads_style = admin_app_list[0].a_ads_style
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         
-        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style})
+        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/sudoku', type='http', auth="public", website=True)
     def sudoku(self, **kw):
@@ -70,6 +94,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -77,8 +107,14 @@ class PiNetworkController(http.Controller):
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
             a_ads_style = admin_app_list[0].a_ads_style
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         
-        return http.request.render('website_pinetwork_games_odoo.sudoku', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style})
+        return http.request.render('website_pinetwork_games_odoo.sudoku', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/snake', type='http', auth="public", website=True)
     def snake(self, **kw):
@@ -91,6 +127,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -98,11 +140,20 @@ class PiNetworkController(http.Controller):
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
             a_ads_style = admin_app_list[0].a_ads_style
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         
         return http.request.render('website_pinetwork_games_odoo.snake', {'sandbox': sandbox, 'amount': amount, 
                                                                         'google_adsense': google_adsense, 'a_ads': a_ads, 
                                                                         'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style,
-                                                                        'hide_google_translate': True})
+                                                                        'hide_google_translate': True,
+                                                                        'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 
+                                                                        'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 
+                                                                        'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
         
     @http.route('/chess', type='http', auth="public", website=True)
     def chess(self, **kw):
@@ -115,6 +166,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -122,8 +179,14 @@ class PiNetworkController(http.Controller):
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
             a_ads_style = admin_app_list[0].a_ads_style
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
         
-        return http.request.render('website_pinetwork_games_odoo.chess', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style})
+        return http.request.render('website_pinetwork_games_odoo.chess', {'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
     @http.route('/modal-vote', type='http', auth="public", website=True, csrf=False)
     def modal_vote(self, **kw):

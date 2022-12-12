@@ -26,6 +26,12 @@
                                     <field name="a_ads"/>
                                     <field name="a_ads_data"/>
                                     <field name="a_ads_style"/>
+                                    <field name="a_ads_2"/>
+                                    <field name="a_ads_data_2"/>
+                                    <field name="a_ads_style_2"/>
+                                    <field name="a_ads_3"/>
+                                    <field name="a_ads_data_3"/>
+                                    <field name="a_ads_style_3"/>
                                     <field name="pi_users_winners_datetime" attrs="{'required': [('pi_users_winners_count', '>', 0)]}"/>
                                     <field name="pi_users_winners_count"/>
                                     <field name="pi_users_winners_ids" widget="many2many_tags"/>
