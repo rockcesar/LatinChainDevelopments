@@ -25,12 +25,12 @@ class Website(Website):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
-            a_ads_2 = admin_app_list[0].a_ads_2
-            a_ads_data_2 = admin_app_list[0].a_ads_data_2
-            a_ads_style_2 = admin_app_list[0].a_ads_style_2
-            a_ads_3 = admin_app_list[0].a_ads_3
-            a_ads_data_3 = admin_app_list[0].a_ads_data_3
-            a_ads_style_3 = admin_app_list[0].a_ads_style_3
+            a_ads_2 = ""
+            a_ads_data_2 = ""
+            a_ads_style_2 = ""
+            a_ads_3 = ""
+            a_ads_data_3 = ""
+            a_ads_style_3 = ""
             mainnet = ""
         else:
             sandbox = admin_app_list[0].sandbox
@@ -61,12 +61,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
-            a_ads_2 = admin_app_list[0].a_ads_2
-            a_ads_data_2 = admin_app_list[0].a_ads_data_2
-            a_ads_style_2 = admin_app_list[0].a_ads_style_2
-            a_ads_3 = admin_app_list[0].a_ads_3
-            a_ads_data_3 = admin_app_list[0].a_ads_data_3
-            a_ads_style_3 = admin_app_list[0].a_ads_style_3
+            a_ads_2 = ""
+            a_ads_data_2 = ""
+            a_ads_style_2 = ""
+            a_ads_3 = ""
+            a_ads_data_3 = ""
+            a_ads_style_3 = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -94,12 +94,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
-            a_ads_2 = admin_app_list[0].a_ads_2
-            a_ads_data_2 = admin_app_list[0].a_ads_data_2
-            a_ads_style_2 = admin_app_list[0].a_ads_style_2
-            a_ads_3 = admin_app_list[0].a_ads_3
-            a_ads_data_3 = admin_app_list[0].a_ads_data_3
-            a_ads_style_3 = admin_app_list[0].a_ads_style_3
+            a_ads_2 = ""
+            a_ads_data_2 = ""
+            a_ads_style_2 = ""
+            a_ads_3 = ""
+            a_ads_data_3 = ""
+            a_ads_style_3 = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -127,12 +127,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
-            a_ads_2 = admin_app_list[0].a_ads_2
-            a_ads_data_2 = admin_app_list[0].a_ads_data_2
-            a_ads_style_2 = admin_app_list[0].a_ads_style_2
-            a_ads_3 = admin_app_list[0].a_ads_3
-            a_ads_data_3 = admin_app_list[0].a_ads_data_3
-            a_ads_style_3 = admin_app_list[0].a_ads_style_3
+            a_ads_2 = ""
+            a_ads_data_2 = ""
+            a_ads_style_2 = ""
+            a_ads_3 = ""
+            a_ads_data_3 = ""
+            a_ads_style_3 = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -166,12 +166,12 @@ class PiNetworkController(http.Controller):
             a_ads = ""
             a_ads_data = ""
             a_ads_style = ""
-            a_ads_2 = admin_app_list[0].a_ads_2
-            a_ads_data_2 = admin_app_list[0].a_ads_data_2
-            a_ads_style_2 = admin_app_list[0].a_ads_style_2
-            a_ads_3 = admin_app_list[0].a_ads_3
-            a_ads_data_3 = admin_app_list[0].a_ads_data_3
-            a_ads_style_3 = admin_app_list[0].a_ads_style_3
+            a_ads_2 = ""
+            a_ads_data_2 = ""
+            a_ads_style_2 = ""
+            a_ads_3 = ""
+            a_ads_data_3 = ""
+            a_ads_style_3 = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
