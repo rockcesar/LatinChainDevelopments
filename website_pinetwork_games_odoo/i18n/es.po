@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-07 21:22+0000\n"
-"PO-Revision-Date: 2022-12-07 21:22+0000\n"
+"POT-Creation-Date: 2022-12-12 16:24+0000\n"
+"PO-Revision-Date: 2022-12-12 16:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -115,8 +115,8 @@ msgid ""
 "3.- You should fill your Pi Wallet address in the mainscreen on latin-"
 "chain.com, to receive prizes as winner on Pi Mainnet."
 msgstr ""
-"3.- Debes rellenar tu dirección de Pi Wallet en la página principal de latin-"
-"chain.com, para recibir premios como ganador en la Pi Mainnet."
+"3.- Debes rellenar tu dirección de Pi Wallet en la página principal de "
+"latin-chain.com, para recibir premios como ganador en la Pi Mainnet."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -142,11 +142,11 @@ msgstr ""
 msgid ""
 "<br/>\n"
 "                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
-"                                    <br/>Crypto news:<br/><br/>"
+"                                    <br/>"
 msgstr ""
 "<br/>\n"
 "                                    <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
-"                                    <br/>Noticias cripto:<br/><br/>"
+"                                    <br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -188,6 +188,7 @@ msgstr "<br/>Escoge tu app:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "<br/>Crypto news:<br/><br/>"
 msgstr "<br/>Noticias cripto:<br/><br/>"
 
