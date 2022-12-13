@@ -115,7 +115,9 @@
                              data-ad-format="auto"
                              data-full-width-responsive="true"></ins>
                         <script>
+                            $( document ).ready(function() {
                              (adsbygoogle = window.adsbygoogle || []).push({});
+                            });
                         </script>
                         <div style='overflow: auto; width:100%;'>
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="30000">

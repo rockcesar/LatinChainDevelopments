@@ -629,7 +629,9 @@
                              data-ad-format="auto"
                              data-full-width-responsive="true"></ins>
                         <script>
+                            $( document ).ready(function() {
                              (adsbygoogle = window.adsbygoogle || []).push({});
+                            });
                         </script>
                         <div style='overflow: auto; width:100%;'>
                             <div id="myCarouselPublicity"  class="s_carousel s_carousel_default carousel slide" data-interval="30000" data-ride="carousel">
