@@ -622,13 +622,12 @@
                         <!--<strong>Publicity:</strong>-->
                         <br/>
                         <div style='overflow: auto; width:100%;'>
-                            <!-- LatinChain Ad responsive -->
                             <ins class="adsbygoogle"
                                  style="display:block"
+                                 data-ad-format="fluid"
+                                 data-ad-layout-key="-7f+ed+2o-1d-6b"
                                  data-ad-client="ca-pub-2334449220276386"
-                                 data-ad-slot="6625994850"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
+                                 data-ad-slot="6266902206"></ins>
                             <script>
                                  (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
