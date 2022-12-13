@@ -62,8 +62,6 @@
                                     <!--<strong>Publicity:</strong>-->
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
-                                        <script async="true" t-att-src="google_adsense"
-                                             crossorigin="anonymous"></script>
                                         <!-- LatinChain Ad responsive -->
                                         <ins class="adsbygoogle"
                                              style="display:block"
