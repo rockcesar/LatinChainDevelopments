@@ -533,3 +533,14 @@ class PiNetworkBaseController(http.Controller):
 
         #"9ab0680599b4a0d44a5c46a500ef78ba0753c8772401d6df13e5a1158f293cd603c4a257723d964e300759deb38470fa1bd000018823d156bfc618f88bba81b5"
         return validation_key
+        
+    @http.route('/ads.txt', type='http', auth="public", website=True, csrf=False)
+    def google_adsense_txt(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            google_adsense_ads_txt = ""
+        else:
+            google_adsense_ads_txt = admin_app_list[0].google_adsense_ads_txt
+
+        return google_adsense_ads_txt
