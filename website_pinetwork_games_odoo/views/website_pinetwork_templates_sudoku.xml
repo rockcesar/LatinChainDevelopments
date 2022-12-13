@@ -192,7 +192,7 @@
                                     <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                                     <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
                                     <br />
-                                    <script async t-att-src="google_adsense"
+                                    <script async="true" t-att-src="google_adsense"
                                          crossorigin="anonymous"></script>
                                     <ins class="adsbygoogle"
                                          style="display:block"

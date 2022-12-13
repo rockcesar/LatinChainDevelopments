@@ -714,7 +714,7 @@
                             </div>
                           </div>
                         </div>
-                        <script async t-att-src="google_adsense"
+                        <script async="true" t-att-src="google_adsense"
                              crossorigin="anonymous"></script>
                         <ins class="adsbygoogle"
                              style="display:block"

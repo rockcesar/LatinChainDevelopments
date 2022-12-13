@@ -123,7 +123,7 @@
                                     
                                     <h2 align="center" style="color:#000000">Play Chess Against the best AI Chess Player (Stockfish)</h2>
                                     <br />
-                                    <script async t-att-src="google_adsense"
+                                    <script async="true" t-att-src="google_adsense"
                                          crossorigin="anonymous"></script>
                                     <ins class="adsbygoogle"
                                          style="display:block"

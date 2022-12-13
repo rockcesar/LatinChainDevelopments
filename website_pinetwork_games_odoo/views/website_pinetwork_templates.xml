@@ -163,7 +163,7 @@
                             <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
                             <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>-->
                         </div>
-                        <script async t-att-src="google_adsense"
+                        <script async="true" t-att-src="google_adsense"
                              crossorigin="anonymous"></script>
                         <ins class="adsbygoogle"
                              style="display:block"
