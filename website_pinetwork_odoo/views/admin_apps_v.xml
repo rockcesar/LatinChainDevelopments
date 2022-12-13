@@ -23,6 +23,7 @@
                                     <field name="mainnet"/>
                                     <field name="amount"/>
                                     <field name="google_adsense"/>
+                                    <field name="google_adsense_ads_txt"/>
                                     <field name="a_ads"/>
                                     <field name="a_ads_data"/>
                                     <field name="a_ads_style"/>
