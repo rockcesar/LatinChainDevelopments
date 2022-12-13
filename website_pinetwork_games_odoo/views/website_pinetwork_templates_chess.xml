@@ -75,6 +75,17 @@
                                             <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 290px; max-height: 290px'"/>
                                             <div class="carousel-item active" t-att-style="background">
                                                 <div align="center" style="text-align:center">
+                                                    <script async="true" t-att-src="google_adsense"
+                                                         crossorigin="anonymous"></script>
+                                                    <ins class="adsbygoogle"
+                                                         style="display:block"
+                                                         data-ad-format="fluid"
+                                                         data-ad-layout-key="-gc+4r+1p-d0+h0"
+                                                         data-ad-client="ca-pub-2334449220276386"
+                                                         data-ad-slot="6758976353"></ins>
+                                                    <script>
+                                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script>
                                                     <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
                                                 </div>
                                             </div>
@@ -123,17 +134,6 @@
                                     
                                     <h2 align="center" style="color:#000000">Play Chess Against the best AI Chess Player (Stockfish)</h2>
                                     <br />
-                                    <script async="true" t-att-src="google_adsense"
-                                         crossorigin="anonymous"></script>
-                                    <ins class="adsbygoogle"
-                                         style="display:block"
-                                         data-ad-format="fluid"
-                                         data-ad-layout-key="-gc+4r+1p-d0+h0"
-                                         data-ad-client="ca-pub-2334449220276386"
-                                         data-ad-slot="6758976353"></ins>
-                                    <script>
-                                         (adsbygoogle = window.adsbygoogle || []).push({});
-                                    </script><br/>
                                     <iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>
                                     <br />
                                     <div style="text-align:center" class="form-group container">

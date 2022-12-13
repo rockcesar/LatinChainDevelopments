@@ -121,6 +121,17 @@
                                 <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 290px; max-height: 290px'"/>
                                 <div class="carousel-item active" t-att-style="background">
                                     <div align="center" style="text-align:center">
+                                        <script async="true" t-att-src="google_adsense"
+                                             crossorigin="anonymous"></script>
+                                        <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-format="fluid"
+                                             data-ad-layout-key="-gc+4r+1p-d0+h0"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="6758976353"></ins>
+                                        <script>
+                                             (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
                                         <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
                                     </div>
                                 </div>
@@ -163,17 +174,7 @@
                             <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
                             <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>-->
                         </div>
-                        <script async="true" t-att-src="google_adsense"
-                             crossorigin="anonymous"></script>
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-format="fluid"
-                             data-ad-layout-key="-gc+4r+1p-d0+h0"
-                             data-ad-client="ca-pub-2334449220276386"
-                             data-ad-slot="6758976353"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script><br/>
+                        
                         <iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>
                         <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                         <br/><input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" lang="en-US"/>
