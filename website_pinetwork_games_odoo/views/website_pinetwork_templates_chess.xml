@@ -62,6 +62,17 @@
                                     <!--<strong>Publicity:</strong>-->
                                     <br/>
                                     <div style='overflow: auto; width:100%;'>
+                                        <script async="true" t-att-src="google_adsense"
+                                             crossorigin="anonymous"></script>
+                                        <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-format="fluid"
+                                             data-ad-layout-key="-gc+4r+1p-d0+h0"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="6758976353"></ins>
+                                        <script>
+                                             (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="30000">
                                           <div class="carousel-indicators">
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -75,17 +86,6 @@
                                             <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 290px; max-height: 290px'"/>
                                             <div class="carousel-item active" t-att-style="background">
                                                 <div align="center" style="text-align:center">
-                                                    <script async="true" t-att-src="google_adsense"
-                                                         crossorigin="anonymous"></script>
-                                                    <ins class="adsbygoogle"
-                                                         style="display:block"
-                                                         data-ad-format="fluid"
-                                                         data-ad-layout-key="-gc+4r+1p-d0+h0"
-                                                         data-ad-client="ca-pub-2334449220276386"
-                                                         data-ad-slot="6758976353"></ins>
-                                                    <script>
-                                                         (adsbygoogle = window.adsbygoogle || []).push({});
-                                                    </script>
                                                     <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
                                                 </div>
                                             </div>
