@@ -191,12 +191,7 @@
                              data-ad-layout-key="-gc+4r+1p-d0+h0"
                              data-ad-client="ca-pub-2334449220276386"
                              data-ad-slot="6758976353"></ins>-->
-                        
-                        <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-format="autorelaxed"
-                                 data-ad-client="ca-pub-2334449220276386"
-                                 data-ad-slot="1794208680"></ins>
+                             
                         <!--<br/><br/>
                         <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
                         <br/><br/>
@@ -204,10 +199,17 @@
                         <br />
                         <br />
                         <span id="loading_word" style="display: none;">Loading...</span>
+                        <br/>
+                        <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-format="autorelaxed"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="1794208680"></ins>
                         <br/><br/>Crypto news:<br/><br/>
                         <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                         <br/><br/>Enjoy:<br/><br/>
                         <iframe id="tiesto" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                        
                     </div>
 
                 </body>
