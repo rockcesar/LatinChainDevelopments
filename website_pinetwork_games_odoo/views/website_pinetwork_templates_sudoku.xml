@@ -214,12 +214,18 @@
                                     <br/>
                                     <span id="loading_word" style="display: none;">Loading...</span>
                                     <br/>
-                                    <ins class="adsbygoogle"
+                                    <!--<ins class="adsbygoogle"
                                          style="display:block"
                                          data-ad-format="fluid"
                                          data-ad-layout-key="-gc+4r+1p-d0+h0"
                                          data-ad-client="ca-pub-2334449220276386"
-                                         data-ad-slot="6758976353"></ins>
+                                         data-ad-slot="6758976353"></ins>-->
+                                    
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-format="autorelaxed"
+                                         data-ad-client="ca-pub-2334449220276386"
+                                         data-ad-slot="1794208680"></ins>
                                     <!--<br/>
                                     <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
                                     <br/>Crypto news:<br/><br/>
