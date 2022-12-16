@@ -76,6 +76,7 @@ function get_user() {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     $('#chess-tab').show();
+                    load_all_boards();
                     $("#counter_span").html("(5)");
                     setTimeout(function() {
                         $("#counter_span").html("(4)");
@@ -88,7 +89,6 @@ function get_user() {
                                     setTimeout(function() {
                                         $("#counter_span").html("");
                                         $('#chess-tab').click();
-                                        load_all_boards();
                                     }, 1000);
                                 }, 1000);
                             }, 1000);
