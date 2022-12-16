@@ -325,6 +325,8 @@
                         var all_was_loaded = false;
                         var all_was_loaded_lib = false;
                         $( document ).ready(function() {
+                            $('#chess-tab').show();
+                            
                             
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
