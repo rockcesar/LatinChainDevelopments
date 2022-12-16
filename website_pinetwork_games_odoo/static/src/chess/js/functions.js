@@ -76,21 +76,21 @@ function get_user() {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     $('#chess-tab').show();
-                    $("#number_span").html("(5)");
+                    $("#counter_span").html("(5)");
                     setTimeout(function() {
-                        $("#number_span").html("(4)");
+                        $("#counter_span").html("(4)");
                     }, 1000);
                     setTimeout(function() {
-                        $("#number_span").html("(3)");
+                        $("#counter_span").html("(3)");
                     }, 1000);
                     setTimeout(function() {
-                        $("#number_span").html("(2)");
+                        $("#counter_span").html("(2)");
                     }, 1000);
                     setTimeout(function() {
-                        $("#number_span").html("(1)");
+                        $("#counter_span").html("(1)");
                     }, 1000);
                     setTimeout(function() {
-                        $("#number_span").html("");
+                        $("#counter_span").html("");
                     }, 1000);
                     $('#chess-tab').click();
                     
