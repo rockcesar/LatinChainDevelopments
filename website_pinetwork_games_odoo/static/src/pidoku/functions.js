@@ -51,7 +51,23 @@ function get_user() {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     $("#sudoku-tab").show();
-                    $("#sudoku-tab").click();
+                    $("#counter_span").html("(5)");
+                    setTimeout(function() {
+                        $("#counter_span").html("(4)");
+                        setTimeout(function() {
+                            $("#counter_span").html("(3)");
+                            setTimeout(function() {
+                                $("#counter_span").html("(2)");
+                                setTimeout(function() {
+                                    $("#counter_span").html("(1)");
+                                    setTimeout(function() {
+                                        $("#counter_span").html("");
+                                        $("#sudoku-tab").click();
+                                    }, 1000);
+                                }, 1000);
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
                 }
                 else
                 {
