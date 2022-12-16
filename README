@@ -10,13 +10,13 @@ https://minepi.com/blog/hackathon-winners-announcement
 To use these sources codes in Pi Sandbox (https://developers.minepi.com/), put it in the root of HTTP Server: /var/www/html.
 In the HTTP Server, where you put these codes, you can use domains or subdomains.
 
-sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License)
+sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2021)
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License)
+snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3)
+chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021)
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 piapp-example (AGPLv3) is a test and example of how to use Pi Apps API in a Webpage.
