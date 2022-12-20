@@ -546,6 +546,6 @@ class PiNetworkBaseController(http.Controller):
         return google_adsense_ads_txt
 
     @http.route('/c31e6c84fe776276bd8ee62aa064f70c.txt', type='http', auth="public", website=True, csrf=False)
-    def google_adsense_txt(self, **kw):
+    def coinzilla_txt(self, **kw):
 
         return "c31e6c84fe776276bd8ee62aa064f70c"
