@@ -164,8 +164,8 @@
                                             'width' : 300,
                                             'params' : {}
                                         };
-                                        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplayformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></scr' + 'ipt>');
                                     </script>
+                                    <script type="text/javascript" src="https://www.profitabledisplayformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
                                     <br/>
                                     <ins class="adsbygoogle"
                                          style="display:block"
