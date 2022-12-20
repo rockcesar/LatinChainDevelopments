@@ -221,6 +221,8 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
+                    <meta name="coinzilla" content="c31e6c84fe776276bd8ee62aa064f70c" />
 
                     <script type="text/javascript">
                         var pi_user_id = "";
