@@ -856,17 +856,6 @@
                         <div id="social_div">Share in Social Networks:<br/><br/>
                         <button id="button1" class="btn btn-primary">Share</button><br/><br/>
                         
-                        <script type="text/javascript">
-                            atOptions = {
-                                'key' : 'b3626277f6615b27c340298a132b7897',
-                                'format' : 'iframe',
-                                'height' : 250,
-                                'width' : 300,
-                                'params' : {}
-                            };
-                        </script>
-                        <script type="text/javascript" src="https://www.profitabledisplayformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
-                        <br/>
                         <ins class="adsbygoogle"
                                  style="display:block"
                                  data-ad-format="autorelaxed"
