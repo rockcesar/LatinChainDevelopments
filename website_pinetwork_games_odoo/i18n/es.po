@@ -169,8 +169,7 @@ msgstr "<br/><br/>Disfrute:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/><span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
 msgstr ""
-"<br/><span id=\"loading_word\" style=\"display: "
-"none;\">Cargando...<br/></span>"
+"<br/><span id=\"loading_word\" style=\"display: none;\">Cargando...<br/></span>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
