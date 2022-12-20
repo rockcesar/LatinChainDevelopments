@@ -161,7 +161,7 @@ msgstr ""
 "                        <br/>\n"
 "                        <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
 "                        <br/>\n"
-"                        <ins class=\"adsbygoogle\" style=\"display:block\" data-ad-format=\"autorelaxed\" data-ad-client=\"ca-pub-2334449220276386\" data-ad-slot=\"1794208680\"/>\n"
+"                        <ins class=\"adsbygoogle\" style=\"display:block\" data-ad-format=\"autorelaxed\" data-ad-client=\"ca-pub-2334449220276386\" data-ad-slot=\"1794208680\"/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
