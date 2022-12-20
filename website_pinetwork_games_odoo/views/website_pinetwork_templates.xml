@@ -200,8 +200,6 @@
                         <br />
                         <span id="loading_word" style="display: none;">Loading...</span>
                         <br/>
-                        <script async="true" src="https://appsha-prm.ctengine.io/js/script.js?wkey=YoPE5ukNuL"></script>
-                        <br/>
                         <ins class="adsbygoogle"
                                  style="display:block"
                                  data-ad-format="autorelaxed"
