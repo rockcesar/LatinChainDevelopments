@@ -57,8 +57,8 @@
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             $("#a-ads").prop('src', $("#a_ads_val").val());
-                            /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
-                            $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
+                            $("#a-ads_2").prop('src', $("#a_ads_val_2").val());
+                            /*$("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
                             //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS');
                         
@@ -119,8 +119,8 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="amount" t-att-value="amount"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
-                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
-                    <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
+                    <input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
+                    <!--<input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div id="loading" class="container-narrow">
                         <p>
                             <img src="/website_pinetwork_games_odoo/static/src/pidoku/assets/img/pacman.gif"/> Loading...
@@ -198,10 +198,10 @@
                                         <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
                                         <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>-->
                                     </div>
+                                    <iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>
                                     <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" />
                                     <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
-                                    <!--<br />
-                                    <iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
+                                    
                                     <br />
                                     <button id="clear_cache" class="btn btn-info">Clear Cache</button>
                                     <br /><br />
