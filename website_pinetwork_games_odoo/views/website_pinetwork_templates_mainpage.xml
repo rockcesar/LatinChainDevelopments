@@ -236,7 +236,7 @@
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
-                    <script async src="https://appsha-pnd.ctengine.io/js/script.js?wkey=YoPE5ukNuL"></script> 
+                    <script async="true" src="https://appsha-pnd.ctengine.io/js/script.js?wkey=YoPE5ukNuL"></script>
 
                     <script type="text/javascript">
                         var pi_user_id = "";
