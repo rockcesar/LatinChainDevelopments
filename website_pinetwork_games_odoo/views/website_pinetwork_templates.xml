@@ -44,8 +44,8 @@
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             $("#a-ads").prop('src', $("#a_ads_val").val());
-                            $("#a-ads_2").prop('src', $("#a_ads_val_2").val());
-                            /*$("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
+                            /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
+                            $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
                             //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS');
                         

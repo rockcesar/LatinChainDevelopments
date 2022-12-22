@@ -326,8 +326,8 @@
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             $("#a-ads").prop('src', $("#a_ads_val").val());
-                            $("#a-ads_2").prop('src', $("#a_ads_val_2").val());
-                            /*$("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
+                            /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
+                            $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
                             $("#latin-chain").prop('src', 'https://www.youtube.com/embed/9KqcyAoCZzo');
                             //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS');
@@ -515,8 +515,8 @@
                     
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
-                    <input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
-                    <!--<input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
+                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
+                    <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div id="wrap">
                         <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
                           <div id="myCarousel1647794696348" class="s_carousel s_carousel_default carousel slide" data-interval="10000" data-ride="carousel">
@@ -700,7 +700,7 @@
                             <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
                             <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>-->
                         </div>
-                        <iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>
+                        <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />
                         Hi<strong><span id="username"></span></strong><span id="verified"></span>. Welcome to Pi Network Games from Latin America. Download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link">App Store</a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link">Play Store</a> to watch it working.<br/>
