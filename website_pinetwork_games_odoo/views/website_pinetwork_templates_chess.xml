@@ -38,6 +38,8 @@
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
+                    <script async src="https://appsha-pnd.ctengine.io/js/script.js?wkey=YoPE5ukNuL"></script> 
 
                 </head>
 

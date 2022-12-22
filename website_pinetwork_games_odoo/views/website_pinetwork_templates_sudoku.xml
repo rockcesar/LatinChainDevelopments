@@ -41,6 +41,8 @@
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
+                    <script async src="https://appsha-pnd.ctengine.io/js/script.js?wkey=YoPE5ukNuL"></script> 
 
                     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                     <!--[if lt IE 9]>
