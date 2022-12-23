@@ -38,8 +38,6 @@
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    
-                    <script type="text/javascript" src="https://app.web3ads.net/main.js" async="true"></script>
 
                 </head>
 
@@ -126,7 +124,6 @@
                                         <a target="_blank" href="https://wallet.gooddollar.org/?inviteCode=4VUQ8X7FGe"><img src="/website_pinetwork_games_odoo/static/src/img/gooddollar_970X250.jpg" t-att-style='a_ads_style'/></a><br/>
                                         <a target="_blank" href="https://myubi.global/wallet"><img src="/website_pinetwork_games_odoo/static/src/img/myubi_400x100.png" t-att-style='a_ads_style'/></a>-->
                                     </div>
-                                    <div class="_0cbf1c3d417e250a" data-placement="78e1ff4713c54cc3b92077bd1bf51690" style="width:300px;height:250px;display: inline-block;margin: 0 auto"></div>
                                     <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                                     <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
                                     <img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/chess/img/icons/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
