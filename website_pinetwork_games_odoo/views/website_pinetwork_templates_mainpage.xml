@@ -325,8 +325,8 @@
                         
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            $("#a-ads").prop('src', $("#a_ads_val").val());
-                            /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
+                            /*$("#a-ads").prop('src', $("#a_ads_val").val());
+                            $("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
                             $("#latin-chain").prop('src', 'https://www.youtube.com/embed/9KqcyAoCZzo');
                             //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
@@ -514,8 +514,8 @@
                     
                     
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
-                    <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
-                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
+                    <!--<input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
+                    <input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div id="wrap">
                         <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
@@ -658,7 +658,17 @@
                                   <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 290px; max-height: 290px'"/>
                                   <div class="carousel-item active" t-att-style="background" data-name="Slide">
                                     <div align="center" style="text-align:center">
-                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
+                                        <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
+                                        <script type="text/javascript">
+                                            atOptions = {
+                                                'key' : 'b3626277f6615b27c340298a132b7897',
+                                                'format' : 'iframe',
+                                                'height' : 250,
+                                                'width' : 300,
+                                                'params' : {}
+                                            };
+                                        </script>
+                                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
                                     </div>
                                   </div>
                                   <!--<div class="carousel-item" t-att-style="background" data-name="Slide">
