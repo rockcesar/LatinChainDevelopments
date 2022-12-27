@@ -124,7 +124,7 @@ $( document ).ready(function() {
                                 }, 10000);*/
                                 transfer();
                             }else{
-                                alert("You can't pay less than " + $("#amount").val() + " Pi, non more than " + (parseFloat($("#amount").val())*10) + " Pi.");
+                                alert("You only can pay from " + $("#amount").val() + " Pi to " + (parseFloat($("#amount").val())*10) + " Pi.");
                             }
                         });
                         $("#button_click").prop( "disabled", false );
