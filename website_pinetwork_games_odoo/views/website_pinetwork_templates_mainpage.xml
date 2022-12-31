@@ -821,7 +821,7 @@
                                 <br/>
                                 <div class="row">
                                     <div class="col-6"><a href="/snake" class="btn btn-primary"><i class="fa fa-gamepad"></i> SNAKE</a></div>
-                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><i class="far fa-handshake-o"></i> DONATE</a></div>
+                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><i class="fa fa-handshake-o"></i> DONATE</a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
