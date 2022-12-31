@@ -750,7 +750,7 @@
                             <div class="card-header" id="headingOne">
                               <h5 class="mb-0">
                                 <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  Wallet
+                                  <i class="fa fa-wallet-o"></i> Wallet
                                 </button>
                               </h5>
                             </div>
@@ -821,7 +821,7 @@
                                 <br/>
                                 <div class="row">
                                     <div class="col-6"><a href="/snake" class="btn btn-primary"><i class="fa fa-gamepad"></i> SNAKE</a></div>
-                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary">DONATE</a></div>
+                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><i class="fa fa-handshake"></i> DONATE</a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
