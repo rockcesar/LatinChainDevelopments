@@ -541,7 +541,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <button id="cryptonews" class="btn btn-primary mb-2 o_default_snippet_text cryptonews"><i class="fa fa-newspaper"></i> Crypto News</button>
+                                          <button id="cryptonews" class="btn btn-primary mb-2 o_default_snippet_text cryptonews"><i class="fa fa-newspaper-o"></i> Crypto News</button>
                                       </h2>
                                       <br/>
                                     </div>
@@ -815,17 +815,17 @@
                             
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-6"><a href="/chess" class="btn btn-success">CHESS</a></div>
-                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary">SUDOKU</a></div>
+                                    <div class="col-6"><a href="/chess" class="btn btn-success"><i class="fa fa-gamepad"></i> CHESS</a></div>
+                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary"><i class="fa fa-gamepad"></i> SUDOKU</a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/snake" class="btn btn-primary">SNAKE</a></div>
+                                    <div class="col-6"><a href="/snake" class="btn btn-primary"><i class="fa fa-gamepad"></i> SNAKE</a></div>
                                     <div class="col-6"><a href="/pinetwork" class="btn btn-primary">DONATE</a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-12"><button id="cryptonews_2" class="btn btn-primary cryptonews">CRYPTO NEWS</button></div>
+                                    <div class="col-12"><button id="cryptonews_2" class="btn btn-primary cryptonews"><i class="fa fa-newspaper-o"></i> CRYPTO NEWS</button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
