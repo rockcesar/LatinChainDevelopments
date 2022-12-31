@@ -532,6 +532,7 @@
                               <li data-target="#myCarousel1647794696348" data-slide-to="4"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="5"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="6"/>
+                              <li data-target="#myCarousel1647794696348" data-slide-to="7"/>
                             </ol>
                             <div class="carousel-inner">
                               <t t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
