@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-23 11:02+0000\n"
-"PO-Revision-Date: 2022-12-23 11:02+0000\n"
+"POT-Creation-Date: 2022-12-31 15:07+0000\n"
+"PO-Revision-Date: 2022-12-31 15:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -189,6 +189,41 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Video presentation:<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-gamepad\"/> CHESS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-gamepad\"/> SNAKE"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-gamepad\"/> SUDOKU"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-handshake-o\"/> DONATE"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-money\"/> Wallet"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-newspaper-o\"/> CRYPTO NEWS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<i class=\"fa fa-newspaper-o\"/> Crypto News"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -412,11 +447,6 @@ msgid "Black"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "CHESS"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Chess<span id=\"counter_span\"/>"
 msgstr ""
@@ -458,11 +488,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Credits"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "DONATE"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -765,16 +790,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "SNAKE"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "SUDOKU"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Save"
 msgstr ""
 
@@ -907,11 +922,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Video"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Wallet"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
