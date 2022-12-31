@@ -540,7 +540,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <button id="cryptonews" class="btn btn-primary"><i class="fa-duotone fa-newspaper"></i> Crypto News</button>
+                                          <button id="cryptonews" class="btn btn-primary"><i class="fa fa-newspaper"></i> Crypto News</button>
                                       </h2>
                                       <br/>
                                     </div>
