@@ -824,6 +824,10 @@
                                 </div>
                                 <br/>
                                 <div class="row">
+                                    <div class="col-12"><button id="cryptonews" class="btn btn-primary">CRYPTO NEWS</button></div>
+                                </div>
+                                <br/>
+                                <div class="row">
                                     <div class="col-12"><button id="clear_cache" class="btn btn-info">Clear Cache</button></div>
                                 </div>
                             </div>
