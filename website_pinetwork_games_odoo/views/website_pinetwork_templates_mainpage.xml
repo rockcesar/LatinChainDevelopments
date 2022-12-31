@@ -489,7 +489,7 @@
                                 $.colorbox({href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
-                            $( "#cryptonews" ).click(function() {
+                            $( "#cryptonews #cryptonews_2" ).click(function() {
                                 $.colorbox({href:"https://news.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
@@ -824,7 +824,7 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-12"><button id="cryptonews" class="btn btn-primary">CRYPTO NEWS</button></div>
+                                    <div class="col-12"><button id="cryptonews_2" class="btn btn-primary">CRYPTO NEWS</button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
