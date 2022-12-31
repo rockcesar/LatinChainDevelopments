@@ -540,6 +540,18 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
+                                          <button id="cryptonews" class="btn btn-primary"><i class="fa-duotone fa-newspaper"></i> Crypto News</button>
+                                      </h2>
+                                      <br/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" t-att-style="background" data-name="Slide">
+                                <div class="container">
+                                  <div class="row content">
+                                    <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                      <h2 style="font-size: 30px;" class="o_default_snippet_text">
                                           <a href="https://youtube.com/c/CesarOpenSourceExpert" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><i class="fa fa-youtube"></i> Subscribe Youtube Channel</a>
                                       </h2>
                                       <br/>
@@ -809,10 +821,6 @@
                                 <div class="row">
                                     <div class="col-6"><a href="/snake" class="btn btn-primary">SNAKE</a></div>
                                     <div class="col-6"><a href="/pinetwork" class="btn btn-primary">DONATE</a></div>
-                                </div>
-                                <br/>
-                                <div class="row">
-                                    <div class="col-12"><button id="cryptonews" class="btn btn-primary">CRYPTO NEWS</button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
