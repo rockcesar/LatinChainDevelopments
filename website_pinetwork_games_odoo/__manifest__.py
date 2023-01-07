@@ -26,7 +26,7 @@
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
-    "license": "AGPL-3",
+    "license": "PiOS License",
     'description': """
 Pi Hackathon winners: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
 
