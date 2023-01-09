@@ -21,7 +21,7 @@ snake (MIT License) is the Super Snake. It's a modification of https://github.co
 chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021)
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-piapp-example (AGPLv3) is a test and example of how to use Pi Apps API in a Webpage.
+piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
 # Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 website_pinetwork_odoo (PiOS License) is a Pi Network First App for Odoo.
