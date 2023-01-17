@@ -1,3 +1,6 @@
+LatinChain Platform
+-----------------
+
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
 Original Repository: https://github.com/rockcesar/PiNetworkDevelopments
@@ -12,23 +15,26 @@ https://minepi.com/blog/hackathon-winners-announcement
 To use these sources codes in Pi Sandbox (https://developers.minepi.com/), put it in the root of HTTP Server: /var/www/html.
 In the HTTP Server, where you put these codes, you can use domains or subdomains.
 
+Apps
+-----------------
+
 sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2021)
-# Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
+#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
-# Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
+#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021)
-# Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
+#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
-# Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
+#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 website_pinetwork_odoo (PiOS License) is a Pi Network First App for Odoo.
-# Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
+#Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 website_pinetwork_games_odoo (PiOS License) is a Pi Network Games Engine and Platform for Odoo.
-# Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
+#Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 server1.php is a server side example for PiApps (PiOS License).
 
