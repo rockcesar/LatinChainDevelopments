@@ -40,8 +40,10 @@ server1.php is a server side example for PiApps (PiOS License).
 
 In client, for using Sandbox you must set, sandox: true, in Pi.init().
 
-  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+```javascript
+  <script src="https://sdk.minepi.com/pi-sdk.js" ></script>
   <script>Pi.init({ version: "2.0", sandbox: true })</script>
+```
 
 Apps published:
 
