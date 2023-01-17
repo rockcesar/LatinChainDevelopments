@@ -42,7 +42,7 @@ In client, for using Sandbox you must set, sandox: true, in Pi.init().
 
 ```javascript
   <script src="https://sdk.minepi.com/pi-sdk.js" ></script>
-  <script>Pi.init({ version: "2.0", sandbox: true })</script>
+  <script> Pi.init({ version: "2.0", sandbox: true }) </script>
 ```
 
 Apps published:
