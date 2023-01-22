@@ -231,13 +231,13 @@ class PiNetwork:
         return True
 
 # DO NOT expose these values to public
-api_key = "lpnivsrqr9wzhmssnvfwbionfbyjv6xyvcmfqh1zjg6cd6eyzapqqzabfsdvfcra"
-wallet_private_seed = "SAPPLU4T6L3NQAXA52LQMIJPULLRN6XY22ZLID6GAYDMTLDLR56H2UZ5" # starts with S
+api_key = ""
+wallet_private_seed = "" # starts with S
 
 pi = PiNetwork()
 pi.initialize(api_key, wallet_private_seed, "Pi Testnet")
 
-user_uid = "38633a57-2388-49e0-a000-e325ef03c451"
+user_uid = ""
 payment_data = {
   "amount": 1,
   "memo": "From app to user test",
@@ -255,13 +255,13 @@ for i in incomplete_payments:
         txid = pi.submit_payment(i["identifier"], i)
         print(str(txid))
         pi.complete_payment(i["identifier"], txid)
-    else:
-        print("txid " + i["transaction"]["txid"])
-        pi.complete_payment(i["identifier"], i["transaction"]["txid"])
+    #else:
+    #    print("txid " + i["transaction"]["txid"])
+    #    pi.complete_payment(i["identifier"], i["transaction"]["txid"])
 
-#payment_id = pi.create_payment(payment_data)
+payment_id = pi.create_payment(payment_data)
 
-#txid = pi.submit_payment(payment_id, False)
+txid = pi.submit_payment(payment_id, False)
 #txid = pi.submit_payment("jGCjzZqgg78B6Pf1wzYHFSBTqNIv")
 
-#payment = pi.complete_payment(payment_id, txid)
+payment = pi.complete_payment(payment_id, txid)
