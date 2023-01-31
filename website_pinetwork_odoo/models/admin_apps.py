@@ -214,7 +214,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=1200))]
+            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(seconds=43200))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
@@ -222,7 +222,7 @@ class admin_apps(models.Model):
             for t in transactions_ids:
                 i.pi_users_winners_to_pay += t.amount
                 
-            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=1200))]
+            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(seconds=43200))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
