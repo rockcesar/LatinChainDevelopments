@@ -48,9 +48,9 @@ class PiNetwork:
             balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
             balance_found = False
             for i in balances:
-                if i.asset_type == "native":
+                if i["asset_type"] == "native":
                     balance_found = True
-                    if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(self.server.accounts().account_id(self.keypair.public_key).call()["balances"][0]["balance"]):
+                    if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
                         return ""
                     break
                     
@@ -84,9 +84,9 @@ class PiNetwork:
         balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
         balance_found = False
         for i in balances:
-            if i.asset_type == "native":
+            if i["asset_type"] == "native":
                 balance_found = True
-                if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(self.server.accounts().account_id(self.keypair.public_key).call()["balances"][0]["balance"]):
+                if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
                     return ""
                 break
                 
