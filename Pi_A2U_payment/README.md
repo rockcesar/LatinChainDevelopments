@@ -10,6 +10,6 @@ This is a version for Python of Pi payment from A2U in Ruby:
 
 https://github.com/pi-apps/pi-ruby/blob/main/lib/pi_network.rb
 
-You can watch the official version here:
+You can watch the Community version here:
 
 https://github.com/pi-apps/pi-python
