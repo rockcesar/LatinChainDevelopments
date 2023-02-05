@@ -176,6 +176,7 @@ class admin_apps(models.Model):
     pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_rel', string='Devs', domain=[('pi_user_role', 'in', ['latinchain_dev', 'latinchain_adm'])], groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_paid_rel', string='Devs Paid', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_account_balance = fields.Float('Account Balance', digits=(50,7), compute='_get_balance', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_to_pay_per_user = fields.Float('Devs To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_completed_payments = fields.Integer('Devs To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
@@ -192,6 +193,22 @@ class admin_apps(models.Model):
     a_ads_data_3 = fields.Char('A-Ads.com data 3', required=True, default="Set your A-Ads.com data ID", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_style_3 = fields.Char('A-Ads.com style 3', required=True, default="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
+    def _get_balance(self):
+        for i in self:
+            api_key = i.admin_key
+            wallet_private_seed = i.wallet_private_seed
+            
+            if i.mainnet == "Mainnet ON":
+                network = "Pi Network"
+            else:
+                network = "Pi Testnet"
+
+            """ Initialization """
+            pi = pi_python.PiNetwork()
+            pi.initialize(api_key, wallet_private_seed, network)
+    
+            i.pi_users_account_balance = pi.get_balance()
+
     def fill_winners(self):
         winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
         winner_chess_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20)]
