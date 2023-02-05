@@ -508,7 +508,8 @@ class admin_apps(models.Model):
                         else:
                             pi.cancel_payment(i["identifier"])
             
-            devs = self_i.pi_users_devs_ids
+            devs = self_i._compute_to_pay_devs()
+            #self_i.pi_users_devs_ids
             
             for i in devs:
                 if float(admin_app_list.pi_users_devs_to_pay_per_user) > 0:
@@ -595,6 +596,8 @@ class admin_apps(models.Model):
                     i.pi_users_winners_to_pay_per_user = 0
                     
                 winners_list = winners
+        
+        return winners_list
                 
     def _compute_to_pay_devs(self):
         devs_list = list()
