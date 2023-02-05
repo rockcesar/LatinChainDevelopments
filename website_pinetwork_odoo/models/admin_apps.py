@@ -595,8 +595,24 @@ class admin_apps(models.Model):
                     i.pi_users_winners_to_pay_per_user = 0
                     
                 winners_list = winners
+                
+    def _compute_to_pay_devs(self):
+        devs_list = list()
+        for i in self:            
+            counter_devs = len(i.pi_users_devs_ids.ids)
+            devs = list()
+            for j in i.pi_users_devs_ids:
+                dev_paid = False
+                for k in i.pi_users_devs_paid_ids:
+                    if j.pi_user_code == k.pi_user_code:
+                        dev_paid = True
+                        break
+                if not dev_paid:
+                    devs.append(j)
+                
+            devs_list = devs
         
-        return winners_list
+        return devs_list
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_pi_winner_text(self):
