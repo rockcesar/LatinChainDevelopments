@@ -26,7 +26,7 @@
     $postString = http_build_query($data, '', '&');
     # Setting our options
     $headers = array(
-       "Authorization: " . $apps[$_POST['app_client']],
+       "Authorization: Key " . $apps[$_POST['app_client']],
     );
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_POST, 1);
