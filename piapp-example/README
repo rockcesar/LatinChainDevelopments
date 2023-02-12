@@ -2,7 +2,5 @@ You should use a Sandbox at https://developers.minepi.com
 
 You have to put all the code in the root of the HTTP Server. Example: /var/www/html.
 
-If you have KYC done and want to donate something, use my username in Pi Network: rockcesar
-
 index.html # Client side example
-server1.php # Server side example
+server1.php # Server side example https://github.com/rockcesar/PiNetworkDevelopments/blob/master/server1.php
