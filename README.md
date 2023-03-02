@@ -30,10 +30,10 @@ chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorS
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
 #Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-website_pinetwork_odoo (PiOS License) is a LatinChain Platform (Pi Network First App for Odoo).
+website_pinetwork_odoo (PiOS License) is a LatinChain Platform (First App in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
-website_pinetwork_games_odoo (PiOS License) is a LatinChain Platform (Pi Network Games Engine and Platform for Odoo).
+website_pinetwork_games_odoo (PiOS License) is a LatinChain Platform (Games Engine and Platform in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 server1.php is a server side example for PiApps (PiOS License).
@@ -55,10 +55,10 @@ Snake
 Chess
 PiApp Example
 
-LatinChain Platform (Pi Network First App for Odoo):
+LatinChain Platform (First App in Odoo for Pi):
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
 
-LatinChain Platform (Pi Network Games Engine and Platform for Odoo):
+LatinChain Platform (Games Engine and Platform in Odoo for Pi):
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/
 
 Link for info:
