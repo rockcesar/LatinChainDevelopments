@@ -744,18 +744,7 @@
                           });
                         </script>
                         
-                        <br/>
                         
-                        <div id="taboola-below-article-thumbnails"></div>
-                        <script type="text/javascript">
-                          window._taboola = window._taboola || [];
-                          _taboola.push({
-                            mode: 'alternating-thumbnails-a',
-                            container: 'taboola-below-article-thumbnails',
-                            placement: 'Below Article Thumbnails',
-                            target_type: 'mix'
-                          });
-                        </script>
                         
                         <!-- LatinChain Ad responsive -->
                         <!--<ins class="adsbygoogle"
@@ -990,6 +979,17 @@
                                  data-ad-client="ca-pub-2334449220276386"
                                  data-ad-slot="1794208680"></ins>
                         </div>-->
+                        
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
                         
                     </div>
                     <script type="text/javascript">
