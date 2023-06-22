@@ -332,9 +332,6 @@ var init_controls = function(){
                     }
                 }
                 
-                $("#cancel").attr("disabled", "disabled");
-                $("#clear").attr("disabled", "disabled");
-                
                 set_points(points_values[get_tab()]);
             }
         }
