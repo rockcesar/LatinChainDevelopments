@@ -22,6 +22,8 @@ function set_points(points) {
             if(data.result && points > 0)
             {
                 alert("You won " + points + " points");
+                $("#cancel").attr("disabled", "disabled");
+                $("#clear").attr("disabled", "disabled");
                 refresh_board();
             }
             
