@@ -1,4 +1,4 @@
-var pi_user_id = "";
+ var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";
 var passkey = "";
@@ -77,9 +77,9 @@ function get_user() {
                     $("#button_click").hide();
                     $('#chess-tab').show();
                     $('#chess-tab').click();
-                    setTimeout(function() {
+                    /*setTimeout(function() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 2000);
+					}, 2000);*/
                     
                     load_all_boards();
                 }
