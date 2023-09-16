@@ -60,8 +60,8 @@
                         $( document ).ready(function() {
                         
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            /*(adsbygoogle = window.adsbygoogle || []).push({});
-                            (adsbygoogle = window.adsbygoogle || []).push({});*/
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});*/
                             //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
