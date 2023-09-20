@@ -18,22 +18,19 @@ In the HTTP Server, where you put these codes, you can use domains or subdomains
 Apps
 -----------------
 
+sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2021)
+
+snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
+
+chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021)
+
+piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
+
 website_pinetwork_odoo (PiOS License) is a LatinChain Platform (First App in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 website_pinetwork_games_odoo (PiOS License) is a LatinChain Platform (Games Engine and Platform in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
-
-Based on the following softwares:
-
-sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License)
-
-snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License)
-
-chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3)
-
-piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
-piapp-example can be browsable here: https://github.com/rockcesar/LatinChainDevelopments/tree/master/piapp-example
 
 Apps Sandbox
 -----------------
