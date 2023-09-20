@@ -18,25 +18,25 @@ In the HTTP Server, where you put these codes, you can use domains or subdomains
 Apps
 -----------------
 
-sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2021)
-#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
-
-snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
-#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
-
-chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021)
-#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
-
-piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
-#Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
-
 website_pinetwork_odoo (PiOS License) is a LatinChain Platform (First App in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 website_pinetwork_games_odoo (PiOS License) is a LatinChain Platform (Games Engine and Platform in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
-server1.php is a server side example for PiApps (PiOS License).
+Based on the following softwares:
+
+sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License)
+
+snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License)
+
+chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3)
+
+piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
+piapp-example can be browsable here: https://github.com/rockcesar/LatinChainDevelopments/tree/master/piapp-example
+
+Apps Sandbox
+-----------------
 
 In client, for using Sandbox you must set, sandox: true, in Pi.init().
 
@@ -45,7 +45,8 @@ In client, for using Sandbox you must set, sandox: true, in Pi.init().
   <script> Pi.init({ version: "2.0", sandbox: true }) </script>
 ```
 
-Apps published:
+Apps published
+-----------------
 
 LatinChain Platform:
 https://latin-chain.com
