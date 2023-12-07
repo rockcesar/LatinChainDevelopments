@@ -441,12 +441,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid ""
-"<span id=\"game-turn\" style=\"display: none;\">It's your turn!</span>\n"
-"                                                    <span id=\"game-state\" class=\"hidden\"/>"
-msgstr ""
-"<span id=\"game-turn\" style=\"display: none;\">Es tu turno!</span>\n"
-"                                                    <span id=\"game-state\" class=\"hidden\"/>"
+msgid "It's your turn!"
+msgstr "Es tu turno!"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
