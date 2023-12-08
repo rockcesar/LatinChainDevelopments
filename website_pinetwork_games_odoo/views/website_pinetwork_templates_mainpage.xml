@@ -918,7 +918,7 @@
                             
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-6"><a href="/chess" class="btn btn-success"><i class="fa fa-gamepad"></i> CHESS</a></div>
+                                    <div class="col-6"><a href="/chess" class="btn btn-success"><i class="fa fa-gamepad"></i> CHESS</a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fa fa-info"></i></button></div>
                                     <div class="col-6"><a href="/sudoku" class="btn btn-primary"><i class="fa fa-gamepad"></i> SUDOKU</a></div>
                                 </div>
                                 <br/>
