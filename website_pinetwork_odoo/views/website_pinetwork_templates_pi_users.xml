@@ -54,6 +54,11 @@
                                 $(".on-page-search").on("input.highlight", function() {
                                     var searchTerm = $(this).val();
                                     $(".container").unmark().mark(searchTerm);
+                                    if$(".container").filter( function ()
+                                    {
+                                        if($( this ).text().toLowerCase().indexOf( searchTerm.toLowerCase() ) >= 0)
+                                            alert("found");
+                                    });
                                 }).trigger("input.highlight").focus();
                             });
                         </script>
