@@ -773,13 +773,13 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                               <div class="accordion-body">
-                                <table id="donators" class="display">
-                                    <thead>
+                                <table id="donators" class="display" translate="no">
+                                    <thead translate="yes">
                                         <tr>
                                             <th>Username</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody translate="yes">
                                         <!--<t t-foreach="pi_users_list" t-as="pi_user">
                                             <tr>
                                                 <td>
