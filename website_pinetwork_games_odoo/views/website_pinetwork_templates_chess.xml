@@ -126,7 +126,7 @@
                           
                           <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
                           <li><button style="margin-left:5px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
-                          <li><img style="display: block; margin-left:5px; border: 1px solid;" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" /></button></li>
+                          <li><img style="display: block; margin-left:5px; border: 1px solid;" width="35" height="95%" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" /></li>
                           
                         </ul>
                         <div class="tab-content" id="myTabContent">
