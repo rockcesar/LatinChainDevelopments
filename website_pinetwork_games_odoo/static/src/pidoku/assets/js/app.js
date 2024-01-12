@@ -436,12 +436,15 @@ var solve_puzzle_check = function(puzzle){
                 for(var c = 0; c < 9; ++c){
                     var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
                     //alert(solved_board[i_counter]);
-                    if($square.val() != "" && solved_board[i_counter] != $square.val())
+                    if($square.val() > 9)
                     {
-                        $square.addClass("red-text");
-                    }else
-                    {
-                        $square.removeClass("red-text");
+                        if($square.val() != "" && solved_board[i_counter] != $square.val())
+                        {
+                            $square.addClass("red-text");
+                        }else
+                        {
+                            $square.removeClass("red-text");
+                        }
                     }
                     i_counter++;
                     /*alert($square.val());*/
