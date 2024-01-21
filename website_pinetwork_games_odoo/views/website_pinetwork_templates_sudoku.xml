@@ -390,7 +390,8 @@
                                     <h1 align="center" style="font-weight:600">Sudoku</h1><br/>
                                     <div class="cont">
                                     <h1>Time</h1>
-                                    <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+                                    <!--<p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+                                    -->
                                     <div class="timer well"></div>
                                     </div>
                                     
