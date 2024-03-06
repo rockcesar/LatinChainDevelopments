@@ -244,7 +244,7 @@ class PiNetworkBaseController(http.Controller):
         else:
             unblocked_datetime = str(pi_users_list[0].unblocked_datetime) + " UTC"
         
-        result_found = self.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
+        result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
             
         request.env.cr.commit()
