@@ -255,8 +255,7 @@
                             
                             .darkmode--activated input:disabled, 
                             .darkmode--activated select:disabled{
-                              color: white !important;
-                              background-color: gray !important;
+                              filter: contrast(100%);
                             }
                             
                             .darkmode--activated .dataTables_paginate > span > a.paginate_button,
@@ -575,8 +574,7 @@
                         
                         .darkmode--activated input:disabled, 
                         .darkmode--activated select:disabled{
-                          color: white !important;
-                          background-color: gray !important;
+                          filter: contrast(100%);
                         }
                         
                         .darkmode--activated .dataTables_paginate > span > a.paginate_button,
