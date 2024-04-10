@@ -253,6 +253,12 @@
                               background-color: black !important;
                             }
                             
+                            .darkmode--activated input:disabled, 
+                            .darkmode--activated select:disabled{
+                              color: white !important;
+                              background-color: gray !important;
+                            }
+                            
                             .darkmode--activated .dataTables_paginate > span > a.paginate_button,
                             .darkmode--activated .dataTables_paginate > span > span.ellipsis{
                               color: white !important;
@@ -565,6 +571,12 @@
                         .darkmode--activated select{
                           color: white !important;
                           background-color: black !important;
+                        }
+                        
+                        .darkmode--activated input:disabled, 
+                        .darkmode--activated select:disabled{
+                          color: white !important;
+                          background-color: gray !important;
                         }
                         
                         .darkmode--activated .dataTables_paginate > span > a.paginate_button,
