@@ -264,6 +264,7 @@
                             .darkmode--activated .container,
                             .darkmode--activated .container > span {
                               color: #000 !important;
+                              background-color: #fff !important;
                             }
                             
                             .darkmode--activated .container > div > div > span > i {
