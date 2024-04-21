@@ -684,7 +684,9 @@
                         .darkmode--activated .btn-outline-success:hover, 
                         .darkmode--activated .btn-outline-success:active, 
                         .darkmode--activated a.btn-outline-success:hover, 
-                        .darkmode--activated a.btn-outline-success:active {
+                        .darkmode--activated a.btn-outline-success:active,
+                        .darkmode--activated .fa-home:hover,
+                        .darkmode--activated .fa-home:active {
                             color: #fff !important;
                         }
                         
