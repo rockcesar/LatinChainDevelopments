@@ -684,10 +684,14 @@
                         .darkmode--activated .btn-outline-success:hover, 
                         .darkmode--activated .btn-outline-success:active, 
                         .darkmode--activated a.btn-outline-success:hover, 
-                        .darkmode--activated a.btn-outline-success:active,
-                        .darkmode--activated .fa-home:hover,
-                        .darkmode--activated .fa-home:active {
+                        .darkmode--activated a.btn-outline-success:active {
                             color: #fff !important;
+                        }
+                        
+                        .darkmode--activated a > i.fa-home,
+                        .darkmode--activated a > i.fa-home:hover,
+                        .darkmode--activated a > i.fa-home:active {
+                            color: #000 !important;
                         }
                         
                         .darkmode--activated button.dropdown-toggle::after {
