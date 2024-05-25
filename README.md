@@ -24,7 +24,7 @@ sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github
 snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
 #Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021)
+chess (AGPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021. Currently it's AGPLv3, 2024)
 #Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
