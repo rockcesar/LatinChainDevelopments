@@ -181,10 +181,6 @@
                             }
                         </script>
                         <style>
-                            *, html {
-                                scroll-behavior: smooth !important;
-                            }
-                            
                             .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
                             .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
                               color: #000 !important;
@@ -565,10 +561,6 @@
                         }
                     </script>
                     <style>
-                        *, html {
-                            scroll-behavior: smooth !important;
-                        }
-                        
                         .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
                         .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
                           color: #fff !important;
