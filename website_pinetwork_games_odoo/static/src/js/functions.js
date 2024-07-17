@@ -113,23 +113,26 @@ async function showPiAds(Pi) {
         
         const showAdResponse = await Pi.Ads.showAd("interstitial");
         
-        if(pi_user_id != "" && pi_user_code != "")
+        if(showAdResponse.result == "AD_CLOSED")
         {
-            var data = {
-                        'pi_user_id': pi_user_id,
-                        'pi_user_code': pi_user_code,
-                        'accessToken': accessToken,
-                        'csrf_token': odoo.csrf_token,
-                    };
-            //$.ajaxSetup({async: false});
-            return $.post( "/set-pi-ad-datetime", data).done(function(data) {
-                data = JSON.parse(data);
-                if(data.result)
-                {
-                }
-            }).fail(function() {
-                
-            });
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                var data = {
+                            'pi_user_id': pi_user_id,
+                            'pi_user_code': pi_user_code,
+                            'accessToken': accessToken,
+                            'csrf_token': odoo.csrf_token,
+                        };
+                //$.ajaxSetup({async: false});
+                return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                    data = JSON.parse(data);
+                    if(data.result)
+                    {
+                    }
+                }).fail(function() {
+                    
+                });
+            }
         }
     } catch (err) {
         //alert(err);
