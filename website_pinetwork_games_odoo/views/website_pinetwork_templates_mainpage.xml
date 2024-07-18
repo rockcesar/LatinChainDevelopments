@@ -388,10 +388,6 @@
                               color: #000 !important;
                             }
                             
-                            .darkmode--activated .accordion-button:hover {
-                              color: black !important;
-                            }
-                            
                         </style>
                     </t>
 
@@ -762,6 +758,14 @@
                         
                         .darkmode--activated .goog-te-gadget {
                           color: #fff !important;
+                        }
+                                                
+                        .darkmode--activated .accordion-button:hover {
+                          color: white !important;
+                        }
+                        
+                        .darkmode--activated .accordion-button {
+                          color: black !important;
                         }
                         
                     </style>
