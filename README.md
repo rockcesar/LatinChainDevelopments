@@ -36,9 +36,9 @@ website_pinetwork_odoo (PiOS License) is a LatinChain Platform (First App in Odo
 website_pinetwork_games_odoo (PiOS License) is a LatinChain Platform (Games Engine and Platform in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
-mahjong (MIT License) is the Mahjong. It's a modification of https://github.com/ScriptRaccoon/mahjong-solitaire (MIT License, 2021)
+mahjong-solitaire (MIT License) is the Mahjong. It's a modification of https://github.com/ScriptRaccoon/mahjong-solitaire (MIT License, 2021)
 
-tetris (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2021)
+blockrain.js (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2021)
 
 Apps Sandbox
 -----------------
