@@ -1327,11 +1327,11 @@
                                                 if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     if (confirm($("#mainnet_version_message").text())) {
-                                                        Object.assign(document.createElement('a'), {
-                                                            target: '_blank',
-                                                            rel: 'noopener noreferrer',
-                                                            href: '/mainnet',
-                                                        }).click();
+                                                        $.get("https://latin-chain.com").done(function(data) {
+                                                            alert("123");
+
+                                                        }).fail(function() {
+                                                        });
                                                     } else {
                                                         // Do nothing!
                                                     }
