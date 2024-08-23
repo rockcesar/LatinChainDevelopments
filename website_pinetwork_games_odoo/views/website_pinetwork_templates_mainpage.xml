@@ -1327,7 +1327,7 @@
                                                 if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     if (confirm($("#mainnet_version_message").text())) {
-                                                        alert($("#gotomainnet").html());
+                                                        //alert($("#gotomainnet").html());
                                                         $("#gotomainnet")[0].click();
                                                     } else {
                                                         // Do nothing!
