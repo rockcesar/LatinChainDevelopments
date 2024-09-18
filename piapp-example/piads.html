@@ -1,0 +1,111 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pi Ads Example</title>
+    <meta name="description" content="Pi Ads Example" />
+        
+    <meta property="og:url" content="/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="SilkRoad"/>
+    <meta property="og:description" content="SilkRoad"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- ios support -->
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+
+    <meta name="application-name" content="Pi Ads Example">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv-pre3.6.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--<script src="https://downloads.minepi.com/sdk/v1/dev.js"></script>-->
+    <!--<script src="https://downloads.minepi.com/sdk/v1/prod.js"></script>-->
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+</head>
+<body>
+    
+    <h5>Pi Ads Example</h5>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            const Pi = window.Pi;
+            Pi.init({ version: "2.0" });
+
+            //alert(PiNetworkClient);
+            
+            //This function was made by LatinChain Platform
+            async function showPiAds(Pi) {
+                try {
+                    var d1 = new Date();
+                    var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+                    var date2 = new Date(date1.getTime() - 2 * 60000);
+                    
+                    if(localStorage && localStorage['pi_ad_datetime'] > date2.getTime())
+                    {
+                        return;
+                    }
+                    
+                    const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+                                
+                    if (isAdReadyResponse.ready === false) {
+                        await Pi.Ads.requestAd("interstitial");
+                    }
+                    
+                    const showAdResponse = await Pi.Ads.showAd("interstitial");
+                    
+                    if(showAdResponse.result == "AD_CLOSED")
+                    {
+                        var d1 = new Date();
+                        var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+
+                        localStorage['pi_ad_datetime'] = date1.getTime();
+                    }
+                } catch (err) {
+                    //alert(err);
+                    // Not able to fetch the user
+                }
+            }
+
+            async function auth() {
+                try {
+                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                    
+                    if(!adNetworkSupported)
+                        alert("Update Pi Browser version, please.");
+                    
+                    // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+                    const scopes = ['username', 'payments', 'wallet_address'];
+                    function onIncompletePaymentFound(payment) {
+                    
+                    }; // Read more about this in the SDK reference
+
+                    Pi.authenticate(scopes, onIncompletePaymentFound).then(function (auth) {
+                        
+                        showPiAds(Pi);
+                        
+                        //alert('Hello ' + auth.user.username);
+                    }).catch(function (error) {
+                        console.error(error);
+                    });
+                } catch (err) {
+                    alert(err);
+                    // Not able to fetch the user
+                }
+            }
+
+            auth();
+
+        });
+    </script>
+</body>
+</html>
