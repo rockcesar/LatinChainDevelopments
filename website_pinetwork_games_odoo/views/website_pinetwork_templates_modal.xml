@@ -338,8 +338,8 @@
                         <style>
                             iframe
                             {
-                                width:270px;
-                                max-width:270px;
+                                width:250px;
+                                max-width:250px;
                             }
                         </style>
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
