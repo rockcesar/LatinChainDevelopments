@@ -410,7 +410,7 @@
                     </script>-->
                     
                     <!-- Button trigger modal -->
-                    <button id="open_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" aria-hidden="true">
+                    <button id="open_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
                       Open Modal
                     </button>
 
