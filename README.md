@@ -18,10 +18,10 @@ In the HTTP Server, where you put these codes, you can use domains or subdomains
 Apps
 -----------------
 
-sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2021)
+sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2014)
 #Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
-snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
+snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2014)
 #Put it in the root of HTTP Server: /var/www/html (You can use domains or subdomains)
 
 chess (AGPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021. Currently it's AGPLv3, 2024)
@@ -36,9 +36,9 @@ website_pinetwork_odoo (PiOS License) is a LatinChain Platform (First App in Odo
 website_pinetwork_games_odoo (PiOS License) is a LatinChain Platform (Games Engine and Platform in Odoo for Pi).
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
-mahjong-solitaire (MIT License) is the Mahjong. It's a modification of https://github.com/ScriptRaccoon/mahjong-solitaire (MIT License, 2021)
+mahjong-solitaire (MIT License) is the Mahjong. It's a modification of https://github.com/ScriptRaccoon/mahjong-solitaire (MIT License, 2024)
 
-blockrain.js (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2021)
+blockrain.js (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2015)
 
 Apps Sandbox
 -----------------
