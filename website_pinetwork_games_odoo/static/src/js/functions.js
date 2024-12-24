@@ -254,9 +254,7 @@ $( document ).ready(function() {
                         });
                         
                         $("#button_click").prop( "disabled", false );
-
-                        alert(show_pi_ad_user);
-                        alert(pi_ad_new);
+                        
                         if(show_pi_ad_user || pi_ad_new)
                             $("#button_reward_ad").prop( "disabled", false );
                         
