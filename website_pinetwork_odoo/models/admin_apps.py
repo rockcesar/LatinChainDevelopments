@@ -234,7 +234,6 @@ class admin_apps(models.Model):
     points_latin_amount = fields.Float('Latin points amount', digits=(50,7), default=1, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_seconds = fields.Integer('Pi Ad seconds', default=300, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_max = fields.Integer('Pi Ad max', default=5, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_ad_seconds_unblocked = fields.Integer('Pi Ad seconds unblocked', default=28800, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
