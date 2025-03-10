@@ -557,6 +557,11 @@ class PiNetworkBaseController(http.Controller):
             
             apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
             
+            pi_ad_seconds = apps_list[0].pi_ad_seconds
+            
+            if pi_users_list[0].unblocked:
+                pi_ad_seconds = apps_list[0].pi_ad_seconds*8
+            
             if not pi_users_list[0].pi_ad_datetime:
                 values.update({'pi_ad_datetime': datetime.now()})
                 if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
