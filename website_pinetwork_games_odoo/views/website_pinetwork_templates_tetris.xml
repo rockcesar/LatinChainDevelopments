@@ -100,7 +100,7 @@
                                 
                                 function press_down(key)
                                 {
-                                    var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
+                                    var e = jQuery.Event( "keypress", { which: key, keyCode: key } );
                                     $(document).trigger( e );
                                 }
                                 
@@ -122,7 +122,7 @@
                                 $( ".right" ).mousedown(function() {
                                     press_down(39);
                                 });
-                                
+                                /*
                                 $( ".left" ).mouseup(function() {
                                     press_up(37);
                                 });
@@ -135,6 +135,7 @@
                                 $( ".right" ).mouseup(function() {
                                     press_up(39);
                                 });
+                                */
                                 
                                 $( "#themes" ).change(function() {
                                     $('.game').blockrain('theme', $("#themes").find(":selected").val());
