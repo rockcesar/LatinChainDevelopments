@@ -100,14 +100,14 @@
                                 
                                 function press_down(key)
                                 {
-                                    var e = jQuery.Event( "keypress", { which: key, keyCode: key } );
-                                    jQuery( "body" ).trigger( e );
+                                    var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
+                                    $(document).trigger( e );
                                 }
                                 
                                 function press_up(key)
                                 {
                                     var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
-                                    jQuery( "body" ).trigger( e );
+                                    $(document).trigger( e );
                                 }
                                 
                                 $( ".left" ).mousedown(function() {
