@@ -1210,8 +1210,8 @@
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
-                        <div class="alert alert-info" role="alert" t-if="mainnet in ['Mainnet ON']">
-                          <div style="display:inline;">Mainnet ON</div> <div style="display:inline;">Accepting payments</div>
+                        <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded" t-if="mainnet in ['Mainnet ON']">
+                          <a class="text-white" href="/pinetwork"><div style="display:inline;">Mainnet ON.</div> <div style="display:inline;">Accepting payments</div>.</a>
                         </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
