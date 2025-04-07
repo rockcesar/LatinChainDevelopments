@@ -83,7 +83,7 @@ function get_user_rewarded() {
                 {
                     unblocked = data.unblocked;
                     
-                    if(data.unblocked)
+                    if(["Mainnet ON"].includes($("#mainnet").val()))
                         $(".getverified").hide();
                     
                     $("#user_points").html(data.points);
@@ -139,7 +139,7 @@ function get_user_rewarded() {
                     $("#user_points_datetime").html(data.points_datetime);
                 }else{
                     
-                    if(!data.unblocked)
+                    if(["Mainnet ON"].includes($("#mainnet").val()))
                         $(".getverified").show();
                 
                     $("#user_points").html(data.points);
