@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal to MP3 Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .progress-bar {
+            /* Estilos de la barra de progreso */
+            width: 0%;
+            height: 0.75rem; /* Altura ajustada */
+            background-color: #3b82f6; /* Azul de Tailwind */
+            border-radius: 0.375rem; /* Radio de borde redondeado de Tailwind */
+            transition: width 0.2s ease-in-out;
+            display: flex; /* Añadido para centrar el texto */
+            align-items: center;
+            justify-content: center;
+            color: white; /* Color del texto */
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+        .progress {
+            background-color: #d1d5db;
+            border-radius: 0.375rem; /* Radio de borde redondeado de Tailwind */
+            height: 0.75rem; /* Altura ajustada */
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5G7GWSPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VY5G7GWSPR');
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+    -->
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div style="text-align:center; width:100% !important">
+            <style>
+                /* Ajustes para que el traductor de Google sea visible */
+                .goog-te-banner-frame.skiptranslate,
+                .skiptranslate > iframe {
+                    display: none !important;
+                }
+                
+                body {
+                    top: 0px !important; 
+                }
+
+                .goog-te-menu-frame {
+                    max-width:100% !important; 
+                }
+                .goog-te-menu2 { 
+                    max-width: 100% !important;
+                    overflow-x: scroll !important;
+                    box-sizing:border-box !important; 
+                    height:auto !important; 
+                }
+                
+                /* Ocultar elementos no deseados sin ocultar el widget principal */
+                #goog-gt-tt, 
+                #goog-gt-, 
+                .goog-te-balloon-frame {
+                    display: none !important;
+                } 
+                .goog-text-highlight { 
+                    background: none !important; 
+                    box-shadow: none !important;
+                }
+                
+                .goog-logo-link {
+                    display: none !important;
+                }
+                .goog-te-gadget {
+                    height: 28px !important;  
+                    overflow: hidden;
+                }
+            </style>
+            
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    var lang_google='en';
+                    
+                    new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                            autoDisplay: true,
+                                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                            'google_translate_element');
+                    
+                    //var el = document.querySelector('#goog-gt-');
+                    //var el2 = document.querySelector('.skiptranslate');
+                    var el3 = document.querySelector('circle');
+                    //var el4 = document.querySelector('.goog-te-gadget');
+                    var observer = new window.IntersectionObserver(([entry]) => {
+                        /*for(var i = 0; i < document.getElementsByClassName("skiptranslate").length; i++)
+                        {
+                            for(var j = 0; j < document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
+                            {
+                                if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
+                                    document.getElementsByClassName("skiptranslate")[i].style.display = "none";
+                            }
+                        }
+                        document.getElementById("goog-gt-").style.display = "none";*/
+                        document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                    }, {
+                        root: null,
+                        threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                    });
+
+                    //observer.observe(el);
+                    //observer.observe(el2);
+                    observer.observe(el3);
+                    //observer.observe(el4);
+                    
+                }
+            </script>
+
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+            <strong>Translate</strong>
+            <div id="google_translate_element"></div>
+        </div>
+        <!--<br/>
+        <br/>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>-->
+        <br/>
+        <strong>Contact: latinchain.info@gmail.com</strong>
+        <br/>
+        <strong>mp3.latin-chain.com</strong>
+        <br/>
+        <strong>Made with help of Google Gemini AI</strong>
+        <br/>
+        <br/>
+        <h1 class="text-2xl font-semibold text-blue-600 mb-6 text-center">Universal to MP3 Converter</h1>
+        <p class="text-gray-700 mb-4 text-center">Select an audio or video file to convert to MP3.</p>
+
+        <p class="text-gray-700 mb-4 text-center">Accepted formats.
+        <br/><strong>Audio:</strong> ['audio/mpeg', 'audio/x-wav', 'audio/wav', 'application/ogg', 'audio/ogg', 'audio/aac', 'audio/x-m4a'].
+        <br/><strong>Video:</strong> ['video/mp4', 'video/webm', 'video/ogg', 'video/x-matroska'].</p>
+
+        <div class="mb-4">
+            <label for="file-input" class="inline-flex items-center justify-center px-5 py-3 bg-blue-600 text-white font-medium rounded-md shadow-md cursor-pointer hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                <span><div style="display:inline;"><i class="fa-solid fa-upload"></i></div> <div style="display:inline;">Upload File</div></span>
+                <input type="file" id="file-input" accept="*" class="hidden"/>
+            </label>
+            <p id="file-name" class="mt-2 text-sm text-gray-500 text-center"></p>
+            <p id="file-error" class="mt-2 text-sm text-red-500 text-center"></p>
+        </div>
+
+        <div class="mb-4">
+            <label for="bitrate-select" class="block text-gray-700 text-sm font-bold mb-2">MP3 Quality:</label>
+            <select id="bitrate-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="32">32kbps (Very Low)</option>
+                <option value="64">64kbps (Low)</option>
+                <option value="96">96kbps (Normal)</option>
+                <option value="128" selected>128kbps (Standard)</option>
+                <option value="160">160kbps (Good)</option>
+                <option value="192">192kbps (High)</option>
+                <option value="224">224kbps (Very High)</option>
+                <option value="256">256kbps (Premium)</option>
+                <option value="320">320kbps (Lossless)</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="bitrate-mode-select" class="block text-gray-700 text-sm font-bold mb-2">Bitrate Mode:</label>
+            <select id="bitrate-mode-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="cbr" selected>CBR (Constant Bitrate)</option>
+                <option value="vbr">VBR (Variable Bitrate)</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="channel-mode-select" class="block text-gray-700 text-sm font-bold mb-2">Channel Mode:</label>
+            <select translate="no" id="channel-mode-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="mono">Mono</option>
+                <option value="stereo" selected>Stereo</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="sample-rate-select" class="block text-gray-700 text-sm font-bold mb-2">Output Sample Rate:</label>
+            <select id="sample-rate-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="44100" selected>44.1 kHz (CD Quality)</option>
+                <option value="48000">48 kHz (DVD Quality)</option>
+                <option value="22050">22.05 kHz</option>
+                <option value="16000">16 kHz</option>
+            </select>
+        </div>
+
+        <div class="mb-4 flex items-center">
+            <input type="checkbox" id="sound-enhancement-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500" checked>
+            <label for="sound-enhancement-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Sound Enhancement (Clarity/Noise Reduction)</label>
+        </div>
+
+        <div class="mb-4 flex items-center">
+            <input type="checkbox" id="volume-normalization-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500">
+            <label for="volume-normalization-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Volume Normalization</label>
+        </div>
+
+        <div class="mb-4 flex items-center">
+            <input type="checkbox" id="fade-in-out-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500">
+            <label for="fade-in-out-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Fade In/Out (2s)</label>
+        </div>
+
+        <div class="mb-4">
+            <button id="convert-button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md w-full focus:outline-none focus:shadow-outline transition-colors duration-300" disabled>
+                Convert to MP3
+            </button>
+            <p id="conversion-status" class="mt-2 text-sm text-gray-500 text-center"></p>
+             <div class="progress mt-2">
+                <div id="progress-bar" class="progress-bar bg-blue-500 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span class="sr-only">0% Complete</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center space-y-2"> 
+            <a id="download-link" href="#" download="" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline transition-colors duration-300 w-full inline-block">
+                Download MP3
+            </a>
+            </div>
+        
+        <br/>
+        <!--<ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>-->
+    </div>
+
+    <script>
+        // Web Worker script as a Blob URL
+        const workerScript = `
+            importScripts('https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js');
+
+            self.onmessage = function(event) {
+                const { audioData, sampleRate, bitrate, bitrateMode, channelMode, originalNumberOfChannels } = event.data;
+
+                // Reconstruct Float32Array views from ArrayBuffers
+                let receivedChannels = [];
+                for (let i = 0; i < audioData.length; i++) {
+                    receivedChannels.push(new Float32Array(audioData[i]));
+                }
+
+                function encodeMP3(inputChannels, currentSampleRate, currentBitrate, currentBitrateMode, currentNumberOfChannels) {
+                    // Initialize LAME encoder based on bitrate mode
+                    let encoderBitrate = currentBitrate;
+                    if (currentBitrateMode === 'vbr') {
+                        encoderBitrate = 0; // 0 for VBR in lamejs
+                    }
+                    var mp3enc = new lamejs.Mp3Encoder(currentNumberOfChannels, currentSampleRate, encoderBitrate);
+                    
+                    var mp3Data = [];
+                    var CHUNK_SIZE = 1152; // Un tamaño de chunk común para LAME
+
+                    var totalSamples = inputChannels[0].length;
+                    var totalChunks = Math.ceil(totalSamples / CHUNK_SIZE);
+                    var processedChunks = 0;
+
+                    for (var i = 0; i < totalSamples; i += CHUNK_SIZE) {
+                        let leftChannel = new Int16Array(CHUNK_SIZE);
+                        let rightChannel = new Int16Array(CHUNK_SIZE); // Only used if stereo
+
+                        for (let j = 0; j < CHUNK_SIZE; j++) {
+                            const sampleIndex = i + j;
+                            if (sampleIndex < totalSamples) {
+                                leftChannel[j] = inputChannels[0][sampleIndex] * 0x7FFF;
+                                if (currentNumberOfChannels === 2) {
+                                    rightChannel[j] = inputChannels[1][sampleIndex] * 0x7FFF;
+                                }
+                            } else {
+                                leftChannel[j] = 0;
+                                if (currentNumberOfChannels === 2) {
+                                    rightChannel[j] = 0;
+                                }
+                            }
+                        }
+                        
+                        let encoded;
+                        if (currentNumberOfChannels === 2) {
+                            encoded = mp3enc.encodeBuffer(leftChannel, rightChannel);
+                        } else {
+                            encoded = mp3enc.encodeBuffer(leftChannel);
+                        }
+                        
+                        if (encoded.length > 0) {
+                            mp3Data.push(new Uint8Array(encoded));
+                        }
+                        processedChunks++;
+                        // Post progress back to the main thread
+                        self.postMessage({ type: 'progress', progress: Math.round((processedChunks * 100) / totalChunks) });
+                    }
+                    var mp3end = mp3enc.flush();
+                    if (mp3end.length > 0) {
+                        mp3Data.push(new Uint8Array(mp3end));
+                    }
+
+                    if (mp3Data.length === 0) {
+                        return null;
+                    }
+
+                    var totalLength = 0;
+                    mp3Data.forEach(d => {
+                        totalLength += d.length;
+                    });
+                    var mp3Bytes = new Uint8Array(totalLength);
+                    var offset = 0;
+                    mp3Data.forEach(d => {
+                        mp3Bytes.set(d, offset);
+                        offset += d.length;
+                    });
+
+                    var mp3Blob = new Blob([mp3Bytes], { type: 'audio/mpeg' });
+                    return { blob: mp3Blob, url: URL.createObjectURL(mp3Blob) };
+                }
+
+                try {
+                    let processedInputChannels = [];
+                    let actualChannelsToEncode = originalNumberOfChannels; 
+
+                    if (channelMode === 'mono') {
+                        if (originalNumberOfChannels > 1) {
+                            let monoData = new Float32Array(receivedChannels[0].length); 
+                            for (let i = 0; i < receivedChannels[0].length; i++) {
+                                let sum = 0;
+                                for (let channel = 0; channel < originalNumberOfChannels; channel++) {
+                                    sum += receivedChannels[channel][i];
+                                }
+                                monoData[i] = sum / originalNumberOfChannels;
+                            }
+                            processedInputChannels.push(monoData);
+                        } else {
+                            processedInputChannels.push(receivedChannels[0]);
+                        }
+                        actualChannelsToEncode = 1;
+                    } else { // Stereo mode
+                        if (originalNumberOfChannels === 1) {
+                            processedInputChannels.push(receivedChannels[0]);
+                            processedInputChannels.push(receivedChannels[0]); // Duplicar para estéreo
+                        } else {
+                            processedInputChannels.push(receivedChannels[0]);
+                            processedInputChannels.push(receivedChannels[1]);
+                        }
+                        actualChannelsToEncode = 2;
+                    }
+
+                    const result = encodeMP3(processedInputChannels, sampleRate, bitrate, bitrateMode, actualChannelsToEncode);
+                    self.postMessage({ type: 'complete', blob: result.blob, url: result.url });
+                } catch (error) {
+                    self.postMessage({ type: 'error', message: error.message });
+                }
+            };
+        `;
+        const workerBlob = new Blob([workerScript], { type: 'application/javascript' });
+        const workerUrl = URL.createObjectURL(workerBlob);
+        const mp3Worker = new Worker(workerUrl);
+
+        // Constants
+        const MAX_FILE_SIZE_MB = 50; // Maximum file size allowed in MB
+
+        var fileInput = document.getElementById('file-input');
+        var fileNameDisplay = document.getElementById('file-name');
+        var fileErrorDisplay = document.getElementById('file-error');
+        var convertButton = document.getElementById('convert-button');
+        var conversionStatus = document.getElementById('conversion-status');
+        var downloadLink = document.getElementById('download-link');
+        // var copyLinkButton = document.getElementById('copy-link-button'); // Removed reference for copy button
+        var bitrateSelect = document.getElementById('bitrate-select');
+        var bitrateModeSelect = document.getElementById('bitrate-mode-select'); 
+        var channelModeSelect = document.getElementById('channel-mode-select'); 
+        var sampleRateSelect = document.getElementById('sample-rate-select'); 
+        var soundEnhancementCheckbox = document.getElementById('sound-enhancement-checkbox'); 
+        var volumeNormalizationCheckbox = document.getElementById('volume-normalization-checkbox'); 
+        var fadeInOutCheckbox = document.getElementById('fade-in-out-checkbox'); 
+        var progressBar = document.getElementById('progress-bar');
+
+        var selectedFile = null;
+        var isProcessing = false;
+        var selectedBitrate = 128; 
+        var selectedBitrateMode = 'cbr'; 
+        var selectedChannelMode = 'stereo'; 
+        var selectedSampleRate = 44100; 
+        var decodedAudioBuffer = null; 
+
+        // Manejar mensajes del Web Worker
+        mp3Worker.onmessage = function(event) {
+            const { type, progress, blob, url, message } = event.data;
+            if (type === 'progress') {
+                updateProgressBar(progress);
+            } else if (type === 'complete') {
+                conversionStatus.textContent = '¡Conversión completada!';
+                downloadLink.href = url;
+                downloadLink.download = selectedFile.name.split('.').slice(0, -1).join('.') + '.mp3';
+                downloadLink.classList.remove('hidden');
+                // copyLinkButton.classList.remove('hidden'); // Removed show copy link button
+                isProcessing = false;
+                convertButton.disabled = true; 
+                convertButton.classList.remove('opacity-50');
+                fileInput.value = ''; 
+                fileNameDisplay.textContent = ''; 
+                progressBar.style.width = '100%';
+                progressBar.setAttribute('aria-valuenow', 100);
+                progressBar.textContent = '100%';
+            } else if (type === 'error') {
+                console.error('Conversion failed:', message);
+                conversionStatus.textContent = `Error: La conversión falló. ${message}`;
+                isProcessing = false;
+                convertButton.disabled = false;
+                convertButton.classList.remove('opacity-50');
+                progressBar.style.width = '0%';
+                progressBar.setAttribute('aria-valuenow', 0);
+                progressBar.textContent = '0%';
+            }
+        };
+
+        // Function to handle file selection change
+        fileInput.addEventListener('change', function(event) {
+            selectedFile = event.target.files[0];
+            resetUI(); // Reset the interface when a new file is selected
+
+            if (selectedFile) {
+                // Check file size
+                if (selectedFile.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+                    fileNameDisplay.textContent = '';
+                    fileErrorDisplay.textContent = `Error: El archivo es demasiado grande (${(selectedFile.size / (1024 * 1024)).toFixed(2)} MB). El tamaño máximo permitido es ${MAX_FILE_SIZE_MB} MB para un rendimiento óptimo en el navegador.`;
+                    convertButton.disabled = true;
+                    convertButton.classList.add('opacity-50');
+                    selectedFile = null;
+                    decodedAudioBuffer = null;
+                    return; // Stop processing
+                }
+
+                var validAudioTypes = ['audio/mpeg', 'audio/x-wav', 'audio/wav', 'application/ogg', 'audio/ogg', 'audio/aac', 'audio/x-m4a'];
+                var validVideoTypes = ['video/mp4', 'video/webm', 'video/ogg', 'video/x-matroska'];
+                
+                if (validAudioTypes.includes(selectedFile.type) || validVideoTypes.includes(selectedFile.type)) {
+                    fileNameDisplay.textContent = `Archivo seleccionado: ${selectedFile.name}`;
+                    fileErrorDisplay.textContent = ''; // Clear error message
+
+                    // Read the file to decode audio data and determine channels
+                    var reader = new FileReader();
+                    reader.onerror = () => {
+                        fileErrorDisplay.textContent = 'Error: No se pudo leer el archivo.';
+                        convertButton.disabled = true;
+                        convertButton.classList.add('opacity-50');
+                        selectedFile = null;
+                        decodedAudioBuffer = null;
+                    };
+
+                    reader.onload = () => {
+                        var arrayBuffer = reader.result;
+                        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+                        audioContext.decodeAudioData(arrayBuffer, (audioBuffer) => {
+                            decodedAudioBuffer = audioBuffer; // Store the decoded audio buffer
+                            
+                            // Automatically set channel mode based on the input file
+                            if (audioBuffer.numberOfChannels === 1) {
+                                channelModeSelect.value = 'mono';
+                                selectedChannelMode = 'mono';
+                            } else {
+                                channelModeSelect.value = 'stereo';
+                                selectedChannelMode = 'stereo';
+                            }
+                            console.log(`Canales detectados: ${audioBuffer.numberOfChannels}, setting mode to: ${selectedChannelMode}`);
+
+                            // Set default sample rate to source sample rate if available in options, otherwise 44.1kHz
+                            if (Array.from(sampleRateSelect.options).some(option => parseInt(option.value) === audioBuffer.sampleRate)) {
+                                sampleRateSelect.value = audioBuffer.sampleRate;
+                                selectedSampleRate = audioBuffer.sampleRate;
+                            } else {
+                                sampleRateSelect.value = 44100; // Fallback to default
+                                selectedSampleRate = 44100;
+                            }
+                            console.log(`Frecuencia de muestreo detectada: ${audioBuffer.sampleRate}Hz, estableciendo salida a: ${selectedSampleRate}Hz`);
+
+
+                            convertButton.disabled = false;
+                            convertButton.classList.remove('opacity-50');
+
+                        }, (error) => {
+                            fileErrorDisplay.textContent = 'Error al decodificar los datos de audio: ' + error.message + '. Esto puede ocurrir con archivos muy grandes o dañados.';
+                            convertButton.disabled = true;
+                            convertButton.classList.add('opacity-50');
+                            selectedFile = null;
+                            decodedAudioBuffer = null;
+                        });
+                    };
+                    reader.readAsArrayBuffer(selectedFile);
+
+                } else {
+                    fileNameDisplay.textContent = '';
+                    fileErrorDisplay.textContent = 'Error: Formato de archivo no compatible. Seleccione un archivo de audio o video válido.';
+                    convertButton.disabled = true;
+                    convertButton.classList.add('opacity-50');
+                    selectedFile = null; // Reset the selected file
+                    decodedAudioBuffer = null;
+                }
+            } else {
+                fileNameDisplay.textContent = '';
+                convertButton.disabled = true;
+                convertButton.classList.add('opacity-50');
+                decodedAudioBuffer = null;
+            }
+        });
+
+        // Función para manejar los cambios en la calidad seleccionada (bitrate)
+        bitrateSelect.addEventListener('change', function() {
+            selectedBitrate = parseInt(bitrateSelect.value);
+            console.log(`Calidad seleccionada: ${selectedBitrate}kbps`); // Para depuración
+        });
+
+        // Handle changes in bitrate mode
+        bitrateModeSelect.addEventListener('change', function() {
+            selectedBitrateMode = bitrateModeSelect.value;
+            console.log(`Modo de bitrate seleccionado: ${selectedBitrateMode}`);
+        });
+
+        // Función para manejar los cambios en el modo de canal seleccionado
+        channelModeSelect.addEventListener('change', function() {
+            selectedChannelMode = channelModeSelect.value;
+            console.log(`Modo de canal seleccionado: ${selectedChannelMode}`); // Para depuración
+        });
+
+        // Handle changes in output sample rate
+        sampleRateSelect.addEventListener('change', function() {
+            selectedSampleRate = parseInt(sampleRateSelect.value);
+            console.log(`Frecuencia de muestreo de salida seleccionada: ${selectedSampleRate}Hz`);
+        });
+
+        // Función para actualizar la barra de progreso
+        function updateProgressBar(progress) {
+            progressBar.style.width = `${progress}%`;
+            progressBar.setAttribute('aria-valuenow', progress);
+            progressBar.textContent = `${progress}%`;
+        }
+
+        // Función para reiniciar la interfaz
+        function resetUI() {
+            conversionStatus.textContent = '';
+            downloadLink.classList.add('hidden');
+            // copyLinkButton.classList.add('hidden'); // Removed hide copy link button
+            // Revocar la URL del Blob anterior si existe para liberar memoria
+            if (downloadLink.href && downloadLink.href !== '#') {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#'; // Restablecer href
+            }
+            if (!selectedFile) {
+                convertButton.disabled = true;
+                convertButton.classList.add('opacity-50');
+            }
+            progressBar.style.width = '0%';
+            progressBar.setAttribute('aria-valuenow', 0);
+            progressBar.textContent = '0%';
+            decodedAudioBuffer = null; // Asegurarse de que el búfer de audio decodificado se borre al reiniciar
+            soundEnhancementCheckbox.checked = true; // Preseleccionar la mejora de sonido al reiniciar la UI
+            volumeNormalizationCheckbox.checked = false; // Reset normalization checkbox
+            fadeInOutCheckbox.checked = false; // Reset fade in/out checkbox
+            bitrateModeSelect.value = 'cbr'; // Reset bitrate mode
+            // sampleRateSelect will be set by file input change
+        }
+
+        // Función para aplicar procesamiento de audio avanzado
+        async function processAudioBuffer(originalAudioBuffer, options) {
+            const { soundEnhancement, volumeNormalization, fadeInOut, targetSampleRate } = options;
+
+            let currentBuffer = originalAudioBuffer;
+            let currentSampleRate = originalAudioBuffer.sampleRate;
+            let currentChannels = originalAudioBuffer.numberOfChannels;
+
+            // Step 1: Resampling if needed
+            if (targetSampleRate && targetSampleRate !== currentSampleRate) {
+                conversionStatus.textContent = 'Resampleando audio...';
+                // Create an offline audio context for resampling
+                const resampleContext = new (window.OfflineAudioContext || window.webkitOfflineAudioContext)(
+                    currentChannels,
+                    Math.ceil(originalAudioBuffer.length * (targetSampleRate / currentSampleRate)), // new length
+                    targetSampleRate
+                );
+                const source = resampleContext.createBufferSource();
+                source.buffer = currentBuffer;
+                source.connect(resampleContext.destination);
+                source.start(0);
+                currentBuffer = await resampleContext.startRendering();
+                currentSampleRate = targetSampleRate; // Update current sample rate
+            }
+
+            // Step 2: Apply Sound Enhancement, Volume Normalization, Fade In/Out
+            if (soundEnhancement || volumeNormalization || fadeInOut) {
+                conversionStatus.textContent = 'Aplicando efectos de audio...';
+                const processingContext = new (window.OfflineAudioContext || window.webkitOfflineAudioContext)(
+                    currentBuffer.numberOfChannels,
+                    currentBuffer.length,
+                    currentBuffer.sampleRate
+                );
+                const source = processingContext.createBufferSource();
+                source.buffer = currentBuffer;
+
+                let lastNode = source;
+
+                if (soundEnhancement) {
+                    const highpassFilter = processingContext.createBiquadFilter();
+                    highpassFilter.type = 'highpass';
+                    highpassFilter.frequency.setValueAtTime(80, processingContext.currentTime);
+                    lastNode.connect(highpassFilter);
+                    lastNode = highpassFilter;
+
+                    const compressor = processingContext.createDynamicsCompressor();
+                    compressor.threshold.setValueAtTime(-20, processingContext.currentTime);
+                    compressor.knee.setValueAtTime(30, processingContext.currentTime);
+                    compressor.ratio.setValueAtTime(12, processingContext.currentTime);
+                    compressor.attack.setValueAtTime(0.003, processingContext.currentTime);
+                    compressor.release.setValueAtTime(0.25, processingContext.currentTime);
+                    lastNode.connect(compressor);
+                    lastNode = compressor;
+                }
+
+                if (volumeNormalization) {
+                    // Simple peak normalization: find max absolute value and scale
+                    let maxAmplitude = 0;
+                    for (let channel = 0; channel < currentBuffer.numberOfChannels; channel++) {
+                        const channelData = currentBuffer.getChannelData(channel);
+                        for (let i = 0; i < channelData.length; i++) {
+                            maxAmplitude = Math.max(maxAmplitude, Math.abs(channelData[i]));
+                        }
+                    }
+                    if (maxAmplitude > 0) {
+                        const normalizationGain = 1.0 / maxAmplitude; // Scale to peak 1.0
+                        const gainNode = processingContext.createGain();
+                        gainNode.gain.setValueAtTime(normalizationGain, processingContext.currentTime);
+                        lastNode.connect(gainNode);
+                        lastNode = gainNode;
+                    }
+                }
+
+                if (fadeInOut) {
+                    const fadeDuration = 2; // seconds
+                    const totalDuration = currentBuffer.duration;
+
+                    const gainNode = processingContext.createGain();
+                    // Initial fade-in
+                    gainNode.gain.setValueAtTime(0, processingContext.currentTime); 
+                    gainNode.gain.linearRampToValueAtTime(1, processingContext.currentTime + fadeDuration); 
+                    // Hold at 1 for the middle part
+                    gainNode.gain.setValueAtTime(1, processingContext.currentTime + Math.max(fadeDuration, totalDuration - fadeDuration)); 
+                    // Fade-out
+                    gainNode.gain.linearRampToValueAtTime(0, processingContext.currentTime + totalDuration); 
+
+                    lastNode.connect(gainNode);
+                    lastNode = gainNode;
+                }
+
+                lastNode.connect(processingContext.destination);
+                source.start(0);
+                currentBuffer = await processingContext.startRendering();
+            }
+
+            return currentBuffer;
+        }
+
+        // Función para manejar el clic en el botón de convertir
+        convertButton.addEventListener('click', async function() {
+            // Asegurarse de que se ha seleccionado y decodificado un archivo, y que no hay ningún procesamiento en curso
+            if (!selectedFile || !decodedAudioBuffer || isProcessing) {
+                console.log("Conversión no iniciada: No hay archivo seleccionado, audio no decodificado o ya en proceso.");
+                return;
+            }
+
+            isProcessing = true;
+            conversionStatus.textContent = 'Convirtiendo... Por favor, espere.';
+            convertButton.disabled = true;
+            convertButton.classList.add('opacity-50');
+            downloadLink.classList.add('hidden');
+            // copyLinkButton.classList.add('hidden'); // Removed hide copy link button when starting conversion
+            progressBar.style.width = '0%';
+            progressBar.setAttribute('aria-valuenow', 0);
+            progressBar.textContent = '0%';
+
+            let audioBufferToProcess = decodedAudioBuffer;
+
+            try {
+                // Apply all selected audio processing options
+                audioBufferToProcess = await processAudioBuffer(decodedAudioBuffer, {
+                    soundEnhancement: soundEnhancementCheckbox.checked,
+                    volumeNormalization: volumeNormalizationCheckbox.checked,
+                    fadeInOut: fadeInOutCheckbox.checked,
+                    targetSampleRate: selectedSampleRate // Pass target sample rate for resampling
+                });
+
+                conversionStatus.textContent = 'Procesamiento de audio completado. Codificando MP3...';
+
+                // Extraer los datos de los canales del búfer de audio procesado
+                const channelDataForWorker = [];
+                for (let i = 0; i < audioBufferToProcess.numberOfChannels; i++) {
+                    // Transferir el ArrayBuffer subyacente para eficiencia
+                    channelDataForWorker.push(audioBufferToProcess.getChannelData(i).buffer); 
+                }
+
+                // Enviar los datos del búfer de audio al Web Worker
+                mp3Worker.postMessage({
+                    audioData: channelDataForWorker, // Array de ArrayBuffers
+                    sampleRate: audioBufferToProcess.sampleRate, // Use the sample rate of the processed buffer
+                    bitrate: selectedBitrate,
+                    bitrateMode: selectedBitrateMode, // Pass bitrate mode to worker
+                    channelMode: selectedChannelMode,
+                    originalNumberOfChannels: audioBufferToProcess.numberOfChannels // Also send the number of channels of the processed buffer
+                }, channelDataForWorker); // Lista de objetos transferibles
+            } catch (error) {
+                console.error('La conversión falló:', error);
+                conversionStatus.textContent = `Error: La conversión falló. ${error.message}`;
+                isProcessing = false;
+                convertButton.disabled = false;
+                convertButton.classList.remove('opacity-50');
+                progressBar.style.width = '0%';
+                progressBar.setAttribute('aria-valuenow', 0);
+                progressBar.textContent = '0%';
+            }
+        });
+
+        // Añadir evento para revocar la URL del Blob después de la descarga
+        downloadLink.addEventListener('click', function() {
+            // Dar al navegador un momento para iniciar la descarga antes de revocar
+            setTimeout(() => {
+                if (downloadLink.href && downloadLink.href !== '#') {
+                    URL.revokeObjectURL(downloadLink.href);
+                    downloadLink.href = '#'; // Restablecer href
+                }
+            }, 100); 
+        });
+
+        // Removed Event listener for the new Copy Link button
+        /*
+        copyLinkButton.addEventListener('click', async function() {
+            if (downloadLink.href && downloadLink.href !== '#') {
+                try {
+                    await navigator.clipboard.writeText(downloadLink.href);
+                    alert('Enlace copiado al portapapeles!');
+                } catch (err) {
+                    console.error('Failed to copy link: ', err);
+                    alert('No se pudo copiar el enlace. Por favor, cópielo manualmente del botón "Download MP3" (manteniendo pulsado).');
+                }
+            } else {
+                alert('No hay enlace de MP3 disponible para copiar.');
+            }
+        });
+        */
+    </script>
+</body>
+</html>

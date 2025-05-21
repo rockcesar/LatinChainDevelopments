@@ -46,6 +46,8 @@ memory-game (MIT License) is the Test Your Brain. It's a modification of https:/
 
 js-15-puzzle (MIT License) is the 15 Puzzle Game. It's a modification of https://github.com/richterich/js-15-puzzle (MIT License, 2020)
 
+mp3 (PiOS License) is the MP3 Converter on mp3.latin-chain.com
+
 Apps Sandbox
 -----------------
 
