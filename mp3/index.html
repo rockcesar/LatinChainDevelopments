@@ -224,7 +224,7 @@
         </div>
 
         <div class="mb-4 flex items-center">
-            <input translate="no" type="checkbox" id="volume-normalization-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500">
+            <input translate="no" type="checkbox" id="volume-normalization-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500" checked>
             <label translate="no" for="volume-normalization-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Volume Normalization</label>
         </div>
 
@@ -589,7 +589,7 @@
             progressBar.textContent = '0%';
             decodedAudioBuffer = null; // Asegurarse de que el búfer de audio decodificado se borre al reiniciar
             soundEnhancementCheckbox.checked = true; // Preseleccionar la mejora de sonido al reiniciar la UI
-            volumeNormalizationCheckbox.checked = false; // Reset normalization checkbox
+            volumeNormalizationCheckbox.checked = true; // Reset normalization checkbox to true
             fadeInOutCheckbox.checked = false; // Reset fade in/out checkbox
             bitrateModeSelect.value = 'cbr'; // Reset bitrate mode
             // sampleRateSelect will be set by file input change
