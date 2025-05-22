@@ -164,7 +164,7 @@
         <h1 class="text-2xl font-semibold text-blue-600 mb-6 text-center">Universal to MP3 Converter</h1>
         <p class="text-gray-700 mb-4 text-center">Select an audio or video file to convert to MP3.</p>
 
-        <p class="text-gray-700 mb-4 text-center">Accepted formats.
+        <p class="text-gray-700 mb-4 text-center" translate="no">Accepted formats.
         <br/><strong>Audio:</strong> ['audio/mpeg', 'audio/x-wav', 'audio/wav', 'application/ogg', 'audio/ogg', 'audio/aac', 'audio/x-m4a'].
         <br/><strong>Video:</strong> ['video/mp4', 'video/webm', 'video/ogg', 'video/x-matroska'].</p>
 
@@ -179,7 +179,7 @@
 
         <div class="mb-4">
             <label for="bitrate-select" class="block text-gray-700 text-sm font-bold mb-2">MP3 Quality:</label>
-            <select id="bitrate-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <select translate="no" id="bitrate-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 <option value="32">32kbps (Very Low)</option>
                 <option value="64">64kbps (Low)</option>
                 <option value="96">96kbps (Normal)</option>
@@ -194,7 +194,7 @@
 
         <div class="mb-4">
             <label for="bitrate-mode-select" class="block text-gray-700 text-sm font-bold mb-2">Bitrate Mode:</label>
-            <select id="bitrate-mode-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <select translate="no" id="bitrate-mode-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 <option value="cbr" selected>CBR (Constant Bitrate)</option>
                 <option value="vbr">VBR (Variable Bitrate)</option>
             </select>
@@ -210,7 +210,7 @@
 
         <div class="mb-4">
             <label for="sample-rate-select" class="block text-gray-700 text-sm font-bold mb-2">Output Sample Rate:</label>
-            <select id="sample-rate-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <select translate="no" id="sample-rate-select" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 <option value="44100" selected>44.1 kHz (CD Quality)</option>
                 <option value="48000">48 kHz (DVD Quality)</option>
                 <option value="22050">22.05 kHz</option>
@@ -219,18 +219,18 @@
         </div>
 
         <div class="mb-4 flex items-center">
-            <input type="checkbox" id="sound-enhancement-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500" checked>
-            <label for="sound-enhancement-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Sound Enhancement (Clarity/Noise Reduction)</label>
+            <input translate="no" type="checkbox" id="sound-enhancement-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500" checked>
+            <label translate="no" for="sound-enhancement-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Sound Enhancement (Clarity/Noise Reduction)</label>
         </div>
 
         <div class="mb-4 flex items-center">
-            <input type="checkbox" id="volume-normalization-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500">
-            <label for="volume-normalization-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Volume Normalization</label>
+            <input translate="no" type="checkbox" id="volume-normalization-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500">
+            <label translate="no" for="volume-normalization-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Volume Normalization</label>
         </div>
 
         <div class="mb-4 flex items-center">
-            <input type="checkbox" id="fade-in-out-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500">
-            <label for="fade-in-out-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Fade In/Out (2s)</label>
+            <input translate="no" type="checkbox" id="fade-in-out-checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500">
+            <label translate="no" for="fade-in-out-checkbox" class="ml-2 text-gray-700 text-sm font-bold">Fade In/Out (2s)</label>
         </div>
 
         <div class="mb-4">
@@ -249,7 +249,7 @@
             <a id="download-link" href="#" download="" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline transition-colors duration-300 w-full inline-block">
                 Download MP3
             </a>
-            </div>
+        </div>
         
         <br/>
         <!--<ins class="adsbygoogle"
