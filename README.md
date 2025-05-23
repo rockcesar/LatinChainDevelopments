@@ -48,6 +48,8 @@ js-15-puzzle (MIT License) is the 15 Puzzle Game. It's a modification of https:/
 
 mp3 (PiOS License) is the MP3 Converter on mp3.latin-chain.com
 
+trends (PiOS License) is the Youtube Trends on trends.latin-chain.com
+
 Apps Sandbox
 -----------------
 

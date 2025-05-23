@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending videos on YouTube</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .video-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .skeleton-loader {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        .pagination-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        /* Estilos para el contenedor de paginación en pantallas pequeñas */
+        @media (max-width: 768px) {
+            #pagination-controls .flex-wrap > button,
+            #pagination-controls .flex-wrap > div > button {
+                margin-bottom: 0.5rem; /* Espacio entre botones cuando se envuelven */
+            }
+        }
+
+        /* Estilos para el iframe responsivo (aspect-ratio) */
+        .aspect-w-16 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .aspect-h-9 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Estilos para el nuevo modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            position: relative;
+            width: 90%;
+            /* Eliminado max-width fijo para mayor flexibilidad y responsividad */
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #4a5568; /* gray-700 */
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5G7GWSPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VY5G7GWSPR');
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-4xl">
+        <h5 class="text-4xl font-extrabold text-center text-gray-800 mb-8">
+            <div style="text-align:center; width:100% !important">
+            <style>
+                /* Ajustes para que el traductor de Google sea visible */
+                .goog-te-banner-frame.skiptranslate,
+                .skiptranslate > iframe {
+                    display: none !important;
+                }
+                
+                body {
+                    top: 0px !important; 
+                }
+
+                .goog-te-menu-frame {
+                    max-width:100% !important; 
+                }
+                .goog-te-menu2 { 
+                    max-width: 100% !important;
+                    overflow-x: scroll !important;
+                    box-sizing:border-box !important; 
+                    height:auto !important; 
+                }
+                
+                /* Ocultar elementos no deseados sin ocultar el widget principal */
+                #goog-gt-tt, 
+                #goog-gt-, 
+                .goog-te-balloon-frame {
+                    display: none !important;
+                } 
+                .goog-text-highlight { 
+                    background: none !important; 
+                    box-shadow: none !important;
+                }
+                
+                .goog-logo-link {
+                    display: none !important;
+                }
+                .goog-te-gadget {
+                    height: 28px !important;  
+                    overflow: hidden;
+                }
+            </style>
+            
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    var lang_google='en';
+                    
+                    new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                            autoDisplay: true,
+                                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                            'google_translate_element');
+                    
+                    var el3 = document.querySelector('circle');
+                    var observer = new window.IntersectionObserver(([entry]) => {
+                        document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                    }, {
+                        root: null,
+                        threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                    });
+
+                    observer.observe(el3);
+                    
+                }
+            </script>
+
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            
+            <strong>Translate</strong>
+            <div id="google_translate_element"></div>
+        </div>
+        <br/>
+        <br/>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br/>
+        </h5>
+
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-8">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
+                Trending videos (YouTube)
+            </span>
+            <span translate="no" class="text-xl text-gray-500 block mt-2">(by Gemini AI, trends.latin-chain.com)</span>
+        </h1>
+
+        <div id="api-key-instructions" class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6 rounded-lg" role="alert">
+            <p class="font-bold">¡Atención!</p>
+            <p>You need your own YouTube API key. Replace `YOUR_API_KEY_HERE` in the JavaScript code with yours. You can get one from the <a href="https://console.developers.google.com/apis/credentials" target="_blank" class="text-yellow-800 underline">Google Developers Console</a>.</p>
+        </div>
+
+        <div id="loading-indicator" class="text-center text-gray-600 mb-4 hidden">
+            <div class="flex justify-center items-center">
+                <svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading trending videos...
+            </div>
+        </div>
+
+        <div id="error-message" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg hidden" role="alert">
+            <p class="font-bold">Error on loading videos:</p>
+            <p id="error-text"></p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+            <input type="text" id="search-input" placeholder="Search: title or channel..." class="w-full md:w-2/3 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500">
+            <select translate="no" id="sort-select" class="w-full md:w-1/3 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
+                <option value="views-desc" selected>Most Viewed</option>
+                <option value="published-desc">Most Recent</option>
+                <option value="views-per-time-desc">Most Viewed in the Least Time</option>
+                <option value="title-asc">Title (A-Z)</option>
+                <option value="channel-asc">Channel (A-Z)</option>
+                <option value="title-desc">Title (Z-A)</option>
+                <option value="channel-desc">Channel (Z-A)</option>
+            </select>
+        </div>
+
+        <div id="video-list" translate="no" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+
+        <div translate="no" id="pagination-controls" class="flex flex-col items-center mt-8 space-y-4">
+            <div id="pagination-info" class="text-gray-700 font-semibold"></div>
+            <div class="flex justify-center items-center space-x-2 flex-wrap">
+                <button id="first-page-button" class="pagination-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md">
+                    First
+                </button>
+                <button id="prev-page-button" class="pagination-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md">
+                    Previews
+                </button>
+                <div id="page-numbers" class="flex space-x-2 flex-wrap justify-center">
+                </div>
+                <button id="next-page-button" class="pagination-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md">
+                    Next
+                </button>
+                <button id="last-page-button" class="pagination-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md">
+                    Last
+                </button>
+            </div>
+        </div>
+        <h5 class="text-4xl font-extrabold text-center text-gray-800 mb-8">
+        <br/>
+        <br/>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br/>
+        </h5>
+    </div>
+
+    <div id="video-modal" class="modal">
+        <div class="modal-content" style="height:90% !important;">
+            <button id="close-modal-button" class="modal-close-button">×</button>
+            <div style="height:90% !important; width:100% !important; margin-top: 30px">
+                <iframe id="youtube-embed-player" class="w-full h-full rounded-lg" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video Player"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $( document ).ready(function() {
+            var API_KEY = 'AIzaSyA7Gn5URN1EKTUhHRj_nCatcA8P28bddTc'; // IMPORTANT! Replace this with your YouTube API key
+            var VIDEO_LIST_CONTAINER = document.getElementById('video-list');
+            var LOADING_INDICATOR = document.getElementById('loading-indicator');
+            var ERROR_MESSAGE = document.getElementById('error-message');
+            var ERROR_TEXT = document.getElementById('error-text');
+            var API_KEY_INSTRUCTIONS = document.getElementById('api-key-instructions');
+            var FIRST_PAGE_BUTTON = document.getElementById('first-page-button');
+            var PREV_PAGE_BUTTON = document.getElementById('prev-page-button');
+            var NEXT_PAGE_BUTTON = document.getElementById('next-page-button');
+            var LAST_PAGE_BUTTON = document.getElementById('last-page-button');
+            var PAGINATION_INFO = document.getElementById('pagination-info');
+            var PAGE_NUMBERS_CONTAINER = document.getElementById('page-numbers');
+            var SEARCH_INPUT = document.getElementById('search-input');
+            var SORT_SELECT = document.getElementById('sort-select'); // New sort select element
+
+            // Modal elements
+            var VIDEO_MODAL = document.getElementById('video-modal');
+            var CLOSE_MODAL_BUTTON = document.getElementById('close-modal-button');
+            var YOUTUBE_EMBED_PLAYER = document.getElementById('youtube-embed-player');
+
+            var allVideos = []; // Stores all videos obtained from the API
+            var filteredVideos = []; // Stores videos filtered by search term
+            var videosPerPage = 10;
+            var currentPage = 1;
+            var totalPages = 0;
+
+            // Function to display an error message
+            function displayError(message) {
+                ERROR_TEXT.textContent = message;
+                ERROR_MESSAGE.classList.remove('hidden');
+            }
+
+            // Function to hide the error message
+            function hideError() {
+                ERROR_MESSAGE.classList.add('hidden');
+            }
+
+            // Function to show the loading indicator
+            function showLoading() {
+                LOADING_INDICATOR.classList.remove('hidden');
+                VIDEO_LIST_CONTAINER.innerHTML = ''; // Clear previous videos
+                hideError();
+                // Add skeleton loaders
+                for (var i = 0; i < 9; i++) {
+                    VIDEO_LIST_CONTAINER.innerHTML += `
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden video-card p-4">
+                            <div class="w-full h-40 bg-gray-300 rounded-lg skeleton-loader mb-4"></div>
+                            <div class="h-6 bg-gray-300 rounded-md skeleton-loader w-3/4 mb-2"></div>
+                            <div class="h-4 bg-gray-300 rounded-md skeleton-loader w-1/2 mb-2"></div>
+                            <div class="h-4 bg-gray-300 rounded-md skeleton-loader w-1/3"></div>
+                        </div>
+                    `;
+                }
+            }
+
+            // Function to hide the loading indicator
+            function hideLoading() {
+                LOADING_INDICATOR.classList.add('hidden');
+            }
+
+            // Function to format large numbers (e.g., 1234567 -> 1.2M)
+            function formatNumber(num) {
+                if (num >= 1000000) {
+                    return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+                }
+                if (num >= 1000) {
+                    return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+                }
+                return num;
+            }
+
+            // Function to format date (e.g., 2 days ago)
+            function timeAgo(dateString) {
+                var now = new Date();
+                var past = new Date(dateString);
+                var seconds = Math.floor((now - past) / 1000);
+
+                var interval = seconds / 31536000;
+                if (interval > 1) {
+                    return Math.floor(interval) + (Math.floor(interval) === 1 ? ' año' : ' años');
+                }
+                interval = seconds / 2592000;
+                if (interval > 1) {
+                    return Math.floor(interval) + (Math.floor(interval) === 1 ? ' mes' : ' meses');
+                }
+                interval = seconds / 86400;
+                if (interval > 1) {
+                    return Math.floor(interval) + (Math.floor(interval) === 1 ? ' día' : ' días');
+                }
+                interval = seconds / 3600;
+                if (interval > 1) {
+                    return Math.floor(interval) + (Math.floor(interval) === 1 ? ' hora' : ' horas');
+                }
+                interval = seconds / 60;
+                if (interval > 1) {
+                    return Math.floor(interval) + (Math.floor(interval) === 1 ? ' minuto' : ' minutos');
+                }
+                return Math.floor(seconds) + (Math.floor(seconds) === 1 ? ' segundo' : ' segundos');
+            }
+
+            // Function to update the state of pagination buttons and page numbers
+            function updatePaginationControls() {
+                var currentTotalVideos = filteredVideos.length;
+                totalPages = Math.ceil(currentTotalVideos / videosPerPage);
+
+                var startRange = (currentPage - 1) * videosPerPage + 1;
+                var endRange = Math.min(currentPage * videosPerPage, currentTotalVideos);
+                
+                if (currentTotalVideos === 0) {
+                    PAGINATION_INFO.textContent = `No videos were found matching your search.`;
+                } else {
+                    PAGINATION_INFO.textContent = `Showing ${startRange}-${endRange} of ${currentTotalVideos} videos`;
+                }
+                
+
+                FIRST_PAGE_BUTTON.disabled = currentPage === 1 || currentTotalVideos === 0;
+                PREV_PAGE_BUTTON.disabled = currentPage === 1 || currentTotalVideos === 0;
+                NEXT_PAGE_BUTTON.disabled = currentPage === totalPages || totalPages === 0 || currentTotalVideos === 0;
+                LAST_PAGE_BUTTON.disabled = currentPage === totalPages || totalPages === 0 || currentTotalVideos === 0;
+
+                PAGE_NUMBERS_CONTAINER.innerHTML = ''; // Clear previous page numbers
+
+                // Show up to 10 page buttons centered around the current page
+                var maxPageButtons = 10;
+                var startPage = Math.max(1, currentPage - Math.floor(maxPageButtons / 2));
+                var endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
+
+                // Adjust startPage if we are at the end to maintain maxPageButtons
+                if (endPage - startPage + 1 < maxPageButtons) {
+                    startPage = Math.max(1, endPage - maxPageButtons + 1);
+                }
+
+                for (let i = startPage; i <= endPage; i++) { // Changed 'var' to 'let' for correct closure
+                    var pageButton = document.createElement('button');
+                    pageButton.textContent = i;
+                    pageButton.classList.add('px-3', 'py-1', 'rounded-lg', 'font-bold', 'text-sm', 'pagination-button');
+                    if (i === currentPage) {
+                        pageButton.classList.add('bg-red-600', 'text-white');
+                    } else {
+                        pageButton.classList.add('bg-gray-200', 'hover:bg-gray-300', 'text-gray-700');
+                    }
+                    // Corrected event listener to capture the 'i' value for each button
+                    pageButton.addEventListener('click', () => displayPage(i)); 
+                    PAGE_NUMBERS_CONTAINER.appendChild(pageButton);
+                }
+            }
+
+            // Function to display videos on a specific page
+            function displayPage(pageNumber) {
+                currentPage = pageNumber;
+                var startIndex = (currentPage - 1) * videosPerPage;
+                var endIndex = startIndex + videosPerPage;
+                var videosToDisplay = filteredVideos.slice(startIndex, endIndex); // Use filteredVideos
+
+                VIDEO_LIST_CONTAINER.innerHTML = ''; // Clear current videos
+
+                if (videosToDisplay.length === 0 && filteredVideos.length > 0) {
+                    VIDEO_LIST_CONTAINER.innerHTML = '<p class="text-center text-gray-500 col-span-full">No hay videos en esta página.</p>';
+                } else if (filteredVideos.length === 0) {
+                    VIDEO_LIST_CONTAINER.innerHTML = '<p class="text-center text-gray-500 col-span-full">No se encontraron videos que coincidan con la búsqueda.</p>';
+                }
+
+
+                videosToDisplay.forEach(video => {
+                    var videoId = video.id;
+                    var title = video.snippet.title;
+                    var channelTitle = video.snippet.channelTitle;
+                    var thumbnailUrl = video.snippet.thumbnails.high.url;
+                    var viewCount = video.statistics.viewCount ? formatNumber(parseInt(video.statistics.viewCount)) : 'N/A';
+                    var publishedAt = timeAgo(video.snippet.publishedAt);
+
+                    var videoCard = `
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden video-card">
+                            <a class="view-video-button" href="#openVideo" rel="noopener noreferrer" data-video-id="${videoId}">
+                                <img src="${thumbnailUrl}" alt="${title}" class="w-full h-48 object-cover rounded-t-xl">
+                                <div class="p-4">
+                                    <h2 class="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">${title}</h2>
+                                    <p class="text-sm text-gray-600 mb-1">${channelTitle}</p>
+                                    <p class="text-xs text-gray-500">
+                                        ${viewCount} vistas • hace ${publishedAt}
+                                    </p>
+                                </div>
+                            </a>
+                            <div class="p-4 pt-0">
+                                <button class="view-video-button mt-3 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md" data-video-id="${videoId}">Watch Embedded Video</button>
+                            </div>
+                        </div>
+                    `;
+                    VIDEO_LIST_CONTAINER.innerHTML += videoCard;
+                });
+                // Re-attach event listeners for "Watch embedded video" buttons after new content is added
+                $('.view-video-button').off('click').on('click', function(){
+                    var videoId = $(this).data('videoId');
+                    openVideoModal(videoId);
+                });
+
+                updatePaginationControls();
+            }
+
+            // Function to filter videos
+            function filterVideos() {
+                var searchTerm = SEARCH_INPUT.value.toLowerCase();
+                if (searchTerm.trim() === '') {
+                    filteredVideos = [...allVideos]; // If search input is empty, show all videos
+                } else {
+                    filteredVideos = allVideos.filter(video => {
+                        var title = video.snippet.title ? video.snippet.title.toLowerCase() : '';
+                        var channelTitle = video.snippet.channelTitle ? video.snippet.channelTitle.toLowerCase() : '';
+                        return title.includes(searchTerm) || channelTitle.includes(searchTerm);
+                    });
+                }
+                currentPage = 1; // Reset to first page after filtering
+                sortVideos(); // Apply sorting after filtering
+            }
+
+            // Function to sort videos
+            function sortVideos() {
+                var sortOption = SORT_SELECT.value;
+                var now = new Date().getTime(); // Current time in milliseconds for "views per time" calculation
+
+                filteredVideos.sort((a, b) => {
+                    var aSnippet = a.snippet;
+                    var bSnippet = b.snippet;
+                    var aStats = a.statistics;
+                    var bStats = b.statistics;
+
+                    switch (sortOption) {
+                        case 'views-desc':
+                            // Sort by view count (descending)
+                            var aViews = parseInt(aStats.viewCount || 0);
+                            var bViews = parseInt(bStats.viewCount || 0);
+                            return bViews - aViews;
+                        case 'published-desc':
+                            // Sort by published date (descending - newest first)
+                            var aDate = new Date(aSnippet.publishedAt);
+                            var bDate = new Date(bSnippet.publishedAt);
+                            return bDate.getTime() - aDate.getTime();
+                        case 'views-per-time-desc':
+                            // Sort by views per time (descending)
+                            var aPublishedTime = new Date(aSnippet.publishedAt).getTime();
+                            var bPublishedTime = new Date(bSnippet.publishedAt).getTime();
+
+                            var aTimeElapsed = now - aPublishedTime; // Time elapsed in milliseconds
+                            var bTimeElapsed = now - bPublishedTime;
+
+                            var aViewsPerTime = aStats.viewCount && aTimeElapsed > 0 ? parseInt(aStats.viewCount) / aTimeElapsed : (aStats.viewCount ? parseInt(aStats.viewCount) : 0) * 1000000; // Large number if time elapsed is 0 or no views
+                            var bViewsPerTime = bStats.viewCount && bTimeElapsed > 0 ? parseInt(bStats.viewCount) / bTimeElapsed : (bStats.viewCount ? parseInt(bStats.viewCount) : 0) * 1000000; // Large number if time elapsed is 0 or no views
+
+                            return bViewsPerTime - aViewsPerTime;
+                        case 'title-asc':
+                            // Sort by title (ascending)
+                            var aTitle = aSnippet.title.toLowerCase();
+                            var bTitle = bSnippet.title.toLowerCase();
+                            return aTitle.localeCompare(bTitle);
+                        case 'channel-asc':
+                            // Sort by channel title (ascending)
+                            var aChannel = aSnippet.channelTitle.toLowerCase();
+                            var bChannel = bSnippet.channelTitle.toLowerCase();
+                            return aChannel.localeCompare(bChannel);
+                        case 'title-desc':
+                            // Sort by title (descending)
+                            var aTitle = aSnippet.title.toLowerCase();
+                            var bTitle = bSnippet.title.toLowerCase();
+                            return bTitle.localeCompare(aTitle); // Flipped comparison
+                        case 'channel-desc':
+                            // Sort by channel title (descending)
+                            var aChannel = aSnippet.channelTitle.toLowerCase();
+                            var bChannel = bSnippet.channelTitle.toLowerCase();
+                            return bChannel.localeCompare(aChannel); // Flipped comparison
+                        default:
+                            return 0; // No sorting
+                    }
+                });
+                currentPage = 1; // Reset to first page after sorting
+                displayPage(currentPage);
+            }
+
+            // Function to fetch all trending videos (up to 100)
+            async function fetchAllTrendingVideos() {
+                if (API_KEY === 'TU_CLAVE_DE_API_AQUI' || API_KEY.trim() === '') {
+                    displayError('Please insert your YouTube API key into the code. Without it, videos will not load.');
+                    API_KEY_INSTRUCTIONS.classList.remove('hidden');
+                    return;
+                } else {
+                    API_KEY_INSTRUCTIONS.classList.add('hidden');
+                }
+
+                showLoading();
+                allVideos = []; // Clear previous videos
+                filteredVideos = []; // Clear filtered videos
+                currentPage = 1; // Reset to first page
+
+                try {
+                    // First request (max 50 results)
+                    var apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=50&key=${API_KEY}`;
+                    var response = await fetch(apiUrl);
+                    var data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.error.message || `HTTP error! status: ${response.status}`);
+                    }
+
+                    allVideos = allVideos.concat(data.items);
+                    var firstPageNextToken = data.nextPageToken;
+
+                    // Second request if there's a next page token and we haven't reached 100 videos
+                    if (firstPageNextToken && allVideos.length < 100) {
+                        apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=50&pageToken=${firstPageNextToken}&key=${API_KEY}`;
+                        response = await fetch(apiUrl);
+                        data = await response.json();
+
+                        if (!response.ok) {
+                            throw new Error(data.error.message || `HTTP error! status: ${response.status}`);
+                        }
+                        allVideos = allVideos.concat(data.items);
+                    }
+
+                    filteredVideos = [...allVideos]; // Initially, filtered videos are all videos
+                    totalPages = Math.ceil(filteredVideos.length / videosPerPage); // Calculate totalPages based on filteredVideos
+                    hideLoading();
+
+                    if (allVideos.length === 0) {
+                        VIDEO_LIST_CONTAINER.innerHTML = '<p class="text-center text-gray-500 col-span-full">No se encontraron videos en tendencia.</p>';
+                        updatePaginationControls(); // Update buttons even if no videos
+                        return;
+                    }
+
+                    sortVideos(); // Apply default sorting after fetching all videos
+                } catch (error) {
+                    hideLoading();
+                    console.error('Error fetching trending videos:', error);
+                    displayError(`The videos could not be loaded. ${error.message}. Please make sure your API key is valid and enabled for the YouTube Data API v3.`);
+                    updatePaginationControls(); // Update buttons in case of error
+                }
+            }
+
+            // Function to open the video modal
+            function openVideoModal(videoId) {
+                // FIX: Use standard YouTube embed URL with variable interpolation.
+                var embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                YOUTUBE_EMBED_PLAYER.src = embedUrl;
+                VIDEO_MODAL.classList.add('open'); // Use the 'open' class for visibility
+            }
+
+            // Function to close the video modal
+            function closeVideoModal() {
+                YOUTUBE_EMBED_PLAYER.src = ''; // Stop the video
+                VIDEO_MODAL.classList.remove('open'); // Remove the 'open' class to hide
+            }
+
+            // Event handlers for pagination buttons
+            FIRST_PAGE_BUTTON.addEventListener('click', () => displayPage(1));
+            PREV_PAGE_BUTTON.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    displayPage(currentPage - 1);
+                }
+            });
+            NEXT_PAGE_BUTTON.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    displayPage(currentPage + 1);
+                }
+            });
+            LAST_PAGE_BUTTON.addEventListener('click', () => displayPage(totalPages));
+
+            // Event listener for search input
+            SEARCH_INPUT.addEventListener('input', filterVideos);
+
+            // Event listener for sort select
+            SORT_SELECT.addEventListener('change', sortVideos);
+
+            // Event listeners for modal
+            CLOSE_MODAL_BUTTON.addEventListener('click', closeVideoModal);
+            VIDEO_MODAL.addEventListener('click', (event) => {
+                // Close modal if clicking on the overlay, not the content
+                if (event.target === VIDEO_MODAL) {
+                    closeVideoModal();
+                }
+            });
+
+            // Load all videos on application start
+            fetchAllTrendingVideos();
+        });
+    </script>
+</body>
+</html>
