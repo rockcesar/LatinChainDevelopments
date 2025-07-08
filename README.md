@@ -44,11 +44,19 @@ bubble-shooter (MIT License) is the Bubble Shooter. It's a modification of https
 
 memory-game (MIT License) is the Test Your Brain. It's a modification of https://github.com/MTrajK/memory-game (MIT License, 2014)
 
-js-15-puzzle (MIT License) is the 15 Puzzle Game. It's a modification of https://github.com/richterich/js-15-puzzle (MIT License, 2020)
+15 Puzzle Game (PiOS License). Developed with Gemini AI (Google).
 
-mp3 (PiOS License) is the MP3 Converter on mp3.latin-chain.com
+PingPong (PiOS License). Developed with Gemini AI (Google).
 
-trends (PiOS License) is the Youtube Trends on trends.latin-chain.com
+Checkers (PiOS License). Developed with Gemini AI (Google).
+
+Domino (PiOS License). Developed with Gemini AI (Google).
+
+Latin Crush (PiOS License). Developed with Gemini AI (Google).
+
+mp3 (PiOS License) is the MP3 Converter on mp3.latin-chain.com . Developed with Gemini AI (Google).
+
+trends (PiOS License) is the Youtube Trends on trends.latin-chain.com . Developed with Gemini AI (Google).
 
 Apps Sandbox
 -----------------
