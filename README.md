@@ -54,6 +54,10 @@ Domino (PiOS License). Developed with Gemini AI (Google).
 
 Latin Crush (PiOS License). Developed with Gemini AI (Google).
 
+Odoo Learning (PiOS License). Developed with Gemini AI (Google).
+
+Language Learning (PiOS License). Developed with Gemini AI (Google).
+
 mp3 (PiOS License) is the MP3 Converter on mp3.latin-chain.com . Developed with Gemini AI (Google).
 
 trends (PiOS License) is the Youtube Trends on trends.latin-chain.com . Developed with Gemini AI (Google).
