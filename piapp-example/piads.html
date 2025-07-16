@@ -98,7 +98,7 @@
             }
 
             (async () => {
-                await Pi.init({ version: "2.0" });
+                await Pi.init({ version: "2.0", sandbox: false });
                 
                 (async () => {
                     const nativeFeaturesList = await Pi.nativeFeaturesList();
