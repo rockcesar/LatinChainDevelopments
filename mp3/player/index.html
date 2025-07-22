@@ -182,7 +182,7 @@
                 <button id="shuffle-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <!-- Shuffle Icon (Improved) -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 16L12 21L17 16M12 21V3M17 8L12 3L7 8M12 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 16L12 21L17 16M12 21V3M17 8L12 3L7 8M12 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="roun>
                     </svg>
                 </button>
                 <button id="prev-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -230,7 +230,7 @@
 
             <!-- File/Directory Input -->
             <div class="flex flex-col sm:flex-row gap-3 w-full justify-center mt-4">
-                <input type="file" id="file-input" accept="audio/*" webkitdirectory directory class="hidden">
+                <input type="file" id="file-input" accept="audio/*" class="hidden">
                 <button id="select-file-btn" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500">
                     Load File
                 </button>
@@ -623,11 +623,11 @@
             });
 
             // If no song is currently loaded, load the first one from the new additions
-            if (currentSongIndex === -1 && playlist.length > 0) {
+            /*if (currentSongIndex === -1 && playlist.length > 0) {
                 loadSong(0);
                 isPlaying = true; // Indicate intent to play
                 updatePlayPauseIcon();
-            }
+            }*/
             console.log(`Added ${files.length} files to playlist. Total songs: ${playlist.length}`);
         }
 
