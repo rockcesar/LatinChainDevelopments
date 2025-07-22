@@ -493,13 +493,13 @@
                     <label for="singleVideoInput" class="custom-file-input-label">
                         <i class="fas fa-file-video"></i>
                         <span>Add a video</span>
-                        <input type="file" id="singleVideoInput" accept="video/*, .avi">
+                        <input type="file" id="singleVideoInput" accept="video/*" webkitdirectory directory/>
                     </label>
 
                     <label for="multiVideoInput" class="custom-file-input-label">
                         <i class="fas fa-folder-plus"></i>
                         <span>Add multiple videos</span>
-                        <input type="file" id="multiVideoInput" accept="video/*, .avi" multiple>
+                        <input type="file" id="multiVideoInput" accept="video/*" webkitdirectory directory multiple />
                     </label>
 
                     <button id="clearPlaylistBtn" class="btn btn-danger" disabled><i class="fas fa-trash-alt mr-1 md:mr-2"></i>Clear Playlist</button>
