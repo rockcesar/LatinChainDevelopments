@@ -290,7 +290,16 @@
         const folderInput = document.getElementById('folder-input');
         const selectFileBtn = document.getElementById('select-file-btn');
         const selectFolderBtn = document.getElementById('select-folder-btn');
-        const clearPlaylistBtn = document.getElementById('clear-playlist-btn'); // New button reference
+        const clearPlaylistBtn = document.getElementById('clear-playlist-btn');
+
+        // Volume icons
+        const volumeIconLow = document.getElementById('volume-icon-low');
+        const volumeIconMedium = document.getElementById('volume-icon-medium');
+        const volumeIconHigh = document.getElementById('volume-icon-high');
+
+        // Repeat one indicator
+        const repeatOneIndicator = repeatBtn.querySelector('#repeat-one-indicator');
+
 
         // Global state variables
         let playlist = []; // Array to store audio files
@@ -329,27 +338,53 @@
          * Updates the repeat button icon/style based on repeat mode.
          */
         function updateRepeatButton() {
-            repeatBtn.classList.remove('text-blue-400', 'font-bold'); // Reset styling
+            // Reset styling for all icons
+            shuffleBtn.classList.remove('text-blue-400', 'font-bold');
+            repeatBtn.classList.remove('text-blue-400', 'font-bold');
+            repeatOneIndicator.classList.add('hidden'); // Hide repeat one indicator by default
+
+            if (isShuffle) {
+                shuffleBtn.classList.add('text-blue-400', 'font-bold');
+            }
+
             if (repeatMode === 1) { // Repeat all
-                repeatBtn.innerHTML = `
-                    <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
-                    </svg>`;
+                repeatBtn.classList.add('text-blue-400', 'font-bold');
             } else if (repeatMode === 2) { // Repeat one
-                repeatBtn.innerHTML = `
-                    <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
-                        <text x="10" y="15" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle">1</text>
-                    </svg>`;
-            } else { // No repeat
-                repeatBtn.innerHTML = `
-                    <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
-                    </svg>`;
+                repeatBtn.classList.add('text-blue-400', 'font-bold');
+                repeatOneIndicator.classList.remove('hidden'); // Show repeat one indicator
+            }
+        }
+
+        /**
+         * Updates the volume icon based on the current volume level.
+         */
+        function updateVolumeIcon() {
+            const volume = audioPlayer.volume;
+            volumeIconLow.classList.add('hidden');
+            volumeIconMedium.classList.add('hidden');
+            volumeIconHigh.classList.add('hidden');
+
+            if (volume === 0) {
+                volumeIconLow.classList.remove('hidden'); // Mute icon
+            } else if (volume > 0 && volume <= 0.5) {
+                volumeIconMedium.classList.remove('hidden'); // Medium volume icon
+            } else {
+                volumeIconHigh.classList.remove('hidden'); // High volume icon
             }
         }
 
         // --- Core Player Functions ---
+
+        /**
+         * Handles the 'canplaythrough' event, starting playback if intended.
+         */
+        function handleCanPlayThrough() {
+            if (isPlaying) {
+                audioPlayer.play().catch(e => console.error("Error playing audio after canplaythrough:", e));
+            }
+            // Remove the event listener once it's triggered to prevent multiple calls
+            audioPlayer.removeEventListener('canplaythrough', handleCanPlayThrough);
+        }
 
         /**
          * Loads a song into the audio player and updates UI.
@@ -364,7 +399,10 @@
             currentSongIndex = index;
             const song = playlist[currentSongIndex];
 
+            // Set the audio source and add the 'canplaythrough' listener
             audioPlayer.src = URL.createObjectURL(song);
+            audioPlayer.addEventListener('canplaythrough', handleCanPlayThrough, { once: true });
+
             currentSongTitle.textContent = song.name;
             albumArt.src = "https://latin-chain.com/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg"; // Reset album art
             progressBar.value = 0;
@@ -380,11 +418,6 @@
                     item.classList.add('bg-gray-600', 'hover:bg-gray-500');
                 }
             });
-
-            // If a song was playing, continue playing the new song
-            if (isPlaying) {
-                audioPlayer.play().catch(e => console.error("Error playing audio:", e));
-            }
         }
 
         /**
@@ -397,14 +430,16 @@
 
             if (currentSongIndex === -1) {
                 loadSong(0); // Load the first song if none is loaded
-            }
-
-            if (isPlaying) {
-                audioPlayer.pause();
+                isPlaying = true; // Indicate intent to play
             } else {
-                audioPlayer.play().catch(e => console.error("Error playing audio:", e));
+                if (isPlaying) {
+                    audioPlayer.pause();
+                } else {
+                    // If already loaded, play directly. If not, canplaythrough will handle it.
+                    audioPlayer.play().catch(e => console.error("Error playing audio:", e));
+                }
+                isPlaying = !isPlaying;
             }
-            isPlaying = !isPlaying;
             updatePlayPauseIcon();
         }
 
@@ -494,12 +529,11 @@
         playPauseBtn.addEventListener('click', togglePlayPause);
         prevBtn.addEventListener('click', playPrevSong);
         nextBtn.addEventListener('click', playNextSong);
-        clearPlaylistBtn.addEventListener('click', clearPlaylist); // New event listener for clear button
+        clearPlaylistBtn.addEventListener('click', clearPlaylist);
 
         shuffleBtn.addEventListener('click', () => {
             isShuffle = !isShuffle;
-            shuffleBtn.classList.toggle('text-blue-400', isShuffle);
-            shuffleBtn.classList.toggle('font-bold', isShuffle);
+            updateRepeatButton(); // Call to update button styling based on new shuffle state
             console.log("Shuffle mode:", isShuffle ? "On" : "Off");
         });
 
@@ -531,10 +565,12 @@
 
         volumeBar.addEventListener('input', () => {
             audioPlayer.volume = volumeBar.value / 100;
+            updateVolumeIcon(); // Update icon when volume changes
         });
 
-        // Initialize volume
+        // Initialize volume and icon
         audioPlayer.volume = volumeBar.value / 100;
+        updateVolumeIcon();
         updateRepeatButton(); // Set initial repeat button state
 
         // --- File/Folder Loading ---
@@ -589,8 +625,7 @@
             // If no song is currently loaded, load the first one from the new additions
             if (currentSongIndex === -1 && playlist.length > 0) {
                 loadSong(0);
-                isPlaying = true; // Ensure playback starts
-                audioPlayer.play().catch(e => console.error("Error playing audio on initial load:", e));
+                isPlaying = true; // Indicate intent to play
                 updatePlayPauseIcon();
             }
             console.log(`Added ${files.length} files to playlist. Total songs: ${playlist.length}`);
