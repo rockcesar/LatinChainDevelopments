@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Video Player</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base styles (Mobile First) */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to start for content flow */
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem; /* Smaller padding for mobile */
+            box-sizing: border-box;
+        }
+        .main-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow for mobile */
+            padding: 1.5rem; /* Smaller padding for mobile */
+            max-width: 100%; /* Full width on mobile */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* Smaller gap for mobile */
+        }
+
+        /* Layout for video and playlist - Mobile default is column */
+        .player-and-playlist-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* Smaller gap for mobile */
+        }
+
+        .video-player-section {
+            flex: 1; /* Takes full space on mobile */
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .playlist-section {
+            flex: 1; /* Takes full space on mobile */
+            background-color: #f8fafc;
+            border-radius: 1rem;
+            padding: 1rem; /* Smaller padding for mobile */
+            border: 1px solid #e2e8f0;
+        }
+
+        video {
+            width: 100%;
+            min-height: 200px;
+            max-height: auto; /* Adjusted max height for mobile */
+            background-color: #000;
+            border-radius: 1rem;
+            object-fit: contain;
+        }
+
+        /* Custom Controls Styling */
+        .controls {
+            background-color: #1e293b;
+            border-radius: 0.75rem;
+            padding: 0.5rem; /* Smaller padding for mobile */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around; /* Distribute items on mobile */
+            gap: 0.75rem; /* Smaller gap for mobile */
+            color: white;
+        }
+        .controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.25rem; /* Slightly smaller icons for mobile */
+            cursor: pointer;
+            padding: 0.4rem; /* Smaller padding for touch targets */
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .controls button:hover:not(:disabled) {
+            background-color: #334155;
+        }
+        .controls button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-bar-wrapper {
+            flex-grow: 1;
+            height: 0.4rem; /* Thinner progress bar for mobile */
+            background-color: #475569;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            position: relative;
+            margin: 0 0.5rem; /* Add some horizontal margin */
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #3b82f6;
+            border-radius: 0.25rem;
+        }
+        .time-display {
+            font-size: 0.8rem; /* Smaller font size for mobile */
+            white-space: nowrap;
+        }
+
+        .volume-control, .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem; /* Smaller gap for mobile */
+        }
+        .volume-control input[type="range"],
+        .speed-control select {
+            background-color: #475569;
+            border-radius: 0.25rem;
+            height: 0.4rem; /* Thinner slider for mobile */
+            cursor: pointer;
+        }
+        .volume-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px; /* Smaller thumb for mobile */
+            height: 14px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            margin-top: -5px;
+            box-shadow: 0 0 2px rgba(0,0,0,0.5);
+        }
+        .speed-control select {
+            padding: 0.15rem 0.4rem; /* Smaller padding for mobile */
+            border: none;
+            background-color: #334155;
+            color: white;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.8rem; /* Smaller font for mobile */
+            min-width: 3.5rem; /* Added min-width for better visibility */
+            text-align: center; /* Center text */
+            text-align-last: center; /* For Firefox compatibility */
+            height: 18px; /* Set height to 18px as requested */
+            line-height: 18px; /* Adjust line-height to match height */
+            -webkit-appearance: none; /* Remove default select styling for better control */
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* File Input and General Buttons */
+        .file-input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* Smaller gap for mobile */
+            margin-top: 0.5rem;
+        }
+
+        /* Custom styling for file input buttons */
+        .custom-file-input-label {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1rem; /* Mobile padding */
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #3b82f6; /* bg-blue-500 */
+            color: white;
+            border: none;
+            font-size: 0.9rem; /* Mobile font size */
+            gap: 0.5rem;
+            overflow: hidden; /* Hide overflow for input */
+        }
+        .custom-file-input-label:hover {
+            background-color: #2563eb; /* bg-blue-600 */
+        }
+        .custom-file-input-label i {
+            font-size: 1rem; /* Mobile icon size */
+        }
+
+        .custom-file-input-label input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1; /* Ensure it's above the label text */
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem; /* Smaller padding for mobile */
+            border-radius: 0.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem; /* Smaller gap for icons */
+            font-size: 0.9rem; /* Smaller font for mobile */
+        }
+        .btn i {
+            font-size: 1rem; /* Adjust icon size */
+        }
+        .btn-primary {
+            background-color: #3b82f6; /* bg-blue-500 */
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb; /* bg-blue-600 */
+        }
+        .btn-secondary {
+            background-color: #e2e8f0; /* bg-slate-200 */
+            color: #333;
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #cbd5e1; /* bg-slate-300 */
+        }
+        .btn-danger {
+            background-color: #ef4444; /* bg-red-500 */
+            color: white;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #dc2626; /* bg-red-600 */
+        }
+
+        .video-info {
+            text-align: center;
+            font-size: 1rem; /* Adjusted font size */
+            font-weight: 500;
+            color: #475569;
+        }
+        /* Error message is now hidden by default and only logs to console */
+        .error-message {
+            display: none; /* Hide error messages from UI */
+        }
+
+        /* Playlist Specific Styles */
+        .playlist-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 300px; /* Smaller max height for mobile */
+            overflow-y: auto;
+        }
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.6rem;
+            padding: 0.6rem 0.8rem; /* Smaller padding for mobile */
+            margin-bottom: 0.6rem;
+            cursor: grab;
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            font-size: 0.9rem; /* Smaller font for mobile */
+        }
+        .playlist-item-name {
+            flex-grow: 1;
+            margin-right: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #333;
+        }
+        .playlist-item-remove {
+            font-size: 1.1rem; /* Adjusted icon size */
+            padding: 0.2rem;
+        }
+
+        /* Drag and Drop styles */
+        .playlist-item.dragging {
+            opacity: 0.5;
+            border: 2px dashed #3b82f6;
+        }
+        .playlist-item.insert-before {
+            border-top: 2px solid #3b82f6;
+        }
+        .playlist-item.insert-after {
+            border-bottom: 2px solid #3b82f6;
+        }
+        .playlist-item.active {
+            background-color: #e0f2fe; /* Light blue for active item */
+            border-color: #3b82f6; /* Blue border for active item */
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Blue glow */
+        }
+
+        /* Fullscreen mode */
+        .video-player-section.fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-player-section.fullscreen video {
+            width: 100%;
+            height: 100%;
+            max-height: none;
+            object-fit: contain;
+            border-radius: 0;
+        }
+        .video-player-section.fullscreen .controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-radius: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        /* No media queries for desktop/tablet views, keeping mobile-first styles for all sizes */
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5G7GWSPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VY5G7GWSPR');
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+    -->
+</head>
+<body>
+    <div class="main-container">
+        <div style="text-align:center; width:100% !important">
+            <style>
+                /* Ajustes para que el traductor de Google sea visible */
+                .goog-te-banner-frame.skiptranslate,
+                .skiptranslate > iframe {
+                    display: none !important;
+                }
+                
+                body {
+                    top: 0px !important; 
+                }
+
+                .goog-te-menu-frame {
+                    max-width:100% !important; 
+                }
+                .goog-te-menu2 { 
+                    max-width: 100% !important;
+                    overflow-x: scroll !important;
+                    box-sizing:border-box !important; 
+                    height:auto !important; 
+                }
+                
+                /* Ocultar elementos no deseados sin ocultar el widget principal */
+                #goog-gt-tt, 
+                #goog-gt-, 
+                .goog-te-balloon-frame {
+                    display: none !important;
+                } 
+                .goog-text-highlight { 
+                    background: none !important; 
+                    box-shadow: none !important;
+                }
+                
+                .goog-logo-link {
+                    display: none !important;
+                }
+                .goog-te-gadget {
+                    height: 28px !important;  
+                    overflow: hidden;
+                }
+            </style>
+            
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    var lang_google='en';
+                    
+                    new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                          autoDisplay: true,
+                                                          layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                          'google_translate_element');
+                    
+                    //var el = document.querySelector('#goog-gt-');
+                    //var el2 = document.querySelector('.skiptranslate');
+                    var el3 = document.querySelector('circle');
+                    //var el4 = document.querySelector('.goog-te-gadget');
+                    var observer = new window.IntersectionObserver(([entry]) => {
+                        /*for(var i = 0; i < document.getElementsByClassName("skiptranslate").length; i++)
+                        {
+                            for(var j = 0; j < document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
+                            {
+                                if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
+                                    document.getElementsByClassName("skiptranslate")[i].style.display = "none";
+                            }
+                        }
+                        document.getElementById("goog-gt-").style.display = "none";*/
+                        document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                    }, {
+                        root: null,
+                        threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                    });
+
+                    //observer.observe(el);
+                    //observer.observe(el2);
+                    observer.observe(el3);
+                    //observer.observe(el4);
+                    
+                }
+            </script>
+
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+            <strong>Translate</strong>
+            <div id="google_translate_element"></div>
+        </div>
+        <br/>
+        
+        <!--<ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-gc+4r+1p-d0+h0"
+           data-ad-client="ca-pub-2334449220276386"
+           data-ad-slot="6758976353"></ins>
+        <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>-->
+        
+        <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">Professional Video Player</h1>
+        
+        <h3 class="text-1xl md:text-1xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">
+            <strong>Contact: latinchain.info@gmail.com</strong>
+            <br/>
+            <strong>mp3.latin-chain.com/player</strong>
+            <br/>
+            <strong>Made with help of Google Gemini AI</strong>
+        </h3>
+
+        <div class="player-and-playlist-wrapper">
+            <div id="videoPlayerSection" class="video-player-section">
+                <video id="videoPlayer" controls>
+                    Your browser does not support the video tag.
+                </video>
+
+                <div class="controls">
+                    <button id="playPauseBtn" title="Play/Pause"><i class="fas fa-play"></i></button>
+                    <div class="time-display"><span id="currentTime">00:00</span> / <span id="duration">00:00</span></div>
+                    <div id="progressBarWrapper" class="progress-bar-wrapper">
+                        <div id="progressBar" class="progress-bar"></div>
+                    </div>
+                    <div class="volume-control">
+                        <button id="muteBtn" title="Mute/Unmute"><i class="fas fa-volume-up"></i></button>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+                    </div>
+                    <div class="speed-control">
+                        <select id="playbackSpeed">
+                            <option value="0.5">0.5x</option>
+                            <option value="0.75">0.75x</option>
+                            <option value="1" selected>1x</option>
+                            <option value="1.25">1.25x</option>
+                            <option value="1.5">1.5x</option>
+                            <option value="2">2x</option>
+                        </select>
+                    </div>
+                    <button id="fullscreenBtn" title="Fullscreen"><i class="fas fa-expand"></i></button>
+                </div>
+
+                <div id="videoInfo" class="video-info">No video loaded</div>
+                <div id="errorMessage" class="error-message hidden"></div>
+            </div>
+
+            <div class="playlist-section">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Playlist</h2>
+                <div class="file-input-wrapper mb-4 md:mb-6">
+                    <label for="singleVideoInput" class="custom-file-input-label">
+                        <i class="fas fa-file-video"></i>
+                        <span>Add a video</span>
+                        <input type="file" id="singleVideoInput" accept="video/*, .avi">
+                    </label>
+
+                    <label for="multiVideoInput" class="custom-file-input-label">
+                        <i class="fas fa-folder-plus"></i>
+                        <span>Add multiple videos</span>
+                        <input type="file" id="multiVideoInput" accept="video/*, .avi" multiple>
+                    </label>
+
+                    <button id="clearPlaylistBtn" class="btn btn-danger" disabled><i class="fas fa-trash-alt mr-1 md:mr-2"></i>Clear Playlist</button>
+                </div>
+
+                <ul id="playlist" class="playlist-list">
+                    <!-- Playlist items will be added here -->
+                    <li class="text-slate-500 text-center py-3 md:py-4">Playlist is empty.</li>
+                </ul>
+
+                <div class="button-group flex justify-center gap-3 md:gap-4 mt-4 md:mt-6">
+                    <button id="prevBtn" class="btn btn-secondary" disabled><i class="fas fa-backward mr-1 md:mr-2"></i>Previous</button>
+                    <button id="nextBtn" class="btn btn-primary" disabled>Next<i class="fas fa-forward ml-1 md:ml-2"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <!--<br/>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br/>-->
+    </div>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoPlayerSection = document.getElementById('videoPlayerSection');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = playPauseBtn.querySelector('i');
+        const progressBarWrapper = document.getElementById('progressBarWrapper');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeDisplay = document.getElementById('currentTime');
+        const durationDisplay = document.getElementById('duration');
+        const muteBtn = document.getElementById('muteBtn');
+        const muteIcon = muteBtn.querySelector('i');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const playbackSpeedSelect = document.getElementById('playbackSpeed');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+        const singleVideoInput = document.getElementById('singleVideoInput');
+        const multiVideoInput = document.getElementById('multiVideoInput');
+        const videoInfo = document.getElementById('videoInfo');
+        const errorMessage = document.getElementById('errorMessage'); // Still get reference for potential future use, but hidden
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const playlistElement = document.getElementById('playlist');
+        const clearPlaylistBtn = document.getElementById('clearPlaylistBtn');
+
+        let playlist = []; // Stores File objects for the playlist
+        let currentVideoIndex = -1;
+        let isDragging = false;
+        let draggedItem = null;
+
+        // --- Utility Functions ---
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+        }
+
+        // Modified to only log errors to console, not display on UI
+        function displayError(message) {
+            console.error('Video Player Error:', message);
+            // errorMessage.textContent = message; // Removed UI update
+            // errorMessage.classList.remove('hidden'); // Removed UI update
+        }
+
+        // No longer needed as errors are not displayed on UI
+        function clearError() {
+            // errorMessage.textContent = ''; // Removed UI update
+            // errorMessage.classList.add('hidden'); // Ensure it stays hidden
+        }
+
+        // --- Playlist Management ---
+        function addVideoToPlaylist(file) {
+            playlist.push(file);
+            renderPlaylist();
+            updateNavigationButtons();
+            clearError(); // Still call to clear previous console errors
+        }
+
+        function removeVideoFromPlaylist(index) {
+            if (index > -1 && index < playlist.length) {
+                const wasPlaying = (currentVideoIndex === index);
+                playlist.splice(index, 1);
+
+                if (playlist.length === 0) {
+                    currentVideoIndex = -1;
+                    videoPlayer.src = '';
+                    videoInfo.textContent = 'No video loaded';
+                    playPauseIcon.classList.remove('fa-pause');
+                    playPauseIcon.classList.add('fa-play');
+                } else if (wasPlaying) {
+                    // If the currently playing video was removed, play the next one or the first one
+                    currentVideoIndex = Math.min(index, playlist.length - 1);
+                    loadVideo(playlist[currentVideoIndex]);
+                } else if (index < currentVideoIndex) {
+                    // If a video before the current one was removed, adjust currentVideoIndex
+                    currentVideoIndex--;
+                }
+                renderPlaylist();
+                updateNavigationButtons();
+            }
+        }
+
+        function clearPlaylist() {
+            if (playlist.length === 0) {
+                return; // Do nothing if already empty
+            }
+
+            playlist = []; // Empty the playlist array
+            currentVideoIndex = -1; // Reset current video index
+            videoPlayer.src = ''; // Clear video player source
+            videoInfo.textContent = 'No video loaded'; // Update info text
+            playPauseIcon.classList.remove('fa-pause'); // Reset play/pause icon
+            playPauseIcon.classList.add('fa-play');
+            renderPlaylist(); // Re-render the empty playlist
+            updateNavigationButtons(); // Update button states
+            clearError(); // Clear any existing errors
+        }
+
+        function renderPlaylist() {
+            playlistElement.innerHTML = ''; // Clear existing list
+            if (playlist.length === 0) {
+                playlistElement.innerHTML = '<li class="text-slate-500 text-center py-3 md:py-4">Playlist is empty.</li>';
+                clearPlaylistBtn.disabled = true; // Disable clear button if playlist is empty
+                return;
+            }
+
+            playlist.forEach((file, index) => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('playlist-item');
+                if (index === currentVideoIndex) {
+                    listItem.classList.add('active');
+                }
+                listItem.dataset.index = index;
+                listItem.draggable = true; // Make items draggable
+
+                const itemName = document.createElement('span');
+                itemName.classList.add('playlist-item-name');
+                itemName.textContent = file.name;
+                listItem.appendChild(itemName);
+
+                const removeBtn = document.createElement('button');
+                removeBtn.classList.add('playlist-item-remove');
+                removeBtn.innerHTML = '<i class="fas fa-times-circle"></i>';
+                removeBtn.title = 'Remove from playlist';
+                removeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent playing video when removing
+                    removeVideoFromPlaylist(index);
+                });
+                listItem.appendChild(removeBtn);
+
+                listItem.addEventListener('click', () => {
+                    if (!isDragging) { // Only play if not currently dragging
+                        currentVideoIndex = index;
+                        loadVideo(playlist[currentVideoIndex]);
+                        renderPlaylist(); // Re-render to update active class
+                        updateNavigationButtons();
+                    }
+                });
+
+                // Drag and Drop listeners
+                listItem.addEventListener('dragstart', (e) => {
+                    isDragging = true;
+                    draggedItem = listItem;
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/plain', index); // Store index for reordering
+                    setTimeout(() => listItem.classList.add('dragging'), 0); // Add class after drag starts
+                });
+
+                listItem.addEventListener('dragover', (e) => {
+                    e.preventDefault(); // Allow drop
+                    const boundingBox = listItem.getBoundingClientRect();
+                    const offset = e.clientY - boundingBox.top;
+                    if (offset < boundingBox.height / 2) {
+                        listItem.classList.remove('insert-after');
+                        listItem.classList.add('insert-before');
+                    } else {
+                        listItem.classList.remove('insert-before');
+                        listItem.classList.add('insert-after');
+                    }
+                });
+
+                listItem.addEventListener('dragleave', () => {
+                    listItem.classList.remove('insert-before', 'insert-after');
+                });
+
+                listItem.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    listItem.classList.remove('insert-before', 'insert-after');
+
+                    const fromIndex = parseInt(e.dataTransfer.getData('text/plain'));
+                    const toIndex = parseInt(listItem.dataset.index);
+
+                    if (fromIndex !== toIndex) {
+                        const [movedItem] = playlist.splice(fromIndex, 1);
+                        playlist.splice(toIndex, 0, movedItem);
+
+                        // Adjust currentVideoIndex if the playing video was moved
+                        if (currentVideoIndex === fromIndex) {
+                            currentVideoIndex = toIndex;
+                        } else if (currentVideoIndex > fromIndex && currentVideoIndex <= toIndex) {
+                            currentVideoIndex--;
+                        } else if (currentVideoIndex < fromIndex && currentVideoIndex >= toIndex) {
+                            currentVideoIndex++;
+                        }
+
+                        renderPlaylist();
+                        updateNavigationButtons();
+                    }
+                });
+
+                listItem.addEventListener('dragend', () => {
+                    isDragging = false;
+                    draggedItem.classList.remove('dragging');
+                    draggedItem = null;
+                    // Clean up any lingering insert classes
+                    document.querySelectorAll('.playlist-item').forEach(item => {
+                        item.classList.remove('insert-before', 'insert-after');
+                    });
+                });
+
+                playlistElement.appendChild(listItem);
+            });
+            clearPlaylistBtn.disabled = false; // Enable clear button if playlist has items
+        }
+
+        // --- Video Player Core Logic ---
+        function loadVideo(file) {
+            clearError();
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                videoPlayer.src = fileURL;
+                videoPlayer.load(); // Load the new video source
+                videoPlayer.play().catch(e => {
+                    displayError('Error playing video: ' + e.message + '. Format might not be supported, or browser autoplay restrictions are active.');
+                    playPauseIcon.classList.remove('fa-pause');
+                    playPauseIcon.classList.add('fa-play');
+                });
+                videoInfo.textContent = `Playing: ${file.name}`;
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+            } else {
+                videoPlayer.src = '';
+                videoInfo.textContent = 'No video loaded';
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+            }
+        }
+
+        function updateNavigationButtons() {
+            prevBtn.disabled = currentVideoIndex <= 0 || playlist.length === 0;
+            nextBtn.disabled = currentVideoIndex >= playlist.length - 1 || playlist.length === 0;
+            clearPlaylistBtn.disabled = playlist.length === 0; // Also update clear button state here
+        }
+
+        // --- Event Listeners ---
+
+        // File Inputs
+        singleVideoInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('video/')) {
+                addVideoToPlaylist(file);
+                currentVideoIndex = playlist.length - 1; // Play the newly added video
+                loadVideo(playlist[currentVideoIndex]);
+                renderPlaylist();
+            } else {
+                displayError('Please select a valid video file.');
+            }
+            event.target.value = null; // Clear input for next selection
+        });
+
+        // Event listener for the new multi-file input
+        multiVideoInput.addEventListener('change', (event) => {
+            const files = event.target.files;
+            let videosFound = 0;
+            if (files.length > 0) {
+                // Convert FileList to array, filter, and sort
+                const newVideos = Array.from(files).filter(file => file.type.startsWith('video/'));
+                newVideos.sort((a, b) => a.name.localeCompare(b.name));
+
+                newVideos.forEach(file => {
+                    addVideoToPlaylist(file);
+                    videosFound++;
+                });
+
+                if (videosFound > 0) {
+                    if (currentVideoIndex === -1) { // If playlist was empty, start playing the first added video
+                        currentVideoIndex = 0;
+                        loadVideo(playlist[currentVideoIndex]);
+                    }
+                    renderPlaylist();
+                } else {
+                    displayError('No valid video files found.');
+                }
+            } else {
+                displayError('No files selected.');
+            }
+            event.target.value = null; // Clear input for next selection
+        });
+
+        // Custom Video Controls
+        playPauseBtn.addEventListener('click', () => {
+            if (videoPlayer.paused) {
+                videoPlayer.play().catch(e => {
+                    displayError('Error playing: ' + e.message);
+                });
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+            } else {
+                videoPlayer.pause();
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+            }
+        });
+
+        videoPlayer.addEventListener('play', () => {
+            playPauseIcon.classList.remove('fa-play');
+            playPauseIcon.classList.add('fa-pause');
+        });
+
+        videoPlayer.addEventListener('pause', () => {
+            playPauseIcon.classList.remove('fa-pause');
+            playPauseIcon.classList.add('fa-play');
+        });
+
+        videoPlayer.addEventListener('timeupdate', () => {
+            const currentTime = videoPlayer.currentTime;
+            const duration = videoPlayer.duration;
+
+            currentTimeDisplay.textContent = formatTime(currentTime);
+            if (!isNaN(duration)) {
+                durationDisplay.textContent = formatTime(duration);
+                const progress = (currentTime / duration) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+        });
+
+        videoPlayer.addEventListener('loadedmetadata', () => {
+            durationDisplay.textContent = formatTime(videoPlayer.duration);
+            volumeSlider.value = videoPlayer.volume; // Set slider to current volume
+            muteIcon.classList.toggle('fa-volume-mute', videoPlayer.muted);
+            muteIcon.classList.toggle('fa-volume-up', !videoPlayer.muted);
+            // Set initial playback speed select value
+            // Ensure the value exists in the options, otherwise default to 1x
+            const rate = videoPlayer.playbackRate.toString();
+            if (Array.from(playbackSpeedSelect.options).some(option => option.value === rate)) {
+                playbackSpeedSelect.value = rate;
+            } else {
+                playbackSpeedSelect.value = '1'; // Default to 1x if current rate is not in options
+            }
+        });
+
+        // New event listener for 'ratechange' to update the select box
+        videoPlayer.addEventListener('ratechange', () => {
+            // Ensure the value exists in the options, otherwise default to 1x
+            const rate = videoPlayer.playbackRate.toString();
+            if (Array.from(playbackSpeedSelect.options).some(option => option.value === rate)) {
+                playbackSpeedSelect.value = rate;
+            } else {
+                playbackSpeedSelect.value = '1'; // Default to 1x if current rate is not in options
+            }
+        });
+
+        progressBarWrapper.addEventListener('click', (e) => {
+            const rect = progressBarWrapper.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            const percent = clickX / width;
+            videoPlayer.currentTime = videoPlayer.duration * percent;
+        });
+
+        muteBtn.addEventListener('click', () => {
+            videoPlayer.muted = !videoPlayer.muted;
+            muteIcon.classList.toggle('fa-volume-mute', videoPlayer.muted);
+            muteIcon.classList.toggle('fa-volume-up', !videoPlayer.muted);
+        });
+
+        volumeSlider.addEventListener('input', () => {
+            videoPlayer.volume = volumeSlider.value;
+            videoPlayer.muted = (volumeSlider.value == 0); // Mute if volume is 0
+            muteIcon.classList.toggle('fa-volume-mute', videoPlayer.muted);
+            muteIcon.classList.toggle('fa-volume-up', !videoPlayer.muted);
+        });
+
+        playbackSpeedSelect.addEventListener('change', () => {
+            videoPlayer.playbackRate = parseFloat(playbackSpeedSelect.value);
+        });
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                videoPlayerSection.requestFullscreen().catch(err => {
+                    displayError(`Error trying to enter fullscreen: ${err.message} (Your browser might not allow it without direct user interaction or due to security restrictions).`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                fullscreenBtn.querySelector('i').classList.remove('fa-expand');
+                fullscreenBtn.querySelector('i').classList.add('fa-compress');
+                videoPlayerSection.classList.add('fullscreen');
+            } else {
+                fullscreenBtn.querySelector('i').classList.remove('fa-compress');
+                fullscreenBtn.querySelector('i').classList.add('fa-expand');
+                videoPlayerSection.classList.remove('fullscreen');
+            }
+        });
+
+        // Playlist Navigation Buttons
+        prevBtn.addEventListener('click', () => {
+            if (currentVideoIndex > 0) {
+                currentVideoIndex--;
+                loadVideo(playlist[currentVideoIndex]);
+                renderPlaylist();
+                updateNavigationButtons();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentVideoIndex < playlist.length - 1) {
+                currentVideoIndex++;
+                loadVideo(playlist[currentVideoIndex]);
+                renderPlaylist();
+                updateNavigationButtons();
+            } else {
+                videoInfo.textContent = 'End of playlist.';
+                videoPlayer.pause();
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+            }
+        });
+
+        // Event listener for the new "Clear Playlist" button
+        clearPlaylistBtn.addEventListener('click', clearPlaylist);
+
+        // Video ended event
+        videoPlayer.addEventListener('ended', () => {
+            if (currentVideoIndex < playlist.length - 1) {
+                currentVideoIndex++;
+                loadVideo(playlist[currentVideoIndex]);
+                renderPlaylist();
+            } else {
+                videoInfo.textContent = 'End of playlist.';
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+                videoPlayer.pause();
+            }
+            updateNavigationButtons();
+        });
+
+        // Initial render and button state
+        renderPlaylist();
+        updateNavigationButtons();
+    </script>
+</body>
+</html>
