@@ -13,6 +13,7 @@
             background-color: #1a202c; /* Dark background */
             color: #e2e8f0; /* Light text */
             display: flex;
+            flex-direction: column; /* Allow content to stack vertically */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -38,6 +39,37 @@
         .playlist-container::-webkit-scrollbar-thumb:hover {
             background: #6a768e; /* Darker thumb on hover */
         }
+
+        /* Custom styling for range inputs (progress and volume bars) */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #60a5fa; /* Blue-400 */
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.4); /* Focus ring effect */
+            transition: background 0.2s ease-in-out;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #60a5fa; /* Blue-400 */
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.4);
+            transition: background 0.2s ease-in-out;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #3b82f6; /* Blue-500 */
+        }
+
+        input[type="range"]::-moz-range-thumb:hover {
+            background: #3b82f6; /* Blue-500 */
+        }
     </style>
 
     <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5G7GWSPR"></script>
@@ -48,7 +80,7 @@
 
       gtag('config', 'G-VY5G7GWSPR');
     </script>
-    
+   
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
     -->
 </head>
@@ -63,7 +95,7 @@
                 .skiptranslate > iframe {
                     display: none !important;
                 }
-                
+               
                 body {
                     top: 0px !important; 
                 }
@@ -77,7 +109,7 @@
                     box-sizing:border-box !important; 
                     height:auto !important; 
                 }
-                
+               
                 /* Ocultar elementos no deseados sin ocultar el widget principal */
                 #goog-gt-tt, 
                 #goog-gt-, 
@@ -88,7 +120,7 @@
                     background: none !important; 
                     box-shadow: none !important;
                 }
-                
+               
                 .goog-logo-link {
                     display: none !important;
                 }
@@ -97,70 +129,53 @@
                     overflow: hidden;
                 }
             </style>
-            
+           
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     var lang_google='en';
-                    
+                   
                     new google.translate.TranslateElement({pageLanguage: lang_google,
-                                                            autoDisplay: true,
-                                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                            'google_translate_element');
-                    
-                    //var el = document.querySelector('#goog-gt-');
-                    //var el2 = document.querySelector('.skiptranslate');
+                                                                 autoDisplay: true,
+                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                                 'google_translate_element');
+                   
                     var el3 = document.querySelector('circle');
-                    //var el4 = document.querySelector('.goog-te-gadget');
                     var observer = new window.IntersectionObserver(([entry]) => {
-                        /*for(var i = 0; i < document.getElementsByClassName("skiptranslate").length; i++)
-                        {
-                            for(var j = 0; j < document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
-                            {
-                                if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
-                                    document.getElementsByClassName("skiptranslate")[i].style.display = "none";
-                            }
-                        }
-                        document.getElementById("goog-gt-").style.display = "none";*/
                         document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
                     }, {
                         root: null,
                         threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
                     });
 
-                    //observer.observe(el);
-                    //observer.observe(el2);
                     observer.observe(el3);
-                    //observer.observe(el4);
-                    
+                   
                 }
             </script>
 
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        
+       
             <strong>Translate</strong>
             <div id="google_translate_element"></div>
         </div>
-        <!--<br/>
+        <!--
         <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2334449220276386"
-             data-ad-slot="6625994850"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-gc+4r+1p-d0+h0"
+           data-ad-client="ca-pub-2334449220276386"
+           data-ad-slot="6758976353"></ins>
         <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
+           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>-->
 
         <!-- Music Player Section -->
         <div class="flex-1 flex flex-col items-center justify-center space-y-6">
             <h1 class="text-3xl font-bold text-blue-400 mb-4">Music Player</h1>
-
+           
             <h3 class="text-1xl font-bold text-blue-400 mb-4">
-                <strong>Contact: latinchain.info@gmail.com</strong>
-                <br/>
-                <strong>mp3.latin-chain.com/player</strong>
-                <br/>
-                <strong>Made with help of Google Gemini AI</strong>
+                Contact: latinchain.info@gmail.com<br/>
+                mp3.latin-chain.com/player<br/>
+                Made with help of Google Gemini AI
             </h3>
 
             <!-- Current Song Info -->
@@ -179,19 +194,19 @@
 
             <!-- Controls -->
             <div class="flex items-center justify-center space-x-4 w-full">
-                <button id="shuffle-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <!-- Shuffle Icon (Improved) -->
+                <button id="shuffle-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Shuffle playlist">
+                    <!-- Shuffle Icon (Updated to standard criss-cross) -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 16L12 21L17 16M12 21V3M17 8L12 3L7 8M12 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="roun>
+                        <path d="M7 16L12 21L17 16M12 21V3M17 8L12 3L7 8M12 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <button id="prev-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="prev-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Previous song">
                     <!-- Previous Icon -->
                     <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
-                <button id="play-pause-btn" class="p-4 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="play-pause-btn" class="p-4 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Play or pause">
                     <!-- Play Icon -->
                     <svg id="play-icon" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 5v14l11-7z"></path>
@@ -201,45 +216,49 @@
                         <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
                     </svg>
                 </button>
-                <button id="next-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="next-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Next song">
                     <!-- Next Icon -->
                     <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
-                <button id="repeat-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <!-- Repeat Icon (Improved) -->
+                <button id="repeat-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Repeat mode">
+                    <!-- Repeat Icon (Updated to standard repeat-one) -->
                     <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
+                        <!-- Small '1' for repeat one mode -->
+                        <path id="repeat-one-indicator" class="hidden" d="M12 15a3 3 0 100-6 3 3 0 000 6z" fill="white"/>
                     </svg>
                 </button>
             </div>
 
             <!-- Volume Control -->
             <div class="flex items-center space-x-2 w-full">
-                <!-- Volume Low Icon -->
-                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path>
+                <!-- Volume Icons (Dynamic) -->
+                <svg id="volume-icon-low" class="w-6 h-6 text-gray-400 hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z"/>
                 </svg>
-                <input type="range" id="volume-bar" value="100" min="0" max="100" class="flex-1 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-400">
-                <!-- Volume High Icon (no change needed for this specific icon) -->
-                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path>
+                <svg id="volume-icon-medium" class="w-6 h-6 text-gray-400 hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5zM19 12c0 .94-.28 1.81-.76 2.53l1.45 1.45C20.42 15.08 21 13.63 21 12c0-2.39-1.29-4.51-3.22-5.68l-1.45 1.45c1.16.71 1.97 1.97 1.97 3.23z"/>
                 </svg>
+                <svg id="volume-icon-high" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+                <input type="range" id="volume-bar" value="100" min="0" max="100" class="flex-1 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-400" aria-label="Volume control">
             </div>
 
             <!-- File/Directory Input -->
             <div class="flex flex-col sm:flex-row gap-3 w-full justify-center mt-4">
-                <input type="file" id="file-input" accept="audio/*" class="hidden">
-                <button id="select-file-btn" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <input type="file" id="file-input" accept="audio/*" class="hidden" aria-label="Select audio file"/>
+                <button id="select-file-btn" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Load single audio file">
                     Load File
                 </button>
 
-                <input type="file" id="folder-input" multiple class="hidden">
-                <button id="select-folder-btn" class="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500">
-                    Load Folder
+                <input type="file" id="folder-input" multiple class="hidden" aria-label="Select folder with audio files" />
+                <button id="select-folder-btn" class="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500" aria-label="Load audio files from folder">
+                    Load multiple files
                 </button>
-                <button id="clear-playlist-btn" class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <button id="clear-playlist-btn" class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Clear playlist">
                     Clear Playlist
                 </button>
             </div>
@@ -258,7 +277,8 @@
         <audio id="audio-player" class="hidden"></audio>
 
         <br/>
-        <!--<ins class="adsbygoogle"
+        <!--
+        <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-2334449220276386"
              data-ad-slot="6625994850"
@@ -524,6 +544,68 @@
             console.log("Playlist cleared.");
         }
 
+        /**
+         * Removes a song from the playlist by its index.
+         * @param {number} indexToRemove - The index of the song to remove.
+         */
+        function removeSongFromPlaylist(indexToRemove) {
+            if (indexToRemove < 0 || indexToRemove >= playlist.length) {
+                console.error("Invalid index for song removal.");
+                return;
+            }
+
+            const wasPlaying = isPlaying;
+            const wasCurrentSong = (indexToRemove === currentSongIndex);
+
+            // Remove from array
+            playlist.splice(indexToRemove, 1);
+
+            // Remove from DOM
+            const listItemToRemove = playlistElement.querySelector(`li[data-index="${indexToRemove}"]`);
+            if (listItemToRemove) {
+                playlistElement.removeChild(listItemToRemove);
+            }
+
+            // Re-index remaining DOM elements and adjust currentSongIndex
+            document.querySelectorAll('#playlist li').forEach((item, idx) => {
+                // Only update data-index for items that were after the removed item
+                if (parseInt(item.dataset.index) > indexToRemove) {
+                    item.dataset.index = parseInt(item.dataset.index) - 1;
+                }
+            });
+
+            if (wasCurrentSong) {
+                // If the current song was removed
+                audioPlayer.pause();
+                isPlaying = false;
+                if (playlist.length > 0) {
+                    // Try to play the next song, or the first if it was the last
+                    currentSongIndex = Math.min(indexToRemove, playlist.length - 1); // Stay at same index or go to last
+                    if (currentSongIndex < 0) currentSongIndex = 0; // Ensure it's not -1 if playlist becomes empty
+                    loadSong(currentSongIndex);
+                    isPlaying = wasPlaying; // Resume playing if it was playing before removal
+                    if (isPlaying) {
+                        audioPlayer.play().catch(e => console.error("Error playing audio after removal:", e));
+                    }
+                } else {
+                    // If playlist is now empty
+                    clearPlaylist();
+                }
+            } else if (indexToRemove < currentSongIndex) {
+                // If a song before the current one was removed, decrement currentSongIndex
+                currentSongIndex--;
+            }
+            // If a song after the current one was removed, currentSongIndex remains the same.
+
+            updatePlayPauseIcon();
+            // If the playlist becomes empty, ensure the "No song loaded" message is displayed
+            if (playlist.length === 0 && playlistElement.children.length === 0) {
+                playlistElement.innerHTML = '<li class="text-gray-400 text-center py-4">Load files or folders to start.</li>';
+            }
+            console.log(`Removed song at index ${indexToRemove}. Total songs: ${playlist.length}`);
+        }
+
+
         // --- Event Handlers ---
 
         playPauseBtn.addEventListener('click', togglePlayPause);
@@ -604,13 +686,43 @@
 
             files.forEach(file => {
                 playlist.push(file);
+                const newIndex = playlist.length - 1; // Get the index before adding to DOM
+
                 const listItem = document.createElement('li');
-                listItem.classList.add('p-3', 'rounded-md', 'bg-gray-600', 'hover:bg-gray-500', 'cursor-pointer', 'transition', 'duration-150', 'truncate');
-                listItem.textContent = file.name;
-                listItem.dataset.index = playlist.length - 1; // Store index for easy access
+                listItem.classList.add(
+                    'p-3', 'rounded-md', 'bg-gray-600', 'hover:bg-gray-500', 
+                    'cursor-pointer', 'transition', 'duration-150', 'truncate',
+                    'flex', 'items-center', 'justify-between' // Flexbox for name and delete button
+                );
+                listItem.dataset.index = newIndex; // Store index for easy access
+
+                const songNameSpan = document.createElement('span');
+                songNameSpan.classList.add('flex-1', 'truncate');
+                songNameSpan.textContent = file.name;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add(
+                    'delete-song-btn', 'text-red-400', 'hover:text-red-600', 'ml-4', 
+                    'p-1', 'rounded-full', 'hover:bg-gray-700', 'transition', 
+                    'duration-150', 'focus:outline-none', 'focus:ring-2', 'focus:ring-red-500'
+                );
+                deleteButton.setAttribute('aria-label', 'Remove song');
+                deleteButton.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                `;
+                deleteButton.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent the li click event from firing
+                    const indexToDelete = parseInt(listItem.dataset.index);
+                    removeSongFromPlaylist(indexToDelete);
+                });
+
+                listItem.appendChild(songNameSpan);
+                listItem.appendChild(deleteButton);
 
                 listItem.addEventListener('click', (event) => {
-                    const clickedIndex = parseInt(event.target.dataset.index);
+                    const clickedIndex = parseInt(event.currentTarget.dataset.index); // Use currentTarget for the li
                     if (clickedIndex !== currentSongIndex) {
                         loadSong(clickedIndex);
                         isPlaying = true; // Start playing immediately
@@ -630,7 +742,8 @@
                     isPlaying = true; // Indicate intent to play
                     updatePlayPauseIcon();
                 }
-            }, 5000);
+            }, 500); // Reduced timeout for faster initial play
+           
             console.log(`Added ${files.length} files to playlist. Total songs: ${playlist.length}`);
         }
 
