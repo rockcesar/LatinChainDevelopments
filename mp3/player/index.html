@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Music Player</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the player */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0; /* Light text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Custom scrollbar for playlist */
+        .playlist-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .playlist-container::-webkit-scrollbar-track {
+            background: #2d3748; /* Darker track */
+            border-radius: 10px;
+        }
+
+        .playlist-container::-webkit-scrollbar-thumb {
+            background: #4a5568; /* Thumb color */
+            border-radius: 10px;
+        }
+
+        .playlist-container::-webkit-scrollbar-thumb:hover {
+            background: #6a768e; /* Darker thumb on hover */
+        }
+    </style>
+
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5G7GWSPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VY5G7GWSPR');
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+    -->
+</head>
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-gray-800 rounded-xl shadow-2xl p-6 w-full max-w-2xl flex flex-col gap-6">
+
+        <div style="text-align:center; width:100% !important">
+            <style>
+                /* Ajustes para que el traductor de Google sea visible */
+                .goog-te-banner-frame.skiptranslate,
+                .skiptranslate > iframe {
+                    display: none !important;
+                }
+                
+                body {
+                    top: 0px !important; 
+                }
+
+                .goog-te-menu-frame {
+                    max-width:100% !important; 
+                }
+                .goog-te-menu2 { 
+                    max-width: 100% !important;
+                    overflow-x: scroll !important;
+                    box-sizing:border-box !important; 
+                    height:auto !important; 
+                }
+                
+                /* Ocultar elementos no deseados sin ocultar el widget principal */
+                #goog-gt-tt, 
+                #goog-gt-, 
+                .goog-te-balloon-frame {
+                    display: none !important;
+                } 
+                .goog-text-highlight { 
+                    background: none !important; 
+                    box-shadow: none !important;
+                }
+                
+                .goog-logo-link {
+                    display: none !important;
+                }
+                .goog-te-gadget {
+                    height: 28px !important;  
+                    overflow: hidden;
+                }
+            </style>
+            
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    var lang_google='en';
+                    
+                    new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                            autoDisplay: true,
+                                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                            'google_translate_element');
+                    
+                    //var el = document.querySelector('#goog-gt-');
+                    //var el2 = document.querySelector('.skiptranslate');
+                    var el3 = document.querySelector('circle');
+                    //var el4 = document.querySelector('.goog-te-gadget');
+                    var observer = new window.IntersectionObserver(([entry]) => {
+                        /*for(var i = 0; i < document.getElementsByClassName("skiptranslate").length; i++)
+                        {
+                            for(var j = 0; j < document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
+                            {
+                                if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
+                                    document.getElementsByClassName("skiptranslate")[i].style.display = "none";
+                            }
+                        }
+                        document.getElementById("goog-gt-").style.display = "none";*/
+                        document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                    }, {
+                        root: null,
+                        threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                    });
+
+                    //observer.observe(el);
+                    //observer.observe(el2);
+                    observer.observe(el3);
+                    //observer.observe(el4);
+                    
+                }
+            </script>
+
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+            <strong>Translate</strong>
+            <div id="google_translate_element"></div>
+        </div>
+        <!--<br/>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>-->
+
+        <!-- Music Player Section -->
+        <div class="flex-1 flex flex-col items-center justify-center space-y-6">
+            <h1 class="text-3xl font-bold text-blue-400 mb-4">Music Player</h1>
+
+            <h3 class="text-1xl font-bold text-blue-400 mb-4">
+                <strong>Contact: latinchain.info@gmail.com</strong>
+                <br/>
+                <strong>mp3.latin-chain.com/player</strong>
+                <br/>
+                <strong>Made with help of Google Gemini AI</strong>
+            </h3>
+
+            <!-- Current Song Info -->
+            <div class="text-center w-full">
+                <p id="current-song-title" class="text-xl font-semibold text-gray-200 truncate">No song loaded</p>
+                <p id="current-song-time" class="text-sm text-gray-400 mt-1">0:00 / 0:00</p>
+            </div>
+
+            <!-- Album Art Placeholder -->
+            <div class="w-48 h-48 bg-gray-700 rounded-lg flex items-center justify-center overflow-hidden shadow-lg">
+                <img id="album-art" src="https://latin-chain.com/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="Album Art" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Progress Bar -->
+            <input type="range" id="progress-bar" value="0" min="0" max="100" class="w-full h-2 bg-blue-600 rounded-lg appearance-none cursor-pointer accent-blue-400">
+
+            <!-- Controls -->
+            <div class="flex items-center justify-center space-x-4 w-full">
+                <button id="shuffle-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- Shuffle Icon (Improved) -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 16L12 21L17 16M12 21V3M17 8L12 3L7 8M12 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button id="prev-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- Previous Icon -->
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button id="play-pause-btn" class="p-4 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- Play Icon -->
+                    <svg id="play-icon" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                    <!-- Pause Icon -->
+                    <svg id="pause-icon" class="w-8 h-8 text-white hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                    </svg>
+                </button>
+                <button id="next-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- Next Icon -->
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                <button id="repeat-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- Repeat Icon (Improved) -->
+                    <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Volume Control -->
+            <div class="flex items-center space-x-2 w-full">
+                <!-- Volume Low Icon -->
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path>
+                </svg>
+                <input type="range" id="volume-bar" value="100" min="0" max="100" class="flex-1 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-400">
+                <!-- Volume High Icon (no change needed for this specific icon) -->
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path>
+                </svg>
+            </div>
+
+            <!-- File/Directory Input -->
+            <div class="flex flex-col sm:flex-row gap-3 w-full justify-center mt-4">
+                <input type="file" id="file-input" accept="audio/*" class="hidden">
+                <button id="select-file-btn" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    Load File
+                </button>
+
+                <input type="file" id="folder-input" webkitdirectory directory multiple class="hidden">
+                <button id="select-folder-btn" class="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    Load Folder
+                </button>
+                <button id="clear-playlist-btn" class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500">
+                    Clear Playlist
+                </button>
+            </div>
+        </div>
+
+        <!-- Playlist Section -->
+        <div class="flex-1 bg-gray-700 rounded-lg p-4 shadow-inner flex flex-col">
+            <h2 class="text-2xl font-bold text-gray-200 mb-4 text-center">Playlist</h2>
+            <ul id="playlist" class="flex-1 overflow-y-auto space-y-2 playlist-container">
+                <!-- Playlist items will be added here by JavaScript -->
+                <li class="text-gray-400 text-center py-4">Load files or folders to start.</li>
+            </ul>
+        </div>
+
+        <!-- Audio element (hidden) -->
+        <audio id="audio-player" class="hidden"></audio>
+
+        <br/>
+        <!--<ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br/>-->
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const audioPlayer = document.getElementById('audio-player');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const shuffleBtn = document.getElementById('shuffle-btn');
+        const repeatBtn = document.getElementById('repeat-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const volumeBar = document.getElementById('volume-bar');
+        const currentSongTitle = document.getElementById('current-song-title');
+        const currentSongTime = document.getElementById('current-song-time');
+        const albumArt = document.getElementById('album-art');
+        const playlistElement = document.getElementById('playlist');
+        const fileInput = document.getElementById('file-input');
+        const folderInput = document.getElementById('folder-input');
+        const selectFileBtn = document.getElementById('select-file-btn');
+        const selectFolderBtn = document.getElementById('select-folder-btn');
+        const clearPlaylistBtn = document.getElementById('clear-playlist-btn'); // New button reference
+
+        // Global state variables
+        let playlist = []; // Array to store audio files
+        let currentSongIndex = -1; // Index of the currently playing song
+        let isPlaying = false; // Playback status
+        let isShuffle = false; // Shuffle mode status
+        let repeatMode = 0; // 0: No repeat, 1: Repeat all, 2: Repeat one
+
+        // --- Utility Functions ---
+
+        /**
+         * Formats time in seconds to MM:SS format.
+         * @param {number} seconds - The time in seconds.
+         * @returns {string} Formatted time string.
+         */
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+        }
+
+        /**
+         * Updates the play/pause button icon based on playback state.
+         */
+        function updatePlayPauseIcon() {
+            if (isPlaying) {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        }
+
+        /**
+         * Updates the repeat button icon/style based on repeat mode.
+         */
+        function updateRepeatButton() {
+            repeatBtn.classList.remove('text-blue-400', 'font-bold'); // Reset styling
+            if (repeatMode === 1) { // Repeat all
+                repeatBtn.innerHTML = `
+                    <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
+                    </svg>`;
+            } else if (repeatMode === 2) { // Repeat one
+                repeatBtn.innerHTML = `
+                    <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
+                        <text x="10" y="15" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle">1</text>
+                    </svg>`;
+            } else { // No repeat
+                repeatBtn.innerHTML = `
+                    <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
+                    </svg>`;
+            }
+        }
+
+        // --- Core Player Functions ---
+
+        /**
+         * Loads a song into the audio player and updates UI.
+         * @param {number} index - The index of the song in the playlist.
+         */
+        function loadSong(index) {
+            if (index < 0 || index >= playlist.length) {
+                console.error("Invalid song index.");
+                return;
+            }
+
+            currentSongIndex = index;
+            const song = playlist[currentSongIndex];
+
+            audioPlayer.src = URL.createObjectURL(song);
+            currentSongTitle.textContent = song.name;
+            albumArt.src = "https://latin-chain.com/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg"; // Reset album art
+            progressBar.value = 0;
+            currentSongTime.textContent = '0:00 / 0:00';
+
+            // Highlight current song in playlist
+            document.querySelectorAll('#playlist li').forEach((item, idx) => {
+                if (idx === currentSongIndex) {
+                    item.classList.add('bg-blue-600', 'text-white', 'font-semibold');
+                    item.classList.remove('bg-gray-600', 'hover:bg-gray-500');
+                } else {
+                    item.classList.remove('bg-blue-600', 'text-white', 'font-semibold');
+                    item.classList.add('bg-gray-600', 'hover:bg-gray-500');
+                }
+            });
+
+            // If a song was playing, continue playing the new song
+            if (isPlaying) {
+                audioPlayer.play().catch(e => console.error("Error playing audio:", e));
+            }
+        }
+
+        /**
+         * Toggles play/pause state.
+         */
+        function togglePlayPause() {
+            if (playlist.length === 0) {
+                return; // No songs to play
+            }
+
+            if (currentSongIndex === -1) {
+                loadSong(0); // Load the first song if none is loaded
+            }
+
+            if (isPlaying) {
+                audioPlayer.pause();
+            } else {
+                audioPlayer.play().catch(e => console.error("Error playing audio:", e));
+            }
+            isPlaying = !isPlaying;
+            updatePlayPauseIcon();
+        }
+
+        /**
+         * Plays the next song in the playlist.
+         */
+        function playNextSong() {
+            if (playlist.length === 0) return;
+
+            if (repeatMode === 2) { // Repeat one
+                audioPlayer.currentTime = 0;
+                audioPlayer.play();
+                return;
+            }
+
+            let nextIndex;
+            if (isShuffle) {
+                nextIndex = Math.floor(Math.random() * playlist.length);
+                while (nextIndex === currentSongIndex && playlist.length > 1) {
+                    nextIndex = Math.floor(Math.random() * playlist.length);
+                }
+            } else {
+                nextIndex = currentSongIndex + 1;
+                if (nextIndex >= playlist.length) {
+                    nextIndex = 0; // Loop back to the beginning
+                    if (repeatMode === 0) { // If no repeat, stop after last song
+                        isPlaying = false;
+                        updatePlayPauseIcon();
+                        currentSongTitle.textContent = "Playback finished";
+                        return;
+                    }
+                }
+            }
+            loadSong(nextIndex);
+            isPlaying = true; // Ensure it plays after changing song
+            updatePlayPauseIcon();
+        }
+
+        /**
+         * Plays the previous song in the playlist.
+         */
+        function playPrevSong() {
+            if (playlist.length === 0) return;
+
+            let prevIndex;
+            if (isShuffle) {
+                prevIndex = Math.floor(Math.random() * playlist.length);
+                while (prevIndex === currentSongIndex && playlist.length > 1) {
+                    prevIndex = Math.floor(Math.random() * playlist.length);
+                }
+            } else {
+                prevIndex = currentSongIndex - 1;
+                if (prevIndex < 0) {
+                    prevIndex = playlist.length - 1; // Loop back to the end
+                }
+            }
+            loadSong(prevIndex);
+            isPlaying = true; // Ensure it plays after changing song
+            updatePlayPauseIcon();
+        }
+
+        /**
+         * Clears the entire playlist and resets the player state.
+         */
+        function clearPlaylist() {
+            audioPlayer.pause();
+            audioPlayer.src = ''; // Clear current audio source
+            isPlaying = false;
+            currentSongIndex = -1;
+            playlist = []; // Clear the playlist array
+
+            // Reset UI elements
+            currentSongTitle.textContent = 'No song loaded';
+            currentSongTime.textContent = '0:00 / 0:00';
+            progressBar.value = 0;
+            albumArt.src = "https://latin-chain.com/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg";
+            updatePlayPauseIcon();
+
+            // Clear playlist display and add initial message
+            playlistElement.innerHTML = '<li class="text-gray-400 text-center py-4">Load files or folders to start.</li>';
+
+            console.log("Playlist cleared.");
+        }
+
+        // --- Event Handlers ---
+
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        prevBtn.addEventListener('click', playPrevSong);
+        nextBtn.addEventListener('click', playNextSong);
+        clearPlaylistBtn.addEventListener('click', clearPlaylist); // New event listener for clear button
+
+        shuffleBtn.addEventListener('click', () => {
+            isShuffle = !isShuffle;
+            shuffleBtn.classList.toggle('text-blue-400', isShuffle);
+            shuffleBtn.classList.toggle('font-bold', isShuffle);
+            console.log("Shuffle mode:", isShuffle ? "On" : "Off");
+        });
+
+        repeatBtn.addEventListener('click', () => {
+            repeatMode = (repeatMode + 1) % 3; // Cycle through 0, 1, 2
+            updateRepeatButton();
+            console.log("Repeat mode:", repeatMode === 0 ? "No Repeat" : (repeatMode === 1 ? "Repeat All" : "Repeat One"));
+        });
+
+        audioPlayer.addEventListener('timeupdate', () => {
+            const currentTime = audioPlayer.currentTime;
+            const duration = audioPlayer.duration;
+
+            // Update progress bar
+            if (!isNaN(duration)) {
+                progressBar.value = (currentTime / duration) * 100;
+                currentSongTime.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
+            }
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            playNextSong(); // Automatically play the next song when current one ends
+        });
+
+        progressBar.addEventListener('input', () => {
+            const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+            audioPlayer.currentTime = seekTime;
+        });
+
+        volumeBar.addEventListener('input', () => {
+            audioPlayer.volume = volumeBar.value / 100;
+        });
+
+        // Initialize volume
+        audioPlayer.volume = volumeBar.value / 100;
+        updateRepeatButton(); // Set initial repeat button state
+
+        // --- File/Folder Loading ---
+
+        selectFileBtn.addEventListener('click', () => fileInput.click());
+        selectFolderBtn.addEventListener('click', () => folderInput.click());
+
+        fileInput.addEventListener('change', (event) => {
+            const files = Array.from(event.target.files);
+            addFilesToPlaylist(files);
+        });
+
+        folderInput.addEventListener('change', (event) => {
+            const files = Array.from(event.target.files);
+            // Filter for audio files (common types)
+            const audioFiles = files.filter(file => file.type.startsWith('audio/') || file.name.match(/\.(mp3|wav|ogg|flac|aac)$/i));
+            addFilesToPlaylist(audioFiles);
+        });
+
+        /**
+         * Adds files to the playlist and updates the UI.
+         * @param {File[]} files - An array of File objects.
+         */
+        function addFilesToPlaylist(files) {
+            if (files.length === 0) return;
+
+            // Clear existing playlist if new files are loaded
+            if (playlist.length === 0) {
+                playlistElement.innerHTML = ''; // Clear initial message
+            }
+
+            files.forEach(file => {
+                playlist.push(file);
+                const listItem = document.createElement('li');
+                listItem.classList.add('p-3', 'rounded-md', 'bg-gray-600', 'hover:bg-gray-500', 'cursor-pointer', 'transition', 'duration-150', 'truncate');
+                listItem.textContent = file.name;
+                listItem.dataset.index = playlist.length - 1; // Store index for easy access
+
+                listItem.addEventListener('click', (event) => {
+                    const clickedIndex = parseInt(event.target.dataset.index);
+                    if (clickedIndex !== currentSongIndex) {
+                        loadSong(clickedIndex);
+                        isPlaying = true; // Start playing immediately
+                        updatePlayPauseIcon();
+                    } else {
+                        togglePlayPause(); // If clicked on current song, toggle play/pause
+                    }
+                });
+                playlistElement.appendChild(listItem);
+            });
+
+            // If no song is currently loaded, load the first one from the new additions
+            if (currentSongIndex === -1 && playlist.length > 0) {
+                loadSong(0);
+                isPlaying = true; // Ensure playback starts
+                audioPlayer.play().catch(e => console.error("Error playing audio on initial load:", e));
+                updatePlayPauseIcon();
+            }
+            console.log(`Added ${files.length} files to playlist. Total songs: ${playlist.length}`);
+        }
+
+        // --- Drag and Drop functionality ---
+        const dropArea = document.body; // Or a specific div if you prefer
+
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault(); // Prevent default to allow drop
+            dropArea.classList.add('border-blue-500', 'border-dashed'); // Visual feedback
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.classList.remove('border-blue-500', 'border-dashed');
+        });
+
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('border-blue-500', 'border-dashed');
+
+            const items = e.dataTransfer.items;
+            const filesToProcess = [];
+
+            // Function to recursively read directory entries
+            function readEntry(entry) {
+                return new Promise(resolve => {
+                    if (entry.isFile) {
+                        entry.file(file => {
+                            if (file.type.startsWith('audio/') || file.name.match(/\.(mp3|wav|ogg|flac|aac)$/i)) {
+                                filesToProcess.push(file);
+                            }
+                            resolve();
+                        });
+                    } else if (entry.isDirectory) {
+                        const dirReader = entry.createReader();
+                        dirReader.readEntries(entries => {
+                            const promises = entries.map(subEntry => readEntry(subEntry));
+                            Promise.all(promises).then(resolve);
+                        });
+                    } else {
+                        resolve();
+                    }
+                });
+            }
+
+            const entryPromises = [];
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                if (item.kind === 'file') {
+                    const entry = item.webkitGetAsEntry(); // For directory support
+                    if (entry) {
+                        entryPromises.push(readEntry(entry));
+                    }
+                }
+            }
+
+            Promise.all(entryPromises).then(() => {
+                addFilesToPlaylist(filesToProcess);
+            }).catch(error => {
+                console.error("Error during drag and drop file processing:", error);
+            });
+        });
+
+    </script>
+</body>
+</html>
