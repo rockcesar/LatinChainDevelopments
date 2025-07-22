@@ -735,14 +735,11 @@
             });
 
             // If no song is currently loaded, load the first one from the new additions
-            setTimeout(function ()
-            {
-                if (currentSongIndex === -1 && playlist.length > 0) {
-                    loadSong(0);
-                    isPlaying = true; // Indicate intent to play
-                    updatePlayPauseIcon();
-                }
-            }, 500); // Reduced timeout for faster initial play
+            if (currentSongIndex === -1 && playlist.length > 0) {
+                loadSong(0);
+                isPlaying = true; // Indicate intent to play
+                //updatePlayPauseIcon();
+            }
            
             console.log(`Added ${files.length} files to playlist. Total songs: ${playlist.length}`);
         }
