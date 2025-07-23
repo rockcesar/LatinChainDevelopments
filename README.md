@@ -60,6 +60,10 @@ Language Learning (PiOS License). Developed with Gemini AI (Google).
 
 WebTorrent P2P Player (PiOS License). Developed with Gemini AI (Google).
 
+Music Player (PiOS License). Developed with Gemini AI (Google).
+
+Video Player (PiOS License). Developed with Gemini AI (Google).
+
 mp3 (PiOS License) is the MP3 Converter on mp3.latin-chain.com . Developed with Gemini AI (Google).
 
 trends (PiOS License) is the Youtube Trends on trends.latin-chain.com . Developed with Gemini AI (Google).
