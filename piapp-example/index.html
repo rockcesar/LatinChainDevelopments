@@ -27,7 +27,6 @@
         <script type="text/javascript">
             $( document ).ready(function() {
                 const Pi = window.Pi;
-                Pi.init({ version: "2.0" });
                 
                 async function auth() {
                     try {
@@ -40,19 +39,21 @@
                         Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                             $("#username").html(" " + auth.user.username);
                         }).catch(function(error) {
-                            //Pi.openShareDialog("Error", error);
                             //alert(err);
                             console.error(error);
                         });
                     } catch (err) {
-                        //Pi.openShareDialog("Error", err);
                         //alert(err);
                         console.error(err);
                         // Not able to fetch the user
                     }
                 }
                 
-                auth();
+                (async () => {
+                    await Pi.init({ version: "2.0", sandbox: false });
+                    
+                    auth();
+                })();
                 
                 const shareData = {
                     title: 'LatinChain Platform',
