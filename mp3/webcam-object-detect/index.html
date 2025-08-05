@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection with Voice and Webcam</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- TensorFlow.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- COCO-SSD model CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* A soft background color */
+        }
+        .container {
+            max-width: 90%; /* Max width for the container */
+            margin: 2rem auto; /* Center and add space */
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        video, canvas {
+            display: block;
+            border-radius: 0.75rem; /* Rounded corners for video/canvas */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            max-width: 100%; /* Ensure it fits the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .loading-message {
+            color: #3b82f6; /* Blue color for loading message */
+            font-weight: 600;
+        }
+        .error-message {
+            color: #ef4444; /* Red color for error message */
+            font-weight: 600;
+        }
+        .detection-info {
+            margin-top: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        .detection-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .detection-item {
+            background-color: #e0f2fe; /* Background color for detected items */
+            color: #1e40af; /* Text color for detected items */
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .control-buttons {
+            display: flex;
+            gap: 1rem; /* Space between buttons */
+            margin-top: 1rem;
+            flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+            justify-content: center;
+        }
+        .action-button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .action-button:hover {
+            background-color: #45a049;
+        }
+        .action-button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: translateY(1px);
+        }
+        #speechStatus {
+            margin-top: 10px;
+            font-style: italic;
+            color: #6b7280;
+        }
+        .confidence-control {
+            margin-top: 1rem;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .confidence-control label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #4b5563;
+        }
+        .confidence-control input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 8px;
+            background: #d1d5db;
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+        .confidence-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .confidence-control input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY5G7GWSPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VY5G7GWSPR');
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+    -->
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="container bg-white p-6 rounded-xl shadow-lg">
+        <div style="text-align:center; width:100% !important">
+            <style>
+                /* Adjustments for Google Translator to be visible */
+                .goog-te-banner-frame.skiptranslate,
+                .skiptranslate > iframe {
+                    display: none !important;
+                }
+                
+                body {
+                    top: 0px !important; 
+                }
+
+                .goog-te-menu-frame {
+                    max-width:100% !important; 
+                }
+                .goog-te-menu2 { 
+                    max-width: 100% !important;
+                    overflow-x: scroll !important;
+                    box-sizing:border-box !important; 
+                    height:auto !important; 
+                }
+                
+                /* Hide unwanted elements without hiding the main widget */
+                #goog-gt-tt, 
+                #goog-gt-, 
+                .goog-te-balloon-frame {
+                    display: none !important;
+                } 
+                .goog-text-highlight { 
+                    background: none !important; 
+                    box-shadow: none !important;
+                }
+                
+                .goog-logo-link {
+                    display: none !important;
+                }
+                .goog-te-gadget {
+                    height: 28px !important;  
+                    overflow: hidden;
+                }
+            </style>
+            
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    var lang_google='en';
+                    
+                    new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                                 autoDisplay: true,
+                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                                 'google_translate_element');
+                    
+                    var el3 = document.querySelector('circle');
+                    var observer = new window.IntersectionObserver(([entry]) => {
+                        document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                    }, {
+                        root: null,
+                        threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                    });
+
+                    observer.observe(el3);
+                    
+                }
+            </script>
+
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            
+            <strong>Translate</strong>
+            <div id="google_translate_element"></div>
+        
+            <!--
+            <br/>
+            <br/>
+            <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-format="fluid"
+               data-ad-layout-key="-gc+4r+1p-d0+h0"
+               data-ad-client="ca-pub-2334449220276386"
+               data-ad-slot="6758976353"></ins>
+            <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            -->
+            <br/>
+        
+        </div>
+        
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Real-time Object Detection with Voice</h1>
+        
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">Developed with Gemini AI</h3>
+
+        <div id="status" class="text-lg text-gray-600 mb-4 loading-message">Loading model... please wait.</div>
+        <div id="error" class="text-lg text-red-600 mb-4 error-message hidden"></div>
+
+        <div class="relative w-full max-w-xl">
+            <video id="webcam" autoplay muted playsinline class="w-full rounded-lg"></video>
+            <canvas id="outputCanvas" class="absolute top-0 left-0 w-full h-full rounded-lg"></canvas>
+        </div>
+
+        <div class="control-buttons">
+            <button id="switchCameraButton" class="action-button">Switch Camera</button>
+            <button id="askButton" class="action-button">Ask What I'm Seeing</button>
+        </div>
+        <div id="speechStatus" class="text-sm"></div>
+
+        <div class="confidence-control">
+            <label for="confidenceThreshold">Min Confidence: <span id="confidenceValue">50%</span></label>
+            <input type="range" id="confidenceThreshold" min="0" max="100" value="50">
+        </div>
+
+        <div id="detectionInfo" class="detection-info">
+            <h2 class="text-xl font-semibold text-gray-700 mt-4 mb-2">Detected Objects:</h2>
+            <ul id="detectionList" class="detection-list">
+                <!-- Detected objects will be inserted here -->
+            </ul>
+        </div>
+        
+        <!--
+        <br/>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6625994850"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br/>
+        -->
+    </div>
+
+    <script>
+        // Get DOM element references
+        const video = document.getElementById('webcam');
+        const canvas = document.getElementById('outputCanvas');
+        const ctx = canvas.getContext('2d');
+        const statusDiv = document.getElementById('status');
+        const errorDiv = document.getElementById('error');
+        const detectionList = document.getElementById('detectionList');
+        const switchCameraButton = document.getElementById('switchCameraButton');
+        const askButton = document.getElementById('askButton'); // New button
+        const speechStatusDiv = document.getElementById('speechStatus');
+        const confidenceThresholdSlider = document.getElementById('confidenceThreshold'); // New slider
+        const confidenceValueSpan = document.getElementById('confidenceValue'); // Span to display slider value
+
+        let model = undefined; // Variable to store the TensorFlow.js model
+        let animationFrameId = null; // To control the animation loop
+        let currentFacingMode = 'user'; // 'user' for front camera, 'environment' for rear camera
+
+        // Variables to control detection frequency
+        let lastDetectionTime = 0;
+        const detectionInterval = 100; // ms (approximately 10 detections per second)
+
+        let lastDetectedPredictions = []; // Stores the latest predictions for on-demand TTS
+        let minConfidence = parseFloat(confidenceThresholdSlider.value) / 100; // Initial confidence threshold
+
+        // --- Variables and Functions for Voice Selection (Web Speech API) ---
+        let voicesLoaded = false;
+        let englishVoice = null;
+
+        // Function to load and select the best available English voice
+        function loadVoices() {
+            if (voicesLoaded) return; // Prevent loading voices multiple times
+
+            const voices = window.speechSynthesis.getVoices();
+            // Search for a US English voice that is a local service (often better quality)
+            englishVoice = voices.find(voice => voice.lang === 'en-US' && voice.localService) ||
+                           // If not, search for any US English voice
+                           voices.find(voice => voice.lang === 'en-US') ||
+                           // As a last resort, search for any voice starting with 'en'
+                           voices.find(voice => voice.lang.startsWith('en'));
+
+            if (englishVoice) {
+                console.log("English voice selected:", englishVoice.name);
+            } else {
+                console.warn("No suitable English voice found. Using default browser voice.");
+            }
+            voicesLoaded = true;
+        }
+
+        // Event listener for when voices are loaded (can be asynchronous)
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+
+        // Call loadVoices immediately in case they are already loaded at startup
+        loadVoices();
+
+        // Function to generate and play voice using the browser's Web Speech API
+        async function speakDetectedObjects(textToSpeak) {
+            if ('speechSynthesis' in window) {
+                // If there's already speech in progress, cancel it to avoid overlaps
+                if (window.speechSynthesis.speaking) {
+                    window.speechSynthesis.cancel();
+                }
+
+                speechStatusDiv.textContent = "Speaking...";
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                utterance.lang = 'en-US'; // Set language to US English
+                utterance.pitch = 1; // Pitch (0 to 2, 1 is normal)
+                utterance.rate = 1; // Speed (0.1 to 10, 1 is normal)
+
+                // Assign the selected voice if available
+                if (englishVoice) {
+                    utterance.voice = englishVoice;
+                } else {
+                    // If for some reason the voice didn't load, try again
+                    loadVoices();
+                    if (englishVoice) {
+                        utterance.voice = englishVoice;
+                    }
+                }
+
+                utterance.onend = () => {
+                    speechStatusDiv.textContent = `Last announcement: "${textToSpeak}"`;
+                };
+                utterance.onerror = (event) => {
+                    console.error("Speech synthesis error:", event.error);
+                    speechStatusDiv.textContent = "Error speaking.";
+                };
+
+                window.speechSynthesis.speak(utterance);
+            } else {
+                speechStatusDiv.textContent = "Your browser does not support speech synthesis.";
+                console.warn("Web Speech API (SpeechSynthesis) not supported in this browser.");
+            }
+        }
+
+        // --- Main application functions ---
+
+        // Function to display error messages
+        function displayError(message) {
+            errorDiv.textContent = `Error: ${message}`;
+            errorDiv.classList.remove('hidden');
+            statusDiv.classList.add('hidden');
+        }
+
+        // Function to initialize the webcam with a specific facing mode
+        async function setupWebcam(facingMode) {
+            // Stop any existing video stream
+            if (video.srcObject) {
+                video.srcObject.getTracks().forEach(track => track.stop());
+            }
+
+            try {
+                statusDiv.textContent = `Starting camera (${facingMode === 'user' ? 'front' : 'rear'})...`;
+                errorDiv.classList.add('hidden'); // Hide previous errors
+
+                // Request webcam access with the desired facing mode
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: facingMode }
+                });
+                video.srcObject = stream;
+                currentFacingMode = facingMode; // Update current facing mode
+
+                // Wait for the video to load and be ready to play
+                await new Promise((resolve) => {
+                    video.onloadedmetadata = () => {
+                        resolve(video);
+                    };
+                });
+
+                // Set canvas dimensions to match the video
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+
+                statusDiv.textContent = 'Webcam started. Loading model...';
+                return video;
+            } catch (err) {
+                console.error(`Error accessing webcam (${facingMode}):`, err);
+                // If the desired camera is not available, try the other one
+                if (facingMode === 'user' && err.name === 'OverconstrainedError') {
+                    displayError('Front camera not available, trying rear camera...');
+                    return setupWebcam('environment');
+                } else if (facingMode === 'environment' && err.name === 'OverconstrainedError') {
+                    displayError('Rear camera not available, trying front camera...');
+                    return setupWebcam('user');
+                } else {
+                    displayError(`Could not access webcam. Make sure you have granted permissions. (${err.message})`);
+                    return null;
+                }
+            }
+        }
+
+        // Function to load the COCO-SSD model
+        async function loadModel() {
+            try {
+                statusDiv.textContent = 'Loading model...';
+                model = await cocoSsd.load(); // Load the pre-trained model
+                statusDiv.textContent = 'Model loaded. Starting detection...';
+                // Hide loading message once the model is ready
+                statusDiv.classList.add('hidden');
+            } catch (err) {
+                console.error('Error loading model:', err);
+                displayError('Could not load the object detection model.');
+            }
+        }
+
+        // Function to detect objects in the video stream
+        async function detectObjects(currentTime) {
+            // Ensure the model is loaded and video is ready
+            if (!model || video.readyState !== 4) {
+                animationFrameId = requestAnimationFrame(detectObjects);
+                return;
+            }
+
+            // Draw the video frame to the canvas on every frame for fluidity
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Only perform object detection if enough time has passed since the last detection
+            if (currentTime - lastDetectionTime > detectionInterval) {
+                lastDetectionTime = currentTime; // Update the last detection time
+
+                const predictions = await model.detect(video);
+                
+                // Filter predictions based on the minConfidence threshold
+                lastDetectedPredictions = predictions.filter(prediction => prediction.score >= minConfidence);
+
+                detectionList.innerHTML = ''; // Clear the detection list
+
+                // Draw bounding boxes and labels for each filtered detection
+                lastDetectedPredictions.forEach(prediction => {
+                    const [x, y, width, height] = prediction.bbox; // Bounding box coordinates and dimensions
+                    const label = prediction.class; // Detected object class
+                    const score = Math.round(prediction.score * 100); // Confidence score
+
+                    // Draw bounding box
+                    ctx.beginPath();
+                    ctx.rect(x, y, width, height);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#00FF00'; // Green color for the box
+                    ctx.fillStyle = '#00FF00'; // Green color for text background
+                    ctx.stroke();
+
+                    // Draw text background
+                    const fontSize = 16;
+                    ctx.font = `${fontSize}px Arial`;
+                    const text = `${label} (${score}%)`;
+                    const textWidth = ctx.measureText(text).width;
+                    ctx.fillRect(x, y > fontSize ? y - fontSize : y, textWidth + 8, fontSize + 4); // Background for text
+
+                    // Draw text
+                    ctx.fillStyle = '#000000'; // Black color for text
+                    ctx.fillText(text, x + 4, y > fontSize ? y - 4 : y + fontSize + 4);
+
+                    // Add the detected object to the list
+                    const listItem = document.createElement('li');
+                    listItem.className = 'detection-item';
+                    listItem.textContent = `${label} (${score}%)`;
+                    detectionList.appendChild(listItem);
+                });
+            }
+
+            // Continue the animation loop to draw the video fluidly
+            animationFrameId = requestAnimationFrame(detectObjects);
+        }
+
+        // New function to ask what is being seen
+        async function askWhatIsBeingSeen() {
+            if (lastDetectedPredictions.length > 0) {
+                const detectedClasses = new Set();
+                lastDetectedPredictions.forEach(prediction => {
+                    detectedClasses.add(prediction.class);
+                });
+
+                const classNames = Array.from(detectedClasses);
+                let speechText = "I'm watching ";
+
+                if (classNames.length === 1) {
+                    speechText += `a ${classNames[0]}.`;
+                } else if (classNames.length === 2) {
+                    speechText += `a ${classNames[0]} and a ${classNames[1]}.`;
+                } else {
+                    const last = classNames.pop();
+                    speechText += `a ${classNames.join(', a ')}, and a ${last}.`;
+                }
+                await speakDetectedObjects(speechText);
+            } else {
+                speechStatusDiv.textContent = "No objects detected recently.";
+                // Optional: You could play a sound or a TTS message of "No objects"
+            }
+        }
+
+        // Function to switch camera
+        async function switchCamera() {
+            // Cancel the current detection loop
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+
+            // Determine the new facing mode
+            const newFacingMode = currentFacingMode === 'user' ? 'environment' : 'user';
+            const webcamReady = await setupWebcam(newFacingMode); // Try to start the new camera
+
+            if (webcamReady) {
+                // Restart the detection loop if the new camera started successfully
+                if (model) { // Ensure the model is already loaded
+                    lastDetectionTime = 0; // Reset time to force immediate detection when switching camera
+                    lastDetectedPredictions = []; // Clear predictions when switching camera
+                    animationFrameId = requestAnimationFrame(detectObjects);
+                } else {
+                    // If the model hasn't loaded yet (first time), load it then start detection
+                    await loadModel();
+                    if (model) {
+                        lastDetectionTime = 0; // Reset time
+                        lastDetectedPredictions = []; // Clear predictions
+                        animationFrameId = requestAnimationFrame(detectObjects);
+                    }
+                }
+            }
+        }
+
+        // Add event listeners to buttons
+        switchCameraButton.addEventListener('click', switchCamera);
+        askButton.addEventListener('click', askWhatIsBeingSeen); // Event listener for the new button
+
+        // Event listener for the confidence slider
+        confidenceThresholdSlider.addEventListener('input', (event) => {
+            minConfidence = parseFloat(event.target.value) / 100;
+            confidenceValueSpan.textContent = `${event.target.value}%`;
+        });
+
+        // Startup function when the window has fully loaded
+        window.onload = async function() {
+            // Start with the front camera by default
+            const webcamReady = await setupWebcam('user');
+            if (webcamReady) {
+                await loadModel();
+                // Start the detection loop only if the model loaded successfully
+                if (model) {
+                    animationFrameId = requestAnimationFrame(detectObjects);
+                }
+            }
+        };
+
+        // Stop animation loop and video stream if the user leaves the page
+        window.onbeforeunload = () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            if (video.srcObject) {
+                video.srcObject.getTracks().forEach(track => track.stop());
+            }
+        };
+    </script>
+</body>
+</html>
