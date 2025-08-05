@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Detection with Voice and Webcam</title>
-    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- TensorFlow.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <!-- COCO-SSD model CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
     <style>
         body {
@@ -157,7 +154,7 @@
                 .skiptranslate > iframe {
                     display: none !important;
                 }
-                
+               
                 body {
                     top: 0px !important; 
                 }
@@ -171,7 +168,7 @@
                     box-sizing:border-box !important; 
                     height:auto !important; 
                 }
-                
+               
                 /* Hide unwanted elements without hiding the main widget */
                 #goog-gt-tt, 
                 #goog-gt-, 
@@ -182,25 +179,25 @@
                     background: none !important; 
                     box-shadow: none !important;
                 }
-                
+               
                 .goog-logo-link {
                     display: none !important;
                 }
                 .goog-te-gadget {
-                    height: 28px !important;  
+                    height: 28px !important; 
                     overflow: hidden;
                 }
             </style>
-            
+           
             <script type="text/javascript">
                 function googleTranslateElementInit() {
                     var lang_google='en';
-                    
+                   
                     new google.translate.TranslateElement({pageLanguage: lang_google,
-                                                                 autoDisplay: true,
-                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                                 'google_translate_element');
-                    
+                                                            autoDisplay: true,
+                                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                            'google_translate_element');
+                   
                     var el3 = document.querySelector('circle');
                     var observer = new window.IntersectionObserver(([entry]) => {
                         document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
@@ -210,15 +207,15 @@
                     });
 
                     observer.observe(el3);
-                    
+                   
                 }
             </script>
 
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            
+           
             <strong>Translate</strong>
             <div id="google_translate_element"></div>
-        
+            
             <!--
             <br/>
             <br/>
@@ -233,11 +230,11 @@
             </script>
             -->
             <br/>
-        
+       
         </div>
-        
+       
         <h1 class="text-3xl font-bold text-gray-800 mb-4">Real-time Object Detection with Voice</h1>
-        
+       
         <h3 class="text-3xl font-bold text-gray-800 mb-4">Developed with Gemini AI</h3>
 
         <div id="status" class="text-lg text-gray-600 mb-4 loading-message">Loading model... please wait.</div>
@@ -251,6 +248,7 @@
         <div class="control-buttons">
             <button id="switchCameraButton" class="action-button">Switch Camera</button>
             <button id="askButton" class="action-button">Ask What I'm Seeing</button>
+            <button id="toggleAutoSpeak" class="action-button">Enable Continuous Speech</button>
         </div>
         <div id="speechStatus" class="text-sm"></div>
 
@@ -262,8 +260,7 @@
         <div id="detectionInfo" class="detection-info">
             <h2 class="text-xl font-semibold text-gray-700 mt-4 mb-2">Detected Objects:</h2>
             <ul id="detectionList" class="detection-list">
-                <!-- Detected objects will be inserted here -->
-            </ul>
+           </ul>
         </div>
         
         <!--
@@ -279,6 +276,7 @@
         </script>
         <br/>
         -->
+       
     </div>
 
     <script>
@@ -290,71 +288,76 @@
         const errorDiv = document.getElementById('error');
         const detectionList = document.getElementById('detectionList');
         const switchCameraButton = document.getElementById('switchCameraButton');
-        const askButton = document.getElementById('askButton'); // New button
+        const askButton = document.getElementById('askButton');
+        const toggleAutoSpeakButton = document.getElementById('toggleAutoSpeak'); // New button
         const speechStatusDiv = document.getElementById('speechStatus');
-        const confidenceThresholdSlider = document.getElementById('confidenceThreshold'); // New slider
-        const confidenceValueSpan = document.getElementById('confidenceValue'); // Span to display slider value
+        const confidenceThresholdSlider = document.getElementById('confidenceThreshold');
+        const confidenceValueSpan = document.getElementById('confidenceValue');
 
-        let model = undefined; // Variable to store the TensorFlow.js model
-        let animationFrameId = null; // To control the animation loop
-        let currentFacingMode = 'user'; // 'user' for front camera, 'environment' for rear camera
+        let model = undefined;
+        let animationFrameId = null;
+        let currentFacingMode = 'user';
 
-        // Variables to control detection frequency
         let lastDetectionTime = 0;
-        const detectionInterval = 100; // ms (approximately 10 detections per second)
+        const detectionInterval = 100; // ms
 
-        let lastDetectedPredictions = []; // Stores the latest predictions for on-demand TTS
-        let minConfidence = parseFloat(confidenceThresholdSlider.value) / 100; // Initial confidence threshold
+        let lastDetectedPredictions = [];
+        let minConfidence = parseFloat(confidenceThresholdSlider.value) / 100;
+       
+        // --- New variables for continuous speech ---
+        let isAutoSpeakEnabled = false;
+        let lastSpokenObjects = new Set();
+        const autoSpeakInterval = 5000; // 5 seconds
+        let lastSpokenTime = 0;
 
         // --- Variables and Functions for Voice Selection (Web Speech API) ---
         let voicesLoaded = false;
         let englishVoice = null;
 
-        // Function to load and select the best available English voice
         function loadVoices() {
-            if (voicesLoaded) return; // Prevent loading voices multiple times
+            if (voicesLoaded) return;
 
-            const voices = window.speechSynthesis.getVoices();
-            // Search for a US English voice that is a local service (often better quality)
-            englishVoice = voices.find(voice => voice.lang === 'en-US' && voice.localService) ||
-                           // If not, search for any US English voice
-                           voices.find(voice => voice.lang === 'en-US') ||
-                           // As a last resort, search for any voice starting with 'en'
-                           voices.find(voice => voice.lang.startsWith('en'));
+            if ('speechSynthesis' in window)
+            {
+                const voices = window.speechSynthesis.getVoices();
+                englishVoice = voices.find(voice => voice.lang === 'en-US' && voice.localService) ||
+                                 voices.find(voice => voice.lang === 'en-US') ||
+                                 voices.find(voice => voice.lang.startsWith('en'));
 
-            if (englishVoice) {
-                console.log("English voice selected:", englishVoice.name);
-            } else {
-                console.warn("No suitable English voice found. Using default browser voice.");
+                if (englishVoice) {
+                    console.log("English voice selected:", englishVoice.name);
+                } else {
+                    console.warn("No suitable English voice found. Using default browser voice.");
+                }
+                voicesLoaded = true;
             }
-            voicesLoaded = true;
         }
 
-        // Event listener for when voices are loaded (can be asynchronous)
-        window.speechSynthesis.onvoiceschanged = loadVoices;
+        if ('speechSynthesis' in window)
+        {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
 
-        // Call loadVoices immediately in case they are already loaded at startup
-        loadVoices();
+        if ('speechSynthesis' in window)
+        {
+            loadVoices();
+        }
 
-        // Function to generate and play voice using the browser's Web Speech API
         async function speakDetectedObjects(textToSpeak) {
             if ('speechSynthesis' in window) {
-                // If there's already speech in progress, cancel it to avoid overlaps
                 if (window.speechSynthesis.speaking) {
                     window.speechSynthesis.cancel();
                 }
 
                 speechStatusDiv.textContent = "Speaking...";
                 const utterance = new SpeechSynthesisUtterance(textToSpeak);
-                utterance.lang = 'en-US'; // Set language to US English
-                utterance.pitch = 1; // Pitch (0 to 2, 1 is normal)
-                utterance.rate = 1; // Speed (0.1 to 10, 1 is normal)
+                utterance.lang = 'en-US';
+                utterance.pitch = 1;
+                utterance.rate = 1;
 
-                // Assign the selected voice if available
                 if (englishVoice) {
                     utterance.voice = englishVoice;
                 } else {
-                    // If for some reason the voice didn't load, try again
                     loadVoices();
                     if (englishVoice) {
                         utterance.voice = englishVoice;
@@ -376,49 +379,41 @@
             }
         }
 
-        // --- Main application functions ---
-
-        // Function to display error messages
         function displayError(message) {
             errorDiv.textContent = `Error: ${message}`;
             errorDiv.classList.remove('hidden');
             statusDiv.classList.add('hidden');
         }
 
-        // Function to initialize the webcam with a specific facing mode
         async function setupWebcam(facingMode) {
-            // Stop any existing video stream
             if (video.srcObject) {
                 video.srcObject.getTracks().forEach(track => track.stop());
             }
 
             try {
                 statusDiv.textContent = `Starting camera (${facingMode === 'user' ? 'front' : 'rear'})...`;
-                errorDiv.classList.add('hidden'); // Hide previous errors
-
-                // Request webcam access with the desired facing mode
+                errorDiv.classList.add('hidden');
+               
                 const stream = await navigator.mediaDevices.getUserMedia({
                     video: { facingMode: facingMode }
                 });
+               
                 video.srcObject = stream;
-                currentFacingMode = facingMode; // Update current facing mode
+                currentFacingMode = facingMode;
 
-                // Wait for the video to load and be ready to play
                 await new Promise((resolve) => {
                     video.onloadedmetadata = () => {
                         resolve(video);
                     };
                 });
 
-                // Set canvas dimensions to match the video
                 canvas.width = video.videoWidth;
                 canvas.height = video.videoHeight;
-
+               
                 statusDiv.textContent = 'Webcam started. Loading model...';
                 return video;
             } catch (err) {
                 console.error(`Error accessing webcam (${facingMode}):`, err);
-                // If the desired camera is not available, try the other one
                 if (facingMode === 'user' && err.name === 'OverconstrainedError') {
                     displayError('Front camera not available, trying rear camera...');
                     return setupWebcam('environment');
@@ -432,13 +427,11 @@
             }
         }
 
-        // Function to load the COCO-SSD model
         async function loadModel() {
             try {
                 statusDiv.textContent = 'Loading model...';
-                model = await cocoSsd.load(); // Load the pre-trained model
+                model = await cocoSsd.load();
                 statusDiv.textContent = 'Model loaded. Starting detection...';
-                // Hide loading message once the model is ready
                 statusDiv.classList.add('hidden');
             } catch (err) {
                 console.error('Error loading model:', err);
@@ -446,67 +439,90 @@
             }
         }
 
-        // Function to detect objects in the video stream
+        // Modified detection function
         async function detectObjects(currentTime) {
-            // Ensure the model is loaded and video is ready
             if (!model || video.readyState !== 4) {
                 animationFrameId = requestAnimationFrame(detectObjects);
                 return;
             }
 
-            // Draw the video frame to the canvas on every frame for fluidity
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-            // Only perform object detection if enough time has passed since the last detection
             if (currentTime - lastDetectionTime > detectionInterval) {
-                lastDetectionTime = currentTime; // Update the last detection time
+                lastDetectionTime = currentTime;
 
                 const predictions = await model.detect(video);
-                
-                // Filter predictions based on the minConfidence threshold
+               
                 lastDetectedPredictions = predictions.filter(prediction => prediction.score >= minConfidence);
 
-                detectionList.innerHTML = ''; // Clear the detection list
-
-                // Draw bounding boxes and labels for each filtered detection
+                detectionList.innerHTML = '';
+                const currentDetectedClasses = new Set();
+               
                 lastDetectedPredictions.forEach(prediction => {
-                    const [x, y, width, height] = prediction.bbox; // Bounding box coordinates and dimensions
-                    const label = prediction.class; // Detected object class
-                    const score = Math.round(prediction.score * 100); // Confidence score
+                    const [x, y, width, height] = prediction.bbox;
+                    const label = prediction.class;
+                    const score = Math.round(prediction.score * 100);
 
-                    // Draw bounding box
                     ctx.beginPath();
                     ctx.rect(x, y, width, height);
                     ctx.lineWidth = 2;
-                    ctx.strokeStyle = '#00FF00'; // Green color for the box
-                    ctx.fillStyle = '#00FF00'; // Green color for text background
+                    ctx.strokeStyle = '#00FF00';
+                    ctx.fillStyle = '#00FF00';
                     ctx.stroke();
 
-                    // Draw text background
                     const fontSize = 16;
                     ctx.font = `${fontSize}px Arial`;
                     const text = `${label} (${score}%)`;
                     const textWidth = ctx.measureText(text).width;
-                    ctx.fillRect(x, y > fontSize ? y - fontSize : y, textWidth + 8, fontSize + 4); // Background for text
+                    ctx.fillRect(x, y > fontSize ? y - fontSize : y, textWidth + 8, fontSize + 4);
 
-                    // Draw text
-                    ctx.fillStyle = '#000000'; // Black color for text
+                    ctx.fillStyle = '#000000';
                     ctx.fillText(text, x + 4, y > fontSize ? y - 4 : y + fontSize + 4);
 
-                    // Add the detected object to the list
                     const listItem = document.createElement('li');
                     listItem.className = 'detection-item';
                     listItem.textContent = `${label} (${score}%)`;
                     detectionList.appendChild(listItem);
+               
+                    currentDetectedClasses.add(label);
                 });
+             
+                // --- New logic for continuous speech ---
+                if (isAutoSpeakEnabled && currentTime - lastSpokenTime > autoSpeakInterval) {
+                    // Find new objects that were not in the last spoken set
+                    const newObjects = Array.from(currentDetectedClasses).filter(
+                        object => !lastSpokenObjects.has(object)
+                    );
+
+                    // Find objects that are no longer in view
+                    const lostObjects = Array.from(lastSpokenObjects).filter(
+                        object => !currentDetectedClasses.has(object)
+                    );
+
+                    let speechText = '';
+                    if (newObjects.length > 0) {
+                        speechText += `I see a ${newObjects.join(', a ')}.`;
+                    }
+
+                    if (lostObjects.length > 0) {
+                        if (speechText !== '') speechText += ' ';
+                        speechText += `I no longer see a ${lostObjects.join(', a ')}.`;
+                    }
+
+                    if (speechText !== '') {
+                        speakDetectedObjects(speechText);
+                        lastSpokenTime = currentTime;
+                    }
+               
+                    // Update the set of last spoken objects
+                    lastSpokenObjects = currentDetectedClasses;
+                }
             }
 
-            // Continue the animation loop to draw the video fluidly
             animationFrameId = requestAnimationFrame(detectObjects);
         }
 
-        // New function to ask what is being seen
         async function askWhatIsBeingSeen() {
             if (lastDetectedPredictions.length > 0) {
                 const detectedClasses = new Set();
@@ -528,43 +544,55 @@
                 await speakDetectedObjects(speechText);
             } else {
                 speechStatusDiv.textContent = "No objects detected recently.";
-                // Optional: You could play a sound or a TTS message of "No objects"
             }
         }
 
-        // Function to switch camera
         async function switchCamera() {
-            // Cancel the current detection loop
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
                 animationFrameId = null;
             }
 
-            // Determine the new facing mode
             const newFacingMode = currentFacingMode === 'user' ? 'environment' : 'user';
-            const webcamReady = await setupWebcam(newFacingMode); // Try to start the new camera
+            const webcamReady = await setupWebcam(newFacingMode);
 
             if (webcamReady) {
-                // Restart the detection loop if the new camera started successfully
-                if (model) { // Ensure the model is already loaded
-                    lastDetectionTime = 0; // Reset time to force immediate detection when switching camera
-                    lastDetectedPredictions = []; // Clear predictions when switching camera
+                if (model) {
+                    lastDetectionTime = 0;
+                    lastDetectedPredictions = [];
+                    lastSpokenObjects = new Set();
                     animationFrameId = requestAnimationFrame(detectObjects);
                 } else {
-                    // If the model hasn't loaded yet (first time), load it then start detection
                     await loadModel();
                     if (model) {
-                        lastDetectionTime = 0; // Reset time
-                        lastDetectedPredictions = []; // Clear predictions
+                        lastDetectionTime = 0;
+                        lastDetectedPredictions = [];
+                        lastSpokenObjects = new Set();
                         animationFrameId = requestAnimationFrame(detectObjects);
                     }
                 }
             }
         }
+       
+        // New function to toggle continuous speech
+        function toggleAutoSpeak() {
+            isAutoSpeakEnabled = !isAutoSpeakEnabled;
+            toggleAutoSpeakButton.textContent = isAutoSpeakEnabled ? 'Disable Continuous Speech' : 'Enable Continuous Speech';
+            if (isAutoSpeakEnabled) {
+                speechStatusDiv.textContent = 'Continuous speech enabled.';
+                // Force a speech update immediately
+                lastSpokenTime = 0;
+            } else {
+                speechStatusDiv.textContent = '';
+                window.speechSynthesis.cancel(); // Stop any ongoing speech
+            }
+        }
+
 
         // Add event listeners to buttons
         switchCameraButton.addEventListener('click', switchCamera);
-        askButton.addEventListener('click', askWhatIsBeingSeen); // Event listener for the new button
+        askButton.addEventListener('click', askWhatIsBeingSeen);
+        toggleAutoSpeakButton.addEventListener('click', toggleAutoSpeak);
 
         // Event listener for the confidence slider
         confidenceThresholdSlider.addEventListener('input', (event) => {
@@ -574,18 +602,17 @@
 
         // Startup function when the window has fully loaded
         window.onload = async function() {
-            // Start with the front camera by default
             const webcamReady = await setupWebcam('user');
             if (webcamReady) {
+               
                 await loadModel();
-                // Start the detection loop only if the model loaded successfully
+               
                 if (model) {
                     animationFrameId = requestAnimationFrame(detectObjects);
                 }
             }
         };
 
-        // Stop animation loop and video stream if the user leaves the page
         window.onbeforeunload = () => {
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
@@ -594,6 +621,7 @@
                 video.srcObject.getTracks().forEach(track => track.stop());
             }
         };
+       
     </script>
 </body>
 </html>
