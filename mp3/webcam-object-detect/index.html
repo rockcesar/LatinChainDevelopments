@@ -175,91 +175,91 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="container bg-white p-6 rounded-xl shadow-lg">
-        <div style="text-align:center; width:100% !important">
-            <style>
-                /* Adjustments for Google Translator to be visible */
-                .goog-te-banner-frame.skiptranslate,
-                .skiptranslate > iframe {
-                    display: none !important;
-                }
-               
-                body {
-                    top: 0px !important; 
-                }
-
-                .goog-te-menu-frame {
-                    max-width:100% !important; 
-                }
-                .goog-te-menu2 { 
-                    max-width: 100% !important;
-                    overflow-x: scroll !important;
-                    box-sizing:border-box !important; 
-                    height:auto !important; 
-                }
-               
-                /* Hide unwanted elements without hiding the main widget */
-                #goog-gt-tt, 
-                #goog-gt-, 
-                .goog-te-balloon-frame {
-                    display: none !important;
-                } 
-                .goog-text-highlight { 
-                    background: none !important; 
-                    box-shadow: none !important;
-                }
-               
-                .goog-logo-link {
-                    display: none !important;
-                }
-                .goog-te-gadget {
-                    height: 28px !important; 
-                    overflow: hidden;
-                }
-            </style>
+    <div style="text-align:center; width:100% !important">
+        <style>
+            /* Adjustments for Google Translator to be visible */
+            .goog-te-banner-frame.skiptranslate,
+            .skiptranslate > iframe {
+                display: none !important;
+            }
            
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                    var lang_google='en';
-                   
-                    new google.translate.TranslateElement({pageLanguage: lang_google,
-                                                                 autoDisplay: true,
-                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                                 'google_translate_element');
-                   
-                    var el3 = document.querySelector('circle');
-                    var observer = new window.IntersectionObserver(([entry]) => {
-                        document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
-                    }, {
-                        root: null,
-                        threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
-                    });
+            body {
+                top: 0px !important; 
+            }
 
-                    observer.observe(el3);
-                   
-                }
-            </script>
-
-            <!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+            .goog-te-menu-frame {
+                max-width:100% !important; 
+            }
+            .goog-te-menu2 { 
+                max-width: 100% !important;
+                overflow-x: scroll !important;
+                box-sizing:border-box !important; 
+                height:auto !important; 
+            }
            
-            <!-- <strong>Translate</strong> -->
-            <!-- <div id="google_translate_element"></div> -->
+            /* Hide unwanted elements without hiding the main widget */
+            #goog-gt-tt, 
+            #goog-gt-, 
+            .goog-te-balloon-frame {
+                display: none !important;
+            } 
+            .goog-text-highlight { 
+                background: none !important; 
+                box-shadow: none !important;
+            }
            
-            <!--
-            <br/>
-            <br/>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-format="fluid"
-                 data-ad-layout-key="-gc+4r+1p-d0+h0"
-                 data-ad-client="ca-pub-2334449220276386"
-                 data-ad-slot="6758976353"></ins>
-            <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            -->
-            <br/>
+            .goog-logo-link {
+                display: none !important;
+            }
+            .goog-te-gadget {
+                height: 28px !important; 
+                overflow: hidden;
+            }
+        </style>
        
-        </div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                var lang_google='en';
+               
+                new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                             autoDisplay: true,
+                                                             layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                                             'google_translate_element');
+               
+                var el3 = document.querySelector('circle');
+                var observer = new window.IntersectionObserver(([entry]) => {
+                    document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                }, {
+                    root: null,
+                    threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                });
+
+                observer.observe(el3);
+               
+            }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+       
+        <strong>Translate</strong>
+        <div id="google_translate_element"></div>
+       
+        <!--
+        <br/>
+        <br/>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-gc+4r+1p-d0+h0"
+             data-ad-client="ca-pub-2334449220276386"
+             data-ad-slot="6758976353"></ins>
+        <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        -->
+        <br/>
+   
+    </div>
        
         <h1 class="text-3xl font-bold text-gray-800 mb-4">Real-time Object Detection on Webcam</h1>
        
@@ -290,7 +290,7 @@
         <div id="voiceControl" class="voice-select">
             <label for="voiceSelect">Select Voice:</label>
             <select id="voiceSelect" class="rounded-lg">
-                <option>Loading voices...</option>
+                <option>Voices...</option>
             </select>
         </div>
 
