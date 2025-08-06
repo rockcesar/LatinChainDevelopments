@@ -374,8 +374,9 @@
 
                 window.speechSynthesis.speak(utterance);
             } else {
-                speechStatusDiv.textContent = "Your browser does not support speech synthesis.";
-                console.warn("Web Speech API (SpeechSynthesis) not supported in this browser.");
+                //speechStatusDiv.textContent = "Your browser does not support speech synthesis.";
+                //console.warn("Web Speech API (SpeechSynthesis) not supported in this browser.");
+                speechStatusDiv.textContent = `Last announcement: "${textToSpeak}"`;
             }
         }
 
