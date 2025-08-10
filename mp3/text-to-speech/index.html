@@ -300,7 +300,7 @@
                 // Pause event listener
                 pauseBtn.addEventListener('click', () => {
                     if (window.speechSynthesis.speaking) {
-                        window.speechSynthesis.pause();
+                        window.speechSynthesis.cancel();
                         messageBox.textContent = 'Playback paused.';
                     } else {
                         messageBox.textContent = 'Nothing is currently playing to pause.';
