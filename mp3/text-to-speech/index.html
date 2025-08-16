@@ -329,6 +329,12 @@
                 [playBtn, pauseBtn, stopBtn, fileInput, voiceSelect].forEach(el => el.disabled = true);
             }
         });
+        window.onbeforeunload = () => {
+            if ('speechSynthesis' in window)
+            {
+                window.speechSynthesis.cancel();
+            }
+        };
     </script>
 </bdy>
 </html>
