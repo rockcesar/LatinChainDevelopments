@@ -264,7 +264,7 @@ loadLang = () => {
         try{
             if(lang1[1])
                 savedLanguage1 += "-" + lang1[1];
-        catch(e){
+        }catch(e){
         }
         
         // If a language was found, set the URL hash to load it automatically.
