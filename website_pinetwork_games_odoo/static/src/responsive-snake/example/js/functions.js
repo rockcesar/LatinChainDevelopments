@@ -48,7 +48,8 @@ function isTouchDevice() {
 }
 
 function set_points(points) {
-    if(pi_user_id != "" && pi_user_code != "")
+    if(true)
+    //if(pi_user_id != "" && pi_user_code != "")
     {
         end();
         if(seconds <= 5)
@@ -89,7 +90,27 @@ function set_points(points) {
 }
 
 function get_user(pause) {
-    if(pi_user_id != "" && pi_user_code != "")
+    $("#reset_pause_controls").show();
+    $("#plus_minus_controls").show();
+    $("#pause").show();
+    $("#reset").show();
+    $("#minus").show();
+    $("#plus").show();
+    if($("#disable_dragging").is(":hidden"))
+    {
+        $("#enable_dragging").show();
+        $('#disable_dragging').hide();
+    }
+    $("#pi_donate").hide();
+    $("#button_click").hide();
+    
+    if(pause)
+        press(80);
+        
+    $("#test_game").hide();
+    
+    /*
+    if(true) //pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -204,6 +225,7 @@ function get_user(pause) {
             
         });
     }
+    */
 }
 
 async function showPiAds(Pi) {
@@ -306,6 +328,25 @@ $( document ).ready(function() {
                                 });
             }; // Read more about this in the SDK reference
 
+            set_points(0).always(function(){
+                get_user(true).always(function(){
+                    //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    //    showPiAds(Pi);
+                    
+                    $( "#button_click" ).click(function() {
+                        if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
+                        {
+                            $("#button_click").prop( "disabled", true );
+                            transfer();
+                        }else{
+                            alert($("#payment_lessthan_message").text() + amount + " Pi.");
+                        }
+                    });
+                    $("#button_click").prop( "disabled", false );
+                });
+            });
+
+            /*
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
@@ -321,10 +362,6 @@ $( document ).ready(function() {
                             if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
                             {
                                 $("#button_click").prop( "disabled", true );
-                                /*setTimeout(function ()
-                                {
-                                    $("#button_click").prop( "disabled", false );
-                                }, 10000);*/
                                 transfer();
                             }else{
                                 alert($("#payment_lessthan_message").text() + amount + " Pi.");
@@ -339,6 +376,7 @@ $( document ).ready(function() {
                 //alert(err);
                 console.error(error);
             });
+            */
         } catch (err) {
             setConfirmUnload(false);
             //Pi.openShareDialog("Error", err);

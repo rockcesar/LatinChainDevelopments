@@ -347,7 +347,42 @@ function get_user_rewarded() {
 }
 
 function get_user() {
-    if(pi_user_id != "" && pi_user_code != "")
+    
+    $(".show-tetris").show();
+    $(".show-mahjong").show();
+    $(".show-bubble-shooter").show();
+    $(".show-test-your-brain").show();
+    $(".show-15-puzzle").show();
+    $(".show-pingpong").show();
+    $(".show-checkers").show();
+    $(".show-domino").show();
+    $(".show-latincrush").show();
+    $(".show-gameslearning").show();
+    $(".show-odoolearning").show();
+    $(".show-languagelearning").show();
+    $(".show-webtorrent").show();
+    $(".show-musicplayer").show();
+    $(".show-videoplayer").show();
+    $(".show-imgplayer").show();
+    $(".show-webcamplayer").show();
+    $(".show-texttospeechplayer").show();
+    $(".show-mapsplayer").show();
+    $(".show-calcplayer").show();
+    $(".show-calendarplayer").show();
+    //$(".show-tvonline").show();
+    //$(".show-sport-results").show();
+    //$(".show-cointelegraph").show();
+    $(".show-streamerzoneboard").show();
+    //$(".show-stellarium").show();
+    //$(".show-latin-search").show();
+    //$(".show-latin-dictionary").show();
+    //$(".show-latin-university").show();
+    //$(".show-latin-books").show();
+    //$(".show-latin-academy").show();
+    
+    /*
+    if(true)
+    //if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -368,6 +403,7 @@ function get_user() {
                     $("#accordionTwo").show();
                 }*/
                     
+                /*
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
                 pi_ad_new = data.pi_ad_new;
@@ -375,6 +411,10 @@ function get_user() {
                 
                 $("#pi_ad_hours").html(show_pi_ad_user_time);
                 $("#pi_ad_max").html(pi_ad_max);
+                
+                */
+                
+                /*
                 
                 $(".show-tetris").show();
                 $(".show-mahjong").show();
@@ -408,11 +448,13 @@ function get_user() {
                 //$(".show-latin-books").show();
                 //$(".show-latin-academy").show();
                 
-                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                */
+                
+                /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     $(".show_pi_ad_automatic").show();
                     $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
-                }
+                }*/
                 
                 /*var options = $("#avatar_user");
                 //don't forget error handling!
@@ -425,7 +467,7 @@ function get_user() {
                     }
                     else
                         options.append($("<option />").val(index).text(item));
-                });*/
+                });
                 
                 $("#avatar_user option[value="+ data.avatar_user +"]").prop("selected",true);
                 
@@ -447,12 +489,6 @@ function get_user() {
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
-                    
-                    /*if(["Mainnet ON"].includes($("#mainnet").val()))
-                    {
-                        $(".getverified").hide();
-                        $(".isverified").show();
-                    }*/
                     
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
@@ -636,7 +672,7 @@ function get_user() {
             
         }).fail(function() {
         });
-    }
+    }*/
 }
 
 async function showPiInterstitialAds(Pi, url) {
@@ -1157,7 +1193,200 @@ $( document ).ready(function() {
               $("#loading_word").hide();
               $("#loading_word_under").hide();
             }, 5000);
+            
+            set_points(0).always(function(){
+                get_user().always(function(){
+                    
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        if(show_pi_ad_user || pi_ad_new)
+                        {
+                            $("#button_reward_ad").show();
+                            $("#piad_not_available").hide();
+                            $("#button_reward_ad").prop( "disabled", false );
+                        }else
+                        {
+                            $("#button_reward_ad").hide();
+                            $("#piad_not_available").show();
+                        }
+                                
+                        var startTime=new Date(), endTime=new Date(), seconds=0;
 
+                        function start() {
+                          startTime = new Date();
+                        };
+
+                        function end() {
+                          endTime = new Date();
+                          var timeDiff = endTime - startTime; //in ms
+                          // strip the ms
+                          timeDiff /= 1000;
+
+                          // get seconds 
+                          seconds = Math.round(timeDiff);
+                        }
+
+                        var start_flag = false;
+                        
+                        async function showRewardedPiAd()
+                        {
+                            end();
+                            if(seconds < 5 && start_flag)
+                            {
+                                start();
+                                return;
+                            }
+                            start();
+                            
+                            if(!start_flag)
+                            {
+                                start_flag = true;
+                            }
+                            
+                            $("#button_reward_ad").prop( "disabled", true );
+                            $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
+                            
+                            if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
+                            {
+                                try {
+                                    
+                                    const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
+                                    if (isAdReadyResponse.ready === false) {
+                                        
+                                        const requestAdResponse = await Pi.Ads.requestAd("rewarded");
+                                        if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
+                                            // display modal to update Pi Browser
+                                            // showAdsNotSupportedModal()
+                                            alert("Update Pi Browser version, please!.");
+                                            $("#button_reward_ad").html(btnvalue);
+                                            $("#button_reward_ad").prop( "disabled", false );
+                                            return;
+                                        }
+                                        if (requestAdResponse.result !== "AD_LOADED") {
+                                            // display modal ads are temporarily unavailable and user should try again later
+                                            // showAdUnavailableModal()
+                                            alert("Ads are temporarily unavailable, try again later!.");
+                                            $("#button_reward_ad").html(btnvalue);
+                                            $("#button_reward_ad").prop( "disabled", false );
+                                            return;
+                                        }
+                                    }
+                                    
+                                    const showAdResponse = await Pi.Ads.showAd("rewarded");
+                                    
+                                    if (showAdResponse.result === "AD_REWARDED") {
+                                        if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
+                                        {
+                                            $("#button_reward_ad").prop( "disabled", true );
+                                            $("#button_reward_ad").html("Verifying...");
+                                            //alert($("#ready_reward_message").text());
+                                            var data = {
+                                                'pi_user_id': pi_user_id,
+                                                'pi_user_code': pi_user_code,
+                                                'adId': showAdResponse.adId,
+                                                'passkey': passkey,
+                                                'accessToken': accessToken,
+                                                'csrf_token': odoo.csrf_token,
+                                            };
+                                            //$.ajaxSetup({async: false});
+                                            setConfirmUnloadPoints(true);
+                                            return $.post( "/set-latin-points", data).done(function(data) {
+                                                end();
+                                                setConfirmUnloadPoints(false);
+                                                data = JSON.parse(data);
+                                                if(data.result && data.points_latin > 0)
+                                                {
+                                                    $("#button_reward_ad").prop( "disabled", true );
+                                                    $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                    var gemini_image = getGeminiImage();
+                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                    
+                                                    if(data.x2_game)
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                    
+                                                    $("#open_modal").click();
+                                                    /*setTimeout(function ()
+                                                    {
+                                                        $("#button_reward_ad").html(btnvalue);
+                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                    }, 5000);*/
+                                                    
+                                                    pi_ad_new = data.pi_ad_new;
+                                                    if(data.pi_ad_new)
+                                                    {
+                                                        $("#button_reward_ad").show();
+                                                        $("#piad_not_available").hide();
+                                                        setTimeout(function ()
+                                                        {
+                                                            $("#button_reward_ad").html(btnvalue);
+                                                            $("#button_reward_ad").prop( "disabled", false );
+                                                        }, 5000);
+                                                    }else
+                                                    {
+                                                        $("#button_reward_ad").hide();
+                                                        $("#piad_not_available").show();
+                                                        setTimeout(function ()
+                                                        {
+                                                            $("#button_reward_ad").html(btnvalue);
+                                                            $("#button_reward_ad").prop( "disabled", false );
+                                                        }, 5000);
+                                                    }
+                                                    
+                                                    get_user_rewarded();
+                                                }else{
+                                                    //$("#button_reward_ad").html("Error, try again...");
+                        
+                                                    setTimeout(function ()
+                                                    {
+                                                        $("#button_reward_ad").html(btnvalue);
+                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                    }, 5000);
+                                                }
+                                                start();
+                                            }).fail(function() {
+                                                $("#button_reward_ad").html("Fail, try again...");
+                        
+                                                setTimeout(function ()
+                                                {
+                                                    $("#button_reward_ad").html(btnvalue);
+                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                }, 5000);
+                                                setConfirmUnloadPoints(false);
+                                            });
+                                        }else{
+                                            $("#button_reward_ad").html(btnvalue);
+                                            $("#button_reward_ad").prop( "disabled", false );
+                                        }
+                                    } else {
+                                        $("#button_reward_ad").html(btnvalue);
+                                        $("#button_reward_ad").prop( "disabled", false );
+                                        // fallback logic
+                                        // showAdErrorModal()
+                                    }
+                                    
+                                } catch (err) {
+                                    $("#button_reward_ad").html(btnvalue);
+                                    $("#button_reward_ad").prop( "disabled", false );
+                                    // good practice to handle any potential errors
+                                }
+                            }else
+                            {
+                                $("#button_reward_ad").html(btnvalue);
+                                $("#button_reward_ad").prop( "disabled", false );
+                            }
+                        }
+                        
+                        $( "#button_reward_ad" ).click(async function() {
+                            showRewardedPiAd();
+                        });
+                        
+                        if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            showRewardedPiAd();
+                    }
+                });
+            });
+
+            /*
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
@@ -1177,213 +1406,15 @@ $( document ).ready(function() {
                 });
                 
                 $( ".div-certification" ).show();
-                
-                /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
-                $("#winnerboard").attr("href", "/get-top10-zone/" + auth.user.username);
-                $("#winnerzoneboard").attr("href", "/get-winners-zone/" + auth.user.username);*/
 
                 //get_user();
-                set_points(0).always(function(){
-                    get_user().always(function(){
-                        
-                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        {
-                            if(show_pi_ad_user || pi_ad_new)
-                            {
-                                $("#button_reward_ad").show();
-                                $("#piad_not_available").hide();
-                                $("#button_reward_ad").prop( "disabled", false );
-                            }else
-                            {
-                                $("#button_reward_ad").hide();
-                                $("#piad_not_available").show();
-                            }
-                                    
-                            var startTime=new Date(), endTime=new Date(), seconds=0;
-
-                            function start() {
-                              startTime = new Date();
-                            };
-
-                            function end() {
-                              endTime = new Date();
-                              var timeDiff = endTime - startTime; //in ms
-                              // strip the ms
-                              timeDiff /= 1000;
-
-                              // get seconds 
-                              seconds = Math.round(timeDiff);
-                            }
-
-                            var start_flag = false;
-                            
-                            async function showRewardedPiAd()
-                            {
-                                end();
-                                if(seconds < 5 && start_flag)
-                                {
-                                    start();
-                                    return;
-                                }
-                                start();
-                                
-                                if(!start_flag)
-                                {
-                                    start_flag = true;
-                                }
-                                
-                                $("#button_reward_ad").prop( "disabled", true );
-                                $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
-                                
-                                if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
-                                {
-                                    try {
-                                        
-                                        const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
-                                        if (isAdReadyResponse.ready === false) {
-                                            
-                                            const requestAdResponse = await Pi.Ads.requestAd("rewarded");
-                                            if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
-                                                // display modal to update Pi Browser
-                                                // showAdsNotSupportedModal()
-                                                alert("Update Pi Browser version, please!.");
-                                                $("#button_reward_ad").html(btnvalue);
-                                                $("#button_reward_ad").prop( "disabled", false );
-                                                return;
-                                            }
-                                            if (requestAdResponse.result !== "AD_LOADED") {
-                                                // display modal ads are temporarily unavailable and user should try again later
-                                                // showAdUnavailableModal()
-                                                alert("Ads are temporarily unavailable, try again later!.");
-                                                $("#button_reward_ad").html(btnvalue);
-                                                $("#button_reward_ad").prop( "disabled", false );
-                                                return;
-                                            }
-                                        }
-                                        
-                                        const showAdResponse = await Pi.Ads.showAd("rewarded");
-                                        
-                                        if (showAdResponse.result === "AD_REWARDED") {
-                                            if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
-                                            {
-                                                $("#button_reward_ad").prop( "disabled", true );
-                                                $("#button_reward_ad").html("Verifying...");
-                                                //alert($("#ready_reward_message").text());
-                                                var data = {
-                                                    'pi_user_id': pi_user_id,
-                                                    'pi_user_code': pi_user_code,
-                                                    'adId': showAdResponse.adId,
-                                                    'passkey': passkey,
-                                                    'accessToken': accessToken,
-                                                    'csrf_token': odoo.csrf_token,
-                                                };
-                                                //$.ajaxSetup({async: false});
-                                                setConfirmUnloadPoints(true);
-                                                return $.post( "/set-latin-points", data).done(function(data) {
-                                                    end();
-                                                    setConfirmUnloadPoints(false);
-                                                    data = JSON.parse(data);
-                                                    if(data.result && data.points_latin > 0)
-                                                    {
-                                                        $("#button_reward_ad").prop( "disabled", true );
-                                                        $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                        var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                        
-                                                        if(data.x2_game)
-                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                                        
-                                                        $("#open_modal").click();
-                                                        /*setTimeout(function ()
-                                                        {
-                                                            $("#button_reward_ad").html(btnvalue);
-                                                            $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);*/
-                                                        
-                                                        pi_ad_new = data.pi_ad_new;
-                                                        if(data.pi_ad_new)
-                                                        {
-                                                            $("#button_reward_ad").show();
-                                                            $("#piad_not_available").hide();
-                                                            setTimeout(function ()
-                                                            {
-                                                                $("#button_reward_ad").html(btnvalue);
-                                                                $("#button_reward_ad").prop( "disabled", false );
-                                                            }, 5000);
-                                                        }else
-                                                        {
-                                                            $("#button_reward_ad").hide();
-                                                            $("#piad_not_available").show();
-                                                            setTimeout(function ()
-                                                            {
-                                                                $("#button_reward_ad").html(btnvalue);
-                                                                $("#button_reward_ad").prop( "disabled", false );
-                                                            }, 5000);
-                                                        }
-                                                        
-                                                        get_user_rewarded();
-                                                    }else{
-                                                        //$("#button_reward_ad").html("Error, try again...");
-                            
-                                                        setTimeout(function ()
-                                                        {
-                                                            $("#button_reward_ad").html(btnvalue);
-                                                            $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);
-                                                    }
-                                                    start();
-                                                }).fail(function() {
-                                                    $("#button_reward_ad").html("Fail, try again...");
-                            
-                                                    setTimeout(function ()
-                                                    {
-                                                        $("#button_reward_ad").html(btnvalue);
-                                                        $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 5000);
-                                                    setConfirmUnloadPoints(false);
-                                                });
-                                            }else{
-                                                $("#button_reward_ad").html(btnvalue);
-                                                $("#button_reward_ad").prop( "disabled", false );
-                                            }
-                                        } else {
-                                            $("#button_reward_ad").html(btnvalue);
-                                            $("#button_reward_ad").prop( "disabled", false );
-                                            // fallback logic
-                                            // showAdErrorModal()
-                                        }
-                                        
-                                    } catch (err) {
-                                        $("#button_reward_ad").html(btnvalue);
-                                        $("#button_reward_ad").prop( "disabled", false );
-                                        // good practice to handle any potential errors
-                                    }
-                                }else
-                                {
-                                    $("#button_reward_ad").html(btnvalue);
-                                    $("#button_reward_ad").prop( "disabled", false );
-                                }
-                            }
-                            
-                            $( "#button_reward_ad" ).click(async function() {
-                                showRewardedPiAd();
-                            });
-                            
-                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                showRewardedPiAd();
-                            
-                            /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                            {
-                                showPiAds(Pi, true);
-                            }*/
-                        }
-                    });
-                });
+                
             }).catch(function(error) {
                 //Pi.openShareDialog("Error", error);
                 //alert(err);
                 console.error(error);
             });
+            */
         } catch (err) {
             //Pi.openShareDialog("Error", err);
             //alert(err);

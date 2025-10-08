@@ -60,7 +60,31 @@ function setConfirmUnloadPoints(on) {
 }
 
 function set_points(points) {
-    if(pi_user_id != "" && pi_user_code != "")
+    //end();
+    
+    /*if(data.x2_game)
+    {
+        $("#x2_game").show();
+    }else
+    {
+        $("#x2_game").hide();
+    }*/
+    
+    $("#gained_points").show();
+    //$("#gained_points").html("+" + data.points);
+    showConfetti(5);
+    setTimeout(function() {
+        $("#gained_points").hide();
+        /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            showPiAdsNotTiming(Pi);*/
+    }, 15000);
+    //alert("+" + points + $("#points_message").text());
+    start();
+    only_unlock_board();
+    
+    /*
+    if(true)
+    //if(pi_user_id != "" && pi_user_code != "")
     {
         end();
         if(seconds <= 5)
@@ -97,8 +121,6 @@ function set_points(points) {
                 showConfetti(5);
                 setTimeout(function() {
                     $("#gained_points").hide();
-                    /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        showPiAdsNotTiming(Pi);*/
                 }, 15000);
                 //alert("+" + points + $("#points_message").text());
                 start();
@@ -108,11 +130,12 @@ function set_points(points) {
         }).fail(function() {
             setConfirmUnloadPoints(false);
         });
-    }
+    }*/
 }
 
 function get_user() {
-    if(pi_user_id != "" && pi_user_code != "")
+    if(true)
+    //pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -353,39 +376,43 @@ $( document ).ready(function() {
                                 });
             }; // Read more about this in the SDK reference
 
-            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {            
+            set_points(0).always(function(){
+                get_user().always(function(){
+                    //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    //    showPiAds(Pi);
+                    
+                    $( "#button_click" ).click(function() {
+                        if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
+                        {
+                            $("#button_click").prop( "disabled", true );
+                            /*setTimeout(function ()
+                            {
+                                $("#button_click").prop( "disabled", false );
+                            }, 10000);*/
+                            transfer();
+                        }else{
+                            alert($("#payment_lessthan_message").text() + amount + " Pi.");
+                        }
+                    });
+                    $("#button_click").prop( "disabled", false );
+                });
+            });
+            
+            /*
+             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {            
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
                 
                 //get_user();
-                set_points(0).always(function(){
-                    get_user().always(function(){
-                        //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        //    showPiAds(Pi);
-                        
-                        $( "#button_click" ).click(function() {
-                            if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
-                            {
-                                $("#button_click").prop( "disabled", true );
-                                /*setTimeout(function ()
-                                {
-                                    $("#button_click").prop( "disabled", false );
-                                }, 10000);*/
-                                transfer();
-                            }else{
-                                alert($("#payment_lessthan_message").text() + amount + " Pi.");
-                            }
-                        });
-                        $("#button_click").prop( "disabled", false );
-                    });
-                });
+                
             }).catch(function(error) {
                 setConfirmUnload(false);
                 //Pi.openShareDialog("Error", error);
                 //alert(err);
                 console.error(error);
             });
+            */
         } catch (err) {
             setConfirmUnload(false);
             //Pi.openShareDialog("Error", err);

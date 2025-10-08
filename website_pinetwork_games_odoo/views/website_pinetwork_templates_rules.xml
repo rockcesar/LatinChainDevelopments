@@ -155,8 +155,8 @@
                                     <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">5.- For an unverified user, Pi Ads will be displayed 1 ad each certain time (in the mainscreen will appears the specific time). For a verified user, Pi Ads only will be displayed if you do click on the Watch Pi Ads button, or activating automatic Pi Ads checkbox.</h3>
                                     <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">6.- In the mainscreen there will be a checkbox to activate or deactivate (only verified users) automatic Pi Ads.</h3>
                                     <h1>* Additionally:</h1>
-                                    <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">a.- You will can use <a href="https://radioforus.pinet.com" target="_blank">RadioForUs</a> and LatinChain with the same subscription of 30 days.</h3>
-                                    <h3 t-if="mainnet in ['Testnet OFF', 'Testnet ON']">a.- You will can use <a href="https://radioforustest3650.pinet.com" target="_blank">RadioForUs</a> and LatinChain with the same subscription of 30 days.</h3>
+                                    <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">a.- You will can use <a href="https://radioforus.com" target="_blank">RadioForUs</a> and LatinChain with the same subscription of 30 days.</h3>
+                                    <h3 t-if="mainnet in ['Testnet OFF', 'Testnet ON']">a.- You will can use <a href="https://radioforustest.com" target="_blank">RadioForUs</a> and LatinChain with the same subscription of 30 days.</h3>
                                   </div>
                                 </div>
                               </div>

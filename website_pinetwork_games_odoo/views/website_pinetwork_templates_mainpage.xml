@@ -13,7 +13,7 @@
         </xpath>  
         <xpath expr="script[last()]" position="after"> 
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                    
+            
             <script id="colorbox-lib" src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
             
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -929,11 +929,11 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.475"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.479"></script>
                     
-                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
                       !function (e, f, u, i) {
@@ -1023,8 +1023,7 @@
                     <div id="wrap">
                         <section class="s_carousel_wrapper showInterstitialAd" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
                           <div id="myCarousel1647794696348" class="s_carousel s_carousel_default carousel slide" data-interval="10000" data-ride="carousel">
-                            <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" t-set="background_indicators" t-value="''"/>
-                            <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']" t-set="background_indicators" t-value="''"/>
+                            <t t-set="background_indicators" t-value="''"/>
                             <ol class="carousel-indicators o_we_no_overlay" t-att-style="background_indicators">
                               <li data-target="#myCarousel1647794696348" data-slide-to="0" class="active"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="1"/>
@@ -1040,8 +1039,7 @@
                               <li data-target="#myCarousel1647794696348" data-slide-to="11"/>
                             </ol>
                             <div class="carousel-inner">
-                              <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
-                              <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']" t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
+                              <t t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
                               <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level active" t-att-style="background" data-name="Slide">
                                 <div class="container">
                                   <div class="row content">
@@ -1233,7 +1231,7 @@
                         </div>
                     </div>
                     
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <div class="container" style="text-align:center;">
                         
                         <!-- LatinChain Ad responsive -->
                         
@@ -1453,7 +1451,7 @@
                                 <button id="sport-results-2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">Latinchain Pal</div></a>
+                                <a href="https://test.latin-chain.com" target="_blank" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">Latinchain Pal</div></a>
                             </div>
                             <t t-if="pioneers_streaming">
                                 <div style="margin-bottom:5px">
@@ -1482,8 +1480,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://test.latin-chain.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latin-chain.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         
@@ -2079,7 +2077,7 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>
+                                                <div class="col-10"><a href="https://test.latin-chain.com" target="_blank" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>

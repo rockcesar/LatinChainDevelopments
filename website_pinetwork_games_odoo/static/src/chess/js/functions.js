@@ -60,7 +60,7 @@ function setConfirmUnloadPoints(on) {
 }
 
 function set_points(points) {
-    if(pi_user_id != "" && pi_user_code != "")
+    if(true) //pi_user_id != "" && pi_user_code != "")
     {
         end();
         if(seconds <= 5)
@@ -139,123 +139,99 @@ function load_all_boards()
 }
 
 function get_user() {
-    if(pi_user_id != "" && pi_user_code != "")
+    if(true) //pi_user_id != "" && pi_user_code != "")
     {
-        var data = {
-                    'pi_user_id': pi_user_id,
-                    'pi_user_code': pi_user_code,
-                    'accessToken': accessToken,
-                    'csrf_token': odoo.csrf_token,
-                };
-        //$.ajaxSetup({async: false});
-        return $.post( "/get-user", data).done(function(data) {
-            data = JSON.parse(data);
-            if(data.result)
-            {
-                if(data.complete_found)
-                    alert($("#payment_message").text());
-                
-                show_pi_ad_user = data.show_pi_ad;
-                
-                passkey=data.passkey;
-                
-                if(data.x2_game)
-                {
-                    $("#x2_game").show();
-                }else
-                {
-                    $("#x2_game").hide();
-                }
-                
-                if(data.unblocked)
-                {
-                    unblocked = data.unblocked;
-                    
-                    $("#pi_donate").hide();
-                    $("#button_click").hide();
-                    $(".hide_when_unblock").hide();
-                    $("#loading_word").hide();
-                    $(".loading_section").hide();
-                    $('#chess-tab').show();
-                    $("#home-tab").prop( "disabled", true );
-                    $('#chess-tab').click();
-                    /*setTimeout(function() {
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 1000);*/
-                    
-                    setTimeout(function() {
-                      load_all_boards();
-                      setTimeout(function() {
-                        $("#home-tab").prop( "disabled", false );
-                      }, 2000);
-					}, 1000);
-                    
-                    $("#test_game").hide();
-                    $(".show_test_game").hide();
-                }else if(["Mainnet OFF"].includes($("#mainnet").val()))
-                {
-                    alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
-                    $("#pi_donate").hide();
-                    $("#button_click").hide();
-                    $(".hide_when_unblock").hide();
-                    $("#loading_word").hide();
-                    $(".loading_section").hide();
-                    $('#chess-tab').show();
-                    $("#home-tab").prop( "disabled", true );
-                    $('#chess-tab').click();
-                    /*setTimeout(function() {
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 1000);*/
-                    
-                    setTimeout(function() {
-                      load_all_boards();
-                      setTimeout(function() {
-                        $("#home-tab").prop( "disabled", false );
-                      }, 2000);
-					}, 1000);
-                    
-                    $("#test_game").hide();
-                    $(".show_test_game").hide();
-                }
-                else
-                {
-                    $(".hide_when_unblock").show();
-                    $("#loading_word").hide();
-                    $(".loading_section").hide();
-                    $("#pi_donate").hide();
-                    $("#button_click").show();
-                    $('#chess-tab').hide();
-                    $("#home-tab").click();
-                    
-                    $("#test_game").prop( "disabled", false );
-                    $("#test_game").click(function(){
-                        alert("You can use Chess, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
-                        $("#pi_donate").hide();
-                        $("#button_click").show();
-                        $(".hide_when_unblock").show();
-                        $("#loading_word").hide();
-                        $(".loading_section").hide();
-                        $('#chess-tab').show();
-                        $("#home-tab").prop( "disabled", true );
-                        $('#chess-tab').click();
-                        /*setTimeout(function() {
-                          (adsbygoogle = window.adsbygoogle || []).push({});
-                        }, 1000);*/
-                        
-                        setTimeout(function() {
-                          load_all_boards();
-                          setTimeout(function() {
-                            $("#home-tab").prop( "disabled", false );
-                          }, 2000);
-                        }, 1000);
-                        $("#test_game").hide();
-                        $(".show_test_game").hide();
-                    });
-                }
-            }
-        }).fail(function() {
+        /*if(data.complete_found)
+            alert($("#payment_message").text());
+        
+        show_pi_ad_user = data.show_pi_ad;
+        
+        passkey=data.passkey;
+        
+        if(data.x2_game)
+        {
+            $("#x2_game").show();
+        }else
+        {
+            $("#x2_game").hide();
+        }
+        
+        if(data.unblocked)
+        {*/
+        
+        $("#pi_donate").hide();
+        $("#button_click").hide();
+        $(".hide_when_unblock").hide();
+        $("#loading_word").hide();
+        $(".loading_section").hide();
+        $('#chess-tab').show();
+        $("#home-tab").prop( "disabled", true );
+        $('#chess-tab').click();
+        
+        setTimeout(function() {
+          load_all_boards();
+          setTimeout(function() {
+            $("#home-tab").prop( "disabled", false );
+          }, 2000);
+        }, 1000);
+        
+        $("#test_game").hide();
+        $(".show_test_game").hide();
+        
+        /*}else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
+            $("#pi_donate").hide();
+            $("#button_click").hide();
+            $(".hide_when_unblock").hide();
+            $("#loading_word").hide();
+            $(".loading_section").hide();
+            $('#chess-tab').show();
+            $("#home-tab").prop( "disabled", true );
+            $('#chess-tab').click();
             
-        });
+            setTimeout(function() {
+              load_all_boards();
+              setTimeout(function() {
+                $("#home-tab").prop( "disabled", false );
+              }, 2000);
+            }, 1000);
+            
+            $("#test_game").hide();
+            $(".show_test_game").hide();
+        }
+        else
+        {
+            $(".hide_when_unblock").show();
+            $("#loading_word").hide();
+            $(".loading_section").hide();
+            $("#pi_donate").hide();
+            $("#button_click").show();
+            $('#chess-tab').hide();
+            $("#home-tab").click();
+            
+            $("#test_game").prop( "disabled", false );
+            $("#test_game").click(function(){
+                alert("You can use Chess, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
+                $("#pi_donate").hide();
+                $("#button_click").show();
+                $(".hide_when_unblock").show();
+                $("#loading_word").hide();
+                $(".loading_section").hide();
+                $('#chess-tab').show();
+                $("#home-tab").prop( "disabled", true );
+                $('#chess-tab').click();
+                
+                setTimeout(function() {
+                  load_all_boards();
+                  setTimeout(function() {
+                    $("#home-tab").prop( "disabled", false );
+                  }, 2000);
+                }, 1000);
+                $("#test_game").hide();
+                $(".show_test_game").hide();
+            });
+        }*/
     }
 }
 
@@ -412,6 +388,26 @@ $( document ).ready(function() {
                                 });
             }; // Read more about this in the SDK reference
 
+            set_points(0).always(function(){
+                get_user().always(function(){
+                    
+                    //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    //    showPiAds(Pi);
+                    
+                    $( "#button_click" ).click(function() {
+                        if(parseFloat($("#pi_donate").val()) == parseFloat(amount))
+                        {
+                            $("#button_click").prop( "disabled", true );
+                            transfer();
+                        }else{
+                            alert($("#payment_lessthan_message").text() + amount + " Pi.");
+                        }
+                    });
+                    $("#button_click").prop( "disabled", false );
+                });
+            });
+
+            /*
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
@@ -428,10 +424,7 @@ $( document ).ready(function() {
                             if(parseFloat($("#pi_donate").val()) == parseFloat(amount))
                             {
                                 $("#button_click").prop( "disabled", true );
-                                /*setTimeout(function ()
-                                {
-                                    $("#button_click").prop( "disabled", false );
-                                }, 10000);*/
+                                
                                 transfer();
                             }else{
                                 alert($("#payment_lessthan_message").text() + amount + " Pi.");
@@ -447,7 +440,7 @@ $( document ).ready(function() {
                 setConfirmUnload(false);
                 
                 console.error(error);
-            });
+            });*/
         } catch (err) {
             setConfirmUnload(false);
             //Pi.openShareDialog("Error", err);
