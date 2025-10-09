@@ -321,6 +321,9 @@ $( document ).ready(function() {
     });
     
     async function auth() {
+        get_user();
+        
+        /*
         $("#pi_donate").hide();
         $("#button_click").show();
         $("#sudoku-tab").hide();
@@ -383,10 +386,6 @@ $( document ).ready(function() {
                         if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
                         {
                             $("#button_click").prop( "disabled", true );
-                            /*setTimeout(function ()
-                            {
-                                $("#button_click").prop( "disabled", false );
-                            }, 10000);*/
                             transfer();
                         }else{
                             alert($("#payment_lessthan_message").text() + amount + " Pi.");
@@ -395,8 +394,6 @@ $( document ).ready(function() {
                     $("#button_click").prop( "disabled", false );
                 });
             });
-            
-            /*
              Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {            
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
@@ -410,7 +407,6 @@ $( document ).ready(function() {
                 //alert(err);
                 console.error(error);
             });
-            */
         } catch (err) {
             setConfirmUnload(false);
             //Pi.openShareDialog("Error", err);
@@ -418,6 +414,7 @@ $( document ).ready(function() {
             console.error(err);
             // Not able to fetch the user
         }
+        */
     }
     
     async function transfer() {
