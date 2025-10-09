@@ -2633,10 +2633,11 @@
                         
                     </div>
                     
-                    <div class="container" style="text-align:center;">
+                    <div class="container" style="text-align:center; display:_none;">
                         
                         <!-- LatinChain Ad responsive -->
                         
+                        <!--
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -2646,7 +2647,7 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                        <br/>
+                        <br/>-->
                     </div>
                     
                     <div class="container" style="text-align:center;">
