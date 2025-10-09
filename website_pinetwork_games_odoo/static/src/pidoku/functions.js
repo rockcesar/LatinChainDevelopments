@@ -70,18 +70,6 @@ function set_points(points) {
         $("#x2_game").hide();
     }*/
     
-    $("#gained_points").show();
-    //$("#gained_points").html("+" + data.points);
-    showConfetti(5);
-    setTimeout(function() {
-        $("#gained_points").hide();
-        /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-            showPiAdsNotTiming(Pi);*/
-    }, 15000);
-    //alert("+" + points + $("#points_message").text());
-    start();
-    only_unlock_board();
-    
     /*
     if(true)
     //if(pi_user_id != "" && pi_user_code != "")
@@ -134,6 +122,22 @@ function set_points(points) {
 }
 
 function get_user() {
+    $("#pi_donate").hide();
+    $("#button_click").hide();
+    $(".hide_when_unblock").hide();
+    $("#sudoku-tab").show();
+    $("#sudoku-tab").click();
+
+    var tab_name = get_tab();
+    refresh_board();
+    /*setTimeout(function() {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }, 2000);*/
+
+    $("#test_game").hide();
+    $(".show_test_game").hide();
+    
+    /*
     if(true)
     //pi_user_id != "" && pi_user_code != "")
     {
@@ -175,9 +179,6 @@ function get_user() {
                     
                     var tab_name = get_tab();
                     refresh_board();
-                    /*setTimeout(function() {
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 2000);*/
                     
                     $("#test_game").hide();
                     $(".show_test_game").hide();
@@ -223,7 +224,7 @@ function get_user() {
         }).fail(function() {
             
         });
-    }
+    }*/
 }
 
 async function showPiAds(Pi) {

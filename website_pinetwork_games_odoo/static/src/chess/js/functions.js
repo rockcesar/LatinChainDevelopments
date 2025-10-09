@@ -139,6 +139,26 @@ function load_all_boards()
 }
 
 function get_user() {
+    
+    $("#pi_donate").hide();
+    $("#button_click").hide();
+    $(".hide_when_unblock").hide();
+    $("#loading_word").hide();
+    $(".loading_section").hide();
+    $('#chess-tab').show();
+    $("#home-tab").prop( "disabled", true );
+    $('#chess-tab').click();
+
+    setTimeout(function() {
+      load_all_boards();
+      setTimeout(function() {
+        $("#home-tab").prop( "disabled", false );
+      }, 2000);
+    }, 1000);
+
+    $("#test_game").hide();
+    $(".show_test_game").hide();
+    
     if(true) //pi_user_id != "" && pi_user_code != "")
     {
         /*if(data.complete_found)
@@ -158,25 +178,6 @@ function get_user() {
         
         if(data.unblocked)
         {*/
-        
-        $("#pi_donate").hide();
-        $("#button_click").hide();
-        $(".hide_when_unblock").hide();
-        $("#loading_word").hide();
-        $(".loading_section").hide();
-        $('#chess-tab').show();
-        $("#home-tab").prop( "disabled", true );
-        $('#chess-tab').click();
-        
-        setTimeout(function() {
-          load_all_boards();
-          setTimeout(function() {
-            $("#home-tab").prop( "disabled", false );
-          }, 2000);
-        }, 1000);
-        
-        $("#test_game").hide();
-        $(".show_test_game").hide();
         
         /*}else if(["Mainnet OFF"].includes($("#mainnet").val()))
         {
