@@ -50,7 +50,7 @@ async function colorboxLoaded()
                     return false;
                 colorbox_count += 1;
                 colorboxLoaded();
-            }, 100);
+            }, 48);
         }
     }
 }
@@ -184,7 +184,7 @@ function set_points_exchange(value_client) {
                 setTimeout(function() {
                     $('#button_exchange').prop( "disabled", false );
                     $('#exchange_latin').prop( "disabled", false );
-                }, 3000);
+                }, 48);
                 //$("#refresh").click();
 
             }).fail(function() {
@@ -1061,7 +1061,7 @@ $( document ).ready(function() {
                 //$("#refresh").click();
                 setTimeout(function() {
                   $("#avatar_user").prop( "disabled", false );
-                }, 3000);
+                }, 48);
                 
             }).fail(function() {
                 setConfirmUnloadPoints(false);
@@ -1105,7 +1105,7 @@ $( document ).ready(function() {
                 //$("#refresh").click();
                 setTimeout(function() {
                   $("#pi_ad_automatic").prop( "disabled", false );
-                }, 3000);
+                }, 48);
                 
             }).fail(function() {
                 setConfirmUnloadPoints(false);
@@ -1192,7 +1192,7 @@ $( document ).ready(function() {
             setTimeout(function() {
               $("#loading_word").hide();
               $("#loading_word_under").hide();
-            }, 5000);
+            }, 48);
             
             set_points(0).always(function(){
                 get_user().always(function(){
@@ -1309,7 +1309,7 @@ $( document ).ready(function() {
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 5000);*/
+                                                    }, 48);*/
                                                     
                                                     pi_ad_new = data.pi_ad_new;
                                                     if(data.pi_ad_new)
@@ -1320,7 +1320,7 @@ $( document ).ready(function() {
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
                                                             $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);
+                                                        }, 48);
                                                     }else
                                                     {
                                                         $("#button_reward_ad").hide();
@@ -1329,7 +1329,7 @@ $( document ).ready(function() {
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
                                                             $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);
+                                                        }, 48);
                                                     }
                                                     
                                                     get_user_rewarded();
@@ -1340,7 +1340,7 @@ $( document ).ready(function() {
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 5000);
+                                                    }, 48);
                                                 }
                                                 start();
                                             }).fail(function() {
@@ -1350,7 +1350,7 @@ $( document ).ready(function() {
                                                 {
                                                     $("#button_reward_ad").html(btnvalue);
                                                     $("#button_reward_ad").prop( "disabled", false );
-                                                }, 5000);
+                                                }, 48);
                                                 setConfirmUnloadPoints(false);
                                             });
                                         }else{
@@ -1447,7 +1447,7 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-            }, 10000);
+            }, 48);
             $(".loggedin").show();
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
         {
@@ -1458,7 +1458,7 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-            }, 10000);
+            }, 48);
             $(".loggedin").show();
         }else
         {
@@ -1526,7 +1526,7 @@ $( document ).ready(function() {
         {
             if(pi_user_id == "" && pi_user_code == "")
                 auth();
-        }, 10000);
+        }, 48);
         $(".loggedin").show();
         $(".loggedout").hide();
     });
@@ -1540,7 +1540,7 @@ $( document ).ready(function() {
         {
             if(pi_user_code == "" && pi_user_code == "")
                 auth();
-        }, 10000);
+        }, 48);
     }else
     {
         $("#login_latinchain").click(function(){
@@ -1550,7 +1550,7 @@ $( document ).ready(function() {
             {
                 if(pi_user_code == "" && pi_user_code == "")
                     auth();
-            }, 10000);
+            }, 48);
         });
         
         $(".modal-body-login").html($("#modal_login_latinchain_message").text());
