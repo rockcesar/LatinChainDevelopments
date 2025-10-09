@@ -2651,7 +2651,7 @@
                         <br/>
                     </div>
                     
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <div class="container" style="text-align:center;">
                         <!-- LatinChain Ad responsive 2 -->
                         
                         <!--<ins class="adsbygoogle"
@@ -2708,7 +2708,7 @@
                             }
                     </style>
                     
-                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
                     </script>
