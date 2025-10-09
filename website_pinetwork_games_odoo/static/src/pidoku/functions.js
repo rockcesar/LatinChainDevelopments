@@ -130,9 +130,6 @@ function get_user() {
 
     var tab_name = get_tab();
     refresh_board();
-    /*setTimeout(function() {
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    }, 2000);*/
 
     $("#test_game").hide();
     $(".show_test_game").hide();
