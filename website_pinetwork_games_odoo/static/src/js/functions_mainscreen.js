@@ -56,6 +56,8 @@ async function colorboxLoaded()
 }
 
 function set_points(points) {
+    //if(true)
+    /*
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -76,6 +78,7 @@ function set_points(points) {
         }).fail(function() {
         });
     }
+    */
 }
 
 function set_points_exchange(value_client) {
@@ -1178,6 +1181,8 @@ $( document ).ready(function() {
     $("#verified").hide();
     
     async function auth() {
+        get_user();
+        /*
         try {
             
             // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
@@ -1311,6 +1316,8 @@ $( document ).ready(function() {
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 48);*/
                                                     
+                                                    /*
+                                                    
                                                     pi_ad_new = data.pi_ad_new;
                                                     if(data.pi_ad_new)
                                                     {
@@ -1385,42 +1392,13 @@ $( document ).ready(function() {
                     }
                 });
             });
-
-            /*
-            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                pi_user_id = auth.user.uid;
-                pi_user_code = auth.user.username;
-                accessToken = auth.accessToken;
-                $("#username").html(" " + auth.user.username);
-                
-                $(".referrer_username").html("<strong>" + auth.user.username + "</strong>");
-                
-                leaderboard = "/get-points/" + auth.user.username;
-                winnerboard = "/get-top10-zone/" + auth.user.username;
-                winnerzoneboard = "/get-winners-zone/" + auth.user.username;
-                streamerzoneboard = "/get-streamers-zone/" + auth.user.username;
-                generalranking = "/get-general-ranking/" + auth.user.username;
-                
-                $( ".certification" ).click(function() {
-                    $.colorbox({href:"/latinchain-certification/" + auth.user.username, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                });
-                
-                $( ".div-certification" ).show();
-
-                //get_user();
-                
-            }).catch(function(error) {
-                //Pi.openShareDialog("Error", error);
-                //alert(err);
-                console.error(error);
-            });
-            */
+        
         } catch (err) {
             //Pi.openShareDialog("Error", err);
             //alert(err);
             console.error(err);
             // Not able to fetch the user
-        }
+        }*/
     }
     $(".referrer_username").html("<strong>--</strong>");
     
