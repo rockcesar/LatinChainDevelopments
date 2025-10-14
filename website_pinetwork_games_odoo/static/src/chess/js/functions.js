@@ -152,6 +152,14 @@ function get_user() {
     setTimeout(function() {
       load_all_boards();
       setTimeout(function() {
+        /*$("#pi_donate").hide();
+        $("#button_click").hide();
+        $(".hide_when_unblock").hide();
+        $("#loading_word").hide();
+        $(".loading_section").hide();
+        $('#chess-tab').show();
+        $("#home-tab").prop( "disabled", false );
+        $('#chess-tab').click();*/
         $("#home-tab").prop( "disabled", false );
       }, 2000);
     }, 1000);
@@ -336,7 +344,7 @@ $( document ).ready(function() {
     });
     
     async function auth() {
-        $("#pi_donate").hide();
+        /*$("#pi_donate").hide();
         $("#button_click").show();
         $('#chess-tab').hide();
         $("#home-tab").click();
@@ -347,7 +355,7 @@ $( document ).ready(function() {
         setTimeout(function() {
           $("#loading_word").hide();
           $(".loading_section").hide();
-        }, 5000);
+        }, 5000);*/
         
         try {
             

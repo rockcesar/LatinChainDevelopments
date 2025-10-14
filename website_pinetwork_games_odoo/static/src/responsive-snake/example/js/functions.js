@@ -90,24 +90,32 @@ function set_points(points) {
 }
 
 function get_user(pause) {
-    $("#reset_pause_controls").show();
-    $("#plus_minus_controls").show();
-    $("#pause").show();
-    $("#reset").show();
-    $("#minus").show();
-    $("#plus").show();
-    if($("#disable_dragging").is(":hidden"))
-    {
-        $("#enable_dragging").show();
-        $('#disable_dragging').hide();
-    }
-    $("#pi_donate").hide();
-    $("#button_click").hide();
     
-    if(pause)
-        press(80);
+    setTimeout(function() {
         
-    $("#test_game").hide();
+        $("#reset_pause_controls").show();
+        $("#plus_minus_controls").show();
+        $("#pause").show();
+        $("#reset").show();
+        $("#minus").show();
+        $("#plus").show();
+        if($("#disable_dragging").is(":hidden"))
+        {
+            $("#enable_dragging").show();
+            $('#disable_dragging').hide();
+        }
+        $("#pi_donate").hide();
+        $("#button_click").hide();
+        
+        if(pause)
+            press(80);
+        
+        //$(".fa-play").click();
+        
+        $("#test_game").hide();
+    
+    }, 2048);
+
     
     /*
     if(true) //pi_user_id != "" && pi_user_code != "")
@@ -278,7 +286,9 @@ $( document ).ready(function() {
     });
     
     async function auth() {
-        $("#pause").hide();
+        
+        get_user(true);
+        /*$("#pause").hide();
         $("#reset").hide();
         $("#pi_donate").hide();
         $("#button_click").show();
@@ -287,12 +297,12 @@ $( document ).ready(function() {
                                 
         setTimeout(function() {
           $("#loading_word").hide();
-        }, 5000);
+        }, 5000);*/
         
         try {
             
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
-            const scopes = ['username', 'payments', 'wallet_address'];
+            /*const scopes = ['username', 'payments', 'wallet_address'];
             function onIncompletePaymentFound(payment) {
                 try {
                     var txid = payment.transaction.txid;
@@ -346,7 +356,6 @@ $( document ).ready(function() {
                 });
             });
 
-            /*
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
