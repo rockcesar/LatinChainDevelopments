@@ -161,15 +161,15 @@ function get_user() {
         $("#home-tab").prop( "disabled", false );
         $('#chess-tab').click();*/
         $("#home-tab").prop( "disabled", false );
-      }, 2000);
+      }, 5000);
     }, 1000);
 
     $("#test_game").hide();
     $(".show_test_game").hide();
     
-    if(true) //pi_user_id != "" && pi_user_code != "")
+    /*if(true) //pi_user_id != "" && pi_user_code != "")
     {
-        /*if(data.complete_found)
+        if(data.complete_found)
             alert($("#payment_message").text());
         
         show_pi_ad_user = data.show_pi_ad;
@@ -240,8 +240,8 @@ function get_user() {
                 $("#test_game").hide();
                 $(".show_test_game").hide();
             });
-        }*/
-    }
+        }
+    }*/
 }
 
 async function showPiAds(Pi) {
