@@ -1,3 +1,5 @@
+alert("cxvbn23");
+
 var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";
@@ -10,8 +12,6 @@ var show_pi_ad_user = true;
 var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
 var btnvalue = "";
-
-alert("cxvbn");
 
 function setConfirmUnload(on) {
     unloadMessage(on);
