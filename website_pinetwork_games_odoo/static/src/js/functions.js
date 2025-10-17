@@ -109,10 +109,11 @@ function get_user(donation) {
                 $("#pi_ad_hours").html(show_pi_ad_user_time);
                 $("#pi_ad_max").html(pi_ad_max);
             }
-        }
-    }).fail(function() {
-        
-    });
+            
+        }).fail(function() {
+            
+        });
+    }
 }
 
 async function showPiAds(Pi) {
