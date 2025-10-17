@@ -1155,7 +1155,7 @@ $( document ).ready(function() {
             
             set_points(0).always(function(){
                 get_user().always(function(){
-                    
+                    alert("12345678");
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
                         if(show_pi_ad_user || pi_ad_new)
