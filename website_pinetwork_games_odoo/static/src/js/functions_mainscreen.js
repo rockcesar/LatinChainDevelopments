@@ -50,14 +50,12 @@ async function colorboxLoaded()
                     return false;
                 colorbox_count += 1;
                 colorboxLoaded();
-            }, 48);
+            }, 4048);
         }
     }
 }
 
 function set_points(points) {
-    //if(true)
-    /*
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -78,7 +76,6 @@ function set_points(points) {
         }).fail(function() {
         });
     }
-    */
 }
 
 function set_points_exchange(value_client) {
@@ -187,7 +184,7 @@ function set_points_exchange(value_client) {
                 setTimeout(function() {
                     $('#button_exchange').prop( "disabled", false );
                     $('#exchange_latin').prop( "disabled", false );
-                }, 48);
+                }, 4048);
                 //$("#refresh").click();
 
             }).fail(function() {
@@ -351,41 +348,7 @@ function get_user_rewarded() {
 
 function get_user() {
     
-    $(".show-tetris").show();
-    $(".show-mahjong").show();
-    $(".show-bubble-shooter").show();
-    $(".show-test-your-brain").show();
-    $(".show-15-puzzle").show();
-    $(".show-pingpong").show();
-    $(".show-checkers").show();
-    $(".show-domino").show();
-    $(".show-latincrush").show();
-    $(".show-gameslearning").show();
-    $(".show-odoolearning").show();
-    $(".show-languagelearning").show();
-    $(".show-webtorrent").show();
-    $(".show-musicplayer").show();
-    $(".show-videoplayer").show();
-    $(".show-imgplayer").show();
-    $(".show-webcamplayer").show();
-    $(".show-texttospeechplayer").show();
-    $(".show-mapsplayer").show();
-    $(".show-calcplayer").show();
-    $(".show-calendarplayer").show();
-    //$(".show-tvonline").show();
-    //$(".show-sport-results").show();
-    //$(".show-cointelegraph").show();
-    $(".show-streamerzoneboard").show();
-    //$(".show-stellarium").show();
-    //$(".show-latin-search").show();
-    //$(".show-latin-dictionary").show();
-    //$(".show-latin-university").show();
-    //$(".show-latin-books").show();
-    //$(".show-latin-academy").show();
-    
-    /*
-    if(true)
-    //if(pi_user_id != "" && pi_user_code != "")
+    if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -401,12 +364,11 @@ function get_user() {
                 if(data.complete_found)
                     alert($("#payment_message").text());
                 
-                /*if(data.pi_user_code && data.pi_user_code == $("#pi_main_user").val())
+                if(data.pi_user_code && data.pi_user_code == $("#pi_main_user").val())
                 {
                     $("#accordionTwo").show();
-                }*/
-                    
-                /*
+                }
+                
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
                 pi_ad_new = data.pi_ad_new;
@@ -414,10 +376,6 @@ function get_user() {
                 
                 $("#pi_ad_hours").html(show_pi_ad_user_time);
                 $("#pi_ad_max").html(pi_ad_max);
-                
-                */
-                
-                /*
                 
                 $(".show-tetris").show();
                 $(".show-mahjong").show();
@@ -451,15 +409,13 @@ function get_user() {
                 //$(".show-latin-books").show();
                 //$(".show-latin-academy").show();
                 
-                */
-                
-                /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     $(".show_pi_ad_automatic").show();
                     $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
-                }*/
+                }
                 
-                /*var options = $("#avatar_user");
+                var options = $("#avatar_user");
                 //don't forget error handling!
                 var was_selected = false;
                 $.each(data.avatar_user_options, function(index, item) {
@@ -675,7 +631,7 @@ function get_user() {
             
         }).fail(function() {
         });
-    }*/
+    }
 }
 
 async function showPiInterstitialAds(Pi, url) {
@@ -703,7 +659,7 @@ async function showPiInterstitialAds(Pi, url) {
                 
                 return;
             }
-        }, 48);
+        }, 4048);
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
 
@@ -1064,7 +1020,7 @@ $( document ).ready(function() {
                 //$("#refresh").click();
                 setTimeout(function() {
                   $("#avatar_user").prop( "disabled", false );
-                }, 48);
+                }, 4048);
                 
             }).fail(function() {
                 setConfirmUnloadPoints(false);
@@ -1108,7 +1064,7 @@ $( document ).ready(function() {
                 //$("#refresh").click();
                 setTimeout(function() {
                   $("#pi_ad_automatic").prop( "disabled", false );
-                }, 48);
+                }, 4048);
                 
             }).fail(function() {
                 setConfirmUnloadPoints(false);
@@ -1181,8 +1137,6 @@ $( document ).ready(function() {
     $("#verified").hide();
     
     async function auth() {
-        get_user();
-        /*
         try {
             
             // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
@@ -1197,7 +1151,7 @@ $( document ).ready(function() {
             setTimeout(function() {
               $("#loading_word").hide();
               $("#loading_word_under").hide();
-            }, 48);
+            }, 4048);
             
             set_points(0).always(function(){
                 get_user().always(function(){
@@ -1310,13 +1264,11 @@ $( document ).ready(function() {
                                                         $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
                                                     
                                                     $("#open_modal").click();
-                                                    /*setTimeout(function ()
+                                                    setTimeout(function ()
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 48);*/
-                                                    
-                                                    /*
+                                                    }, 4048);
                                                     
                                                     pi_ad_new = data.pi_ad_new;
                                                     if(data.pi_ad_new)
@@ -1327,7 +1279,7 @@ $( document ).ready(function() {
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
                                                             $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 48);
+                                                        }, 4048);
                                                     }else
                                                     {
                                                         $("#button_reward_ad").hide();
@@ -1336,7 +1288,7 @@ $( document ).ready(function() {
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
                                                             $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 48);
+                                                        }, 4048);
                                                     }
                                                     
                                                     get_user_rewarded();
@@ -1347,7 +1299,7 @@ $( document ).ready(function() {
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 48);
+                                                    }, 4048);
                                                 }
                                                 start();
                                             }).fail(function() {
@@ -1357,7 +1309,7 @@ $( document ).ready(function() {
                                                 {
                                                     $("#button_reward_ad").html(btnvalue);
                                                     $("#button_reward_ad").prop( "disabled", false );
-                                                }, 48);
+                                                }, 4048);
                                                 setConfirmUnloadPoints(false);
                                             });
                                         }else{
@@ -1398,7 +1350,7 @@ $( document ).ready(function() {
             //alert(err);
             console.error(err);
             // Not able to fetch the user
-        }*/
+        }
     }
     $(".referrer_username").html("<strong>--</strong>");
     
@@ -1425,7 +1377,7 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-            }, 48);
+            }, 4048);
             $(".loggedin").show();
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
         {
@@ -1436,7 +1388,7 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-            }, 48);
+            }, 4048);
             $(".loggedin").show();
         }else
         {
@@ -1504,12 +1456,11 @@ $( document ).ready(function() {
         {
             if(pi_user_id == "" && pi_user_code == "")
                 auth();
-        }, 48);
+        }, 4048);
         $(".loggedin").show();
         $(".loggedout").hide();
     });
     
-    /*
     if(localStorage.getItem("loggedIn"))
     {
         auth();
@@ -1518,7 +1469,7 @@ $( document ).ready(function() {
         {
             if(pi_user_code == "" && pi_user_code == "")
                 auth();
-        }, 48);
+        }, 4048);
     }else
     {
         $("#login_latinchain").click(function(){
@@ -1528,12 +1479,12 @@ $( document ).ready(function() {
             {
                 if(pi_user_code == "" && pi_user_code == "")
                     auth();
-            }, 48);
+            }, 4048);
         });
         
         $(".modal-body-login").html($("#modal_login_latinchain_message").text());
         $("#open_modal_login").click();
-    }*/
+    }
 
     //$("#social_div").css("visibility", "visible");
     const btn = document.querySelector('#button1');
