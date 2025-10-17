@@ -73,6 +73,7 @@ function get_user(donation) {
             data = JSON.parse(data);
             if(data.result)
             {
+                alert(data.unblocked);
                 if(data.complete_found)
                     alert($("#payment_message").text());
                 
@@ -738,8 +739,6 @@ $( document ).ready(function() {
         }
     }
     
-    alert("12345");
-    
     // you usually would check the ads support ahead of time and store the information
     (async () => {
         await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -765,7 +764,6 @@ $( document ).ready(function() {
                     auth();
             }, 10000);
             
-            alert("123");
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
         {
             auth();
