@@ -34,8 +34,8 @@ function end() {
 }
 
 function set_points(points) {
-    if(true)
-    //if(pi_user_id != "" && pi_user_code != "")
+    alert("123456789");
+    if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
             'pi_user_id': pi_user_id,
@@ -73,7 +73,7 @@ function get_user(donation) {
             data = JSON.parse(data);
             if(data.result)
             {
-                alert(data.unblocked);
+                
                 if(data.complete_found)
                     alert($("#payment_message").text());
                 
