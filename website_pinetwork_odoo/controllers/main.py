@@ -377,7 +377,7 @@ class PiNetworkBaseController(http.Controller):
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 
                             'points_latin': pi_users_list[0].points_latin, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
-                            'unblocked': True, #pi_users_list[0].unblocked,
+                            'unblocked': pi_users_list[0].unblocked,
                             'unblocked_datetime': str(unblocked_datetime),
                             'days_available': pi_users_list[0].days_available,
                             'amount': pi_amount,
