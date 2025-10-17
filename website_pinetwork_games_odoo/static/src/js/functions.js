@@ -738,6 +738,8 @@ $( document ).ready(function() {
         }
     }
     
+    alert("12345");
+    
     // you usually would check the ads support ahead of time and store the information
     (async () => {
         await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -749,8 +751,6 @@ $( document ).ready(function() {
                 
                 if(!adNetworkSupported)
                     alert("Update Pi Browser version, please!.");
-                
-                alert("1234");
             }
           // store adNetworkSupported for later use
         })();
