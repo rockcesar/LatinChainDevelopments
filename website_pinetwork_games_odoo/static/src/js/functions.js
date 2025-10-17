@@ -34,7 +34,6 @@ function end() {
 }
 
 function set_points(points) {
-    alert("123456789");
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -166,7 +165,6 @@ $( document ).ready(function() {
     amount = $("#amount").val();
 
     async function auth() {
-        alert("987654321");
         
         $("#loading_section").show();
         $("#loading_word").show();
