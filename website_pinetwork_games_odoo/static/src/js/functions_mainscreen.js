@@ -1406,7 +1406,7 @@ $( document ).ready(function() {
         
         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
-            $('.showInterstitialAd').find('a.btn').click(function(e) {
+            /*$('.showInterstitialAd').find('a.btn').click(function(e) {
                 if($(this).attr('target') != "_blank")
                 {
                     if($('#pi_ad_automatic').is(':checked') && !unblocked) {
@@ -1426,7 +1426,7 @@ $( document ).ready(function() {
                         //showPiInterstitialAds(Pi, false);
                     }
                 }
-            });
+            });*/
         }
     
     })();
@@ -1461,7 +1461,6 @@ $( document ).ready(function() {
         $(".loggedout").hide();
     });
     
-    /*
     if(localStorage.getItem("loggedIn"))
     {
         auth();
@@ -1470,7 +1469,7 @@ $( document ).ready(function() {
         {
             if(pi_user_code == "" && pi_user_code == "")
                 auth();
-        }, 48);
+        }, 4048);
     }else
     {
         $("#login_latinchain").click(function(){
@@ -1480,12 +1479,12 @@ $( document ).ready(function() {
             {
                 if(pi_user_code == "" && pi_user_code == "")
                     auth();
-            }, 48);
+            }, 4048);
         });
         
         $(".modal-body-login").html($("#modal_login_latinchain_message").text());
         $("#open_modal_login").click();
-    }*/
+    }
 
     //$("#social_div").css("visibility", "visible");
     const btn = document.querySelector('#button1');

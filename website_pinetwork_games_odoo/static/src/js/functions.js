@@ -218,7 +218,7 @@ $( document ).ready(function() {
                     
                     //if(show_pi_ad_user)
                     //    showPiAds(Pi);
-                    
+                    alert(unblocked);
                     function executepayment(){
                         if(!$( "#acceptConditions" ).prop("checked"))
                         {
