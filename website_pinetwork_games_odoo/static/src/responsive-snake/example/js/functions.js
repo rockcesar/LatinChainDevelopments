@@ -116,9 +116,7 @@ function get_user(pause) {
     
     }, 2048);
 
-    
-    /*
-    if(true) //pi_user_id != "" && pi_user_code != "")
+    if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -233,7 +231,6 @@ function get_user(pause) {
             
         });
     }
-    */
 }
 
 async function showPiAds(Pi) {
@@ -287,8 +284,7 @@ $( document ).ready(function() {
     
     async function auth() {
         
-        get_user(true);
-        /*$("#pause").hide();
+        $("#pause").hide();
         $("#reset").hide();
         $("#pi_donate").hide();
         $("#button_click").show();
@@ -297,12 +293,12 @@ $( document ).ready(function() {
                                 
         setTimeout(function() {
           $("#loading_word").hide();
-        }, 5000);*/
+        }, 5000);
         
         try {
             
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
-            /*const scopes = ['username', 'payments', 'wallet_address'];
+            const scopes = ['username', 'payments', 'wallet_address'];
             function onIncompletePaymentFound(payment) {
                 try {
                     var txid = payment.transaction.txid;
@@ -385,7 +381,7 @@ $( document ).ready(function() {
                 //alert(err);
                 console.error(error);
             });
-            */
+            
         } catch (err) {
             setConfirmUnload(false);
             //Pi.openShareDialog("Error", err);

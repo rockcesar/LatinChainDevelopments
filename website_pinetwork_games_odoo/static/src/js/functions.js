@@ -59,9 +59,7 @@ function set_points(points) {
 }
 
 function get_user(donation) {
-    /*
-    if(true)
-    //pi_user_id != "" && pi_user_code != "")
+    if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -82,39 +80,38 @@ function get_user(donation) {
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
-    */
-    /*if(donation)
-    {
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-            $("#open_modal").click();
-        }else{
-            $(".modal-body").html($("#unblocked_message").text());
-            $("#open_modal").click();
-        }
-    }*/
-    
-    //$(".show-verified-user").show();
-    $(".show-not-verified-user").hide();
-    /*
-            }else
-            {
-                //$(".show-verified-user").hide();
-                $(".show-not-verified-user").show();
+                    
+                    if(donation)
+                    {
+                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        {
+                            $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                            $("#open_modal").click();
+                        }else{
+                            $(".modal-body").html($("#unblocked_message").text());
+                            $("#open_modal").click();
+                        }
+                    }
+                    
+                    $(".show-not-verified-user").hide();
+                }else
+                {
+                    //$(".show-verified-user").hide();
+                    $(".show-not-verified-user").show();
+                }
+                
+                show_pi_ad_user = data.show_pi_ad;
+                show_pi_ad_user_time = data.show_pi_ad_time;
+                pi_ad_new = data.pi_ad_new;
+                pi_ad_max = data.pi_ad_max;
+                
+                $("#pi_ad_hours").html(show_pi_ad_user_time);
+                $("#pi_ad_max").html(pi_ad_max);
             }
-            
-            show_pi_ad_user = data.show_pi_ad;
-            show_pi_ad_user_time = data.show_pi_ad_time;
-            pi_ad_new = data.pi_ad_new;
-            pi_ad_max = data.pi_ad_max;
-            
-            $("#pi_ad_hours").html(show_pi_ad_user_time);
-            $("#pi_ad_max").html(pi_ad_max);
         }
     }).fail(function() {
         
-    });*/
+    });
 }
 
 async function showPiAds(Pi) {
@@ -428,7 +425,6 @@ $( document ).ready(function() {
                 });
             });
 
-            /*
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
@@ -638,14 +634,13 @@ $( document ).ready(function() {
                         });
                     });
                 });
-            
-              
+                
                 //alert('Hello ' + auth.user.username);
             }).catch(function(error) {
                 setConfirmUnload(false);
               console.error(error);
             });
-            */
+            
         } catch (err) {
             setConfirmUnload(false);
             console.error(err);

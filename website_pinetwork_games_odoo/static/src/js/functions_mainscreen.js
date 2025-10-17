@@ -1400,7 +1400,7 @@ $( document ).ready(function() {
             
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                showPiAds(Pi, true);
+                //showPiAds(Pi, true);
             }
         }
         
@@ -1413,7 +1413,7 @@ $( document ).ready(function() {
                         if(!$(this).hasClass("href-external"))
                         {
                             e.preventDefault();
-                            showPiInterstitialAds(Pi, $(this).attr('href'));
+                            //showPiInterstitialAds(Pi, $(this).attr('href'));
                         }
                     }
                 }
@@ -1423,7 +1423,7 @@ $( document ).ready(function() {
                 if($('#pi_ad_automatic').is(':checked') && !unblocked) {
                     if(!$(this).hasClass("href-external"))
                     {
-                        showPiInterstitialAds(Pi, false);
+                        //showPiInterstitialAds(Pi, false);
                     }
                 }
             });
