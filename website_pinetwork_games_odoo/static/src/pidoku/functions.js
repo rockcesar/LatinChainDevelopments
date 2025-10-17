@@ -122,8 +122,21 @@ function set_points(points) {
 }
 
 function get_user() {
+    $("#pi_donate").hide();
+    $("#button_click").hide();
+    $(".hide_when_unblock").hide();
+    $("#sudoku-tab").show();
+    $("#sudoku-tab").click();
+
+    var tab_name = get_tab();
+    refresh_board();
+
+    $("#test_game").hide();
+    $(".show_test_game").hide();
     
-    if(pi_user_id != "" && pi_user_code != "")
+    /*
+    if(true)
+    //pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -208,7 +221,7 @@ function get_user() {
         }).fail(function() {
             
         });
-    }
+    }*/
 }
 
 async function showPiAds(Pi) {
@@ -308,7 +321,9 @@ $( document ).ready(function() {
     });
     
     async function auth() {
+        get_user();
         
+        /*
         $("#pi_donate").hide();
         $("#button_click").show();
         $("#sudoku-tab").hide();
@@ -399,6 +414,7 @@ $( document ).ready(function() {
             console.error(err);
             // Not able to fetch the user
         }
+        */
     }
     
     async function transfer() {

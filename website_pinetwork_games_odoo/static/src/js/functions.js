@@ -34,7 +34,8 @@ function end() {
 }
 
 function set_points(points) {
-    if(pi_user_id != "" && pi_user_code != "")
+    if(true)
+    //if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
             'pi_user_id': pi_user_id,
@@ -58,7 +59,9 @@ function set_points(points) {
 }
 
 function get_user(donation) {
-    if(pi_user_id != "" && pi_user_code != "")
+    /*
+    if(true)
+    //pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -72,7 +75,6 @@ function get_user(donation) {
             data = JSON.parse(data);
             if(data.result)
             {
-                
                 if(data.complete_found)
                     alert($("#payment_message").text());
                 
@@ -80,39 +82,39 @@ function get_user(donation) {
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
-                    
-                    if(donation)
-                    {
-                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        {
-                            $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                            $("#open_modal").click();
-                        }else{
-                            $(".modal-body").html($("#unblocked_message").text());
-                            $("#open_modal").click();
-                        }
-                    }
-                    
-                    $(".show-not-verified-user").hide();
-                }else
-                {
-                    //$(".show-verified-user").hide();
-                    $(".show-not-verified-user").show();
-                }
-                
-                show_pi_ad_user = data.show_pi_ad;
-                show_pi_ad_user_time = data.show_pi_ad_time;
-                pi_ad_new = data.pi_ad_new;
-                pi_ad_max = data.pi_ad_max;
-                
-                $("#pi_ad_hours").html(show_pi_ad_user_time);
-                $("#pi_ad_max").html(pi_ad_max);
+    */
+    /*if(donation)
+    {
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+            $("#open_modal").click();
+        }else{
+            $(".modal-body").html($("#unblocked_message").text());
+            $("#open_modal").click();
+        }
+    }*/
+    
+    //$(".show-verified-user").show();
+    $(".show-not-verified-user").hide();
+    /*
+            }else
+            {
+                //$(".show-verified-user").hide();
+                $(".show-not-verified-user").show();
             }
             
-        }).fail(function() {
+            show_pi_ad_user = data.show_pi_ad;
+            show_pi_ad_user_time = data.show_pi_ad_time;
+            pi_ad_new = data.pi_ad_new;
+            pi_ad_max = data.pi_ad_max;
             
-        });
-    }
+            $("#pi_ad_hours").html(show_pi_ad_user_time);
+            $("#pi_ad_max").html(pi_ad_max);
+        }
+    }).fail(function() {
+        
+    });*/
 }
 
 async function showPiAds(Pi) {
@@ -165,7 +167,6 @@ $( document ).ready(function() {
     amount = $("#amount").val();
 
     async function auth() {
-        
         $("#loading_section").show();
         $("#loading_word").show();
                                 
@@ -215,6 +216,219 @@ $( document ).ready(function() {
                 });
             }; // Read more about this in the SDK reference
 
+            set_points(0).always(function(){
+                get_user(false).always(function(){
+                    
+                    //if(show_pi_ad_user)
+                    //    showPiAds(Pi);
+                    
+                    function executepayment(){
+                        if(!$( "#acceptConditions" ).prop("checked"))
+                        {
+                            alert($("#donation_message").text());
+                            return false;
+                        }
+                        var max_amount = 0;
+                        
+                        if(parseFloat(parseFloat(amount)*3.0).toFixed(7).toString().match(/(\.0*)/)[0].length - 1 == 7)
+                            max_amount = parseFloat(parseFloat(amount)*3.0).toFixed(1);
+                        else
+                            max_amount = round(parseFloat(parseFloat(amount)*3.0), 7);
+                        
+                        max_amount = round(parseFloat(amount), 7);
+                            
+                        if(parseFloat($("#pi_donate").val()) == parseFloat(amount))
+                        {
+                            $("#button_click").prop( "disabled", true );
+                            /*setTimeout(function ()
+                            {
+                                $("#button_click").prop( "disabled", false );
+                            }, 10000);*/
+                            transfer();
+                        }else{
+                            alert($("#payment_lessthan_message").text() + amount + " Pi" + $("#payment_morethan_message").text() + max_amount + " Pi.");
+                        }
+                    }
+                    
+                    $( "#button_click" ).click(function() {
+                        executepayment();
+                    });
+                    
+                    $("#button_click").prop( "disabled", false );
+                    
+                    if($.parseJSON($("#payoneclick").val().toLowerCase()))
+                    {
+                        $('#acceptConditions').prop('checked', true);
+                        executepayment();
+                    }
+                    
+                    if(show_pi_ad_user || pi_ad_new)
+                    {
+                        $("#button_reward_ad").show();
+                        $("#piad_not_available").hide();
+                        $("#button_reward_ad").prop( "disabled", false );
+                    }else
+                    {
+                        $("#button_reward_ad").hide();
+                        $("#piad_not_available").show();
+                    }
+                    
+                    var start_flag = false;
+                    
+                    async function showRewardedPiAd()
+                    {
+                        end();
+                        if(seconds <= 5 && start_flag)
+                        {
+                            start();
+                            return;
+                        }
+                        start();
+                        
+                        if(!start_flag)
+                        {
+                            start_flag = true;
+                        }
+                        
+                        $("#button_reward_ad").prop( "disabled", true );
+                        $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
+                        
+                        if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
+                        {
+                            try {
+                                const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
+                                if (isAdReadyResponse.ready === false) {
+                                    
+                                    const requestAdResponse = await Pi.Ads.requestAd("rewarded");
+                                    if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
+                                        // display modal to update Pi Browser
+                                        // showAdsNotSupportedModal()
+                                        alert("Update Pi Browser version, please!.");
+                                        $("#button_reward_ad").html(btnvalue);
+                                        $("#button_reward_ad").prop( "disabled", false );
+                                        return;
+                                    }
+                                    if (requestAdResponse.result !== "AD_LOADED") {
+                                        // display modal ads are temporarily unavailable and user should try again later
+                                        // showAdUnavailableModal()
+                                        alert("Ads are temporarily unavailable, try again later!.");
+                                        $("#button_reward_ad").html(btnvalue);
+                                        $("#button_reward_ad").prop( "disabled", false );
+                                        return;
+                                    }
+                                }
+                                
+                                const showAdResponse = await Pi.Ads.showAd("rewarded");
+                                
+                                if (showAdResponse.result === "AD_REWARDED") {
+                                    if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
+                                    {
+                                        $("#button_reward_ad").prop( "disabled", true );
+                                        $("#button_reward_ad").html("Verifying...");
+                                        //alert($("#ready_reward_message").text());
+                                        var data = {
+                                            'pi_user_id': pi_user_id,
+                                            'pi_user_code': pi_user_code,
+                                            'adId': showAdResponse.adId,
+                                            'passkey': passkey,
+                                            'accessToken': accessToken,
+                                            'csrf_token': odoo.csrf_token,
+                                        };
+                                        //$.ajaxSetup({async: false});
+                                        setConfirmUnloadPoints(true);
+                                        return $.post( "/set-latin-points", data).done(function(data) {
+                                            end();
+                                            setConfirmUnloadPoints(false);
+                                            data = JSON.parse(data);
+                                            if(data.result && data.points_latin > 0)
+                                            {
+                                                $("#button_reward_ad").prop( "disabled", true );
+                                                $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
+                                                var gemini_image = getGeminiImage();
+                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                
+                                                if(data.x2_game)
+                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                
+                                                $("#open_modal").click();
+                                                /*setTimeout(function ()
+                                                {
+                                                    $("#button_reward_ad").html(btnvalue);
+                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                }, 5000);*/
+                                                //alert("+" + data.points_latin + " Latin points.");
+                                                
+                                                pi_ad_new = data.pi_ad_new;
+                                                if(data.pi_ad_new)
+                                                {
+                                                    $("#button_reward_ad").show();
+                                                    $("#piad_not_available").hide();
+                                                    setTimeout(function ()
+                                                    {
+                                                        $("#button_reward_ad").html(btnvalue);
+                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                    }, 5000);
+                                                }else
+                                                {
+                                                    $("#button_reward_ad").hide();
+                                                    $("#piad_not_available").show();
+                                                    setTimeout(function ()
+                                                    {
+                                                        $("#button_reward_ad").html(btnvalue);
+                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                    }, 5000);
+                                                }
+                                            }else{
+                                                //$("#button_reward_ad").html("Error, try again...");
+                                                
+                                                setTimeout(function ()
+                                                {
+                                                    $("#button_reward_ad").html(btnvalue);
+                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                }, 5000);
+                                            }
+                                            start();
+                                        }).fail(function() {
+                                            $("#button_reward_ad").html("Fail, try again...");
+                                                
+                                            setTimeout(function ()
+                                            {
+                                                $("#button_reward_ad").html(btnvalue);
+                                                $("#button_reward_ad").prop( "disabled", false );
+                                            }, 5000);
+                                            setConfirmUnloadPoints(false);
+                                        });
+                                    }else{
+                                        $("#button_reward_ad").html(btnvalue);
+                                        $("#button_reward_ad").prop( "disabled", false );
+                                    }
+                                } else {
+                                    $("#button_reward_ad").html(btnvalue);
+                                    $("#button_reward_ad").prop( "disabled", false );
+                                    // fallback logic
+                                    // showAdErrorModal()
+                                }
+                                
+                            } catch (err) {
+                                $("#button_reward_ad").html(btnvalue);
+                                $("#button_reward_ad").prop( "disabled", false );
+                                // good practice to handle any potential errors
+                            }
+                        }else
+                        {
+                            $("#button_reward_ad").html(btnvalue);
+                            $("#button_reward_ad").prop( "disabled", false );
+                        }
+                    }
+                    
+                    $( "#button_reward_ad" ).click(async function() {
+                        showRewardedPiAd();
+                    });
+                    
+                });
+            });
+
+            /*
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
@@ -424,13 +638,14 @@ $( document ).ready(function() {
                         });
                     });
                 });
-                
+            
+              
                 //alert('Hello ' + auth.user.username);
             }).catch(function(error) {
                 setConfirmUnload(false);
               console.error(error);
             });
-            
+            */
         } catch (err) {
             setConfirmUnload(false);
             console.error(err);
@@ -552,7 +767,6 @@ $( document ).ready(function() {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
-            
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
         {
             auth();
