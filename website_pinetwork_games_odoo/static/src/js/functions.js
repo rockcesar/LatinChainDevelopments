@@ -165,6 +165,8 @@ $( document ).ready(function() {
     amount = $("#amount").val();
 
     async function auth() {
+        alert("987654321")
+        
         $("#loading_section").show();
         $("#loading_word").show();
                                 
@@ -214,7 +216,7 @@ $( document ).ready(function() {
                 });
             }; // Read more about this in the SDK reference
 
-            set_points(0).always(function(){
+            /*set_points(0).always(function(){
                 get_user(false).always(function(){
                     
                     //if(show_pi_ad_user)
@@ -238,10 +240,7 @@ $( document ).ready(function() {
                         if(parseFloat($("#pi_donate").val()) == parseFloat(amount))
                         {
                             $("#button_click").prop( "disabled", true );
-                            /*setTimeout(function ()
-                            {
-                                $("#button_click").prop( "disabled", false );
-                            }, 10000);*/
+                            
                             transfer();
                         }else{
                             alert($("#payment_lessthan_message").text() + amount + " Pi" + $("#payment_morethan_message").text() + max_amount + " Pi.");
@@ -349,11 +348,7 @@ $( document ).ready(function() {
                                                     $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
                                                 
                                                 $("#open_modal").click();
-                                                /*setTimeout(function ()
-                                                {
-                                                    $("#button_reward_ad").html(btnvalue);
-                                                    $("#button_reward_ad").prop( "disabled", false );
-                                                }, 5000);*/
+                                                
                                                 //alert("+" + data.points_latin + " Latin points.");
                                                 
                                                 pi_ad_new = data.pi_ad_new;
@@ -424,7 +419,7 @@ $( document ).ready(function() {
                     });
                     
                 });
-            });
+            });*/
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
