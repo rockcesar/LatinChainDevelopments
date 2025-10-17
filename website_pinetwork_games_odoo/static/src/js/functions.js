@@ -11,6 +11,8 @@ var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
 var btnvalue = "";
 
+alert("cxvbn");
+
 function setConfirmUnload(on) {
     unloadMessage(on);
 }
@@ -165,7 +167,7 @@ $( document ).ready(function() {
     amount = $("#amount").val();
 
     async function auth() {
-        alert("987654321")
+        alert("987654321");
         
         $("#loading_section").show();
         $("#loading_word").show();
