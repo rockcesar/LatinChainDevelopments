@@ -749,6 +749,8 @@ $( document ).ready(function() {
                 
                 if(!adNetworkSupported)
                     alert("Update Pi Browser version, please!.");
+                
+                alert("1234");
             }
           // store adNetworkSupported for later use
         })();
