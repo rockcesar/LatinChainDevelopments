@@ -762,6 +762,8 @@ $( document ).ready(function() {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
+            
+            alert("123");
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
         {
             auth();
