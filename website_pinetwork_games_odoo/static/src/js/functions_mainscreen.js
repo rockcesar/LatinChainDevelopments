@@ -1139,6 +1139,38 @@ $( document ).ready(function() {
     async function auth() {
         try {
             
+            $(".show-tetris").show();
+            $(".show-mahjong").show();
+            $(".show-bubble-shooter").show();
+            $(".show-test-your-brain").show();
+            $(".show-15-puzzle").show();
+            $(".show-pingpong").show();
+            $(".show-checkers").show();
+            $(".show-domino").show();
+            $(".show-latincrush").show();
+            $(".show-gameslearning").show();
+            $(".show-odoolearning").show();
+            $(".show-languagelearning").show();
+            $(".show-webtorrent").show();
+            $(".show-musicplayer").show();
+            $(".show-videoplayer").show();
+            $(".show-imgplayer").show();
+            $(".show-webcamplayer").show();
+            $(".show-texttospeechplayer").show();
+            $(".show-mapsplayer").show();
+            $(".show-calcplayer").show();
+            $(".show-calendarplayer").show();
+            //$(".show-tvonline").show();
+            //$(".show-sport-results").show();
+            //$(".show-cointelegraph").show();
+            $(".show-streamerzoneboard").show();
+            //$(".show-stellarium").show();
+            //$(".show-latin-search").show();
+            //$(".show-latin-dictionary").show();
+            //$(".show-latin-university").show();
+            //$(".show-latin-books").show();
+            //$(".show-latin-academy").show();
+            
             // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
             const scopes = ['username', 'payments', 'wallet_address'];
             function onIncompletePaymentFound(payment) {
