@@ -56,8 +56,6 @@ async function colorboxLoaded()
 }
 
 function set_points(points) {
-    //if(true)
-    /*
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
@@ -78,7 +76,6 @@ function set_points(points) {
         }).fail(function() {
         });
     }
-    */
 }
 
 function set_points_exchange(value_client) {
