@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.489"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.490"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1554,7 +1554,7 @@
                         </div>-->
                         
                         <!--<div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">-->
-                        <!--<div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#Amazon #Links &#127978;</div></strong></h5>
                             </div>
@@ -1576,7 +1576,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
                             <div style="margin-bottom:5px" class="border-bottom">
