@@ -1,13 +1,16 @@
 // Configuración de los feeds RSS solicitados. Se han actualizado a HTTPS para mejorar la fiabilidad.
 const FEED_CONFIGS = [
     { name: "BBC News (Global)", url: "https://feeds.bbci.co.uk/news/world/rss.xml" },
-    //{ name: "CNN (Stories principales)", url: "http://rss.cnn.com/rss/cnn_topstories.rss" },
+    { name: "CNN (World News)", url: "http://rss.cnn.com/rss/cnn_world.rss" },
     //{ name: "CNN en español", url: "https://cnnespanol.cnn.com/feed/" },
-    //{ name: "China Daily", url: "http://www.chinadaily.com.cn/rss/world_rss.xml" },
+    { name: "China Daily", url: "http://www.chinadaily.com.cn/rss/world_rss.xml" },
     { name: "Times of India", url: "https://timesofindia.indiatimes.com/rssfeedmostrecent.cms" },
     { name: "SCMP (South China Morning Post)", url: "https://www.scmp.com/rss/91/feed" },
     { name: "Contelegraph", url: "https://cointelegraph.com/rss" },
     { name: "TSMH (The Sydney Morning Herald)", url: "https://www.smh.com.au/rss/feed.xml" },
+    { name: "Telesur English", url: "https://www.telesurenglish.net/feed/" },
+    { name: "Aljazeera", url: "https://www.aljazeera.com/xml/rss/all.xml" },
+    { name: "HispanTV", url: "https://www.hispantv.com/services/news.asmx/Rss?category=-1" },
     { name: "RT (News)", url: "https://www.rt.com/rss/news" },
 ];
 
@@ -43,26 +46,38 @@ function parseRss(xmlText) {
     items.forEach(item => {
         const titleElement = item.querySelector("title");
         const linkElement = item.querySelector("link");
-        const dateElement = item.querySelector("pubDate") || item.querySelector("date"); // Acepta pubDate o date
+        
+        // Adaptación para aceptar múltiples formatos de fechas, incluyendo ISO 8601 (2017-12-12T...).
+        // Busca en orden: pubDate (RSS estándar), date, updated, o published (común en Atom o extensiones RSS).
+        const dateElement = item.querySelector("pubDate") || 
+                            item.querySelector("pubdate") || 
+                            item.querySelector("date") ||
+                            item.querySelector("updated") ||
+                            item.querySelector("published");
 
         if (titleElement && linkElement) {
             const title = titleElement.textContent.trim();
             const link = linkElement.textContent.trim();
-            
+             
             let formattedDate = 'Fecha desconocida';
             let dateText = dateElement ? dateElement.textContent : null;
             
             if (dateText) {
-                // FIX: Limpieza agresiva de la cadena de fecha para mejorar el parseo de new Date().
+                // FIX: Limpieza de la cadena de fecha para formatos RFC (ej. Mon, 12 Dec...)
+                // que a menudo contienen comas o nombres de zona horaria entre paréntesis.
+                // Esta limpieza es segura y no afecta negativamente al formato ISO 8601 solicitado.
+                
                 // 1. Eliminar contenido entre paréntesis (ej. nombres de zonas horarias).
                 let cleanedDateText = dateText.replace(/\s+\(.*?\)/g, '');
                 // 2. Reemplazar comas por espacios, ya que confunden el parseo en algunos formatos RFC.
                 cleanedDateText = cleanedDateText.replace(/,/g, ' ').trim(); 
 
+                // new Date() es compatible con ISO 8601 (2017-12-12T...) y RFC (Mon, 12 Dec...)
                 const date = new Date(cleanedDateText);
                 
                 // Verificar la validez de la fecha utilizando getTime()
                 if (date && !isNaN(date.getTime())) {
+                    // Formatea la fecha a español
                     formattedDate = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
                 }
             }

@@ -3421,7 +3421,7 @@
                     <head>
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                        <title>Agregador de Noticias Globales RSS</title>
+                        <title>Global RSS News Aggregator</title>
                         <!-- Carga de Tailwind CSS -->
                         <script src="https://cdn.tailwindcss.com"></script>
                         <!-- Configuración de Tailwind para usar la fuente Inter -->
@@ -3620,9 +3620,9 @@
                                     
                                     <br/>
                                     
-                                    Noticias Globales <span class="text-primary-blue">RSS</span>
+                                    Global News <span class="text-primary-blue">RSS</span>
                                 </h1>
-                                <p class="text-lg text-gray-600">Agregador de titulares de las fuentes más importantes del mundo.</p>
+                                <p class="text-lg text-gray-600">Headline aggregator from the world's leading sources.</p>
                             </header>
 
                             <!-- Contenedor de feeds -->
@@ -3632,9 +3632,9 @@
                                 <!-- Indicador de carga -->
                                 <div id="loading-indicator" class="col-span-full text-center p-12">
                                     <div class="animate-spin inline-block w-10 h-10 border-4 border-t-4 border-primary-blue border-t-transparent rounded-full mb-3"></div>
-                                    <p class="text-xl text-gray-700">Cargando feeds. Esto puede tomar un momento...</p>
+                                    <p class="text-xl text-gray-700">Loading feeds. This may take a moment...</p>
                                     <p class="text-sm text-blue-500 mt-2">
-                                        <strong class="font-bold">Nota:</strong> Se utiliza un servicio proxy público para evitar problemas de CORS.
+                                        <strong class="font-bold">Note:</strong> A public proxy service is used to avoid CORS issues.
                                     </p>
                                 </div>
                                 
@@ -3645,7 +3645,7 @@
                         <footer class="text-center p-4 text-gray-500 text-sm mt-10">
                         </footer>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/newsplayer_functions.js?v=1.107"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/newsplayer_functions.js?v=1.118"></script>
                     </body>
                 </html>
             </t>
