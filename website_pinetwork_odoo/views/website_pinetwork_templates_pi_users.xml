@@ -1,0 +1,2403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="new_header_common_latinchain" inherit_id="web.layout">
+            <xpath expr="//head//script[last()]" position="after">
+                <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.429"></script>
+            </xpath>
+        </template>
+
+        <template id="general_ranking" name="General Ranking View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <title>LatinChain General Ranking (verified and not verified)</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_user">
+                            <div>
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                            </div>
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                            <br/>
+                            <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                            <br/>
+                            <table class="table table-hover table-dark" style="word-break: break-word; filter: contrast(100%) !important;" translate="no">
+                              <thead>
+                                <tr>
+                                  <td>Chess</td>
+                                  <td>Snake</td>
+                                  <td>Sudoku</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                </tr>
+                              </tbody>
+                            </table><br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
+                        </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".accordion-body").unmark().mark(searchTerm);
+                                    if(searchTerm.trim() != "")
+                                    {
+                                        //$( "#user_question" ).hide();
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                        {
+                                           $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
+                                           $( "#text_found" ).show();
+                                           $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                           {
+                                                $( "#user_found" ).show();
+                                           }
+                                           else
+                                           {
+                                                $( "#user_found" ).hide();
+                                           }
+                                            
+                                           $( "#headingOne" ).addClass("text-decoration-underline");
+                                        }else
+                                        {
+                                            $('.list-group-item').hide();
+                                            
+                                            $( "#text_found" ).hide();
+                                            $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
+                                            
+                                            $( "#headingOne" ).removeClass("text-decoration-underline");
+                                        }
+                                    }else
+                                    {
+                                        $('.list-group-item').show();
+                                        
+                                        //$( "#user_question" ).show();
+                                        $( "#text_found" ).hide();
+                                        $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
+                                        
+                                        $( "#headingOne" ).removeClass("text-decoration-underline");
+                                    }
+                                }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
+                        
+                        <div class="row">
+                            <div class="col-8" style="text-align: right">
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" placeholder="Search users" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
+                            </div>
+                            <div class="col-4" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
+                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Global ranking (<t t-esc="len(pi_users_list)"/>) <span style="color:#E5E4E2 !important">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <!--<t t-if="i &lt;= 10">
+                                            <t t-set="style" t-value="'background-color:#77d7f1'" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="style" t-value="''" />
+                                        </t>-->
+                                        
+                                        <t t-set="style" t-value="'background-color:#E5E4E2'" />
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+
+        <template id="list_points" name="Points View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <title>LatinChain Leaders Board</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_user">
+                            <div>
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                            </div>
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                            <br/>
+                            <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                            <br/>
+                            <table class="table table-hover table-dark" style="word-break: break-word; filter: contrast(100%) !important;" translate="no">
+                              <thead>
+                                <tr>
+                                  <td>Chess</td>
+                                  <td>Snake</td>
+                                  <td>Sudoku</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                </tr>
+                              </tbody>
+                            </table><br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
+                        </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".accordion-body").unmark().mark(searchTerm);
+                                    if(searchTerm.trim() != "")
+                                    {
+                                        //$( "#user_question" ).hide();
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                        {
+                                           $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
+                                           $( "#text_found" ).show();
+                                           $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                           {
+                                                $( "#user_found" ).show();
+                                           }
+                                           else
+                                           {
+                                                $( "#user_found" ).hide();
+                                           }
+                                            
+                                           $( "#headingOne" ).addClass("text-decoration-underline");
+                                        }else
+                                        {
+                                            $('.list-group-item').hide();
+                                            
+                                            $( "#text_found" ).hide();
+                                            $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
+                                            
+                                            $( "#headingOne" ).removeClass("text-decoration-underline");
+                                        }
+                                    }else
+                                    {
+                                        $('.list-group-item').show();
+                                        
+                                        //$( "#user_question" ).show();
+                                        $( "#text_found" ).hide();
+                                        $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
+                                        
+                                        $( "#headingOne" ).removeClass("text-decoration-underline");
+                                    }
+                                }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }                                    
+                                });
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
+                        
+                        <div class="row">
+                            <div class="col-8" style="text-align: right">
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" placeholder="Search users" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
+                            </div>
+                            <div class="col-4" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
+                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Leaders zone (<t t-esc="len(pi_users_list)"/>) <span style="color:#77d7f1 !important">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <t t-if="i &lt;= 10">
+                                            <t t-set="style" t-value="'background-color:#77d7f1'" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="style" t-value="''" />
+                                        </t>
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_winners" name="Top 10 View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <title>LatinChain Top 10 Board</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_user">
+                            <div>
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                            </div>
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                            <br/>
+                            <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                            <br/>
+                            <table class="table table-hover table-dark" style="word-break: break-word; filter: contrast(100%) !important;" translate="no">
+                              <thead>
+                                <tr>
+                                  <td>Chess</td>
+                                  <td>Snake</td>
+                                  <td>Sudoku</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                </tr>
+                              </tbody>
+                            </table><br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
+                        </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".accordion-body").unmark().mark(searchTerm);
+                                    if(searchTerm.trim() != "")
+                                    {
+                                        //$( "#user_question" ).hide();
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                        {
+                                            $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
+                                           $( "#text_found" ).show();
+                                           $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                $( "#user_found" ).show();
+                                           else
+                                                $( "#user_found" ).hide();
+                                           
+                                           if($( ".accordion-zone" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                           {
+                                                $( "#panelsStayOpen-headingOne" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingOne" ).removeClass("text-decoration-underline");
+                                           }
+                                           if($( ".accordion-chess" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                           {
+                                                $( "#panelsStayOpen-headingTwo" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingTwo" ).removeClass("text-decoration-underline");
+                                           }
+                                           if($( ".accordion-snake" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                           {
+                                                $( "#panelsStayOpen-headingThree" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingThree" ).removeClass("text-decoration-underline");
+                                           }
+                                           if($( ".accordion-sudoku" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                           {
+                                                $( "#panelsStayOpen-headingFour" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingFour" ).removeClass("text-decoration-underline");
+                                           }
+                                        }else
+                                        {
+                                            $('.list-group-item').hide();
+                                            
+                                            $( "#text_found" ).hide();
+                                            $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
+                                            
+                                            $( "#panelsStayOpen-headingOne" ).removeClass("text-decoration-underline");
+                                            $( "#panelsStayOpen-headingTwo" ).removeClass("text-decoration-underline");
+                                            $( "#panelsStayOpen-headingThree" ).removeClass("text-decoration-underline");
+                                            $( "#panelsStayOpen-headingFour" ).removeClass("text-decoration-underline");
+                                        }
+                                    }else
+                                    {
+                                        $('.list-group-item').show();
+                                        
+                                        //$( "#user_question" ).show();
+                                        $( "#text_found" ).hide();
+                                        $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
+                                        
+                                        $( "#panelsStayOpen-headingOne" ).removeClass("text-decoration-underline");
+                                        $( "#panelsStayOpen-headingTwo" ).removeClass("text-decoration-underline");
+                                        $( "#panelsStayOpen-headingThree" ).removeClass("text-decoration-underline");
+                                        $( "#panelsStayOpen-headingFour" ).removeClass("text-decoration-underline");
+                                    }
+                                }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
+                        
+                        <div class="row">
+                            <div class="col-8" style="text-align: right">
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" placeholder="Search users" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
+                            </div>
+                            <div class="col-4" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
+                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                <strong>Top 10 zone (<t t-esc="len(pi_users_list)"/>) <span style="color:#a0ec97 !important">●</span></strong><br/>
+                              </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                              <div class="accordion-body accordion-zone">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <t t-if="i &lt;= 10">
+                                            <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="style" t-value="''" />
+                                        </t>
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <strong>Top 10 zone Chess (<t t-esc="len(pi_users_list_chess)"/>) <span style="color:#a0ec97 !important">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                              <div class="accordion-body accordion-chess">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list_chess" t-as="pi_user">
+                                        <t t-if="i &lt;= 10">
+                                            <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="style" t-value="''" />
+                                        </t>
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                <strong>Top 10 zone Snake (<t t-esc="len(pi_users_list_snake)"/>) <span style="color:#a0ec97 !important">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                              <div class="accordion-body accordion-snake">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list_snake" t-as="pi_user">
+                                        <t t-if="i &lt;= 10">
+                                            <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="style" t-value="''" />
+                                        </t>
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                <strong>Top 10 zone Sudoku (<t t-esc="len(pi_users_list_sudoku)"/>) <span style="color:#a0ec97 !important">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                              <div class="accordion-body accordion-sudoku">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list_sudoku" t-as="pi_user">
+                                        <t t-if="i &lt;= 10">
+                                            <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="style" t-value="''" />
+                                        </t>
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <!--<strong>Top 10 zone <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                        <strong>Top 10 zone Chess <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_chess" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                        <strong>Top 10 zone Snake <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_snake" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                        <strong>Top 10 zone Sudoku <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_sudoku" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>-->
+                        <br/><br/><br/><br/><br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_winners_zone" name="Winners View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
+                    
+                    <link rel="stylesheet" href="/website_pinetwork_odoo/static/src/modals/colorbox/example3/colorbox.css" />
+                    <script src="/website_pinetwork_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+                    
+                    <title>LatinChain Winners Board</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_users_winners_datetime">
+                            Cut at: <span t-esc="pi_users_winners_datetime" /> UTC<br/><br/>
+                        </t>
+                        <t t-if="not pi_user">
+                            <span>
+                                <div>
+                                    <strong>App to user payments (it means, prizes) not working yet.</strong>
+                                </div>
+                            </span>
+                            <br/>
+                            <span>
+                                <div><strong>Prizes will be paid the 15th of each month, if we reach 1000 verified users.</strong></div>
+                            </span>
+                            <br/>
+                        </t>
+                        
+                        <t t-if="pi_user">
+                            <div>
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                            </div>
+                            <t t-if="pi_user.streaming_url">
+                                <button style="filter: contrast(100%) !important; margin-top: 5px" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
+                                <br/>
+                            </t>
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                            <br/>
+                            <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                            <br/>
+                            <table class="table table-hover table-dark" style="word-break: break-word; filter: contrast(100%) !important;" translate="no">
+                              <thead>
+                                <tr>
+                                  <td>Chess</td>
+                                  <td>Snake</td>
+                                  <td>Sudoku</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                            <span>
+                                <div>
+                                    <strong>App to user payments (it means, prizes) not working yet.</strong>
+                                </div>
+                            </span>
+                            <br/>
+                            <span>
+                                <div style="display:inline;">
+                                    <strong>Prizes will be paid the 15th of each month, if we reach 1000 verified users.</strong>
+                                </div>
+                            </span>
+                            
+                            <t t-foreach="pi_user.admin_apps_winners_ids" t-as="winner_app">
+                                <span t-if="winner_app.app == 'auth_platform'">
+                                    <br/>
+                                    <div style="display:inline;"><strong> You are winner, check in this winner list.</strong></div> <div style="display:inline;"><i class="fa fa-trophy"></i></div>
+                                </span>
+                            </t>
+                            <t t-foreach="pi_user.admin_apps_winners_paid_ids" t-as="winner_app">
+                                <span t-if="winner_app.app == 'auth_platform'">
+                                    <strong> You have been paid
+                                    <!--<span t-if="winner_app.pi_users_winners_to_pay_per_user">
+                                        <t t-esc="winner_app.pi_users_winners_to_pay_per_user" /> Pi,
+                                    </span>-->
+                                    <span t-if="winner_app.pi_users_winners_paid_datetime">
+                                        at <t t-esc="winner_app.pi_users_winners_paid_datetime" /> UTC,
+                                    </span> check in your Pi wallet.</strong>
+                                </span>
+                            </t><br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
+                        </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".open_streaming").click(function(){
+                                    var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
+                                    streaming_url = streaming_url[1];
+                                    $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                });
+                            
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".accordion-body").unmark().mark(searchTerm);
+                                    if(searchTerm.trim() != "")
+                                    {
+                                        //$( "#user_question" ).hide();
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                        {
+                                            $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
+                                           $( "#text_found" ).show();
+                                           $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                $( "#user_found" ).show();
+                                           else
+                                                $( "#user_found" ).hide();
+                                           
+                                           $( "#headingOne" ).addClass("text-decoration-underline");
+                                        }else
+                                        {
+                                            $('.list-group-item').hide();
+                                            
+                                            $( "#text_found" ).hide();
+                                            $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
+                                            
+                                            $( "#headingOne" ).removeClass("text-decoration-underline");
+                                        }
+                                    }else
+                                    {
+                                        $('.list-group-item').show();
+                                        
+                                        //$( "#user_question" ).show();
+                                        $( "#text_found" ).hide();
+                                        $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
+                                        
+                                        $( "#headingOne" ).removeClass("text-decoration-underline");
+                                    }
+                                }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
+                        
+                        <div class="row">
+                            <div class="col-8" style="text-align: right">
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" placeholder="Search users" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
+                            </div>
+                            <div class="col-4" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
+                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i><i class="fa fa-trophy"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <!--
+                        Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
+                        -->
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Winners zone (<t t-esc="len(pi_users_list)"/>) <span style="color:#a0ec97 !important">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        <!--<t t-if="i == 11">
+                                            <t t-set="i" t-value="1"/>
+                                        </t>-->
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <t t-if="pi_user.streaming_url">
+                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" style="margin-top: 5px" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
+                                            <br/>
+                                        </t>
+                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_streamer_zone" name="Winners View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
+                    
+                    <link rel="stylesheet" href="/website_pinetwork_odoo/static/src/modals/colorbox/example3/colorbox.css" />
+                    <script src="/website_pinetwork_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+                    
+                    <title>LatinChain Top 50 streamers</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_user">
+                            <div>
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                            </div>
+                            <t t-if="pi_user.streaming_url">
+                                <button style="filter: contrast(100%) !important; margin-top: 5px" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
+                                <br/>
+                            </t>
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                            <br/>
+                            <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                            <br/>
+                            <table class="table table-hover table-dark" style="word-break: break-word; filter: contrast(100%) !important;" translate="no">
+                              <thead>
+                                <tr>
+                                  <td>Chess</td>
+                                  <td>Snake</td>
+                                  <td>Sudoku</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                  <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                </tr>
+                              </tbody>
+                            </table><br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
+                        </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".open_streaming").click(function(){
+                                    var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
+                                    streaming_url = streaming_url[1];
+                                    $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                });
+                            
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".accordion-body").unmark().mark(searchTerm);
+                                    if(searchTerm.trim() != "")
+                                    {
+                                        //$( "#user_question" ).hide();
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                        {
+                                            $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
+                                           $( "#text_found" ).show();
+                                           $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                $( "#user_found" ).show();
+                                           else
+                                                $( "#user_found" ).hide();
+                                           
+                                           $( "#headingOne" ).addClass("text-decoration-underline");
+                                        }else
+                                        {
+                                            $('.list-group-item').hide();
+                                            
+                                            $( "#text_found" ).hide();
+                                            $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
+                                            
+                                            $( "#headingOne" ).removeClass("text-decoration-underline");
+                                        }
+                                    }else
+                                    {
+                                        $('.list-group-item').show();
+                                        
+                                        //$( "#user_question" ).show();
+                                        $( "#text_found" ).hide();
+                                        $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
+                                        
+                                        $( "#headingOne" ).removeClass("text-decoration-underline");
+                                    }
+                                }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
+                        
+                        <div class="row">
+                            <div class="col-8" style="text-align: right">
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" placeholder="Search users" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
+                            </div>
+                            <div class="col-4" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
+                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i><i class="fa-brands fa-youtube"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <!--
+                        Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
+                        -->
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Top 50 streamers (<t t-esc="len(pi_users_list)"/>) <span style="color:#a0ec97 !important">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        <!--<t t-if="i == 11">
+                                            <t t-set="i" t-value="1"/>
+                                        </t>-->
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <div>
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                        </div>
+                                        <t t-if="pi_user.streaming_url">
+                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" style="margin-top: 5px" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
+                                            <br/>
+                                        </t>
+                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa-brands fa-youtube"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
+                                        <br/>
+                                        <table class="table table-hover table-dark" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_chess)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_snake)" /></td>
+                                              <td><t t-esc="'{:,}'.format(pi_user.points_sudoku)" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_credits" name="Credits">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
+                    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                    
+                    <script type="text/javascript">
+                        $(document).ready( function () {
+                            $('#donators').DataTable( {
+                                responsive: true,
+                                ajax: '/get-credits-data',
+                                processing: true,
+                                serverSide: true,
+                                serverMethod: 'post',
+                                columns: [
+                                    { data: 'pi_user_code' },
+                                ],
+                                ordering: false,
+                            } );
+                        } );
+                    </script>
+                    
+                    <title>Credits</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        
+                        <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Donators</strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <!--For verified, write:<br/>"<strong translate='no'>is verified</strong>".<br/>For unverified, write:<br/>"<strong translate='no'>not verified</strong>".-->
+                                <br/><br/>
+                                <table id="donators" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--<t t-foreach="pi_users_list" t-as="pi_user">
+                                            <tr>
+                                                <td>
+                                                    <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>)</t>
+                                                </td>
+                                            </tr>
+                                        </t>-->
+                                    </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_transactions" name="Transactions">
+            <t t-call="website.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <!--
+                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>-->
+                    
+                    <script type="text/javascript" src="/website_pinetwork_odoo/static/src/js/latinchain_transactions_functions.js?v=1.104"></script>
+                    
+                    <title>Transactions</title>
+                </head>
+                <body>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
+                    <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
+                    
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        <!-- LatinChain Ad responsive -->
+                        
+                        <!--<br/>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>-->
+                        
+                        
+                        <!--<br/>
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>-->
+                        
+                        <br/>
+                        <button id="clear_cache" class="btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <button id="back" class="btn btn-info" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
+                        <br/><br/>
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        Pi cryptocurrency transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
+                        <!--<div>
+                            Company Tax ID: <t t-esc="company_latinchain_id.vat" /><br/>
+                            Company address: <t t-esc="company_latinchain_id.country_id.name" />
+                        </div>
+                        <br/><br/>-->
+                        <table id="transactions" class="display" style="">
+                            <thead>
+                                <tr>
+                                    <th>Memo</th>
+                                    <th>Amount</th>
+                                    <th>TXID</th>
+                                </tr>
+                            </thead>
+                            <tbody style="word-break: break-word;">
+                                <!--<t t-foreach="pi_users_list" t-as="pi_user">
+                                    <tr>
+                                        <td>
+                                            <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>)</t>
+                                        </td>
+                                    </tr>
+                                </t>-->
+                            </tbody>
+                        </table>
+                        <br/>
+                        
+                        <!-- LatinChain Ad responsive 2 -->
+                        <br/>
+                        <!--<ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="9525388880"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        
+                        <br/>
+                            
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>-->
+                    </div>
+                    
+                    <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
+                        
+                    <style>
+                        /*Floating Back-To-Top Button*/
+                            #myBtn {
+                                position: fixed;
+                                bottom: 10px;
+                                float: right;
+                                right: 10%;
+                                bottom: 10%;
+                                max-width: 50px;
+                                max-height: 50px;
+                                width: 100%;
+                                height: 100%;
+                                font-size: 18px;
+                                border-color: rgba(85, 85, 85, 0.2);
+                                background-color: rgb(100,100,100);
+                                /*padding: 10px;*/
+                                border-radius: 4px;
+                                opacity: 0.5;
+                                z-index:100;
+                            }
+                        /*On Hover Color Change*/
+                            #myBtn:hover {
+                                background-color: #7dbbf1;
+                            }
+                    </style>
+                    
+                    <!--<script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({flush: true});
+                    </script>-->
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="latinchain_academy" name="LatinChain Academy">
+            <t t-call="website.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
+                    
+                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
+                    <!--
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>-->
+                    
+                    <script type="text/javascript">
+                        function copyToClipboard(text) {
+                            var sampleTextarea = document.createElement("textarea");
+                            document.body.appendChild(sampleTextarea);
+                            sampleTextarea.value = text; //save main text in it
+                            sampleTextarea.select(); //select textarea contenrs
+                            document.execCommand("copy");
+                            document.body.removeChild(sampleTextarea);
+                        }
+                        $(document).ready( function () {
+                            window.addEventListener('unhandledrejection', function (e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+                                return false;
+                            });
+                            
+                            //(adsbygoogle = window.adsbygoogle || []).push({});
+                            
+                            var pi_user_id = "", pi_user_code = "", accessToken = "";
+                            
+                            var passkey = "";
+                            var unblocked = false;
+                            var show_pi_ad_user = true;
+                            
+                            const Pi = window.Pi;
+                            
+                            function set_points(points) {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var data = {
+                                        'pi_user_id': pi_user_id,
+                                        'pi_user_code': pi_user_code,
+                                        'points': points,
+                                        'passkey': passkey,
+                                        'accessToken': accessToken,
+                                        'csrf_token': odoo.csrf_token,
+                                    };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/pi-points", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        //if(data.result)
+                                        //    alert("You won " + points + " points");
+                                        //$("#refresh").click();
+
+                                    }).fail(function() {
+                                    });
+                                }
+                            }
+                            
+                            function get_user() {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var data = {
+                                                'pi_user_id': pi_user_id,
+                                                'pi_user_code': pi_user_code,
+                                                'accessToken': accessToken,
+                                                'csrf_token': odoo.csrf_token,
+                                            };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/get-user", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        if(data.result)
+                                        {
+                                            if(data.complete_found)
+                                                alert($("#payment_message").text());
+                                                
+                                            show_pi_ad_user = data.show_pi_ad;
+                                            
+                                            passkey=data.passkey;
+                                            
+                                            $("#show_pibrowser").hide();
+                                            if(data.unblocked)
+                                            {
+                                                unblocked = data.unblocked;
+                                                
+                                                startLatinChainAcademy("#show_content");
+                                                $("#show_content").show();
+                                            }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+                                            {
+                                                alert("You can use LatinChain Academy, for testing purposes, until Pi OpenMainnet.");
+                                                
+                                                startLatinChainAcademy("#show_content");
+                                                $("#show_content").show();
+                                            }else
+                                            {
+                                                $("#show_button").show();
+                                            }
+                                        }
+                                        
+                                    }).fail(function() {
+                                    });
+                                }
+                            }
+                            
+                            async function showPiAds(Pi) {
+                                try {
+                                    const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+                                    
+                                    if (isAdReadyResponse.ready === false) {
+                                        await Pi.Ads.requestAd("interstitial");
+                                    }
+                                    
+                                    const showAdResponse = await Pi.Ads.showAd("interstitial");
+                                    
+                                    if(showAdResponse.result == "AD_CLOSED")
+                                    {
+                                        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                        {
+                                            var data = {
+                                                        'pi_user_id': pi_user_id,
+                                                        'pi_user_code': pi_user_code,
+                                                        'accessToken': accessToken,
+                                                        'csrf_token': odoo.csrf_token,
+                                                    };
+                                            //$.ajaxSetup({async: false});
+                                            return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                                                data = JSON.parse(data);
+                                                if(data.result)
+                                                {
+                                                }
+                                            }).fail(function() {
+                                                
+                                            });
+                                        }
+                                    }
+                                } catch (err) {
+                                    //alert(err);
+                                    // Not able to fetch the user
+                                }
+                            }
+                            
+                            async function auth() {
+                                try {
+                                    
+                                    // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                    const scopes = ['username', 'payments', 'wallet_address'];
+                                    function onIncompletePaymentFound(payment) {
+                                        
+                                    }; // Read more about this in the SDK reference
+
+                                    Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                        pi_user_id = auth.user.uid;
+                                        pi_user_code = auth.user.username;
+                                        accessToken = auth.accessToken;
+                                        
+                                        $('#username').html(" " + auth.user.username);
+                                        
+                                        set_points(0).always(function(){
+                                            get_user().always(function(){
+                                                //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                //    showPiAds(Pi);
+                                            });
+                                        });
+                                    }).catch(function(error) {
+                                        console.error(error);
+                                    });
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            }
+                            
+                            
+                            // you usually would check the ads support ahead of time and store the information
+                            (async () => {
+                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                (async () => {
+                                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                    {
+                                        const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                        
+                                        if(!adNetworkSupported)
+                                            alert("Update Pi Browser version, please!.");
+                                    }
+                                  // store adNetworkSupported for later use
+                                })();
+                            
+                                if(localStorage.getItem("loggedIn"))
+                                {
+                                    auth();
+                                
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+                                {
+                                    auth();
+                                    localStorage.setItem("loggedIn", true);
+                                
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }
+                            })();
+                            
+                            $( "#clear_cache" ).click(function() {
+                                var result = confirm($( "#clear_cache_message" ).text());
+                                if(result)
+                                {
+                                    try {
+                                        Cache.delete();
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                    try {
+                                        window.location.reload(true);
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                }
+                            });
+                            
+                            $( "#back" ).click(function() {
+                                var result = confirm($( "#back_message" ).text());
+                                if(result)
+                                {
+                                    //history.back();
+                                    location.href="/";
+                                }
+                            });
+                            
+                            $(".open_streaming").click(function(){
+                                var streaming_url = $(this).attr("videourl");
+                                $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                            });
+                        } );
+                    </script>
+                    
+                    <title>LatinChain Academy</title>
+                </head>
+                <body>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
+                    <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
+                    
+                    <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
+                        <!-- LatinChain Ad responsive -->
+                        
+                        <br/>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        
+                        <!--<br/>
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>-->
+                        
+                        <br/>
+                        <button id="clear_cache" class="btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <button id="back" class="btn btn-info" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
+                        <br/><br/>
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        Hello <strong translate="no"><span id="username" /></strong><br/><br/>
+                        Welcome to LatinChain Academy, where you can learn Odoo.<br/><br/>
+                        
+                        <!--<button videourl="https://www.youtube.com/embed/videoseries?si=9l1QgZLWWPWYInZ0&amp;list=PLmedLgLFYxR0QKTg-F7z1XtUS852518H-" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">LatinChain Academy</div></button>-->
+                        <br/><br/>
+                        
+                        <div id="show_pibrowser" style="display: none">
+                            Access throught Pi Browser (Pi Network).
+                        </div>
+                        <div id="show_content" style="display: none; background-color: white">
+                        </div>
+                        <div id="show_button" style="display: none">
+                            <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Academy</div><div style="font-size:80%;">Earn Latin points</div></a>
+                        </div>
+                        <br/>
+                        
+                        <!-- LatinChain Ad responsive 2 -->
+                        <br/>
+                        <!--<ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="9525388880"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        
+                        <br/>
+                            
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>-->
+                    </div>
+                    
+                    <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
+                        
+                    <style>
+                        /*Floating Back-To-Top Button*/
+                            #myBtn {
+                                position: fixed;
+                                bottom: 10px;
+                                float: right;
+                                right: 10%;
+                                bottom: 10%;
+                                max-width: 50px;
+                                max-height: 50px;
+                                width: 100%;
+                                height: 100%;
+                                font-size: 18px;
+                                border-color: rgba(85, 85, 85, 0.2);
+                                background-color: rgb(100,100,100);
+                                /*padding: 10px;*/
+                                border-radius: 4px;
+                                opacity: 0.5;
+                                z-index:100;
+                            }
+                        /*On Hover Color Change*/
+                            #myBtn:hover {
+                                background-color: #7dbbf1;
+                            }
+                    </style>
+                    
+                    <!--<script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({flush: true});
+                    </script>-->
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="latinchain_sports" name="LatinChain Sports">
+            <t t-call="website.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
+                    
+                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
+                    <!--
+                    
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>-->
+                    
+                    <script type="text/javascript">
+                        function copyToClipboard(text) {
+                            var sampleTextarea = document.createElement("textarea");
+                            document.body.appendChild(sampleTextarea);
+                            sampleTextarea.value = text; //save main text in it
+                            sampleTextarea.select(); //select textarea contenrs
+                            document.execCommand("copy");
+                            document.body.removeChild(sampleTextarea);
+                        }
+                        $(document).ready( function () {
+                            window.addEventListener('unhandledrejection', function (e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+                                return false;
+                            });
+                            
+                            //(adsbygoogle = window.adsbygoogle || []).push({});
+                            
+                            var pi_user_id = "", pi_user_code = "", accessToken = "";
+                            
+                            var passkey = "";
+                            var unblocked = false;
+                            var show_pi_ad_user = true;
+                            
+                            const Pi = window.Pi;
+                            
+                            function set_points(points) {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var data = {
+                                        'pi_user_id': pi_user_id,
+                                        'pi_user_code': pi_user_code,
+                                        'points': points,
+                                        'passkey': passkey,
+                                        'accessToken': accessToken,
+                                        'csrf_token': odoo.csrf_token,
+                                    };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/pi-points", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        //if(data.result)
+                                        //    alert("You won " + points + " points");
+                                        //$("#refresh").click();
+
+                                    }).fail(function() {
+                                    });
+                                }
+                            }
+                            
+                            function get_user() {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var data = {
+                                                'pi_user_id': pi_user_id,
+                                                'pi_user_code': pi_user_code,
+                                                'accessToken': accessToken,
+                                                'csrf_token': odoo.csrf_token,
+                                            };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/get-user", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        if(data.result)
+                                        {
+                                            if(data.complete_found)
+                                                alert($("#payment_message").text());
+                                                
+                                            show_pi_ad_user = data.show_pi_ad;
+                                            
+                                            passkey=data.passkey;
+                                            
+                                            $("#show_pibrowser").hide();
+                                            if(data.unblocked)
+                                            {
+                                                unblocked = data.unblocked;
+                                                
+                                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                                                {
+                                                    startLatinChainSports("#show_content");
+                                                    $("#show_content").show();
+                                                }
+                                            }else
+                                            {
+                                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                                                {
+                                                    $("#show_button").show();
+                                                }
+                                            }
+                                        }
+                                        
+                                    }).fail(function() {
+                                    });
+                                }
+                            }
+                            
+                            async function showPiAds(Pi) {
+                                try {
+                                    const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+                                
+                                    if (isAdReadyResponse.ready === false) {
+                                        await Pi.Ads.requestAd("interstitial");
+                                    }
+                                    
+                                    const showAdResponse = await Pi.Ads.showAd("interstitial");
+                                    
+                                    if(showAdResponse.result == "AD_CLOSED")
+                                    {
+                                        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                        {
+                                            var data = {
+                                                        'pi_user_id': pi_user_id,
+                                                        'pi_user_code': pi_user_code,
+                                                        'accessToken': accessToken,
+                                                        'csrf_token': odoo.csrf_token,
+                                                    };
+                                            //$.ajaxSetup({async: false});
+                                            return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                                                data = JSON.parse(data);
+                                                if(data.result)
+                                                {
+                                                }
+                                            }).fail(function() {
+                                                
+                                            });
+                                        }
+                                    }
+                                } catch (err) {
+                                    //alert(err);
+                                    // Not able to fetch the user
+                                }
+                            }
+                            
+                            async function auth() {
+                                try {
+                                    
+                                    // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                    const scopes = ['username', 'payments', 'wallet_address'];
+                                    function onIncompletePaymentFound(payment) {
+                                        
+                                    }; // Read more about this in the SDK reference
+
+                                    Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                        pi_user_id = auth.user.uid;
+                                        pi_user_code = auth.user.username;
+                                        accessToken = auth.accessToken;
+                                        
+                                        $('#username').html(" " + auth.user.username);
+                                        
+                                        set_points(0).always(function(){
+                                            get_user().always(function(){
+                                                //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                //    showPiAds(Pi);
+                                            });
+                                        });
+                                    }).catch(function(error) {
+                                        console.error(error);
+                                    });
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            }
+                            
+                            // you usually would check the ads support ahead of time and store the information
+                            (async () => {
+                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                (async () => {
+                                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                    {
+                                        const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                        
+                                        if(!adNetworkSupported)
+                                            alert("Update Pi Browser version, please!.");
+                                    }
+                                  // store adNetworkSupported for later use
+                                })();
+                            
+                                if(localStorage.getItem("loggedIn"))
+                                {
+                                    auth();
+                                
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+                                {
+                                    auth();
+                                    localStorage.setItem("loggedIn", true);
+                                
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }
+                            
+                            })();
+                            
+                            $( "#clear_cache" ).click(function() {
+                                var result = confirm($( "#clear_cache_message" ).text());
+                                if(result)
+                                {
+                                    try {
+                                        Cache.delete();
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                    try {
+                                        window.location.reload(true);
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                }
+                            });
+                            
+                            $( "#back" ).click(function() {
+                                var result = confirm($( "#back_message" ).text());
+                                if(result)
+                                {
+                                    //history.back();
+                                    location.href="/";
+                                }
+                            });
+                        } );
+                    </script>
+                    
+                    <title>LatinChain Sports</title>
+                </head>
+                <body>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
+                    <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
+                    
+                    <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
+                        <!-- LatinChain Ad responsive -->
+                        
+                        <br/>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    
+                    <div class="container" style="text-align:center; max-width: 840px">
+                        
+                        
+                        <!--<br/>
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>-->
+                        
+                        <br/>
+                        <button id="clear_cache" class="btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <button id="back" class="btn btn-info" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
+                        <br/><br/>
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        Hello <strong translate="no"><span id="username" /></strong><br/><br/>
+                        Welcome to LatinChain Sports, where you can watch Soccer results.<br/><br/>
+                        
+                        <div id="show_pibrowser" style="display: none">
+                            Access throught Pi Browser (Pi Network).
+                        </div>
+                        <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="show_content" style="display: none">
+                        </div>
+                        <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="show_button" style="display: none">
+                            <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Sports</div><div style="font-size:80%;">Earn Latin points</div></a>
+                        </div>
+                        <br/>
+                        
+                        <!-- LatinChain Ad responsive 2 -->
+                        <br/>
+                        <!--<ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="9525388880"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        
+                        <br/>
+                            
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>-->
+                    </div>
+                    
+                    <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
+                        
+                    <style>
+                        /*Floating Back-To-Top Button*/
+                            #myBtn {
+                                position: fixed;
+                                bottom: 10px;
+                                float: right;
+                                right: 10%;
+                                bottom: 10%;
+                                max-width: 50px;
+                                max-height: 50px;
+                                width: 100%;
+                                height: 100%;
+                                font-size: 18px;
+                                border-color: rgba(85, 85, 85, 0.2);
+                                background-color: rgb(100,100,100);
+                                /*padding: 10px;*/
+                                border-radius: 4px;
+                                opacity: 0.5;
+                                z-index:100;
+                            }
+                        /*On Hover Color Change*/
+                            #myBtn:hover {
+                                background-color: #7dbbf1;
+                            }
+                    </style>
+                    
+                    <!--<script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({flush: true});
+                    </script>-->
+                </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>

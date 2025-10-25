@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="fifteen_puzzle" name="Fifteen Puzzle">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+            <head>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>15 Puzzle Game</title>
+                <!-- Tailwind CSS CDN -->
+                <script src="https://cdn.tailwindcss.com"></script>
+                <style>
+                    /* Custom CSS for the puzzle board and tiles */
+                    body {
+                        font-family: 'Inter', sans-serif; /* Using Inter font as requested */
+                        background-color: #f0f4f8; /* Light gray background */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                        margin: 0;
+                        padding: 20px;
+                        box-sizing: border-box;
+                    }
+
+                    .puzzle-container {
+                        background-color: #ffffff;
+                        border-radius: 16px; /* More rounded corners */
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                        padding: 24px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        max-width: 90%; /* Responsive width: takes up to 90% of parent width */
+                        width: 400px; /* Max width for desktop, allows shrinking on smaller screens */
+                    }
+
+                    .puzzle-board {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+                        grid-template-rows: repeat(4, 1fr); /* 4 equal rows */
+                        gap: 8px; /* Gap between tiles */
+                        width: 100%; /* Takes full width of its container */
+                        padding: 10px;
+                        background-color: #cbd5e1; /* Gray-200 */
+                        border-radius: 12px;
+                        aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+                        max-width: 380px; /* Max width for the board itself */
+                    }
+
+                    .puzzle-tile {
+                        width: 100%;
+                        height: 100%;
+                        background-color: #4f46e5; /* Indigo-600 */
+                        color: #ffffff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 2.25rem; /* text-4xl */
+                        font-weight: bold;
+                        border-radius: 8px; /* Rounded corners for tiles */
+                        cursor: pointer;
+                        transition: background-color 0.2s ease, transform 0.1s ease;
+                        user-select: none; /* Prevent text selection */
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .puzzle-tile:hover {
+                        background-color: #4338ca; /* Indigo-700 on hover */
+                        transform: translateY(-2px);
+                    }
+
+                    .puzzle-tile.empty {
+                        background-color: #e2e8f0; /* Gray-200 for empty space */
+                        cursor: default;
+                        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+                    }
+
+                    .puzzle-tile.empty:hover {
+                        background-color: #e2e8f0; /* No change on hover for empty */
+                        transform: none;
+                    }
+
+                    .message-box {
+                        background-color: #fefcbf; /* Yellow-100 */
+                        color: #92400e; /* Yellow-800 */
+                        padding: 12px 20px;
+                        border-radius: 8px;
+                        margin-top: 20px;
+                        font-weight: 600;
+                        text-align: center;
+                        width: 100%;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .button {
+                        padding: 10px 20px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .button-primary {
+                        background-color: #22c55e; /* Green-500 */
+                        color: #ffffff;
+                    }
+
+                    .button-primary:hover {
+                        background-color: #16a34a; /* Green-600 */
+                        transform: translateY(-1px);
+                        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .button-secondary {
+                        background-color: #64748b; /* Slate-500 */
+                        color: #ffffff;
+                    }
+
+                    .button-secondary:hover {
+                        background-color: #475569; /* Slate-600 */
+                        transform: translateY(-1px);
+                        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+                    }
+
+                    /* Responsive adjustments for smaller screens (e.g., mobile) */
+                    @media (max-width: 640px) {
+                        body {
+                            padding: 10px; /* Reduce overall padding on small screens */
+                        }
+                        .puzzle-container {
+                            padding: 16px; /* Reduce container padding */
+                            max-width: 100%; /* Allow container to take full width */
+                        }
+                        .puzzle-board {
+                            gap: 6px; /* Smaller gap between tiles */
+                            padding: 8px; /* Reduce board padding */
+                        }
+                        .puzzle-tile {
+                            font-size: 1.75rem; /* text-3xl for smaller screens */
+                        }
+                        .message-box {
+                            font-size: 0.9rem; /* Smaller font for messages */
+                            padding: 10px 15px;
+                        }
+                        .button {
+                            font-size: 0.9rem;
+                            padding: 8px 16px;
+                        }
+                    }
+                </style>
+                
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                
+                <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                <script type="text/javascript">
+                    const Pi = window.Pi;
+                    $( document ).ready(function() {
+                    
+                        var pi_user_id = "";
+                        async function auth() {
+                            try {
+                                // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                const scopes = ['username', 'payments', 'wallet_address'];
+                                function onIncompletePaymentFound(payment) {
+                                    
+                                }; // Read more about this in the SDK reference
+                                
+                                Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                    pi_user_id = auth.user.uid;
+                                    
+                                    document.getElementById('blockingOverlay').style.display = 'none';
+                                }).catch(function(error) {
+                                    //Pi.openShareDialog("Error", error);
+                                    //alert(err);
+                                    console.error(error);
+                                });
+                            } catch (err) {
+                                //Pi.openShareDialog("Error", err);
+                                //alert(err);
+                                console.error(err);
+                                // Not able to fetch the user
+                            }
+                        }
+                        
+                        (async () => {
+                            await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                            auth();
+                            
+                            setTimeout(function ()
+                            {
+                                if(pi_user_id == "")
+                                {
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            //alert($("#pi_prowser_message").text());
+                                            
+                                            if(window.location.hostname == "localhost")
+                                            {
+                                                $("a.anchor-click").attr('href', window.location.origin);
+                                            }
+                                            else if(window.location.hostname == "test.latin-chain.com")
+                                            {
+                                                $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                            }
+                                            else
+                                            {
+                                                $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                            }
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                            document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                        }
+                                    }, 10000);
+                                }
+                            }, 10000);
+                        })();
+                    });
+                </script>
+                
+                <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                    <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                        <div id="blocking-message" style="display: none;">
+                            <div>
+                                Go to Pi Browser
+                            </div>
+                            <div>
+                                <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                            </div>
+                        </div>
+                        <div id="loading-message" style="display: block;">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+            </head>
+            <body>
+                <div class="puzzle-container">
+                    <style>
+                        /* Adjustments for Google Translator to be visible */
+                        .goog-te-banner-frame.skiptranslate,
+                        .skiptranslate > iframe {
+                            display: none !important;
+                        }
+                       
+                        body {
+                            top: 0px !important; 
+                        }
+
+                        .goog-te-menu-frame {
+                            max-width:100% !important; 
+                        }
+                        .goog-te-menu2 { 
+                            max-width: 100% !important;
+                            overflow-x: scroll !important;
+                            box-sizing:border-box !important; 
+                            height:auto !important; 
+                        }
+                       
+                        /* Hide unwanted elements without hiding the main widget */
+                        #goog-gt-tt, 
+                        #goog-gt-, 
+                        .goog-te-balloon-frame {
+                            display: none !important;
+                        } 
+                        .goog-text-highlight { 
+                            background: none !important; 
+                            box-shadow: none !important;
+                        }
+                       
+                        .goog-logo-link {
+                            display: none !important;
+                        }
+                        .goog-te-gadget {
+                            height: 28px !important; 
+                            overflow: hidden;
+                        }
+                    </style>
+                    <script type="text/javascript">
+                        $( document ).ready(function() {
+                            $("#translate_text_latinchain_2").appendTo(".translate_here");
+                            $("#google_translate_element").appendTo(".translate_here");
+                            
+                            $("#translate_text_latinchain_2").show();
+                            $("#google_translate_element").show();
+                        });
+                    </script>
+                    
+                    <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                    </div>
+                    
+                    <h1 class="text-3xl font-extrabold text-gray-800 mb-6">15 Puzzle Game</h1>
+
+                    <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                    <div id="puzzle-board" class="puzzle-board" translate="no">
+                        <!-- Puzzle tiles will be dynamically generated here -->
+                    </div>
+
+                    <div class="flex flex-col items-center mt-6 w-full">
+                        <p id="moves-count" class="text-xl font-semibold text-gray-700 mb-4">Moves: 0</p>
+                        <div id="message-area" class="message-box hidden"></div>
+                        <div class="flex space-x-4 mt-4">
+                            <button id="new-game-button" class="button button-primary">New Game</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <script type="module" src="/website_pinetwork_games_odoo/static/src/js/games/fifteenpuzzle_functions.js?v=1.105"></script>
+                
+            </body>
+            </html>
+                </t>
+		</template>
+
+</odoo>

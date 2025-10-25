@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="modal" name="Modal View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Vote for Pi Network Games from Latin America in Pi Brainstorm.</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Vote for Pi Network Games from Latin America in Pi Brainstorm."/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center">
+                            <h1>We won an Honorable mention!!!:</h1>
+                            <h3><a href="https://minepi.com/blog/hackathon-winners-announcement" target="_blank">Pi Hackathon Announcement</a></h3>
+                            <h3><a href="https://twitter.com/PiCoreTeam/status/1451328648150020097" target="_blank">Watch the Pi Core Team tweet</a></h3>
+                            <h3>* LatinChain Platform (Games from Latin America for Pi).</h3>
+                            <h3>* Use this link to join Pi Network: </h3>
+                            <a href="https://minepi.com/rockcesar" target="_blank">https://minepi.com/rockcesar</a>
+                            <h3>* Use this code to join Pi Network: rockcesar</h3>
+                            <h3>(Remember <strong>clear the Pi Browser cache</strong> if it is not working well).</h3>
+                            <h3>Thank you very much!.</h3>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="latinchain_x" name="LatinchainX View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>LatinChain X.</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="LatinChain X."/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center">
+                            <br/>
+                            <span t-raw="announcement_html" />
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="latinchain_mainnet_redirect" name="Mainnet redirect View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>LatinChain Redirect.</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="LatinChain X."/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                        <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                        
+                        <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({article:'auto'});
+                          !function (e, f, u, i) {
+                            if (!document.getElementById(i)){
+                              e.async = 1;
+                              e.src = u;
+                              e.id = i;
+                              f.parentNode.insertBefore(e, f);
+                            }
+                          }(document.createElement('script'),
+                          document.getElementsByTagName('script')[0],
+                          '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                          'tb_loader_script');
+                          if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                            {window.performance.mark('tbl_ic');}
+                        </script>
+                        
+                        <style>
+                        
+                            .darkmode--activated a.amazon-list {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated button.going-back {
+                              color: #000 !important;
+                            }
+                            
+                        </style>
+                        
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center; max-width: 810px">
+                            <br/>
+                            <div style="font-size: 95%">
+                                We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
+                                <br/>
+                                <br/>
+                            </div>
+                            <a href="https://latinchain.pinet.com" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
+                            <!--<br/>
+                            <div class="container rounded" style="text-align:center; max-width: 810px; border:3px solid; padding:5px;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a href="https://amzn.to/3OHvyJZ" target="_blank" class="btn btn-link amazon-list"><strong><div><img src="/website_pinetwork_games_odoo/static/src/img/amazon_logo.png?v=1.102" style="height: 50px; weight: 200px"/></div><div>Buy best books in Amazon. Challenge: buy a weekly book and read it.</div></strong></a>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px">
+                                    <div class="col-12"><a href="https://amzn.to/3OHvyJZ" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-1"></i></div></a>
+                                                        <a href="https://amzn.to/4fcgI8V" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-2"></i></div></a>
+                                                        <a href="https://amzn.to/3VYyypp" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-3"></i></div></a>
+                                                        <a href="https://amzn.to/4iAkQmi" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-4"></i></div></a>
+                                                        <a href="https://amzn.to/3Zm4N2B" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-handshake"></i></div></a>
+                                                        <a href="https://amzn.to/4irGTv2" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-medal"></i></div></a>
+                                                        <a href="https://amzn.to/3ZjOraC" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-medal"></i></div></a>
+                                                        <a href="https://amzn.to/3DdvCyk" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-medal"></i></div></a>
+                                                        <a href="https://amzn.to/4iog62K" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-medal"></i></div></a>
+                                                        <a href="https://amzn.to/3Vnbikf" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-medal"></i></div></a>
+                                                        <a href="https://dev-rockcesar.blogspot.com/2024/12/amazon-promotions-checkout-following.html" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text amazon-list" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa-solid fa-cart-plus"></i></div></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <br/>
+                            <button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Return to LatinChain Testnet</button>
+                            <!--<button onClick="window.parent.$.colorbox.close()" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
+                            <br/>
+                            <br/>
+                            <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                <!-- LatinChain Ad responsive 2 -->
+                                
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2334449220276386"
+                                     data-ad-slot="9525388880"
+                                     data-ad-format="auto"
+                                     data-full-width-responsive="true"></ins>
+                                <script>
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                                
+                                <br/>
+                                
+                                <div id="taboola-below-article-thumbnails"></div>
+                                <script type="text/javascript">
+                                  window._taboola = window._taboola || [];
+                                  _taboola.push({
+                                    mode: 'alternating-thumbnails-a',
+                                    container: 'taboola-below-article-thumbnails',
+                                    placement: 'Below Article Thumbnails',
+                                    target_type: 'mix'
+                                  });
+                                </script>
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                        
+                        <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
+                    
+                        <style>
+                            /*Floating Back-To-Top Button*/
+                                #myBtn {
+                                    position: fixed;
+                                    bottom: 10px;
+                                    float: right;
+                                    right: 10%;
+                                    bottom: 10%;
+                                    max-width: 50px;
+                                    max-height: 50px;
+                                    width: 100%;
+                                    height: 100%;
+                                    font-size: 18px;
+                                    border-color: rgba(85, 85, 85, 0.2);
+                                    background-color: rgb(100,100,100);
+                                    /*padding: 10px;*/
+                                    border-radius: 4px;
+                                    opacity: 0.5;
+                                    z-index:100;
+                                }
+                            /*On Hover Color Change*/
+                                #myBtn:hover {
+                                    background-color: #7dbbf1;
+                                }
+                        </style>
+                        
+                        <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({flush: true});
+                        </script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="reading_club" name="Reading club View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Reading Club</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Reading Club"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                        <link rel="stylesheet" href="/website_pinetwork_odoo/static/src/modals/colorbox/example3/colorbox.css" />
+                        <script src="/website_pinetwork_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+                        
+                        <base target="_blank" />
+                        
+                        <script type="text/javascript">
+                            $( document ).ready(function() {
+                                $(".open_streaming_playlist").click(function(){
+                                    var streaming_url = $(this).attr("videourl");
+                                    $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                });
+                            });
+                        </script>
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center; max-width: 810px;">
+                            <br/>
+                            <h3>Welcome to the reading club: Literary, Sci-Fi and other genres books to read.</h3>
+                            <br/>
+                            <div>
+                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR2N7gyAcOexehZ3IaRKkwBL" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">podcasts</div></button>
+                            </div>
+                            <br/>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DK3NJ23V&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_T1VVG5FSPT5MYM2ECN40" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DJVY51LS&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_7DY0NGS6KPB967ZBQPV2" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DWN6625N&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_QCNSJC670PWM8938Q2MN" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DGHN945X&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_JNE6TR8X2N19Y5WS02ZW" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DL3DCHMT&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_MC2QK2S9B6REAEE1F1N6" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DGD6G7TX&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_305ZQ3M6RHXA7WM229D0" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DGRZCC5F&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_REJGK7N575T7T6M5QP5B" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DHX7ZY6C&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_QCNSJC670PWM8938Q2MN" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DVRYVG2T&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_QCNSJC670PWM8938Q2MN" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DW8R5RBN&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_QCNSJC670PWM8938Q2MN" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DWL1D2G8&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_QCNSJC670PWM8938Q2MN" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><iframe width="100%" height="250px" frameborder="0" allowfullscreen="true" style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0DX2M9LQ8&amp;preview=inline&amp;linkCode=kpe&amp;ref_=kip_embed_taf_preview_QCNSJC670PWM8938Q2MN" ></iframe></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><img src="https://pictures.abebooks.com/inventory/md/md31490145360.jpg" width="120px" height="180px" /><br/><strong>Humanity Book</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.iberlibro.com/servlet/BookDetailsPL?bi=31490145360">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><img src="https://pictures.abebooks.com/inventory/md/md31783314984.jpg" width="120px" height="180px" /><br/><strong>La voz de los pensamientos</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.iberlibro.com/servlet/BookDetailsPL?bi=31783314984">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><img src="https://pictures.abebooks.com/inventory/md/md31786026674.jpg" width="120px" height="180px" /><br/><strong>Telepathic Treatises</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.iberlibro.com/servlet/BookDetailsPL?bi=31786026674">Read more</a></h5>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="certification" name="Certification View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Certification</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Certification"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center; max-width: 810px;">
+                            <br/>
+                            <div t-if="not unblocked">
+                                <h3>User has to be verified in LatinChain Platform to show the certification. Not verified yet.</h3>
+                            </div>
+                            <style>
+                                .border-gradient-rounded {
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, white, white), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: black !important;
+                                  filter: contrast(100%) !important;
+                                  
+                                  margin-bottom:5px;
+                                  padding:10px;
+                                  width: 100%;
+                                }
+                                
+                                .darkmode--activated .border-gradient-rounded {
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, #021526, #021526), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: white !important;
+                                  filter: contrast(100%) !important;
+                                  
+                                  margin-bottom:5px;
+                                  padding:10px;
+                                  width: 100%;
+                                }
+                                
+                                .border-rounded-print
+                                {
+                                    display: none;
+                                }
+                                
+                                .img-latinchain {
+                                    display: none;
+                                    width: 80px;
+                                    height: 80px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 10px;
+                                }
+                            </style>
+                            
+                            <style media="print">
+                                .darkmode-toggle, .darkmode-layer, .hide-when-print, 
+                                .print-button, #website_translation_latin_chain {
+                                  display: none;
+                                }
+                                
+                                .border-gradient-rounded
+                                {
+                                    display: none;
+                                }
+                                
+                                .border-rounded-print {
+                                  display: block;
+                                  border:3px solid;
+                                  margin-bottom:5px;
+                                  padding:10px;
+                                  width: 100%;
+                                  border-radius: 20px;
+                                  border-color: black;
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated .border-rounded-print {
+                                  display: block;
+                                  border:3px solid;
+                                  margin-bottom:5px;
+                                  padding:10px;
+                                  width: 100%;
+                                  border-radius: 20px;
+                                  border-color: black;
+                                  color: black !important;
+                                }
+                                
+                                h5, h3, div, strong {
+                                    color: black !important;
+                                }
+                                
+                                .img-latinchain {
+                                    display: block;
+                                    width: 55px;
+                                    height: 55px;
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 0px;
+                                }
+                            </style>
+                            
+                            <div t-if="unblocked">
+                                <img class="rounded img-latinchain" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style=""/>
+                                
+                                <h3><div translate="no" style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div translate="no" style="display:inline;">UTC.</div></h3>
+                                <h3><div translate="no" style="display:inline;">This info refers to:</div> <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Mainnet (https://latinchain.pinet.com)</div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Testnet (https://latinchaintest9869.pinet.com)</div></h3>
+                                <h3 translate="no">The following certifies that the Pioneer <strong><div style="display:inline;"> <div style="display:inline;" t-esc="username" translate="no"></div> </div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
+                                <br/>
+                                
+                                <!-- Certification Webpage Section -->
+                                
+                                <div class="hide-when-print">
+                                    <div class="border-gradient-rounded">
+                                        <div style="margin-bottom:5px;">
+                                            <h5 translate="no" style="display:inline;">
+                                                <div translate="no" style="display:inline;"><strong>Chess</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Sudoku</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Snake</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Blockrain (kind of tetris)</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Mahjong</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Bubble Shooter</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Test Your Brain</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>15 Puzzle Game</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>PingPong</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Checkers</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Domino</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Latin Crush</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>WebTorrent</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Music Player</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Video Player</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Photo Viewer</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Webcam Objects Detect</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Text-to-speech Reader</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Maps Finder</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Calculator</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Calendar Converter</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Games learning: Chess, Sudoku, Snake</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Odoo Development</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Learn: Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Can watch Crypto News</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <h5 class="border-gradient-rounded"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
+                                    <br/><br/><div><button class="btn btn-success print-button" onclick="window.print();">Print</button></div>
+                                    </h5>
+                                </div>
+                                
+                                <!-- Certification Print Section -->
+                                
+                                <div class="border-rounded-print">
+                                    <div style="margin-bottom:5px;">
+                                        <h5 translate="no" style="display:inline;">
+                                            <div translate="no" style="display:inline;"><strong>Chess</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Sudoku</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Snake</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Blockrain (kind of tetris)</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Mahjong</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Bubble Shooter</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Test Your Brain</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>15 Puzzle Game</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>PingPong</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Checkers</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Domino</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Latin Crush</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>WebTorrent</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Music Player</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Video Player</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Photo Viewer</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Webcam Objects Detect</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Text-to-speech Reader</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Maps Finder</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Calculator</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Calendar Converter</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Games learning: Chess, Sudoku, Snake</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Odoo Development</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Learn: Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Can watch Crypto News</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <br/>
+                                <h5 class="border-rounded-print"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
+                                <br/><br/><div><button class="btn btn-success print-button" onclick="window.print();">Print</button></div>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="hide-when-print">
+                            <br/><br/><br/><br/><br/>
+                        </div>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="askanexpert" name="Ask an Expert View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Ask an Expert</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Ask an Expert"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                        <script src="https://platform.linkedin.com/badges/js/profile.js" async="true" defer="true" type="text/javascript"></script>
+                    </head>
+
+                    <body>
+                        <style>
+                            iframe
+                            {
+                                width:260px;
+                                max-width:260px;
+                            }
+                        </style>
+                        <div class="container form-group" style="text-align:center; max-width: 810px;">
+                            <br/>
+                            <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
+                            <h3>This is a list of LatinChain Platform (latin-chain.com) experts, among of them there are Social Networks experts, Computer Scientists and other interesting professions, from around the World. Check it out!.</h3>
+                            <h3>Now you can consult an Expert if you need their services:</h3>
+                            <br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Professionals</strong></h3>
+                            <div class="d-flex row justify-content-center text-center">
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="rita-nguyen-0749b5a4" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://vn.linkedin.com/in/rita-nguyen-0749b5a4?trk=profile-badge">Rita Nguyen</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="jonathan-garcia-barroso-06a548169" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/jonathan-garcia-barroso-06a548169?trk=profile-badge">Jonathan Garcia Barroso</a></div>
+                                </h5>
+                                <!--<h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>-->
+                            </div>
+                            <div class="d-flex row justify-content-center text-center">
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="marina-molechino-82a6a853" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ar.linkedin.com/in/marina-molechino-82a6a853?trk=profile-badge">Marina Molechino</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="adrian-latorre-4522861a" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ar.linkedin.com/in/adrian-latorre-4522861a?trk=profile-badge">Adrian Latorre</a></div>
+                                </h5>
+                            </div>
+                            <!--<div class="row justify-content-center text-center">
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; width:270px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                            </div>-->
+                            <!--<br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Doctors</strong>
+                            </h3>
+                            <br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Journalists</strong>
+                            </h3>
+                            <br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Engineers</strong>
+                            </h3>
+                            <br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Social positions</strong>
+                            </h3>
+                            <br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Community Managers</strong>
+                            </h3>-->
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="partners" name="Partners View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Partners</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Partners"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center; max-width: 810px;">
+                            <br/>
+                            <style>
+                                .border-gradient-rounded {
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, white, white), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: black !important;
+                                }
+                            </style>
+                            <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
+                            <h3>Partners list. To be on this list, contact to this email: latinchain.info@gmail.com</h3>
+                            <br/>
+                            <div style="border:3px solid; margin-bottom:5px; padding:5px; width: 100%; background-color: white !important; filter: contrast(100%) !important;" class="rounded">
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><img width="50" height="50" src="https://latin-chain.com/web/image/website/1/logo/LatinChain?unique=8b8d8a1" /><br/><strong>LatinChain.<br/>Mainnet: <a href="https://latinchain.pinet.com" target="_blank">Link</a>.<br/>Testnet: <a href="https://latinchaintest9869.pinet.com" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><br/><strong>Pi Network | Pi Ads (LatinChain Mainnet): <a href="https://minepi.com/rockcesar" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><img width="50" height="50" src="https://radioforus.com/wp-content/uploads/2023/02/cropped-Radioforus-86x86.png" /><br/><strong>RadioForUs.<br/>Mainnet: <a href="https://mainnet.radioforus.com" target="_blank">Link</a>.<br/>Testnet: <a href="https://radioforus.com" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><br/><strong>Piketplace: <a href="https://piketplace.com" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><img width="200" height="50" src="https://mainnet.pisilkroad.com/logo.png" /><br/><strong>SilkRoad for Pi.<br/>Mainnet: <a href="https://mainnet.pisilkroad.com" target="_blank">Link</a>.<br/>Testnet: <a href="https://pisilkroad.com" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>

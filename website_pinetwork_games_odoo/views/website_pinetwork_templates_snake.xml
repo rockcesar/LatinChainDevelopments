@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="snake" name="Snake">
+            <t t-call="web.layout">
+          &lt;!DOCTYPE html&gt;
+            <html class="no-js">
+            <head>
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <title>Super Snake</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                <link rel="manifest" href="/website_pinetwork_games_odoo/static/src/responsive-snake/manifest.webmanifest"/>
+                
+                <!-- ios support -->
+                <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                <meta name="theme-color" content="#db4938" />
+                
+                <meta name="application-name" content="Super Snake"/>
+                <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+
+                <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/responsive-snake/example/assets/css/main.css"/>
+
+                <script>
+                    window.requestAnimationFrame=function(){
+                        return window.requestAnimationFrame||window.webkitRequestAnimationFrame||
+                                window.mozRequestAnimationFrame||window.msRequestAnimationFrame||
+                                window.oRequestAnimationFrame||function(f){window.setTimeout(f,1e3/60)}}();
+                </script>
+                
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/jquery-3.5.1.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+                <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.156"></script>
+                
+                <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
+                
+                <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
+                <link rel="canonical" href="https://cr-innova.negocio.site/"/>
+            </head>
+
+            <body>
+                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                <input type="hidden" id="amount" t-att-value="amount"/>
+                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                <div id="points_message" style="display:none;"> points.</div>
+                <div id="session_points_message" style="display:none;">Session: </div>
+                <div id="unblocked_message" style="display:none;">Thank you for your donation. You were unblocked.</div>
+                <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
+                <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
+                <div id="reset_message" style="display:none;">Are you sure you want to Reset?, it will restart the game.</div>
+                <div id="pause_text_message" style="display:none;"><i class="fa fa-pause"></i></div>
+                <div id="resume_text_message" style="display:none;"><i class="fa fa-play"></i></div>
+                <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
+                <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game. Only if you are verified.</div>
+                <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
+                
+                <style>
+                .square {border-radius: 25px; color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
+                .square-borderless {color: black; font-weight: bold; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center;}
+                .transparent {opacity: 0.5;}
+                .bottom {
+                    position: absolute;
+                    bottom: 40px;
+                }
+                .grabbable:hover {
+                    cursor: move; /* fallback if grab cursor is unsupported */
+                    cursor: grab;
+                    cursor: -moz-grab;
+                    cursor: -webkit-grab;
+                }
+
+                 /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+                .grabbable:active {
+                    cursor: grabbing;
+                    cursor: -moz-grabbing;
+                    cursor: -webkit-grabbing;
+                }
+                </style>
+                
+                <script type="text/javascript">
+                    $( document ).ready(function() {
+                        window.addEventListener('unhandledrejection', function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            e.stopImmediatePropagation();
+                            return false;
+                        });
+                    
+                        $("#up").draggable({ disabled: true });
+                        $("#left").draggable({ disabled: true });
+                        $("#down").draggable({ disabled: true });
+                        $("#right").draggable({ disabled: true });
+                        
+                        if(!isTouchDevice())
+                        {
+                            $( "#left" ).mousedown(function() {
+                                press(37);
+                            });
+                            $( "#up" ).mousedown(function() {
+                                press(38);
+                            });
+                            $( "#down" ).mousedown(function() {
+                                press(40);
+                            });
+                            $( "#right" ).mousedown(function() {
+                                press(39);
+                            });
+                            
+                            $( "#left" ).mouseup(function() {
+                                release(37);
+                            });
+                            $( "#up" ).mouseup(function() {
+                                release(38);
+                            });
+                            $( "#down" ).mouseup(function() {
+                                release(40);
+                            });
+                            $( "#right" ).mouseup(function() {
+                                release(39);
+                            });
+                        }else
+                        {
+                            $( "#left" ).on('touchstart', function() {
+                                press(37);
+                            });
+                            $( "#up" ).on('touchstart', function() {
+                                press(38);
+                            });
+                            $( "#down" ).on('touchstart', function() {
+                                press(40);
+                            });
+                            $( "#right" ).on('touchstart', function() {
+                                press(39);
+                            });
+                            
+                            $( "#left" ).on('touchend', function() {
+                                release(37);
+                            });
+                            $( "#up" ).on('touchend', function() {
+                                release(38);
+                            });
+                            $( "#down" ).on('touchend', function() {
+                                release(40);
+                            });
+                            $( "#right" ).on('touchend', function() {
+                                release(39);
+                            });
+                        }
+                        
+                        $( "#reset" ).click(function() {
+                            press(82);
+                        });
+                        $( "#pause" ).click(function() {
+                            press(32);
+                        });
+                        /*$( "#bot" ).click(function() {
+                            press(66);
+                        });*/
+                        /*$( "#minus" ).click(function() {
+                            press(189);
+                        });*/
+                        $( "#plus" ).click(function() {
+                            press(187);
+                        });
+                        
+                        var enable_drag = false;
+                        
+                        $('#enable_dragging').click(function() {
+                            if(!enable_drag)
+                            {
+                                /*$("#up").draggable({ disabled: false });
+                                $("#left").draggable({ disabled: false });
+                                $("#down").draggable({ disabled: false });
+                                $("#right").draggable({ disabled: false });*/
+                                
+                                $("#controls").draggable({ disabled: false });
+                                $("#controls").css({ 'color': 'red', 'border': 'solid', 'font-weight': 'bold' });
+                                
+                                $("#up").css({ 'color': 'red' });
+                                $("#left").css({ 'color': 'red' });
+                                $("#down").css({ 'color': 'red' });
+                                $("#right").css({ 'color': 'red' });
+                                enable_drag = true;
+                                
+                                $('#enable_dragging').hide();
+                                $('#disable_dragging').show();
+                                $('#controls').addClass('grabbable');
+                            }
+                        });
+                        
+                        $('#disable_dragging').click(function() {
+                            if(enable_drag)
+                            {
+                                /*$("#up").draggable({ disabled: true });
+                                $("#left").draggable({ disabled: true });
+                                $("#down").draggable({ disabled: true });
+                                $("#right").draggable({ disabled: true });*/
+                                
+                                $("#controls").draggable({ disabled: true });
+                                $("#controls").css({ 'color': 'black', 'border': '', 'font-weight': '' });
+                                
+                                $("#up").css({ 'color': 'black' });
+                                $("#left").css({ 'color': 'black' });
+                                $("#down").css({ 'color': 'black' });
+                                $("#right").css({ 'color': 'black' });
+                                enable_drag = false;
+                                
+                                $('#disable_dragging').hide();
+                                $('#enable_dragging').show();
+                                $('#controls').removeClass('grabbable');
+                            }
+                        });
+                        
+                        var status_audio = false;
+                        var audioElement = document.createElement('audio');
+                        audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
+                        audioElement.addEventListener('ended', function() {
+                            this.play();
+                        }, false);
+                        
+                        $('#play_button').click(function() {
+                            if(!status_audio)
+                            {
+                                audioElement.play();
+                                status_audio = true;
+                                $("#play").removeClass("fa-volume-off");
+                                $("#play").addClass("fa-volume-up");
+                                //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                            }
+                            else
+                            {
+                                audioElement.pause();
+                                status_audio = false;
+                                $("#play").removeClass("fa-volume-up");
+                                $("#play").addClass("fa-volume-off");
+                                //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                            }
+                        });
+                        
+                        $( "#clear_cache" ).click(function() {
+                            var result = confirm($("#clear_cache_message").text());
+                            if(result)
+                            {
+                                try {
+                                    Cache.delete();
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                                try {
+                                    window.location.reload(true);
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            }
+                        });
+                        
+                        $( "#back" ).click(function() {
+                            var result = confirm($("#back_message").text());
+                            if(result)
+                            {
+                                //history.back();
+                                location.href="/";
+                            }
+                        });
+                        
+                        $( "#show" ).click(function() {
+                            if($( "#show" ).html() == '<i class="fa fa-eye-slash"></i>')
+                            {
+                                $( "#show" ).html('<i class="fa fa-eye"></i>');
+                                $( "#bottom_controls" ).show();
+                                $( "#show_title" ).show();
+                                //$( "#clear_cache" ).removeClass("transparent");
+                                //$( "#back" ).removeClass("transparent");
+                                //$( ".fps-counter" ).removeClass("transparent");
+                            }else if($( "#show" ).html() == '<i class="fa fa-eye"></i>')
+                            {
+                                $( "#show" ).html('<i class="fa fa-eye-slash"></i>');
+                                $( "#bottom_controls" ).hide();
+                                $( "#show_title" ).hide();
+                                //$( "#clear_cache" ).addClass("transparent");
+                                //$( "#back" ).addClass("transparent");
+                                //$( ".fps-counter" ).addClass("transparent");
+                            }
+                        });
+                        
+                        $("#score-points").html($("#session_points_message").text() + "<strong>0</strong>");
+                    });
+                </script>
+                <div class="intro" style="width: 100%; text-align: center">
+                    <!--<iframe data-aa="1429940" src="//ad.a-ads.com/1429940?size=120x60" scrolling="no" style="opacity: 0.3; width:120px; height:60px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+                    <br>-->
+                    <div style="margin-right: 10% !important; height: 150px; width: 90%; text-align: center; border-style: none;">
+                        <div style="border-style: none; width: 95%; margin-left: 5%">
+                            <div id="show_title" style="display: flex;">
+                                <ul style="list-style-type: none;">
+                                  <li><h2>
+                                    <div id="play_button">
+                                        <i id="play" class="fa fa-volume-off transparent"></i> 
+                                    </div>
+                                    Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2></li>
+                                  <li>
+                                      <p style="width: 230px;">
+                                        <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US"/>
+                                        <button id="button_click" name="button_click" class="transparent" disabled="true" style="font-size:20px; font-weight: bold;"><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Unblock with <span t-esc="amount" /> Pi</div></button>
+                                      </p>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="controls" style="border-radius: 25px; padding: 10px; max-width: 123px; min-width: 123px; max-height: 117px; min-height: 117px; margin-left: 28% !important; margin-top: 30px" draggable="true">
+                        <!--<div style="min-height: 60px;"></div>-->
+                        <div class="square-borderless"></div>
+                        <div class="square" id="up"><i class="fa-solid fa-arrow-up"></i></div>
+                        <br/><br/>
+                        <div class="square" id="left"><i class="fa-solid fa-arrow-left"></i></div>
+                        <div class="square-borderless"></div>
+                        <div class="square" id="right"><i class="fa-solid fa-arrow-right"></i></div>
+                        <br/><br/><div class="square-borderless"></div>
+                        <div class="square" id="down"><i class="fa-solid fa-arrow-down"></i></div>
+                    </div>
+                    <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
+                </div>
+
+                <div class="container absolute">
+
+                    <canvas id="snake-canvas" autofocus="autofocus" data-full-screen="true"></canvas>
+                    
+                    <div class="bottom">
+                        <p>
+                            <span id="loading_word" style="display: none; margin-left: 5px;"><img width="50" height="50" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif" /></span><br/>
+                            <span id="show" class="transparent square"><i class="fa fa-eye"></i></span><br/><br/>
+                            <div id="bottom_controls" style="">
+                                <div id="plus_minus_controls" style="display: none;">
+                                    <!--<div class="square" id="minus" style="display: none;">-</div>--><div class="square transparent" id="plus" >+</div>
+                                </div>
+                                <div id="reset_pause_controls" style="display: none;">
+                                    <div class="square transparent" id="reset" style="display: none;"><i class="fa fa-repeat"></i></div><div class="square transparent" id="pause" style="display: none;"><i class="fa fa-play"></i></div>
+                                </div>
+                                <div class="square transparent" id="enable_dragging" ><i class="fa fa-hand-paper-o"></i></div><div class="square transparent" id="disable_dragging" style="display: none;"><i class="fa fa-hand-rock-o"></i></div>
+                                <div class="square transparent" id="clear_cache" style=""><i class="fa fa-refresh"></i></div><div class="square transparent" id="back" style=""><i class="fa fa-step-backward"></i></div>
+                                <div class="square transparent" id="test_game" style=""><i class="fa-solid fa-flask-vial"></i></div>
+                                <div class="square transparent" id="x2_game" style="display:none"><i class="fa-solid fa-plug-circle-bolt"></i>x2</div>
+                                <!--<div class="square" id="bot">Bot</div>-->
+                                <br/><br/>
+                            </div>
+                            
+                            <div class="square-borderless fps-counter transparent"></div>
+                        </p>
+                        <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
+                    </div>
+
+                    <div id="scoreboard">
+                        <div id="score">
+                            Score :
+                            <span>0</span>
+                        </div>
+
+                        <div id="hi-score" style="display:none">
+                            Hi session Score :
+                            <span>0</span>
+                        </div>
+                        
+                        <div id="score-points">
+                        </div>
+
+                        <!--<div id="bot-hi-score">
+                            Bot Hi Score :
+                            <span>0</span>
+                        </div>-->
+                    </div>
+                </div>
+
+            <!-- Vendor Component Libraries -->
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto/zepto.js"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
+
+            <!-- Browserified Build -->
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/build/snake.build.js?v=1.204"></script>
+
+            <script>
+                //Start Snake Game
+                $(document).ready(function() {
+                    ResponsiveSnake.start({
+                        snakePixels    : 14,
+                        snakeSize      : 2,
+                        bot            : false,
+                        explosion      : true,
+                    });
+                    ResponsiveSnake.game.pause();
+                });
+            </script>
+            </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>
