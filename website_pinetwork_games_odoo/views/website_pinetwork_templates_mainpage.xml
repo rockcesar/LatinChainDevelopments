@@ -2214,6 +2214,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        <!--<li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">-->
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
