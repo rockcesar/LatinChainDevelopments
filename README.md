@@ -66,6 +66,18 @@ Video Player (PiOS License). Developed with Gemini AI (Google).
 
 Photo Viewer (PiOS License). Developed with Gemini AI (Google).
 
+Webcam Ojects Detect (PiOS License). Developed with Gemini AI (Google).
+
+Text-To-Speech Reader (PiOS License). Developed with Gemini AI (Google).
+
+Maps Finder (PiOS License). Developed with Gemini AI (Google).
+
+News Player (PiOS License). Developed with Gemini AI (Google).
+
+Calculator (PiOS License). Developed with DeepSeek AI (Google).
+
+Calendar Converter (PiOS License). Developed with DeepSeek AI (Google).
+
 mp3 (PiOS License) is the MP3 Converter on mp3.latin-chain.com . Developed with Gemini AI (Google).
 
 trends (PiOS License) is the Youtube Trends on trends.latin-chain.com . Developed with Gemini AI (Google).
