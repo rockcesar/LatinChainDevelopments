@@ -296,10 +296,7 @@ class admin_apps(models.Model):
                 now = datetime.now().time()  # Get current time (without date)
                 start_time = time(14, 30, 0)
                 end_time = time(15, 0, 0)
-
-                _logger.info(str(start_time))
-                _logger.info(str(now))
-                _logger.info(str(end_time))
+                
                 if start_time <= now <= end_time:
                     i._update_amount_price()
     
