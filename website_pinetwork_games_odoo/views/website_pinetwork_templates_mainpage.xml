@@ -28,20 +28,30 @@
             <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
         </xpath>
     </template>
-    
-    <template id="web_layout_scroll_fix" inherit_id="web.layout">
-        
-        <xpath expr="//body" position="attributes">
-            <attribute name="style">height: 100%; overflow: hidden; margin: 0;</attribute>
-        </xpath>
+                
+        <template id="web_layout_scroll_fix" inherit_id="web.layout">
+            <xpath expr="//body" position="before">
+               <span id="scroll_attributes_latin_chain" name="scroll_attributes_latin_chain">
+                   <style>
+                       body
+                       {
+                            height: 100%; overflow: hidden; margin: 0;
+                       }
+                   </style>
+               </span>
+            </xpath>
+            
+            <!--<xpath expr="//body" position="attributes">
+                <attribute name="style">height: 100%; overflow: hidden; margin: 0;</attribute>
+            </xpath>-->
 
-        <xpath expr="//t[@t-raw='0']" position="replace">
-            <div class="o_scroll_wrapper" style="height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;">
-                <t t-raw="0"/>
-            </div>
-        </xpath>
+            <xpath expr="//t[@t-raw='0']" position="replace">
+                <div class="o_scroll_wrapper" id="o_scroll_wrapper" style="height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+                    <t t-raw="0"/>
+                </div>
+            </xpath>
 
-    </template>
+        </template>
     
         <template id="new_header" inherit_id="web.layout">
             <xpath expr="//head//link[last()]" position="after">
@@ -506,6 +516,9 @@
         </template>
         
         <template id="new_header_layout" inherit_id="website.layout">
+            
+            <xpath expr="//span[@name='scroll_attributes_latin_chain']" position="replace">
+           </xpath>
             
             <xpath expr="//div[@id='font-awesome-div']" position="replace">
             </xpath>
