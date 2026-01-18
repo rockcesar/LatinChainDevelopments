@@ -9,7 +9,7 @@
                 const isMobile = /Mobi/.test(window.navigator.userAgent);
                 
                 if(isMobile == false)
-                    location.href="https://latin-chain.com/weblatin";
+                    location.href="https://google.com";
             </script>-->
         <?php
             }
@@ -96,7 +96,7 @@
                 });
                 
                 $( "#vote" ).click(function() {
-                    $.colorbox({href:"https://latin-chain.com/modals/vote_pi.html", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                    $.colorbox({href:"https://google.com", iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
                 });
             });
 
