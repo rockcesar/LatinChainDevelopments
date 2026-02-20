@@ -1736,7 +1736,10 @@ $( document ).ready(function() {
     
     $(document).bind('cbox_complete', function(){
         // Selecciona el iframe dentro de la estructura de Colorbox y añade el permiso
+        var iframe = $('#cboxLoadedContent').find('iframe');
+        alert(iframe.attr('allow'));
         $('iframe.cboxIframe').attr('allow', 'web-share');
+        alert(iframe.attr('allow'));
     });
     
     $( ".fans-shopping-club" ).click(function() {
