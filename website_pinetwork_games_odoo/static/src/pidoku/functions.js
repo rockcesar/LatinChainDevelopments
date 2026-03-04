@@ -439,7 +439,6 @@ $( document ).ready(function() {
                                         data = JSON.parse(data);
                                         if(data.result && data.completed)
                                         {
-                                            $("#button_click").prop( "disabled", true );
                                             alert($("#payment_message").text());
                                         }
                                     } catch (e) {
@@ -554,10 +553,7 @@ $( document ).ready(function() {
                                     $("#button_click").prop( "disabled", false );
                                     data = JSON.parse(data);
                                     if(data.result && data.completed)
-                                    {
                                         get_user();
-                                        $("#button_click").prop( "disabled", true );
-                                    }
                                 }).fail(function() {
                                     setConfirmUnload(false);
                                     $("#button_click").prop( "disabled", false );
