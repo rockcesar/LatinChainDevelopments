@@ -1357,8 +1357,8 @@ class admin_apps(models.Model):
                                 if not unblocked_previous:
                                     data_write.update({'pi_ad_automatic': False})
                                 
-                                #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                                #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
+                                if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
                                 
@@ -1579,7 +1579,6 @@ class pi_users(models.Model):
                 
                 if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                     if i.paid_in_transactions > paid_in_transactions:
-                        i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
                         if not unblocked_previous:
                             i.pi_ad_automatic = False
                 
