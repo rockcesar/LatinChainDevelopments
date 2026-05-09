@@ -569,7 +569,7 @@ var googleTranslateElementInit = () => {
     }
 };
 
-//document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     try{
 
@@ -601,7 +601,7 @@ var googleTranslateElementInit = () => {
     {
     }
         
-//});
+});
 
 
 /*
