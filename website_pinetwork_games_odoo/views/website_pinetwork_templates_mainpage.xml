@@ -1626,7 +1626,7 @@
                                     <div class="progress" style="height: 30px;">
                                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
                                              role="progressbar" 
-                                             t-att-style="'width: ' + total_users_verified_count + '%; font-weight: bold; font-size: 1rem;'" 
+                                             t-att-style="'width: ' + str(total_users_verified_count) + '%; font-weight: bold; font-size: 1rem;'" 
                                              t-att-aria-valuenow="total_users_verified_count"
                                              aria-valuemin="0" 
                                              aria-valuemax="100">
