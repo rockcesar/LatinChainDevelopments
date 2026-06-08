@@ -1728,45 +1728,72 @@
                             </div>
                         </div>
                         
-                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                        <t t-if="true">
                             <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Quests #EarnPoints &#128240;</div></strong></h5>
                                 </div>
-                                <div class="getverified">
-                                    <div style="margin-bottom:5px">
-                                        <h5>
-                                            <strong>
-                                                Become LATINCHAIN PREMIUM.
-                                            </strong>
-                                        </h5>
+                                
+                                <div id="myAwesomeCarousel" class="carousel slide" data-bs-ride="carousel">
+  
+                                  <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#myAwesomeCarousel" data-bs-slide-to="0" class="active getverified" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#myAwesomeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#myAwesomeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                  </div>
+
+                                  <div class="carousel-inner">
+                                    <div class="carousel-item active getverified">
+                                        <div class="getverified">
+                                            <div style="margin-bottom:5px">
+                                                <h5>
+                                                    <strong>
+                                                        Become LATINCHAIN PREMIUM.
+                                                    </strong>
+                                                </h5>
+                                            </div>
+                                            <div style="margin-bottom:5px">
+                                                <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div style="margin-bottom:5px">
-                                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    <div class="carousel-item">
+                                        <div style="margin-bottom:5px">
+                                            <h5>
+                                                <strong>
+                                                    GPM Ambassador Program.
+                                                </strong>
+                                            </h5>
+                                        </div>
+                                        <div style="margin-bottom:5px">
+                                            <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/gpm_quest1.png?v=1.101" alt="GPM Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                        </div>
                                     </div>
+                                    <div class="carousel-item">
+                                        <div style="margin-bottom:5px">
+                                            <h5>
+                                                <strong>
+                                                    Use our dApps.
+                                                </strong>
+                                            </h5>
+                                        </div>
+                                        <div style="margin-bottom:5px">
+                                            <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                  <button class="carousel-control-prev" type="button" data-bs-target="#myAwesomeCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                  </button>
+                                  <button class="carousel-control-next" type="button" data-bs-target="#myAwesomeCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                  </button>
+                                  
                                 </div>
                                 
-                                <div style="margin-bottom:5px">
-                                    <h5>
-                                        <strong>
-                                            GPM Ambassador Program.
-                                        </strong>
-                                    </h5>
-                                </div>
-                                <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/gpm_quest1.png?v=1.101" alt="GPM Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
-                                </div>
-                                
-                                <div style="margin-bottom:5px">
-                                    <h5>
-                                        <strong>
-                                            Use our dApps.
-                                        </strong>
-                                    </h5>
-                                </div>
-                                <div style="margin-bottom:5px">
-                                    <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
-                                </div>
                             </div>
                         </t>
                         
