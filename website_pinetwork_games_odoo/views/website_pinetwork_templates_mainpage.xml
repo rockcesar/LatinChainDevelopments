@@ -3872,6 +3872,9 @@
                                                 <div style="display: inline" t-if="not discount_active">
                                                     PREMIUM amount
                                                 </div>
+                                                <div style="display: inline">
+                                                    . No Pi ads at (https://latinchain.pinet.com)
+                                                </div>
                                             </div>
                                             <div style="word-break: break-word;">
                                                 <div t-if="discount_active and discount_percentage">
