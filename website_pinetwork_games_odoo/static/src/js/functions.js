@@ -13,7 +13,7 @@ var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
 var pi_ad_max = 0;
 var btnvalue = "";
-var mainuser = "rockcesar";
+//mainuser is at website_pinetwork_odoo/static/src/js/common_functions.js
 
 function setConfirmUnload(on) {
     unloadMessage(on);

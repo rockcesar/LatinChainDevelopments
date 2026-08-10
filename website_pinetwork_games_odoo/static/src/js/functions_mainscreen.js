@@ -32,7 +32,7 @@ var colorbox_opened_mainnet = false;
 var is_open_tab = false;
 var is_open_tab_ads = false;
 
-var mainuser = "rockcesar";
+//mainuser is at website_pinetwork_odoo/static/src/js/common_functions.js
 
 var eco_page_version = "?v=1.148";
 
