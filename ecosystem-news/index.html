@@ -1,0 +1,555 @@
+<!-- ========================================== -->
+<!-- DEPENDENCIAS Y SCRIPTS (Blogger Head)      -->
+<!-- ========================================== -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- Google Analytics -->
+<script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-139G91GZND"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-139G91GZND');
+</script>
+
+<!-- AdSense -->
+<script async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+
+<!-- Taboola -->
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>
+
+<!-- ========================================== -->
+<!-- ESTILOS PERSONALIZADOS                     -->
+<!-- ========================================== -->
+<style>
+    body {
+        word-break: break-word;
+    }
+
+    .google-auto-placed, 
+    ins.adsbygoogle {
+        max-width: 100% !important;
+        display: block !important;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    iframe, ins, img, video {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    .darkmode--activated a.amazon-list,
+    .darkmode--activated button.going-back {
+        color: #000 !important;
+    }
+
+    /* ========================================== */
+    /* NUEVOS ESTILOS DE BOTONES (Sin Bootstrap)  */
+    /* ========================================== */
+    
+    /* Botón Base */
+    .custom-btn {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 20px !important;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .custom-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Utilidad para ancho completo */
+    .custom-btn-full {
+        width: 100%;
+    }
+
+    /* Colores y Variantes */
+    .custom-btn-success {
+        background-color: #198754;
+        border-color: #198754;
+        color: #ffffff !important;
+    }
+    
+    .custom-btn-outline-success {
+        background-color: transparent;
+        border-color: #198754;
+        color: #157347 !important;
+    }
+    
+    .custom-btn-outline-success:hover {
+        background-color: #198754;
+        color: #ffffff !important;
+    }
+
+    .custom-btn-purple {
+        background-color: #703d92;
+        border-color: #703d92;
+        color: #ffffff !important;
+    }
+    
+    .custom-btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        color: #ffffff !important;
+    }
+
+    .custom-btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        color: #ffffff !important;
+    }
+
+    /* Botón tipo enlace discreto */
+    .custom-btn-link {
+        display: inline-block;
+        background: none;
+        border: none;
+        color: #0d6efd;
+        text-decoration: underline;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 0.5rem;
+        box-shadow: none;
+        transition: color 0.2s;
+    }
+    .custom-btn-link:hover {
+        color: #0a58ca;
+        box-shadow: none;
+        transform: none;
+    }
+
+    /* Formato interno para botones con íconos y subtítulos */
+    .btn-icon {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+    .btn-title {
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+    .btn-subtitle {
+        font-size: 0.8rem;
+        font-weight: 400;
+        opacity: 0.9;
+        margin-top: 4px;
+    }
+
+    /* ========================================== */
+
+    /* Estilos personalizados para Google Translate */
+    .goog-te-banner-frame.skiptranslate { display: none !important; }
+    .skiptranslate > iframe { display: none !important; }
+    body { top: 0px !important; }
+    .goog-te-menu-frame { max-width: 100% !important; }
+    .goog-te-menu2 { 
+        max-width: 100% !important;
+        overflow-x: scroll !important;
+        box-sizing: border-box !important; 
+        height: auto !important; 
+    }
+    #goog-gt-tt, #goog-gt-, .goog-te-balloon-frame { display: none !important; } 
+    .goog-text-highlight { 
+        background: none !important; 
+        box-shadow: none !important;
+    }
+    .goog-logo-link { display: none !important; }
+
+    /* Floating Back-To-Top Button */
+    #myBtn {
+        position: fixed;
+        bottom: 60px;
+        float: right;
+        right: 10%;
+        max-width: 50px;
+        max-height: 50px;
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+        border-color: rgba(85, 85, 85, 0.2);
+        background-color: rgb(100,100,100);
+        border-radius: 4px;
+        opacity: 0.5;
+        z-index:100;
+        color: white;
+    }
+    #myBtn:hover {
+        background-color: #7dbbf1;
+    }
+    
+    .button-group {
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+    }
+</style>
+
+<!-- ========================================== -->
+<!-- CONTENIDO PRINCIPAL (BODY)                 -->
+<!-- ========================================== -->
+<div id="open_mainnet_message" style="display:none;">You can Donate on LatinChain Mainnet and start using it everyday being verified during a month. Or access as unverified user.<br/>Which one you choose?.</div>
+
+<div class="container form-group justify-content-center text-center" style="text-align:center; max-width: 840px;">
+    <div class="row justify-content-center">
+        
+        <div class="col-12 my-3" style="text-align:center; max-width: 100%;">
+            <!-- LatinChain Ad responsive 2 -->
+            <br/>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2334449220276386"
+                 data-ad-slot="9525388880"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br/>
+        </div>
+
+        <div class="col-12" style="font-size: 90%; word-break: break-word;">
+            <div style="display: inline">
+                <div style="display: inline;"><i class="fa-solid fa-link"></i></div> <div style="display: inline"><strong translate="no">news.latin-chain.com/</strong></div>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div>
+                <script defer="defer" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> 
+                <div class="livecoinwatch-widget-6" lcw-coin="_______PI" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="0" ></div>
+            </div>
+            <div>
+                <strong>LatinChain Platform: Pi Hackathon winner 2021.</strong>
+            </div>
+            <div style="font-size: 90%">
+                Welcome to LatinChain Ecosystem portal on Pi Network cryptocurrency ecosystem. Get utility usage bonus <i class="fa-solid fa-bolt"></i> by using Mainnet and Testnet.
+            </div>
+        </div>
+        
+        <div class="col-12" style="display:none">
+            <div style="margin-bottom:10px" class="col-12">
+                <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="href-external custom-btn custom-btn-full custom-btn-purple">
+                    <div class="btn-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+                    <div class="btn-title">STAKE PI</div>
+                    <div class="btn-subtitle">Stake Pi during 365 days (any amount and time is permitted, we thank you) to Boost Rank of your favorite Pi App: LatinChain Mainnet on Pi Ecosystem, by clicking here.<br/><br/>Among everyone, we could stake 1 million Pi to Boost LatinChain.</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12" style="display:none">
+            <div style="margin-bottom:10px" class="col-12">
+               <a href="https://x.com/i/status/1999919404910273018" rel="noopener" target="_blank" class="href-external custom-btn-link">
+                   <div><i class="fa-solid fa-cubes-stacked"></i> More info about staking, clicking here</div>
+               </a>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div style="margin-bottom:10px" class="col-12">
+                <a href="https://latinchain.pinet.com/index-nopopup" rel="noopener" target="_blank" class="href-external custom-btn custom-btn-full custom-btn-success">
+                    <div class="btn-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="btn-title">Go to LatinChain Mainnet</div>
+                    <div class="btn-subtitle">Use LatinChain</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div style="margin-bottom:10px" class="col-12">
+                <a href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="href-external custom-btn custom-btn-full custom-btn-success">
+                    <div class="btn-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="btn-title" translate="no">PAY PI <span style="font-weight: 400;">(GET PREMIUM, no ads)</span></div>
+                    <div class="btn-subtitle" translate="no">Earn Latin points (Mainnet)</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12" style="display:none">
+            <div style="margin-bottom:10px;" class="col-12">
+                <a href="https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain" rel="noopener" target="_blank" class="href-external custom-btn custom-btn-full custom-btn-outline-success">
+                    <div class="btn-icon"><i class="fa-solid fa-right-left"></i></div>
+                    <div class="btn-title" translate="no">JOIN MEXC AND TRADE PI</div>
+                    <div class="btn-subtitle">Pi KYB ready</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12" style="display:none">
+            <div style="margin-bottom:10px;" class="col-12">
+                <a href="https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain" rel="noopener" target="_blank" class="href-external custom-btn custom-btn-full custom-btn-outline-success">
+                    <div class="btn-icon"><i class="fa-solid fa-right-left"></i></div>
+                    <div class="btn-title" translate="no">TRADE PI ON MEXC</div>
+                    <div class="btn-subtitle">Pi KYB ready</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div style="margin-bottom:10px" class="col-12">
+                <a href="https://latinchaintest9869.pinet.com/index-nopopup" rel="noopener" target="_blank" class="href-external custom-btn-link">
+                    Go to LatinChain Testnet
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 my-3" style="text-align:center; max-width: 100%;">
+            <!-- LatinChain Ad responsive 2 -->
+            <br/>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2334449220276386"
+                 data-ad-slot="9525388880"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br/>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="text-center col-12">
+            <h2 class="fw-bold text-primary">Understanding the LatinChain Ecosystem</h2>
+            <p class="lead text-muted">
+                Your gateway to decentralized applications on the Pi Network.
+            </p>
+        </div>
+
+        <hr class="col-12"/>
+
+        <div class="col-12">
+            <p>
+                Welcome to the LatinChain Ecosystem portal. As a decentralized application (dApp) built on the <strong>Pi Network</strong>, our goal is to provide real utility and seamless interaction for the Pi community. Whether you are a developer, a pioneer, or a casual user, understanding the difference between our Mainnet and Testnet environments is crucial for maximizing your experience.
+            </p>
+        </div>
+
+        <div class="col-12 my-3" style="text-align:center; max-width: 100%;">
+            <!-- LatinChain Ad responsive 2 -->
+            <br/>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2334449220276386"
+                 data-ad-slot="9525388880"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br/>
+        </div>
+
+        <div class="card shadow-sm border-primary bg-light col-12" style="color:black !important">
+            <div class="card-body">
+                <h3 class="h4 card-title text-primary" style="color:black !important">
+                    <i class="bi bi-rocket-takeoff-fill me-2"></i>Staking Pi to Boost Rank
+                </h3>
+                <p class="card-text" style="color:black !important">
+                    Did you know you can directly support the growth of <strong>LatinChain Mainnet</strong>?
+                </p>
+                <p style="color:black !important">
+                    By <strong>Staking Pi</strong> on our app within the Pi Browser, you help boost our ranking in the ecosystem directory. A higher rank means more visibility, bringing more Pioneers into our community and increasing the value of the network for everyone.
+                </p>
+                <p class="mb-0 text-dark fw-bold" style="color:black !important">
+                    <small>Support us today and help LatinChain reach the top!</small>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-12 my-3" style="text-align:center; max-width: 100%;">
+            <!-- LatinChain Ad responsive 2 -->
+            <br/>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2334449220276386"
+                 data-ad-slot="9525388880"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br/>
+        </div>
+
+        <div class="card shadow-sm border-0 col-12">
+            <div class="card-body">
+                <h3 class="h4 card-title text-success"><i class="bi bi-check-circle-fill me-2"></i>Why Choose the Mainnet?</h3>
+                <p class="card-text">
+                    The LatinChain Mainnet (<code>latinchain.pinet.com</code>) is the live production environment where real value is exchanged. By accessing the Mainnet, you are interacting with the fully operational version of our blockchain application.
+                </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Real Utility:</strong> Every action contributes to the genuine activity of the network.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Verified Status:</strong> Users who choose to support the ecosystem via donations can unlock "Verified" status. This signals your commitment to the community.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Double Utility Bonus:</strong> Active usage on the Mainnet contributes to your Pi utility usage bonus.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-12 my-3" style="text-align:center; max-width: 100%;">
+            <!-- LatinChain Ad responsive 2 -->
+            <br/>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2334449220276386"
+                 data-ad-slot="9525388880"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br/>
+        </div>
+
+        <div class="col-12">
+            <h3 class="h4 text-warning">The Role of the Testnet</h3>
+            <p>
+                The Testnet serves as our sandbox environment. It is designed for users who want to explore new features, test transaction flows, or understand the mechanics of the <strong>LatinChain token</strong> without using real Pi. It is the perfect training ground for new pioneers to get comfortable with Web3 interactions before moving to the Mainnet.
+            </p>
+        </div>
+
+        <div class="col-12 my-3" style="text-align:center; max-width: 100%;">
+            <!-- LatinChain Ad responsive 2 -->
+            <br/>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2334449220276386"
+                 data-ad-slot="9525388880"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br/>
+        </div>
+
+        <div class="bg-light rounded-3 col-12">
+            <h3 class="h4">How the LatinChain Token Works</h3>
+            <p>
+                LatinChain is designed to foster a digital economy within the Pi Browser. By participating in either network, you are helping to stress-test and improve a growing financial ecosystem.
+            </p>
+        </div>
+
+        <div class="col-12 my-3" style="text-align:center; max-width: 100%;">
+            <!-- LatinChain Ad responsive 2 -->
+            <br/>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2334449220276386"
+                 data-ad-slot="9525388880"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br/>
+        </div>
+
+        <div class="text-center text-muted small col-12">
+            <p>Select an option above to begin your journey.</p>
+        </div>
+
+        <div style="text-align:center;">
+            <div id="taboola-below-article-thumbnails"></div>
+            <script type="text/javascript">
+              window._taboola = window._taboola || [];
+              _taboola.push({
+                mode: 'alternating-thumbnails-a',
+                container: 'taboola-below-article-thumbnails',
+                placement: 'Below Article Thumbnails',
+                target_type: 'mix'
+              });
+            </script>
+        </div>
+    </div>
+</div>
+
+<br/><br/><br/><br/><br/>
+<a id="myABtn" class="href-external" href="javascript:void(0);" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="color: white" translate="no">
+    <button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button>
+</a>
+
+<!-- ========================================== -->
+<!-- SCRIPTS FINALES / MODAL                    -->
+<!-- ========================================== -->
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<!-- Button trigger modal -->
+<button id="open_modal" type="button" class="custom-btn custom-btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" style="display: none;">
+  Open Modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Message</h5>
+        <button type="button" class="btn-close" style="background-color:white !important; color:black !important; filter: contrast(100%) !important;" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer button-group">
+        <button type="button" class="custom-btn custom-btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
