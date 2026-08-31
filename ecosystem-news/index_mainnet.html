@@ -1,0 +1,458 @@
+<!--==========================================-->
+<!--DEPENDENCIAS Y SCRIPTS (Blogger Head)-->
+<!--==========================================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></link>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet"></link>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"></link>
+
+<!--Google Analytics-->
+<script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-139G91GZND"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-139G91GZND');
+</script>
+
+<!--AdSense-->
+<script async="true" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386"></script>
+
+<!--Taboola-->
+<!--<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>-->
+
+<!--==========================================-->
+<!--ESTILOS PERSONALIZADOS-->
+<!--==========================================-->
+<style>
+    body {
+        word-break: break-word;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    .darkmode--activated a.amazon-list,
+    .darkmode--activated button.going-back {
+        color: #000 !important;
+    }
+
+    /* ========================================== */
+    /* NUEVOS ESTILOS DE BOTONES (Sin Bootstrap)  */
+    /* ========================================== */
+    
+    /* Botón Base */
+    .custom-btn {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 20px !important;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .custom-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Utilidad para ancho completo */
+    .custom-btn-full {
+        width: 100%;
+    }
+
+    /* Colores y Variantes */
+    .custom-btn-success {
+        background-color: #198754;
+        border-color: #198754;
+        color: #ffffff !important;
+    }
+    
+    .custom-btn-outline-success {
+        background-color: transparent;
+        border-color: #198754;
+        color: #157347 !important;
+    }
+    
+    .custom-btn-outline-success:hover {
+        background-color: #198754;
+        color: #ffffff !important;
+    }
+
+    .custom-btn-purple {
+        background-color: #703d92;
+        border-color: #703d92;
+        color: #ffffff !important;
+    }
+    
+    .custom-btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        color: #ffffff !important;
+    }
+
+    .custom-btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        color: #ffffff !important;
+    }
+
+    /* Botón tipo enlace discreto */
+    .custom-btn-link {
+        display: inline-block;
+        background: none;
+        border: none;
+        color: #0d6efd;
+        text-decoration: underline;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 0.5rem;
+        box-shadow: none;
+        transition: color 0.2s;
+    }
+    .custom-btn-link:hover {
+        color: #0a58ca;
+        box-shadow: none;
+        transform: none;
+    }
+
+    /* Formato interno para botones con íconos y subtítulos */
+    .btn-icon {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+    .btn-title {
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+    .btn-subtitle {
+        font-size: 0.8rem;
+        font-weight: 400;
+        opacity: 0.9;
+        margin-top: 4px;
+    }
+    
+    .button-group {
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+    }
+</style>
+
+<!--==========================================-->
+<!--CONTENIDO PRINCIPAL (BODY)-->
+<!--==========================================-->
+<div id="open_mainnet_message" style="display: none;">You can Donate on LatinChain Mainnet and start using it everyday being verified during a month. Or access as unverified user.<br />Which one you choose?.</div>
+
+<div class="container form-group justify-content-center text-center" style="max-width: 840px; text-align: center;">
+    <div class="row justify-content-center">
+        
+        <!--<div class="col-12 my-3" style="max-width: 100%; text-align: center;">-->
+            <!--LatinChain Ad responsive 2-->
+            <!--<br />
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display: block;"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br />
+        </div>-->
+
+        <div class="col-12" style="font-size: 90%; word-break: break-word;">
+            <div style="display: inline;">
+                <div style="display: inline;"><i class="fa-solid fa-link"></i></div> <div style="display: inline;"><b translate="no">news.latin-chain.com/</b></div>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div>
+                <script defer="defer" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> 
+                <div class="livecoinwatch-widget-6" lcw-base="USD" lcw-border-w="0" lcw-coin="_______PI" lcw-color-bg="#1f2434" lcw-color-tx="#ffffff" lcw-period="d"></div>
+            </div>
+            <div>
+                <b>LatinChain Platform: Pi Hackathon winner 2021.</b>
+            </div>
+            <div style="font-size: 90%;">
+                Welcome to LatinChain Ecosystem portal on Pi Network cryptocurrency ecosystem. Get utility usage bonus <i class="fa-solid fa-bolt"></i> by using Mainnet and Testnet.
+            </div>
+        </div>
+        
+        <div class="col-12" style="display: none;">
+            <div class="col-12" style="margin-bottom: 10px;">
+                <a class="href-external custom-btn custom-btn-full custom-btn-purple" href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank">
+                    <div class="btn-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+                    <div class="btn-title">STAKE PI</div>
+                    <div class="btn-subtitle">Stake Pi during 365 days (any amount and time is permitted, we thank you) to Boost Rank of your favorite Pi App: LatinChain Mainnet on Pi Ecosystem, by clicking here.<br /><br />Among everyone, we could stake 1 million Pi to Boost LatinChain.</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12" style="display: none;">
+            <div class="col-12" style="margin-bottom: 10px;">
+               <a class="href-external custom-btn-link" href="https://x.com/i/status/1999919404910273018" rel="noopener" target="_blank">
+                   <div><i class="fa-solid fa-cubes-stacked"></i> More info about staking, clicking here</div>
+               </a>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div class="col-12" style="margin-bottom: 10px;">
+                <a class="href-external custom-btn custom-btn-full custom-btn-success" href="https://latinchain.pinet.com/index-nopopup" rel="noopener" target="_blank">
+                    <div class="btn-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="btn-title">Go to LatinChain Mainnet</div>
+                    <div class="btn-subtitle">Use LatinChain</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div class="col-12" style="margin-bottom: 10px;">
+                <a class="href-external custom-btn custom-btn-full custom-btn-success" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank">
+                    <div class="btn-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="btn-title" translate="no">PAY PI <span style="font-weight: 400;">(GET PREMIUM, no ads)</span></div>
+                    <div class="btn-subtitle" translate="no">Earn Latin points (Mainnet)</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12" style="display: none;">
+            <div class="col-12" style="margin-bottom: 10px;">
+                <a class="href-external custom-btn custom-btn-full custom-btn-outline-success" href="https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain" rel="noopener" target="_blank">
+                    <div class="btn-icon"><i class="fa-solid fa-right-left"></i></div>
+                    <div class="btn-title" translate="no">JOIN MEXC AND TRADE PI</div>
+                    <div class="btn-subtitle">Pi KYB ready</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12" style="display: none;">
+            <div class="col-12" style="margin-bottom: 10px;">
+                <a class="href-external custom-btn custom-btn-full custom-btn-outline-success" href="https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain" rel="noopener" target="_blank">
+                    <div class="btn-icon"><i class="fa-solid fa-right-left"></i></div>
+                    <div class="btn-title" translate="no">TRADE PI ON MEXC</div>
+                    <div class="btn-subtitle">Pi KYB ready</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div class="col-12" style="margin-bottom: 10px;">
+                <a class="href-external custom-btn-link" href="https://latinchaintest9869.pinet.com/index-nopopup" rel="noopener" target="_blank">
+                    Go to LatinChain Testnet
+                </a>
+            </div>
+        </div>
+
+        <!--<div class="col-12 my-3" style="max-width: 100%; text-align: center;">-->
+            <!--LatinChain Ad responsive 2-->
+            <!--<br />
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display: block;"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br />
+        </div>-->
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="text-center col-12">
+            <h2 class="fw-bold text-primary">Understanding the LatinChain Ecosystem</h2>
+            <p class="lead text-muted">
+                Your gateway to decentralized applications on the Pi Network.
+            </p>
+        </div>
+
+        <hr class="col-12" />
+
+        <div class="col-12">
+            <p>
+                Welcome to the LatinChain Ecosystem portal. As a decentralized application (dApp) built on the <b>Pi Network</b>, our goal is to provide real utility and seamless interaction for the Pi community. Whether you are a developer, a pioneer, or a casual user, understanding the difference between our Mainnet and Testnet environments is crucial for maximizing your experience.
+            </p>
+        </div>
+
+        <!--<div class="col-12 my-3" style="max-width: 100%; text-align: center;">-->
+            <!--LatinChain Ad responsive 2-->
+            <!--<br />
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display: block;"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br />
+        </div>-->
+
+        <div class="card shadow-sm border-primary bg-light col-12" style="color: black;">
+            <div class="card-body">
+                <h3 class="h4 card-title text-primary" style="color: black;">
+                    <i class="bi bi-rocket-takeoff-fill me-2"></i>Staking Pi to Boost Rank
+                </h3>
+                <p class="card-text" style="color: black;">
+                    Did you know you can directly support the growth of <b>LatinChain Mainnet</b>?
+                </p>
+                <p style="color: black;">
+                    By <b>Staking Pi</b> on our app within the Pi Browser, you help boost our ranking in the ecosystem directory. A higher rank means more visibility, bringing more Pioneers into our community and increasing the value of the network for everyone.
+                </p>
+                <p class="mb-0 text-dark fw-bold" style="color: black;">
+                    <small>Support us today and help LatinChain reach the top!</small>
+                </p>
+            </div>
+        </div>
+
+        <!--<div class="col-12 my-3" style="max-width: 100%; text-align: center;">-->
+            <!--LatinChain Ad responsive 2-->
+            <!--<br />
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display: block;"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br />
+        </div>-->
+
+        <div class="card shadow-sm border-0 col-12">
+            <div class="card-body">
+                <h3 class="h4 card-title text-success"><i class="bi bi-check-circle-fill me-2"></i>Why Choose the Mainnet?</h3>
+                <p class="card-text">
+                    The LatinChain Mainnet (<code>latinchain.pinet.com</code>) is the live production environment where real value is exchanged. By accessing the Mainnet, you are interacting with the fully operational version of our blockchain application.
+                </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <b>Real Utility:</b> Every action contributes to the genuine activity of the network.
+                    </li>
+                    <li class="list-group-item">
+                        <b>Verified Status:</b> Users who choose to support the ecosystem via donations can unlock "Verified" status. This signals your commitment to the community.
+                    </li>
+                    <li class="list-group-item">
+                        <b>Double Utility Bonus:</b> Active usage on the Mainnet contributes to your Pi utility usage bonus.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--<div class="col-12 my-3" style="max-width: 100%; text-align: center;">-->
+            <!--LatinChain Ad responsive 2-->
+            <!--<br />
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display: block;"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br />
+        </div>-->
+
+        <div class="col-12">
+            <h3 class="h4 text-warning">The Role of the Testnet</h3>
+            <p>
+                The Testnet serves as our sandbox environment. It is designed for users who want to explore new features, test transaction flows, or understand the mechanics of the <b>LatinChain token</b> without using real Pi. It is the perfect training ground for new pioneers to get comfortable with Web3 interactions before moving to the Mainnet.
+            </p>
+        </div>
+
+        <!--<div class="col-12 my-3" style="max-width: 100%; text-align: center;">-->
+            <!--LatinChain Ad responsive 2-->
+            <!--<br />
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display: block;"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br />
+        </div>-->
+
+        <div class="bg-light rounded-3 col-12">
+            <h3 class="h4">How the LatinChain Token Works</h3>
+            <p>
+                LatinChain is designed to foster a digital economy within the Pi Browser. By participating in either network, you are helping to stress-test and improve a growing financial ecosystem.
+            </p>
+        </div>
+
+        <!--<div class="col-12 my-3" style="max-width: 100%; text-align: center;">-->
+            <!--LatinChain Ad responsive 2-->
+            <!--<br />
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display: block;"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br />
+        </div>-->
+
+        <div class="text-center text-muted small col-12">
+            <p>Select an option above to begin your journey.</p>
+        </div>
+      
+        <div class="text-center col-12">
+          
+            <h2 style="text-align: center;">The Evolution of Cryptocurrency: From Bitcoin's Genesis to Pi Network's Ecosystem (2008-nowadays)</h2>
+
+            <p>The world of finance was forever changed in the aftermath of the 2008 global financial crisis. What started as an obscure proposal on a cryptography mailing list has transformed into a global technological revolution. Here is the journey of cryptocurrency from its inception to the present day.</p>
+
+            <h3>The Genesis: Bitcoin and the Decentralized Dream (2008-2010)</h3>
+            <p>In October 2008, an anonymous entity named Satoshi Nakamoto published a whitepaper titled "Bitcoin: A Peer-to-Peer Electronic Cash System." It introduced a revolutionary concept: a decentralized digital currency that required no central bank or administrator.</p>
+            <ul>
+                <li><strong>The Genesis Block:</strong> On January 3, 2009, the first block of the Bitcoin network was mined, setting the foundation for a new financial paradigm.</li>
+                <li><strong>Proof of Work:</strong> This brilliant consensus mechanism solved the double-spending problem, ensuring complete trust in a trustless digital environment.</li>
+            </ul>
+
+            <hr />
+
+            <h3>Programmable Money: Ethereum and the DeFi Explosion (2015-2021)</h3>
+            <p>While Bitcoin proved the concept of digital scarcity, developers soon realized blockchain technology could do much more. In 2015, Ethereum launched, introducing "smart contracts"—self-executing code that lives directly on the blockchain.</p>
+            <ul>
+                <li><strong>Decentralized Finance (DeFi):</strong> Ethereum enabled the creation of lending platforms, decentralized exchanges, and automated market makers.</li>
+                <li><strong>Mainstream Awareness:</strong> By 2021, the crypto market reached unprecedented heights, driven by global retail interest, digital art (NFTs), and the exciting promise of Web3.</li>
+            </ul>
+
+            <hr />
+
+            <h3>Maturation and Institutional Adoption (2022-2024)</h3>
+            <p>Following the euphoric highs of previous years, the industry entered a vital period of maturation. The global focus shifted from pure speculation to building robust, scalable infrastructure.</p>
+            <ul>
+                <li><strong>Layer 2 Solutions:</strong> New networks built on top of base blockchains made transactions significantly faster and cheaper.</li>
+                <li><strong>Wall Street Entry:</strong> Major traditional financial institutions embraced Bitcoin ETFs, permanently cementing cryptocurrency as a legitimate and highly sought-after asset class.</li>
+            </ul>
+
+            <hr />
+
+            <h3>The Accessibility Revolution: Pi Network (2025-nowadays)</h3>
+            <p>Despite massive industry growth, a major barrier remained: traditional crypto mining was expensive and technically complex. Enter <strong>Pi Network</strong>, a visionary project designed to put cryptocurrency directly into the hands of everyday people. By nowadays, Pi Network has beautifully solidified its vision of creating a truly inclusive digital economy.</p>
+            <ul>
+                <li><strong>Mobile-First Innovation:</strong> Pi revolutionized accessibility by allowing users to mine directly from their smartphones without draining battery life or data.</li>
+                <li><strong>Global Community:</strong> It successfully built one of the largest, most engaged, and widely distributed communities in the entire Web3 space.</li>
+                <li><strong>Everyday Utility:</strong> With a robust ecosystem of decentralized applications (dApps) and an innovative native KYC solution, Pi Network empowers millions of everyday users to transact, build, and interact seamlessly.</li>
+            </ul>
+
+            <br />
+            <blockquote style="background-color: #f9f9f9; padding: 15px; border-left: 5px solid #ccc;">
+                <strong>Takeaway:</strong> The journey from 2008 to nowadays highlights a monumental shift from niche cryptography to universal accessibility, paving the way for a financial future that truly includes everyone.
+            </blockquote>
+        </div>
+    </div>
+</div>
