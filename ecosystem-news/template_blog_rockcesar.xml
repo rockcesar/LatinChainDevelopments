@@ -3035,7 +3035,7 @@ margin-left:40px
                   <b:section class='container' id='header' name='Header' showaddelement='false'>
                     <b:widget id='Header1' locked='true' title='AI &amp;amp; Open Source Expert: César&amp;#39;s Blog (Header)' type='Header' version='2' visible='true'>
                       <b:widget-settings>
-                        <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEjhrEWVTdEpR5EvGSGsWjKKnXNBw05MP6BRz_pKOAKYpSI0SBJOgF-OBUOgcTvvsSeddcDESPbJW-6lxh_xFm4rB7np6B1p8aeISlGhUIK9MOYLJSOIOklqMDyvGHnu4dJQi0NKSOKJ2GskasEiMMzViDN92k0PIMxHODSkXqowV14savPRn_cYO8pwcPo=s431</b:widget-setting>
+                        <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBlXIMKnyEEPfAajmFK1y8Z-jcDsOKND2Ecob9LiZ0JhyphenhyphenJoNsAxTE1aRYDiQDZHRvrXj3ZOOP7IVwhK9j06JcuPVF5Zx09WO1vkMVsY3TIaXZKtu2yTg-D54cHlj0QAlnXpCkvoogpfi9xFzXKW3zeytCpFrIIshnBwVGE96493Z1PBOUUDeVu74dSjOk/s431/Icon%20Cesar%20OpenSource%20Expert%202.png</b:widget-setting>
                         <b:widget-setting name='displayHeight'>431</b:widget-setting>
                         <b:widget-setting name='sectionWidth'>431</b:widget-setting>
                         <b:widget-setting name='useImage'>true</b:widget-setting>
@@ -3448,13 +3448,16 @@ margin-left:40px
                     <b:includable id='snippetedPostContent'>
           <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
           <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                  <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                </div>
-
-                <!-- END AADS AD UNIT 2457774 -->
+              <script>
+		  atOptions = {
+		    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+		    &#39;format&#39; : &#39;iframe&#39;,
+		    &#39;height&#39; : 250,
+		    &#39;width&#39; : 300,
+		    &#39;params&#39; : {}
+		  };
+		</script>
+		<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3465,13 +3468,16 @@ margin-left:40px
           <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
           	<b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
           <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                  <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                </div>
-
-                <!-- END AADS AD UNIT 2457774 -->
+              <script>
+		  atOptions = {
+		    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+		    &#39;format&#39; : &#39;iframe&#39;,
+		    &#39;height&#39; : 250,
+		    &#39;width&#39; : 300,
+		    &#39;params&#39; : {}
+		  };
+		</script>
+		<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3875,13 +3881,16 @@ margin-left:40px
     
     <data:post.body/>
     <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-        </div>
-
-        <!-- END AADS AD UNIT 2457774 -->
+        <script>
+		  atOptions = {
+		    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+		    &#39;format&#39; : &#39;iframe&#39;,
+		    &#39;height&#39; : 250,
+		    &#39;width&#39; : 300,
+		    &#39;params&#39; : {}
+		  };
+		</script>
+		<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3900,13 +3909,16 @@ margin-left:40px
             
             <b:include cond='data:post' data='post' name='postSnippet'/>
             <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                  <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                </div>
-
-                <!-- END AADS AD UNIT 2457774 -->
+              <script>
+		  atOptions = {
+		    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+		    &#39;format&#39; : &#39;iframe&#39;,
+		    &#39;height&#39; : 250,
+		    &#39;width&#39; : 300,
+		    &#39;params&#39; : {}
+		  };
+		</script>
+		<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3919,13 +3931,16 @@ margin-left:40px
     <!-- Post title and body -->
     <div class='post-outer'>
       <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-        </div>
-
-        <!-- END AADS AD UNIT 2457774 -->
+        <script>
+		  atOptions = {
+		    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+		    &#39;format&#39; : &#39;iframe&#39;,
+		    &#39;height&#39; : 250,
+		    &#39;width&#39; : 300,
+		    &#39;params&#39; : {}
+		  };
+		</script>
+		<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4125,13 +4140,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                        </div>
-
-                        <!-- END AADS AD UNIT 2457774 -->
+                        <script>
+			  atOptions = {
+			    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+			    &#39;format&#39; : &#39;iframe&#39;,
+			    &#39;height&#39; : 250,
+			    &#39;width&#39; : 300,
+			    &#39;params&#39; : {}
+			  };
+			</script>
+			<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4189,13 +4207,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                        </div>
-
-                        <!-- END AADS AD UNIT 2457774 -->
+                        <script>
+			  atOptions = {
+			    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+			    &#39;format&#39; : &#39;iframe&#39;,
+			    &#39;height&#39; : 250,
+			    &#39;width&#39; : 300,
+			    &#39;params&#39; : {}
+			  };
+			</script>
+			<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4223,13 +4244,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                        </div>
-
-                        <!-- END AADS AD UNIT 2457774 -->
+                        <script>
+			  atOptions = {
+			    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+			    &#39;format&#39; : &#39;iframe&#39;,
+			    &#39;height&#39; : 250,
+			    &#39;width&#39; : 300,
+			    &#39;params&#39; : {}
+			  };
+			</script>
+			<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4257,13 +4281,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                        </div>
-
-                        <!-- END AADS AD UNIT 2457774 -->
+                        <script>
+			  atOptions = {
+			    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+			    &#39;format&#39; : &#39;iframe&#39;,
+			    &#39;height&#39; : 250,
+			    &#39;width&#39; : 300,
+			    &#39;params&#39; : {}
+			  };
+			</script>
+			<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4294,13 +4321,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                        </div>
-
-                        <!-- END AADS AD UNIT 2457774 -->
+                        <script>
+			  atOptions = {
+			    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+			    &#39;format&#39; : &#39;iframe&#39;,
+			    &#39;height&#39; : 250,
+			    &#39;width&#39; : 300,
+			    &#39;params&#39; : {}
+			  };
+			</script>
+			<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4318,13 +4348,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                        </div>
-
-                        <!-- END AADS AD UNIT 2457774 -->
+                        <script>
+			  atOptions = {
+			    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+			    &#39;format&#39; : &#39;iframe&#39;,
+			    &#39;height&#39; : 250,
+			    &#39;width&#39; : 300,
+			    &#39;params&#39; : {}
+			  };
+			</script>
+			<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4342,13 +4375,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                        <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                          <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                        </div>
-
-                        <!-- END AADS AD UNIT 2457774 -->
+                        <script>
+			  atOptions = {
+			    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+			    &#39;format&#39; : &#39;iframe&#39;,
+			    &#39;height&#39; : 250,
+			    &#39;width&#39; : 300,
+			    &#39;params&#39; : {}
+			  };
+			</script>
+			<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4369,13 +4405,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                            <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                              <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                            </div>
-
-                            <!-- END AADS AD UNIT 2457774 -->
+                          <script>
+				  atOptions = {
+				    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+				    &#39;format&#39; : &#39;iframe&#39;,
+				    &#39;height&#39; : 250,
+				    &#39;width&#39; : 300,
+				    &#39;params&#39; : {}
+				  };
+				</script>
+				<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4393,13 +4432,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                            <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                              <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                            </div>
-
-                            <!-- END AADS AD UNIT 2457774 -->
+                          <script>
+				  atOptions = {
+				    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+				    &#39;format&#39; : &#39;iframe&#39;,
+				    &#39;height&#39; : 250,
+				    &#39;width&#39; : 300,
+				    &#39;params&#39; : {}
+				  };
+				</script>
+				<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4419,13 +4461,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                            <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                              <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                            </div>
-
-                            <!-- END AADS AD UNIT 2457774 -->
+                          <script>
+				  atOptions = {
+				    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+				    &#39;format&#39; : &#39;iframe&#39;,
+				    &#39;height&#39; : 250,
+				    &#39;width&#39; : 300,
+				    &#39;params&#39; : {}
+				  };
+				</script>
+				<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4445,13 +4490,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                            <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                              <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                            </div>
-
-                            <!-- END AADS AD UNIT 2457774 -->
+                          <script>
+				  atOptions = {
+				    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+				    &#39;format&#39; : &#39;iframe&#39;,
+				    &#39;height&#39; : 250,
+				    &#39;width&#39; : 300,
+				    &#39;params&#39; : {}
+				  };
+				</script>
+				<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4472,13 +4520,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2457774 -->
-
-                            <div id='frame' style='width: 300px;margin: auto;z-index: 99998;height: auto'>
-                              <iframe data-aa='2457774' src='//ad.a-ads.com/2457774/?size=300x250' style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'/>
-                            </div>
-
-                            <!-- END AADS AD UNIT 2457774 -->
+                          <script>
+				  atOptions = {
+				    &#39;key&#39; : &#39;bd54f5eaf89c63437ca63a2749ebd0c2&#39;,
+				    &#39;format&#39; : &#39;iframe&#39;,
+				    &#39;height&#39; : 250,
+				    &#39;width&#39; : 300,
+				    &#39;params&#39; : {}
+				  };
+				</script>
+				<script src='https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js'/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4508,100 +4559,8 @@ margin-left:40px
             
             <b:if cond='data:view.isSingleItem'>
               <div id='recent-posts-resume-list' style='margin-top: 30px; box-sizing: border-box; width: 100%;'/>
-              <script>
-                //<![CDATA[
-                document.addEventListener("DOMContentLoaded", function() {
-                  fetch('/feeds/posts/default?alt=json&max-results=10')
-                    .then(function(response) { return response.json(); })
-                    .then(function(data) {
-                      var container = document.getElementById('recent-posts-resume-list');
-                      var entries = data.feed.entry || [];
-                      var html = '';
 
-                      html += '<h5 style="color: inherit; font-size: 16px; margin: 20px 0 10px 0;">RECENT POSTS</h5>';
-
-                      for (var i = 0; i < entries.length; i++) {
-                        var entry = entries[i];
-                        var title = entry.title.$t;
-                        var link = '#';
-
-                        for (var j = 0; j < entry.link.length; j++) {
-                          if (entry.link[j].rel === 'alternate') {
-                            link = entry.link[j].href;
-                            break;
-                          }
-                        }
-
-                        var snippet = '';
-                        if (entry.summary) {
-                          snippet = entry.summary.$t;
-                        } else if (entry.content) {
-                          var tempDiv = document.createElement('div');
-                          tempDiv.innerHTML = entry.content.$t;
-                          snippet = tempDiv.textContent || tempDiv.innerText || '';
-                          if (snippet.length > 160) {
-                            snippet = snippet.substring(0, 160) + '...';
-                          }
-                        }
-
-                        var thumbUrl = '';
-                        if (entry.media$thumbnail) {
-                          thumbUrl = entry.media$thumbnail.url;
-                        } else if (entry.content) {
-                          var imgMatch = entry.content.$t.match(/<img[^>]+src="([^">]+)"/);
-                          if (imgMatch) {
-                            thumbUrl = imgMatch[1];
-                          }
-                        }
-
-                        html += '<article class="post" role="article" style="background: #fff; padding: 15px; margin-bottom: 16px; box-sizing: border-box; width: 100%; word-break: break-word;">' + 
-                                  '<!-- Ad before post -->' +
-                                    '<div id="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">' +
-                                      '<iframe data-aa="2457774" src="//ad.a-ads.com/2457774/?size=300x250"' +
-                                                        'style="border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto"></iframe>' +
-                                    '</div>' +
-                                  '<div class="ads-antes-body" style="margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;">' +
-                                    '<ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display:block;"></ins>' +
-                                  '</div>' +
-
-                                  '<h3 class="post-title" style="font: bold 20px Roboto, sans-serif; margin: 0 0 8px 0; float: none; width: 100%; clear: both; word-break: break-word;">' +
-                                    '<a href="' + link + '" style="color: #212121; text-decoration: none;">' + title + '</a>' +
-                                  '</h3>' +
-
-                                  (thumbUrl ? '<div class="snippet-thumbnail" style="float: left; margin: 0 15px 10px 0; max-height: 128px; max-width: 128px;"><img src="' + thumbUrl + '" style="max-width: 100%; height: auto; display: block;" /></div>' : '') +
-
-                                  '<div class="post-snippet" style="color: #757575; font-size: 15px; line-height: 1.6em; margin: 10px 0; clear: none; word-break: break-word;">' + snippet + '</div>' +
-                                  '<div style="clear: both; margin-bottom: 10px;">' +
-                                    '<a href="' + link + '" style="color: #2196f3; text-decoration: none; font-weight: bold;">READ MORE</a>' +
-                                  '</div>' +
-
-                                  '<div style="clear: both;"></div>' +
-
-                                  '<!-- Ad after post -->' +
-                                  '<div id="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">' +
-                                      '<iframe data-aa="2457774" src="//ad.a-ads.com/2457774/?size=300x250"' +
-                                                        'style="border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto"></iframe>' +
-                                    '</div>' +
-                                  '<div class="ads-despues-body" style="margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;">' +
-                                    '<ins class="adsbygoogle" data-ad-client="ca-pub-2334449220276386" data-ad-format="auto" data-ad-slot="9525388880" data-full-width-responsive="true" style="display:block;"></ins>' +
-                                  '</div>' +
-                                '</article>';
-                      }
-
-                      container.innerHTML = html;
-
-                      var insElements = container.querySelectorAll('.adsbygoogle');
-                      for (var k = 0; k < insElements.length; k++) {
-                        try {
-                          (window.adsbygoogle = window.adsbygoogle || []).push({});
-                        } catch (e) {
-                          console.error(e);
-                        }
-                      }
-                    });
-                });
-                //]]>
-              </script>
+                <script src='https://ecosystem.latin-chain.com/blogger/techblog_functions.js?v=1.111'/>
             </b:if>
           </div>
         </b:includable>
@@ -5333,11 +5292,11 @@ margin-left:40px
           </b:widget>
           <b:widget id='Image2' locked='false' title='Cesar OpenSource Expert' type='Image' visible='true'>
             <b:widget-settings>
-              <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEgH2j6VaodC1sqzyWq-HeWwvMcd0mlGFCmsypOqx6fhaaBLdGrQNPJXnQVOpB43CroRWK9WF02t-S7cvd0CIstrW3qvUhsqFjd54bNRmhPOvjRZvDHiO4dv08awkoq2QjMjPh8zuZ55Gf8S3FWUIfOCg4W-FPZETTs3EPRGyYFhuMKO4_6wG2btsuZpsSI=s344</b:widget-setting>
-              <b:widget-setting name='displayHeight'>344</b:widget-setting>
-              <b:widget-setting name='sectionWidth'>344</b:widget-setting>
+              <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwUYQVyLvlOZ322ZgdMenILlhrnOXD9yydUAi5_llFXu1RhykkEDmUIcGqXj9wVEIbYBuQBYL1jVNHdVIwidgS1w64eWrHDrtrFDHqVw3DFKscqKFW-5wzeUINgelc96_q3kGn5m8hbqu0TSQrbZjT3CfKRRqz8cBm2Q2WYQVL_5FXrogKbwfP8lKPAuc/s311/Icon%20Cesar%20OpenSource%20Expert%202.png</b:widget-setting>
+              <b:widget-setting name='displayHeight'>311</b:widget-setting>
+              <b:widget-setting name='sectionWidth'>311</b:widget-setting>
               <b:widget-setting name='shrinkToFit'>true</b:widget-setting>
-              <b:widget-setting name='displayWidth'>344</b:widget-setting>
+              <b:widget-setting name='displayWidth'>311</b:widget-setting>
               <b:widget-setting name='link'/>
               <b:widget-setting name='caption'/>
             </b:widget-settings>
