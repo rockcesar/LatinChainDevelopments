@@ -4566,7 +4566,7 @@ margin-left:40px
                   //<![CDATA[
                     function createAdsterraBanner() {
                         let adWrapper = document.createElement('div');
-                        adWrapper.className = 'ads-adsterra-body';
+                        /*adWrapper.className = 'ads-adsterra-body';
                         adWrapper.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
 
                         let iframe = document.createElement('iframe');
@@ -4597,7 +4597,7 @@ margin-left:40px
                         `;
                         
                         iframe.srcdoc = adHtml;
-                        adWrapper.appendChild(iframe);
+                        adWrapper.appendChild(iframe);*/
                         return adWrapper;
                       }
                     document.addEventListener("DOMContentLoaded", function() {
