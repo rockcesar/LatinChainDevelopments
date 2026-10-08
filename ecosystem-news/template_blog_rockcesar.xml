@@ -4564,7 +4564,42 @@ margin-left:40px
                 
                 <script type='text/javascript'>
                   //<![CDATA[
-                
+                    function createAdsterraBanner() {
+                        let adWrapper = document.createElement('div');
+                        adWrapper.className = 'ads-adsterra-body';
+                        adWrapper.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
+
+                        let iframe = document.createElement('iframe');
+                        iframe.width = '300';
+                        iframe.height = '250';
+                        iframe.style.border = 'none';
+                        iframe.style.overflow = 'hidden';
+                        iframe.scrolling = 'no';
+                        
+                        // HTML interno que aislará el script y las opciones de Adsterra por cada post
+                        let adHtml = `
+                          <!DOCTYPE html>
+                          <html>
+                          <head><style>body { margin:0; padding:0; text-align:center; background:transparent; }</style></head>
+                          <body>
+                            <script type="text/javascript">
+                              atOptions = {
+                                'key': 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                                'format': 'iframe',
+                                'height': 250,
+                                'width': 300,
+                                'params' : {}
+                              };
+                            <\/script>
+                            <script type="text/javascript" src="https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js"><\/script>
+                          </body>
+                          </html>
+                        `;
+                        
+                        iframe.srcdoc = adHtml;
+                        adWrapper.appendChild(iframe);
+                        return adWrapper;
+                      }
                     document.addEventListener("DOMContentLoaded", function() {
                       fetch('/feeds/posts/default?alt=json&max-results=10')
                         .then(function(response) { return response.json(); })
@@ -4627,13 +4662,15 @@ margin-left:40px
                             adBefore.className = 'ads-antes-body';
                             adBefore.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
 
-                            let scriptOpt1 = document.createElement('script');
+                            /*let scriptOpt1 = document.createElement('script');
                             scriptOpt1.textContent = 'atOptions = {"key": "bd54f5eaf89c63437ca63a2749ebd0c2", "format": "iframe", "height": 250, "width": 300, "params": {}};';
                             adBefore.appendChild(scriptOpt1);
 
                             let scriptInvoke1 = document.createElement('script');
                             scriptInvoke1.src = 'https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js';
-                            adBefore.appendChild(scriptInvoke1);
+                            adBefore.appendChild(scriptInvoke1);*/
+                            
+                            adBefore.appendChild(createAdsterraBanner());
 
                             let ins1 = document.createElement('ins');
                             ins1.className = 'adsbygoogle';
@@ -4704,13 +4741,15 @@ margin-left:40px
                             adAfter.className = 'ads-despues-body';
                             adAfter.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
 
-                            let scriptOpt2 = document.createElement('script');
+                            /*let scriptOpt2 = document.createElement('script');
                             scriptOpt2.textContent = 'atOptions = {"key": "bd54f5eaf89c63437ca63a2749ebd0c2", "format": "iframe", "height": 250, "width": 300, "params": {}};';
                             adAfter.appendChild(scriptOpt2);
 
                             let scriptInvoke2 = document.createElement('script');
                             scriptInvoke2.src = 'https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js';
-                            adAfter.appendChild(scriptInvoke2);
+                            adAfter.appendChild(scriptInvoke2);*/
+                            
+                            adAfter.appendChild(createAdsterraBanner());
 
                             let ins2 = document.createElement('ins');
                             ins2.className = 'adsbygoogle';
