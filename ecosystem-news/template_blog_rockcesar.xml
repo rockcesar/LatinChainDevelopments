@@ -4560,7 +4560,7 @@ margin-left:40px
             <b:if cond='data:view.isSingleItem'>
               <div id='recent-posts-resume-list' style='margin-top: 30px; box-sizing: border-box; width: 100%;'/>
 
-                <script src='https://ecosystem.latin-chain.com/blogger/techblog_functions.js?v=1.111'/>
+                <script src='https://ecosystem.latin-chain.com/blogger/techblog_functions.js?v=1.113'/>
             </b:if>
           </div>
         </b:includable>
