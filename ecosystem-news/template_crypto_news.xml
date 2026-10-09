@@ -3450,16 +3450,14 @@ margin-left:40px
                     <b:includable id='snippetedPostContent'>
           <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
           <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <script>
-		  atOptions = {
-		    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-		    &#39;format&#39; : &#39;iframe&#39;,
-		    &#39;height&#39; : 250,
-		    &#39;width&#39; : 300,
-		    &#39;params&#39; : {}
-		  };
-		</script>
-		<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+              <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                    <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                            style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                </div>
+
+              <!-- END AADS AD UNIT 2457984 -->
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3470,16 +3468,14 @@ margin-left:40px
           <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
           <b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
           <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <script>
-		  atOptions = {
-		    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-		    &#39;format&#39; : &#39;iframe&#39;,
-		    &#39;height&#39; : 250,
-		    &#39;width&#39; : 300,
-		    &#39;params&#39; : {}
-		  };
-		</script>
-		<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+              <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                    <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                            style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                </div>
+
+              <!-- END AADS AD UNIT 2457984 -->
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3882,16 +3878,14 @@ margin-left:40px
   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
     <data:post.body/>
     <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-        <script>
-		  atOptions = {
-		    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-		    &#39;format&#39; : &#39;iframe&#39;,
-		    &#39;height&#39; : 250,
-		    &#39;width&#39; : 300,
-		    &#39;params&#39; : {}
-		  };
-		</script>
-		<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+        <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+            <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                    style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+        </div>
+
+      <!-- END AADS AD UNIT 2457984 -->
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3909,16 +3903,14 @@ margin-left:40px
             </b:if>
             <b:include cond='data:post' data='post' name='postSnippet'/>
             <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <script>
-		  atOptions = {
-		    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-		    &#39;format&#39; : &#39;iframe&#39;,
-		    &#39;height&#39; : 250,
-		    &#39;width&#39; : 300,
-		    &#39;params&#39; : {}
-		  };
-		</script>
-		<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+              <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                    <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                            style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                </div>
+
+              <!-- END AADS AD UNIT 2457984 -->
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3932,16 +3924,14 @@ margin-left:40px
     <!-- Post title and body -->
     <div class='post-outer'>
       <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-        <script>
-		  atOptions = {
-		    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-		    &#39;format&#39; : &#39;iframe&#39;,
-		    &#39;height&#39; : 250,
-		    &#39;width&#39; : 300,
-		    &#39;params&#39; : {}
-		  };
-		</script>
-		<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+            </div>
+
+          <!-- END AADS AD UNIT 2457984 -->
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4140,16 +4130,14 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <script>
-			  atOptions = {
-			    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-			    &#39;format&#39; : &#39;iframe&#39;,
-			    &#39;height&#39; : 250,
-			    &#39;width&#39; : 300,
-			    &#39;params&#39; : {}
-			  };
-			</script>
-			<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                        <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                            <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                    style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                        </div>
+
+                      <!-- END AADS AD UNIT 2457984 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4206,16 +4194,14 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <script>
-			  atOptions = {
-			    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-			    &#39;format&#39; : &#39;iframe&#39;,
-			    &#39;height&#39; : 250,
-			    &#39;width&#39; : 300,
-			    &#39;params&#39; : {}
-			  };
-			</script>
-			<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                        <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                            <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                    style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                        </div>
+
+                      <!-- END AADS AD UNIT 2457984 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4242,16 +4228,14 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <script>
-			  atOptions = {
-			    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-			    &#39;format&#39; : &#39;iframe&#39;,
-			    &#39;height&#39; : 250,
-			    &#39;width&#39; : 300,
-			    &#39;params&#39; : {}
-			  };
-			</script>
-			<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                        <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                            <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                    style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                        </div>
+
+                      <!-- END AADS AD UNIT 2457984 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4278,16 +4262,14 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <script>
-			  atOptions = {
-			    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-			    &#39;format&#39; : &#39;iframe&#39;,
-			    &#39;height&#39; : 250,
-			    &#39;width&#39; : 300,
-			    &#39;params&#39; : {}
-			  };
-			</script>
-			<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                        <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                            <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                    style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                        </div>
+
+                      <!-- END AADS AD UNIT 2457984 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4317,16 +4299,14 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <script>
-			  atOptions = {
-			    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-			    &#39;format&#39; : &#39;iframe&#39;,
-			    &#39;height&#39; : 250,
-			    &#39;width&#39; : 300,
-			    &#39;params&#39; : {}
-			  };
-			</script>
-			<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                        <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                            <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                    style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                        </div>
+
+                      <!-- END AADS AD UNIT 2457984 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4343,16 +4323,14 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <script>
-			  atOptions = {
-			    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-			    &#39;format&#39; : &#39;iframe&#39;,
-			    &#39;height&#39; : 250,
-			    &#39;width&#39; : 300,
-			    &#39;params&#39; : {}
-			  };
-			</script>
-			<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                            </div>
+
+                          <!-- END AADS AD UNIT 2457984 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4369,16 +4347,14 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <script>
-			  atOptions = {
-			    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-			    &#39;format&#39; : &#39;iframe&#39;,
-			    &#39;height&#39; : 250,
-			    &#39;width&#39; : 300,
-			    &#39;params&#39; : {}
-			  };
-			</script>
-			<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                        <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                            </div>
+
+                          <!-- END AADS AD UNIT 2457984 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4398,16 +4374,14 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <script>
-				  atOptions = {
-				    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-				    &#39;format&#39; : &#39;iframe&#39;,
-				    &#39;height&#39; : 250,
-				    &#39;width&#39; : 300,
-				    &#39;params&#39; : {}
-				  };
-				</script>
-				<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                          <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                            </div>
+
+                          <!-- END AADS AD UNIT 2457984 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4424,16 +4398,14 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <script>
-				  atOptions = {
-				    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-				    &#39;format&#39; : &#39;iframe&#39;,
-				    &#39;height&#39; : 250,
-				    &#39;width&#39; : 300,
-				    &#39;params&#39; : {}
-				  };
-				</script>
-				<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                          <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                            </div>
+
+                          <!-- END AADS AD UNIT 2457984 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4452,16 +4424,14 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <script>
-				  atOptions = {
-				    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-				    &#39;format&#39; : &#39;iframe&#39;,
-				    &#39;height&#39; : 250,
-				    &#39;width&#39; : 300,
-				    &#39;params&#39; : {}
-				  };
-				</script>
-				<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                          <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                            </div>
+
+                          <!-- END AADS AD UNIT 2457984 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4480,16 +4450,14 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <script>
-				  atOptions = {
-				    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-				    &#39;format&#39; : &#39;iframe&#39;,
-				    &#39;height&#39; : 250,
-				    &#39;width&#39; : 300,
-				    &#39;params&#39; : {}
-				  };
-				</script>
-				<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                          <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                            </div>
+
+                          <!-- END AADS AD UNIT 2457984 -->
                           
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
@@ -4510,16 +4478,14 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <script>
-				  atOptions = {
-				    &#39;key&#39; : &#39;965f52969e90286ccd9b08a873f54c8a&#39;,
-				    &#39;format&#39; : &#39;iframe&#39;,
-				    &#39;height&#39; : 250,
-				    &#39;width&#39; : 300,
-				    &#39;params&#39; : {}
-				  };
-				</script>
-				<script src='https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js'/>
+                          <!-- BEGIN AADS AD UNIT 2457984 -->
+
+                            <div class="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+                                <iframe data-aa='2457984' src='//ad.a-ads.com/2457984/?size=300x250'
+                                        style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+                            </div>
+
+                          <!-- END AADS AD UNIT 2457984 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4591,6 +4557,29 @@ margin-left:40px
                         adWrapper.appendChild(iframe);
                         return adWrapper;
                       }*/
+                      
+                      function createAadsBanner() {
+                        let adWrapper = document.createElement('div');
+                        adWrapper.classList.add('frame');
+                        adWrapper.style.cssText = 'width: 300px; margin: auto; z-index: 99998; height: auto;';
+
+                        let iframe = document.createElement('iframe');
+                        iframe.setAttribute('data-aa', '2457984');
+                        iframe.src = '//ad.a-ads.com/2457984/?size=300x250';
+                        iframe.width = '300';
+                        iframe.height = '250';
+                        iframe.style.border = '0';
+                        iframe.style.padding = '0';
+                        iframe.style.width = '300px';
+                        iframe.style.height = '250px';
+                        iframe.style.overflow = 'hidden';
+                        iframe.style.display = 'block';
+                        iframe.style.margin = 'auto';
+                        iframe.scrolling = 'no';
+
+                        adWrapper.appendChild(iframe);
+                        return adWrapper;
+                      }
                     
                       fetch('/feeds/posts/default?alt=json&max-results=10')
                         .then(function(response) { return response.json(); })
@@ -4653,13 +4642,15 @@ margin-left:40px
                             adBefore.className = 'ads-antes-body';
                             adBefore.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
 
-                            let scriptOpt1 = document.createElement('script');
+                            /*let scriptOpt1 = document.createElement('script');
                             scriptOpt1.textContent = 'atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};';
                             adBefore.appendChild(scriptOpt1);
 
                             let scriptInvoke1 = document.createElement('script');
                             scriptInvoke1.src = 'https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js';
-                            adBefore.appendChild(scriptInvoke1);
+                            adBefore.appendChild(scriptInvoke1);*/
+                            
+                            adBefore.appendChild(createAadsBanner());
 
                             let ins1 = document.createElement('ins');
                             ins1.className = 'adsbygoogle';
@@ -4730,13 +4721,15 @@ margin-left:40px
                             adAfter.className = 'ads-despues-body';
                             adAfter.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
 
-                            let scriptOpt2 = document.createElement('script');
+                            /*let scriptOpt2 = document.createElement('script');
                             scriptOpt2.textContent = 'atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};';
                             adAfter.appendChild(scriptOpt2);
 
                             let scriptInvoke2 = document.createElement('script');
                             scriptInvoke2.src = 'https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js';
-                            adAfter.appendChild(scriptInvoke2);
+                            adAfter.appendChild(scriptInvoke2);*/
+                            
+                            adAfter.appendChild(createAadsBanner());
 
                             let ins2 = document.createElement('ins');
                             ins2.className = 'adsbygoogle';
