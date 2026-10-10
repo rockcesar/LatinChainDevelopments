@@ -3450,14 +3450,6 @@ margin-left:40px
                     <b:includable id='snippetedPostContent'>
           <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
           <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                    <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                            style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                </div>
-
-              <!-- END AADS AD UNIT 2458049 -->
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3468,14 +3460,6 @@ margin-left:40px
           <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
           <b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
           <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                    <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                            style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                </div>
-
-              <!-- END AADS AD UNIT 2458049 -->
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3878,14 +3862,6 @@ margin-left:40px
   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
     <data:post.body/>
     <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-        <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-            <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                    style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-        </div>
-
-      <!-- END AADS AD UNIT 2458049 -->
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3903,14 +3879,6 @@ margin-left:40px
             </b:if>
             <b:include cond='data:post' data='post' name='postSnippet'/>
             <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-              <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                    <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                            style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                </div>
-
-              <!-- END AADS AD UNIT 2458049 -->
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3924,14 +3892,6 @@ margin-left:40px
     <!-- Post title and body -->
     <div class='post-outer'>
       <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
-        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-            </div>
-
-          <!-- END AADS AD UNIT 2458049 -->
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4130,14 +4090,6 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                        <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                            <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                    style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                        </div>
-
-                      <!-- END AADS AD UNIT 2458049 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4194,14 +4146,6 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                        <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                            <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                    style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                        </div>
-
-                      <!-- END AADS AD UNIT 2458049 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4228,14 +4172,6 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                        <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                            <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                    style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                        </div>
-
-                      <!-- END AADS AD UNIT 2458049 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4262,14 +4198,6 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                        <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                            <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                    style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                        </div>
-
-                      <!-- END AADS AD UNIT 2458049 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4299,14 +4227,6 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                        <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                            <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                    style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                        </div>
-
-                      <!-- END AADS AD UNIT 2458049 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4323,14 +4243,6 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                            </div>
-
-                          <!-- END AADS AD UNIT 2458049 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4347,14 +4259,6 @@ margin-left:40px
 
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <br/>
-                        <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                            </div>
-
-                          <!-- END AADS AD UNIT 2458049 -->
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4374,14 +4278,6 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                            </div>
-
-                          <!-- END AADS AD UNIT 2458049 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4398,14 +4294,6 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                            </div>
-
-                          <!-- END AADS AD UNIT 2458049 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4424,14 +4312,6 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                            </div>
-
-                          <!-- END AADS AD UNIT 2458049 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4450,15 +4330,6 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                            </div>
-
-                          <!-- END AADS AD UNIT 2458049 -->
-                          
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4478,14 +4349,6 @@ margin-left:40px
 
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <br/>
-                          <!-- BEGIN AADS AD UNIT 2458049 -->
-
-                            <div class="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-                                <iframe data-aa='2458049' src='//acceptable.a-ads.com/2458049/?size=Adaptive'
-                                        style='border:0; padding:0; width:100%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-                            </div>
-
-                          <!-- END AADS AD UNIT 2458049 -->
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4560,7 +4423,7 @@ margin-left:40px
                       
                       function createAadsBanner() {
                         let adWrapper = document.createElement('div');
-                        adWrapper.classList.add('frame');
+                        /*adWrapper.classList.add('frame');
                         adWrapper.style.cssText = 'width: 100%;margin: auto;position: relative; z-index: 99998;';
 
                         let iframe = document.createElement('iframe');
@@ -4574,7 +4437,7 @@ margin-left:40px
                         iframe.style.display = 'block';
                         iframe.style.margin = 'auto';
 
-                        adWrapper.appendChild(iframe);
+                        adWrapper.appendChild(iframe);*/
                         return adWrapper;
                       }
                     
