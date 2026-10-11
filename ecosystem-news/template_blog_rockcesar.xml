@@ -4503,7 +4503,7 @@ margin-left:40px
                             let article = document.createElement('article');
                             article.className = 'post';
                             article.setAttribute('role', 'article');
-                            article.style.cssText = 'background: #fff; padding: 15px; margin-bottom: 16px; box-sizing: border-box; width: 100%; word-break: break-word;';
+                            article.style.cssText = 'background: #fff; margin-bottom: 16px; box-sizing: border-box; width: 100%; word-break: break-word;';
 
                             // 2. Comentario: Ad before post
                             article.appendChild(document.createComment(' Ad before post '));
@@ -4511,7 +4511,7 @@ margin-left:40px
                             // 3. Contenedor de anuncios (Antes)
                             let adBefore = document.createElement('div');
                             adBefore.className = 'ads-antes-body';
-                            adBefore.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
+                            adBefore.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box;';
 
                             /*let scriptOpt1 = document.createElement('script');
                             scriptOpt1.textContent = 'atOptions = {"key": "bd54f5eaf89c63437ca63a2749ebd0c2", "format": "iframe", "height": 250, "width": 300, "params": {}};';
@@ -4537,7 +4537,7 @@ margin-left:40px
                             // 4. Título del post (<h3>) con su enlace (<a>)
                             let h3 = document.createElement('h3');
                             h3.className = 'post-title';
-                            h3.style.cssText = 'font: bold 20px Roboto, sans-serif; margin: 0 0 8px 0; float: none; width: 100%; clear: both; word-break: break-word;';
+                            h3.style.cssText = 'font: bold 20px Roboto, sans-serif; margin: 8px; float: none; width: 100%; clear: both; word-break: break-word;';
 
                             let titleLink = document.createElement('a');
                             titleLink.href = link;
@@ -4550,7 +4550,7 @@ margin-left:40px
                             if (thumbUrl) {
                                 let thumbDiv = document.createElement('div');
                                 thumbDiv.className = 'snippet-thumbnail';
-                                thumbDiv.style.cssText = 'float: left; margin: 0 15px 10px 0; max-height: 128px; max-width: 128px;';
+                                thumbDiv.style.cssText = 'float: left; margin: 8px; max-height: 128px; max-width: 128px;';
 
                                 let img = document.createElement('img');
                                 img.src = thumbUrl;
@@ -4563,13 +4563,13 @@ margin-left:40px
                             // 6. Snippet del post
                             let snippetDiv = document.createElement('div');
                             snippetDiv.className = 'post-snippet';
-                            snippetDiv.style.cssText = 'color: #757575; font-size: 15px; line-height: 1.6em; margin: 10px 0; clear: none; word-break: break-word;';
+                            snippetDiv.style.cssText = 'color: #757575; font-size: 15px; line-height: 1.6em; margin: 8px; clear: none; word-break: break-word;';
                             snippetDiv.textContent = snippet;
                             article.appendChild(snippetDiv);
 
                             // 7. Enlace "READ MORE"
                             let readMoreWrapper = document.createElement('div');
-                            readMoreWrapper.style.cssText = 'clear: both; margin-bottom: 10px;';
+                            readMoreWrapper.style.cssText = 'margin: 8px; clear: both;';
 
                             let readMoreLink = document.createElement('a');
                             readMoreLink.href = link;
@@ -4590,7 +4590,7 @@ margin-left:40px
                             // 10. Contenedor de anuncios (Después)
                             let adAfter = document.createElement('div');
                             adAfter.className = 'ads-despues-body';
-                            adAfter.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
+                            adAfter.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box;';
 
                             /*let scriptOpt2 = document.createElement('script');
                             scriptOpt2.textContent = 'atOptions = {"key": "bd54f5eaf89c63437ca63a2749ebd0c2", "format": "iframe", "height": 250, "width": 300, "params": {}};';
