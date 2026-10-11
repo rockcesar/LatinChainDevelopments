@@ -51,7 +51,7 @@
         
         <script async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
         
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
           window._taboola = window._taboola || [];
           _taboola.push({article:'auto'});
           !function (e, f, u, i) {
@@ -67,7 +67,7 @@
           'tb_loader_script');
           if(window.performance && typeof window.performance.mark == 'function')
             {window.performance.mark('tbl_ic');}
-        </script>-->
+        </script>
 
         <style>
             body {
@@ -531,19 +531,6 @@
                     <div class="text-center text-muted small col-12">
                         <p>Select an option above to begin your journey.</p>
                     </div>
-
-                <!--<div style="text-align:center;">
-                    <div id="taboola-below-article-thumbnails"></div>
-                    <script type="text/javascript">
-                      window._taboola = window._taboola || [];
-                      _taboola.push({
-                        mode: 'alternating-thumbnails-a',
-                        container: 'taboola-below-article-thumbnails',
-                        placement: 'Below Article Thumbnails',
-                        target_type: 'mix'
-                      });
-                    </script>
-                </div>-->
             </div>
             
             <div id='recent-posts-resume-list' style='margin-top: 30px; box-sizing: border-box; width: 100%;'></div>
@@ -619,7 +606,7 @@
                   let article = document.createElement('article');
                   article.className = 'post';
                   article.setAttribute('role', 'article');
-                  article.style.cssText = 'background: #fff; padding: 15px; margin-bottom: 16px; box-sizing: border-box; width: 100%; word-break: break-word;';
+                  article.style.cssText = 'background: #fff; margin-bottom: 16px; box-sizing: border-box; width: 100%; word-break: break-word;';
 
                   // 2. Comentario: Ad before post
                   article.appendChild(document.createComment(' Ad before post '));
@@ -627,7 +614,7 @@
                   // 3. Contenedor de anuncios (Antes)
                   let adBefore = document.createElement('div');
                   adBefore.className = 'ads-antes-body';
-                  adBefore.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
+                  adBefore.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box;';
                   
                   adBefore.appendChild(createAadsBanner());
 
@@ -698,7 +685,7 @@
                   // 10. Contenedor de anuncios (Después)
                   let adAfter = document.createElement('div');
                   adAfter.className = 'ads-despues-body';
-                  adAfter.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
+                  adAfter.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box;';
                   
                   adAfter.appendChild(createAadsBanner());
 
@@ -739,6 +726,18 @@
               });
             </script>
 
+            <div style="text-align:center;">
+                <div id="taboola-below-article-thumbnails"></div>
+                <script type="text/javascript">
+                  window._taboola = window._taboola || [];
+                  _taboola.push({
+                    mode: 'alternating-thumbnails-a',
+                    container: 'taboola-below-article-thumbnails',
+                    placement: 'Below Article Thumbnails',
+                    target_type: 'mix'
+                  });
+                </script>
+            </div>
         </div>
         <br/><br/><br/><br/><br/>
         
