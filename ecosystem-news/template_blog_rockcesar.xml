@@ -3439,6 +3439,17 @@ margin-left:40px
                     <b:includable id='snippetedPostContent'>
           <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
           <div class='ads-antes-body' style='margin: 15px 0; text-align: center;'>
+              <script>
+                  atOptions = {
+                    'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
+              
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3449,6 +3460,16 @@ margin-left:40px
           <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
           	<b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
           <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
+              <script>
+                  atOptions = {
+                    'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3847,6 +3868,16 @@ margin-left:40px
     
     <data:post.body/>
     <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
+        <script>
+          atOptions = {
+            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3865,6 +3896,16 @@ margin-left:40px
             
             <b:include cond='data:post' data='post' name='postSnippet'/>
             <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
+                <script>
+                  atOptions = {
+                    'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3877,6 +3918,16 @@ margin-left:40px
     <!-- Post title and body -->
     <div class='post-outer'>
       <div class='ads-antes-body' style='margin: 15px 0; text-align: center;'>
+          <script>
+              atOptions = {
+                'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4076,6 +4127,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <script>
+                          atOptions = {
+                            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4133,6 +4194,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <script>
+                          atOptions = {
+                            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4160,6 +4231,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <script>
+                          atOptions = {
+                            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4187,6 +4268,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <script>
+                          atOptions = {
+                            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4217,6 +4308,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <script>
+                          atOptions = {
+                            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4234,6 +4335,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <script>
+                          atOptions = {
+                            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4251,6 +4362,16 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <script>
+                          atOptions = {
+                            'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4271,6 +4392,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <script>
+                              atOptions = {
+                                'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                              };
+                            </script>
+                            <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4288,6 +4419,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <script>
+                              atOptions = {
+                                'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                              };
+                            </script>
+                            <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4307,6 +4448,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <script>
+                              atOptions = {
+                                'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                              };
+                            </script>
+                            <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4326,6 +4477,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <script>
+                              atOptions = {
+                                'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                              };
+                            </script>
+                            <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4346,6 +4507,16 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <script>
+                              atOptions = {
+                                'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                              };
+                            </script>
+                            <script src="https://bicea.org/22/bd54f5eaf89c63437ca63a2749ebd0c2"></script>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4380,7 +4551,7 @@ margin-left:40px
                 
                 <script type='text/javascript'>
                   //<![CDATA[
-                    /*function createAdsterraBanner() {
+                    function createAdsterraBanner() {
                         let adWrapper = document.createElement('div');
                         adWrapper.className = 'ads-adsterra-body';
                         adWrapper.style.cssText = 'margin: 15px 0; text-align: center; width: 100%; box-sizing: border-box;';
@@ -4415,7 +4586,7 @@ margin-left:40px
                         iframe.srcdoc = adHtml;
                         adWrapper.appendChild(iframe);
                         return adWrapper;
-                      }*/
+                      }
                       
                       function createAadsBanner() {
                         let adWrapper = document.createElement('div');
@@ -4507,7 +4678,8 @@ margin-left:40px
                             scriptInvoke1.src = 'https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js';
                             adBefore.appendChild(scriptInvoke1);*/
                             
-                            adBefore.appendChild(createAadsBanner());
+                            //adBefore.appendChild(createAadsBanner());
+                            adBefore.appendChild(createAdsterraBanner());
 
                             let ins1 = document.createElement('ins');
                             ins1.className = 'adsbygoogle';
@@ -4586,7 +4758,8 @@ margin-left:40px
                             scriptInvoke2.src = 'https://www.highrevenueformat.com/bd54f5eaf89c63437ca63a2749ebd0c2/invoke.js';
                             adAfter.appendChild(scriptInvoke2);*/
                             
-                            adAfter.appendChild(createAadsBanner());
+                            //adAfter.appendChild(createAadsBanner());
+                            adAfter.appendChild(createAdsterraBanner());
 
                             let ins2 = document.createElement('ins');
                             ins2.className = 'adsbygoogle';
