@@ -2951,7 +2951,8 @@ margin-left:40px
     <b:include cond='not data:view.isPreview' data='{                         image: data:skin.vars.body_background.image,                         selector: &quot;.bg-photo&quot;,                         imageSizes: [480, 640, 800, 1200, 1600]                      }' name='responsiveImageStyle'/>
 
     <b:if cond='(data:widgets.AdSense.first or data:blog.adsenseClientId) and not data:blog.adsenseAutoAds'>
-      <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
+      <!-- AdSense Disabled -->
+      <!--<script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>-->
     </b:if>
     <b:include data='blog' name='google-analytics'/>
 
@@ -3087,7 +3088,7 @@ margin-left:40px
                     <b:section class='clearboth' id='page_list_top' name='Page List (Top)' showaddelement='false'>
                       <b:widget cond='!data:view.isPost' id='PageList1' locked='true' title='Páginas' type='PageList' visible='true'>
                         <b:widget-settings>
-                          <b:widget-setting name='pageListJson'><![CDATA[{"link28":{"href":"https://dev-rockcesar.blogspot.com/2024/01/tratado-telepatico.html","position":28,"title":"My Book! (Sci-Fi 3)"},"link29":{"href":"https://dev-rockcesar.blogspot.com/2024/08/dios-ya-no-existe-como-dios.html","position":29,"title":"My Book! (Sci-Fi 4)"},"link30":{"href":"http://dev-rockcesar.blogspot.com/2024/09/universo-descentralizado-decentralized.html","position":30,"title":"My Book! (Sci-Fi 5)"},"link1":{"href":"https://dev-rockcesar.blogspot.com/2026/06/algo-asi-es-lo-que-necesitamos-en-las.html?m=1","position":1,"title":"Para las zonas del terremoto"},"link0":{"href":"https://dev-rockcesar.blogspot.com/2026/06/experto-en-odoo-buscando-trabajo.html","position":0,"title":"Experto en Odoo"},"link5":{"href":"http://dev-rockcesar.blogspot.com/2025/03/donations-to-latinchain.html","position":5,"title":"Donations"},"link15":{"href":"https://dev-rockcesar.blogspot.com/2023/07/odoo-technical-training-by-cesar-cordero.html","position":15,"title":"Odoo Technical Training by Cesar Cordero"},"link4":{"href":"https://dev-rockcesar.blogspot.com/2026/05/como-instalar-ollama-con-open-webui.html","position":4,"title":"Cómo instalar Ollama con Open-WebUI: Guía paso a paso"},"link16":{"href":"https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html","position":16,"title":"Pi Apps"},"link3":{"href":"https://dev-rockcesar.blogspot.com/2024/01/consulta-de-egresados-de-luz.html","position":3,"title":"Consulta de egresados de LUZ"},"link13":{"href":"https://www.youtube.com/channel/UCOmQKHnw9n126vfCOQc_F8w?view_as=subscriber","position":13,"title":"Canal de Youtube"},"link2":{"href":"https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html","position":2,"title":"Pi Apps published on Pi Network Ecosystem"},"link14":{"href":"https://dev-rockcesar.blogspot.com/2024/12/como-crear-tu-marca-personal-by-cesar_8.html","position":14,"title":"Crea tu marca personal by César OpenSource Expert"},"link9":{"href":"https://dev-rockcesar.blogspot.com/2024/12/amazon-promotions-checkout-following.html","position":9,"title":"Amazon Affiliates Marketing"},"link11":{"href":"https://cr-innova.negocio.site","position":11,"title":"Página principal de CR-Innova"},"link8":{"href":"https://dev-rockcesar.blogspot.com/2025/03/cursos-en-udemy.html","position":8,"title":"Cursos (Udemy) y Libros (Amazon)"},"link12":{"href":"https://dev-rockcesar.blogspot.com/2021/06/sigueme-en-mis-redes-sociales-follow-me.html","position":12,"title":"Sígueme en Redes Sociales"},"link7":{"href":"https://dev-rockcesar.blogspot.com/2026/04/mi-entrenamiento-actual-me-mantiene.html","position":7,"title":"Entrenamiento físico diario"},"link6":{"href":"https://dev-rockcesar.blogspot.com/2026/06/wanaiki-nuevo-idioma-venezolano.html","position":6,"title":"Wanaikí: Nuevo idioma venezolano"},"link10":{"href":"https://dev-rockcesar.blogspot.com/2023/08/free-crypto-airdrop-each-24-hours.html","position":10,"title":"Free Cryptos"},"link19":{"href":"https://dev-rockcesar.blogspot.com/2021/09/calculadora-bolivar-sobera-bolivar.html","position":19,"title":"Bolívar Soberano a Bolívar Digital"},"link17":{"href":"http://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html","position":17,"title":"How to develop a Pi App?"},"link18":{"href":"https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html","position":18,"title":"Social Network project"},"link26":{"href":"https://dev-rockcesar.blogspot.com/2023/07/mi-libro-vendiendose-en-argentina.html","position":26,"title":"My Book! (Sci-Fi)"},"link27":{"href":"http://dev-rockcesar.blogspot.com/2024/01/la-voz-de-los-pensamientos-en-todas-las.html","position":27,"title":"My Book! (Sci-Fi 2)"},"link24":{"href":"https://dev-rockcesar.blogspot.com/2022/05/simulador-de-computadora-cuantica-en.html","position":24,"title":"Simulador de Computadora Cuántica"},"link25":{"href":"https://dev-rockcesar.blogspot.com/2026/05/el-espectro-oculto.html","position":25,"title":"EL ESPECTRO OCULTO (Libro Sci-Fi)"},"link22":{"href":"https://rockcesar.github.io","position":22,"title":"Portafolio en Github"},"link23":{"href":"https://portfolio-rockcesar.blogspot.com","position":23,"title":"Portafolio en Blogspot"},"link20":{"href":"https://dev-rockcesar.blogspot.com/2021/06/tv-en-venezuela-online-venezuelan-tv.html","position":20,"title":"TV Online"},"link21":{"href":"https://dev-rockcesar.blogspot.com/2021/06/los-26-katas-del-karate-do-shotokan-por.html","position":21,"title":"26 Kata del Karate Do Shotokan"}}]]></b:widget-setting>
+                          <b:widget-setting name='pageListJson'><![CDATA[{"link28":{"href":"https://dev-rockcesar.blogspot.com/2026/05/el-espectro-oculto.html","position":28,"title":"EL ESPECTRO OCULTO (Libro Sci-Fi)"},"link29":{"href":"https://dev-rockcesar.blogspot.com/2023/07/mi-libro-vendiendose-en-argentina.html","position":29,"title":"My Book! (Sci-Fi)"},"link30":{"href":"http://dev-rockcesar.blogspot.com/2024/01/la-voz-de-los-pensamientos-en-todas-las.html","position":30,"title":"My Book! (Sci-Fi 2)"},"link1":{"href":"https://dev-rockcesar.blogspot.com/2026/06/experto-en-odoo-buscando-trabajo.html","position":1,"title":"Experto en Odoo"},"link0":{"href":"https://blog-rockcesar.latin-chain.com/2026/10/all-about-latinchain-platform.html","position":0,"title":"All about LatinChain Platform"},"link5":{"href":"https://blog-rockcesar.latin-chain.com/2026/10/artificial-intelligence-course-online.html","position":5,"title":"Artificial Intelligence course online"},"link15":{"href":"https://dev-rockcesar.blogspot.com/2021/06/sigueme-en-mis-redes-sociales-follow-me.html","position":15,"title":"Sígueme en Redes Sociales"},"link4":{"href":"https://dev-rockcesar.blogspot.com/2024/01/consulta-de-egresados-de-luz.html","position":4,"title":"Consulta de egresados de LUZ"},"link16":{"href":"https://www.youtube.com/channel/UCOmQKHnw9n126vfCOQc_F8w?view_as=subscriber","position":16,"title":"Canal de Youtube"},"link3":{"href":"https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html","position":3,"title":"Pi Apps published on Pi Network Ecosystem"},"link13":{"href":"https://dev-rockcesar.blogspot.com/2023/08/free-crypto-airdrop-each-24-hours.html","position":13,"title":"Free Cryptos"},"link2":{"href":"https://dev-rockcesar.blogspot.com/2026/06/algo-asi-es-lo-que-necesitamos-en-las.html?m=1","position":2,"title":"Para las zonas del terremoto"},"link14":{"href":"https://cr-innova.negocio.site","position":14,"title":"Página principal de CR-Innova"},"link9":{"href":"https://dev-rockcesar.blogspot.com/2026/06/wanaiki-nuevo-idioma-venezolano.html","position":9,"title":"Wanaikí: Nuevo idioma venezolano"},"link11":{"href":"https://dev-rockcesar.blogspot.com/2025/03/cursos-en-udemy.html","position":11,"title":"Cursos (Udemy) y Libros (Amazon)"},"link33":{"href":"http://dev-rockcesar.blogspot.com/2024/09/universo-descentralizado-decentralized.html","position":33,"title":"My Book! (Sci-Fi 5)"},"link8":{"href":"http://dev-rockcesar.blogspot.com/2025/03/donations-to-latinchain.html","position":8,"title":"Donations"},"link12":{"href":"https://dev-rockcesar.blogspot.com/2024/12/amazon-promotions-checkout-following.html","position":12,"title":"Amazon Affiliates Marketing"},"link7":{"href":"https://blog-rockcesar.latin-chain.com/2026/10/intente-crear-un-libro-con-gemini-y-no.html","position":7,"title":"Libro de Gemini"},"link31":{"href":"https://dev-rockcesar.blogspot.com/2024/01/tratado-telepatico.html","position":31,"title":"My Book! (Sci-Fi 3)"},"link6":{"href":"https://dev-rockcesar.blogspot.com/2026/05/como-instalar-ollama-con-open-webui.html","position":6,"title":"Cómo instalar Ollama con Open-WebUI: Guía paso a paso"},"link10":{"href":"https://dev-rockcesar.blogspot.com/2026/04/mi-entrenamiento-actual-me-mantiene.html","position":10,"title":"Entrenamiento físico diario"},"link32":{"href":"https://dev-rockcesar.blogspot.com/2024/08/dios-ya-no-existe-como-dios.html","position":32,"title":"My Book! (Sci-Fi 4)"},"link19":{"href":"https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html","position":19,"title":"Pi Apps"},"link17":{"href":"https://dev-rockcesar.blogspot.com/2024/12/como-crear-tu-marca-personal-by-cesar_8.html","position":17,"title":"Crea tu marca personal by César OpenSource Expert"},"link18":{"href":"https://dev-rockcesar.blogspot.com/2023/07/odoo-technical-training-by-cesar-cordero.html","position":18,"title":"Odoo Technical Training by Cesar Cordero"},"link26":{"href":"https://portfolio-rockcesar.blogspot.com","position":26,"title":"Portafolio en Blogspot"},"link27":{"href":"https://dev-rockcesar.blogspot.com/2022/05/simulador-de-computadora-cuantica-en.html","position":27,"title":"Simulador de Computadora Cuántica"},"link24":{"href":"https://dev-rockcesar.blogspot.com/2021/06/los-26-katas-del-karate-do-shotokan-por.html","position":24,"title":"26 Kata del Karate Do Shotokan"},"link25":{"href":"https://rockcesar.github.io","position":25,"title":"Portafolio en Github"},"link22":{"href":"https://dev-rockcesar.blogspot.com/2021/09/calculadora-bolivar-sobera-bolivar.html","position":22,"title":"Bolívar Soberano a Bolívar Digital"},"link23":{"href":"https://dev-rockcesar.blogspot.com/2021/06/tv-en-venezuela-online-venezuelan-tv.html","position":23,"title":"TV Online"},"link20":{"href":"http://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html","position":20,"title":"How to develop a Pi App?"},"link21":{"href":"https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html","position":21,"title":"Social Network project"}}]]></b:widget-setting>
                           <b:widget-setting name='homeTitle'>Home</b:widget-setting>
                         </b:widget-settings>
                         <b:includable id='main'>
@@ -3143,14 +3144,9 @@ margin-left:40px
             </header>
             <div>
               <b:section ads='true' class='vertical-ad-container' id='ads' name='Ads' showaddelement='false'>
-                <b:widget id='AdSense1' locked='true' title='' type='AdSense' visible='true'>
+                <b:widget id='AdSense1' locked='true' title='' type='AdSense' visible='false'>
                   <b:widget-settings>
-                    <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-                    <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                   </b:widget-settings>
                   <b:includable id='main'>
@@ -3169,14 +3165,9 @@ margin-left:40px
           </b:with>
         </b:includable>
                 </b:widget>
-                <b:widget id='AdSense2' locked='true' title='' type='AdSense' visible='true'>
+                <b:widget id='AdSense2' locked='true' title='' type='AdSense' visible='false'>
                   <b:widget-settings>
-                    <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-                    <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                   </b:widget-settings>
                   <b:includable id='main'>
@@ -3447,7 +3438,7 @@ margin-left:40px
         </b:includable>
                     <b:includable id='snippetedPostContent'>
           <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
-          <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+          <div class='ads-antes-body' style='margin: 15px 0; text-align: center;'>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3457,7 +3448,7 @@ margin-left:40px
           <b:include name='headerByline'/>
           <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
           	<b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
-          <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+          <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3491,14 +3482,10 @@ margin-left:40px
                   <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
                     <b:widget-settings>
                       <b:widget-setting name='showDateHeader'>false</b:widget-setting>
-                      <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='showShareButtons'>true</b:widget-setting>
                       <b:widget-setting name='showCommentLink'>true</b:widget-setting>
-                      <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='showAuthor'>true</b:widget-setting>
-                      <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-                      <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='timestampLabel'>-</b:widget-setting>
                       <b:widget-setting name='reactionsLabel'/>
                       <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
@@ -3507,10 +3494,9 @@ margin-left:40px
                       <b:widget-setting name='showLocation'>true</b:widget-setting>
                       <b:widget-setting name='postLabelsLabel'/>
                       <b:widget-setting name='showTimestamp'>true</b:widget-setting>
-                      <b:widget-setting name='postsPerAd'>3</b:widget-setting>
+                      <b:widget-setting name='postsPerAd'>1</b:widget-setting>
                       <b:widget-setting name='showBacklinks'>false</b:widget-setting>
-                      <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                      <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+                      <b:widget-setting name='showInlineAds'>false</b:widget-setting>
                       <b:widget-setting name='showReactions'>false</b:widget-setting>
                     </b:widget-settings>
                     <b:includable id='main'>
@@ -3860,7 +3846,7 @@ margin-left:40px
   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
     
     <data:post.body/>
-    <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+    <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3878,7 +3864,7 @@ margin-left:40px
             </b:if>
             
             <b:include cond='data:post' data='post' name='postSnippet'/>
-            <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+            <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3890,7 +3876,7 @@ margin-left:40px
   <article class='post-outer-container'>
     <!-- Post title and body -->
     <div class='post-outer'>
-      <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+      <div class='ads-antes-body' style='margin: 15px 0; text-align: center;'>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4087,7 +4073,7 @@ margin-left:40px
                   <div class='container form-group justify-content-center text-center' style='width: 100%; text-align: center;'>
                     <div class='row justify-content-center'>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4144,7 +4130,7 @@ margin-left:40px
                         </div>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4171,7 +4157,7 @@ margin-left:40px
                         </p>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4198,7 +4184,7 @@ margin-left:40px
                         </div>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4228,7 +4214,7 @@ margin-left:40px
                         </div>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4245,7 +4231,7 @@ margin-left:40px
                         </p>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4262,7 +4248,7 @@ margin-left:40px
                         </p>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4282,7 +4268,7 @@ margin-left:40px
 
                         <p>The world of finance was forever changed in the aftermath of the 2008 global financial crisis. What started as an obscure proposal on a cryptography mailing list has transformed into a global technological revolution. Here is the journey of cryptocurrency from its inception to the present day.</p>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4299,7 +4285,7 @@ margin-left:40px
                           <li><strong>Proof of Work:</strong> This brilliant consensus mechanism solved the double-spending problem, ensuring complete trust in a trustless digital environment.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4318,7 +4304,7 @@ margin-left:40px
                           <li><strong>Mainstream Awareness:</strong> By 2021, the crypto market reached unprecedented heights, driven by global retail interest, digital art (NFTs), and the exciting promise of Web3.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4337,7 +4323,7 @@ margin-left:40px
                           <li><strong>Wall Street Entry:</strong> Major traditional financial institutions embraced Bitcoin ETFs, permanently cementing cryptocurrency as a legitimate and highly sought-after asset class.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
@@ -4357,7 +4343,7 @@ margin-left:40px
                           <li><strong>Everyday Utility:</strong> With a robust ecosystem of decentralized applications (dApps) and an innovative native KYC solution, Pi Network empowers millions of everyday users to transact, build, and interact seamlessly.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
