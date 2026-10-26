@@ -3146,12 +3146,7 @@ margin-left:40px
               <b:section ads='true' class='vertical-ad-container' id='ads' name='Ads' showaddelement='false'>
                 <b:widget id='AdSense1' locked='true' title='' type='AdSense' visible='true'>
                   <b:widget-settings>
-                    <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-                    <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                   </b:widget-settings>
                   <b:includable id='main'>
@@ -3172,12 +3167,7 @@ margin-left:40px
                 </b:widget>
                 <b:widget id='AdSense2' locked='true' title='' type='AdSense' visible='true'>
                   <b:widget-settings>
-                    <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-                    <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-                    <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
                     <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                   </b:widget-settings>
                   <b:includable id='main'>
@@ -3493,14 +3483,10 @@ margin-left:40px
                   <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
                     <b:widget-settings>
                       <b:widget-setting name='showDateHeader'>false</b:widget-setting>
-                      <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='showShareButtons'>true</b:widget-setting>
                       <b:widget-setting name='showCommentLink'>true</b:widget-setting>
-                      <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='showAuthor'>false</b:widget-setting>
-                      <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-                      <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='timestampLabel'/>
                       <b:widget-setting name='reactionsLabel'/>
                       <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
@@ -3511,7 +3497,6 @@ margin-left:40px
                       <b:widget-setting name='showTimestamp'>true</b:widget-setting>
                       <b:widget-setting name='postsPerAd'>1</b:widget-setting>
                       <b:widget-setting name='showBacklinks'>false</b:widget-setting>
-                      <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='showInlineAds'>false</b:widget-setting>
                       <b:widget-setting name='showReactions'>false</b:widget-setting>
                     </b:widget-settings>

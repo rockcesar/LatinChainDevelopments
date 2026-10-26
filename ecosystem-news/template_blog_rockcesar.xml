@@ -3438,7 +3438,7 @@ margin-left:40px
         </b:includable>
                     <b:includable id='snippetedPostContent'>
           <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
-          <div class='ads-antes-body' style='margin: 15px 0; text-align: center;'>
+          <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
               <script>
                   atOptions = {
                     'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
@@ -3459,7 +3459,7 @@ margin-left:40px
           <b:include name='headerByline'/>
           <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
           	<b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
-          <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
+          <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
               <script>
                   atOptions = {
                     'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
@@ -3867,7 +3867,7 @@ margin-left:40px
   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
     
     <data:post.body/>
-    <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
+    <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
         <script>
           atOptions = {
             'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
@@ -3895,7 +3895,7 @@ margin-left:40px
             </b:if>
             
             <b:include cond='data:post' data='post' name='postSnippet'/>
-            <div class='ads-despues-body' style='margin: 15px 0; text-align: center;'>
+            <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
                 <script>
                   atOptions = {
                     'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
@@ -3917,7 +3917,7 @@ margin-left:40px
   <article class='post-outer-container'>
     <!-- Post title and body -->
     <div class='post-outer'>
-      <div class='ads-antes-body' style='margin: 15px 0; text-align: center;'>
+      <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
           <script>
               atOptions = {
                 'key' : 'bd54f5eaf89c63437ca63a2749ebd0c2',
@@ -4124,7 +4124,7 @@ margin-left:40px
                   <div class='container form-group justify-content-center text-center' style='width: 100%; text-align: center;'>
                     <div class='row justify-content-center'>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <script>
@@ -4191,7 +4191,7 @@ margin-left:40px
                         </div>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <script>
@@ -4228,7 +4228,7 @@ margin-left:40px
                         </p>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <script>
@@ -4265,7 +4265,7 @@ margin-left:40px
                         </div>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <script>
@@ -4305,7 +4305,7 @@ margin-left:40px
                         </div>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <script>
@@ -4332,7 +4332,7 @@ margin-left:40px
                         </p>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <script>
@@ -4359,7 +4359,7 @@ margin-left:40px
                         </p>
                       </div>
 
-                      <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                      <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
                         <script>
@@ -4389,7 +4389,7 @@ margin-left:40px
 
                         <p>The world of finance was forever changed in the aftermath of the 2008 global financial crisis. What started as an obscure proposal on a cryptography mailing list has transformed into a global technological revolution. Here is the journey of cryptocurrency from its inception to the present day.</p>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <script>
@@ -4416,7 +4416,7 @@ margin-left:40px
                           <li><strong>Proof of Work:</strong> This brilliant consensus mechanism solved the double-spending problem, ensuring complete trust in a trustless digital environment.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <script>
@@ -4445,7 +4445,7 @@ margin-left:40px
                           <li><strong>Mainstream Awareness:</strong> By 2021, the crypto market reached unprecedented heights, driven by global retail interest, digital art (NFTs), and the exciting promise of Web3.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <script>
@@ -4474,7 +4474,7 @@ margin-left:40px
                           <li><strong>Wall Street Entry:</strong> Major traditional financial institutions embraced Bitcoin ETFs, permanently cementing cryptocurrency as a legitimate and highly sought-after asset class.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <script>
@@ -4504,7 +4504,7 @@ margin-left:40px
                           <li><strong>Everyday Utility:</strong> With a robust ecosystem of decentralized applications (dApps) and an innovative native KYC solution, Pi Network empowers millions of everyday users to transact, build, and interact seamlessly.</li>
                         </ul>
 
-                        <div class='col-12 my-3' style='max-width: 100%; text-align: center;'>
+                        <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
                           <script>
@@ -5349,6 +5349,12 @@ margin-left:40px
     <b:if cond='data:copyright != &quot;&quot;'>
       <div class='copyright'><data:copyright/></div>
     </b:if>
+    
+    <!-- Adsterra Popunder -->
+    <script data-cfasync="false" src="https://afders.org/1/700f54495a2fe2580b912872f9f67f4b"></script>
+    
+    <!-- Adsterra Social Bar -->
+    <script data-cfasync="false" src="https://bicea.org/14/e5b3c709224020473be0e2e0a785dbf3"></script>
     
     <!--Taboola-->
     <!--<div style='background-color: white; padding: 10px'>
