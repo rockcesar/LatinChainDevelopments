@@ -4485,7 +4485,7 @@ margin-left:40px
                             // 3. Contenedor de anuncios (Antes)
                             let adBefore = document.createElement('div');
                             adBefore.className = 'ads-antes-body';
-                            adBefore.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box;';
+                            adBefore.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box; min-height: 250px;';
 
                             /*let scriptOpt1 = document.createElement('script');
                             scriptOpt1.textContent = 'atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};';
@@ -4564,7 +4564,7 @@ margin-left:40px
                             // 10. Contenedor de anuncios (Después)
                             let adAfter = document.createElement('div');
                             adAfter.className = 'ads-despues-body';
-                            adAfter.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box;';
+                            adAfter.style.cssText = 'margin-bottom: 5px; text-align: center; width: 100%; box-sizing: border-box; ; min-height: 250px;';
 
                             /*let scriptOpt2 = document.createElement('script');
                             scriptOpt2.textContent = 'atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};';
