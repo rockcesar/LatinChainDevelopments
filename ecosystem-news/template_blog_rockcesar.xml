@@ -2951,8 +2951,8 @@ margin-left:40px
     <b:include cond='not data:view.isPreview' data='{                         image: data:skin.vars.body_background.image,                         selector: &quot;.bg-photo&quot;,                         imageSizes: [480, 640, 800, 1200, 1600]                      }' name='responsiveImageStyle'/>
 
     <b:if cond='(data:widgets.AdSense.first or data:blog.adsenseClientId) and not data:blog.adsenseAutoAds'>
-      <!-- AdSense Enabled -->
-      <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
+      <!-- AdSense Disabled -->
+      <!--<script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>-->
     </b:if>
     <b:include data='blog' name='google-analytics'/>
 
@@ -3439,6 +3439,9 @@ margin-left:40px
                     <b:includable id='snippetedPostContent'>
           <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
           <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+              <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                    <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                </div>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3449,6 +3452,9 @@ margin-left:40px
           <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
           	<b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
           <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+              <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                    <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                </div>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3847,6 +3853,9 @@ margin-left:40px
     
     <data:post.body/>
     <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+        </div>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3865,6 +3874,9 @@ margin-left:40px
             
             <b:include cond='data:post' data='post' name='postSnippet'/>
             <div class='ads-despues-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+                <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                    <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                </div>
               <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
               <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -3877,6 +3889,9 @@ margin-left:40px
     <!-- Post title and body -->
     <div class='post-outer'>
       <div class='ads-antes-body' style='margin: 15px 0; text-align: center; min-height: 250px'>
+          <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+            </div>
         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display:block'/>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4076,6 +4091,9 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                        </div>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4133,6 +4151,9 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                        </div>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4160,6 +4181,9 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                        </div>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4187,6 +4211,9 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                        </div>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4217,6 +4244,9 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                        </div>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4234,6 +4264,9 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                        </div>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4251,6 +4284,9 @@ margin-left:40px
                       <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                         <!--LatinChain Ad responsive 2-->
                         <br/>
+                        <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                        </div>
                         <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                         <script>
                           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4271,6 +4307,9 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                                <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                            </div>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4288,6 +4327,9 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                                <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                            </div>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4307,6 +4349,9 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                                <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                            </div>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4326,6 +4371,9 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                                <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                            </div>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4346,6 +4394,9 @@ margin-left:40px
                         <div class='col-12 my-3' style='max-width: 100%; text-align: center; min-height: 250px'>
                           <!--LatinChain Ad responsive 2-->
                           <br/>
+                          <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                                <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
+                            </div>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-2334449220276386' data-ad-format='auto' data-ad-slot='9525388880' data-full-width-responsive='true' style='display: block;'/>
                           <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -4437,6 +4488,23 @@ margin-left:40px
                         return adWrapper;
                       }
                       
+                      function createAdsLatinChainBanner() {
+                        let adWrapper = document.createElement('div');
+                        adWrapper.className = 'latinchain-ads';
+                        adWrapper.style.cssText = 'display: flex; justify-content: center; align-items: center; width: 100%;';
+
+                        let iframe = document.createElement('iframe');
+                        iframe.src = 'https://latin-chain.com/latinchain-ads';
+                        iframe.width = '100%';
+                        iframe.height = '300';
+                        iframe.style.cssText = 'max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;';
+                        iframe.setAttribute('frameborder', '0');
+                        iframe.setAttribute('align', 'center');
+
+                        adWrapper.appendChild(iframe);
+                        return adWrapper;
+                      }
+                      
                     document.addEventListener("DOMContentLoaded", function() {
                       fetch('/feeds/posts/default?alt=json&max-results=10')
                         .then(function(response) { return response.json(); })
@@ -4509,6 +4577,8 @@ margin-left:40px
                             
                             //adBefore.appendChild(createAadsBanner());
                             adBefore.appendChild(createAdsterraBanner());
+                            
+                            adBefore.appendChild(createAdsLatinChainBanner());
 
                             let ins1 = document.createElement('ins');
                             ins1.className = 'adsbygoogle';
@@ -4517,6 +4587,7 @@ margin-left:40px
                             ins1.setAttribute('data-ad-slot', '9525388880');
                             ins1.setAttribute('data-full-width-responsive', 'true');
                             ins1.style.display = 'block';
+                            
                             adBefore.appendChild(ins1);
 
                             article.appendChild(adBefore);
@@ -4589,6 +4660,8 @@ margin-left:40px
                             
                             //adAfter.appendChild(createAadsBanner());
                             adAfter.appendChild(createAdsterraBanner());
+                            
+                            adAfter.appendChild(createAdsLatinChainBanner());
 
                             let ins2 = document.createElement('ins');
                             ins2.className = 'adsbygoogle';
