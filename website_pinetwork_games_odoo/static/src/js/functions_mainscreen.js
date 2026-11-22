@@ -1523,7 +1523,7 @@ $( document ).ready(function() {
         });
         
         $(document).on('cbox_closed', function () {
-            if(!unblocked && latinOpenedIt)
+            if(!unblocked && pi_user_id != "" && pi_user_code != "" && latinOpenedIt)
             {
                 document.body.style.paddingTop = '55px';
                 document.getElementById('goforward-message').style.paddingTop = '30px';
